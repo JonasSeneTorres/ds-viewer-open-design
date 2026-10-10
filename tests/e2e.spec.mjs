@@ -236,3 +236,26 @@ test("entrar: login, esqueci minha senha e nova senha", async ({ page }) => {
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
   expect(problems).toEqual([]);
 });
+
+test("rodapé: autoria, licenças e privacidade, com o tema selecionado", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/");
+  await expect(page.locator(".site-footer")).toContainText("Site desenvolvido por Jonas Sene Torres");
+
+  // escolhe um tema e abre as páginas do rodapé: o tema continua valendo
+  await page.click(".combobox-btn");
+  await page.keyboard.type("bugatti");
+  await page.keyboard.press("Enter");
+  await page.click('.footer-nav a[href="#/licencas"]');
+  await expect(page).toHaveURL(/#\/licencas$/);
+  await expect(page.locator("main h1")).toHaveText("Licenças e créditos");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "bugatti");
+  await expect(page.locator(".legal section")).toHaveCount(5);
+  await expect(page.locator('.legal a[target="_blank"]').first()).toHaveAttribute("rel", /noopener/);
+
+  await page.click('.footer-nav a[href="#/privacidade"]');
+  await expect(page).toHaveURL(/#\/privacidade$/);
+  await expect(page.locator("main h1")).toHaveText("Privacidade e LGPD");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "bugatti");
+  expect(problems).toEqual([]);
+});

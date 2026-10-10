@@ -1195,9 +1195,20 @@ legend {
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: 16px 32px;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.footer-text {
+  display: grid;
+  gap: 4px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
 .footer-inner a {
@@ -3237,4 +3248,54 @@ fieldset {
   .auth-aside {
     display: none;
   }
+}
+
+/* ---------- Licenças e privacidade ---------- */
+
+.legal {
+  max-width: 72ch;
+}
+
+.legal section {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: var(--bw) solid var(--border-soft, var(--border));
+}
+
+.legal h2 {
+  margin: 0 0 8px;
+  font-size: var(--fs-h3, 1.3rem);
+}
+
+.legal p,
+.legal li {
+  color: var(--fg-soft);
+}
+
+.legal ul {
+  padding-left: 1.2em;
+}
+
+.legal .legal-links {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.legal details {
+  margin-top: 12px;
+}
+
+.legal summary {
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.legal pre {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
 }

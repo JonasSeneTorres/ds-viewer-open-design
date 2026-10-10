@@ -91,6 +91,8 @@ const MEASURE = () => {
   probe("botao-ghost", ".btn-ghost");
   probe("cabecalho", ".main-nav a");
   probe("rodape", ".site-footer span");
+  probe("rodape-link", ".footer-nav a");
+  probe("legal-texto", ".legal p");
   probe("campo", ".field input, .toolbar, #dsSearch");
   probe("pilula", ".pill");
   probe("th", "th");
@@ -116,6 +118,8 @@ const ROUTES = (id) => [
   ["institucional", "/#/institucional"],
   ["entrar", "/#/entrar"],
   ["nova-senha", "/#/entrar/nova-senha"],
+  ["licencas", "/#/licencas"],
+  ["privacidade", "/#/privacidade"],
   ["dashboard", "/#/dashboard"],
   ["loja", "/#/loja"],
 ];
