@@ -285,21 +285,6 @@
   }
  },
  {
-  "href": "/plugins/systems/",
-  "name": "Cisco",
-  "category": "Backend & Data",
-  "tagline": "Enterprise infrastructure brand. Dark trust surfaces, Cisco Blue signal, technical clarity.",
-  "preview": {
-   "bg": "#ffffff",
-   "surface": "#ffffff",
-   "ink": "#39393b",
-   "muted": "rgba(57, 57, 59, 0.55)",
-   "line": "rgba(57, 57, 59, 0.12)",
-   "accent": "#005073",
-   "radius": "10px"
-  }
- },
- {
   "href": "/plugins/design-system-claude/",
   "name": "Claude (Anthropic)",
   "category": "AI & LLM",
