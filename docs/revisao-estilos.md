@@ -1,6 +1,6 @@
 # Revisão de estilos, tema a tema
 
-Gerado por `scripts/review_styles.py` a partir de `scripts/audit_themes.mjs`. A auditoria abre, com cada tema, o início, a página do DS, a tabela e o formulário, em desktop (1280 px) e celular (390 px), e mede contraste, rolagem horizontal, erros e fontes carregadas.
+Gerado por `scripts/review_styles.py` a partir de `scripts/audit_themes.mjs`. A auditoria abre, com cada tema, o início, a página do DS, a tabela, o formulário, o dashboard e a loja, em desktop (1280 px) e celular (390 px), e mede contraste, rolagem horizontal, erros e fontes carregadas.
 
 ## Resumo
 

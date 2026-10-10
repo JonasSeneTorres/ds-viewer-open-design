@@ -105,6 +105,8 @@ const ROUTES = (id) => [
   ["ds", `/#/design-system/${id}`],
   ["tabela", "/#/tabela"],
   ["formulario", "/#/formulario"],
+  ["dashboard", "/#/dashboard"],
+  ["loja", "/#/loja"],
 ];
 const VIEWPORTS = [["desktop", { width: 1280, height: 900 }], ["celular", { width: 390, height: 800 }]];
 

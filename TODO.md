@@ -51,6 +51,8 @@ Marque `[x]` ao concluir cada item.
 - [ ] **27.** Seções 7 a 9 do guia (do/don't, responsivo, guia do agente) são só texto e não viram estilo. Falta, se quiser, extrair do guia o peso e o tamanho por papel tipográfico (hoje `--heading-weight` é 600 em todos).
 - [ ] **23.** `data/systems-raw.json`: a entrada **Cisco** tem `href: "/plugins/systems/"` (aponta para a lista, não para o DS), então o `data:fetch` baixa a página da lista à toa e a Cisco não entra no catálogo. Decidir: corrigir para `/plugins/design-system-cisco/` (e incluir, se o pacote existir no repositório) ou remover a entrada.
 
+- [x] **28.** Cabeçalho com Início, Informações do tema e Exemplos (menu), e duas páginas novas: Dashboard genérico em SVG e Catálogo de loja com categorias — _Feito. "Informações do tema" segue o tema escolhido no seletor. O menu Exemplos abre com teclado (setas, Esc) e marca a página atual. Dashboard: 4 indicadores com minigráfico, área, barras, rosca, anel, atividade e rascunho rápido. Loja: 12 produtos em 5 categorias, ordenação e carrinho. 3 testes E2E novos (12 no total)._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

@@ -44,6 +44,10 @@
     "nav.label": { "en-US": "Main navigation", "pt-BR": "Navegação principal" },
     "nav.home": { "en-US": "Home", "pt-BR": "Início" },
     "nav.ds": { "en-US": "Design System", "pt-BR": "Design System" },
+    "nav.theme": { "en-US": "Theme info", "pt-BR": "Informações do tema" },
+    "nav.examples": { "en-US": "Examples", "pt-BR": "Exemplos" },
+    "nav.dashboard": { "en-US": "Dashboard", "pt-BR": "Dashboard" },
+    "nav.shop": { "en-US": "Store", "pt-BR": "Loja" },
     "nav.blog": { "en-US": "Blog", "pt-BR": "Blog" },
     "nav.table": { "en-US": "Table", "pt-BR": "Tabela" },
     "nav.form": { "en-US": "Form", "pt-BR": "Formulário" },
@@ -147,6 +151,43 @@
     "frm.progress": { "en-US": "Upload progress", "pt-BR": "Progresso do envio" },
     "frm.indeterminate": { "en-US": "Waiting for a response", "pt-BR": "Aguardando resposta" },
     "frm.skeleton": { "en-US": "Content placeholder", "pt-BR": "Espaço reservado para conteúdo" },
+    "dash.kicker": { "en-US": "Example · Dashboard", "pt-BR": "Exemplo · Dashboard" },
+    "dash.h1": { "en-US": "Dashboard", "pt-BR": "Painel" },
+    "dash.lede": { "en-US": "A generic admin panel with SVG charts, inspired by the WordPress dashboard. The numbers are fictional.", "pt-BR": "Um painel genérico com gráficos em SVG, inspirado no painel do WordPress. Os números são fictícios." },
+    "dash.visitors": { "en-US": "Visitors", "pt-BR": "Visitantes" },
+    "dash.posts": { "en-US": "Posts", "pt-BR": "Posts" },
+    "dash.comments": { "en-US": "Comments", "pt-BR": "Comentários" },
+    "dash.users": { "en-US": "Users", "pt-BR": "Usuários" },
+    "dash.visits": { "en-US": "Visits in the last 14 days", "pt-BR": "Visitas nos últimos 14 dias" },
+    "dash.sources": { "en-US": "Traffic sources", "pt-BR": "Origem do tráfego" },
+    "dash.direct": { "en-US": "Direct", "pt-BR": "Direto" },
+    "dash.search": { "en-US": "Search", "pt-BR": "Busca" },
+    "dash.social": { "en-US": "Social", "pt-BR": "Social" },
+    "dash.referral": { "en-US": "Referral", "pt-BR": "Referência" },
+    "dash.monthly": { "en-US": "Posts per month", "pt-BR": "Posts por mês" },
+    "dash.health": { "en-US": "Site health", "pt-BR": "Saúde do site" },
+    "dash.healthText": { "en-US": "Good. Two items to review.", "pt-BR": "Boa. Dois itens para revisar." },
+    "dash.activity": { "en-US": "Recent activity", "pt-BR": "Atividade recente" },
+    "dash.draft": { "en-US": "Quick draft", "pt-BR": "Rascunho rápido" },
+    "dash.draftTitle": { "en-US": "Title", "pt-BR": "Título" },
+    "dash.draftBody": { "en-US": "What's on your mind?", "pt-BR": "Em que você está pensando?" },
+    "dash.draftSave": { "en-US": "Save draft", "pt-BR": "Salvar rascunho" },
+    "shop.kicker": { "en-US": "Example · Store", "pt-BR": "Exemplo · Loja" },
+    "shop.h1": { "en-US": "Product catalog", "pt-BR": "Catálogo de produtos" },
+    "shop.lede": { "en-US": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.", "pt-BR": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." },
+    "shop.cats": { "en-US": "Categories", "pt-BR": "Categorias" },
+    "shop.all": { "en-US": "All products", "pt-BR": "Todos os produtos" },
+    "shop.items": { "en-US": "items", "pt-BR": "itens" },
+    "shop.cart": { "en-US": "Cart", "pt-BR": "Carrinho" },
+    "shop.sort": { "en-US": "Sort by", "pt-BR": "Ordenar por" },
+    "shop.sRel": { "en-US": "Relevance", "pt-BR": "Relevância" },
+    "shop.sAsc": { "en-US": "Lowest price", "pt-BR": "Menor preço" },
+    "shop.sDesc": { "en-US": "Highest price", "pt-BR": "Maior preço" },
+    "shop.sName": { "en-US": "Name (A-Z)", "pt-BR": "Nome (A-Z)" },
+    "shop.add": { "en-US": "Add to cart", "pt-BR": "Adicionar ao carrinho" },
+    "shop.new": { "en-US": "New", "pt-BR": "Novo" },
+    "shop.sale": { "en-US": "Sale", "pt-BR": "Oferta" },
+    "shop.empty": { "en-US": "No products in this category.", "pt-BR": "Nenhum produto nesta categoria." },
     "top.label": { "en-US": "Back to top", "pt-BR": "Voltar ao topo" },
     "close": { "en-US": "Close", "pt-BR": "Fechar" },
     "cancel": { "en-US": "Cancel", "pt-BR": "Cancelar" },
@@ -520,6 +561,7 @@
     var theme = THEMES.filter(function (t) { return t.id === id; })[0] ||
       THEMES.filter(function (t) { return t.id === DEFAULT_THEME; })[0] || THEMES[0];
     currentTheme = theme.id;
+    updateThemeLink();
     applyTheme(theme.id);
     try {
       localStorage.setItem(THEME_KEY, theme.id);
@@ -1599,17 +1641,372 @@
 
   // A busca da barra lateral do blog é só de enfeite.
   app.addEventListener("submit", function (e) {
-    if (e.target.closest && e.target.closest(".aside-search")) e.preventDefault();
+    if (e.target.closest && e.target.closest(".aside-search, .draft-form")) e.preventDefault();
   });
 
-  function setActiveNav(route) {
-    document.querySelectorAll(".main-nav a").forEach(function (link) {
-      var href = link.getAttribute("href").replace("#", "");
-      var isActive =
-        href === route;
-      if (isActive) link.setAttribute("aria-current", "page");
-      else link.removeAttribute("aria-current");
+  // ------------------------------------------------------------------
+  // Dashboard de exemplo, no estilo do painel do WordPress: widgets com gráficos em SVG.
+  // As cores vêm das variáveis do tema; os números são fictícios.
+  // ------------------------------------------------------------------
+
+  function chartSVG(w, h, label, inner) {
+    return '<svg class="chart" viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + esc(label) + '">' + inner + "</svg>";
+  }
+
+  function monthNames(n) {
+    var out = [];
+    for (var m = 0; m < n; m++) out.push(new Date(2026, m, 1).toLocaleDateString(lang, { month: "short" }));
+    return out;
+  }
+
+  // Área com linha: visitas por dia.
+  function areaChartSVG(values, label) {
+    var W = 560, H = 220, L = 40, R = 12, Tp = 12, B = 28;
+    var max = Math.ceil(Math.max.apply(null, values) / 100) * 100;
+    var n = values.length;
+    function x(i) { return L + i * (W - L - R) / (n - 1); }
+    function y(v) { return Tp + (H - Tp - B) * (1 - v / max); }
+    var grid = "";
+    for (var t = 0; t <= 4; t++) {
+      var v = max * t / 4;
+      grid += '<line class="ch-grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v).toFixed(1) + '" y2="' + y(v).toFixed(1) + '"/>' +
+        '<text class="ch-axis" x="' + (L - 8) + '" y="' + (y(v) + 4).toFixed(1) + '" text-anchor="end">' + v + "</text>";
+    }
+    var pts = values.map(function (val, i) { return x(i).toFixed(1) + "," + y(val).toFixed(1); });
+    var line = "M" + pts.join(" L");
+    var area = line + " L" + x(n - 1).toFixed(1) + "," + y(0).toFixed(1) + " L" + x(0).toFixed(1) + "," + y(0).toFixed(1) + " Z";
+    var labels = "", dots = "";
+    values.forEach(function (val, i) {
+      if (i % 2 === 0) labels += '<text class="ch-axis" x="' + x(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle">' + (i + 1) + "</text>";
+      dots += '<circle class="ch-dot ch-s1" cx="' + x(i).toFixed(1) + '" cy="' + y(val).toFixed(1) + '" r="3"/>';
     });
+    return chartSVG(W, H, label, grid + '<path class="ch-area ch-s1" d="' + area + '"/><path class="ch-line ch-s1" d="' + line + '"/>' + dots + labels);
+  }
+
+  // Barras: posts por mês.
+  function barChartSVG(values, names, label) {
+    var W = 360, H = 200, L = 28, R = 8, Tp = 12, B = 26;
+    var max = Math.ceil(Math.max.apply(null, values) / 5) * 5;
+    var n = values.length;
+    var slot = (W - L - R) / n, bw = slot * 0.56;
+    function y(v) { return Tp + (H - Tp - B) * (1 - v / max); }
+    var out = "";
+    for (var t = 0; t <= 3; t++) {
+      var v = max * t / 3;
+      out += '<line class="ch-grid" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v).toFixed(1) + '" y2="' + y(v).toFixed(1) + '"/>' +
+        '<text class="ch-axis" x="' + (L - 6) + '" y="' + (y(v) + 4).toFixed(1) + '" text-anchor="end">' + Math.round(v) + "</text>";
+    }
+    values.forEach(function (val, i) {
+      var bx = L + i * slot + (slot - bw) / 2;
+      out += '<rect class="ch-bar ch-s2" x="' + bx.toFixed(1) + '" y="' + y(val).toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + (y(0) - y(val)).toFixed(1) + '" rx="3"/>' +
+        '<text class="ch-axis" x="' + (bx + bw / 2).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(names[i]) + "</text>";
+    });
+    return chartSVG(W, H, label, out);
+  }
+
+  // Rosca: origem do tráfego (círculo de circunferência 100, para usar as partes como porcentagem).
+  function donutSVG(parts, label) {
+    var acc = 0, out = '<circle class="ch-ring-bg" cx="21" cy="21" r="15.9155" fill="none"/>';
+    parts.forEach(function (p, i) {
+      out += '<circle class="ch-seg ch-s' + (i + 1) + '" cx="21" cy="21" r="15.9155" fill="none" stroke-dasharray="' + p.v + " " + (100 - p.v) +
+        '" stroke-dashoffset="' + (25 - acc) + '"/>';
+      acc += p.v;
+    });
+    return chartSVG(42, 42, label, out);
+  }
+
+  // Anel de progresso: saúde do site.
+  function gaugeSVG(pct, label) {
+    return chartSVG(42, 42, label,
+      '<circle class="ch-ring-bg" cx="21" cy="21" r="15.9155" fill="none"/>' +
+      '<circle class="ch-seg ch-s3" cx="21" cy="21" r="15.9155" fill="none" stroke-dasharray="' + pct + " " + (100 - pct) + '" stroke-dashoffset="25"/>' +
+      '<text class="ch-center" x="21" y="23.5" text-anchor="middle">' + pct + "%</text>");
+  }
+
+  function sparkSVG(values) {
+    var W = 96, H = 32, max = Math.max.apply(null, values), min = Math.min.apply(null, values);
+    var pts = values.map(function (v, i) {
+      return (i * W / (values.length - 1)).toFixed(1) + "," + (H - 3 - (H - 6) * (v - min) / (max - min || 1)).toFixed(1);
+    });
+    return '<svg class="spark" viewBox="0 0 ' + W + " " + H + '" aria-hidden="true"><polyline class="ch-line ch-s1" points="' + pts.join(" ") + '"/></svg>';
+  }
+
+  function widget(title, body, cls) {
+    return '<section class="widget' + (cls ? " " + cls : "") + '"><h2 class="widget-title">' + esc(title) + '</h2><div class="widget-body">' + body + "</div></section>";
+  }
+
+  function dashboardHTML() {
+    var visits = [120, 180, 150, 220, 260, 240, 310, 280, 350, 330, 400, 380, 450, 430];
+    var posts = [8, 12, 9, 15, 11, 18];
+    var sources = [
+      { key: "dash.direct", v: 38 }, { key: "dash.search", v: 31 }, { key: "dash.social", v: 19 }, { key: "dash.referral", v: 12 }
+    ];
+    var stats = [
+      { key: "dash.visitors", value: "12.480", delta: "+12%", up: true, spark: [4, 6, 5, 8, 7, 10, 12] },
+      { key: "dash.posts", value: "86", delta: "+4%", up: true, spark: [3, 3, 4, 4, 5, 5, 6] },
+      { key: "dash.comments", value: "342", delta: "-3%", up: false, spark: [9, 8, 9, 7, 8, 6, 6] },
+      { key: "dash.users", value: "1.205", delta: "+9%", up: true, spark: [2, 3, 3, 5, 6, 6, 8] }
+    ];
+    var activity = [
+      ["Lorem ipsum dolor sit amet", "Jonas Torres", "2h"],
+      ["Consectetur adipiscing elit", "Maria Lorem", "5h"],
+      ["Sed do eiusmod tempor", "Ipsum Dolor", "1d"],
+      ["Ut enim ad minim veniam", "Jonas Torres", "2d"],
+      ["Duis aute irure dolor", "Sit Amet", "3d"]
+    ];
+    return (
+      '<div class="page-head">' +
+      '<span class="kicker">' + esc(T("dash.kicker")) + "</span>" +
+      "<h1>" + esc(T("dash.h1")) + "</h1>" +
+      '<p class="lede">' + esc(T("dash.lede")) + "</p>" +
+      "</div>" +
+      '<div class="dash-stats">' +
+      stats.map(function (s) {
+        return (
+          '<div class="stat"><span class="stat-label">' + esc(T(s.key)) + "</span>" +
+          '<span class="stat-value">' + s.value + "</span>" +
+          '<span class="stat-delta ' + (s.up ? "is-up" : "is-down") + '">' + s.delta + "</span>" +
+          sparkSVG(s.spark) + "</div>"
+        );
+      }).join("") +
+      "</div>" +
+      '<div class="dash-grid">' +
+      widget(T("dash.visits"), areaChartSVG(visits, T("dash.visits")), "span-2") +
+      widget(T("dash.sources"),
+        '<div class="donut-wrap">' + donutSVG(sources.map(function (s) { return { v: s.v }; }), T("dash.sources")) +
+        '<ul class="legend">' + sources.map(function (s, i) {
+          return '<li><span class="swatch ch-sw' + (i + 1) + '" aria-hidden="true"></span>' + esc(T(s.key)) + "<strong>" + s.v + "%</strong></li>";
+        }).join("") + "</ul></div>") +
+      widget(T("dash.monthly"), barChartSVG(posts, monthNames(6), T("dash.monthly"))) +
+      widget(T("dash.health"),
+        '<div class="gauge-wrap">' + gaugeSVG(82, T("dash.health")) +
+        '<p class="muted">' + esc(T("dash.healthText")) + "</p></div>") +
+      widget(T("dash.activity"),
+        '<ul class="activity">' + activity.map(function (a) {
+          return "<li><span>" + esc(a[0]) + '</span><span class="muted">' + esc(a[1]) + " · " + esc(a[2]) + "</span></li>";
+        }).join("") + "</ul>", "span-2") +
+      widget(T("dash.draft"),
+        '<form class="draft-form">' +
+        '<label class="field"><span class="sr-only">' + esc(T("dash.draftTitle")) + '</span><input type="text" placeholder="' + esc(T("dash.draftTitle")) + '"></label>' +
+        '<label class="field"><span class="sr-only">' + esc(T("dash.draftBody")) + '</span><textarea rows="3" placeholder="' + esc(T("dash.draftBody")) + '"></textarea></label>' +
+        '<button type="submit" class="btn btn-primary btn-small">' + esc(T("dash.draftSave")) + "</button></form>") +
+      "</div>"
+    );
+  }
+
+  // ------------------------------------------------------------------
+  // Catálogo de loja de exemplo: navegação por categoria, ordenação e "adicionar ao carrinho".
+  // Sem fotos: degradê com as cores do tema e o ícone de imagem não encontrada em SVG.
+  // ------------------------------------------------------------------
+
+  var SHOP_CATS = [
+    { id: "lorem", name: "Lorem" }, { id: "ipsum", name: "Ipsum" }, { id: "dolor", name: "Dolor" },
+    { id: "sit-amet", name: "Sit amet" }, { id: "consectetur", name: "Consectetur" }
+  ];
+
+  var SHOP_PRODUCTS = [
+    { id: 1, name: "Lorem ipsum dolor", cat: "lorem", price: 129.9, old: 159.9, rating: 5, badge: "sale" },
+    { id: 2, name: "Sit amet consectetur", cat: "ipsum", price: 89.5, old: null, rating: 4, badge: null },
+    { id: 3, name: "Adipiscing elit sed", cat: "dolor", price: 249, old: null, rating: 4, badge: "new" },
+    { id: 4, name: "Eiusmod tempor", cat: "sit-amet", price: 59.9, old: null, rating: 3, badge: null },
+    { id: 5, name: "Incididunt ut labore", cat: "consectetur", price: 319, old: 399, rating: 5, badge: "sale" },
+    { id: 6, name: "Et dolore magna", cat: "lorem", price: 74.9, old: null, rating: 4, badge: null },
+    { id: 7, name: "Aliqua ut enim", cat: "ipsum", price: 199, old: null, rating: 5, badge: "new" },
+    { id: 8, name: "Minim veniam quis", cat: "dolor", price: 39.9, old: null, rating: 3, badge: null },
+    { id: 9, name: "Nostrud exercitation", cat: "sit-amet", price: 149.9, old: 179.9, rating: 4, badge: "sale" },
+    { id: 10, name: "Ullamco laboris", cat: "consectetur", price: 99, old: null, rating: 4, badge: null },
+    { id: 11, name: "Nisi ut aliquip", cat: "lorem", price: 279.9, old: null, rating: 5, badge: null },
+    { id: 12, name: "Commodo consequat", cat: "ipsum", price: 54.9, old: null, rating: 2, badge: null }
+  ];
+
+  var shopSort = "relevance";
+  var shopCart = 0;
+
+  // Ícone de imagem não encontrada: moldura, montanhas, sol e um traço cortando.
+  function noImageSVG() {
+    return (
+      '<svg class="no-image" viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+      '<rect x="8" y="12" width="48" height="40" rx="5"/>' +
+      '<circle cx="22" cy="26" r="4"/>' +
+      '<path d="M8 44l14-12 10 9 8-6 16 12"/>' +
+      '<path d="M12 56L52 8"/>' +
+      "</svg>"
+    );
+  }
+
+  function starsSVG(rating) {
+    var out = "";
+    for (var k = 1; k <= 5; k++) {
+      out += '<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" class="' + (k <= rating ? "star is-on" : "star") + '"><path d="M10 1.8l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 8.1l6-.8z"/></svg>';
+    }
+    return '<span class="stars" role="img" aria-label="' + rating + '/5">' + out + "</span>";
+  }
+
+  function money(v) {
+    try {
+      return new Intl.NumberFormat(lang, { style: "currency", currency: lang === "pt-BR" ? "BRL" : "USD" }).format(v);
+    } catch (e) {
+      return String(v);
+    }
+  }
+
+  function productCardHTML(p, i) {
+    var angle = 110 + (i * 37) % 80;
+    var a = 20 + (i * 13) % 28;
+    var b = 8 + (i * 7) % 18;
+    var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--accent) " + a + "%, var(--surface)), color-mix(in oklab, var(--accent-strong) " + b + "%, var(--surface-2)))";
+    return (
+      '<article class="product">' +
+      '<div class="thumb" style="background:' + grad + '">' + noImageSVG() +
+      (p.badge ? '<span class="badge badge-' + p.badge + '">' + esc(T("shop." + p.badge)) + "</span>" : "") +
+      "</div>" +
+      '<div class="product-body">' +
+      '<span class="product-cat">' + esc(shopCatName(p.cat)) + "</span>" +
+      '<h3 class="product-name">' + esc(p.name) + "</h3>" +
+      starsSVG(p.rating) +
+      '<p class="price">' + (p.old ? '<s class="price-old">' + money(p.old) + "</s> " : "") + "<strong>" + money(p.price) + "</strong></p>" +
+      '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + esc(T("shop.add")) + "</button>" +
+      "</div></article>"
+    );
+  }
+
+  function shopCatName(id) {
+    for (var i = 0; i < SHOP_CATS.length; i++) if (SHOP_CATS[i].id === id) return SHOP_CATS[i].name;
+    return "";
+  }
+
+  function shopList(catId) {
+    var list = SHOP_PRODUCTS.filter(function (p) { return !catId || p.cat === catId; });
+    if (shopSort === "price-asc") list = list.slice().sort(function (a, b) { return a.price - b.price; });
+    else if (shopSort === "price-desc") list = list.slice().sort(function (a, b) { return b.price - a.price; });
+    else if (shopSort === "name") list = list.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    return list;
+  }
+
+  function shopGridHTML(catId) {
+    var list = shopList(catId);
+    if (!list.length) {
+      return '<div class="empty"><strong>' + esc(T("shop.empty")) + "</strong></div>";
+    }
+    return '<div class="product-grid">' + list.map(productCardHTML).join("") + "</div>";
+  }
+
+  function shopHTML(catId) {
+    var current = catId || "";
+    var nav =
+      '<nav class="shop-nav" aria-label="' + esc(T("shop.cats")) + '"><h2 class="aside-title">' + esc(T("shop.cats")) + "</h2><ul>" +
+      '<li><a href="#/loja"' + (!current ? ' aria-current="page"' : "") + ">" + esc(T("shop.all")) + '<span class="aside-count">' + SHOP_PRODUCTS.length + "</span></a></li>" +
+      SHOP_CATS.map(function (c) {
+        var n = SHOP_PRODUCTS.filter(function (p) { return p.cat === c.id; }).length;
+        return '<li><a href="#/loja/' + c.id + '"' + (current === c.id ? ' aria-current="page"' : "") + ">" + esc(c.name) + '<span class="aside-count">' + n + "</span></a></li>";
+      }).join("") +
+      "</ul></nav>";
+    var sorts = [["relevance", "shop.sRel"], ["price-asc", "shop.sAsc"], ["price-desc", "shop.sDesc"], ["name", "shop.sName"]];
+    return (
+      '<div class="page-head">' +
+      '<span class="kicker">' + esc(T("shop.kicker")) + "</span>" +
+      "<h1>" + esc(current ? shopCatName(current) : T("shop.h1")) + "</h1>" +
+      '<p class="lede">' + esc(T("shop.lede")) + "</p>" +
+      "</div>" +
+      '<div class="shop-layout">' + nav +
+      '<div class="shop-main">' +
+      '<div class="toolbar">' +
+      '<span class="count" id="shopCount">' + shopList(current).length + " " + esc(T("shop.items")) + "</span>" +
+      '<span class="shop-tools"><span class="cart" aria-live="polite">' + esc(T("shop.cart")) + ': <strong id="cartCount">' + shopCart + "</strong></span>" +
+      '<label class="shop-sort"><span class="sr-only">' + esc(T("shop.sort")) + '</span><select id="shopSort">' +
+      sorts.map(function (s) { return '<option value="' + s[0] + '"' + (shopSort === s[0] ? " selected" : "") + ">" + esc(T(s[1])) + "</option>"; }).join("") +
+      "</select></label></span></div>" +
+      '<div id="shopGrid" data-cat="' + esc(current) + '">' + shopGridHTML(current) + "</div>" +
+      "</div></div>"
+    );
+  }
+
+  function shopMount() {
+    var grid = document.getElementById("shopGrid");
+    var sel = document.getElementById("shopSort");
+    if (sel) {
+      sel.addEventListener("change", function () {
+        shopSort = sel.value;
+        grid.innerHTML = shopGridHTML(grid.getAttribute("data-cat"));
+      });
+    }
+    if (grid) {
+      grid.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-add]");
+        if (!btn) return;
+        shopCart += 1;
+        document.getElementById("cartCount").textContent = shopCart;
+      });
+    }
+  }
+
+  // ---- menu "Exemplos" do cabeçalho
+  var examplesBtn = document.getElementById("examplesBtn");
+  var examplesMenu = document.getElementById("examplesMenu");
+  var EXAMPLE_ROUTES = ["/blog", "/tabela", "/formulario", "/dashboard", "/loja"];
+
+  function openExamples() {
+    examplesMenu.hidden = false;
+    examplesBtn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeExamples(restoreFocus) {
+    if (!examplesMenu || examplesMenu.hidden) return;
+    examplesMenu.hidden = true;
+    examplesBtn.setAttribute("aria-expanded", "false");
+    if (restoreFocus) examplesBtn.focus();
+  }
+
+  if (examplesBtn && examplesMenu) {
+    examplesBtn.addEventListener("click", function () {
+      if (examplesMenu.hidden) openExamples(); else closeExamples(false);
+    });
+    examplesBtn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        openExamples();
+        var first = examplesMenu.querySelector("a");
+        if (first) first.focus();
+      } else if (e.key === "Escape") {
+        closeExamples(false);
+      }
+    });
+    examplesMenu.addEventListener("keydown", function (e) {
+      var links = Array.prototype.slice.call(examplesMenu.querySelectorAll("a"));
+      var i = links.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); links[(i + 1) % links.length].focus(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
+      else if (e.key === "Escape") { e.preventDefault(); closeExamples(true); }
+      else if (e.key === "Tab") { closeExamples(false); }
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".nav-menu")) closeExamples(false);
+    });
+  }
+
+  // "Informações do tema" leva à página do tema escolhido.
+  function updateThemeLink() {
+    var link = document.getElementById("navTheme");
+    if (link) link.setAttribute("href", "#/design-system/" + encodeURIComponent(currentTheme));
+  }
+
+  function setActiveNav(route) {
+    function mark(link, on) {
+      if (on) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    }
+    document.querySelectorAll(".main-nav > a").forEach(function (link) {
+      var href = link.getAttribute("href").replace("#", "");
+      mark(link, link.id === "navTheme" ? route.indexOf("/design-system") === 0 : href === route);
+    });
+    var inExamples = false;
+    document.querySelectorAll("#examplesMenu a").forEach(function (link) {
+      var href = link.getAttribute("href").replace("#", "");
+      var on = route === href || route.indexOf(href + "/") === 0;
+      if (on) inExamples = true;
+      mark(link, on);
+    });
+    if (examplesBtn) mark(examplesBtn, inExamples);
   }
 
   // Título da aba por rota (o nome do site vem depois) e foco no conteúdo ao navegar,
@@ -1625,6 +2022,7 @@
 
   function router(moveFocus) {
     var hash = location.hash.replace(/^#/, "");
+    closeExamples(false);
     // Cada página de DS é exibida com o próprio tema (prévia); as demais voltam ao tema escolhido.
     var previewId = hash.indexOf("/design-system/") === 0 ? hash.replace("/design-system/", "") : "";
     var previewable = THEMES.some(function (t) { return t.id === previewId; });
@@ -1663,7 +2061,23 @@
           if (location.hash.replace(/^#/, "") !== hash) return;
           app.innerHTML = page(notFoundHTML(), [[T("nf.title")]]);
         });
-      setActiveNav("/");
+      setActiveNav("/design-system");
+    } else if (hash === "/dashboard") {
+      app.innerHTML = page(dashboardHTML(), [[T("nav.dashboard")]]);
+      setTitle(T("nav.dashboard"));
+      setActiveNav("/dashboard");
+    } else if (hash === "/loja" || hash.indexOf("/loja/") === 0) {
+      var catId = hash.indexOf("/loja/") === 0 ? hash.replace("/loja/", "") : "";
+      var known = SHOP_CATS.some(function (c) { return c.id === catId; });
+      if (catId && !known) {
+        app.innerHTML = page(notFoundHTML(), [[T("nav.shop"), "#/loja"], [T("nf.title")]]);
+        setTitle(T("nf.title"));
+      } else {
+        app.innerHTML = page(shopHTML(catId), catId ? [[T("nav.shop"), "#/loja"], [shopCatName(catId)]] : [[T("nav.shop")]]);
+        setTitle(catId ? shopCatName(catId) + " · " + T("nav.shop") : T("nav.shop"));
+        shopMount();
+      }
+      setActiveNav("/loja");
     } else if (hash === "/tabela") {
       clearTimeout(loadTimer);
       tableState = "data";

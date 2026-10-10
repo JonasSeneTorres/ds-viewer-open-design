@@ -21,7 +21,8 @@ test("início mostra o hero e o catálogo completo", async ({ page }) => {
   await page.goto("/#/");
   await expect(page.locator("main h1")).toHaveCount(1);
   await expect(page.locator(".ds-card-cat")).toHaveCount(TOTAL);
-  await expect(page.locator(".main-nav a")).toHaveText(["Início", "Blog", "Tabela", "Formulário"]);
+  await expect(page.locator(".main-nav > a")).toHaveText(["Início", "Informações do tema"]);
+  await expect(page.locator("#examplesBtn")).toContainText("Exemplos");
   expect(problems).toEqual([]);
 });
 
@@ -119,4 +120,47 @@ test("rota antiga e rota inexistente se comportam", async ({ page }) => {
   await expect(page).toHaveURL(/#\/$/);
   await page.goto("/#/nao-existe");
   await expect(page.locator("main .empty strong")).toBeVisible();
+});
+
+test("menu Exemplos lista as páginas de exemplo e a informação do tema segue o tema escolhido", async ({ page }) => {
+  await page.goto("/#/");
+  await page.click("#examplesBtn");
+  await expect(page.locator("#examplesMenu a")).toHaveText(["Blog", "Tabela", "Formulário", "Dashboard", "Loja"]);
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#examplesMenu")).toBeHidden();
+
+  // escolhe outro tema; "Informações do tema" passa a apontar para ele
+  await page.click(".combobox-btn");
+  await page.keyboard.type("tesla");
+  await page.keyboard.press("Enter");
+  await page.click("#navTheme");
+  await expect(page).toHaveURL(/#\/design-system\/tesla$/);
+  await expect(page.locator("#navTheme")).toHaveAttribute("aria-current", "page");
+});
+
+test("dashboard desenha os gráficos em SVG", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/");
+  await page.click("#examplesBtn");
+  await page.click('#examplesMenu a[href="#/dashboard"]');
+  await expect(page).toHaveURL(/#\/dashboard$/);
+  await expect(page.locator(".widget")).toHaveCount(6);
+  await expect(page.locator(".widget svg.chart")).toHaveCount(4);
+  await expect(page.locator("#examplesBtn")).toHaveAttribute("aria-current", "page");
+  expect(problems).toEqual([]);
+});
+
+test("loja: categorias, ordenação e carrinho", async ({ page }) => {
+  await page.goto("/#/loja");
+  await expect(page.locator(".product")).toHaveCount(12);
+  await page.locator('.shop-nav a:has-text("Ipsum")').click();
+  await expect(page).toHaveURL(/#\/loja\/ipsum$/);
+  await expect(page.locator(".product")).toHaveCount(3);
+  await page.selectOption("#shopSort", "price-asc");
+  const prices = await page.locator(".product .price strong").allInnerTexts();
+  const nums = prices.map((t) => parseFloat(t.replace(/[^\d,]/g, "").replace(",", ".")));
+  expect(nums).toEqual([...nums].sort((a, b) => a - b));
+  await page.locator("[data-add]").first().click();
+  await expect(page.locator("#cartCount")).toHaveText("1");
+  await expect(page.locator(".thumb svg.no-image").first()).toBeVisible();
 });

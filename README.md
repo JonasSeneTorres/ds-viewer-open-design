@@ -4,6 +4,8 @@ SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo n
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão** (uma cópia do Vercel).
 
+O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Blog, Tabela, Formulário, Dashboard e Loja).
+
 Páginas:
 
 | Rota | Conteúdo |
@@ -14,6 +16,8 @@ Páginas:
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
 | `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia |
 | `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados |
+| `#/dashboard` | Dashboard genérico no estilo do painel do WordPress: indicadores com minigráficos, área, barras, rosca e anel de progresso, tudo em SVG com as cores do tema |
+| `#/loja` e `#/loja/<categoria>` | Catálogo de loja com navegação por categoria, ordenação e carrinho de brincadeira. Sem fotos: degradê do tema e ícone de imagem não encontrada em SVG |
 | `#/formulario` | Um campo de cada tipo de entrada, mais os estados: erro, ajuda, desabilitado, somente leitura, botões, alertas e carregamento |
 
 ## Estrutura
