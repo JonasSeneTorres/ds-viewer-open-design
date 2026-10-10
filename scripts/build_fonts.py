@@ -8,7 +8,7 @@ O build_ds_details.py usa esse manifesto para escrever @font-face local nos tema
 Uso: python scripts/build_fonts.py   (pula arquivos já baixados)
 Depois: npm run data:update
 """
-import hashlib, json, os, re, sys, time, urllib.request
+import hashlib, json, os, re, sys, time, urllib.parse, urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8")
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do projeto
@@ -35,6 +35,19 @@ gfonts = json.load(open(os.path.join(".cache", "gfonts.json"), encoding="utf-8")
 urls = sorted({v["css"] for v in gfonts.values() if v and v.get("css")})
 manifest = json.load(open(MANIFEST, encoding="utf-8")) if os.path.exists(MANIFEST) else {}
 downloaded = 0
+
+# Helvetica e Helvetica Neue vêm da API do Google, mas são proprietárias (licenciadas ao Google):
+# nunca baixar nem hospedar. A lista também está em build_ds_details.py (NOT_REDISTRIBUTABLE).
+BLOCKED = {"helvetica", "helvetica neue"}
+
+
+def family_of(url):
+    m = re.search(r"family=([^:&]+)", url)
+    return urllib.parse.unquote_plus(m.group(1)).lower() if m else ""
+
+
+urls = [u for u in urls if family_of(u) not in BLOCKED]
+manifest = {u: v for u, v in manifest.items() if family_of(u) not in BLOCKED}
 
 for n, css_url in enumerate(urls, 1):
     if css_url in manifest:

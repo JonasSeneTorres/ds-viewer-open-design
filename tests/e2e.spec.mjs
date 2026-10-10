@@ -288,3 +288,24 @@ test("nenhum botão de envio usa type=submit", async ({ page }) => {
     await expect(page.locator('button[type="submit"], input[type="submit"]')).toHaveCount(0);
   }
 });
+
+test("aviso de fontes proprietárias aparece só nos temas que têm", async ({ page }) => {
+  await page.goto("/#/");
+  await expect(page.locator("#fontNotice")).toBeHidden(); // tema padrão: fontes abertas
+
+  await page.click(".combobox-btn");
+  await page.keyboard.type("bugatti");
+  await page.keyboard.press("Enter");
+  const notice = page.locator("#fontNotice");
+  await expect(notice).toBeVisible();
+  await expect(notice).toContainText("fontes proprietárias");
+  await expect(notice).toContainText("Bugatti");
+
+  // o aviso acompanha a página do tema em prévia, e fecha
+  await page.goto("/#/design-system/padrao");
+  await expect(notice).toBeHidden();
+  await page.goto("/#/design-system/bmw");
+  await expect(notice).toBeVisible();
+  await page.click("[data-close-notice]");
+  await expect(notice).toBeHidden();
+});

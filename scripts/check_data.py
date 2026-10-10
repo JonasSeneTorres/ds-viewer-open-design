@@ -134,7 +134,17 @@ for ds_id in ids:
             if not (title_ok and body_ok):
                 err(f"{path} · {s_.get('id')}: seção sem texto em {lang}")
 
-# ---- fontes
+# ---- fontes: nada de fonte proprietária hospedada
+BLOCKED_FAMILIES = {"helvetica", "helvetica neue"}  # a API do Google entrega, mas são licenciadas ao Google
+manifest_path = os.path.join(FONT_DIR, "manifest.json")
+if os.path.exists(manifest_path):
+    for url, faces in (load(manifest_path) or {}).items():
+        for face in faces:
+            if face.get("family", "").lower() in BLOCKED_FAMILIES:
+                err(f"assets/fonts/manifest.json: {face['family']} é fonte proprietária e não pode ser hospedada")
+for ds in index:
+    if ds.get("proprietaryFonts") and not all(isinstance(x, str) for x in ds["proprietaryFonts"]):
+        err(f"index.json · {ds.get('id')}: proprietaryFonts inválido")
 if os.path.isdir(FONT_DIR):
     orphans = {f for f in os.listdir(FONT_DIR) if f.endswith(".woff2")} - font_refs
     if orphans:

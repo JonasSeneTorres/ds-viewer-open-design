@@ -9,7 +9,7 @@ Gerado por `scripts/review_styles.py` a partir de `scripts/audit_themes.mjs`. A 
 - Com achados, nos 143 temas: **0** (0 achados no total)
 - Botão principal com o par de cores do DS: **106**; ajustado para passar de 4,5:1: **37**
 - Superfície derivada (a do DS não tem contraste com o texto do tema): **1** (playstation)
-- Temas em que a fonte do título ou do corpo não carrega (fonte proprietária, fora do Google Fonts): **73**
+- Temas cujo guia usa fonte de marca proprietária (não incluída no site; o aviso do topo aparece): **61**
 
 ## O que a revisão mudou, por seção do guia
 
@@ -25,85 +25,73 @@ Gerado por `scripts/review_styles.py` a partir de `scripts/audit_themes.mjs`. A 
 
 ## Pendências por tema
 
-### Fonte proprietária não disponível
+### Fonte de marca proprietária
 
-A fonte do DS não está no Google Fonts, então o navegador usa a primeira família de reserva do guia que existir no sistema. Para ficar fiel seria preciso licenciar e hospedar a fonte.
+A fonte do DS é da própria marca e não é distribuída pelo Google Fonts nem por sistemas operacionais, então o site não a inclui: o navegador usa a primeira família de reserva do guia que existir no sistema. A lista completa, com as reservas, está no README.
 
-| Tema | Fonte do título | Carrega | Fonte do corpo | Carrega |
-|---|---|---|---|---|
-| BMW (`bmw`) | BMWTypeNextLatin Light | não | BMWTypeNextLatin | não |
-| BMW M (`bmw-m`) | system-ui | não | system-ui | não |
-| Bugatti (`bugatti`) | Bugatti Display | não | Bugatti Text Regular | não |
-| Ferrari (`ferrari`) | FerrariSans | não | FerrariSans | não |
-| Lamborghini (`lamborghini`) | LamboType | não | Open Sans | sim |
-| Renault (`renault`) | NouvelR | não | NouvelR | não |
-| Tesla (`tesla`) | Universal Sans Display | não | Universal Sans Text | não |
-| ClickHouse (`clickhouse`) | Basier | não | Inter | sim |
-| Composio (`composio`) | abcDiatype | não | abcDiatype | não |
-| HashiCorp (`hashicorp`) | __hashicorpSans_96f0ca | não | __hashicorpSans_96f0ca | não |
-| MongoDB (`mongodb`) | MongoDB Value Serif | não | Euclid Circular A | não |
-| PostHog (`posthog`) | IBM Plex Sans Variable | não | IBM Plex Sans Variable | não |
-| Sanity (`sanity`) | waldenburgNormal | não | Helvetica | sim |
-| Sentry (`sentry`) | Dammit Sans | não | Rubik | sim |
-| Supabase (`supabase`) | Circular | não | Circular | não |
-| Airtable (`airtable`) | Haas Groot Disp | não | Haas | não |
-| Canva (`canva`) | Canva Sans | não | Canva Sans Display | não |
-| Clay (`clay`) | Roobert | não | Roobert | não |
-| Figma (`figma`) | figmaSans | não | figmaSans | não |
-| Framer (`framer`) | GT Walsheim Framer Medium | não | Inter Variable | não |
-| Miro (`miro`) | Roobert PRO Medium | não | Inter | não |
-| Webflow (`webflow`) | WF Visual Sans Variable | não | WF Visual Sans Variable | não |
-| Airbnb (`airbnb`) | Airbnb Cereal VF | não | Airbnb Cereal VF | não |
-| Meta (Store) (`meta`) | Optimistic VF | não | Optimistic VF | não |
-| Nike (`nike`) | Nike Futura ND | não | Helvetica Now Text Medium | não |
-| Shopify (`shopify`) | NeueHaasGrotesk | não | Inter | sim |
-| Starbucks (`starbucks`) | SoDoSans | não | SoDoSans | não |
-| kami (紙 / 纸) (`kami`) | Charter | não | Charter | não |
-| Cursor (`cursor`) | CursorGothic | não | jjannon | não |
-| GitHub (`github`) | Apple Color Emoji | não | Apple Color Emoji | não |
-| Lovable (`lovable`) | Camera Plain Variable | não | Camera Plain Variable | não |
-| Superhuman (`superhuman`) | Super Sans VF | não | Super Sans VF | não |
-| Warp (`warp`) | Matter Regular | não | Inter | sim |
-| Binance.US (`binance`) | BinancePlex | não | BinancePlex | não |
-| Coinbase (`coinbase`) | CoinbaseDisplay | não | CoinbaseSans | não |
-| Kraken (`kraken`) | Kraken-Brand | não | Kraken-Product | não |
-| Mastercard (`mastercard`) | MarkForMC | não | MarkForMC | não |
-| Revolut (`revolut`) | Aeonik Pro | não | Inter | sim |
-| Stripe (`stripe`) | sohne-var | não | sohne-var | não |
-| Wise (`wise`) | Wise Sans | não | Inter | sim |
-| Claude (Anthropic) (`claude`) | Anthropic Serif | não | Anthropic Sans | não |
-| Cohere (`cohere`) | CohereText | não | Unica77 Cohere Web | não |
-| ElevenLabs (`elevenlabs`) | Waldenburg | não | Inter | sim |
-| Mistral AI (`mistral-ai`) | system-ui | não | system-ui | não |
-| Ollama (`ollama`) | SF Pro Rounded | não | SF Pro Rounded | não |
-| OpenAI (`openai`) | Signifier | não | Söhne | não |
-| OpenCode (`opencode-ai`) | Berkeley Mono | não | Berkeley Mono | não |
-| Replicate (`replicate`) | rb-freigeist-neue | não | basier-square | não |
-| Runway (`runwayml`) | abcNormal | não | abcNormal | não |
-| Together AI (`together-ai`) | The Future | não | The Future | não |
-| xAI (`x-ai`) | GeistMono | não | GeistMono | não |
-| Apple (`apple`) | SF Pro Display | não | SF Pro Text | não |
-| NVIDIA (`nvidia`) | NVIDIA-EMEA | não | NVIDIA-EMEA | não |
-| Pinterest (`pinterest`) | Pin Sans | não | Pin Sans | não |
-| PlayStation (`playstation`) | Arial | não | Arial | não |
-| SpaceX (`spacex`) | D-DIN-Bold | não | D-DIN | não |
-| Spotify (`spotify`) | SpotifyMixUITitle | não | SpotifyMixUI | não |
-| The Verge (`theverge`) | Manuka | não | PolySans | não |
-| Uber (`uber`) | UberMove | não | UberMoveText | não |
-| Vodafone (`vodafone`) | Vodafone | não | Vodafone | não |
-| WIRED (`wired`) | WiredDisplay | não | BreveText | não |
-| Xiaohongshu (`xiaohongshu`) | 方正悠黑 | não | 方正悠黑 | não |
-| Expressive (`expressive`) | system-ui | não | system-ui | não |
-| Arc Browser (`arc`) | Argent CF | não | Inter | sim |
-| Discord (`discord`) | gg sans | não | gg sans | não |
-| Duolingo (`duolingo`) | Feather Bold | não | Mona Sans | sim |
-| Intercom (`intercom`) | Saans | não | MediumLL | não |
-| Linear (`linear-app`) | Inter Variable | não | Inter Variable | não |
-| Notion (`notion`) | NotionInter | não | NotionInter | não |
-| Resend (`resend`) | domaine | não | inter | não |
-| Zapier (`zapier`) | Degular Display | não | Inter | sim |
-| Dashboard (`dashboard`) | system-ui | não | system-ui | não |
-| Warm Editorial (`warm-editorial`) | system-ui | não | system-ui | não |
+| Tema | Fontes proprietárias do guia | Fonte do título usada | Fonte do corpo usada |
+|---|---|---|---|
+| BMW (`bmw`) | BMWTypeNextLatin Light, BMWTypeNextLatin | BMWTypeNextLatin Light | BMWTypeNextLatin |
+| Bugatti (`bugatti`) | Bugatti Display, Bugatti Monospace, Bugatti Text Regular | Bugatti Display | Bugatti Text Regular |
+| Ferrari (`ferrari`) | FerrariSans | FerrariSans | FerrariSans |
+| Lamborghini (`lamborghini`) | LamboType | LamboType | Open Sans |
+| Renault (`renault`) | NouvelR | NouvelR | NouvelR |
+| Tesla (`tesla`) | Universal Sans Display, Universal Sans Text | Universal Sans Display | Universal Sans Text |
+| ClickHouse (`clickhouse`) | Basier | Basier | Inter |
+| Composio (`composio`) | abcDiatype | abcDiatype | abcDiatype |
+| HashiCorp (`hashicorp`) | __hashicorpSans_96f0ca | __hashicorpSans_96f0ca | __hashicorpSans_96f0ca |
+| MongoDB (`mongodb`) | MongoDB Value Serif, Euclid Circular A, Akzidenz-Grotesk Std | MongoDB Value Serif | Euclid Circular A |
+| Sanity (`sanity`) | waldenburgNormal | waldenburgNormal | Helvetica |
+| Sentry (`sentry`) | Dammit Sans | Dammit Sans | Rubik |
+| Supabase (`supabase`) | Circular | Circular | Circular |
+| Airtable (`airtable`) | Haas, Haas Groot Disp | Haas Groot Disp | Haas |
+| Canva (`canva`) | Canva Sans, Canva Sans Display | Canva Sans | Canva Sans Display |
+| Clay (`clay`) | Roobert | Roobert | Roobert |
+| Figma (`figma`) | figmaSans, figmaMono | figmaSans | figmaSans |
+| Framer (`framer`) | GT Walsheim Framer Medium | GT Walsheim Framer Medium | Inter Variable |
+| Miro (`miro`) | Roobert PRO Medium, Roobert PRO SemiBold | Roobert PRO Medium | Inter |
+| Webflow (`webflow`) | WF Visual Sans Variable | WF Visual Sans Variable | WF Visual Sans Variable |
+| Airbnb (`airbnb`) | Airbnb Cereal VF | Airbnb Cereal VF | Airbnb Cereal VF |
+| Meta (Store) (`meta`) | Optimistic VF | Optimistic VF | Optimistic VF |
+| Nike (`nike`) | Nike Futura ND, Helvetica Now Display Medium, Helvetica Now Text Medium, Helvetica Now Text, Neue Frutiger Arabic | Nike Futura ND | Helvetica Now Text Medium |
+| Shopify (`shopify`) | NeueHaasGrotesk | NeueHaasGrotesk | Inter |
+| Starbucks (`starbucks`) | SoDoSans, Lander Tall | SoDoSans | SoDoSans |
+| Cursor (`cursor`) | CursorGothic, jjannon, berkeleyMono | CursorGothic | jjannon |
+| Lovable (`lovable`) | Camera Plain Variable | Camera Plain Variable | Camera Plain Variable |
+| Superhuman (`superhuman`) | Super Sans VF | Super Sans VF | Super Sans VF |
+| Warp (`warp`) | Matter Regular, Matter Medium, Matter SQ Regular, Matter Mono Regular | Matter Regular | Inter |
+| Binance.US (`binance`) | BinancePlex | BinancePlex | BinancePlex |
+| Coinbase (`coinbase`) | CoinbaseDisplay, CoinbaseSans, CoinbaseText | CoinbaseDisplay | CoinbaseSans |
+| Kraken (`kraken`) | Kraken-Brand, Kraken-Product | Kraken-Brand | Kraken-Product |
+| Mastercard (`mastercard`) | MarkForMC, MarkOffcForMC | MarkForMC | MarkForMC |
+| Revolut (`revolut`) | Aeonik Pro | Aeonik Pro | Inter |
+| Stripe (`stripe`) | sohne-var | sohne-var | sohne-var |
+| Wise (`wise`) | Wise Sans | Wise Sans | Inter |
+| Claude (Anthropic) (`claude`) | Anthropic Serif, Anthropic Sans, Anthropic Mono | Anthropic Serif | Anthropic Sans |
+| Cohere (`cohere`) | CohereText, Unica77 Cohere Web, CohereMono | CohereText | Unica77 Cohere Web |
+| ElevenLabs (`elevenlabs`) | Waldenburg, WaldenburgFH | Waldenburg | Inter |
+| OpenAI (`openai`) | Signifier, Söhne, Söhne Mono | Signifier | Söhne |
+| OpenCode (`opencode-ai`) | Berkeley Mono | Berkeley Mono | Berkeley Mono |
+| Replicate (`replicate`) | rb-freigeist-neue, basier-square | rb-freigeist-neue | basier-square |
+| Runway (`runwayml`) | abcNormal | abcNormal | abcNormal |
+| Together AI (`together-ai`) | The Future, PP Neue Montreal Mono | The Future | The Future |
+| xAI (`x-ai`) | universalSans | GeistMono | GeistMono |
+| NVIDIA (`nvidia`) | NVIDIA-EMEA | NVIDIA-EMEA | NVIDIA-EMEA |
+| Pinterest (`pinterest`) | Pin Sans | Pin Sans | Pin Sans |
+| Spotify (`spotify`) | SpotifyMixUITitle, SpotifyMixUI | SpotifyMixUITitle | SpotifyMixUI |
+| The Verge (`theverge`) | Manuka, PolySans, PolySans Mono, FK Roman Standard | Manuka | PolySans |
+| Uber (`uber`) | UberMove, UberMoveText | UberMove | UberMoveText |
+| Vodafone (`vodafone`) | Vodafone, icomoon | Vodafone | Vodafone |
+| WIRED (`wired`) | WiredDisplay, BreveText, Apercu, WiredMono, ProximaNova, WIRED Mono | WiredDisplay | BreveText |
+| Xiaohongshu (`xiaohongshu`) | 方正悠黑 | 方正悠黑 | 方正悠黑 |
+| Arc Browser (`arc`) | Argent CF, Berkeley Mono | Argent CF | Inter |
+| Cal.com (`cal`) | Cal Sans UI Variable Light, Cal Sans UI Medium, Matter Regular | Cal Sans | Inter |
+| Discord (`discord`) | gg sans, Whitney, gg mono | gg sans | gg sans |
+| Duolingo (`duolingo`) | Feather Bold | Feather Bold | Mona Sans |
+| Intercom (`intercom`) | Saans, Serrif, SaansMono, MediumLL | Saans | MediumLL |
+| Linear (`linear-app`) | Berkeley Mono | Inter Variable | Inter Variable |
+| Resend (`resend`) | domaine, aBCFavorit | domaine | inter |
+| Zapier (`zapier`) | Degular Display, GT Alpina | Degular Display | Inter |
 
 ### Achados da auditoria
 

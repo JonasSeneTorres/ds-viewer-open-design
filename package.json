@@ -8,6 +8,7 @@
     "data:fetch": "python scripts/build_ds_fetch.py",
     "data:fonts": "python scripts/build_fonts.py",
     "data:update": "python scripts/build_ds_details.py",
+    "readme:fonts": "python scripts/update_readme_fonts.py",
     "i18n:template": "python scripts/build_ds_details.py --template",
     "check": "python scripts/check_data.py && python scripts/check_html.py",
     "check:html": "python scripts/check_html.py",

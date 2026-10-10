@@ -72,8 +72,8 @@ for d in index:
     h1f, bodyf = (m.get("h1") or {}).get("family", "?"), (m.get("corpo") or {}).get("family", "?")
     loaded = set(m.get("carregadas", []))
     h1_ok, body_ok = h1f in loaded, bodyf in loaded
-    if not (h1_ok and body_ok):
-        fonts_missing.append((ds_id, text(d["name"]), h1f, bodyf, h1_ok, body_ok))
+    if d.get("proprietaryFonts"):
+        fonts_missing.append((ds_id, text(d["name"]), ", ".join(d["proprietaryFonts"]), h1f, bodyf))
     rows.append((ds_id, text(d["name"]), text(d["category"]), h1f, "sim" if h1_ok else "não", bodyf,
                  "sim" if body_ok else "não", btn, surf, len(a["achados"]), a["achados"]))
 
@@ -98,7 +98,7 @@ else:
 w(f"- Botão principal com o par de cores do DS: **{len(rows) - len(adjusted_btn)}**; ajustado para passar de 4,5:1: **{len(adjusted_btn)}**")
 w(f"- Superfície derivada (a do DS não tem contraste com o texto do tema): **{len(adjusted_surface)}**"
   + (f" ({', '.join(adjusted_surface)})" if adjusted_surface else ""))
-w(f"- Temas em que a fonte do título ou do corpo não carrega (fonte proprietária, fora do Google Fonts): **{len(fonts_missing)}**\n")
+w(f"- Temas cujo guia usa fonte de marca proprietária (não incluída no site; o aviso do topo aparece): **{len(fonts_missing)}**\n")
 
 w("## O que a revisão mudou, por seção do guia\n")
 w("| Seção do guia | Antes | Agora |")
@@ -112,13 +112,14 @@ w("| 6. Profundidade | Duração e curva de transição fixas | `--motion-fast`,
 w("| 7–9. Do's, responsivo e guia do agente | (texto) | Sem mudança de estilo; o responsivo foi coberto pela auditoria em 390 px (menu ativo sem fundo, rótulo do tema truncado, campos e grades sem estourar) |\n")
 
 w("## Pendências por tema\n")
-w("### Fonte proprietária não disponível\n")
-w("A fonte do DS não está no Google Fonts, então o navegador usa a primeira família de reserva do guia que existir "
-  "no sistema. Para ficar fiel seria preciso licenciar e hospedar a fonte.\n")
-w("| Tema | Fonte do título | Carrega | Fonte do corpo | Carrega |")
-w("|---|---|---|---|---|")
-for ds_id, name, h1f, bodyf, h1_ok, body_ok in fonts_missing:
-    w(f"| {name} (`{ds_id}`) | {h1f} | {'sim' if h1_ok else 'não'} | {bodyf} | {'sim' if body_ok else 'não'} |")
+w("### Fonte de marca proprietária\n")
+w("A fonte do DS é da própria marca e não é distribuída pelo Google Fonts nem por sistemas operacionais, então "
+  "o site não a inclui: o navegador usa a primeira família de reserva do guia que existir no sistema. A lista "
+  "completa, com as reservas, está no README.\n")
+w("| Tema | Fontes proprietárias do guia | Fonte do título usada | Fonte do corpo usada |")
+w("|---|---|---|---|")
+for ds_id, name, props, h1f, bodyf in fonts_missing:
+    w(f"| {name} (`{ds_id}`) | {props} | {h1f} | {bodyf} |")
 w("")
 
 problemas = [r for r in rows if r[9]]

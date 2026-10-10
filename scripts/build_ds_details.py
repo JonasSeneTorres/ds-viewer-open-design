@@ -628,6 +628,55 @@ def css_family(name):
     return name if name.lower() in _GENERIC_FAMILIES or re.fullmatch(r"[\w-]+", name) else f'"{name}"'
 
 
+# Famílias que a API do Google Fonts entrega, mas que são proprietárias ("licenciadas ao Google"):
+# não podem ser hospedadas por terceiros, então o site não as usa nem redistribui.
+NOT_REDISTRIBUTABLE = {"Helvetica", "Helvetica Neue"}
+
+# Nomes do guia que são fontes abertas sob outro nome: carregam a família equivalente do Google Fonts.
+FONT_ALIASES = {
+    "Inter Variable": "Inter",
+    "GeistMono": "Geist Mono",
+    "SourceCodePro": "Source Code Pro",
+    "IBM Plex Sans Variable": "IBM Plex Sans",
+    "SofiaSans": "Sofia Sans",
+    "inter": "Inter",
+    "jetbrains-mono": "JetBrains Mono",
+    "NotionInter": "Inter",  # variação do Inter (OFL) usada pelo Notion
+}
+
+# Só entra na lista de "fontes proprietárias indisponíveis" a fonte de MARCA (ex.: a do Itaú), que não é distribuída
+# pelo Google Fonts nem acompanha um sistema operacional. Fontes do Google, do sistema (Apple, Windows, Android,
+# Linux) e fontes livres não são problema e não geram aviso.
+OS_FONTS = {
+    # genéricas do CSS
+    "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-sans-serif", "ui-serif",
+    "ui-monospace", "ui-rounded", "-apple-system", "blinkmacsystemfont",
+    # Apple (macOS/iOS)
+    "sf pro", "sf pro display", "sf pro text", "sf pro rounded", "sf mono", "sf compact", "new york",
+    "helvetica", "helvetica neue", "avenir", "avenir next", "futura", "gill sans", "optima", "palatino",
+    "baskerville", "american typewriter", "menlo", "monaco", "courier", "times", "apple color emoji",
+    "pingfang sc", "pingfang tc", "hiragino sans",
+    # Windows
+    "arial", "times new roman", "georgia", "courier new", "verdana", "tahoma", "trebuchet ms", "impact",
+    "comic sans ms", "segoe ui", "segoe ui emoji", "calibri", "cambria", "consolas", "microsoft yahei",
+    # Android, Linux e emoji
+    "roboto", "noto color emoji", "dejavu sans", "liberation sans", "cantarell",
+}
+
+# Livres (licença aberta), mesmo fora do Google Fonts: não são problema.
+FREE_FONTS = {"charter", "d-din", "d-din-bold", "open runde", "commitmono", "commit mono"}
+
+
+def is_proprietary_unavailable(family, has_source):
+    """Fonte de marca do guia que não está no site, não é do Google nem do sistema e não é livre."""
+    f = family.strip().lower()
+    if has_source or f in OS_FONTS or f in FREE_FONTS:
+        return False
+    if f.startswith("sf pro") or re.search(r"icon|emoji|font awesome", f):
+        return False
+    return True
+
+
 def describe_fonts(fonts):
     out = []
     for f in fonts:
@@ -635,8 +684,13 @@ def describe_fonts(fonts):
         kinds = [kind_of(r) for r in f["roles"]]
         kind = "mono" if "mono" in kinds else ("display" if "display" in kinds else ("body" if "body" in kinds else "primary"))
         generic = "monospace" if kind == "mono" else "sans-serif"
-        g = google_font(f["family"])
+        lookup = FONT_ALIASES.get(f["family"], f["family"])
+        g = None if lookup in NOT_REDISTRIBUTABLE else google_font(lookup)
+        if g and lookup != f["family"]:
+            # a família aberta equivalente entra logo depois do nome do guia na pilha
+            f = {**f, "fallbacks": [lookup] + [x for x in f["fallbacks"] if x.lower() != lookup.lower()]}
         entry = {
+            "proprietary": is_proprietary_unavailable(f["family"], bool(g)),
             "role": font_role(f["roles"]),
             "kind": kind,
             "family": f["family"],
@@ -646,11 +700,11 @@ def describe_fonts(fonts):
             "source": None,
         }
         if g:
-            slug = f["family"].lower().replace(" ", "-")
+            slug = lookup.lower().replace(" ", "-")
             entry["source"] = {
                 "kind": "google",
                 "css": g["css"],
-                "page": "https://fonts.google.com/specimen/" + f["family"].replace(" ", "+"),
+                "page": "https://fonts.google.com/specimen/" + lookup.replace(" ", "+"),
                 "link": '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
                         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
                         f'<link rel="stylesheet" href="{g["css"]}">',
@@ -1124,13 +1178,18 @@ def build_one(ds_id, page_path, entry, slug):
     else:
         swatches = [x for x in (p.get("bg"), p.get("surface"), p.get("ink"), p.get("accent")) if x]
     # o índice leva só o que a listagem e o seletor usam; variáveis e fontes ficam em data/themes/<id>.css
-    return {
+    entry_out = {
         "id": ds_id,
         "name": data["name"],
         "category": data["category"],
         "tagline": data["intro"],
         "swatches": swatches,
     }
+    # fontes proprietárias do guia que o site não tem: o aviso do topo e o README usam esta lista
+    prop = [f["family"] for f in fonts if f.get("proprietary")]
+    if prop:
+        entry_out["proprietaryFonts"] = prop
+    return entry_out
 
 
 def main():

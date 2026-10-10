@@ -147,6 +147,80 @@ O `<body>` recebe a classe `theme-<id>` do tema ativo (inclusive na prévia de u
 body.theme-airbnb .site-header { /* só no tema Airbnb */ }
 ```
 
+## Fontes proprietárias dos temas
+
+Aqui, "fonte proprietária" é a fonte de **marca** de um design system (a do Itaú, por exemplo), que não é distribuída pelo Google Fonts nem acompanha um sistema operacional, e que por isso poderia dar problema de licença. Elas **não são usadas nem incluídas**. Fontes do Google Fonts (servidas pelo próprio site), fontes dos sistemas (San Francisco, Segoe UI, Arial, Georgia etc.) e fontes livres não são problema e não entram na lista. `Helvetica` e `Helvetica Neue`, que a API do Google chega a entregar mas são licenciadas ao Google e não ao site, também **não são hospedadas**: ficam como fontes do sistema (macOS), sem aviso.
+
+<!-- fontes-proprietarias:inicio -->
+
+**61 dos 143 temas** têm, no guia original, fontes de marca proprietárias (112 famílias no total). **O site não usa nenhuma delas e elas não constam nele**: nenhum arquivo dessas fontes é hospedado ou distribuído aqui. Nesses temas o navegador usa as **fontes de reserva (fallback)** indicadas pelo próprio guia, e a página mostra um aviso no topo dizendo isso.
+
+| Tema | Fontes proprietárias do guia (não usadas) | Reserva indicada pelo guia (o que aparece) |
+|---|---|---|
+| BMW (`bmw`) | BMWTypeNextLatin Light, BMWTypeNextLatin | Helvetica, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo |
+| Bugatti (`bugatti`) | Bugatti Display, Bugatti Monospace, Bugatti Text Regular | ui-sans-serif, system-ui |
+| Ferrari (`ferrari`) | FerrariSans | fontes do sistema |
+| Lamborghini (`lamborghini`) | LamboType | fontes do sistema |
+| Renault (`renault`) | NouvelR | sans-serif |
+| Tesla (`tesla`) | Universal Sans Display, Universal Sans Text | fontes do sistema |
+| ClickHouse (`clickhouse`) | Basier | __basier_a58b65 |
+| Composio (`composio`) | abcDiatype | abcDiatype Fallback, ui-sans-serif, system-ui, Apple Color Emoji, Segoe UI Emoji |
+| HashiCorp (`hashicorp`) | __hashicorpSans_96f0ca | __hashicorpSans_Fallback_96f0ca |
+| MongoDB (`mongodb`) | MongoDB Value Serif, Euclid Circular A, Akzidenz-Grotesk Std | Times |
+| Sanity (`sanity`) | waldenburgNormal | waldenburgNormal Fallback, ui-sans-serif, system-ui |
+| Sentry (`sentry`) | Dammit Sans | fontes do sistema |
+| Supabase (`supabase`) | Circular | custom-font, Helvetica Neue, Helvetica, Arial |
+| Airtable (`airtable`) | Haas, Haas Groot Disp | -apple-system, system-ui, Segoe UI, Roboto, Haas |
+| Canva (`canva`) | Canva Sans, Canva Sans Display | YS Text, system-ui, -apple-system, sans-serif, Canva Sans |
+| Clay (`clay`) | Roobert | Arial |
+| Figma (`figma`) | figmaSans, figmaMono | figmaSans Fallback, SF Pro Display, system-ui, helvetica, figmaMono Fallback |
+| Framer (`framer`) | GT Walsheim Framer Medium | GT Walsheim Medium |
+| Miro (`miro`) | Roobert PRO Medium, Roobert PRO SemiBold | blwf, cv03, cv04, cv09, cv11 |
+| Webflow (`webflow`) | WF Visual Sans Variable | Arial |
+| Airbnb (`airbnb`) | Airbnb Cereal VF | Circular, -apple-system, system-ui, Roboto, Helvetica Neue |
+| Meta (Store) (`meta`) | Optimistic VF | fontes do sistema |
+| Nike (`nike`) | Nike Futura ND, Helvetica Now Display Medium, Helvetica Now Text Medium, Helvetica Now Text, Neue Frutiger Arabic | fontes do sistema |
+| Shopify (`shopify`) | NeueHaasGrotesk | fontes do sistema |
+| Starbucks (`starbucks`) | SoDoSans, Lander Tall | Helvetica Neue, Helvetica, Arial, sans-serif, Iowan Old Style |
+| Cursor (`cursor`) | CursorGothic, jjannon, berkeleyMono | CursorGothic Fallback, system-ui, Helvetica Neue, Helvetica, Arial |
+| Lovable (`lovable`) | Camera Plain Variable | ui-sans-serif, system-ui |
+| Superhuman (`superhuman`) | Super Sans VF | system-ui, -apple-system, Segoe UI, Roboto, Oxygen |
+| Warp (`warp`) | Matter Regular, Matter Medium, Matter SQ Regular, Matter Mono Regular | Matter Regular Placeholder, Matter Medium Placeholder, Matter SQ Regular Placeholder, Matter Mono Regular Placeholder |
+| Binance.US (`binance`) | BinancePlex | fontes do sistema |
+| Coinbase (`coinbase`) | CoinbaseDisplay, CoinbaseSans, CoinbaseText | fontes do sistema |
+| Kraken (`kraken`) | Kraken-Brand, Kraken-Product | IBM Plex Sans, Helvetica, Arial, Helvetica Neue |
+| Mastercard (`mastercard`) | MarkForMC, MarkOffcForMC | fontes do sistema |
+| Revolut (`revolut`) | Aeonik Pro | fontes do sistema |
+| Stripe (`stripe`) | sohne-var | SF Pro Display |
+| Wise (`wise`) | Wise Sans | Inter |
+| Claude (Anthropic) (`claude`) | Anthropic Serif, Anthropic Sans, Anthropic Mono | Georgia, Arial |
+| Cohere (`cohere`) | CohereText, Unica77 Cohere Web, CohereMono | Space Grotesk, Inter, ui-sans-serif, system-ui, Arial |
+| ElevenLabs (`elevenlabs`) | Waldenburg, WaldenburgFH | Waldenburg Fallback, WaldenburgFH Fallback |
+| OpenAI (`openai`) | Signifier, Söhne, Söhne Mono | Source Serif Pro, Georgia, serif, Inter, system-ui |
+| OpenCode (`opencode-ai`) | Berkeley Mono | IBM Plex Mono, ui-monospace, SFMono-Regular, Menlo, Monaco |
+| Replicate (`replicate`) | rb-freigeist-neue, basier-square | ui-sans-serif, system-ui |
+| Runway (`runwayml`) | abcNormal | abcNormal Fallback |
+| Together AI (`together-ai`) | The Future, PP Neue Montreal Mono | Arial, Georgia |
+| xAI (`x-ai`) | universalSans | universalSans Fallback |
+| NVIDIA (`nvidia`) | NVIDIA-EMEA | Arial, Helvetica, sans-serif |
+| Pinterest (`pinterest`) | Pin Sans | -apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans |
+| Spotify (`spotify`) | SpotifyMixUITitle, SpotifyMixUI | CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva |
+| The Verge (`theverge`) | Manuka, PolySans, PolySans Mono, FK Roman Standard | -apple-system, system-ui |
+| Uber (`uber`) | UberMove, UberMoveText | UberMoveText, system-ui, Helvetica Neue, Helvetica, Arial |
+| Vodafone (`vodafone`) | Vodafone, icomoon | fontes do sistema |
+| WIRED (`wired`) | WiredDisplay, BreveText, Apercu, WiredMono, ProximaNova, WIRED Mono | helvetica, Monaco, Courier New, Courier |
+| Xiaohongshu (`xiaohongshu`) | 方正悠黑 | fontes do sistema |
+| Arc Browser (`arc`) | Argent CF, Berkeley Mono | Source Serif Pro, Georgia, serif, ui-monospace, Menlo |
+| Cal.com (`cal`) | Cal Sans UI Variable Light, Cal Sans UI Medium, Matter Regular | Matter SemiBold |
+| Discord (`discord`) | gg sans, Whitney, gg mono | Helvetica Neue, Helvetica, Arial, sans-serif, gg sans |
+| Duolingo (`duolingo`) | Feather Bold | DIN Round Pro, Helvetica Neue, sans-serif |
+| Intercom (`intercom`) | Saans, Serrif, SaansMono, MediumLL | Saans Fallback, ui-sans-serif, system-ui, Serrif Fallback, ui-serif |
+| Linear (`linear-app`) | Berkeley Mono | ui-monospace, SF Mono, Menlo |
+| Resend (`resend`) | domaine, aBCFavorit | ui-sans-serif, system-ui |
+| Zapier (`zapier`) | Degular Display, GT Alpina | fontes do sistema |
+
+<!-- fontes-proprietarias:fim -->
+
 ## Traduções (i18n)
 
 O botão de idioma do topo alterna pt-BR / en-US (o padrão segue o idioma do sistema; a escolha fica no `localStorage`).
@@ -180,7 +254,7 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
 1. **Tema na URL** (por exemplo `?tema=bugatti`): hoje a escolha fica só no navegador, então não dá para compartilhar um link com o tema aplicado, e o botão voltar não desfaz a troca.
-2. **Decidir a fidelidade dos temas** (itens 25 e 26 do TODO): em 73 dos 143 temas a fonte do título ou do corpo é proprietária e cai na reserva do guia (dá para escolher uma fonte aberta parecida por tema), e em 37 temas o botão principal foi ajustado para passar de 4,5:1 de contraste (fidelidade à marca ou acessibilidade).
+2. **Decidir a fidelidade dos temas** (itens 25 e 26 do TODO): em 61 dos 143 temas o guia usa uma fonte de marca proprietária (a lista está na seção "Fontes proprietárias dos temas") e o site cai na reserva do guia (dá para escolher uma fonte aberta parecida por tema), e em 37 temas o botão principal foi ajustado para passar de 4,5:1 de contraste (fidelidade à marca ou acessibilidade).
 3. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
 4. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
 5. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), alternância claro/escuro por design system, suporte a RTL (tema Urdu) e metatags por página para compartilhamento.

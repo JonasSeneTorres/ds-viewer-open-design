@@ -1,33 +1,49 @@
 @font-face {
-  font-family: "Helvetica";
+  font-family: "Inter";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../../assets/fonts/84ffb030468e.woff2") format("woff2");
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Helvetica";
+  font-family: "Inter";
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("../../assets/fonts/e51ac6688147.woff2") format("woff2");
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Helvetica";
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../../assets/fonts/95b8bfa044ab.woff2") format("woff2");
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Helvetica";
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../../assets/fonts/659f4dcd664f.woff2") format("woff2");
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 [data-theme="resend"] {
@@ -92,7 +108,7 @@
   --shadow-card: 0 0 0 1px rgba(176, 199, 217, 0.145), 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
   --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.22);
   --font-display: "domaine", sans-serif;
-  --font-body: "inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "inter", Inter, ui-sans-serif, system-ui, sans-serif;
   --font-code: "commitMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-mono: "commitMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --heading-weight: 600;

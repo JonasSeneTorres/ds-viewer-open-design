@@ -333,6 +333,10 @@
     "shop.new": { "en-US": "New", "pt-BR": "Novo" },
     "shop.sale": { "en-US": "Sale", "pt-BR": "Oferta" },
     "shop.empty": { "en-US": "No products in this category.", "pt-BR": "Nenhum produto nesta categoria." },
+    "fontnote.text": {
+      "en-US": "This theme originally uses proprietary fonts ({fonts}). What you see here uses fallback fonts, not the originals.",
+      "pt-BR": "Este tema, originalmente, utiliza fontes proprietárias ({fonts}). O que você vê aqui usa fontes de reserva (fallback), não as originais."
+    },
     "top.label": { "en-US": "Back to top", "pt-BR": "Voltar ao topo" },
     "close": { "en-US": "Close", "pt-BR": "Fechar" },
     "cancel": { "en-US": "Cancel", "pt-BR": "Cancelar" },
@@ -470,7 +474,8 @@
       label: d.name,
       hint: d.tagline,
       category: d.category,
-      swatches: d.swatches
+      swatches: d.swatches,
+      proprietary: d.proprietaryFonts || []
     });
     if (d.id !== DEFAULT_THEME) {
       CATALOG.push({ id: d.id, name: d.name, category: d.category, tagline: d.tagline, swatches: d.swatches });
@@ -689,6 +694,41 @@
   // (ex.: body.theme-airbnb .site-header { ... }) sem vazar para os outros.
   // O tema só é trocado quando o CSS dele termina de carregar, para não piscar o visual-base.
   var wantedTheme = "";
+  // Aviso no topo para temas cujo guia usa fontes proprietárias: o site usa as fontes de reserva.
+  var FONT_NOTICE_KEY = "odv-font-notice-closed";
+
+  function closedNotices() {
+    try { return JSON.parse(sessionStorage.getItem(FONT_NOTICE_KEY) || "[]"); } catch (e) { return []; }
+  }
+
+  function updateFontNotice(id) {
+    var box = document.getElementById("fontNotice");
+    if (!box) return;
+    var theme = THEMES.filter(function (t) { return t.id === id; })[0];
+    var fonts = theme ? theme.proprietary : [];
+    if (!fonts.length || closedNotices().indexOf(id) !== -1) {
+      box.hidden = true;
+      box.innerHTML = "";
+      return;
+    }
+    var shown = fonts.slice(0, 3).join(", ") + (fonts.length > 3 ? "…" : "");
+    box.innerHTML =
+      '<div class="wrap font-notice-inner"><p>' + esc(T("fontnote.text").replace("{fonts}", shown)) + "</p>" +
+      '<button type="button" class="font-notice-close" data-close-notice="' + esc(id) + '" aria-label="' + esc(T("close")) + '">&times;</button></div>';
+    box.hidden = false;
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest("[data-close-notice]");
+    if (!btn) return;
+    var list = closedNotices();
+    list.push(btn.getAttribute("data-close-notice"));
+    try { sessionStorage.setItem(FONT_NOTICE_KEY, JSON.stringify(list)); } catch (err) {}
+    var box = document.getElementById("fontNotice");
+    box.hidden = true;
+    box.innerHTML = "";
+  });
+
   function applyTheme(id) {
     wantedTheme = id;
     var link = themeLink(id);
@@ -700,6 +740,7 @@
         if (c.indexOf("theme-") === 0) body.classList.remove(c);
       });
       body.classList.add("theme-" + id);
+      updateFontNotice(id);
     }
     if (link.hasAttribute("data-loaded") || link.sheet) swap();
     else {
