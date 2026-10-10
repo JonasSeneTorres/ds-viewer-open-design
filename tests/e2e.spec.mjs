@@ -168,4 +168,6 @@ test("loja: categorias, ordenação e carrinho", async ({ page }) => {
   await page.locator("[data-add]").first().click();
   await expect(page.locator("#cartCount")).toHaveText("1");
   await expect(page.locator(".thumb svg.no-image").first()).toBeVisible();
+  // ícone de carrinho à direita do rótulo do botão
+  await expect(page.locator("[data-add] svg.cart-icon").first()).toBeVisible();
 });

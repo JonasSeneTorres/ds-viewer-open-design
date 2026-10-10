@@ -1869,6 +1869,15 @@
     );
   }
 
+  function cartIconSVG() {
+    return (
+      '<svg class="cart-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+      '<path d="M3 4h2.5l2.2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.76L20 8H6.2"/>' +
+      '<circle cx="9.5" cy="19" r="1.4"/><circle cx="17" cy="19" r="1.4"/>' +
+      "</svg>"
+    );
+  }
+
   function starsSVG(rating) {
     var out = "";
     for (var k = 1; k <= 5; k++) {
@@ -1900,7 +1909,7 @@
       '<h3 class="product-name">' + esc(p.name) + "</h3>" +
       starsSVG(p.rating) +
       '<p class="price">' + (p.old ? '<s class="price-old">' + money(p.old) + "</s> " : "") + "<strong>" + money(p.price) + "</strong></p>" +
-      '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + esc(T("shop.add")) + "</button>" +
+      '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + esc(T("shop.add")) + cartIconSVG() + "</button>" +
       "</div></article>"
     );
   }

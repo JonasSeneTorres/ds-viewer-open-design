@@ -2429,7 +2429,7 @@ fieldset {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
   gap: 20px;
 }
 
@@ -2525,6 +2525,8 @@ fieldset {
 .product-body .btn {
   justify-self: start;
   margin-top: 4px;
+  padding-inline: 12px;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
