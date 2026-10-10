@@ -205,6 +205,12 @@
       "en-US": "All texts, articles and forms are for illustration only. Their sole purpose is to let you interact with the page and get a better feel for what each cataloged design system has to offer.",
       "pt-BR": "Todos os textos, matérias e formulários são somente ilustrativos. A única finalidade é poder interagir com a página tendo uma ideia melhor do que cada design system catalogado tem a oferecer."
     },
+    "home.note": {
+      "en-US": "It is important to make clear that the examples on this page use no UI kit or similar. All the definitions of colors, fonts, borders and shadows come from the {link} documentation.",
+      "pt-BR": "É importante deixar claro que, nos exemplos desta página, não estamos usando nenhum UI Kit ou assemelhado. Toda a definição de cores, fontes, bordas e sombras vem da documentação do {link}."
+    },
+    "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
+    "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
     "home.blog": { "en-US": "Read the blog", "pt-BR": "Ler o blog" },
     "blog.kicker": { "en-US": "Blog", "pt-BR": "Blog" },
     "blog.h1": { "en-US": "Latest posts", "pt-BR": "Últimas publicações" },
@@ -764,6 +770,15 @@
     closeCombo(true);
   }
 
+  // Link para a documentação do Open Design; abre em outra janela e avisa isso a leitores de tela.
+  function openDesignLinkHTML() {
+    return (
+      '<a href="https://open-design.ai/plugins/systems/" target="_blank" rel="noopener">' + esc(T("home.noteLink")) +
+      '<svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>' +
+      '<span class="sr-only"> ' + esc(T("home.newWindow")) + "</span></a>"
+    );
+  }
+
   // Início: o hero e, logo abaixo, o catálogo de design systems.
   function homeHTML() {
     return (
@@ -771,6 +786,7 @@
       '<span class="kicker">' + esc(T("home.kicker")) + "</span>" +
       "<h1>" + esc(T("home.h1")) + "</h1>" +
       '<p class="lede">' + esc(T("home.lede")) + "</p>" +
+      '<p class="lede">' + esc(T("home.note")).replace("{link}", openDesignLinkHTML()) + "</p>" +
       '<div class="hero-actions">' +
       '<a class="btn btn-ghost" href="#/blog">' + esc(T("home.blog")) + "</a>" +
       "</div>" +
