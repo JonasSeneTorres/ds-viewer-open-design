@@ -355,7 +355,6 @@
     },
     "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
     "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
-    "home.blog": { "en-US": "Read the blog", "pt-BR": "Ler o blog" },
     "blog.kicker": { "en-US": "Blog", "pt-BR": "Blog" },
     "blog.h1": { "en-US": "Latest posts", "pt-BR": "Últimas publicações" },
     "home.featured": { "en-US": "Featured", "pt-BR": "Destaque" },
@@ -968,9 +967,6 @@
       "<h1>" + esc(T("home.h1")) + "</h1>" +
       '<p class="lede">' + esc(T("home.lede")) + "</p>" +
       '<p class="lede">' + esc(T("home.note")).replace("{link}", openDesignLinkHTML()) + "</p>" +
-      '<div class="hero-actions">' +
-      '<a class="btn btn-ghost" href="#/blog">' + esc(T("home.blog")) + "</a>" +
-      "</div>" +
       "</div></section>" +
       '<div class="wrap page">' + renderDSList(true) + "</div>"
     );
