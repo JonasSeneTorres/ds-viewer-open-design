@@ -149,6 +149,11 @@ def contrast(a_rgb, b_rgb):
     return (hi + 0.05) / (lo + 0.05)
 
 
+def floor1(x):
+    """Razão de contraste truncada em 1 casa: 4,46 não pode aparecer como 4,5."""
+    return math.floor(x * 10) / 10
+
+
 def feedback_ink(color, fg, backgrounds, target=4.6):
     """Menor % de `fg` misturado em `color` que dá contraste >= target sobre todos os fundos."""
     c, f = hex_to_rgb(color), hex_to_rgb(fg)
@@ -827,9 +832,17 @@ def pick_weight(ranges, want=600):
     return max(below) if below else min(discrete)
 
 
-def theme_vars(tokens, palettes, roles, fonts):
-    """Variáveis CSS do site para este DS. Derivados usam color-mix para funcionar em temas claros e escuros."""
+def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
+    """Variáveis CSS do site para este DS. Derivados usam color-mix para funcionar em temas claros e escuros.
+
+    `adjustments` (lista) recebe os tokens cuja cor do DS ficou abaixo de 4,5:1 (WCAG 2.2 AA) e foi trocada:
+    {token, from, to, ratioFrom, ratioTo[, onFrom, onTo]}. A página mostra isso num aviso."""
     tk = token_map(tokens)
+    adjustments = adjustments if adjustments is not None else []
+
+    def note(token, before, after, r_before, r_after, **extra):
+        adjustments.append({"token": token, "from": before.lower(), "to": after.lower(),
+                            "ratioFrom": floor1(r_before), "ratioTo": floor1(r_after), **extra})
 
     def g(key, default=None):
         """Valor do token, seguindo referências simples (--a: var(--b))."""
@@ -877,6 +890,8 @@ def theme_vars(tokens, palettes, roles, fonts):
     if fg_hex and sf_hex and contrast(hex_to_rgb(fg_hex), hex_to_rgb(sf_hex)) < 3:
         # o texto do tema não é legível sobre a superfície do DS: usa uma superfície derivada do fundo
         sf_rgb = mix_oklab(hex_to_rgb(bg_hex or "#ffffff"), hex_to_rgb(fg_hex), 0.06)
+        note("--surface", sf_hex, to_hex(sf_rgb), contrast(hex_to_rgb(fg_hex), hex_to_rgb(sf_hex)),
+             contrast(hex_to_rgb(fg_hex), sf_rgb))
         sf_hex, surface_css = to_hex(sf_rgb), to_hex(sf_rgb)
     for name, key, default, weak in (("ok", "--success", "#16a34a", 0.12), ("warn", "--warn", "#eab308", 0.14),
                                      ("danger", "--danger", "#dc2626", 0.12)):
@@ -885,6 +900,11 @@ def theme_vars(tokens, palettes, roles, fonts):
             bg_rgb = hex_to_rgb(bg_hex)
             bgs = [bg_rgb, hex_to_rgb(sf_hex), mix_oklab(bg_rgb, hex_to_rgb(col), weak)]
             pct = feedback_ink(col, fg_hex, bgs)
+            if pct:
+                before = min(contrast(hex_to_rgb(col), b) for b in bgs)
+                if before < 4.5:
+                    mixed = mix_oklab(hex_to_rgb(col), hex_to_rgb(fg_hex), pct / 100)
+                    note(f"--{name}-ink", col, to_hex(mixed), before, min(contrast(mixed, b) for b in bgs))
         else:
             pct = 40  # cor em formato não-hex: mistura fixa
         ink[f"--{name}-ink"] = f"var(--{name})" if pct == 0 else f"color-mix(in oklab, var(--{name}) {100 - pct}%, var(--fg))"
@@ -905,13 +925,18 @@ def theme_vars(tokens, palettes, roles, fonts):
         accent_weak_rgb = mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(parse_hex(accent)), 0.12)  # faixa --accent-weak
     base_bgs = [hex_to_rgb(bg_c), hex_to_rgb(surf_c), surface2_rgb] + ([accent_weak_rgb] if accent_weak_rgb else [])
 
-    def readable(key, fallback_css, target=4.7):
+    def readable(key, report_as, fallback_css, target=4.7):
         """Cor do token se tiver contraste suficiente sobre fundo, superfície e fundo secundário;
         senão a mesma cor misturada com --fg até ter."""
         col = parse_hex(g(key))
         if not col:
             return fallback_css
         pct = readable_pct(col, fg_c, base_bgs, target)
+        if pct:
+            before = min(contrast(hex_to_rgb(col), b) for b in base_bgs)
+            if before < 4.5:
+                mixed = mix_oklab(hex_to_rgb(col), hex_to_rgb(fg_c), pct / 100)
+                note(report_as, col, to_hex(mixed), before, min(contrast(mixed, b) for b in base_bgs))
         return col if pct == 0 else f"color-mix(in oklab, {col} {100 - pct}%, var(--fg))"
 
     def derived(start_pct, target=4.7):
@@ -927,7 +952,16 @@ def theme_vars(tokens, palettes, roles, fonts):
         acc_pct = readable_pct(accent_hex, fg_c, base_bgs + [mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(accent_hex), 0.12)],
                                4.8, start=15)
         accent_strong = f"color-mix(in oklab, var(--accent) {100 - acc_pct}%, var(--fg))"
-        solid_bg, solid_fg = solid_pair(accent_hex, parse_hex(g("--accent-on", "#ffffff")))
+        acc_bgs = base_bgs + [mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(accent_hex), 0.12)]
+        acc_before = min(contrast(hex_to_rgb(accent_hex), b) for b in acc_bgs)
+        if acc_before < 4.5:
+            mixed = mix_oklab(hex_to_rgb(accent_hex), hex_to_rgb(fg_c), acc_pct / 100)
+            note("--accent-strong", accent_hex, to_hex(mixed), acc_before, min(contrast(mixed, b) for b in acc_bgs))
+        accent_on = parse_hex(g("--accent-on", "#ffffff"))
+        solid_bg, solid_fg = solid_pair(accent_hex, accent_on)
+        if (solid_bg, solid_fg) != (accent_hex, accent_on):
+            note("--solid", accent_hex, solid_bg, contrast(hex_to_rgb(accent_hex), hex_to_rgb(accent_on or "#ffffff")),
+                 contrast(hex_to_rgb(solid_bg), hex_to_rgb(solid_fg)), onFrom=(accent_on or "#ffffff").lower(), onTo=solid_fg.lower())
         solid_hover = None
         for key in ("--accent-hover",):
             cand = parse_hex(g(key))
@@ -999,9 +1033,9 @@ def theme_vars(tokens, palettes, roles, fonts):
         "--surface": surface_css,
         "--surface-2": surface2_css,
         "--fg": g("--fg", "#171717"),
-        "--fg-soft": readable("--fg-2", derived(78)),
-        "--muted": readable("--muted", derived(60)),
-        "--meta": readable("--meta", "var(--muted)"),
+        "--fg-soft": readable("--fg-2", "--fg-soft", derived(78)),
+        "--muted": readable("--muted", "--muted", derived(60)),
+        "--meta": readable("--meta", "--meta", "var(--muted)"),
         "--border": g("--border", "color-mix(in oklab, var(--fg) 12%, transparent)"),
         "--border-soft": g("--border-soft", "var(--border)"),
         "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
@@ -1155,6 +1189,7 @@ def build_one(ds_id, page_path, entry, slug):
                 sec["html"] = add_lang(sec["html"], lang, t["html"])
     for g in tokens:
         g["group"] = i18n(g["group"], GROUP_PT.get(g["group"]))
+    adjustments = []
     data = {
         "id": ds_id,
         "name": i18n(f"{name} (Default)", f"{name} (Padrão)") if ds_id == "padrao" else name,
@@ -1166,7 +1201,7 @@ def build_one(ds_id, page_path, entry, slug):
         "colors": colors,
         "fonts": fonts,
         "tokens": tokens,
-        "vars": theme_vars(tokens, palettes, roles, fonts),
+        "vars": theme_vars(tokens, palettes, roles, fonts, adjustments),
         "sections": sections,
     }
     write_ds_json(ds_id, data)
@@ -1189,6 +1224,10 @@ def build_one(ds_id, page_path, entry, slug):
     prop = [f["family"] for f in fonts if f.get("proprietary")]
     if prop:
         entry_out["proprietaryFonts"] = prop
+    # tokens do DS abaixo de 4,5:1 (WCAG 2.2 AA) que o build trocou: o aviso da página lista cada um.
+    # Fica num arquivo à parte (carregado ao aplicar o tema) para não engordar o index.json.
+    json.dump(adjustments, open(os.path.join("data", "themes", f"{ds_id}.contrast.json"), "w", encoding="utf-8"),
+              ensure_ascii=False, separators=(",", ":"))
     return entry_out
 
 

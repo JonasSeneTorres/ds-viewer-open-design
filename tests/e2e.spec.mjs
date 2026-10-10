@@ -309,3 +309,22 @@ test("aviso de fontes proprietárias aparece só nos temas que têm", async ({ p
   await page.click("[data-close-notice]");
   await expect(notice).toBeHidden();
 });
+
+test("aviso de contraste lista os tokens ajustados e fecha", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/");
+  const notice = page.locator("#contrastNotice");
+  await expect(notice).toBeVisible(); // o tema padrão também tem tokens abaixo de 4,5:1
+  await expect(notice).toContainText("4,5:1");
+  await expect(notice).toContainText("WCAG 2.2");
+
+  await page.goto("/#/design-system/airbnb");
+  await notice.locator("summary").click();
+  const solid = notice.locator("li", { hasText: "Botão principal" });
+  await expect(solid).toBeVisible();
+  await expect(solid).toContainText("texto"); // no Airbnb a cor fica e só o texto do botão muda
+
+  await page.click("#contrastNotice [data-close-notice]");
+  await expect(notice).toBeHidden();
+  expect(problems).toEqual([]);
+});

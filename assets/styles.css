@@ -3461,3 +3461,38 @@ fieldset {
 .font-notice-close:hover {
   background: var(--surface-2);
 }
+
+/* Aviso de contraste: informativo, recolhido por padrão */
+.contrast-notice {
+  background: var(--surface-2);
+  border-bottom-color: var(--border);
+}
+
+.contrast-notice summary {
+  cursor: pointer;
+}
+
+.cn-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+}
+
+.cn-chip {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: -2px;
+  border: var(--bw) solid var(--border-strong);
+  border-radius: 3px;
+}
+
+.cn-list code {
+  font-size: 0.85em;
+}
+
+.cn-ratio {
+  color: var(--fg-soft);
+}
