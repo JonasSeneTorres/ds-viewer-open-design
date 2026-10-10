@@ -747,6 +747,32 @@ def build_palettes(tokens, colors):
     return palettes, roles
 
 
+def font_weight_ranges(font):
+    """Faixas (mín, máx) de peso baixadas para o estilo normal da fonte (assets/fonts/manifest.json)."""
+    css = (font.get("source") or {}).get("css")
+    out = []
+    for face in (font_manifest().get(css, []) if css else []):
+        if face.get("style", "normal") != "normal" or face.get("family", "").lower() != font["family"].lower():
+            continue
+        try:
+            nums = [int(x) for x in str(face.get("weight", "400")).split()]
+        except ValueError:
+            continue
+        if nums:
+            out.append((min(nums), max(nums)))
+    return out
+
+
+def pick_weight(ranges, want=600):
+    """Peso mais próximo de `want` que a fonte realmente tem (sem passar dele, se possível)."""
+    for lo, hi in ranges:
+        if lo <= want <= hi:
+            return want
+    discrete = sorted({hi for _lo, hi in ranges})
+    below = [w for w in discrete if w <= want]
+    return max(below) if below else min(discrete)
+
+
 def theme_vars(tokens, palettes, roles, fonts):
     """Variáveis CSS do site para este DS. Derivados usam color-mix para funcionar em temas claros e escuros."""
     tk = token_map(tokens)
@@ -901,7 +927,20 @@ def theme_vars(tokens, palettes, roles, fonts):
     if ring and ";" not in ring and "{" not in ring:
         scale["--focus-ring"] = ring
 
-    return {**shades, **ink, **scale, **{
+    # Pesos: fontes que só têm o peso regular (ex.: fonte pixelada) não ganham negrito sintético, que borra os glifos.
+    heading_font = next((f for f in fonts if f["kind"] == "display"), None) or next((f for f in fonts if f["kind"] in ("primary", "body")), None)
+    heading_weight = 600
+    if heading_font:
+        ranges = font_weight_ranges(heading_font)
+        if ranges:
+            heading_weight = pick_weight(ranges)
+    no_bold = any(
+        (r := font_weight_ranges(f)) and max(hi for _lo, hi in r) < 600
+        for f in fonts if f.get("source")
+    )
+    weights = {"font-synthesis-weight": "none"} if no_bold else {}
+
+    return {**weights, **shades, **ink, **scale, **{
         "--bg": g("--bg", "#ffffff"),
         "--surface": surface_css,
         "--surface-2": surface2_css,
@@ -935,7 +974,7 @@ def theme_vars(tokens, palettes, roles, fonts):
         "--font-body": body,
         "--font-code": code,
         "--font-mono": code,
-        "--heading-weight": "600",
+        "--heading-weight": str(heading_weight),
         "--kicker-transform": "uppercase",
         "--kicker-spacing": "0.08em",
         "--hero-ground": "var(--surface-2)",

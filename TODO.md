@@ -63,6 +63,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **33.** Botões de envio como `type="button"` e tela de criar conta — _Feito: nenhum `type="submit"` no site; o clique (ou o Enter num campo) pede `requestSubmit()` e a validação de exemplo continua no evento. Criar conta (`#/entrar/cadastro`) pede só nome, e-mail e senha e avisa que um e-mail de confirmação será enviado. 16 testes E2E, incluindo um que garante que não há `type="submit"` nas telas._
 
+- [x] **34.** Ajustes vistos no tema Pacman — _Feito: (1) o login perdia nitidez porque fontes com um só peso (16 temas, entre eles Pacman, Tetris e Bold) ganhavam negrito sintético; agora `--heading-weight` segue o peso que a fonte tem e esses temas usam `font-synthesis-weight: none`; (2) título do login com mais respiro; (3) em janelas baixas o painel da esquerda deixa de ser fixo; (4) loja: ícone do carrinho à esquerda do rótulo, título do produto em até 2 linhas com reticências, preço cheio em cima do preço com desconto quando não cabem juntos, rótulo do botão em até 2 linhas com reticências._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

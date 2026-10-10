@@ -2093,10 +2093,10 @@
       "</div>" +
       '<div class="product-body">' +
       '<span class="product-cat">' + esc(shopCatName(p.cat)) + "</span>" +
-      '<h3 class="product-name">' + esc(p.name) + "</h3>" +
+      '<h3 class="product-name" title="' + esc(p.name) + '">' + esc(p.name) + "</h3>" +
       starsSVG(p.rating) +
       '<p class="price">' + (p.old ? '<s class="price-old">' + money(p.old) + "</s> " : "") + "<strong>" + money(p.price) + "</strong></p>" +
-      '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + esc(T("shop.add")) + cartIconSVG() + "</button>" +
+      '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + cartIconSVG() + '<span class="btn-label">' + esc(T("shop.add")) + "</span></button>" +
       "</div></article>"
     );
   }
