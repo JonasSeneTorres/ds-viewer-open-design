@@ -61,6 +61,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **32.** Rodapé com autoria e páginas de licenças e privacidade — _Feito: "Site desenvolvido por Jonas Sene Torres", links para `#/licencas` (MIT com o texto completo, Apache 2.0 do Open Design e as alterações feitas, fontes, marcas, sem UI kit) e `#/privacidade` (resumo da LGPD: sem coleta, sem cookies; o que fica no navegador). Ficam só no rodapé e usam o tema selecionado. A privacidade não é obrigatória para um site sem tratamento de dados, mas é curta e evita dúvida sobre os formulários de exemplo._
 
+- [x] **33.** Botões de envio como `type="button"` e tela de criar conta — _Feito: nenhum `type="submit"` no site; o clique (ou o Enter num campo) pede `requestSubmit()` e a validação de exemplo continua no evento. Criar conta (`#/entrar/cadastro`) pede só nome, e-mail e senha e avisa que um e-mail de confirmação será enviado. 16 testes E2E, incluindo um que garante que não há `type="submit"` nas telas._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

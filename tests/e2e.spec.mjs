@@ -90,7 +90,7 @@ test("tabela: adiciona um registro e mostra os estados", async ({ page }) => {
   await expect(page.locator("#tableCount")).toHaveText("10 registros");
   await page.click("#addRecord");
   await page.fill('#recordForm input[name="name"]', "Stepper");
-  await page.click('#recordForm button[type="submit"]');
+  await page.click('#recordForm button[data-submit]');
   await expect(page.locator("#tableCount")).toHaveText("11 registros");
   await expect(page.locator("#tableBody")).toContainText("Stepper");
 
@@ -189,7 +189,7 @@ test("página institucional tem as seções e o contato de mentira", async ({ pa
   await expect(page.locator(".info-card.service")).toHaveCount(6);
   await expect(page.locator(".quote")).toHaveCount(3);
   await page.fill('.contact-form input[name="nome"]', "Maria");
-  await page.click(".contact-form button[type=submit]");
+  await page.click(".contact-form button[data-submit]");
   await expect(page.locator(".contact-form .form-alert")).toBeVisible();
   expect(page.url()).toMatch(/#\/institucional$/);
   expect(problems).toEqual([]);
@@ -207,37 +207,53 @@ test("entrar: login, esqueci minha senha e nova senha", async ({ page }) => {
   await expect(page.locator(".sso-link")).toContainText("SSO");
 
   // login: valida e confirma
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/error/);
   await page.fill('input[name="email"]', "maria@example.com");
   await page.fill('input[name="senha"]', "segredo");
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
 
   // mostrar/ocultar senha
   await page.click("[data-toggle-pw]");
   await expect(page.locator('input[name="senha"]')).toHaveAttribute("type", "text");
 
+  // criar conta: nome, e-mail e senha, e avisa do e-mail de confirmação
+  await page.click('[data-auth-go="signup"]');
+  await expect(page).toHaveURL(/#\/entrar\/cadastro$/);
+  await expect(page.locator(".mail-note")).toContainText("e-mail");
+  await page.click(".auth-form button[data-submit]");
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/error/);
+  await page.fill('input[name="nome"]', "Maria Lorem");
+  await page.fill('input[name="email"]', "maria@example.com");
+  await page.fill('input[name="senha"]', "curta");
+  await page.click(".auth-form button[data-submit]");
+  await expect(page.locator(".field .error")).toBeVisible();
+  await page.fill('input[name="senha"]', "segredo123");
+  await page.keyboard.press("Enter"); // o Enter no campo também envia
+  await expect(page.locator(".auth-form .form-alert")).toContainText("maria@example.com");
+  await page.click('[data-auth-go="login"]');
+
   // esqueci minha senha: pelo link e envia o código
   await page.click('[data-auth-go="forgot"]');
   await expect(page).toHaveURL(/#\/entrar\/esqueci$/);
   await page.fill('input[name="email"]', "maria@example.com");
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
 
   // nova senha: pelo seletor de estados
   await page.locator('#authStates label:has-text("Nova senha")').click();
   await expect(page).toHaveURL(/#\/entrar\/nova-senha$/);
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".otp-field .error")).toBeVisible();
   await page.locator(".otp-digit").first().click();
   await page.keyboard.type("123456");
   await page.fill('input[name="nova"]', "Segredo1");
   await page.fill('input[name="confirma"]', "Outra123");
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/error/);
   await page.fill('input[name="confirma"]', "Segredo1");
-  await page.click('.auth-form button[type="submit"]');
+  await page.click('.auth-form button[data-submit]');
   await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
   expect(problems).toEqual([]);
 });
@@ -263,4 +279,12 @@ test("rodapé: autoria, licenças e privacidade, com o tema selecionado", async 
   await expect(page.locator("main h1")).toHaveText("Privacidade e LGPD");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "bugatti");
   expect(problems).toEqual([]);
+});
+
+test("nenhum botão de envio usa type=submit", async ({ page }) => {
+  for (const route of ["#/", "#/blog", "#/tabela", "#/formulario", "#/institucional", "#/dashboard", "#/entrar", "#/entrar/cadastro", "#/entrar/esqueci", "#/entrar/nova-senha"]) {
+    await page.goto("/" + route);
+    await expect(page.locator("main")).toBeVisible();
+    await expect(page.locator('button[type="submit"], input[type="submit"]')).toHaveCount(0);
+  }
 });

@@ -206,6 +206,17 @@
     "auth.state": { "en-US": "Screen", "pt-BR": "Tela" },
     "auth.sLogin": { "en-US": "Login", "pt-BR": "Login" },
     "auth.demoNote": { "en-US": "This page is only a layout demonstration. No data is sent or checked by any server.", "pt-BR": "Esta é uma página somente de demonstração de layout. Nenhum dado é enviado nem verificado por servidor." },
+    "auth.sSignup": { "en-US": "Create account", "pt-BR": "Criar conta" },
+    "auth.signupTitle": { "en-US": "Create your account", "pt-BR": "Criar sua conta" },
+    "auth.signupText": { "en-US": "Just your name, email and password. We will send an email to confirm your address.", "pt-BR": "Só o seu nome, e-mail e senha. Vamos enviar um e-mail para confirmar o seu endereço." },
+    "auth.name": { "en-US": "Name", "pt-BR": "Nome" },
+    "auth.pwHint": { "en-US": "At least 8 characters.", "pt-BR": "Pelo menos 8 caracteres." },
+    "auth.pwShort": { "en-US": "Use at least 8 characters.", "pt-BR": "Use pelo menos 8 caracteres." },
+    "auth.signupBtn": { "en-US": "Create account", "pt-BR": "Criar conta" },
+    "auth.signupNote": { "en-US": "You will receive an email with a link to confirm your address. The account is activated only after the confirmation.", "pt-BR": "Você vai receber um e-mail com um link para confirmar o seu endereço. A conta só é ativada depois da confirmação." },
+    "auth.signupOk": { "en-US": "Account created! We sent a confirmation email to {email}. Open it and click the link to activate your account.", "pt-BR": "Conta criada! Enviamos um e-mail de confirmação para {email}. Abra-o e clique no link para ativar a sua conta." },
+    "auth.haveAccount": { "en-US": "Already have an account?", "pt-BR": "Já tem uma conta?" },
+    "auth.goLogin": { "en-US": "Log in", "pt-BR": "Fazer login" },
     "auth.sForgot": { "en-US": "Forgot password", "pt-BR": "Esqueci minha senha" },
     "auth.sReset": { "en-US": "New password", "pt-BR": "Nova senha" },
     "auth.loginTitle": { "en-US": "Sign in to your account", "pt-BR": "Entrar na sua conta" },
@@ -991,7 +1002,7 @@
       '<form class="aside-search" role="search">' +
       '<label class="sr-only" for="asideSearch">' + esc(T("aside.search")) + "</label>" +
       '<input type="search" id="asideSearch" placeholder="' + esc(T("aside.searchPh")) + '">' +
-      '<button type="submit" class="btn btn-primary btn-small">' + esc(T("aside.search")) + "</button>" +
+      '<button type="button" data-submit class="btn btn-primary btn-small">' + esc(T("aside.search")) + "</button>" +
       "</form>" +
       block(T("aside.topics"), "<ul>" + topics.map(function (c, i) {
         return '<li><a class="dead-link">' + esc(c) + '</a><span class="aside-count">' + (14 - i * 2) + "</span></li>";
@@ -1007,7 +1018,7 @@
         '<form class="newsletter-form">' +
         '<label class="sr-only" for="asideEmail">' + esc(T("aside.nlPh")) + "</label>" +
         '<input type="email" id="asideEmail" placeholder="' + esc(T("aside.nlPh")) + '">' +
-        '<button type="submit" class="btn btn-primary btn-small">' + esc(T("aside.nlBtn")) + "</button>" +
+        '<button type="button" data-submit class="btn btn-primary btn-small">' + esc(T("aside.nlBtn")) + "</button>" +
         "</form>", "aside-newsletter") +
       block(T("aside.tags"), '<p class="tag-cloud">' + tags.map(function (t) {
         return '<a class="dead-link tag tag-' + t[1] + '">' + esc(t[0]) + "</a>";
@@ -1408,7 +1419,7 @@
       '<label class="field"><span>' + esc(T("frm.comment")) + '</span><textarea name="mensagem"' + ph("frm.commentPh") + '></textarea><span class="hint">' + esc(T("frm.commentHint")) + "</span></label>" +
       "</fieldset>" +
       '<div style="display:flex;gap:12px;flex-wrap:wrap">' +
-      '<button type="submit" class="btn btn-primary" id="demoSubmit">' + esc(T("frm.submit")) + "</button>" +
+      '<button type="button" data-submit class="btn btn-primary" id="demoSubmit">' + esc(T("frm.submit")) + "</button>" +
       '<button type="reset" class="btn btn-ghost">' + esc(T("frm.reset")) + "</button>" +
       "</div>" +
       "</form>" +
@@ -1819,6 +1830,30 @@
     });
   }
 
+  // Botões de envio são type="button" (nada envia por conta própria): o clique, ou o Enter em um campo,
+  // pede o envio do formulário e o evento "submit" de cada tela faz a validação de exemplo.
+  function submitForm(form) {
+    if (form.requestSubmit) form.requestSubmit();
+    else form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest("button[data-submit]");
+    if (!btn || btn.disabled) return;
+    var form = btn.closest("form");
+    if (form) submitForm(form);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    var t = e.target;
+    if (e.key !== "Enter" || e.isComposing || !t || t.tagName !== "INPUT") return;
+    if (["checkbox", "radio", "button", "submit", "reset", "file", "range", "color"].indexOf(t.type) !== -1) return;
+    var form = t.form;
+    if (!form || !form.querySelector("button[data-submit]")) return;
+    e.preventDefault();
+    submitForm(form);
+  });
+
   // A busca da barra lateral do blog é só de enfeite.
   app.addEventListener("submit", function (e) {
     if (!e.target.closest) return;
@@ -1976,7 +2011,7 @@
         '<form class="draft-form">' +
         '<label class="field"><span class="sr-only">' + esc(T("dash.draftTitle")) + '</span><input type="text" placeholder="' + esc(T("dash.draftTitle")) + '"></label>' +
         '<label class="field"><span class="sr-only">' + esc(T("dash.draftBody")) + '</span><textarea rows="3" placeholder="' + esc(T("dash.draftBody")) + '"></textarea></label>' +
-        '<button type="submit" class="btn btn-primary btn-small">' + esc(T("dash.draftSave")) + "</button></form>") +
+        '<button type="button" data-submit class="btn btn-primary btn-small">' + esc(T("dash.draftSave")) + "</button></form>") +
       "</div>"
     );
   }
@@ -2253,7 +2288,7 @@
       '<label class="field"><span>' + esc(T("inst.fEmail")) + '</span><input type="email" name="email" autocomplete="off"></label>' +
       '<label class="field"><span>' + esc(T("inst.fSubject")) + '</span><select name="assunto"><option>' + esc(T("inst.o1")) + "</option><option>" + esc(T("inst.o2")) + "</option><option>" + esc(T("inst.o3")) + "</option></select></label>" +
       '<label class="field"><span>' + esc(T("inst.fMessage")) + '</span><textarea name="mensagem" rows="4"></textarea></label>' +
-      '<button type="submit" class="btn btn-primary">' + esc(T("inst.send")) + "</button>" +
+      '<button type="button" data-submit class="btn btn-primary">' + esc(T("inst.send")) + "</button>" +
       "</form></div></section>"
     );
   }
@@ -2263,7 +2298,12 @@
   // O seletor de estados é o mesmo da tabela. Nada é enviado: é só demonstração.
   // ------------------------------------------------------------------
 
-  var AUTH_STATES = [["login", "auth.sLogin", ""], ["forgot", "auth.sForgot", "esqueci"], ["reset", "auth.sReset", "nova-senha"]];
+  var AUTH_STATES = [["login", "auth.sLogin", ""], ["signup", "auth.sSignup", "cadastro"], ["forgot", "auth.sForgot", "esqueci"], ["reset", "auth.sReset", "nova-senha"]];
+
+  function authTitle(state) {
+    var key = { login: "auth.loginTitle", signup: "auth.signupTitle", forgot: "auth.forgotTitle", reset: "auth.resetTitle" }[state];
+    return T(key || "auth.loginTitle");
+  }
   var authState = "login";
   var AUTH_COMPANY = "XPTO Ink";
 
@@ -2309,6 +2349,22 @@
   function authCardHTML(state) {
     var alertBox = '<div class="form-alert" role="alert"></div>';
     var back = '<button type="button" class="link-btn" data-auth-go="login">&larr; ' + esc(T("auth.back")) + "</button>";
+    if (state === "signup") {
+      return (
+        authBrandHTML() +
+        "<h1>" + esc(T("auth.signupTitle")) + "</h1>" +
+        '<p class="muted">' + esc(T("auth.signupText")) + "</p>" +
+        '<form class="auth-form" data-form="signup" novalidate>' + alertBox +
+        '<label class="field"><span>' + esc(T("auth.name")) + '</span><input type="text" name="nome" autocomplete="name"></label>' +
+        '<label class="field"><span>' + esc(T("auth.email")) + '</span><input type="email" name="email" autocomplete="email"></label>' +
+        pwFieldHTML("senha", "auth.password", "new-password") +
+        '<p class="field-hint">' + esc(T("auth.pwHint")) + "</p>" +
+        '<button type="button" data-submit class="btn btn-primary">' + esc(T("auth.signupBtn")) + "</button>" +
+        "</form>" +
+        '<p class="mail-note">' + iconSVG("mail") + "<span>" + esc(T("auth.signupNote")) + "</span></p>" +
+        '<p class="auth-foot muted">' + esc(T("auth.haveAccount")) + ' <button type="button" class="link-btn" data-auth-go="login">' + esc(T("auth.goLogin")) + "</button></p>"
+      );
+    }
     if (state === "forgot") {
       return (
         authBrandHTML() +
@@ -2316,7 +2372,7 @@
         '<p class="muted">' + esc(T("auth.forgotText")) + "</p>" +
         '<form class="auth-form" data-form="forgot" novalidate>' + alertBox +
         '<label class="field"><span>' + esc(T("auth.email")) + '</span><input type="email" name="email" autocomplete="email"></label>' +
-        '<button type="submit" class="btn btn-primary">' + esc(T("auth.sendCode")) + "</button>" +
+        '<button type="button" data-submit class="btn btn-primary">' + esc(T("auth.sendCode")) + "</button>" +
         "</form>" +
         '<p class="auth-foot" data-after hidden><button type="button" class="link-btn" data-auth-go="reset">' + esc(T("auth.haveCode")) + "</button></p>" +
         '<p class="auth-foot">' + back + "</p>"
@@ -2339,7 +2395,7 @@
         '<li data-req="upper">' + esc(T("auth.req2")) + "</li>" +
         '<li data-req="num">' + esc(T("auth.req3")) + "</li></ul>" +
         pwFieldHTML("confirma", "auth.confirmPw", "new-password") +
-        '<button type="submit" class="btn btn-primary">' + esc(T("auth.resetBtn")) + "</button>" +
+        '<button type="button" data-submit class="btn btn-primary">' + esc(T("auth.resetBtn")) + "</button>" +
         "</form>" +
         '<p class="auth-foot muted">' + esc(T("auth.noCode")) + ' <a class="dead-link">' + esc(T("auth.resend")) + "</a></p>" +
         '<p class="auth-foot">' + back + "</p>"
@@ -2355,7 +2411,7 @@
       pwFieldHTML("senha", "auth.password", "current-password") +
       '<div class="auth-row"><label class="choice-item"><input type="checkbox" name="lembrar"> ' + esc(T("auth.remember")) + "</label>" +
       '<button type="button" class="link-btn" data-auth-go="forgot">' + esc(T("auth.forgotLink")) + "</button></div>" +
-      '<button type="submit" class="btn btn-primary">' + esc(T("auth.signin")) + "</button>" +
+      '<button type="button" data-submit class="btn btn-primary">' + esc(T("auth.signin")) + "</button>" +
       "</form>" +
       '<div class="divider"><span>' + esc(T("auth.or")) + "</span></div>" +
       '<div class="oauth-row">' +
@@ -2365,7 +2421,7 @@
       }).join("") +
       "</div>" +
       '<p class="sso"><button type="button" class="link-btn sso-link">' + esc(T("auth.continueWith")) + " SSO</button></p>" +
-      '<p class="auth-foot muted">' + esc(T("auth.noAccount")) + ' <a class="dead-link">' + esc(T("auth.create")) + "</a></p>"
+      '<p class="auth-foot muted">' + esc(T("auth.noAccount")) + ' <button type="button" class="link-btn" data-auth-go="signup">' + esc(T("auth.create")) + "</button></p>"
     );
   }
 
@@ -2410,8 +2466,7 @@
       if (radio) radio.checked = true;
       // atualiza o endereço sem refazer a rota
       try { history.replaceState(null, "", "#/entrar" + (authSlug(state) ? "/" + authSlug(state) : "")); } catch (e) {}
-      var titleKey = state === "forgot" ? "auth.forgotTitle" : state === "reset" ? "auth.resetTitle" : "auth.loginTitle";
-      setTitle(T(titleKey));
+      setTitle(authTitle(state));
     }
 
     function banner(form, kind, message) {
@@ -2497,6 +2552,15 @@
         if (!form.elements.senha.value) fail(form.elements.senha, "frm.required");
         if (bad.length) { banner(form, "error", T("frm.review")); bad[0].focus(); return; }
         banner(form, "success", T("auth.loginOk"));
+      } else if (kind === "signup") {
+        if (!form.elements.nome.value.trim()) fail(form.elements.nome, "frm.required");
+        var mail = form.elements.email;
+        if (!mail.value.trim()) fail(mail, "frm.required");
+        else if (!EMAIL.test(mail.value)) fail(mail, "frm.emailErr");
+        if (!form.elements.senha.value) fail(form.elements.senha, "frm.required");
+        else if (form.elements.senha.value.length < 8) fail(form.elements.senha, "auth.pwShort");
+        if (bad.length) { banner(form, "error", T("frm.review")); bad[0].focus(); return; }
+        banner(form, "success", T("auth.signupOk").replace("{email}", mail.value.trim()));
       } else if (kind === "forgot") {
         var em = form.elements.email;
         if (!em.value.trim()) fail(em, "frm.required");
@@ -2735,7 +2799,7 @@
       } else {
         authState = wanted || "login";
         app.innerHTML = authHTML(authState);
-        setTitle(T(authState === "forgot" ? "auth.forgotTitle" : authState === "reset" ? "auth.resetTitle" : "auth.loginTitle"));
+        setTitle(authTitle(authState));
         authMount();
       }
       setActiveNav("/entrar");
