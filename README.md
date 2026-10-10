@@ -70,6 +70,7 @@ python -m http.server 8317
 | `npm run data:update` | Regera `data/ds/*.json` e `data/themes/*.css` a partir de `.cache/pages/` e das traduções em `i18n/` |
 | `npm run check` | Confere a consistência dos dados (`scripts/check_data.py`) e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
+| `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
 | `npm run i18n:template -- <slug> [lang]` | Gera `i18n/<lang>/<slug>.html` (padrão `pt-BR`) com o texto em inglês, pronto para traduzir |
 
@@ -93,6 +94,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `node --check assets/app.js`
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
+4. `npm run test:e2e`: 9 cenários básicos no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). Para ativar: no repositório, **Settings → Pages → Build and deployment → Source: GitHub Actions**. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 

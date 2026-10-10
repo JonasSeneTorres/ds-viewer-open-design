@@ -11,9 +11,11 @@
     "i18n:template": "python scripts/build_ds_details.py --template",
     "check": "python scripts/check_data.py && python scripts/check_html.py",
     "check:html": "python scripts/check_html.py",
+    "test:e2e": "playwright test",
     "verify:upstream": "python scripts/verify_upstream.py"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "http-server": "^14.1.1"
   }
 }
