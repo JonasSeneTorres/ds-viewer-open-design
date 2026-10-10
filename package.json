@@ -1,0 +1,19 @@
+{
+  "name": "ds-viewer-open-design",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Visualizador de DS do Open Design — catálogo navegável de design systems (open-design.ai), cada um aplicável ao site.",
+  "scripts": {
+    "start": "http-server -p 8317 -c-1 .",
+    "data:fetch": "python scripts/build_ds_fetch.py",
+    "data:fonts": "python scripts/build_fonts.py",
+    "data:update": "python scripts/build_ds_details.py",
+    "i18n:template": "python scripts/build_ds_details.py --template",
+    "check": "python scripts/check_data.py && python scripts/check_html.py",
+    "check:html": "python scripts/check_html.py",
+    "verify:upstream": "python scripts/verify_upstream.py"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
