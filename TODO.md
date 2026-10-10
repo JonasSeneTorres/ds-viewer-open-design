@@ -42,6 +42,15 @@ Marque `[x]` ao concluir cada item.
 - [x] **19.** Não há script para gerar `systems-raw.json`; a atualização do catálogo é manual. — _Feito: não será feito. O catálogo é uma cópia datada mantida à mão; o README agora diz isso e aponta o repositório do Open Design como base para qualquer atualização._
 - [ ] **20.** Nada foi commitado: `.gitignore`, `LICENSE-OPEN-DESIGN`, `README.md` e o restante estão não rastreados.
 
+## Revisão
+
+- [ ] **22.** Revisão de estilos. Detalhe visto pelo Jonas, a ser especificado quando ele revisar. Para comparar com a documentação original, há uma cópia dos HTMLs do open-design.ai de 2026-10-10 em `.cache/snapshots/2026-10-10/` (142 páginas, 65 MB, fora do Git; baixada com `python scripts/build_ds_fetch.py .cache/snapshots/2026-10-10`). Ela difere do cache usado no build (`.cache/pages/`, de 2026-10-09) em todas as páginas, por pequenas mudanças no CSS/JS embutido do próprio site e no contador de estrelas. _Parte já coberta pelo item 24; resta o detalhe específico que o Jonas viu._
+- [x] **24.** Revisão tema a tema (seções 1 a 9 do guia de cada DS) — _Feito: o site passou a usar os tokens que ignorava (escala tipográfica, entrelinha, tracking, largura e margens, respiro de seção, anel de foco, movimento, hover do botão, `surface-warm`, `border-soft`, `meta`), com contraste garantido no build. `npm run audit:themes` abre os 143 temas em desktop e celular: nos 45 medidos antes, 44 tinham achados (497 no total); depois, os 143 passam sem nenhum. Relatório por tema em `docs/revisao-estilos.md`. Corrigidos também: campo de busca branco nos temas escuros, fallbacks de fonte colados (Airbnb, Renault, WIRED), superfície ilegível do PlayStation, estouro horizontal no celular._
+- [ ] **25.** Fidelidade tipográfica: em 73 dos 143 temas a fonte do título ou do corpo não carrega (fontes proprietárias fora do Google Fonts), e o navegador usa a primeira reserva do guia que existir no sistema. Decidir se basta (o relatório lista cada um) ou se vale escolher uma fonte aberta parecida por tema.
+- [ ] **26.** Botão principal: em 37 temas o par de cores do DS (`--accent` + `--accent-on`) não passa de 4,5:1 e o build ajusta a cor ou o texto. Isso favorece a acessibilidade e se afasta um pouco da marca (ex.: Airbnb, texto escuro sobre o rosa). Decidir se prefere a fidelidade nesses casos.
+- [ ] **27.** Seções 7 a 9 do guia (do/don't, responsivo, guia do agente) são só texto e não viram estilo. Falta, se quiser, extrair do guia o peso e o tamanho por papel tipográfico (hoje `--heading-weight` é 600 em todos).
+- [ ] **23.** `data/systems-raw.json`: a entrada **Cisco** tem `href: "/plugins/systems/"` (aponta para a lista, não para o DS), então o `data:fetch` baixa a página da lista à toa e a Cisco não entra no catálogo. Decidir: corrigir para `/plugins/design-system-cisco/` (e incluir, se o pacote existir no repositório) ou remover a entrada.
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

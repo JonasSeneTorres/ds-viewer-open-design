@@ -71,6 +71,7 @@ python -m http.server 8317
 | `npm run check` | Confere a consistência dos dados (`scripts/check_data.py`) e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
 | `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
+| `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
 | `npm run i18n:template -- <slug> [lang]` | Gera `i18n/<lang>/<slug>.html` (padrão `pt-BR`) com o texto em inglês, pronto para traduzir |
 
@@ -104,7 +105,21 @@ Cada DS vira um arquivo `data/themes/<id>.css` com as fontes (`@font-face` apont
 
 O tema padrão já vem linkado no `index.html`; os outros são carregados quando aplicados, e o site só troca de tema depois que o CSS chega, sem "piscar" o visual-base. O `assets/themes.css` guarda só os valores-base, usados se o CSS de um tema falhar.
 
-Cada tema também gera cores de feedback legíveis: `--ok-ink`, `--warn-ink` e `--danger-ink` (a cor do tema misturada com `--fg` até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do alerta) e `--ok-fg`, `--danger-fg` (texto sobre botões preenchidos). Só o tema PlayStation (fundo preto e superfície branca) não atinge 4,5:1 em atenção e sucesso, porque nenhuma cor serve para os dois fundos.
+Além das cores, cada tema leva os detalhes do guia que o site usa (seções 3 a 6), sempre limitados a faixas seguras e com o contraste garantido pelo build:
+
+| Variáveis | Origem (token do DS) | Uso |
+|---|---|---|
+| `--fs-base`, `--fs-sm`, `--fs-xs`, `--fs-h1`, `--fs-h2`, `--fs-h3`, `--fs-hero` | `--text-*` | tamanhos do texto e dos títulos |
+| `--lh-body`, `--lh-tight`, `--display-tracking` | `--leading-*`, `--tracking-display` | entrelinha e espaçamento entre letras dos títulos |
+| `--container-max`, `--gutter`, `--gutter-tablet`, `--gutter-phone`, `--section-y`, `--section-y-tablet` | `--container-*`, `--section-y-*` | largura, margens e respiro de seção |
+| `--radius-lg`, `--focus-ring`, `--motion-fast`, `--motion-base`, `--ease` | `--radius-lg`, `--focus-ring`, `--motion-*`, `--ease-standard` | cantos grandes, anel de foco e movimento |
+| `--solid`, `--solid-fg`, `--solid-hover` | `--accent`, `--accent-on`, `--accent-hover` | botão principal: o par do DS, ou ajustado se não passar de 4,5:1 |
+| `--accent-strong`, `--muted`, `--fg-soft`, `--meta` | `--accent`, `--muted`, `--fg-2`, `--meta` | links, kicker e textos secundários, garantidos acima de 4,7:1 sobre fundo, superfície e fundo secundário |
+| `--surface-2`, `--border-soft` | `--surface-warm`, `--border-soft` | fundo secundário (hero, cabeçalho de tabela) e divisórias suaves |
+
+A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que foi ajustado em cada um) está em [`docs/revisao-estilos.md`](docs/revisao-estilos.md), gerada por `npm run audit:themes` e `scripts/review_styles.py`.
+
+Cada tema também gera cores de feedback legíveis: `--ok-ink`, `--warn-ink` e `--danger-ink` (a cor do tema misturada com `--fg` até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do alerta) e `--ok-fg`, `--danger-fg` (texto sobre botões preenchidos). Quando o texto do tema não é legível sobre a superfície do DS (caso do PlayStation, com superfície branca e texto branco), o build deriva uma superfície a partir do fundo.
 
 Além disso, cada tema expõe dois tons da paleta, usados no header e no footer:
 

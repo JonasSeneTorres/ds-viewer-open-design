@@ -1,13 +1,14 @@
 """Baixa as páginas de detalhe de cada design system (open-design.ai) para .cache/pages/.
 
-Uso: python scripts/build_ds_fetch.py   (pula o que já está em cache)
+Uso: python scripts/build_ds_fetch.py            (pula o que já está em cache)
+     python scripts/build_ds_fetch.py <pasta>    (baixa uma cópia à parte, sem mexer em .cache/pages/)
 """
 import json, os, sys, time, urllib.request
 
 sys.stdout.reconfigure(encoding="utf-8")
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do projeto
 BASE = "https://open-design.ai"
-OUT = os.path.join(".cache", "pages")
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(".cache", "pages")
 os.makedirs(OUT, exist_ok=True)
 
 seen, items = set(), []

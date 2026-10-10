@@ -87,6 +87,9 @@ for ds_id in ids:
         for name in ("ok", "warn", "danger"):
             if f"--{name}-ink:" not in css:
                 err(f"{theme}: falta --{name}-ink (texto de feedback legível; rode npm run data:update)")
+        for var in ("--solid", "--solid-fg", "--fs-h1", "--fs-base", "--container-max", "--gutter", "--motion-fast"):
+            if f"  {var}:" not in css:
+                err(f"{theme}: falta {var} (rode npm run data:update)")
         for f in re.findall(r"assets/fonts/([\w.-]+)", css):
             font_refs.add(f)
             if not os.path.exists(os.path.join(FONT_DIR, f)):

@@ -12,7 +12,8 @@
     "check": "python scripts/check_data.py && python scripts/check_html.py",
     "check:html": "python scripts/check_html.py",
     "test:e2e": "playwright test",
-    "verify:upstream": "python scripts/verify_upstream.py"
+    "verify:upstream": "python scripts/verify_upstream.py",
+    "audit:themes": "node scripts/audit_themes.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.0",
