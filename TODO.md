@@ -57,6 +57,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **30.** Página institucional de exemplo, a primeira do menu Exemplos — _Feito: hero, sobre (com números), valores, serviços (6 cartões com imagem de exemplo), opiniões de clientes, faixa de chamada e contato fake (o formulário só confirma na tela). Fundos alternados com as cores do tema; o texto das faixas é garantido pelo build (inclui `--accent-weak` nas checagens de contraste). Teste E2E novo (13 no total)._
 
+- [x] **31.** Telas de autenticação: entrar, esqueci minha senha e nova senha — _Feito: empresa XPTO Ink com o logo do visualizador em contorno numa moldura; login com e-mail, senha (mostrar/ocultar), lembrar, 4 botões de OAuth (Google, GitHub, Microsoft, SSO; ícones simplificados); esqueci minha senha com confirmação na tela; nova senha com código de 6 dígitos (avanço automático e colar), nova senha duas vezes e requisitos ao vivo. Seletor de estados como o da tabela; o endereço acompanha (`#/entrar/esqueci`, `#/entrar/nova-senha`). 14 testes E2E no total._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

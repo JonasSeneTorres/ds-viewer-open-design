@@ -4,7 +4,7 @@ SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo n
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão** (uma cópia do Vercel).
 
-O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard e Loja).
+O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Entrar).
 
 Páginas:
 
@@ -12,6 +12,7 @@ Páginas:
 |---|---|
 | `#/` | Início: hero e o catálogo de design systems, com busca e filtros por categoria (o Padrão vem primeiro; o tema ativo fica destacado) |
 | `#/institucional` | Página institucional genérica (a primeira dos exemplos): hero, sobre, valores, serviços, opiniões de clientes, chamada e contato fake. Faixas de largura total com fundos alternados (`--surface-2`, `--bg`, `--accent-weak` e `--solid`); imagens com o degradê e o ícone de imagem não encontrada. O conteúdo é Lorem ipsum: quem dita o estilo é o design system |
+| `#/entrar`, `#/entrar/esqueci` e `#/entrar/nova-senha` | Telas de autenticação da empresa fictícia "XPTO Ink" (logo do visualizador em contorno, numa moldura): login com botões de OAuth, esqueci minha senha e nova senha (código de 6 dígitos e a senha duas vezes, com requisitos). Seletor de estados igual ao da tabela; nada é enviado |
 | `#/blog` | Blog: destaque e lista de artigos de exemplo, com barra lateral ilustrativa (busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags; nada nela funciona) |
 | `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com a mesma barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
 | `#/design-system` | Atalho antigo: redireciona para `#/` |

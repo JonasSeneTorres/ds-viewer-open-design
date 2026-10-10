@@ -99,6 +99,9 @@ const MEASURE = () => {
   probe("estatistica", ".stats-row dd");
   probe("opiniao-autor", ".quote .muted");
   probe("icone", ".icon-bubble");
+  probe("auth-texto", ".auth-card .muted");
+  probe("auth-link", ".link-btn");
+  probe("auth-requisito", ".reqs li");
   out.overflowX = document.documentElement.scrollWidth > document.documentElement.clientWidth + 1;
   out.fonteH1 = out.h1 ? out.h1.family : null;
   out.carregadas = [...new Set([...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family.replace(/["']/g, "")))];
@@ -111,6 +114,8 @@ const ROUTES = (id) => [
   ["tabela", "/#/tabela"],
   ["formulario", "/#/formulario"],
   ["institucional", "/#/institucional"],
+  ["entrar", "/#/entrar"],
+  ["nova-senha", "/#/entrar/nova-senha"],
   ["dashboard", "/#/dashboard"],
   ["loja", "/#/loja"],
 ];

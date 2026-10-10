@@ -86,7 +86,7 @@ out = []
 w = out.append
 w("# Revisão de estilos, tema a tema\n")
 w("Gerado por `scripts/review_styles.py` a partir de `scripts/audit_themes.mjs`. A auditoria abre, com cada tema, "
-  "o início, a página do DS, a tabela, o formulário, a institucional, o dashboard e a loja, em desktop (1280 px) e celular (390 px), e mede contraste, "
+  "o início, a página do DS, a tabela, o formulário, a institucional, as telas de entrar, o dashboard e a loja, em desktop (1280 px) e celular (390 px), e mede contraste, "
   "rolagem horizontal, erros e fontes carregadas.\n")
 w("## Resumo\n")
 w(f"- Temas auditados: **{len(rows)}**")

@@ -135,7 +135,7 @@ test("rota antiga e rota inexistente se comportam", async ({ page }) => {
 test("menu Exemplos lista as páginas de exemplo e a informação do tema segue o tema escolhido", async ({ page }) => {
   await page.goto("/#/");
   await page.click("#examplesBtn");
-  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja"]);
+  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja", "Entrar"]);
   await page.keyboard.press("Escape");
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
@@ -192,5 +192,47 @@ test("página institucional tem as seções e o contato de mentira", async ({ pa
   await page.click(".contact-form button[type=submit]");
   await expect(page.locator(".contact-form .form-alert")).toBeVisible();
   expect(page.url()).toMatch(/#\/institucional$/);
+  expect(problems).toEqual([]);
+});
+
+test("entrar: login, esqueci minha senha e nova senha", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/entrar");
+  await expect(page.locator(".logo-frame").first()).toBeVisible();
+  await expect(page.locator(".oauth")).toHaveCount(4);
+
+  // login: valida e confirma
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/error/);
+  await page.fill('input[name="email"]', "maria@example.com");
+  await page.fill('input[name="senha"]', "segredo");
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
+
+  // mostrar/ocultar senha
+  await page.click("[data-toggle-pw]");
+  await expect(page.locator('input[name="senha"]')).toHaveAttribute("type", "text");
+
+  // esqueci minha senha: pelo link e envia o código
+  await page.click('[data-auth-go="forgot"]');
+  await expect(page).toHaveURL(/#\/entrar\/esqueci$/);
+  await page.fill('input[name="email"]', "maria@example.com");
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
+
+  // nova senha: pelo seletor de estados
+  await page.locator('#authStates label:has-text("Nova senha")').click();
+  await expect(page).toHaveURL(/#\/entrar\/nova-senha$/);
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".otp-field .error")).toBeVisible();
+  await page.locator(".otp-digit").first().click();
+  await page.keyboard.type("123456");
+  await page.fill('input[name="nova"]', "Segredo1");
+  await page.fill('input[name="confirma"]', "Outra123");
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/error/);
+  await page.fill('input[name="confirma"]', "Segredo1");
+  await page.click('.auth-form button[type="submit"]');
+  await expect(page.locator(".auth-form .form-alert")).toHaveClass(/success/);
   expect(problems).toEqual([]);
 });
