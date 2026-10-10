@@ -1,5 +1,7 @@
 # Visualizador de DS — Open Design
 
+**Site publicado:** <https://jonassenetorres.github.io/ds-viewer-open-design/>
+
 SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 143 design systems** open-source, extraídos de <https://open-design.ai/plugins/systems/>.
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão** (uma cópia do Vercel).
@@ -102,9 +104,9 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `node --check assets/app.js`
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 9 cenários básicos no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 16 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
-Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). Para ativar: no repositório, **Settings → Pages → Build and deployment → Source: GitHub Actions**. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
+Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
 ## Temas
 
@@ -172,6 +174,16 @@ O botão de idioma do topo alterna pt-BR / en-US (o padrão segue o idioma do si
 ## Categorias
 
 As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `scripts/build_ds_details.py`; a ordem fica em `CATEGORY_ORDER`. Categorias novas viram automaticamente filtros na página de Design System e grupos no seletor do topo.
+
+## Próximos passos
+
+O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
+
+1. **Tema na URL** (por exemplo `?tema=bugatti`): hoje a escolha fica só no navegador, então não dá para compartilhar um link com o tema aplicado, e o botão voltar não desfaz a troca.
+2. **Decidir a fidelidade dos temas** (itens 25 e 26 do TODO): em 73 dos 143 temas a fonte do título ou do corpo é proprietária e cai na reserva do guia (dá para escolher uma fonte aberta parecida por tema), e em 37 temas o botão principal foi ajustado para passar de 4,5:1 de contraste (fidelidade à marca ou acessibilidade).
+3. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
+4. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
+5. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), alternância claro/escuro por design system, suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
 ## Créditos
 

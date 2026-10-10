@@ -40,7 +40,7 @@ Marque `[x]` ao concluir cada item.
 - [x] **17.** `docs/historico/PROMPTS-PENDENTES.md` descreve tarefas que o README dá como concluídas (os 5 temas de demonstração). — _Feito: conferido: todos os pedidos já estavam implementados. O arquivo foi renomeado por dentro para "Pedidos iniciais (concluídos)", com o status no topo. Os dois arquivos de handoff do Open Design foram mantidos em `docs/historico/` (são a exportação antiga)._
 - [x] **18.** Sem testes nem CI para validar a consistência entre `index.json`, `ds/*.json` e `themes/*.css`. — _Feito: `scripts/check_data.py` e `check_html.py` (dados e HTML), mais 9 testes E2E básicos com Playwright (`npm run test:e2e`), tudo rodando em `.github/workflows/pages.yml` antes do deploy. Sem testes unitários de JS, por decisão. Falta só ativar o Pages (ver item 20)._
 - [x] **19.** Não há script para gerar `systems-raw.json`; a atualização do catálogo é manual. — _Feito: não será feito. O catálogo é uma cópia datada mantida à mão; o README agora diz isso e aponta o repositório do Open Design como base para qualquer atualização._
-- [ ] **20.** Nada foi commitado: `.gitignore`, `LICENSE-OPEN-DESIGN`, `README.md` e o restante estão não rastreados.
+- [x] **20.** Nada foi commitado: `.gitignore`, `LICENSE-OPEN-DESIGN`, `README.md` e o restante estão não rastreados. — _Feito: PR #1 mesclado na `main`, Pages ativo e publicado em https://jonassenetorres.github.io/ds-viewer-open-design/._
 
 ## Revisão
 
@@ -64,6 +64,11 @@ Marque `[x]` ao concluir cada item.
 - [x] **33.** Botões de envio como `type="button"` e tela de criar conta — _Feito: nenhum `type="submit"` no site; o clique (ou o Enter num campo) pede `requestSubmit()` e a validação de exemplo continua no evento. Criar conta (`#/entrar/cadastro`) pede só nome, e-mail e senha e avisa que um e-mail de confirmação será enviado. 16 testes E2E, incluindo um que garante que não há `type="submit"` nas telas._
 
 - [x] **34.** Ajustes vistos no tema Pacman — _Feito: (1) o login perdia nitidez porque fontes com um só peso (16 temas, entre eles Pacman, Tetris e Bold) ganhavam negrito sintético; agora `--heading-weight` segue o peso que a fonte tem e esses temas usam `font-synthesis-weight: none`; (2) título do login com mais respiro; (3) em janelas baixas o painel da esquerda deixa de ser fixo; (4) loja: ícone do carrinho à esquerda do rótulo, título do produto em até 2 linhas com reticências, preço cheio em cima do preço com desconto quando não cabem juntos, rótulo do botão em até 2 linhas com reticências._
+
+- [ ] **35.** Tema na URL (`?tema=<id>`), para compartilhar o link com o tema aplicado e fazer o botão voltar desfazer a troca.
+- [ ] **36.** Dividir `assets/app.js` em módulos ES por página (sem build).
+- [ ] **37.** Auditoria de temas agendada ou sob demanda no CI, e testes em Firefox e WebKit.
+- [ ] **38.** Página de componentes, alternância claro/escuro por DS, RTL (Urdu) e metatags por página.
 
 ## Ordem sugerida
 
