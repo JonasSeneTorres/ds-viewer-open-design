@@ -29,13 +29,13 @@ assets/
 data/
   systems-raw.json      lista do catálogo (nome, categoria, link) extraída de open-design.ai (entrada do build)
   ds/index.json         lista dos DS na ordem do seletor: nome, categoria, tagline e cores (~68 KB)
-  ds/<id>.json          detalhes de cada DS (carregados só ao abrir a página dele)
+  ds/<id>.<lang>.json   detalhes de cada DS, um arquivo por idioma (en-US e pt-BR), minificado; carregado só ao abrir a página dele (~26 KB em média)
   themes/<id>.css       tema de cada DS: @import das fontes + variáveis CSS (carregado ao aplicar o tema)
 i18n/pt-BR/<slug>.html  traduções do conteúdo de cada DS
 scripts/
   build_ds_fetch.py     baixa a página de cada DS para .cache/pages/
   build_fonts.py        baixa as fontes do Google Fonts usadas pelos temas para assets/fonts/
-  build_ds_details.py   gera data/ds/*.json e data/themes/*.css a partir de .cache/pages/ + i18n/
+  build_ds_details.py   gera data/ds/*.<lang>.json e data/themes/*.css a partir de .cache/pages/ + i18n/
 package.json            scripts npm (ver abaixo)
 docs/historico/         registros antigos (handoff do Open Design, pedidos já concluídos)
 .cache/                 páginas baixadas do open-design.ai (pages/) e cache do Google Fonts
@@ -67,7 +67,7 @@ python -m http.server 8317
 | `npm start` | Sobe o site em http://127.0.0.1:8317 |
 | `npm run data:fetch` | Baixa a página de cada DS de `data/systems-raw.json` para `.cache/pages/` (pula o que já existe) |
 | `npm run data:fonts` | Baixa para `assets/fonts/` as fontes do Google Fonts usadas pelos temas (só o subconjunto `latin`, normal e itálico) e grava `manifest.json`. Rode antes do `data:update` |
-| `npm run data:update` | Regera `data/ds/*.json` e `data/themes/*.css` a partir de `.cache/pages/` e das traduções em `i18n/` |
+| `npm run data:update` | Regera `data/ds/*.<lang>.json` e `data/themes/*.css` a partir de `.cache/pages/` e das traduções em `i18n/` |
 | `npm run check` | Confere a consistência dos dados (`scripts/check_data.py`) e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
 | `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
@@ -103,6 +103,8 @@ Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o q
 Cada DS vira um arquivo `data/themes/<id>.css` com as fontes (`@font-face` apontando para `assets/fonts/`) e as variáveis CSS (`--bg`, `--fg`, `--accent`, `--radius`, `--font-display`…) em `[data-theme="<id>"] { … }`. O `styles.css` só usa essas variáveis, por isso qualquer tema funciona em qualquer página.
 
 O tema padrão já vem linkado no `index.html`; os outros são carregados quando aplicados, e o site só troca de tema depois que o CSS chega, sem "piscar" o visual-base. O `assets/themes.css` guarda só os valores-base, usados se o CSS de um tema falhar.
+
+Cada tema também gera cores de feedback legíveis: `--ok-ink`, `--warn-ink` e `--danger-ink` (a cor do tema misturada com `--fg` até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do alerta) e `--ok-fg`, `--danger-fg` (texto sobre botões preenchidos). Só o tema PlayStation (fundo preto e superfície branca) não atinge 4,5:1 em atenção e sucesso, porque nenhuma cor serve para os dois fundos.
 
 Além disso, cada tema expõe dois tons da paleta, usados no header e no footer:
 
@@ -182,7 +184,7 @@ Verificado no repositório [nexu-io/open-design](https://github.com/nexu-io/open
 - O `manifest.json` de cada um deles declara a origem `OpenDesign curated bundled fixture`, ou seja, material curado e incluído pelo próprio projeto. Nenhum pacote do repositório traz arquivo de licença próprio.
 - Só dois pacotes do Open Design declaram origem externa, e **nenhum está neste catálogo**: `cloudflare-kumo` (integração de [`cloudflare/kumo`](https://github.com/cloudflare/kumo), MIT) e `tom-modern` ([`Tom-Opencart/tom-modern-html-style-rule`](https://github.com/Tom-Opencart/tom-modern-html-style-rule)).
 
-Os dados aqui foram extraídos das páginas do open-design.ai. Em 2026-10-10 eles foram conferidos contra o repositório: os 7.526 tokens (`data/ds/*.json`) são idênticos aos de `design-systems/<id>/tokens.css`, e o texto dos guias coincide com o `DESIGN.md` de cada pacote. A única diferença encontrada vinha do site, que ofusca e-mails (Cloudflare); o build agora os decodifica. Para refazer a conferência: `npm run verify:upstream` (ver o topo de `scripts/verify_upstream.py`). Ao reutilizar um tema fora deste visualizador, consulte o pacote correspondente no repositório do Open Design.
+Os dados aqui foram extraídos das páginas do open-design.ai. Em 2026-10-10 eles foram conferidos contra o repositório: os 7.526 tokens (`data/ds/*.en-US.json`) são idênticos aos de `design-systems/<id>/tokens.css`, e o texto dos guias coincide com o `DESIGN.md` de cada pacote. A única diferença encontrada vinha do site, que ofusca e-mails (Cloudflare); o build agora os decodifica. Para refazer a conferência: `npm run verify:upstream` (ver o topo de `scripts/verify_upstream.py`). Ao reutilizar um tema fora deste visualizador, consulte o pacote correspondente no repositório do Open Design.
 
 ### Fontes
 

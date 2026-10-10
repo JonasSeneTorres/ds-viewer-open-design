@@ -51,9 +51,18 @@ for d in index:
         err(f"index.json · {d['id']}: name inválido")
 
 # ---- arquivos órfãos
-on_disk = {os.path.basename(p)[:-5] for p in glob.glob(os.path.join(DS_DIR, "*.json"))} - {"index"}
+on_disk = set()
+for p in glob.glob(os.path.join(DS_DIR, "*.json")):
+    name = os.path.basename(p)[:-5]
+    if name == "index":
+        continue
+    m = re.fullmatch(r"(.+)\.(en-US|pt-BR)", name)
+    if not m:
+        err(f"{p}: nome fora do padrão <id>.<idioma>.json")
+        continue
+    on_disk.add(m.group(1))
 for extra in sorted(on_disk - set(ids)):
-    err(f"data/ds/{extra}.json existe mas não está no index.json")
+    err(f"data/ds/{extra}.*.json existe mas não está no index.json")
 themes_on_disk = {os.path.basename(p)[:-4] for p in glob.glob(os.path.join(THEME_DIR, "*.css"))}
 for extra in sorted(themes_on_disk - set(ids)):
     err(f"data/themes/{extra}.css existe mas não está no index.json")
@@ -61,7 +70,7 @@ for extra in sorted(themes_on_disk - set(ids)):
 # ---- cada DS
 font_refs = set()
 for ds_id in ids:
-    detail = os.path.join(DS_DIR, f"{ds_id}.json")
+    detail = os.path.join(DS_DIR, f"{ds_id}.en-US.json")  # tokens, paletas e fontes são iguais nos dois idiomas
     theme = os.path.join(THEME_DIR, f"{ds_id}.css")
     d = load(detail) if os.path.exists(detail) else err(f"{detail}: não existe")
     css = None
@@ -75,6 +84,9 @@ for ds_id in ids:
             err(f"{theme}: não define [data-theme=\"{ds_id}\"]")
         if re.search(r"@import\s+url\(", css):
             err(f"{theme}: ainda usa @import (as fontes devem ser locais; rode npm run data:fonts)")
+        for name in ("ok", "warn", "danger"):
+            if f"--{name}-ink:" not in css:
+                err(f"{theme}: falta --{name}-ink (texto de feedback legível; rode npm run data:update)")
         for f in re.findall(r"assets/fonts/([\w.-]+)", css):
             font_refs.add(f)
             if not os.path.exists(os.path.join(FONT_DIR, f)):
@@ -103,11 +115,21 @@ for ds_id in ids:
                 err(f"{detail}: paleta {p.get('name')!r} degrau {c.get('step')} com hex inválido")
     if not d.get("sections"):
         err(f"{detail}: sem seções do guia")
-    for s in d.get("sections", []):
-        # seção só com título (corpo vazio no original) é válida
-        body_empty = not any(x.get("message") for x in s.get("html", []))
-        if not has_langs(s.get("title")) or not (body_empty or has_langs(s.get("html"))):
-            err(f"{detail} · {s.get('id')}: seção sem {' e '.join(LANGS)}")
+
+    # cada idioma tem o seu arquivo; as seções precisam estar traduzidas (corpo vazio no original é válido)
+    for lang in LANGS:
+        path = os.path.join(DS_DIR, f"{ds_id}.{lang}.json")
+        dl = d if lang == "en-US" else (load(path) if os.path.exists(path) else err(f"{path}: não existe"))
+        if not dl:
+            continue
+        if lang == "pt-BR" and dl.get("id") != ds_id:
+            err(f"{path}: id interno diferente do nome do arquivo")
+        for s_ in dl.get("sections", []):
+            title_ok = any(x.get("lang") == lang for x in s_.get("title", []))
+            body_empty = not any(x.get("message") for x in s_.get("html", []))
+            body_ok = body_empty or any(x.get("lang") == lang for x in s_.get("html", []))
+            if not (title_ok and body_ok):
+                err(f"{path} · {s_.get('id')}: seção sem texto em {lang}")
 
 # ---- fontes
 if os.path.isdir(FONT_DIR):

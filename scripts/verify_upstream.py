@@ -1,4 +1,4 @@
-"""Compara os tokens de data/ds/*.json com o tokens.css do repositório do Open Design.
+"""Compara os tokens de data/ds/*.en-US.json com o tokens.css do repositório do Open Design.
 
 Serve para sustentar a afirmação do README de que os temas vêm "no estado" da documentação.
 
@@ -35,9 +35,7 @@ def upstream_vars(path):
 checked = same = 0
 problems = []
 skipped = []
-for path in sorted(glob.glob(os.path.join("data", "ds", "*.json"))):
-    if path.endswith("index.json"):
-        continue
+for path in sorted(glob.glob(os.path.join("data", "ds", "*.en-US.json"))):  # tokens iguais nos dois idiomas
     d = json.load(open(path, encoding="utf-8"))
     ds_id = d["id"]
     css = os.path.join(UP, ds_id, "tokens.css")

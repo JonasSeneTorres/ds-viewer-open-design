@@ -476,22 +476,22 @@ main:focus {
 
 .btn-danger {
   background: var(--danger);
-  color: #fff;
+  color: var(--danger-fg, #fff);
 }
 
 .btn-danger:hover {
   background: color-mix(in oklab, var(--danger) 82%, black);
-  color: #fff;
+  color: var(--danger-fg, #fff);
 }
 
 .btn-success {
   background: var(--ok);
-  color: #fff;
+  color: var(--ok-fg, #fff);
 }
 
 .btn-success:hover {
   background: color-mix(in oklab, var(--ok) 82%, black);
-  color: #fff;
+  color: var(--ok-fg, #fff);
 }
 
 .btn-small {
@@ -833,13 +833,13 @@ th.num {
 }
 
 .pill-estável {
-  color: var(--ok);
+  color: var(--ok-ink, var(--ok));
   background: var(--ok-weak);
   border-color: color-mix(in oklab, var(--ok) 30%, transparent);
 }
 
 .pill-beta {
-  color: var(--warn);
+  color: var(--warn-ink, var(--warn));
   background: var(--warn-weak);
   border-color: color-mix(in oklab, var(--warn) 30%, transparent);
 }
@@ -851,7 +851,7 @@ th.num {
 }
 
 .pill-depreciado {
-  color: var(--danger);
+  color: var(--danger-ink, var(--danger));
   background: var(--danger-weak);
   border-color: color-mix(in oklab, var(--danger) 30%, transparent);
 }
@@ -944,7 +944,7 @@ dialog::backdrop {
 
 .field .error {
   font-size: 0.8rem;
-  color: var(--danger);
+  color: var(--danger-ink, var(--danger));
   font-weight: 600;
 }
 
@@ -1140,13 +1140,13 @@ legend {
 
 .form-alert.success {
   background: var(--ok-weak);
-  color: var(--ok);
+  color: var(--ok-ink, var(--ok));
   border-color: color-mix(in oklab, var(--ok) 35%, transparent);
 }
 
 .form-alert.error {
   background: var(--danger-weak);
-  color: var(--danger);
+  color: var(--danger-ink, var(--danger));
   border-color: color-mix(in oklab, var(--danger) 35%, transparent);
 }
 
@@ -1974,7 +1974,7 @@ progress {
 }
 
 .empty.is-error strong {
-  color: var(--danger);
+  color: var(--danger-ink, var(--danger));
 }
 
 .state-switch {

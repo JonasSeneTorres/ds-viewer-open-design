@@ -4,7 +4,7 @@ Uso:
     python scripts/build_ds_details.py                           todos (reescreve data/ds/index.json)
     python scripts/build_ds_details.py --template <slug> [lang]  modelo de tradução em i18n/<lang>/
 
-Para cada DS: data/ds/<id>.json (tokens, paletas 50–950 derivadas quando o DS não define,
+Para cada DS: data/ds/<id>.<lang>.json (um por idioma; tokens, paletas 50–950 derivadas quando o DS não define,
 fontes e como instalar, guia em HTML sanitizado com as traduções de i18n/) e
 data/themes/<id>.css (fontes + variáveis CSS do tema). O índice data/ds/index.json
 leva só o que a listagem e o seletor usam.
@@ -101,6 +101,66 @@ def ink_for(hx):
     # escolhe a tinta com maior contraste WCAG: (claro + 0.05) / (escuro + 0.05)
     bg, dark = lum(hx), lum("#111111")
     return "#111111" if (bg + 0.05) / (dark + 0.05) >= 1.05 / (bg + 0.05) else "#ffffff"
+
+
+def parse_hex(v):
+    """Devolve `v` se for um hex (#rgb ou #rrggbb); None para qualquer outro formato de cor."""
+    v = (v or "").strip()
+    return v if re.fullmatch(r"#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})", v) else None
+
+
+def to_oklab(rgb):
+    r, g, b = (lin(c) for c in rgb)
+    l = (0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b) ** (1 / 3)
+    m = (0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b) ** (1 / 3)
+    s_ = (0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b) ** (1 / 3)
+    return (
+        0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s_,
+        1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s_,
+        0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s_,
+    )
+
+
+def from_oklab(lab):
+    L, a, b = lab
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s_ = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    return tuple(delin(c) for c in (
+        4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s_,
+        -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s_,
+        -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s_,
+    ))
+
+
+def mix_oklab(a_rgb, b_rgb, t):
+    """Mistura como o color-mix(in oklab) do CSS: `t` é a parte de b."""
+    A, B = to_oklab(a_rgb), to_oklab(b_rgb)
+    return from_oklab(tuple(A[i] * (1 - t) + B[i] * t for i in range(3)))
+
+
+def luminance(rgb):
+    r, g, b = (lin(c) for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast(a_rgb, b_rgb):
+    hi, lo = sorted((luminance(a_rgb), luminance(b_rgb)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def feedback_ink(color, fg, backgrounds, target=4.6):
+    """Menor % de `fg` misturado em `color` que dá contraste >= target sobre todos os fundos."""
+    c, f = hex_to_rgb(color), hex_to_rgb(fg)
+    best, best_min = 0, 0.0
+    for pct in range(0, 101, 5):
+        rgb = mix_oklab(c, f, pct / 100)
+        worst = min(contrast(rgb, bg) for bg in backgrounds)
+        if worst >= target:
+            return pct
+        if worst > best_min:  # tema com fundo e superfície opostos (ex.: preto e branco): melhor compromisso
+            best, best_min = pct, worst
+    return best
 
 
 def build_scale(base, anchors=()):
@@ -662,7 +722,24 @@ def theme_vars(tokens, palettes, roles, fonts):
         if hx:
             shades[var] = hx
             shades[var + "-fg"] = ink_for(hx)
-    return {**shades, **{
+    # Texto de feedback (erro, sucesso, atenção) legível em qualquer tema: mistura a cor com --fg
+    # até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do próprio alerta.
+    ink = {}
+    fg_hex, bg_hex = parse_hex(g("--fg", "#171717")), parse_hex(g("--bg", "#ffffff"))
+    sf_hex = parse_hex(g("--surface", g("--bg", "#ffffff"))) or bg_hex
+    for name, key, default, weak in (("ok", "--success", "#16a34a", 0.12), ("warn", "--warn", "#eab308", 0.14),
+                                     ("danger", "--danger", "#dc2626", 0.12)):
+        col = parse_hex(g(key, default))
+        if col and fg_hex and bg_hex:
+            bg_rgb = hex_to_rgb(bg_hex)
+            bgs = [bg_rgb, hex_to_rgb(sf_hex), mix_oklab(bg_rgb, hex_to_rgb(col), weak)]
+            pct = feedback_ink(col, fg_hex, bgs)
+        else:
+            pct = 40  # cor em formato não-hex: mistura fixa
+        ink[f"--{name}-ink"] = f"var(--{name})" if pct == 0 else f"color-mix(in oklab, var(--{name}) {100 - pct}%, var(--fg))"
+        if col:
+            ink[f"--{name}-fg"] = ink_for(col)  # texto sobre o botão preenchido com a cor
+    return {**shades, **ink, **{
         "--bg": g("--bg", "#ffffff"),
         "--surface": g("--surface", g("--bg", "#ffffff")),
         "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
@@ -750,6 +827,27 @@ def font_css(css_url):
     return out
 
 
+def pick_lang(v, lang):
+    """Mantém só o idioma pedido nos campos [{lang, message}]; sem ele, cai para o primeiro (en-US)."""
+    if isinstance(v, list):
+        if v and all(isinstance(x, dict) and "lang" in x and "message" in x for x in v):
+            return [x for x in v if x["lang"] == lang] or v[:1]
+        return [pick_lang(x, lang) for x in v]
+    if isinstance(v, dict):
+        return {k: pick_lang(x, lang) for k, x in v.items()}
+    return v
+
+
+def write_ds_json(ds_id, data):
+    """data/ds/<id>.<lang>.json: um arquivo por idioma, minificado (a página só usa um idioma por vez)."""
+    for lang in ("en-US", "pt-BR"):
+        path = os.path.join("data", "ds", f"{ds_id}.{lang}.json")
+        json.dump(pick_lang(data, lang), open(path, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    old = os.path.join("data", "ds", f"{ds_id}.json")
+    if os.path.exists(old):
+        os.remove(old)
+
+
 def write_theme_css(ds_id, theme_vars_, fonts):
     """data/themes/<id>.css: fontes (@font-face locais, ou @import se faltar o download) + variáveis do tema."""
     os.makedirs(os.path.join("data", "themes"), exist_ok=True)
@@ -814,7 +912,7 @@ def build_one(ds_id, page_path, entry, slug):
         "vars": theme_vars(tokens, palettes, roles, fonts),
         "sections": sections,
     }
-    json.dump(data, open(os.path.join("data", "ds", f"{ds_id}.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    write_ds_json(ds_id, data)
     write_theme_css(ds_id, data["vars"], fonts)
     p = entry.get("preview", {})
     pal = {x["name"]: x for x in palettes}

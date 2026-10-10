@@ -51,6 +51,12 @@
   --primary-500-fg: #111111;
   --neutral-400: #ababab;
   --neutral-400-fg: #111111;
+  --ok-ink: color-mix(in oklab, var(--ok) 90%, var(--fg));
+  --ok-fg: #ffffff;
+  --warn-ink: color-mix(in oklab, var(--warn) 65%, var(--fg));
+  --warn-fg: #111111;
+  --danger-ink: var(--danger);
+  --danger-fg: #ffffff;
   --bg: #ffffff;
   --surface: #f2f2f2;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);

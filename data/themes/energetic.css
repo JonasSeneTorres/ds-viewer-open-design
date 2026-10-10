@@ -57,6 +57,12 @@
 [data-theme="energetic"] {
   --primary-500: #ea580c;
   --primary-500-fg: #111111;
+  --ok-ink: color-mix(in oklab, var(--ok) 70%, var(--fg));
+  --ok-fg: #111111;
+  --warn-ink: color-mix(in oklab, var(--warn) 50%, var(--fg));
+  --warn-fg: #111111;
+  --danger-ink: color-mix(in oklab, var(--danger) 75%, var(--fg));
+  --danger-fg: #111111;
   --bg: #fff8d7;
   --surface: #ffffff;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);

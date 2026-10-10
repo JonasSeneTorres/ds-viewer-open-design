@@ -262,13 +262,13 @@
 
   // ------------------------------------------------------------------
   // Dados de design systems: data/ds/index.json (lista na ordem do combobox:
-  // padrão primeiro, depois as categorias) e data/ds/<id>.json (detalhes,
+  // padrão primeiro, depois as categorias) e data/ds/<id>.<lang>.json (detalhes,
   // carregados só quando a página do DS é aberta) e data/themes/<id>.css (tema). Gerados por
   // scripts/build_ds_details.py a partir do open-design.ai.
   // ------------------------------------------------------------------
 
   var THEMES = [];              // todos os design systems aplicáveis, na ordem do combobox
-  var DS_DATA = {};             // detalhes já carregados (data/ds/<id>.json)
+  var DS_DATA = {};             // detalhes já carregados, por id e idioma (data/ds/<id>.<lang>.json)
   var CATALOG = [];             // THEMES sem o padrão: {id,name,category,tagline,swatches}
   var CATALOG_CATEGORIES = [];
 
@@ -301,12 +301,13 @@
       });
   }
 
-  // Detalhes de um DS (data/ds/<id>.json), com cache.
+  // Detalhes de um DS no idioma atual (data/ds/<id>.<lang>.json), com cache por idioma.
   function loadDsDetail(id) {
-    if (DS_DATA[id]) return Promise.resolve(DS_DATA[id]);
-    return fetch("data/ds/" + encodeURIComponent(id) + ".json", { credentials: "same-origin" })
+    var key = id + "|" + lang;
+    if (DS_DATA[key]) return Promise.resolve(DS_DATA[key]);
+    return fetch("data/ds/" + encodeURIComponent(id) + "." + lang + ".json", { credentials: "same-origin" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (d) { DS_DATA[id] = d; return d; });
+      .then(function (d) { DS_DATA[key] = d; return d; });
   }
 
   var DEFAULT_THEME = "padrao";
@@ -1549,7 +1550,7 @@
   }
 
   function renderDsFull(id) {
-    var d = DS_DATA[id];
+    var d = DS_DATA[id + "|" + lang];
     var atmos = d.sections[0];
     var rest = d.sections.slice(1);
     return (
@@ -1583,7 +1584,7 @@
   }
 
   function renderDSDetail(id) {
-    return DS_DATA[id] ? renderDsFull(id) : notFoundHTML();
+    return DS_DATA[id + "|" + lang] ? renderDsFull(id) : notFoundHTML();
   }
 
   function initDSDetail() {

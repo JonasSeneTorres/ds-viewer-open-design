@@ -43,6 +43,10 @@ test("página de um DS abre com o próprio tema", async ({ page }) => {
   await expect(page.locator("#tokens")).toBeVisible();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "bugatti");
   await expect(page).toHaveTitle(/Bugatti/);
+  // o conteúdo vem de um JSON por idioma: trocar o idioma na página recarrega o outro arquivo
+  await expect(page.locator(".ds-full .kicker")).toContainText("Automotivo");
+  await page.click("#langBtn");
+  await expect(page.locator(".ds-full .kicker")).toContainText("Automotive");
   expect(problems).toEqual([]);
 });
 
