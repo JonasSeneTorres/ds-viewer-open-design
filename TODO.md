@@ -53,6 +53,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **28.** Cabeçalho com Início, Informações do tema e Exemplos (menu), e duas páginas novas: Dashboard genérico em SVG e Catálogo de loja com categorias — _Feito. "Informações do tema" segue o tema escolhido no seletor. O menu Exemplos abre com teclado (setas, Esc) e marca a página atual. Dashboard: 4 indicadores com minigráfico, área, barras, rosca, anel, atividade e rascunho rápido. Loja: 12 produtos em 5 categorias, ordenação e carrinho. 3 testes E2E novos (12 no total)._
 
+- [x] **29.** Barra lateral ilustrativa no blog — _Feito: busca, tópicos, últimos artigos, grade de botões de redes sociais, newsletter e nuvem de tags (16 tags em 5 tamanhos), na lista do blog e nos artigos. Nada funciona (busca, links e assinatura são de enfeite)._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16

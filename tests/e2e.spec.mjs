@@ -65,6 +65,11 @@ test("seletor de temas busca, aplica e lembra a escolha", async ({ page }) => {
 test("blog lista artigos e abre um artigo com a barra lateral", async ({ page }) => {
   await page.goto("/#/blog");
   await expect(page.locator(".article-card")).toHaveCount(5);
+  // barra lateral ilustrativa: busca, tópicos, últimos artigos, redes, newsletter e nuvem de tags
+  await expect(page.locator(".blog-aside .aside-block")).toHaveCount(5);
+  await expect(page.locator(".blog-aside .social-btn")).toHaveCount(6);
+  await expect(page.locator(".blog-aside .tag-cloud .tag").first()).toBeVisible();
+  await expect(page.locator(".blog-aside .aside-newsletter input")).toBeVisible();
   await page.locator(".featured").click();
   await expect(page).toHaveURL(/#\/artigo\//);
   await expect(page.locator(".blog-aside")).toBeVisible();

@@ -11,8 +11,8 @@ Páginas:
 | Rota | Conteúdo |
 |---|---|
 | `#/` | Início: hero e o catálogo de design systems, com busca e filtros por categoria (o Padrão vem primeiro; o tema ativo fica destacado) |
-| `#/blog` | Blog: destaque e lista de artigos de exemplo |
-| `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
+| `#/blog` | Blog: destaque e lista de artigos de exemplo, com barra lateral ilustrativa (busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags; nada nela funciona) |
+| `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com a mesma barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
 | `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia |
 | `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados |
