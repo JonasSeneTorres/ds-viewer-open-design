@@ -1,0 +1,63 @@
+<!-- design-system-airtable · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Híbrido de planilha e banco de dados. Estética de dados estruturados, colorida e amigável.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site da Airtable é uma plataforma limpa e amigável ao mundo corporativo, que comunica &quot;simplicidade sofisticada&quot; por meio de uma tela branca com texto azul-marinho profundo (<code>#181d26</code>) e o Airtable Blue (<code>#1b61c9</code>) como principal destaque interativo. A família tipográfica Haas (variantes de display + texto) cria um sistema tipográfico de precisão suíça, com espaçamento entre letras positivo em todo lugar.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Tela branca com texto azul-marinho profundo (<code>#181d26</code>)</li><li>Airtable Blue (<code>#1b61c9</code>) como cor principal de CTAs e links</li><li>Sistema de duas fontes: Haas + Haas Groot Disp</li><li>Espaçamento entre letras positivo no texto de corpo (0.08px–0.28px)</li><li>Botões com raio de 12px, 16px–32px nos cards</li><li>Sombra em várias camadas tingida de azul: <code>rgba(45,127,249,0.28) 0px 1px 3px</code></li><li>Tokens semânticos de tema: variáveis CSS nomeadas como <code>--theme_*</code></li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Primárias</h3>
+<ul><li><strong>Deep Navy</strong> (<code>#181d26</code>): texto principal</li><li><strong>Airtable Blue</strong> (<code>#1b61c9</code>): botões de CTA, links</li><li><strong>White</strong> (<code>#ffffff</code>): superfície principal</li><li><strong>Spotlight</strong> (<code>rgba(249,252,255,0.97)</code>): <code>--theme_button-text-spotlight</code></li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Success Green</strong> (<code>#006400</code>): <code>--theme_success-text</code></li><li><strong>Weak Text</strong> (<code>rgba(4,14,32,0.69)</code>): <code>--theme_text-weak</code></li><li><strong>Secondary Active</strong> (<code>rgba(7,12,20,0.82)</code>): <code>--theme_button-text-secondary-active</code></li></ul>
+<h3>Neutras</h3>
+<ul><li><strong>Dark Gray</strong> (<code>#333333</code>): texto secundário</li><li><strong>Mid Blue</strong> (<code>#254fad</code>): variante azul de link/destaque</li><li><strong>Border</strong> (<code>#e0e2e6</code>): bordas de cards</li><li><strong>Light Surface</strong> (<code>#f8fafc</code>): superfície sutil</li></ul>
+<h3>Sombras</h3>
+<ul><li><strong>Tingida de azul</strong> (<code>rgba(0,0,0,0.32) 0px 0px 1px, rgba(0,0,0,0.08) 0px 0px 2px, rgba(45,127,249,0.28) 0px 1px 3px, rgba(0,0,0,0.06) 0px 0px 0px 0.5px inset</code>)</li><li><strong>Suave</strong> (<code>rgba(15,48,106,0.05) 0px 0px 20px</code>)</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Principal</strong>: <code>Haas</code>, fallbacks: <code>-apple-system, system-ui, Segoe UI, Roboto</code></li><li><strong>Display</strong>: <code>Haas Groot Disp</code>, fallback: <code>Haas</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th></tr></thead><tbody><tr><td>Display Hero</td><td>Haas</td><td>48px</td><td>400</td><td>1.15</td><td>normal</td></tr><tr><td>Display negrito</td><td>Haas Groot Disp</td><td>48px</td><td>900</td><td>1.50</td><td>normal</td></tr><tr><td>Título de seção</td><td>Haas</td><td>40px</td><td>400</td><td>1.25</td><td>normal</td></tr><tr><td>Subtítulo</td><td>Haas</td><td>32px</td><td>400–500</td><td>1.15–1.25</td><td>normal</td></tr><tr><td>Título de card</td><td>Haas</td><td>24px</td><td>400</td><td>1.20–1.30</td><td>0.12px</td></tr><tr><td>Destaque</td><td>Haas</td><td>20px</td><td>400</td><td>1.25–1.50</td><td>0.1px</td></tr><tr><td>Corpo</td><td>Haas</td><td>18px</td><td>400</td><td>1.35</td><td>0.18px</td></tr><tr><td>Corpo médio</td><td>Haas</td><td>16px</td><td>500</td><td>1.30</td><td>0.08–0.16px</td></tr><tr><td>Botão</td><td>Haas</td><td>16px</td><td>500</td><td>1.25–1.30</td><td>0.08px</td></tr><tr><td>Legenda</td><td>Haas</td><td>14px</td><td>400–500</td><td>1.25–1.35</td><td>0.07–0.28px</td></tr></tbody></table>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<ul><li><strong>Azul primário</strong>: <code>#1b61c9</code>, texto branco, padding de 16px 24px, raio de 12px</li><li><strong>Branco</strong>: fundo branco, texto <code>#181d26</code>, raio de 12px, borda branca de 1px</li><li><strong>Consentimento de cookies</strong>: fundo <code>#1b61c9</code>, raio de 2px (canto vivo)</li></ul>
+<h3>Cards: <code>1px solid #e0e2e6</code>, raio de 16px–24px</h3>
+<h3>Campos: estilo Haas padrão</h3>
+</section>
+
+<section data-section="layout">
+<h2>Layout</h2>
+<ul><li>Espaçamento: 1–48px (base de 8px)</li><li>Raio: 2px (pequeno), 12px (botões), 16px (cards), 24px (seções), 32px (grande), 50% (círculos)</li></ul>
+</section>
+
+<section data-section="depth">
+<h2>Profundidade</h2>
+<ul><li>Sistema de sombras em várias camadas tingido de azul</li><li>Ambiente suave: <code>rgba(15,48,106,0.05) 0px 0px 20px</code></li></ul>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça: use o Airtable Blue nos CTAs, Haas com tracking positivo, botões com raio de 12px</h3>
+<h3>Não faça: abrir mão do espaçamento entre letras positivo, usar sombras pesadas</h3>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<p>Breakpoints: 425–1664px (23 breakpoints)</p>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<ul><li>Texto: Deep Navy (<code>#181d26</code>)</li><li>CTA: Airtable Blue (<code>#1b61c9</code>)</li><li>Fundo: White (<code>#ffffff</code>)</li><li>Borda: <code>#e0e2e6</code></li></ul>
+</section>

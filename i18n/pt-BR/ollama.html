@@ -1,0 +1,113 @@
+<!-- design-system-ollama · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Rode LLMs localmente. Terminal em primeiro lugar, simplicidade monocromática.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>A interface do Ollama é o minimalismo radical levado à sua conclusão lógica — um vazio de branco puro em que o conteúdo flutua sem decoração, sombra ou cor. A filosofia de design espelha o próprio produto: tire tudo que é desnecessário até restar só a ferramenta essencial. É o equivalente digital de um objeto de Dieter Rams — cada pixel merece seu lugar, e a ausência de design É o design.</p>
+<p>A página inteira existe em tons de cinza puros. Não há nenhuma cor cromática na interface — nem azul de marca, nem verde de destaque, nem vermelho semântico. As únicas cores que existem são tons entre o preto puro (<code>#000000</code>) e o branco puro (<code>#ffffff</code>), criando um ambiente monocromático que deixa o modelo mental do usuário sobre &quot;modelos abertos&quot; sem a coloração de uma opinião de marca. O mascote do Ollama, uma lhama desenhada em traço preto simples, é a única ilustração — e até ela é monocromática.</p>
+<p>O que torna o Ollama distinto é a combinação da SF Pro Rounded (a fonte de sistema arredondada da Apple) com uma geometria exclusivamente em pílula (raio de 9999px em tudo que é interativo). Letras arredondadas + botões arredondados + contêineres arredondados criam uma &quot;linguagem da suavidade&quot; coesa, que faz uma ferramenta de CLI para desenvolvedores parecer acessível e amigável em vez de intimidadora. É minimalismo com calor — não o minimalismo frio de grid suíço, mas aquele em que as arestas são literalmente suavizadas.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Tela branca pura sem nenhuma cor cromática — totalmente em tons de cinza</li><li>Títulos em SF Pro Rounded criando uma suavidade característica, à Apple</li><li>Sistema binário de raios: 12px (contêineres) ou 9999px (tudo que é interativo)</li><li>Zero sombras — a profundidade vem exclusivamente de mudanças de cor de fundo e de bordas</li><li>Geometria em pílula em todos os elementos interativos (botões, abas, campos, tags)</li><li>A lhama do Ollama como única ilustração — traço preto, sem cor</li><li>Contenção extrema de conteúdo — a página inicial é curta, focada e sem poluição</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Primárias</h3>
+<ul><li><strong>Pure Black</strong> (<code>#000000</code>): títulos principais, links principais e o texto mais escuro. A única &quot;cor&quot; que exige atenção.</li><li><strong>Near Black</strong> (<code>#262626</code>): texto de botões sobre superfícies claras, peso de título secundário.</li><li><strong>Darkest Surface</strong> (<code>#090909</code>): a superfície mais escura possível — quase indistinguível do preto puro, usada no rodapé ou em contêineres escuros.</li></ul>
+<h3>Superfície e fundo</h3>
+<ul><li><strong>Pure White</strong> (<code>#ffffff</code>): o fundo principal da página — não off-white, não creme, branco puro. Superfícies de botões das ações secundárias.</li><li><strong>Snow</strong> (<code>#fafafa</code>): a menor distinção de superfície possível em relação ao branco — usada em fundos de seções e contêineres quase sem elevação.</li><li><strong>Light Gray</strong> (<code>#e5e5e5</code>): fundos de botões, bordas e a principal cor de contenção. A neutra burro de carga.</li></ul>
+<h3>Neutras e texto</h3>
+<ul><li><strong>Stone</strong> (<code>#737373</code>): texto de corpo secundário, links do rodapé e conteúdo sem ênfase. O principal tom &quot;esmaecido&quot;.</li><li><strong>Mid Gray</strong> (<code>#525252</code>): texto secundário enfatizado, um pouco mais escuro que o Stone.</li><li><strong>Silver</strong> (<code>#a3a3a3</code>): texto terciário, placeholders e metadados bem sem ênfase.</li><li><strong>Button Text Dark</strong> (<code>#404040</code>): específico para o texto de botões sobre superfície branca.</li></ul>
+<h3>Semânticas e destaques</h3>
+<ul><li><strong>Ring Blue</strong> (<code>#3b82f6</code> a 50%): a ÚNICA cor que não é cinza em todo o sistema — o anel de foco padrão do Tailwind, usado exclusivamente para acessibilidade por teclado. Nunca aparece no fluxo normal de interação.</li><li><strong>Border Light</strong> (<code>#d4d4d4</code>): um cinza um pouco mais escuro para as bordas dos botões sobre superfície branca.</li></ul>
+<h3>Sistema de gradientes</h3>
+<ul><li><strong>Nenhum.</strong> O Ollama não usa absolutamente nenhum gradiente. A separação visual vem de blocos de cor chapados e bordas de um único pixel. É uma escolha de design deliberada, quase filosófica.</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Família tipográfica</h3>
+<ul><li><strong>Display</strong>: <code>SF Pro Rounded</code>, com fallbacks: <code>system-ui, -apple-system, system-ui</code></li><li><strong>Corpo / interface</strong>: <code>ui-sans-serif</code>, com fallbacks: <code>system-ui, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji</code></li><li><strong>Monoespaçada</strong>: <code>ui-monospace</code>, com fallbacks: <code>SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New</code></li></ul>
+<p><em>Nota: a SF Pro Rounded é a fonte de sistema da Apple — é renderizada com terminais arredondados no macOS/iOS e cai para a sem serifa do sistema nas outras plataformas.</em></p>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display / hero</td><td>SF Pro Rounded</td><td>48px (3rem)</td><td>500</td><td>1.00 (justa)</td><td>normal</td><td>Impacto máximo, letras arredondadas</td></tr><tr><td>Título de seção</td><td>SF Pro Rounded</td><td>36px (2.25rem)</td><td>500</td><td>1.11 (justa)</td><td>normal</td><td>Títulos de seções de recursos</td></tr><tr><td>Subtítulo</td><td>SF Pro Rounded / ui-sans-serif</td><td>30px (1.88rem)</td><td>400–500</td><td>1.20 (justa)</td><td>normal</td><td>Títulos de cards, nomes de recursos</td></tr><tr><td>Título de card</td><td>ui-sans-serif</td><td>24px (1.5rem)</td><td>400</td><td>1.33</td><td>normal</td><td>Títulos de ênfase média</td></tr><tr><td>Corpo grande</td><td>ui-sans-serif</td><td>18px (1.13rem)</td><td>400–500</td><td>1.56</td><td>normal</td><td>Descrições do hero, texto de botões</td></tr><tr><td>Corpo / link</td><td>ui-sans-serif</td><td>16px (1rem)</td><td>400–500</td><td>1.50</td><td>normal</td><td>Texto de corpo padrão, navegação</td></tr><tr><td>Legenda</td><td>ui-sans-serif</td><td>14px (0.88rem)</td><td>400</td><td>1.43</td><td>normal</td><td>Metadados, descrições</td></tr><tr><td>Pequeno</td><td>ui-sans-serif</td><td>12px (0.75rem)</td><td>400</td><td>1.33</td><td>normal</td><td>O menor texto sem serifa</td></tr><tr><td>Corpo de código</td><td>ui-monospace</td><td>16px (1rem)</td><td>400</td><td>1.50</td><td>normal</td><td>Código inline, comandos</td></tr><tr><td>Legenda de código</td><td>ui-monospace</td><td>14px (0.88rem)</td><td>400</td><td>1.43</td><td>normal</td><td>Trechos de código, secundário</td></tr><tr><td>Código pequeno</td><td>ui-monospace</td><td>12px (0.75rem)</td><td>400–700</td><td>1.63</td><td>normal</td><td>Tags, rótulos</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Display arredondado, corpo padrão</strong>: a SF Pro Rounded carrega os títulos de display com seus terminais arredondados característicos, enquanto a sem serifa padrão do sistema cuida de todo o texto de corpo. A fonte arredondada É a expressão da marca.</li><li><strong>Contenção de peso</strong>: só dois pesos importam — 400 (regular) no corpo e 500 (médio) nos títulos. Nada de negrito, leve ou black. Essa contenção extrema reforça a filosofia minimalista.</li><li><strong>Display justo, corpo confortável</strong>: os títulos se comprimem para altura de linha 1.0, enquanto o texto de corpo relaxa para 1.43–1.56. O contraste cria uma hierarquia clara sem precisar de contraste de peso.</li><li><strong>Monoespaçada como identidade de desenvolvedor</strong>: blocos de código e comandos de terminal aparecem por toda parte como conteúdo principal, usando a pilha monoespaçada do sistema.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Pílula cinza (primário)</strong></p>
+<ul><li>Fundo: Light Gray (<code>#e5e5e5</code>)</li><li>Texto: Near Black (<code>#262626</code>)</li><li>Padding: 10px 24px</li><li>Borda: fina e sólida em Light Gray (<code>1px solid #e5e5e5</code>)</li><li>Raio: em pílula (9999px)</li><li>O botão de ação principal — discreto, em tons de cinza, sempre em pílula</li></ul>
+<p><strong>Pílula branca (secundário)</strong></p>
+<ul><li>Fundo: Pure White (<code>#ffffff</code>)</li><li>Texto: Button Text Dark (<code>#404040</code>)</li><li>Padding: 10px 24px</li><li>Borda: fina e sólida em Border Light (<code>1px solid #d4d4d4</code>)</li><li>Raio: em pílula (9999px)</li><li>Ação secundária — visualmente mais leve que a pílula cinza</li></ul>
+<p><strong>Pílula preta (CTA)</strong></p>
+<ul><li>Fundo: Pure Black (<code>#000000</code>)</li><li>Texto: Pure White (<code>#ffffff</code>)</li><li>Raio: em pílula (9999px)</li><li>Inferido a partir dos botões &quot;Create account&quot; e &quot;Explore&quot;</li><li>Ênfase máxima — preto sobre branco</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Fundo: Pure White ou Snow (<code>#fafafa</code>)</li><li>Borda: fina e sólida em Light Gray (<code>1px solid #e5e5e5</code>) quando necessário</li><li>Raio: confortavelmente arredondado (12px) — o ÚNICO raio que não é pílula no sistema</li><li>Sombra: <strong>nenhuma</strong> — zero sombras em qualquer elemento</li><li>Hover: provavelmente uma leve mudança de fundo ou escurecimento da borda</li></ul>
+<h3>Campos e formulários</h3>
+<ul><li>Fundo: Pure White</li><li>Borda: <code>1px solid #e5e5e5</code></li><li>Raio: em pílula (9999px) — campos de busca e de formulário são em pílula</li><li>Foco: anel Ring Blue (<code>#3b82f6</code> a 50%)</li><li>Placeholder: Silver (<code>#a3a3a3</code>)</li></ul>
+<h3>Navegação</h3>
+<ul><li>Navegação horizontal limpa, com elementos mínimos</li><li>Logo: ícone da lhama do Ollama + logotipo em preto</li><li>Links: &quot;Models&quot;, &quot;Docs&quot;, &quot;Pricing&quot; em preto, 16px, peso 400</li><li>Barra de busca: em pílula, com texto de placeholder</li><li>À direita: link &quot;Sign in&quot; + CTA preto em pílula &quot;Download&quot;</li><li>Sem bordas, sem fundo — navegação transparente sobre a página branca</li></ul>
+<h3>Tratamento de imagens</h3>
+<ul><li>O mascote, a lhama do Ollama, é a única ilustração — traço preto sobre branco</li><li>Capturas de código/saídas de terminal exibidas em contêineres com borda (raio de 12px)</li><li>Logos de integrações exibidos como ícones simples numa grade</li><li>Sem fotografias, sem gradientes, sem imagens decorativas</li></ul>
+<h3>Componentes característicos</h3>
+<p><strong>Pílulas de abas</strong></p>
+<ul><li>Seletores de abas em pílula (ex.: &quot;Coding&quot; | &quot;OpenClaw&quot;)</li><li>Ativa: fundo Light Gray; inativa: transparente</li><li>Todas em pílula (9999px)</li></ul>
+<p><strong>Tags de modelos</strong></p>
+<ul><li>Pequenas tags em pílula (ex.: &quot;ollama&quot;, &quot;launch&quot;, &quot;claude&quot;)</li><li>Fundo Light Gray, texto escuro</li><li>A principal forma de navegar pelos modelos</li></ul>
+<p><strong>Bloco de comando de terminal</strong></p>
+<ul><li>Código monoespaçado mostrando comandos <code>ollama run</code></li><li>Estilo mínimo — só um contêiner com borda e raio de 12px</li><li>Botão de copiar integrado</li></ul>
+<p><strong>Grade de integrações</strong></p>
+<ul><li>Grade de logos de integrações (Codex, Claude Code, OpenCode, LangChain etc.)</li><li>Cada um numa pílula ou card com borda, com ícone + nome</li><li>Abas por categoria (Coding, Documents &amp; RAG, Automation, Chat)</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 4px, 6px, 8px, 9px, 10px, 12px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 88px, 112px</li><li>Padding dos botões: 10px 24px (consistente em todos os botões)</li><li>Padding interno dos cards: aproximadamente 24–32px</li><li>Espaçamento vertical entre seções: muito generoso (88px–112px)</li></ul>
+<h3>Grid e contêiner</h3>
+<ul><li>Largura máxima do contêiner: aproximadamente 1024–1280px, centralizado</li><li>Hero: coluna única centralizada, com a ilustração da lhama</li><li>Seções de recursos: layout em 2 colunas (texto à esquerda, código à direita)</li><li>Grade de integrações: responsiva, em várias colunas</li><li>Rodapé: limpo, em linha única</li></ul>
+<h3>Filosofia do espaço em branco</h3>
+<ul><li><strong>Vazio como luxo</strong>: a página é notavelmente curta e esparsa — nenhuma seção de recursos se demora além da conta. Cada conceito recebe um espaço mínimo, mas suficiente.</li><li><strong>A densidade de conteúdo é baixa por definição</strong>: enquanto outras empresas de IA empilham recurso atrás de recurso, o Ollama apresenta três ideias (rodar modelos, usar com apps, integrações) e para.</li><li><strong>O espaço em branco É a marca</strong>: espaço em branco puro, sem nenhuma decoração, comunica &quot;esta ferramenta sai do seu caminho&quot;.</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Confortavelmente arredondado (12px): o único raio de contêiner — blocos de código, cards, painéis</li><li>Em pílula (9999px): tudo que é interativo — botões, abas, campos, tags, badges</li></ul>
+<p><em>Esse sistema binário é extremo e distinto. Não há 4px, nem 8px, nem gradação de arredondamento. Os elementos são contêineres (12px) ou interativos (pílula).</em></p>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Plano (nível 0)</td><td>Sem sombra, sem borda</td><td>Fundo da página, a maior parte do conteúdo</td></tr><tr><td>Com borda (nível 1)</td><td><code>1px solid #e5e5e5</code></td><td>Cards, blocos de código, botões</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: o Ollama usa <strong>zero sombras</strong>. Não é um descuido — é uma decisão de design deliberada. Todo outro grande site de produto de IA usa ao menos sombras sutis. A abordagem plana e sem sombras do Ollama cria uma experiência de papel, em que os elementos se distinguem só pela cor de fundo e por bordas de um pixel. A profundidade é comunicada pela <strong>hierarquia de conteúdo e pelo peso da tipografia</strong>, não por camadas visuais.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use branco puro (<code>#ffffff</code>) como fundo da página — nunca off-white ou creme</li><li>Use raio de pílula (9999px) em todos os elementos interativos — botões, abas, campos, tags</li><li>Use raio de 12px em todos os contêineres não interativos — blocos de código, cards, painéis</li><li>Mantenha a paleta estritamente em tons de cinza — sem cores cromáticas, exceto o anel de foco azul</li><li>Use a SF Pro Rounded em peso 500 nos títulos de display — os terminais arredondados são a expressão da marca</li><li>Mantenha zero sombras — a profundidade vem só de bordas e mudanças de fundo</li><li>Mantenha a densidade de conteúdo baixa — cada seção deve apresentar uma ideia clara</li><li>Use monoespaçada nos comandos de terminal e no código — é conteúdo principal, não decoração</li><li>Mantenha todos os botões com padding de 10px 24px e formato de pílula — a consistência é absoluta</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não introduza nenhuma cor cromática — nem azul de marca, nem verde de destaque, nem tons quentes</li><li>Não use border-radius entre 12px e 9999px — o sistema é binário</li><li>Não adicione sombras a nenhum elemento — a estética plana é intencional</li><li>Não use pesos de fonte acima de 500 — nada de negrito, nada de black</li><li>Não adicione ilustrações decorativas além do mascote, a lhama</li><li>Não use gradientes em lugar nenhum — só blocos chapados e bordas</li><li>Não complique o layout — no máximo duas colunas, sem grids complexos</li><li>Não use bordas mais grossas que 1px — a contenção é sempre o toque mais leve possível</li><li>Não adicione animações ou transições de hover — as interações devem parecer instantâneas e diretas</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;640px</td><td>Coluna única, tudo empilhado, navegação em hambúrguer</td></tr><tr><td>Tablet pequeno</td><td>640–768px</td><td>Pequenos ajustes de espaçamento</td></tr><tr><td>Tablet</td><td>768–850px</td><td>Começam os layouts de 2 colunas</td></tr><tr><td>Desktop</td><td>850–1024px</td><td>Layout padrão, recursos expandidos</td></tr><tr><td>Desktop grande</td><td>1024–1280px</td><td>Largura máxima do conteúdo</td></tr></tbody></table>
+<h3>Áreas de toque</h3>
+<ul><li>Todos os botões são em pílula, com padding generoso (10px 24px)</li><li>Links de navegação em confortáveis 16px</li><li>A área mínima de toque passa com folga de 44x44px</li></ul>
+<h3>Estratégia de recolhimento</h3>
+<ul><li><strong>Navegação</strong>: recolhe em menu hambúrguer no mobile</li><li><strong>Seções de recursos</strong>: 2 colunas → coluna única empilhada</li><li><strong>Texto do hero</strong>: escala progressiva de 48px → 36px → 30px</li><li><strong>Grade de integrações</strong>: várias colunas → 2 colunas → coluna única</li><li><strong>Blocos de código</strong>: rolagem horizontal mantida</li></ul>
+<h3>Comportamento das imagens</h3>
+<ul><li>O mascote, a lhama, muda de escala proporcionalmente</li><li>Os blocos de código mantêm a formatação monoespaçada</li><li>Os ícones de integrações se reorganizam em menos colunas</li><li>Sem mudanças de direção de arte</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Texto principal: &quot;Pure Black (#000000)&quot;</li><li>Fundo da página: &quot;Pure White (#ffffff)&quot;</li><li>Texto secundário: &quot;Stone (#737373)&quot;</li><li>Fundo de botões: &quot;Light Gray (#e5e5e5)&quot;</li><li>Bordas: &quot;Light Gray (#e5e5e5)&quot;</li><li>Texto esmaecido: &quot;Silver (#a3a3a3)&quot;</li><li>Texto escuro: &quot;Near Black (#262626)&quot;</li><li>Superfície sutil: &quot;Snow (#fafafa)&quot;</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie uma seção hero sobre branco puro (#ffffff) com uma ilustração centralizada acima de um título em SF Pro Rounded 48px peso 500, line-height 1.0. Use texto Pure Black (#000000). Abaixo, adicione um botão CTA preto em pílula (raio de 9999px, padding de 10px 24px) e um botão cinza em pílula.&quot;</li><li>&quot;Desenhe um bloco de código com border-radius de 12px e borda 1px solid Light Gray (#e5e5e5) sobre fundo branco. Use ui-monospace 16px no comando de terminal. Sem sombra.&quot;</li><li>&quot;Construa uma barra de abas com abas em pílula (raio de 9999px). Aba ativa: fundo Light Gray (#e5e5e5), texto Near Black (#262626). Inativa: fundo transparente, texto Stone (#737373).&quot;</li><li>&quot;Crie uma grade de cards de integrações. Cada card é uma pílula com borda (raio de 9999px) ou um card com raio de 12px e borda 1px solid #e5e5e5. Ícone + nome dentro. Grade de 4 colunas no desktop.&quot;</li><li>&quot;Desenhe uma barra de navegação: fundo transparente, sem borda. Logo do Ollama à esquerda, 3 links de texto (Pure Black, 16px, peso 400), campo de busca em pílula no centro, link de texto 'Sign in' e botão preto em pílula 'Download' à direita.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Foque em UM componente por vez</li><li>Mantenha todos os valores em tons de cinza — &quot;Stone (#737373)&quot;, não &quot;use uma cor clara&quot;</li><li>Sempre especifique raio de pílula (9999px) ou de contêiner (12px) — nada entre os dois</li><li>As sombras são sempre zero — nunca as adicione</li><li>O peso é sempre 400 ou 500 — nunca negrito</li><li>Se algo parecer decorado demais, remova — para o Ollama, menos é sempre mais</li></ol>
+</section>

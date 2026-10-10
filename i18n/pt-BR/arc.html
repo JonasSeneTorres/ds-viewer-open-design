@@ -1,0 +1,71 @@
+<!-- design-system-arc · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">&quot;O navegador que navega por você.&quot; Superfícies translúcidas, calor de gradiente, layout centrado na barra lateral.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O Arc Browser dissolve a fronteira entre a moldura e a página. Enquanto Chrome e Safari tratam a janela do navegador como um contêiner, o Arc a trata como cenário — a barra de ferramentas se funde ao papel de parede do sistema, a barra lateral carrega o calor do gradiente da &quot;cor do tema&quot; escolhida pelo usuário e a translucidez está em toda parte. A assinatura visual é <strong>vidro fosco mais um único gradiente saturado</strong> — na maioria das vezes um florescer de pêssego a coral ou de violeta a fúcsia — que define a temperatura emocional da janela inteira.</p>
+<p>A tipografia usa a <strong>Inter</strong> na moldura e uma serifa de display própria (<code>Argent CF</code> ou similar) no marketing — quando o Arc fala em público, fala de forma editorial, com uma voz serifada incomum no mundo da tecnologia. O produto em si é só sem serifa, com tracking justo e altura de linha generosa.</p>
+<p>As formas são suaves como squircles: raios de 12–16px nos cards, 8px nas abas, pílulas de 9999px nas tags. Bordas são raras — o Arc prefere lavagens de fundo tingidas (<code>rgba(255, 255, 255, 0.5)</code> sobre o gradiente) para delimitar os painéis.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Superfícies translúcidas de vidro fosco sobre um fundo em gradiente saturado</li><li>Gradientes da cor do tema (pêssego-coral, violeta-fúcsia, menta-ciano) como clima principal</li><li>Inter na moldura do produto, Argent CF (serifada) no display de marketing</li><li>Raios suaves de squircle de 12–16px em todo lugar</li><li>Layout centrado na barra lateral: abas, espaços e favoritos ficam à esquerda, não no topo</li><li>O seletor de cores é uma superfície da marca — os temas são definidos pelo usuário, não fixos</li><li>Sombras sutis (<code>0 8px 32px rgba(0,0,0,0.08)</code>) sobre o pano de fundo em gradiente</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Gradientes principais do tema (escolhidos pelo usuário; o padrão é &quot;Sunset&quot;)</h3>
+<ul><li><strong>Sunset Start</strong> (<code>#ff7e5f</code>): origem do gradiente pêssego.</li><li><strong>Sunset End</strong> (<code>#feb47b</code>): fim do gradiente, coral suave.</li><li><strong>Twilight Start</strong> (<code>#7f5af0</code>): origem do gradiente violeta.</li><li><strong>Twilight End</strong> (<code>#e84393</code>): fim do gradiente, fúcsia.</li><li><strong>Aurora Start</strong> (<code>#16f2b3</code>): origem do gradiente menta.</li><li><strong>Aurora End</strong> (<code>#0db4f7</code>): fim do gradiente, ciano.</li></ul>
+<h3>Superfícies (foscas)</h3>
+<ul><li><strong>Glass Light</strong> (<code>rgba(255, 255, 255, 0.7)</code>): painel fosco padrão sobre o gradiente.</li><li><strong>Glass Medium</strong> (<code>rgba(255, 255, 255, 0.5)</code>): estado de hover, fundo da pílula de aba.</li><li><strong>Glass Heavy</strong> (<code>rgba(255, 255, 255, 0.85)</code>): painel ativo, barra de comandos.</li><li><strong>Glass Dark</strong> (<code>rgba(20, 20, 25, 0.6)</code>): superfície fosca do modo escuro.</li></ul>
+<h3>Tinta e texto</h3>
+<ul><li><strong>Ink Primary</strong> (<code>#1a1a1f</code>): texto principal sobre superfície fosca clara.</li><li><strong>Ink Secondary</strong> (<code>#54545a</code>): texto secundário, título da aba em repouso.</li><li><strong>Ink Muted</strong> (<code>#8c8c93</code>): terciário, legendas, barra de endereço.</li><li><strong>Ink Inverse</strong> (<code>#fafafa</code>): texto sobre superfície fosca escura.</li></ul>
+<h3>Bordas e divisores</h3>
+<ul><li><strong>Border Glass</strong> (<code>rgba(255, 255, 255, 0.4)</code>): borda da aresta fosca.</li><li><strong>Border Hairline</strong> (<code>rgba(0, 0, 0, 0.06)</code>): divisor finíssimo sobre superfície clara.</li><li><strong>Border Active</strong> (<code>rgba(0, 0, 0, 0.18)</code>): contorno da aba ativa.</li></ul>
+<h3>Destaque da marca</h3>
+<ul><li><strong>Arc Coral</strong> (<code>#ff5f5f</code>): cor padrão da marca — usada no marketing, em <code>arc.net</code>.</li><li><strong>Arc Lavender</strong> (<code>#b794f4</code>): destaque secundário da marca.</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Success</strong> (<code>#48bb78</code>): confirmação em toast.</li><li><strong>Warning</strong> (<code>#f6ad55</code>): pedido de permissão.</li><li><strong>Error</strong> (<code>#f56565</code>): validação de formulário.</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Família tipográfica</h3>
+<ul><li><strong>Display / marketing</strong>: <code>Argent CF</code>, com fallback: <code>'Source Serif Pro', Georgia, serif</code></li><li><strong>Corpo / interface</strong>: <code>Inter</code>, com fallback: <code>system-ui, -apple-system, BlinkMacSystemFont, sans-serif</code></li><li><strong>Código / mono</strong>: <code>Berkeley Mono</code>, com fallback: <code>ui-monospace, Menlo, Consolas, monospace</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Hero de marketing</td><td>Argent CF</td><td>72px (4.5rem)</td><td>400</td><td>1.05</td><td>-0.03em</td><td>Display editorial, só no marketing</td></tr><tr><td>Título de seção</td><td>Argent CF</td><td>40px (2.5rem)</td><td>400</td><td>1.15</td><td>-0.02em</td><td>Títulos de seções de marketing</td></tr><tr><td>H1 da página</td><td>Inter</td><td>32px (2rem)</td><td>700</td><td>1.2</td><td>-0.02em</td><td>Configurações, cabeçalho da barra de comandos</td></tr><tr><td>H2 da página</td><td>Inter</td><td>22px (1.375rem)</td><td>600</td><td>1.25</td><td>-0.01em</td><td>Subseção</td></tr><tr><td>Título da aba</td><td>Inter</td><td>13px (0.8125rem)</td><td>500</td><td>1.3</td><td>-0.005em</td><td>Rótulo da aba na barra lateral</td></tr><tr><td>Corpo</td><td>Inter</td><td>15px (0.9375rem)</td><td>400</td><td>1.55</td><td>normal</td><td>Textos de configurações, tooltips</td></tr><tr><td>Legenda</td><td>Inter</td><td>12px (0.75rem)</td><td>500</td><td>1.4</td><td>0.01em</td><td>Protocolo na barra de endereço, metadados</td></tr><tr><td>Código</td><td>Berkeley Mono</td><td>13px (0.8125rem)</td><td>400</td><td>1.5</td><td>normal</td><td>Barra de endereço, devtools</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Momentos serifados são raros</strong>: a Argent CF aparece só no marketing. O produto é só sem serifa.</li><li><strong>Títulos pequenos</strong>: as abas são renderizadas em 13px para que uma barra lateral longa, com mais de 30 abas, continue fácil de percorrer.</li><li><strong>O tracking aperta com o tamanho</strong>: -0.03em em 72px, voltando ao normal em 15px.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Primário (preenchido)</strong></p>
+<ul><li>Fundo: linear-gradient na cor do tema (ex.: <code>linear-gradient(135deg, #ff7e5f, #feb47b)</code>)</li><li>Texto: <code>#ffffff</code></li><li>Padding: 10px 20px</li><li>Raio: 12px</li><li>Sombra: <code>0 4px 16px rgba(255, 127, 95, 0.3)</code></li><li>Hover: a sombra cresce para <code>0 8px 24px rgba(255, 127, 95, 0.4)</code></li></ul>
+<p><strong>Vidro (secundário)</strong></p>
+<ul><li>Fundo: <code>rgba(255, 255, 255, 0.7)</code></li><li>Backdrop: <code>blur(20px)</code></li><li>Texto: <code>#1a1a1f</code></li><li>Borda: 1px solid <code>rgba(255, 255, 255, 0.4)</code></li><li>Padding: 10px 20px</li><li>Raio: 12px</li></ul>
+<p><strong>Sutil</strong></p>
+<ul><li>Fundo: transparente</li><li>Texto: cor do tema</li><li>Hover: fundo <code>rgba(255, 127, 95, 0.1)</code></li></ul>
+<h3>Abas (barra lateral)</h3>
+<ul><li>Fundo em repouso: transparente</li><li>Fundo no hover: <code>rgba(255, 255, 255, 0.5)</code></li><li>Fundo ativo: <code>rgba(255, 255, 255, 0.85)</code> + sombra suave</li><li>Padding: 8px 12px</li><li>Raio: 8px</li><li>Favicon: quadrado de 16px à esquerda, 8px de espaço até o título.</li></ul>
+<h3>Cards / painéis</h3>
+<ul><li>Fundo: <code>rgba(255, 255, 255, 0.7)</code></li><li>Backdrop: <code>blur(24px)</code> com saturação de 180%</li><li>Borda: 1px solid <code>rgba(255, 255, 255, 0.4)</code></li><li>Raio: 16px</li><li>Sombra: <code>0 8px 32px rgba(0, 0, 0, 0.08)</code></li><li>Padding: 24px</li></ul>
+<h3>Campos (barra de comandos)</h3>
+<ul><li>Fundo: <code>rgba(255, 255, 255, 0.85)</code></li><li>Backdrop: <code>blur(40px)</code></li><li>Texto: <code>#1a1a1f</code></li><li>Borda: 1px solid <code>rgba(255, 255, 255, 0.4)</code></li><li>Raio: 14px</li><li>Padding: 14px 18px</li><li>Foco: sombra <code>0 0 0 4px rgba(255, 127, 95, 0.2)</code></li></ul>
+<h3>Pílulas (espaços / pastas de favoritos)</h3>
+<ul><li>Fundo: cor do tema com 16% de alfa</li><li>Texto: cor do tema (cheia)</li><li>Padding: 4px 10px</li><li>Raio: 9999px</li><li>Fonte: 12px / 600</li></ul>
+</section>
+
+<section data-section="spacing-layout">
+<h2>Espaçamento e layout</h2>
+<ul><li><strong>Unidade base</strong>: 4px. Escala: 4, 8, 12, 16, 24, 32, 48, 64.</li><li><strong>Barra lateral</strong>: 240px de largura; recolhível para 56px.</li><li><strong>Raio da janela</strong>: 12px na própria janela do sistema operacional (um toque só do macOS).</li><li><strong>Padding dentro dos painéis</strong>: 24px.</li></ul>
+</section>
+
+<section data-section="motion">
+<h2>Movimento</h2>
+<ul><li><strong>Duração</strong>: 200ms no hover; 320ms ao criar/fechar abas; 480ms ao expandir a janela &quot;Little Arc&quot;.</li><li><strong>Easing</strong>: <code>cubic-bezier(0.32, 0.72, 0, 1)</code> na expansão da janela (no estilo de mola da Apple).</li><li><strong>Troca de aba</strong>: translate de 1px + mistura de opacidade, sem mudança de escala.</li></ul>
+</section>
+
+<section data-section="usage-guardrails">
+<h2>Limites de uso</h2>
+<ul><li>Mantenha reconhecível o layout centrado na barra lateral; composições só com navegação no topo devem ser evitadas, a menos que o artefato seja uma página de marketing.</li><li>Use superfícies foscas e o calor do gradiente como atmosfera, não como manchas decorativas ou ornamentos de fundo sem relação.</li><li>Reserve o gradiente saturado do tema para a moldura do navegador, o CTA principal ou um painel focal claro.</li><li>Mantenha a interface do produto só sem serifa; use a voz de display serifada apenas em momentos de marketing/editoriais.</li></ul>
+</section>

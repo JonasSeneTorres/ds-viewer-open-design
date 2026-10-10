@@ -1,0 +1,1276 @@
+{
+ "id": "airbnb",
+ "name": "Airbnb",
+ "source": {
+  "name": "Airbnb",
+  "url": "https://open-design.ai/plugins/design-system-airbnb/"
+ },
+ "category": [
+  {
+   "lang": "en-US",
+   "message": "E-Commerce & Retail"
+  },
+  {
+   "lang": "pt-BR",
+   "message": "E-commerce & varejo"
+  }
+ ],
+ "intro": [
+  {
+   "lang": "en-US",
+   "message": "Travel marketplace. Warm coral accent, photography-driven, rounded UI."
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Marketplace de viagens. Destaque coral quente, guiado por fotografia, interface arredondada."
+  }
+ ],
+ "roles": {
+  "primary": "Rausch",
+  "neutral": "Neutral",
+  "secondary": "Luxe Purple"
+ },
+ "palettes": [
+  {
+   "name": "Rausch",
+   "base": "#ff385c",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef4f4",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee6e7",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fecfd0",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#fdafb2",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#ff7c86",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#ff385c",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#e00b41",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#b50035",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#8d0328",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#6a001a",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#43000d",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Plus Magenta",
+   "base": "#92174d",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fff3f6",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee6ec",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fdceda",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#f9afc4",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#e68ba7",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#d0698a",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#ba4b72",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#a32d5b",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#92174d",
+     "exact": true
+    },
+    {
+     "step": 900,
+     "hex": "#670031",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#41001d",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Luxe Purple",
+   "base": "#460479",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f8f5ff",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#f0e9fe",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#e1d6f4",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#cebfe8",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#b59ed9",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#9c7ec9",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#8662b8",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#7146a6",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#5c2a91",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#460479",
+     "exact": true
+    },
+    {
+     "step": 950,
+     "hex": "#2c0050",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Info Blue",
+   "base": "#428bff",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f2f7fe",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#e4eefd",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#cadefe",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#a7c9fe",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#78abfd",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#428bff",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#2c72e0",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#1a5bbd",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#0b459a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#013075",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#001b4d",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Error Red",
+   "base": "#c13515",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fff4f2",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee7e2",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fed0c5",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#fdb2a0",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#fc8267",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#e45f43",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#c13515",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#af2400",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#891b00",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#651000",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#410300",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Success",
+   "base": "#008a05",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#e8fee5",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#c6ffc1",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#aef1a8",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#90de8a",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#68c463",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#40a93c",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#008a05",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#007604",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#015b03",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#004300",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#002800",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Warning",
+   "base": "#c47700",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fdf5ee",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee9d4",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffd3a9",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#fdb76d",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#e39842",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#c47700",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#a86602",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#895200",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#6b3e00",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#4f2c00",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#311800",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Neutral",
+   "base": "#6a6a6a",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f7f7f7",
+     "exact": true
+    },
+    {
+     "step": 100,
+     "hex": "#ededed",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#dddddd",
+     "exact": true
+    },
+    {
+     "step": 300,
+     "hex": "#c1c1c1",
+     "exact": true
+    },
+    {
+     "step": 400,
+     "hex": "#ababab",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#929292",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#777777",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#6a6a6a",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#4a4a4a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#3f3f3f",
+     "exact": true
+    },
+    {
+     "step": 950,
+     "hex": "#222222",
+     "exact": true
+    }
+   ]
+  }
+ ],
+ "colors": [
+  {
+   "name": "Rausch",
+   "hex": "#ff385c",
+   "role": "(#ff385c): The brand's signature coral-pink. CSS variable --palette-bg-primary-core. Used for: primary \"Reserve\" button, search submit button, active tab underline, wishlist heart fill, pricing emphas"
+  },
+  {
+   "name": "Deep Rausch",
+   "hex": "#e00b41",
+   "role": "(#e00b41): A more saturated variant. CSS variable --palette-bg-tertiary-core. Used for pressed/active button states and gradient terminal stops."
+  },
+  {
+   "name": "Plus Magenta",
+   "hex": "#92174d",
+   "role": "(#92174d): CSS variable --palette-bg-primary-plus. The brand color for the Airbnb Plus product tier — a higher-end curated-listing offering."
+  },
+  {
+   "name": "Luxe Purple",
+   "hex": "#460479",
+   "role": "(#460479): CSS variable --palette-bg-primary-luxe. The brand color for the Airbnb Luxe product tier — villa/estate-level rentals."
+  },
+  {
+   "name": "Info Blue",
+   "hex": "#428bff",
+   "role": "(#428bff): CSS variable --palette-text-legal. Used for legal/informational links (terms, privacy, disclosures) — the only non-monochrome link color in the system."
+  },
+  {
+   "name": "Canvas White",
+   "hex": "#ffffff",
+   "role": "(#ffffff): The default page background. Every card, every container, every detail page starts here."
+  },
+  {
+   "name": "Soft Cloud",
+   "hex": "#f7f7f7",
+   "role": "(#f7f7f7): Subtle subsurface tint used on footer backgrounds, map-view wrappers, and \"everything else\" sections that want to step back from the primary white."
+  },
+  {
+   "name": "Hairline Gray",
+   "hex": "#dddddd",
+   "role": "(#dddddd): Ubiquitous 1px border color — separates cards, amenity rows, review panels, footer columns. The workhorse of the layout system."
+  },
+  {
+   "name": "Ink Black",
+   "hex": "#222222",
+   "role": "(#222222): CSS variable --palette-text-primary. The system's near-black. Every heading, every body paragraph, every nav label, every price. Used for ~90% of all text on a page."
+  },
+  {
+   "name": "Charcoal",
+   "hex": "#3f3f3f",
+   "role": "(#3f3f3f): CSS variable --palette-text-focused. Used in focused-state input text and one-step-down emphasis copy."
+  },
+  {
+   "name": "Ash Gray",
+   "hex": "#6a6a6a",
+   "role": "(#6a6a6a): CSS variable --palette-bg-tertiary-hover. Secondary labels, \"Cottage rentals\" subtitle-style copy under city names, muted footer links."
+  },
+  {
+   "name": "Mute Gray",
+   "hex": "#929292",
+   "role": "(#929292): CSS variable --palette-text-link-disabled. Disabled buttons and low-priority metadata."
+  },
+  {
+   "name": "Stone Gray",
+   "hex": "#c1c1c1",
+   "role": "(#c1c1c1): Tertiary dividers, icon strokes, placeholder avatars."
+  },
+  {
+   "name": "Error Red",
+   "hex": "#c13515",
+   "role": "(#c13515): CSS variable --palette-text-primary-error. Form validation errors, destructive-action warnings."
+  },
+  {
+   "name": "Deep Error",
+   "hex": "#b32505",
+   "role": "(#b32505): CSS variable --palette-text-secondary-error-hover. Pressed/active variants of error states."
+  }
+ ],
+ "fonts": [
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Primary"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Principal"
+    }
+   ],
+   "kind": "primary",
+   "family": "Airbnb Cereal VF",
+   "fallbacks": [
+    "Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif"
+   ],
+   "stack": "\"Airbnb Cereal VF\", \"Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif\", sans-serif",
+   "italic": false,
+   "source": null
+  }
+ ],
+ "tokens": [
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Surface"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Superfície"
+    }
+   ],
+   "items": [
+    {
+     "name": "--bg",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--surface",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--surface-warm",
+     "value": "#f7f7f7"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Text"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Texto"
+    }
+   ],
+   "items": [
+    {
+     "name": "--fg",
+     "value": "#222222"
+    },
+    {
+     "name": "--fg-2",
+     "value": "#3f3f3f"
+    },
+    {
+     "name": "--muted",
+     "value": "#6a6a6a"
+    },
+    {
+     "name": "--meta",
+     "value": "#929292"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Border"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Borda"
+    }
+   ],
+   "items": [
+    {
+     "name": "--border",
+     "value": "#dddddd"
+    },
+    {
+     "name": "--border-soft",
+     "value": "#ebebeb"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Accent"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Destaque"
+    }
+   ],
+   "items": [
+    {
+     "name": "--accent",
+     "value": "#ff385c"
+    },
+    {
+     "name": "--accent-on",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--accent-hover",
+     "value": "#e31c5f"
+    },
+    {
+     "name": "--accent-active",
+     "value": "#e00b41"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Semantic"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Semântico"
+    }
+   ],
+   "items": [
+    {
+     "name": "--success",
+     "value": "#008a05"
+    },
+    {
+     "name": "--warn",
+     "value": "#c47700"
+    },
+    {
+     "name": "--danger",
+     "value": "#c13515"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Typography"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tipografia"
+    }
+   ],
+   "items": []
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Type scale"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Escala tipográfica"
+    }
+   ],
+   "items": [
+    {
+     "name": "--text-xs",
+     "value": "12px"
+    },
+    {
+     "name": "--text-sm",
+     "value": "14px"
+    },
+    {
+     "name": "--text-base",
+     "value": "16px"
+    },
+    {
+     "name": "--text-lg",
+     "value": "20px"
+    },
+    {
+     "name": "--text-xl",
+     "value": "22px"
+    },
+    {
+     "name": "--text-2xl",
+     "value": "28px"
+    },
+    {
+     "name": "--text-3xl",
+     "value": "44px"
+    },
+    {
+     "name": "--text-4xl",
+     "value": "56px"
+    },
+    {
+     "name": "--leading-body",
+     "value": "1.43"
+    },
+    {
+     "name": "--leading-tight",
+     "value": "1.2"
+    },
+    {
+     "name": "--tracking-display",
+     "value": "-0.02em"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Spacing"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Espaçamento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--space-1",
+     "value": "4px"
+    },
+    {
+     "name": "--space-2",
+     "value": "8px"
+    },
+    {
+     "name": "--space-3",
+     "value": "12px"
+    },
+    {
+     "name": "--space-4",
+     "value": "16px"
+    },
+    {
+     "name": "--space-5",
+     "value": "20px"
+    },
+    {
+     "name": "--space-6",
+     "value": "24px"
+    },
+    {
+     "name": "--space-8",
+     "value": "32px"
+    },
+    {
+     "name": "--space-12",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-desktop",
+     "value": "64px"
+    },
+    {
+     "name": "--section-y-tablet",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-phone",
+     "value": "32px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Radius"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Raio"
+    }
+   ],
+   "items": [
+    {
+     "name": "--radius-sm",
+     "value": "8px"
+    },
+    {
+     "name": "--radius-md",
+     "value": "14px"
+    },
+    {
+     "name": "--radius-lg",
+     "value": "20px"
+    },
+    {
+     "name": "--radius-pill",
+     "value": "9999px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Elevação"
+    }
+   ],
+   "items": [
+    {
+     "name": "--elev-flat",
+     "value": "none"
+    },
+    {
+     "name": "--elev-ring",
+     "value": "0 0 0 1px var(--border)"
+    },
+    {
+     "name": "--elev-raised",
+     "value": "rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Focus"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Foco"
+    }
+   ],
+   "items": [
+    {
+     "name": "--focus-ring",
+     "value": "0 0 0 2px var(--fg)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Motion"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Movimento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--motion-fast",
+     "value": "150ms"
+    },
+    {
+     "name": "--motion-base",
+     "value": "200ms"
+    },
+    {
+     "name": "--ease-standard",
+     "value": "cubic-bezier(0.2, 0, 0, 1)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "items": [
+    {
+     "name": "--container-max",
+     "value": "1280px"
+    },
+    {
+     "name": "--container-gutter-desktop",
+     "value": "40px"
+    },
+    {
+     "name": "--container-gutter-tablet",
+     "value": "24px"
+    },
+    {
+     "name": "--container-gutter-phone",
+     "value": "16px"
+    }
+   ]
+  }
+ ],
+ "vars": {
+  "--primary-500": "#ff385c",
+  "--primary-500-fg": "#111111",
+  "--neutral-400": "#ababab",
+  "--neutral-400-fg": "#111111",
+  "--bg": "#ffffff",
+  "--surface": "#ffffff",
+  "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+  "--fg": "#222222",
+  "--fg-soft": "#3f3f3f",
+  "--muted": "#6a6a6a",
+  "--border": "#dddddd",
+  "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
+  "--accent": "#ff385c",
+  "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+  "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
+  "--accent-fg": "#ffffff",
+  "--solid": "var(--accent-strong)",
+  "--solid-fg": "#ffffff",
+  "--ok": "#008a05",
+  "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
+  "--warn": "#c47700",
+  "--warn-weak": "color-mix(in oklab, var(--warn) 14%, var(--bg))",
+  "--danger": "#c13515",
+  "--danger-weak": "color-mix(in oklab, var(--danger) 12%, var(--bg))",
+  "--bw": "1px",
+  "--radius": "14px",
+  "--radius-sm": "8px",
+  "--radius-pill": "9999px",
+  "--shadow-card": "rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0",
+  "--shadow-pop": "0 14px 40px rgba(0, 0, 0, 0.22)",
+  "--font-display": "\"Airbnb Cereal VF\", \"Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif\", sans-serif",
+  "--font-body": "\"Airbnb Cereal VF\", \"Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif\", sans-serif",
+  "--font-code": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--font-mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--display-tracking": "-0.02em",
+  "--heading-weight": "600",
+  "--kicker-transform": "uppercase",
+  "--kicker-spacing": "0.08em",
+  "--hero-ground": "var(--surface-2)",
+  "--hero-ink": "var(--fg)"
+ },
+ "sections": [
+  {
+   "id": "visual-theme-atmosphere",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Visual Theme & Atmosphere"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tema visual e atmosfera"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Airbnb's 2026 design feels like a travel magazine that happens to be an app — pristine white canvases give way to full-bleed photography, and the interface itself disappears so the listings can breathe. The signature Rausch coral-pink (<code>#ff385c</code>) is used sparingly but unmistakably: search CTA, active tab indicator, primary action button, the occasional price or wishlist heart. Everything else is a disciplined grayscale, with <code>#222222</code> carrying almost every line of text.</p>\n<p>What makes the system unmistakably Airbnb is how much <em>faith</em> it places in content. Property photos are displayed at hero scale, 4:3 with edge-to-edge radius treatment. Category switching happens through a tri-tab picker (Homes / Experiences / Services) that uses 3D rendered illustrated icons (a pitched-roof house, a hot-air balloon, a service bell) — physical, tactile, almost toy-like — paired with crisp <code>Airbnb Cereal VF</code> labels. This is the rare consumer product where 3D renders and purely typographic UI coexist without tension.</p>\n<p>The newest surface is the <strong>Experiences</strong> product line — same chrome, but richer card density, more photography, and a center-anchored booking panel with sticky right-rail pricing. Listing detail pages (both rooms and experiences) follow a tight template: full-bleed hero image grid → overlapping rounded booking card (sticky on scroll) → amenities → reviews (Guest Favorite awards use a big centered <code>4.81</code> rating with a laurel-wreath lockup) → map → host profile → disclosures. The rhythm is consistent whether you're booking a room or a yacht tour.</p>\n<p><strong>Key Characteristics:</strong></p>\n<ul><li>Rausch coral-pink (<code>#ff385c</code>) as a single-accent brand color, used only for primary CTAs and the search button</li><li>Full-bleed photography at 4:3 / 16:9 with gentle corner rounding (14–20px) as the primary visual vocabulary</li><li>3D rendered category icons paired with typographic tabs — the one place the system allows illustration</li><li>Circular <code>50%</code> icon buttons (back arrow, share, favorite, carousel arrows) scattered throughout</li><li><code>Airbnb Cereal VF</code> carries every label, from 8px legal footnote to 28px section heading — a single-family system</li><li>Product-tier color coding: Airbnb Plus (magenta <code>#92174d</code>), Airbnb Luxe (deep purple <code>#460479</code>), Airbnb (Rausch coral)</li><li>Guest Favorite award lockup — centered giant rating number between two laurel wreaths, one of the most recognizable moments in the system</li><li>Sticky booking panel with a price → dates → guests stack, pinned to the right rail on desktop, transforming to a bottom-anchored &quot;Reserve&quot; bar on mobile</li><li>Sticky bottom mobile navigation (Explore / Wishlists / Log in) with an active-state Rausch tint</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>O design de 2026 do Airbnb parece uma revista de viagem que por acaso é um app — telas brancas impecáveis dão lugar a fotografias de ponta a ponta, e a própria interface desaparece para que os anúncios possam respirar. O característico rosa-coral Rausch (<code>#ff385c</code>) é usado com parcimônia, mas de forma inconfundível: CTA de busca, indicador de aba ativa, botão de ação principal, um preço ou coração da lista de desejos aqui e ali. Todo o resto é uma escala de cinza disciplinada, com <code>#222222</code> carregando quase todas as linhas de texto.</p>\n<p>O que torna o sistema inconfundivelmente Airbnb é o quanto ele <em>confia</em> no conteúdo. As fotos das propriedades aparecem em escala de hero, em 4:3 com cantos arredondados de ponta a ponta. A troca de categoria acontece por um seletor de três abas (Acomodações / Experiências / Serviços) que usa ícones ilustrados renderizados em 3D (uma casa com telhado de duas águas, um balão de ar quente, uma campainha de serviço) — físicos, táteis, quase como brinquedos — combinados com rótulos nítidos em <code>Airbnb Cereal VF</code>. É o raro produto de consumo em que renders 3D e uma interface puramente tipográfica convivem sem tensão.</p>\n<p>A superfície mais nova é a linha de produtos <strong>Experiências</strong> — a mesma estrutura, mas com cards mais densos, mais fotografia e um painel de reserva ancorado no centro, com preço fixo na coluna direita. As páginas de detalhe dos anúncios (tanto de acomodações quanto de experiências) seguem um modelo rígido: grade de imagens hero de ponta a ponta → card de reserva arredondado sobreposto (fixo ao rolar) → comodidades → avaliações (os prêmios Preferido dos Hóspedes usam uma grande nota centralizada <code>4.81</code> com uma composição de coroa de louros) → mapa → perfil do anfitrião → informações legais. O ritmo é o mesmo quer você esteja reservando um quarto ou um passeio de iate.</p>\n<p><strong>Características principais:</strong></p>\n<ul><li>Rosa-coral Rausch (<code>#ff385c</code>) como cor de marca de destaque único, usado só em CTAs principais e no botão de busca</li><li>Fotografia de ponta a ponta em 4:3 / 16:9 com cantos levemente arredondados (14–20px) como vocabulário visual principal</li><li>Ícones de categoria renderizados em 3D combinados com abas tipográficas — o único lugar em que o sistema permite ilustração</li><li>Botões de ícone circulares <code>50%</code> (voltar, compartilhar, favoritar, setas de carrossel) espalhados por toda parte</li><li><code>Airbnb Cereal VF</code> carrega todos os rótulos, da nota legal de 8px ao título de seção de 28px — um sistema de família única</li><li>Codificação de cores por nível de produto: Airbnb Plus (magenta <code>#92174d</code>), Airbnb Luxe (roxo profundo <code>#460479</code>), Airbnb (coral Rausch)</li><li>Composição do prêmio Preferido dos Hóspedes — uma nota gigante centralizada entre duas coroas de louros, um dos momentos mais reconhecíveis do sistema</li><li>Painel de reserva fixo com a pilha preço → datas → hóspedes, preso à coluna direita no desktop e transformado em uma barra &quot;Reservar&quot; ancorada embaixo no mobile</li><li>Navegação mobile fixa no rodapé (Explorar / Favoritos / Entrar) com o estado ativo tingido de Rausch</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "color-palette-roles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Color Palette & Roles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Paleta de cores e papéis"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Primary</h3>\n<ul><li><strong>Rausch</strong> (<code>#ff385c</code>): The brand's signature coral-pink. CSS variable <code>--palette-bg-primary-core</code>. Used for: primary &quot;Reserve&quot; button, search submit button, active tab underline, wishlist heart fill, pricing emphasis. The single highest-visibility color on every page.</li></ul>\n<h3>Secondary &amp; Accent</h3>\n<ul><li><strong>Deep Rausch</strong> (<code>#e00b41</code>): A more saturated variant. CSS variable <code>--palette-bg-tertiary-core</code>. Used for pressed/active button states and gradient terminal stops.</li><li><strong>Plus Magenta</strong> (<code>#92174d</code>): CSS variable <code>--palette-bg-primary-plus</code>. The brand color for the Airbnb Plus product tier — a higher-end curated-listing offering.</li><li><strong>Luxe Purple</strong> (<code>#460479</code>): CSS variable <code>--palette-bg-primary-luxe</code>. The brand color for the Airbnb Luxe product tier — villa/estate-level rentals.</li><li><strong>Info Blue</strong> (<code>#428bff</code>): CSS variable <code>--palette-text-legal</code>. Used for legal/informational links (terms, privacy, disclosures) — the only non-monochrome link color in the system.</li></ul>\n<h3>Surface &amp; Background</h3>\n<ul><li><strong>Canvas White</strong> (<code>#ffffff</code>): The default page background. Every card, every container, every detail page starts here.</li><li><strong>Soft Cloud</strong> (<code>#f7f7f7</code>): Subtle subsurface tint used on footer backgrounds, map-view wrappers, and &quot;everything else&quot; sections that want to step back from the primary white.</li><li><strong>Hairline Gray</strong> (<code>#dddddd</code>): Ubiquitous 1px border color — separates cards, amenity rows, review panels, footer columns. The workhorse of the layout system.</li></ul>\n<h3>Neutrals &amp; Text</h3>\n<ul><li><strong>Ink Black</strong> (<code>#222222</code>): CSS variable <code>--palette-text-primary</code>. The system's near-black. Every heading, every body paragraph, every nav label, every price. Used for ~90% of all text on a page.</li><li><strong>Charcoal</strong> (<code>#3f3f3f</code>): CSS variable <code>--palette-text-focused</code>. Used in focused-state input text and one-step-down emphasis copy.</li><li><strong>Ash Gray</strong> (<code>#6a6a6a</code>): CSS variable <code>--palette-bg-tertiary-hover</code>. Secondary labels, &quot;Cottage rentals&quot; subtitle-style copy under city names, muted footer links.</li><li><strong>Mute Gray</strong> (<code>#929292</code>): CSS variable <code>--palette-text-link-disabled</code>. Disabled buttons and low-priority metadata.</li><li><strong>Stone Gray</strong> (<code>#c1c1c1</code>): Tertiary dividers, icon strokes, placeholder avatars.</li></ul>\n<h3>Semantic &amp; Accent</h3>\n<ul><li><strong>Error Red</strong> (<code>#c13515</code>): CSS variable <code>--palette-text-primary-error</code>. Form validation errors, destructive-action warnings.</li><li><strong>Deep Error</strong> (<code>#b32505</code>): CSS variable <code>--palette-text-secondary-error-hover</code>. Pressed/active variants of error states.</li><li><strong>Translucent Black</strong> (<code>rgba(0, 0, 0, 0.24)</code>): CSS variable <code>--palette-text-material-disabled</code>. Disabled material-style labels.</li></ul>\n<h3>Gradient System</h3>\n<p>Airbnb's brand gradient appears sparingly, typically only on the wordmark and the search-button branded moment:</p>\n<pre><code>linear-gradient(90deg, #ff385c 0%, #e00b41 50%, #92174d 100%)</code></pre>\n<p>This coral → magenta sweep is the &quot;branded moment&quot; — never used as a full surface, only as a narrow pill fill or logo treatment.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Primária</h3>\n<ul><li><strong>Rausch</strong> (<code>#ff385c</code>): o rosa-coral característico da marca. Variável CSS <code>--palette-bg-primary-core</code>. Usado em: botão principal &quot;Reservar&quot;, botão de envio da busca, sublinhado da aba ativa, preenchimento do coração da lista de desejos, ênfase em preços. A cor de maior visibilidade em todas as páginas.</li></ul>\n<h3>Secundárias e destaques</h3>\n<ul><li><strong>Deep Rausch</strong> (<code>#e00b41</code>): uma variante mais saturada. Variável CSS <code>--palette-bg-tertiary-core</code>. Usada nos estados pressionado/ativo dos botões e nas paradas finais de gradientes.</li><li><strong>Plus Magenta</strong> (<code>#92174d</code>): variável CSS <code>--palette-bg-primary-plus</code>. A cor de marca do nível Airbnb Plus — uma oferta de anúncios selecionados de padrão mais alto.</li><li><strong>Luxe Purple</strong> (<code>#460479</code>): variável CSS <code>--palette-bg-primary-luxe</code>. A cor de marca do nível Airbnb Luxe — aluguéis de vilas e propriedades de alto padrão.</li><li><strong>Info Blue</strong> (<code>#428bff</code>): variável CSS <code>--palette-text-legal</code>. Usado em links legais/informativos (termos, privacidade, avisos) — a única cor de link não monocromática do sistema.</li></ul>\n<h3>Superfície e fundo</h3>\n<ul><li><strong>Canvas White</strong> (<code>#ffffff</code>): o fundo padrão da página. Todo card, todo contêiner, toda página de detalhe começa aqui.</li><li><strong>Soft Cloud</strong> (<code>#f7f7f7</code>): tom sutil de subsuperfície usado no fundo do rodapé, nos contêineres da visualização de mapa e nas seções &quot;todo o resto&quot; que querem recuar em relação ao branco principal.</li><li><strong>Hairline Gray</strong> (<code>#dddddd</code>): a onipresente cor de borda de 1px — separa cards, linhas de comodidades, painéis de avaliações, colunas do rodapé. O burro de carga do sistema de layout.</li></ul>\n<h3>Neutras e texto</h3>\n<ul><li><strong>Ink Black</strong> (<code>#222222</code>): variável CSS <code>--palette-text-primary</code>. O quase-preto do sistema. Todo título, todo parágrafo, todo rótulo de navegação, todo preço. Usado em ~90% de todo o texto de uma página.</li><li><strong>Charcoal</strong> (<code>#3f3f3f</code>): variável CSS <code>--palette-text-focused</code>. Usado no texto de campos em foco e em textos com ênfase um degrau abaixo.</li><li><strong>Ash Gray</strong> (<code>#6a6a6a</code>): variável CSS <code>--palette-bg-tertiary-hover</code>. Rótulos secundários, textos em estilo de subtítulo sob nomes de cidades (&quot;Cottage rentals&quot;), links esmaecidos do rodapé.</li><li><strong>Mute Gray</strong> (<code>#929292</code>): variável CSS <code>--palette-text-link-disabled</code>. Botões desabilitados e metadados de baixa prioridade.</li><li><strong>Stone Gray</strong> (<code>#c1c1c1</code>): divisores terciários, traços de ícones, avatares de placeholder.</li></ul>\n<h3>Semânticas e destaques</h3>\n<ul><li><strong>Error Red</strong> (<code>#c13515</code>): variável CSS <code>--palette-text-primary-error</code>. Erros de validação de formulário, avisos de ações destrutivas.</li><li><strong>Deep Error</strong> (<code>#b32505</code>): variável CSS <code>--palette-text-secondary-error-hover</code>. Variantes pressionadas/ativas dos estados de erro.</li><li><strong>Translucent Black</strong> (<code>rgba(0, 0, 0, 0.24)</code>): variável CSS <code>--palette-text-material-disabled</code>. Rótulos desabilitados em estilo material.</li></ul>\n<h3>Sistema de gradientes</h3>\n<p>O gradiente da marca Airbnb aparece com parcimônia, normalmente só no logotipo e no momento de marca do botão de busca:</p>\n<pre><code>linear-gradient(90deg, #ff385c 0%, #e00b41 50%, #92174d 100%)</code></pre>\n<p>Essa passagem de coral → magenta é o &quot;momento de marca&quot; — nunca é usada como superfície inteira, apenas como preenchimento estreito de pílula ou tratamento do logo.</p>"
+    }
+   ]
+  },
+  {
+   "id": "typography-rules",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Typography Rules"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Regras de tipografia"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Font Family</h3>\n<ul><li><strong>Airbnb Cereal VF</strong> (primary and only): The proprietary variable-weight sans-serif that carries the entire system. Fallbacks (in order): <code>Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif</code>.</li></ul>\n<p>Weights observed in the extracted tokens: 500, 600, 700. No 400-regular — the system's &quot;body&quot; weight is 500, which gives every block of text a subtle extra density that reads as confident and deliberate.</p>\n<p>OpenType features: <code>salt</code> (stylistic alternates) is used on the compact 11px and 14px 600-weight labels — likely for tighter numerals and special-character shaping. No ligature or fractional-numeral features observed.</p>\n<h3>Hierarchy</h3>\n<table><thead><tr><th>Role</th><th>Size</th><th>Weight</th><th>Line Height</th><th>Letter Spacing</th><th>Notes</th></tr></thead><tbody><tr><td>Section Heading</td><td>28px / 1.75rem</td><td>700</td><td>1.43</td><td>0</td><td>&quot;Inspiration for future getaways&quot; — page-level headings</td></tr><tr><td>Subsection Heading</td><td>22px / 1.38rem</td><td>500</td><td>1.18</td><td>-0.44px</td><td>&quot;What this place offers&quot;, &quot;Meet the hosts&quot; — content dividers</td></tr><tr><td>Card Title</td><td>21px / 1.31rem</td><td>700</td><td>1.43</td><td>0</td><td>Review panel headings, card lead titles</td></tr><tr><td>Listing Title</td><td>20px / 1.25rem</td><td>600</td><td>1.20</td><td>-0.18px</td><td>&quot;Small Group Yacht Tour, Unlimited Wine &amp; Fruits&quot; — listing headlines on detail pages</td></tr><tr><td>Subtitle Bold</td><td>16px / 1.00rem</td><td>600</td><td>1.25</td><td>0</td><td>Host name, city name</td></tr><tr><td>Body Medium</td><td>16px / 1.00rem</td><td>500</td><td>1.25</td><td>0</td><td>Primary body copy on detail pages</td></tr><tr><td>Button Large</td><td>16px / 1.00rem</td><td>500</td><td>1.25</td><td>0</td><td>&quot;Reserve&quot;, &quot;Become a host&quot;</td></tr><tr><td>Button Default</td><td>14px / 0.88rem</td><td>500</td><td>1.29</td><td>0</td><td>Standard button labels</td></tr><tr><td>Link</td><td>14px / 0.88rem</td><td>500</td><td>1.43</td><td>0</td><td>Nav links, footer links</td></tr><tr><td>Caption Medium</td><td>14px / 0.88rem</td><td>500</td><td>1.29</td><td>0</td><td>Metadata, subtitle lines (&quot;Cottage rentals&quot;, &quot;Villa rentals&quot;)</td></tr><tr><td>Caption Bold</td><td>14px / 0.88rem</td><td>600</td><td>1.43</td><td>0</td><td><code>salt</code> feature enabled — numeric stats, small-text emphasis</td></tr><tr><td>Caption Small</td><td>13px / 0.81rem</td><td>400</td><td>1.23</td><td>0</td><td>Review dates, micro-metadata</td></tr><tr><td>Micro Default</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>0</td><td>Footer disclaimers, legal micro-copy</td></tr><tr><td>Micro Bold</td><td>12px / 0.75rem</td><td>700</td><td>1.33</td><td>0</td><td>&quot;NEW&quot; pill labels</td></tr><tr><td>Badge Uppercase</td><td>11px / 0.69rem</td><td>600</td><td>1.18</td><td>0</td><td><code>salt</code> feature — compact category/status badges</td></tr><tr><td>Superscript</td><td>8px / 0.50rem</td><td>700</td><td>1.25</td><td>0.32px</td><td>Uppercase — price footnotes, decimal tails</td></tr></tbody></table>\n<h3>Principles</h3>\n<ul><li><strong>One family, many weights.</strong> Airbnb Cereal VF handles everything from 8px legal to 28px page headings — the visual identity comes from the family itself, not from typeface mixing.</li><li><strong>500 is the new 400.</strong> The system's &quot;regular&quot; weight is 500, giving every paragraph a slightly more confident texture than the web default.</li><li><strong>Negative tracking on display type only.</strong> Headings 20px+ compress tracking by -0.18 to -0.44px to feel chiseled; body sizes stay at 0 tracking for readability.</li><li><strong>Tight line-heights for headlines, generous for body.</strong> Display type runs at 1.18–1.25 (tight); body and caption open up to 1.43 for long-form comfort.</li><li><strong>No all-caps except at 8px.</strong> The only uppercase transform in the system is the 8px superscript — everywhere else, sentence case with subtle weight shifts does the work.</li></ul>\n<h3>Note on Font Substitutes</h3>\n<p>Airbnb Cereal VF is proprietary. The closest open-source substitute is <strong>Circular Std</strong> (still commercial) or <strong>Inter</strong> (free, Google Fonts) with letter-spacing reduced by -0.01em at display sizes. For strict brand fidelity, the documented fallback chain (<code>Circular, -apple-system, system-ui</code>) renders acceptably on macOS/iOS where <code>system-ui</code> resolves to San Francisco, which has similar proportions.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Família tipográfica</h3>\n<ul><li><strong>Airbnb Cereal VF</strong> (principal e única): a sans-serif proprietária de peso variável que carrega todo o sistema. Fallbacks (em ordem): <code>Circular, -apple-system, system-ui, Roboto, Helvetica Neue, sans-serif</code>.</li></ul>\n<p>Pesos observados nos tokens extraídos: 500, 600, 700. Não há 400 regular — o peso de &quot;corpo&quot; do sistema é 500, o que dá a todo bloco de texto uma densidade extra sutil, lida como confiante e deliberada.</p>\n<p>Recursos OpenType: <code>salt</code> (alternativas estilísticas) é usado nos rótulos compactos de 11px e 14px com peso 600 — provavelmente para numerais mais justos e formas de caracteres especiais. Não foram observados recursos de ligaduras nem de numerais fracionários.</p>\n<h3>Hierarquia</h3>\n<table><thead><tr><th>Papel</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Título de seção</td><td>28px / 1.75rem</td><td>700</td><td>1.43</td><td>0</td><td>&quot;Inspiration for future getaways&quot; — títulos no nível da página</td></tr><tr><td>Título de subseção</td><td>22px / 1.38rem</td><td>500</td><td>1.18</td><td>-0.44px</td><td>&quot;What this place offers&quot;, &quot;Meet the hosts&quot; — divisores de conteúdo</td></tr><tr><td>Título de card</td><td>21px / 1.31rem</td><td>700</td><td>1.43</td><td>0</td><td>Títulos de painéis de avaliações, títulos principais de cards</td></tr><tr><td>Título do anúncio</td><td>20px / 1.25rem</td><td>600</td><td>1.20</td><td>-0.18px</td><td>&quot;Small Group Yacht Tour, Unlimited Wine &amp; Fruits&quot; — títulos de anúncios nas páginas de detalhe</td></tr><tr><td>Subtítulo negrito</td><td>16px / 1.00rem</td><td>600</td><td>1.25</td><td>0</td><td>Nome do anfitrião, nome da cidade</td></tr><tr><td>Corpo médio</td><td>16px / 1.00rem</td><td>500</td><td>1.25</td><td>0</td><td>Texto principal das páginas de detalhe</td></tr><tr><td>Botão grande</td><td>16px / 1.00rem</td><td>500</td><td>1.25</td><td>0</td><td>&quot;Reserve&quot;, &quot;Become a host&quot;</td></tr><tr><td>Botão padrão</td><td>14px / 0.88rem</td><td>500</td><td>1.29</td><td>0</td><td>Rótulos de botões padrão</td></tr><tr><td>Link</td><td>14px / 0.88rem</td><td>500</td><td>1.43</td><td>0</td><td>Links de navegação, links do rodapé</td></tr><tr><td>Legenda média</td><td>14px / 0.88rem</td><td>500</td><td>1.29</td><td>0</td><td>Metadados, linhas de subtítulo (&quot;Cottage rentals&quot;, &quot;Villa rentals&quot;)</td></tr><tr><td>Legenda negrito</td><td>14px / 0.88rem</td><td>600</td><td>1.43</td><td>0</td><td>Recurso <code>salt</code> ativado — estatísticas numéricas, ênfase em texto pequeno</td></tr><tr><td>Legenda pequena</td><td>13px / 0.81rem</td><td>400</td><td>1.23</td><td>0</td><td>Datas de avaliações, micrometadados</td></tr><tr><td>Micro padrão</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>0</td><td>Avisos do rodapé, microtextos legais</td></tr><tr><td>Micro negrito</td><td>12px / 0.75rem</td><td>700</td><td>1.33</td><td>0</td><td>Rótulos em pílula &quot;NEW&quot;</td></tr><tr><td>Badge em caixa-alta</td><td>11px / 0.69rem</td><td>600</td><td>1.18</td><td>0</td><td>Recurso <code>salt</code> — badges compactos de categoria/status</td></tr><tr><td>Sobrescrito</td><td>8px / 0.50rem</td><td>700</td><td>1.25</td><td>0.32px</td><td>Caixa-alta — notas de preço, casas decimais</td></tr></tbody></table>\n<h3>Princípios</h3>\n<ul><li><strong>Uma família, muitos pesos.</strong> A Airbnb Cereal VF cuida de tudo, do texto legal de 8px aos títulos de página de 28px — a identidade visual vem da própria família, não da mistura de fontes.</li><li><strong>500 é o novo 400.</strong> O peso &quot;regular&quot; do sistema é 500, dando a cada parágrafo uma textura um pouco mais confiante que o padrão da web.</li><li><strong>Tracking negativo só na tipografia de display.</strong> Títulos de 20px+ comprimem o tracking em -0.18 a -0.44px para parecerem esculpidos; os tamanhos de corpo ficam com tracking 0 para legibilidade.</li><li><strong>Alturas de linha justas nos títulos, generosas no corpo.</strong> A tipografia de display roda em 1.18–1.25 (justa); corpo e legendas abrem para 1.43 para conforto em textos longos.</li><li><strong>Nada de caixa-alta, exceto em 8px.</strong> A única transformação para maiúsculas do sistema é o sobrescrito de 8px — em todo o resto, frases em caixa normal com mudanças sutis de peso fazem o trabalho.</li></ul>\n<h3>Nota sobre fontes substitutas</h3>\n<p>A Airbnb Cereal VF é proprietária. As substitutas mais próximas são a <strong>Circular Std</strong> (ainda comercial) ou a <strong>Inter</strong> (gratuita, Google Fonts) com espaçamento entre letras reduzido em -0.01em nos tamanhos de display. Para fidelidade estrita à marca, a cadeia de fallbacks documentada (<code>Circular, -apple-system, system-ui</code>) renderiza de forma aceitável no macOS/iOS, onde <code>system-ui</code> resolve para a San Francisco, que tem proporções semelhantes.</p>"
+    }
+   ]
+  },
+  {
+   "id": "component-stylings",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Component Stylings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Estilo dos componentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Buttons</h3>\n<p><strong>Primary CTA</strong> (&quot;Reserve&quot;, &quot;Search&quot;, &quot;Add dates&quot;)</p>\n<ul><li>Background: Rausch <code>#ff385c</code></li><li>Text: Canvas White <code>#ffffff</code>, Airbnb Cereal 500, 16px</li><li>Padding: ~14px vertical, 24px horizontal</li><li>Radius: 8px (rectangular) or 50% (circular icon variant)</li><li>Border: none</li><li>Active/pressed: <code>transform: scale(0.92)</code> plus a 2px <code>#222222</code> focus ring at <code>0 0 0 2px</code></li></ul>\n<p><strong>Secondary Button</strong> (&quot;Become a host&quot;, outlined tertiary actions)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Text: Ink Black <code>#222222</code>, Airbnb Cereal 500, 14–16px</li><li>Padding: 10px 16px</li><li>Radius: 20px (pill) or 8px (rectangular)</li><li>Border: 1px solid Hairline Gray <code>#dddddd</code></li></ul>\n<p><strong>Icon-Only Circular Button</strong> (back arrow, share, favorite, carousel controls)</p>\n<ul><li>Background: <code>#f2f2f2</code> (slightly off-white) or white with 1px translucent black border</li><li>Icon: <code>#222222</code> outline stroke, 16–20px</li><li>Size: 32–44px diameter</li><li>Radius: 50%</li><li>Active/pressed: <code>transform: scale(0.92)</code>; subtle 4px white ring <code>0 0 0 4px rgb(255,255,255)</code> to separate from colorful photography backgrounds</li></ul>\n<p><strong>Disabled Button</strong></p>\n<ul><li>Background: <code>#f2f2f2</code></li><li>Text: Stone Gray <code>#c1c1c1</code></li><li>Opacity: 0.5</li></ul>\n<p><strong>Pill Tab Button</strong> (category selector &quot;Homes / Experiences / Services&quot;)</p>\n<ul><li>Background: transparent</li><li>Text: Ink Black <code>#222222</code>, Airbnb Cereal 500, 16px</li><li>Padding: 8px 14px</li><li>Active state: 2px Ink Black underline beneath the label</li><li>Paired with a 36–48px 3D-rendered illustrated icon above the label</li></ul>\n<h3>Cards &amp; Containers</h3>\n<p><strong>Listing Card</strong> (homepage grid, search results)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Radius: 14px on the image, text sits directly below on transparent background</li><li>Image: 4:3 aspect ratio, full-bleed, rounded with the same 14px radius</li><li>Padding: none on the outer container; 12px spacing between image and metadata rows</li><li>Shadow: none — separation comes from whitespace and the intrinsic radius of the photograph</li><li>Metadata pattern: City/region on line 1 (16px 600), distance/duration on line 2 (14px 500 Ash Gray), date range on line 3, price row with &quot;per night&quot; at the bottom</li></ul>\n<p><strong>Detail Page Booking Panel</strong> (sticky right rail on room/experience pages)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Radius: 14–20px</li><li>Border: 1px solid Hairline Gray <code>#dddddd</code></li><li>Shadow: <code>rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0</code> — a stacked three-layer subtle elevation</li><li>Padding: 24px</li><li>Width: ~370px, pinned 120–140px below the viewport top</li><li>Content: price headline → date picker → guest dropdown → primary CTA → &quot;You won't be charged yet&quot; footnote</li></ul>\n<p><strong>Amenity Grid Card</strong> (on listing detail pages)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Border: 1px solid Hairline Gray <code>#dddddd</code> at the row level (not per item)</li><li>Padding: 16px vertical per amenity row</li><li>Icon + label pattern: 24px outline icon on the left, 16px 500-weight label on the right</li></ul>\n<p><strong>Review Card</strong> (individual review on detail pages)</p>\n<ul><li>Background: <code>#ffffff</code>, no border</li><li>Padding: 0 (relies on grid gaps)</li><li>Content: 40px circular avatar + 16px 600-weight name + 14px 400 Ash Gray date on one row, then 14px 500 body paragraph below</li></ul>\n<h3>Inputs &amp; Forms</h3>\n<p><strong>Search Bar</strong> (primary home page)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Border: 1px solid Hairline Gray <code>#dddddd</code> wrapping all three segments (Where / When / Who)</li><li>Radius: 32px (full pill)</li><li>Shadow: <code>rgba(0, 0, 0, 0.04) 0 2px 6px 0</code> — subtle floating feel</li><li>Structure: three segments divided by thin vertical dividers, each segment has a 12px 500 label above a 14px 500 placeholder</li><li>Submit: Rausch circular icon button at the right edge, 48px diameter</li></ul>\n<p><strong>Text Input</strong> (generic forms)</p>\n<ul><li>Background: <code>#ffffff</code></li><li>Border: 1px solid Hairline Gray <code>#dddddd</code></li><li>Radius: 8px</li><li>Padding: 14px 16px</li><li>Focus: border switches to Ink Black, adds <code>0 0 0 2px</code> black outer ring</li><li>Error: border switches to <code>#c13515</code> (Error Red), helper text uses same color</li></ul>\n<p><strong>Date Picker</strong></p>\n<ul><li>Calendar grid: 7-column layout, circular <code>50%</code> day cells 40–44px wide</li><li>Selected range: Ink Black <code>#222222</code> background with white numerals</li><li>Start/end anchors: larger filled circles; middle dates use Soft Cloud <code>#f7f7f7</code> tint</li></ul>\n<h3>Navigation</h3>\n<p><strong>Top Nav (Desktop)</strong></p>\n<ul><li>Height: ~80px</li><li>Background: <code>#ffffff</code></li><li>Left: Airbnb wordmark+logo lockup in Rausch (102×32px)</li><li>Center: tri-tab category picker (Homes / Experiences / Services) with 36–48px 3D icons stacked above 16px 500 labels; active tab has a 2px Ink Black underline</li><li>Right: &quot;Become a host&quot; text link, then 32px circular globe (language), then 36px hamburger avatar menu</li><li>Border-bottom: 1px solid Hairline Gray <code>#dddddd</code></li></ul>\n<p><strong>Top Nav (Mobile)</strong></p>\n<ul><li>Single-row search pill occupies full width: &quot;Start your search&quot; placeholder with a small magnifier icon</li><li>Below: tri-tab category picker persists (Homes / Experiences / Services) — illustrated icons shrink to ~28px</li><li>Bottom-fixed tab bar: Explore (active state Rausch) / Wishlists / Log in — 24px icons above 12px labels</li></ul>\n<p><strong>Listing Detail Secondary Nav</strong></p>\n<ul><li>Sticky horizontal scroll of anchor links (Photos · Amenities · Reviews · Location · Host) appears on scroll past the hero image</li><li>Height: 56px</li><li>Border-bottom: 1px solid Hairline Gray</li></ul>\n<h3>Image Treatment</h3>\n<ul><li><strong>Primary aspect ratios</strong>: 4:3 for homepage listing grids, 16:9 for experience hero photography, 1:1 for avatars</li><li><strong>Radius</strong>: 14px on listing-grid images, 20px on detail-page hero photo frames, <code>50%</code> on avatars</li><li><strong>Image grid on detail pages</strong>: five-photo grid with a single large-left image (50% width) and four smaller photos in a 2×2 grid on the right, all sharing the 20px outer rounded container</li><li><strong>Lazy loading</strong>: heavy use of <code>loading=&quot;lazy&quot;</code> with blurred placeholder previews</li><li><strong>Carousel</strong>: circular 32px arrow buttons overlay the image, centered vertically; dot indicators sit 12px above the bottom edge</li></ul>\n<h3>Signature Components</h3>\n<p><strong>Guest Favorite Award Lockup</strong> (featured prominently on high-rated listing detail pages)</p>\n<ul><li>Centered rating number rendered at 44–56px 700-weight</li><li>Two hand-drawn laurel-wreath SVG illustrations flanking left and right at ~48px tall</li><li>Below: &quot;Guest Favorite&quot; label at 12px 700 uppercase with <code>0.32px</code> tracking, and a short sub-label at 14px 500 Ash Gray</li><li>Full-width block, no container border — sits directly on white canvas</li></ul>\n<p><strong>Tri-Tab Category Picker</strong> (appears at the top of every browse surface)</p>\n<ul><li>Three tabs: Homes / Experiences / Services</li><li>Each tab: 3D-rendered illustrated icon (~48px tall) above 16px 500 label</li><li>Experiences and Services currently carry a small navy-blue &quot;NEW&quot; pill (12px 700 white text on dark blue) floating top-right of the icon</li><li>Active tab: 2px Ink Black underline beneath the label</li></ul>\n<p><strong>Inspiration City Grid</strong> (homepage &quot;Inspiration for future getaways&quot;)</p>\n<ul><li>6-column grid of destination links on desktop, 2-column on mobile</li><li>Each cell: 16px 600 city name on line 1, 14px 500 Ash Gray rental-type subtitle on line 2 (&quot;Cottage rentals&quot;, &quot;Villa rentals&quot;)</li><li>No images — text-only grid</li><li>Tabbed above by category (Popular / Arts &amp; culture / Beach / Mountains / Outdoors / Things to do / Travel tips &amp; inspiration / Airbnb-friendly apartments) — active tab has 2px underline and weight shift</li></ul>\n<p><strong>Reserve Sticky Card</strong> (listing detail pages)</p>\n<ul><li>Stays fixed 120px below viewport top on desktop as the user scrolls past the hero</li><li>Collapses to a full-width bottom bar on mobile with a &quot;From $X / night&quot; label and a Rausch &quot;Reserve&quot; pill</li><li>Always shows: price headline → date display → guest selector → Rausch CTA → &quot;You won't be charged yet&quot; disclaimer</li></ul>\n<p><strong>Experience Host Card</strong> (experience detail pages)</p>\n<ul><li>Full-width rounded container with a 3:2 cover photograph at top</li><li>Host avatar (circular, 56px) overlapping the bottom edge of the cover by 50%</li><li>Below overlap: host name at 16px 700, host tenure at 14px 500 Ash Gray, small Rausch &quot;Message host&quot; pill button</li><li>Used as the transition between reviews and the amenities/location block</li></ul>\n<p><strong>&quot;Things to know&quot; Strip</strong> (listing detail pages)</p>\n<ul><li>3-column grid of rule/policy blocks (House rules, Safety &amp; property, Cancellation policy)</li><li>Each column: icon at the top, 16px 600 heading, 14px 500 Ash Gray body, &quot;Show more&quot; link in Ink Black underline</li><li>Separator: 1px Hairline Gray top and bottom borders on the overall strip</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Botões</h3>\n<p><strong>CTA principal</strong> (&quot;Reserve&quot;, &quot;Search&quot;, &quot;Add dates&quot;)</p>\n<ul><li>Fundo: Rausch <code>#ff385c</code></li><li>Texto: Canvas White <code>#ffffff</code>, Airbnb Cereal 500, 16px</li><li>Padding: ~14px na vertical, 24px na horizontal</li><li>Raio: 8px (retangular) ou 50% (variante circular de ícone)</li><li>Borda: nenhuma</li><li>Ativo/pressionado: <code>transform: scale(0.92)</code> mais um anel de foco <code>#222222</code> de 2px em <code>0 0 0 2px</code></li></ul>\n<p><strong>Botão secundário</strong> (&quot;Become a host&quot;, ações terciárias com contorno)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Texto: Ink Black <code>#222222</code>, Airbnb Cereal 500, 14–16px</li><li>Padding: 10px 16px</li><li>Raio: 20px (pílula) ou 8px (retangular)</li><li>Borda: 1px solid Hairline Gray <code>#dddddd</code></li></ul>\n<p><strong>Botão circular só com ícone</strong> (voltar, compartilhar, favoritar, controles de carrossel)</p>\n<ul><li>Fundo: <code>#f2f2f2</code> (levemente fora do branco) ou branco com borda preta translúcida de 1px</li><li>Ícone: traço de contorno <code>#222222</code>, 16–20px</li><li>Tamanho: 32–44px de diâmetro</li><li>Raio: 50%</li><li>Ativo/pressionado: <code>transform: scale(0.92)</code>; anel branco sutil de 4px <code>0 0 0 4px rgb(255,255,255)</code> para separar de fundos fotográficos coloridos</li></ul>\n<p><strong>Botão desabilitado</strong></p>\n<ul><li>Fundo: <code>#f2f2f2</code></li><li>Texto: Stone Gray <code>#c1c1c1</code></li><li>Opacidade: 0.5</li></ul>\n<p><strong>Botão de aba em pílula</strong> (seletor de categoria &quot;Homes / Experiences / Services&quot;)</p>\n<ul><li>Fundo: transparente</li><li>Texto: Ink Black <code>#222222</code>, Airbnb Cereal 500, 16px</li><li>Padding: 8px 14px</li><li>Estado ativo: sublinhado Ink Black de 2px sob o rótulo</li><li>Combinado com um ícone ilustrado renderizado em 3D de 36–48px acima do rótulo</li></ul>\n<h3>Cards e contêineres</h3>\n<p><strong>Card de anúncio</strong> (grade da página inicial, resultados de busca)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Raio: 14px na imagem; o texto fica logo abaixo, sobre fundo transparente</li><li>Imagem: proporção 4:3, de ponta a ponta, arredondada com o mesmo raio de 14px</li><li>Padding: nenhum no contêiner externo; 12px de espaço entre a imagem e as linhas de metadados</li><li>Sombra: nenhuma — a separação vem do espaço em branco e do raio intrínseco da fotografia</li><li>Padrão de metadados: cidade/região na linha 1 (16px 600), distância/duração na linha 2 (14px 500 Ash Gray), intervalo de datas na linha 3 e linha de preço com &quot;por noite&quot; no final</li></ul>\n<p><strong>Painel de reserva da página de detalhe</strong> (coluna direita fixa nas páginas de acomodação/experiência)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Raio: 14–20px</li><li>Borda: 1px solid Hairline Gray <code>#dddddd</code></li><li>Sombra: <code>rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0</code> — uma elevação sutil empilhada em três camadas</li><li>Padding: 24px</li><li>Largura: ~370px, fixo 120–140px abaixo do topo da viewport</li><li>Conteúdo: preço em destaque → seletor de datas → dropdown de hóspedes → CTA principal → nota &quot;Você ainda não será cobrado&quot;</li></ul>\n<p><strong>Card da grade de comodidades</strong> (nas páginas de detalhe do anúncio)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid Hairline Gray <code>#dddddd</code> no nível da linha (não por item)</li><li>Padding: 16px na vertical por linha de comodidade</li><li>Padrão ícone + rótulo: ícone de contorno de 24px à esquerda, rótulo de 16px com peso 500 à direita</li></ul>\n<p><strong>Card de avaliação</strong> (avaliação individual nas páginas de detalhe)</p>\n<ul><li>Fundo: <code>#ffffff</code>, sem borda</li><li>Padding: 0 (depende dos espaçamentos da grade)</li><li>Conteúdo: avatar circular de 40px + nome em 16px 600 + data em 14px 400 Ash Gray numa linha, e depois o parágrafo em 14px 500 abaixo</li></ul>\n<h3>Campos e formulários</h3>\n<p><strong>Barra de busca</strong> (página inicial principal)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid Hairline Gray <code>#dddddd</code> envolvendo os três segmentos (Onde / Quando / Quem)</li><li>Raio: 32px (pílula completa)</li><li>Sombra: <code>rgba(0, 0, 0, 0.04) 0 2px 6px 0</code> — sensação sutil de flutuação</li><li>Estrutura: três segmentos separados por divisores verticais finos; cada segmento tem um rótulo de 12px 500 acima de um placeholder de 14px 500</li><li>Envio: botão de ícone circular Rausch na borda direita, com 48px de diâmetro</li></ul>\n<p><strong>Campo de texto</strong> (formulários genéricos)</p>\n<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid Hairline Gray <code>#dddddd</code></li><li>Raio: 8px</li><li>Padding: 14px 16px</li><li>Foco: a borda passa a Ink Black e ganha um anel externo preto <code>0 0 0 2px</code></li><li>Erro: a borda passa a <code>#c13515</code> (Error Red) e o texto de ajuda usa a mesma cor</li></ul>\n<p><strong>Seletor de datas</strong></p>\n<ul><li>Grade do calendário: layout de 7 colunas, células de dia circulares <code>50%</code> com 40–44px de largura</li><li>Intervalo selecionado: fundo Ink Black <code>#222222</code> com numerais brancos</li><li>Âncoras de início/fim: círculos preenchidos maiores; as datas intermediárias usam o tom Soft Cloud <code>#f7f7f7</code></li></ul>\n<h3>Navegação</h3>\n<p><strong>Navegação superior (desktop)</strong></p>\n<ul><li>Altura: ~80px</li><li>Fundo: <code>#ffffff</code></li><li>Esquerda: composição de logotipo + símbolo do Airbnb em Rausch (102×32px)</li><li>Centro: seletor de categoria em três abas (Acomodações / Experiências / Serviços) com ícones 3D de 36–48px empilhados acima de rótulos de 16px 500; a aba ativa tem sublinhado Ink Black de 2px</li><li>Direita: link de texto &quot;Become a host&quot;, depois um globo circular de 32px (idioma) e um menu de avatar com hambúrguer de 36px</li><li>Borda inferior: 1px solid Hairline Gray <code>#dddddd</code></li></ul>\n<p><strong>Navegação superior (mobile)</strong></p>\n<ul><li>Uma pílula de busca de linha única ocupa toda a largura: placeholder &quot;Comece sua busca&quot; com um pequeno ícone de lupa</li><li>Abaixo: o seletor de categoria em três abas continua (Acomodações / Experiências / Serviços) — os ícones ilustrados encolhem para ~28px</li><li>Barra de abas fixa embaixo: Explorar (estado ativo em Rausch) / Favoritos / Entrar — ícones de 24px acima de rótulos de 12px</li></ul>\n<p><strong>Navegação secundária do detalhe do anúncio</strong></p>\n<ul><li>Uma faixa horizontal fixa e rolável de links-âncora (Fotos · Comodidades · Avaliações · Localização · Anfitrião) aparece ao rolar além da imagem hero</li><li>Altura: 56px</li><li>Borda inferior: 1px solid Hairline Gray</li></ul>\n<h3>Tratamento de imagens</h3>\n<ul><li><strong>Proporções principais</strong>: 4:3 nas grades de anúncios da página inicial, 16:9 na fotografia hero das experiências, 1:1 nos avatares</li><li><strong>Raio</strong>: 14px nas imagens da grade de anúncios, 20px nas molduras das fotos hero das páginas de detalhe, <code>50%</code> nos avatares</li><li><strong>Grade de imagens nas páginas de detalhe</strong>: grade de cinco fotos com uma única imagem grande à esquerda (50% da largura) e quatro fotos menores em grade 2×2 à direita, todas dentro do mesmo contêiner externo arredondado de 20px</li><li><strong>Carregamento tardio</strong>: uso intenso de <code>loading=&quot;lazy&quot;</code> com previews desfocadas como placeholder</li><li><strong>Carrossel</strong>: botões circulares de seta de 32px sobrepostos à imagem, centralizados na vertical; os indicadores em pontos ficam 12px acima da borda inferior</li></ul>\n<h3>Componentes característicos</h3>\n<p><strong>Composição do prêmio Preferido dos Hóspedes</strong> (em destaque nas páginas de detalhe de anúncios bem avaliados)</p>\n<ul><li>Nota centralizada renderizada em 44–56px com peso 700</li><li>Duas ilustrações SVG de coroas de louros desenhadas à mão, à esquerda e à direita, com ~48px de altura</li><li>Abaixo: rótulo &quot;Guest Favorite&quot; em 12px 700 caixa-alta com tracking de <code>0.32px</code> e um sub-rótulo curto em 14px 500 Ash Gray</li><li>Bloco de largura total, sem borda de contêiner — fica direto sobre a tela branca</li></ul>\n<p><strong>Seletor de categoria em três abas</strong> (aparece no topo de toda superfície de navegação)</p>\n<ul><li>Três abas: Acomodações / Experiências / Serviços</li><li>Cada aba: ícone ilustrado renderizado em 3D (~48px de altura) acima de um rótulo de 16px 500</li><li>Experiências e Serviços trazem hoje uma pequena pílula azul-marinho &quot;NEW&quot; (texto branco 12px 700 sobre azul-escuro) flutuando no canto superior direito do ícone</li><li>Aba ativa: sublinhado Ink Black de 2px sob o rótulo</li></ul>\n<p><strong>Grade de cidades inspiradoras</strong> (&quot;Inspiration for future getaways&quot; na página inicial)</p>\n<ul><li>Grade de 6 colunas de links de destinos no desktop, 2 colunas no mobile</li><li>Cada célula: nome da cidade em 16px 600 na linha 1, subtítulo do tipo de aluguel em 14px 500 Ash Gray na linha 2 (&quot;Cottage rentals&quot;, &quot;Villa rentals&quot;)</li><li>Sem imagens — grade só de texto</li><li>Abas acima, por categoria (Populares / Arte e cultura / Praia / Montanhas / Ao ar livre / O que fazer / Dicas e inspiração de viagem / Apartamentos amigos do Airbnb) — a aba ativa tem sublinhado de 2px e mudança de peso</li></ul>\n<p><strong>Card fixo de reserva</strong> (páginas de detalhe do anúncio)</p>\n<ul><li>Fica fixo 120px abaixo do topo da viewport no desktop quando o usuário rola além do hero</li><li>Recolhe para uma barra inferior de largura total no mobile, com um rótulo &quot;A partir de $X / noite&quot; e uma pílula &quot;Reservar&quot; em Rausch</li><li>Sempre mostra: preço em destaque → datas → seletor de hóspedes → CTA Rausch → aviso &quot;Você ainda não será cobrado&quot;</li></ul>\n<p><strong>Card do anfitrião da experiência</strong> (páginas de detalhe de experiências)</p>\n<ul><li>Contêiner arredondado de largura total com uma foto de capa 3:2 no topo</li><li>Avatar do anfitrião (circular, 56px) sobrepondo a borda inferior da capa em 50%</li><li>Abaixo da sobreposição: nome do anfitrião em 16px 700, tempo como anfitrião em 14px 500 Ash Gray e um pequeno botão em pílula Rausch &quot;Enviar mensagem ao anfitrião&quot;</li><li>Usado como transição entre as avaliações e o bloco de comodidades/localização</li></ul>\n<p><strong>Faixa &quot;O que você precisa saber&quot;</strong> (páginas de detalhe do anúncio)</p>\n<ul><li>Grade de 3 colunas com blocos de regras/políticas (Regras da casa, Segurança e propriedade, Política de cancelamento)</li><li>Cada coluna: ícone no topo, título em 16px 600, corpo em 14px 500 Ash Gray e link &quot;Mostrar mais&quot; sublinhado em Ink Black</li><li>Separador: bordas Hairline Gray de 1px em cima e embaixo da faixa inteira</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "layout-principles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Layout Principles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Princípios de layout"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Spacing System</h3>\n<ul><li><strong>Base unit</strong>: 8px</li><li><strong>Extracted scale</strong>: 2, 3, 4, 5.5, 6, 8, 10, 11, 12, 15, 16, 18.5, 22, 24, 32px — fine-grained with a handful of off-grid values used for pixel-perfect icon alignment</li><li><strong>Section padding</strong>: ~48–64px top/bottom on desktop, 24–32px on mobile</li><li><strong>Card internal padding</strong>: 24px on booking panels and large cards, 16px on amenity rows, 12px on listing-card metadata</li><li><strong>Gutter between listing cards</strong>: 24px desktop, 16px mobile</li><li><strong>Between stacked text rows</strong>: 4–8px (very tight — reinforces the &quot;dense information&quot; feel of travel listings)</li></ul>\n<h3>Grid &amp; Container</h3>\n<ul><li><strong>Max content width</strong>: 1760–1920px on ultra-wide (Airbnb lets the grid breathe farther than most sites); 1280px on most detail pages</li><li><strong>Homepage listing grid</strong>: 6 columns at ≥1760px, 5 at ≥1440px, 4 at ≥1128px, 3 at ≥800px, 2 at ≥550px, 1 below</li><li><strong>Detail page</strong>: 2-column asymmetric — main content ~58%, sticky booking panel ~36% on the right, ~6% gutter</li><li><strong>Footer</strong>: 3-column Support / Hosting / Airbnb</li></ul>\n<h3>Whitespace Philosophy</h3>\n<p>Airbnb is densely informative but never cramped. Whitespace is used to <em>group</em> — listing cards have 24px of gutter so each photograph reads as a distinct object, but the metadata under each card uses 4–8px gaps so the price/city/date feels like a single unit. The detail-page booking panel has 24px internal padding, but rows within (date picker, guest selector, CTA) are stacked at 12px — the boundary between the card and the page does more separation work than the content within.</p>\n<h3>Border Radius Scale</h3>\n<table><thead><tr><th>Radius</th><th>Use</th></tr></thead><tbody><tr><td>4px</td><td>Inline anchor tags, tag chips</td></tr><tr><td>8px</td><td>Text buttons, dropdowns, small utility buttons</td></tr><tr><td>14px</td><td>Listing card photography, generic content containers, badges</td></tr><tr><td>20px</td><td>Primary rounded buttons (pill shape), large images, booking panel</td></tr><tr><td>32px</td><td>Search bar pill, extra-large containers</td></tr><tr><td>50%</td><td>All circular icon buttons, all avatars, wishlist hearts — the system's signature round geometry</td></tr></tbody></table>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Sistema de espaçamento</h3>\n<ul><li><strong>Unidade base</strong>: 8px</li><li><strong>Escala extraída</strong>: 2, 3, 4, 5.5, 6, 8, 10, 11, 12, 15, 16, 18.5, 22, 24, 32px — granular, com alguns valores fora da grade usados para alinhar ícones com precisão de pixel</li><li><strong>Padding das seções</strong>: ~48–64px em cima/embaixo no desktop, 24–32px no mobile</li><li><strong>Padding interno dos cards</strong>: 24px nos painéis de reserva e cards grandes, 16px nas linhas de comodidades, 12px nos metadados dos cards de anúncio</li><li><strong>Espaço entre cards de anúncio</strong>: 24px no desktop, 16px no mobile</li><li><strong>Entre linhas de texto empilhadas</strong>: 4–8px (bem justo — reforça a sensação de &quot;informação densa&quot; dos anúncios de viagem)</li></ul>\n<h3>Grid e contêiner</h3>\n<ul><li><strong>Largura máxima do conteúdo</strong>: 1760–1920px em telas ultralargas (o Airbnb deixa a grade respirar mais que a maioria dos sites); 1280px na maioria das páginas de detalhe</li><li><strong>Grade de anúncios da página inicial</strong>: 6 colunas a partir de 1760px, 5 a partir de 1440px, 4 a partir de 1128px, 3 a partir de 800px, 2 a partir de 550px e 1 abaixo disso</li><li><strong>Página de detalhe</strong>: 2 colunas assimétricas — conteúdo principal ~58%, painel de reserva fixo ~36% à direita, ~6% de espaço entre eles</li><li><strong>Rodapé</strong>: 3 colunas, Suporte / Hospedagem / Airbnb</li></ul>\n<h3>Filosofia do espaço em branco</h3>\n<p>O Airbnb é densamente informativo, mas nunca apertado. O espaço em branco é usado para <em>agrupar</em> — os cards de anúncio têm 24px de espaço entre si para que cada fotografia seja lida como um objeto distinto, mas os metadados sob cada card usam espaços de 4–8px para que preço/cidade/data pareçam uma única unidade. O painel de reserva da página de detalhe tem 24px de padding interno, mas as linhas dentro dele (seletor de datas, seletor de hóspedes, CTA) ficam empilhadas a 12px — o limite entre o card e a página faz mais trabalho de separação que o conteúdo interno.</p>\n<h3>Escala de raios de borda</h3>\n<table><thead><tr><th>Raio</th><th>Uso</th></tr></thead><tbody><tr><td>4px</td><td>Links-âncora inline, chips de tags</td></tr><tr><td>8px</td><td>Botões de texto, dropdowns, pequenos botões utilitários</td></tr><tr><td>14px</td><td>Fotografia dos cards de anúncio, contêineres de conteúdo genéricos, badges</td></tr><tr><td>20px</td><td>Botões arredondados principais (formato de pílula), imagens grandes, painel de reserva</td></tr><tr><td>32px</td><td>Pílula da barra de busca, contêineres extragrandes</td></tr><tr><td>50%</td><td>Todos os botões de ícone circulares, todos os avatares, corações da lista de desejos — a geometria redonda característica do sistema</td></tr></tbody></table>"
+    }
+   ]
+  },
+  {
+   "id": "depth-elevation",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Depth & Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Profundidade e elevação"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<table><thead><tr><th>Level</th><th>Treatment</th><th>Use</th></tr></thead><tbody><tr><td>0</td><td>No shadow</td><td>Listing cards, body content, text-only sections</td></tr><tr><td>1</td><td><code>rgba(0, 0, 0, 0.08) 0 4px 12px</code></td><td>Active/pressed icon buttons (e.g., back, share, favorite) — subtle lift to indicate interaction</td></tr><tr><td>2</td><td><code>rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0</code></td><td>Booking panel sticky card, modals, dropdown menus — the system's signature three-layer elevation</td></tr><tr><td>Focus Ring</td><td><code>0 0 0 2px #222222</code></td><td>Active-state buttons, focused search input</td></tr><tr><td>White Separator Ring</td><td><code>rgb(255, 255, 255) 0 0 0 4px</code></td><td>Circular buttons overlaid on photographs — a 4px white ring cleanly separates the button from colorful image backgrounds</td></tr></tbody></table>\n<p>Shadow philosophy: Airbnb uses <strong>stacked layered shadows</strong> rather than a single drop. The three-layer booking-panel shadow reads as one cohesive lift but is actually three separate shadows at different opacity/blur values — creating subtle anti-aliasing at the shadow's perimeter that feels premium without being heavy.</p>\n<h3>Decorative Depth</h3>\n<ul><li><strong>Photography as depth</strong>: the system relies heavily on full-bleed photography to create visual depth; shadows and gradients are used sparingly so the photographs do the heavy lifting</li><li><strong>Laurel wreath lockup</strong>: the Guest Favorite award uses two SVG laurel illustrations that give the otherwise-flat rating number a ceremonial, trophy-like presence</li><li><strong>3D rendered category icons</strong>: Homes/Experiences/Services icons have their own soft internal lighting and subtle cast shadows baked into the artwork — the only place the brand allows &quot;dimensional&quot; illustration</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>0</td><td>Sem sombra</td><td>Cards de anúncio, conteúdo de corpo, seções só de texto</td></tr><tr><td>1</td><td><code>rgba(0, 0, 0, 0.08) 0 4px 12px</code></td><td>Botões de ícone ativos/pressionados (ex.: voltar, compartilhar, favoritar) — leve elevação para indicar interação</td></tr><tr><td>2</td><td><code>rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0</code></td><td>Card fixo do painel de reserva, modais, menus dropdown — a elevação característica de três camadas do sistema</td></tr><tr><td>Anel de foco</td><td><code>0 0 0 2px #222222</code></td><td>Botões em estado ativo, campo de busca em foco</td></tr><tr><td>Anel separador branco</td><td><code>rgb(255, 255, 255) 0 0 0 4px</code></td><td>Botões circulares sobre fotografias — um anel branco de 4px separa com limpeza o botão de fundos coloridos</td></tr></tbody></table>\n<p>Filosofia das sombras: o Airbnb usa <strong>sombras empilhadas em camadas</strong> em vez de uma única sombra projetada. A sombra de três camadas do painel de reserva é lida como uma elevação coesa, mas na verdade são três sombras separadas com valores diferentes de opacidade/desfoque — criando um antisserrilhado sutil no perímetro da sombra, que parece premium sem ficar pesado.</p>\n<h3>Profundidade decorativa</h3>\n<ul><li><strong>Fotografia como profundidade</strong>: o sistema depende muito da fotografia de ponta a ponta para criar profundidade visual; sombras e gradientes são usados com parcimônia para que as fotografias façam o trabalho pesado</li><li><strong>Composição da coroa de louros</strong>: o prêmio Preferido dos Hóspedes usa duas ilustrações SVG de louros que dão à nota, de outro modo plana, uma presença cerimonial, de troféu</li><li><strong>Ícones de categoria renderizados em 3D</strong>: os ícones de Acomodações/Experiências/Serviços têm iluminação interna suave e sombras projetadas sutis embutidas na arte — o único lugar em que a marca permite ilustração &quot;dimensional&quot;</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "do-s-and-don-ts",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Do's and Don'ts"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "O que fazer e o que evitar"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Do</h3>\n<ul><li>Reserve Rausch <code>#ff385c</code> for primary actions and the active-tab indicator — never dilute it with decorative uses.</li><li>Let photography breathe — 4:3 crops with 14–20px rounded corners, no overlaid text, no gradient scrims.</li><li>Use Ink Black <code>#222222</code> for every text layer below Rausch — this is the system's near-black, never true <code>#000000</code>.</li><li>Pair the tri-tab category picker's 3D illustrated icons with flat typography — don't mix illustration styles within a single surface.</li><li>Stack three low-opacity shadows (~2%, 4%, 10%) to create the signature booking-panel elevation.</li><li>Use Hairline Gray <code>#dddddd</code> 1px borders for every card-to-card and row-to-row divider.</li><li>Treat the booking panel as sticky on desktop, collapsing to a bottom-anchored reserve bar on mobile.</li><li>Use 4–8px spacing within metadata groups and 24px between cards — information density is intentional.</li></ul>\n<h3>Don't</h3>\n<ul><li>Don't introduce secondary accent colors outside the Rausch / Plus Magenta / Luxe Purple product-tier palette.</li><li>Don't place text inside photographs — captions always sit below the image, never overlaid.</li><li>Don't use all-caps labels except the single 8px superscript role.</li><li>Don't round icon buttons to anything other than 50% — circular is the system's signature geometry.</li><li>Don't add drop shadows to listing cards — they sit on white canvas with no elevation.</li><li>Don't use gradient backgrounds — the only gradient in the system is a narrow Rausch → magenta sweep on the wordmark.</li><li>Don't use the 400-regular font weight — Airbnb Cereal's body weight is 500.</li><li>Don't override Airbnb Cereal VF with a different display face — the system is intentionally single-family.</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Faça</h3>\n<ul><li>Reserve o Rausch <code>#ff385c</code> para ações principais e para o indicador de aba ativa — nunca o dilua com usos decorativos.</li><li>Deixe a fotografia respirar — recortes 4:3 com cantos arredondados de 14–20px, sem texto sobreposto e sem véus de gradiente.</li><li>Use Ink Black <code>#222222</code> em todas as camadas de texto abaixo do Rausch — é o quase-preto do sistema, nunca o <code>#000000</code> puro.</li><li>Combine os ícones ilustrados em 3D do seletor de três abas com tipografia plana — não misture estilos de ilustração numa mesma superfície.</li><li>Empilhe três sombras de baixa opacidade (~2%, 4%, 10%) para criar a elevação característica do painel de reserva.</li><li>Use bordas Hairline Gray <code>#dddddd</code> de 1px em todo divisor entre cards e entre linhas.</li><li>Trate o painel de reserva como fixo no desktop, recolhendo para uma barra de reserva ancorada embaixo no mobile.</li><li>Use 4–8px de espaço dentro dos grupos de metadados e 24px entre cards — a densidade de informação é intencional.</li></ul>\n<h3>Não faça</h3>\n<ul><li>Não introduza cores de destaque secundárias fora da paleta de níveis de produto Rausch / Plus Magenta / Luxe Purple.</li><li>Não coloque texto dentro das fotografias — legendas sempre ficam abaixo da imagem, nunca sobrepostas.</li><li>Não use rótulos em caixa-alta, exceto no papel único de sobrescrito de 8px.</li><li>Não arredonde botões de ícone com nada além de 50% — o círculo é a geometria característica do sistema.</li><li>Não adicione sombras projetadas aos cards de anúncio — eles ficam sobre a tela branca sem elevação.</li><li>Não use fundos com gradiente — o único gradiente do sistema é uma estreita passagem Rausch → magenta no logotipo.</li><li>Não use o peso 400 regular — o peso de corpo da Airbnb Cereal é 500.</li><li>Não substitua a Airbnb Cereal VF por outra fonte de display — o sistema é intencionalmente de família única.</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "responsive-behavior",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Responsive Behavior"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Comportamento responsivo"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Breakpoints</h3>\n<p>Airbnb declares ~60 breakpoints (design-time artifact from their component library), but the meaningful layout shifts happen at a much smaller set:</p>\n<table><thead><tr><th>Name</th><th>Width</th><th>Key Changes</th></tr></thead><tbody><tr><td>Ultra-wide</td><td>≥1760px</td><td>6-column listing grid, 1760–1920px max content width</td></tr><tr><td>Desktop XL</td><td>1440–1759px</td><td>5-column grid, full nav visible, sticky right-rail booking panel</td></tr><tr><td>Desktop</td><td>1128–1439px</td><td>4-column grid, sticky booking panel persists</td></tr><tr><td>Laptop</td><td>1024–1127px</td><td>3–4 column grid, category nav remains horizontal</td></tr><tr><td>Tablet</td><td>800–1023px</td><td>3-column grid, global search may collapse to a single-row pill</td></tr><tr><td>Small tablet</td><td>550–799px</td><td>2-column grid, booking panel drops to full-width inline block</td></tr><tr><td>Mobile</td><td>375–549px</td><td>1-column stacked layout, bottom-fixed tab bar appears (Explore / Wishlists / Log in)</td></tr><tr><td>Small mobile</td><td>&lt;375px</td><td>Edge padding tightens to 16px; category-picker icons shrink to ~28px</td></tr></tbody></table>\n<h3>Touch Targets</h3>\n<p>All interactive elements meet or exceed 44×44px. The circular icon button family is specifically sized 32–44px with 8–12px extended hit-area padding. The Rausch primary Reserve button is ~48px tall. The tri-tab category picker's hit area is the full label-plus-icon rectangle (typically ~64×80px per tab).</p>\n<h3>Collapsing Strategy</h3>\n<ul><li><strong>Nav</strong>: Top nav keeps Airbnb wordmark + tri-tab picker on tablet and above; on mobile the picker slides just below the search pill, and the globe/avatar controls move to a bottom-anchored tab bar.</li><li><strong>Search bar</strong>: Three-segment pill (Where / When / Who) with a Rausch circular submit button on desktop; collapses to a single-row &quot;Start your search&quot; pill on mobile, tapping which opens a full-screen search sheet.</li><li><strong>Booking panel</strong>: Sticky right-rail on ≥1128px; inline within the main content column between 800–1127px; bottom-fixed &quot;Reserve&quot; pill on &lt;800px.</li><li><strong>Listing grid</strong>: Reflows 6 → 5 → 4 → 3 → 2 → 1 columns across breakpoints.</li><li><strong>Detail-page image grid</strong>: Five-image layout (1 large + 4 small) on desktop; becomes a swipeable full-bleed carousel on mobile with page-dot indicators.</li><li><strong>Footer</strong>: 3-column layout collapses to stacked single-column at &lt;800px.</li></ul>\n<h3>Image Behavior</h3>\n<ul><li><code>loading=&quot;lazy&quot;</code> universal, with blurred <code>im_w=</code> URL-parameterized preview thumbs served first</li><li>Responsive images use Airbnb's <code>muscache.com</code> CDN with <code>im_w</code> query parameter for width-based delivery (<code>im_w=240</code>, <code>im_w=720</code>, <code>im_w=1200</code>, <code>im_w=2400</code>)</li><li>No art-direction crops — the same image is scaled up/down across breakpoints</li><li>Carousels auto-advance photo height to maintain a consistent 4:3 ratio regardless of source aspect</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Breakpoints</h3>\n<p>O Airbnb declara ~60 breakpoints (resíduo de tempo de design da biblioteca de componentes), mas as mudanças de layout relevantes acontecem num conjunto bem menor:</p>\n<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Ultralarga</td><td>≥1760px</td><td>Grade de anúncios de 6 colunas, largura máxima do conteúdo de 1760–1920px</td></tr><tr><td>Desktop XL</td><td>1440–1759px</td><td>Grade de 5 colunas, navegação completa visível, painel de reserva fixo na coluna direita</td></tr><tr><td>Desktop</td><td>1128–1439px</td><td>Grade de 4 colunas, o painel de reserva fixo continua</td></tr><tr><td>Notebook</td><td>1024–1127px</td><td>Grade de 3–4 colunas, a navegação de categorias continua horizontal</td></tr><tr><td>Tablet</td><td>800–1023px</td><td>Grade de 3 colunas, a busca global pode recolher para uma pílula de linha única</td></tr><tr><td>Tablet pequeno</td><td>550–799px</td><td>Grade de 2 colunas, o painel de reserva vira um bloco inline de largura total</td></tr><tr><td>Mobile</td><td>375–549px</td><td>Layout empilhado de 1 coluna, aparece a barra de abas fixa embaixo (Explorar / Favoritos / Entrar)</td></tr><tr><td>Mobile pequeno</td><td>&lt;375px</td><td>O padding das bordas cai para 16px; os ícones do seletor de categoria encolhem para ~28px</td></tr></tbody></table>\n<h3>Áreas de toque</h3>\n<p>Todos os elementos interativos atendem ou superam 44×44px. A família de botões de ícone circulares tem especificamente 32–44px, com 8–12px de padding estendendo a área de toque. O botão principal Reservar em Rausch tem ~48px de altura. A área de toque do seletor de categoria em três abas é o retângulo inteiro de rótulo mais ícone (tipicamente ~64×80px por aba).</p>\n<h3>Estratégia de recolhimento</h3>\n<ul><li><strong>Navegação</strong>: a navegação superior mantém o logotipo do Airbnb + o seletor de três abas do tablet para cima; no mobile o seletor desce para logo abaixo da pílula de busca, e os controles de globo/avatar vão para uma barra de abas ancorada embaixo.</li><li><strong>Barra de busca</strong>: pílula de três segmentos (Onde / Quando / Quem) com um botão circular de envio em Rausch no desktop; recolhe para uma pílula de linha única &quot;Comece sua busca&quot; no mobile, que ao ser tocada abre uma folha de busca em tela cheia.</li><li><strong>Painel de reserva</strong>: coluna direita fixa a partir de 1128px; inline dentro da coluna de conteúdo principal entre 800–1127px; pílula &quot;Reservar&quot; fixa embaixo abaixo de 800px.</li><li><strong>Grade de anúncios</strong>: reorganiza 6 → 5 → 4 → 3 → 2 → 1 colunas ao longo dos breakpoints.</li><li><strong>Grade de imagens da página de detalhe</strong>: layout de cinco imagens (1 grande + 4 pequenas) no desktop; vira um carrossel deslizável de ponta a ponta no mobile, com indicadores de página em pontos.</li><li><strong>Rodapé</strong>: o layout de 3 colunas recolhe para uma coluna única empilhada abaixo de 800px.</li></ul>\n<h3>Comportamento das imagens</h3>\n<ul><li><code>loading=&quot;lazy&quot;</code> em todo lugar, com miniaturas de preview desfocadas parametrizadas pela URL (<code>im_w=</code>) servidas primeiro</li><li>As imagens responsivas usam a CDN <code>muscache.com</code> do Airbnb com o parâmetro de query <code>im_w</code> para entrega baseada em largura (<code>im_w=240</code>, <code>im_w=720</code>, <code>im_w=1200</code>, <code>im_w=2400</code>)</li><li>Sem recortes de direção de arte — a mesma imagem é ampliada/reduzida ao longo dos breakpoints</li><li>Os carrosséis ajustam automaticamente a altura da foto para manter uma proporção 4:3 consistente, independentemente da proporção original</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "agent-prompt-guide",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Agent Prompt Guide"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Guia de prompts para agentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Quick Color Reference</h3>\n<ul><li>Primary CTA: &quot;Rausch (#ff385c)&quot;</li><li>Page background: &quot;Canvas White (#ffffff)&quot;</li><li>Subsurface: &quot;Soft Cloud (#f7f7f7)&quot;</li><li>Heading / body text: &quot;Ink Black (#222222)&quot;</li><li>Secondary text: &quot;Ash Gray (#6a6a6a)&quot;</li><li>Border / divider: &quot;Hairline Gray (#dddddd)&quot;</li><li>Error: &quot;Error Red (#c13515)&quot;</li><li>Info link: &quot;Info Blue (#428bff)&quot;</li><li>Luxe tier accent: &quot;Luxe Purple (#460479)&quot;</li><li>Plus tier accent: &quot;Plus Magenta (#92174d)&quot;</li></ul>\n<h3>Example Component Prompts</h3>\n<ul><li>&quot;Create a primary Reserve button: Rausch (#ff385c) background, white Airbnb Cereal 500-weight label at 16px, 14px × 24px padding, 8px border-radius, no shadow. On active/pressed add <code>transform: scale(0.92)</code> with a 2px Ink Black focus ring (<code>0 0 0 2px #222222</code>).&quot;</li><li>&quot;Build a listing card with a 4:3 full-bleed photograph at 14px border-radius, no container shadow; below the image stack three text rows with 4px gaps: city name at 16px 600 Ink Black, rental type at 14px 500 Ash Gray (#6a6a6a), and price range in 16px 500 Ink Black with a 14px <code>per night</code> suffix.&quot;</li><li>&quot;Design a sticky booking panel: white background, 14px border-radius, 1px Hairline Gray (#dddddd) border, 3-layer elevation shadow (<code>rgba(0,0,0,0.02) 0 0 0 1px, rgba(0,0,0,0.04) 0 2px 6px 0, rgba(0,0,0,0.1) 0 4px 8px 0</code>), 24px padding, 370px width, pinned 120px below viewport top on desktop. Contents: price headline, date picker, guest dropdown, Rausch primary CTA, and a 12px Ash Gray <code>You won't be charged yet</code> disclaimer.&quot;</li><li>&quot;Create a tri-tab category picker: three equal-width tabs labeled Homes, Experiences, Services; each tab has a ~48px 3D-rendered illustrated icon (house, balloon, bell) above a 16px 500 Ink Black label; active tab gets a 2px Ink Black underline; add a small 12px 700 white <code>NEW</code> pill on a dark navy background to the top-right of the Experiences and Services icons.&quot;</li><li>&quot;Render the Guest Favorite award lockup: a centered rating number at 52px 700-weight Ink Black, flanked left and right by hand-drawn SVG laurel wreaths at ~48px tall; below, a 12px 700 uppercase <code>GUEST FAVORITE</code> label with 0.32px tracking; sub-label at 14px 500 Ash Gray; full-width block sitting directly on white canvas with no container border.&quot;</li></ul>\n<h3>Iteration Guide</h3>\n<p>When refining existing screens generated with this design system:</p>\n<ol><li>Focus on ONE component at a time.</li><li>Reference specific color names and hex codes from this document (e.g., &quot;Ink Black #222222&quot;, not &quot;dark gray&quot;).</li><li>Use natural language descriptions alongside measurements (&quot;subtle three-layer elevation&quot; rather than a long shadow string).</li><li>Describe the desired &quot;feel&quot; (&quot;magazine-like, photography-first&quot; vs &quot;dense utility&quot;).</li><li>Always default to Airbnb Cereal VF 500-weight for body and 600–700 for emphasis — never 400.</li><li>Keep Rausch pink scarce — if more than one Rausch-colored element appears per viewport, consider whether one should be neutralized.</li></ol>\n<h3>Known Gaps</h3>\n<ul><li><strong>Homepage listing grid cards</strong>: the main property-card grid (the primary visual surface of airbnb.com) was not fully captured in the extracted homepage screenshots — content loaded only partially. Listing Card specs above are inferred from the Inspiration grid structure and Airbnb's broader conventions; confirm exact aspect ratios and metadata hierarchy against the live site before production use.</li><li><strong>Experiences category icons</strong>: the 3D illustrated icons for Homes / Experiences / Services are served as raster assets; their exact source-file specifications (SVG vs PNG, rendered pixel dimensions) are not documented here.</li><li><strong>Animation and transition timings</strong>: not captured — static extraction scope.</li><li><strong>Dark mode</strong>: Airbnb does not ship a native dark mode in the extracted product surfaces; this document describes the single light-mode theme only.</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Referência rápida de cores</h3>\n<ul><li>CTA principal: &quot;Rausch (#ff385c)&quot;</li><li>Fundo da página: &quot;Canvas White (#ffffff)&quot;</li><li>Subsuperfície: &quot;Soft Cloud (#f7f7f7)&quot;</li><li>Texto de títulos / corpo: &quot;Ink Black (#222222)&quot;</li><li>Texto secundário: &quot;Ash Gray (#6a6a6a)&quot;</li><li>Borda / divisor: &quot;Hairline Gray (#dddddd)&quot;</li><li>Erro: &quot;Error Red (#c13515)&quot;</li><li>Link informativo: &quot;Info Blue (#428bff)&quot;</li><li>Destaque do nível Luxe: &quot;Luxe Purple (#460479)&quot;</li><li>Destaque do nível Plus: &quot;Plus Magenta (#92174d)&quot;</li></ul>\n<h3>Exemplos de prompts de componentes</h3>\n<ul><li>&quot;Crie um botão principal Reservar: fundo Rausch (#ff385c), rótulo branco em Airbnb Cereal peso 500 com 16px, padding de 14px × 24px, border-radius de 8px, sem sombra. No estado ativo/pressionado, adicione <code>transform: scale(0.92)</code> com um anel de foco Ink Black de 2px (<code>0 0 0 2px #222222</code>).&quot;</li><li>&quot;Construa um card de anúncio com uma fotografia 4:3 de ponta a ponta com border-radius de 14px, sem sombra no contêiner; abaixo da imagem, empilhe três linhas de texto com espaços de 4px: nome da cidade em 16px 600 Ink Black, tipo de aluguel em 14px 500 Ash Gray (#6a6a6a) e faixa de preço em 16px 500 Ink Black com o sufixo <code>per night</code> em 14px.&quot;</li><li>&quot;Desenhe um painel de reserva fixo: fundo branco, border-radius de 14px, borda Hairline Gray (#dddddd) de 1px, sombra de elevação em 3 camadas (<code>rgba(0,0,0,0.02) 0 0 0 1px, rgba(0,0,0,0.04) 0 2px 6px 0, rgba(0,0,0,0.1) 0 4px 8px 0</code>), padding de 24px, largura de 370px, fixo 120px abaixo do topo da viewport no desktop. Conteúdo: preço em destaque, seletor de datas, dropdown de hóspedes, CTA principal em Rausch e o aviso <code>You won't be charged yet</code> em 12px Ash Gray.&quot;</li><li>&quot;Crie um seletor de categoria em três abas: três abas de mesma largura chamadas Homes, Experiences e Services; cada aba tem um ícone ilustrado renderizado em 3D de ~48px (casa, balão, campainha) acima de um rótulo de 16px 500 Ink Black; a aba ativa ganha um sublinhado Ink Black de 2px; adicione uma pequena pílula <code>NEW</code> branca de 12px 700 sobre fundo azul-marinho escuro no canto superior direito dos ícones de Experiences e Services.&quot;</li><li>&quot;Renderize a composição do prêmio Preferido dos Hóspedes: uma nota centralizada em 52px peso 700 Ink Black, ladeada à esquerda e à direita por coroas de louros em SVG desenhadas à mão com ~48px de altura; abaixo, um rótulo <code>GUEST FAVORITE</code> em 12px 700 caixa-alta com tracking de 0.32px; sub-rótulo em 14px 500 Ash Gray; bloco de largura total direto sobre a tela branca, sem borda de contêiner.&quot;</li></ul>\n<h3>Guia de iteração</h3>\n<p>Ao refinar telas existentes geradas com este design system:</p>\n<ol><li>Foque em UM componente por vez.</li><li>Cite nomes de cores e códigos hex específicos deste documento (ex.: &quot;Ink Black #222222&quot;, não &quot;cinza-escuro&quot;).</li><li>Use descrições em linguagem natural junto com as medidas (&quot;elevação sutil em três camadas&quot; em vez de uma longa string de sombra).</li><li>Descreva a &quot;sensação&quot; desejada (&quot;como uma revista, fotografia em primeiro lugar&quot; vs &quot;utilitário denso&quot;).</li><li>Sempre use por padrão Airbnb Cereal VF peso 500 no corpo e 600–700 para ênfase — nunca 400.</li><li>Mantenha o rosa Rausch escasso — se aparecer mais de um elemento em Rausch por viewport, avalie se um deles deveria ser neutralizado.</li></ol>\n<h3>Lacunas conhecidas</h3>\n<ul><li><strong>Cards da grade de anúncios da página inicial</strong>: a grade principal de cards de propriedades (a principal superfície visual do airbnb.com) não foi totalmente capturada nas capturas de tela extraídas da página inicial — o conteúdo carregou só parcialmente. As especificações do card de anúncio acima foram inferidas da estrutura da grade de inspiração e das convenções gerais do Airbnb; confirme as proporções exatas e a hierarquia de metadados no site ao vivo antes de usar em produção.</li><li><strong>Ícones de categoria de Experiências</strong>: os ícones ilustrados em 3D de Acomodações / Experiências / Serviços são servidos como imagens raster; as especificações exatas dos arquivos de origem (SVG vs PNG, dimensões renderizadas em pixels) não estão documentadas aqui.</li><li><strong>Tempos de animação e transição</strong>: não capturados — o escopo da extração é estático.</li><li><strong>Modo escuro</strong>: o Airbnb não oferece modo escuro nativo nas superfícies de produto extraídas; este documento descreve apenas o tema claro único.</li></ul>"
+    }
+   ]
+  }
+ ]
+}

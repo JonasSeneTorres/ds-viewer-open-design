@@ -1,0 +1,71 @@
+<!-- design-system-huggingface · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Hub da comunidade de ML. Destaque amarelo-sol, identidade monoespaçada, alegre e denso.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>A Hugging Face é a rara marca de ML que se recusa a parecer séria. O hub aposta num destaque amarelo-sol (<code>#ffd21e</code>), num emoji de carinha abraçando como logo e numa voz confiante em <strong>IBM Plex Mono</strong>, que parece mais um fanzine de comunidade do que um laboratório de pesquisa. O fundo da página é um off-white limpo (<code>#fafafa</code>) com texto num ardósia profundo (<code>#0d1117</code>), e o amarelo aparece em citações em destaque, tags, badges de &quot;novo&quot; e na faixa do cabeçalho dos model cards — nunca como superfície inteira, sempre como pontuação.</p>
+<p>O sistema tipográfico privilegia a fonte monoespaçada de um jeito que poucas marcas de produto arriscam: <strong>IBM Plex Mono</strong> nos títulos e tags, <strong>Source Sans Pro</strong> (ou Inter) no corpo. A mistura dá a cada página uma vibe de &quot;o arquivo de configuração é o README&quot; — adequada para uma plataforma construída em torno de <code>.gitattributes</code> e <code>model-card.md</code>.</p>
+<p>As formas são nítidas, não suaves: raios de 4–6px, bordas sólidas de 1px que se anunciam em vez de se esconder. As tabelas são densas, com hover de linha num cinza tênue (<code>#f3f4f6</code>). O emoji da marca pontua tudo — chips, títulos, até estados de erro usam um 🤗 — e assim o sistema parece humano mesmo exibindo dados técnicos.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Amarelo-sol <code>#ffd21e</code> como único destaque saturado</li><li>IBM Plex Mono nos títulos e tags; Source Sans Pro no corpo</li><li>Tela off-white (<code>#fafafa</code>) com bordas nítidas de 1px (<code>#e5e7eb</code>)</li><li>Raios de 4–6px — mais perto do brutalista do que do arredondado</li><li>Emoji 🤗 usado sem ironia como glifo do sistema</li><li>Tabelas densas, padding mínimo — um hub de comunidade para usuários avançados</li><li>Categorias de modelos codificadas por cor (NLP azul, visão verde, áudio roxo)</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Primárias</h3>
+<ul><li><strong>HF Yellow</strong> (<code>#ffd21e</code>): primária da marca, badges, pílula de &quot;novo&quot;, barra do cabeçalho dos model cards.</li><li><strong>HF Yellow Deep</strong> (<code>#f59e0b</code>): hover/ativo do amarelo.</li><li><strong>HF Yellow Soft</strong> (<code>#fff4cc</code>): tom de superfície, fundo de chamadas.</li></ul>
+<h3>Superfície e fundo</h3>
+<ul><li><strong>Canvas</strong> (<code>#ffffff</code>): fundo principal da página.</li><li><strong>Canvas Subtle</strong> (<code>#fafafa</code>): fundo alternativo de seções, rodapé.</li><li><strong>Canvas Inset</strong> (<code>#f3f4f6</code>): fundo de blocos de código, linha em hover.</li><li><strong>Canvas Dark</strong> (<code>#0d1117</code>): fundo do tema escuro.</li></ul>
+<h3>Tinta e texto</h3>
+<ul><li><strong>Ink Primary</strong> (<code>#0d1117</code>): texto principal, títulos.</li><li><strong>Ink Secondary</strong> (<code>#374151</code>): texto corrido.</li><li><strong>Ink Muted</strong> (<code>#6b7280</code>): legendas, caminhos de arquivos, autores de modelos.</li><li><strong>Ink Inverse</strong> (<code>#f9fafb</code>): texto sobre superfície escura.</li></ul>
+<h3>Destaques de categoria (tarefas de modelos)</h3>
+<ul><li><strong>NLP Blue</strong> (<code>#2563eb</code>): badges de tarefas de texto/NLP.</li><li><strong>Vision Green</strong> (<code>#16a34a</code>): badges de tarefas de visão computacional.</li><li><strong>Audio Purple</strong> (<code>#9333ea</code>): badges de tarefas de áudio/fala.</li><li><strong>Multimodal Pink</strong> (<code>#db2777</code>): badges de tarefas multimodais/de difusão.</li><li><strong>Tabular Orange</strong> (<code>#ea580c</code>): badges de tarefas tabulares/estruturadas.</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Success</strong> (<code>#16a34a</code>): build concluído, deploy no ar.</li><li><strong>Warning</strong> (<code>#f59e0b</code>): inferência lenta, limite de requisições.</li><li><strong>Error</strong> (<code>#dc2626</code>): build com falha, modelo quebrado.</li><li><strong>Info</strong> (<code>#2563eb</code>): faixa de aviso.</li></ul>
+<h3>Bordas</h3>
+<ul><li><strong>Border Default</strong> (<code>#e5e7eb</code>): linha finíssima padrão de 1px.</li><li><strong>Border Strong</strong> (<code>#d1d5db</code>): borda enfatizada no hover.</li><li><strong>Border Subtle</strong> (<code>#f3f4f6</code>): divisor interno.</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Família tipográfica</h3>
+<ul><li><strong>Display / interface / títulos / tags</strong>: <code>IBM Plex Mono</code>, com fallback: <code>ui-monospace, SFMono-Regular, Menlo, Consolas, monospace</code></li><li><strong>Corpo / texto corrido</strong>: <code>Source Sans Pro</code>, com fallback: <code>Inter, system-ui, -apple-system, sans-serif</code></li><li><strong>Editorial (raro, só no blog)</strong>: <code>Source Serif Pro</code>, com fallback: <code>Georgia, serif</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display</td><td>IBM Plex Mono</td><td>48px (3rem)</td><td>600</td><td>1.1</td><td>-0.01em</td><td>Hero de marketing</td></tr><tr><td>H1</td><td>IBM Plex Mono</td><td>32px (2rem)</td><td>600</td><td>1.2</td><td>normal</td><td>Título da página, nome do modelo</td></tr><tr><td>H2</td><td>IBM Plex Mono</td><td>24px (1.5rem)</td><td>600</td><td>1.25</td><td>normal</td><td>Título de seção</td></tr><tr><td>H3</td><td>IBM Plex Mono</td><td>18px (1.125rem)</td><td>600</td><td>1.3</td><td>normal</td><td>Subseção</td></tr><tr><td>Corpo grande</td><td>Source Sans Pro</td><td>18px (1.125rem)</td><td>400</td><td>1.6</td><td>normal</td><td>Abertura, introdução do blog</td></tr><tr><td>Corpo</td><td>Source Sans Pro</td><td>15px (0.9375rem)</td><td>400</td><td>1.55</td><td>normal</td><td>Texto padrão, model card</td></tr><tr><td>Legenda</td><td>Source Sans Pro</td><td>13px (0.8125rem)</td><td>500</td><td>1.4</td><td>0.01em</td><td>Autoria, data e hora</td></tr><tr><td>Tag / badge</td><td>IBM Plex Mono</td><td>12px (0.75rem)</td><td>500</td><td>1.2</td><td>0.02em</td><td>Tags de tarefa, chips de framework</td></tr><tr><td>Código</td><td>IBM Plex Mono</td><td>14px (0.875rem)</td><td>400</td><td>1.55</td><td>normal</td><td>Blocos de código, <code>model_id</code> inline</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Mono em tudo que importa</strong>: links de navegação, títulos, tags e metadados são todos monoespaçados. A sem serifa fica reservada para parágrafos de texto corrido.</li><li><strong>Peso até 600</strong>: 600 é o teto; 700 grita demais contra o amarelo. A hierarquia vem do tamanho e da cor.</li><li><strong>Tags parecem código</strong>: as tags de modelos usam mono para parecerem as strings que os desenvolvedores vão colar no Python.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Primário</strong></p>
+<ul><li>Fundo: <code>#0d1117</code></li><li>Texto: <code>#ffffff</code></li><li>Padding: 8px 16px</li><li>Raio: 6px</li><li>Hover: <code>#374151</code></li><li>Uso: &quot;Use this model&quot;, formulários principais.</li></ul>
+<p><strong>CTA amarelo</strong></p>
+<ul><li>Fundo: <code>#ffd21e</code></li><li>Texto: <code>#0d1117</code></li><li>Padding: 8px 16px</li><li>Raio: 6px</li><li>Hover: <code>#f59e0b</code></li><li>Uso: &quot;Pro upgrade&quot;, &quot;Sponsor&quot;.</li></ul>
+<p><strong>Com contorno</strong></p>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Texto: <code>#0d1117</code></li><li>Borda: 1px solid <code>#e5e7eb</code></li><li>Hover: fundo <code>#f3f4f6</code></li></ul>
+<h3>Cards / model cards</h3>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid <code>#e5e7eb</code></li><li>Raio: 6px</li><li>Padding: 16px 20px</li><li>Faixa de cabeçalho: fundo <code>#ffd21e</code>, 4px de altura, só nos model cards em destaque.</li></ul>
+<h3>Campos</h3>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid <code>#e5e7eb</code></li><li>Raio: 6px</li><li>Padding: 8px 12px</li><li>Foco: borda <code>#0d1117</code>, anel <code>0 0 0 3px rgba(13,17,23,0.1)</code></li></ul>
+<h3>Tags / chips (tarefa / framework)</h3>
+<ul><li>Fundo: tom suave da categoria (<code>#dbeafe</code> para NLP, <code>#dcfce7</code> para visão etc.)</li><li>Texto: a cor forte correspondente da categoria.</li><li>Padding: 2px 8px</li><li>Raio: 4px</li><li>Fonte: IBM Plex Mono 12px / 500</li></ul>
+<h3>Tabelas</h3>
+<ul><li>Cabeçalho: fundo <code>#fafafa</code>, borda inferior de 1px <code>#e5e7eb</code>.</li><li>Linha: borda inferior de 1px <code>#f3f4f6</code>, hover <code>#f3f4f6</code>.</li><li>Padding: 8px 16px por célula — densa por definição.</li></ul>
+</section>
+
+<section data-section="spacing-layout">
+<h2>Espaçamento e layout</h2>
+<ul><li><strong>Unidade base</strong>: 4px. Escala: 4, 8, 12, 16, 24, 32, 48, 64.</li><li><strong>Contêiner</strong>: máximo de 1280px, gutter de 24px.</li><li><strong>Barra lateral (navegador de modelos)</strong>: 280px de largura.</li><li><strong>Ritmo das seções</strong>: 64–96px na vertical entre as seções principais.</li></ul>
+</section>
+
+<section data-section="motion">
+<h2>Movimento</h2>
+<ul><li><strong>Duração</strong>: 120ms no hover; 200ms ao abrir menus.</li><li><strong>Easing</strong>: <code>ease-out</code>.</li><li><strong>Pulo da tag</strong>: escala de 1.05× no hover em 120ms — a única exceção ao hover chapado.</li></ul>
+</section>
+
+<section data-section="usage-guardrails">
+<h2>Limites de uso</h2>
+<ul><li>Preserve juntos o destaque amarelo, os metadados em mono e o layout denso de model cards; o amarelo sozinho não cria uma superfície com cara de Hugging Face.</li><li>Use tags, tabelas e metadados em estilo de repositório em contextos de navegação ou avaliação de modelos, em vez de cards decorativos de marketing.</li><li>Mantenha o movimento mínimo e funcional, reservando o pequeno pulo para os chips interativos de taxonomia.</li></ul>
+</section>

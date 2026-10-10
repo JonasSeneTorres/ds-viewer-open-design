@@ -1,0 +1,1195 @@
+{
+ "id": "lamborghini",
+ "name": "Lamborghini",
+ "source": {
+  "name": "Lamborghini",
+  "url": "https://open-design.ai/plugins/design-system-lamborghini/"
+ },
+ "category": [
+  {
+   "lang": "en-US",
+   "message": "Automotive"
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Automotivo"
+  }
+ ],
+ "intro": [
+  {
+   "lang": "en-US",
+   "message": "Supercar brand. True black surfaces, gold accents, dramatic uppercase typography."
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Marca de superesportivos. Superfícies em preto verdadeiro, destaques dourados, tipografia dramática em caixa-alta."
+  }
+ ],
+ "roles": {
+  "primary": "Lamborghini Gold",
+  "neutral": "Neutral",
+  "secondary": "Cyan Pulse"
+ },
+ "palettes": [
+  {
+   "name": "Lamborghini Gold",
+   "base": "#d4af37",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fff7df",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#feecb8",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffce3e",
+     "exact": true
+    },
+    {
+     "step": 300,
+     "hex": "#e8c454",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#d4af37",
+     "exact": true
+    },
+    {
+     "step": 500,
+     "hex": "#ad8b0e",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#917300",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#765d00",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#5b4802",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#423401",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#271e05",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Cyan Pulse",
+   "base": "#29abe2",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f0f8fd",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#daf1fd",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#b4e4ff",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#7fd3ff",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#29abe2",
+     "exact": true
+    },
+    {
+     "step": 500,
+     "hex": "#0f9cd1",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#0882af",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#03698f",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#005171",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#003b52",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#002333",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Link Blue",
+   "base": "#3860be",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f3f7fe",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#e5edfd",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ccddfe",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#adc7fe",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#82a9fb",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#638ce5",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#4972d0",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#3860be",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#204298",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#102d79",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#031655",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Success",
+   "base": "#39a852",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#e6ffe8",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#c2ffc9",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#a1f4ac",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#85e092",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#5fc471",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#39a852",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#1e8f3d",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#00752b",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#005b1f",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#004214",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#002808",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Danger",
+   "base": "#e63946",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fff4f3",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee6e5",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffcfcc",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#feb0ac",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#fe7e7d",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#e63946",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#d6293b",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#b50828",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#8f011c",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#6a0011",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#430007",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Neutral",
+   "base": "#666666",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f8f8f8",
+     "exact": true
+    },
+    {
+     "step": 100,
+     "hex": "#e6e6e6",
+     "exact": true
+    },
+    {
+     "step": 200,
+     "hex": "#dcdcdc",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#c7c7c7",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#969696",
+     "exact": true
+    },
+    {
+     "step": 500,
+     "hex": "#7d7d7d",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#666666",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#555555",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#313131",
+     "exact": true
+    },
+    {
+     "step": 900,
+     "hex": "#202020",
+     "exact": true
+    },
+    {
+     "step": 950,
+     "hex": "#050505",
+     "exact": true
+    }
+   ]
+  }
+ ],
+ "colors": [
+  {
+   "name": "Lamborghini Gold",
+   "hex": "#ffc000",
+   "role": "(#FFC000): The signature accent color — a warm, saturated amber-gold (rgb 255, 192, 0) used exclusively for primary action buttons (\"Discover More\", \"Tickets\", \"Start Configuration\"). The only chromat"
+  },
+  {
+   "name": "Pure White",
+   "hex": "#ffffff",
+   "role": "(#FFFFFF): Primary text color on dark surfaces, logo rendering, nav elements, and light-mode button fills — the voice that speaks from the darkness"
+  },
+  {
+   "name": "Dark Gold",
+   "hex": "#917300",
+   "role": "(#917300): Hover/pressed state for gold buttons — a deep amber (rgb 145, 115, 0) that darkens the gold to signal interaction"
+  },
+  {
+   "name": "Gold Text",
+   "hex": "#ffce3e",
+   "role": "(#FFCE3E): Slightly lighter gold variant (rgb 255, 206, 62) used for inline text accents and highlighted labels"
+  },
+  {
+   "name": "Cyan Pulse",
+   "hex": "#29abe2",
+   "role": "(#29ABE2): Electric blue-cyan (rgb 41, 171, 226) appearing as an informational accent and interactive element highlight"
+  },
+  {
+   "name": "Link Blue",
+   "hex": "#3860be",
+   "role": "(#3860BE): Medium blue (rgb 56, 96, 190) used universally for link hover states across all text colors"
+  },
+  {
+   "name": "Absolute Black",
+   "hex": "#000000",
+   "role": "(#000000): The dominant surface color — used for page background, hero sections, header, footer, and most containers"
+  },
+  {
+   "name": "Charcoal",
+   "hex": "#202020",
+   "role": "(#202020): Elevated dark surface (rgb 32, 32, 32) — the primary \"dark gray\" for cards, panels, and text containers sitting above the black canvas"
+  },
+  {
+   "name": "Dark Iron",
+   "hex": "#181818",
+   "role": "(#181818): Subtle surface variant (rgb 24, 24, 24) — barely distinguishable from black, used for footer and deep sections"
+  },
+  {
+   "name": "Near White",
+   "hex": "#f8f8f8",
+   "role": "(#F8F8F8): Rare light surface (rgb 248, 248, 248) for content blocks in white-mode sections"
+  },
+  {
+   "name": "Mist",
+   "hex": "#e6e6e6",
+   "role": "(#E6E6E6): Light gray surface for secondary light-mode containers"
+  },
+  {
+   "name": "Smoke",
+   "hex": "#f5f5f5",
+   "role": "(#F5F5F5): Secondary text on dark surfaces — slightly softer than pure white"
+  },
+  {
+   "name": "Graphite",
+   "hex": "#494949",
+   "role": "(#494949): Dark gray text on light surfaces (rgb 73, 73, 73)"
+  },
+  {
+   "name": "Ash",
+   "hex": "#7d7d7d",
+   "role": "(#7D7D7D): Mid-range gray for muted text, timestamps, and metadata (rgb 125, 125, 125)"
+  },
+  {
+   "name": "Steel",
+   "hex": "#969696",
+   "role": "(#969696): Lighter gray for disabled text and subtle labels (rgb 150, 150, 150)"
+  },
+  {
+   "name": "Slate",
+   "hex": "#666666",
+   "role": "(#666666): Alternative mid-gray for secondary content"
+  },
+  {
+   "name": "Iron",
+   "hex": "#555555",
+   "role": "(#555555): Dark mid-gray for body text variants"
+  },
+  {
+   "name": "Shadow",
+   "hex": "#313131",
+   "role": "(#313131): Very dark gray for text on dark surfaces where white is too strong"
+  },
+  {
+   "name": "Teal Action",
+   "hex": "#1eaedb",
+   "role": "(#1EAEDB): Button hover background for transparent/ghost variants (rgb 30, 174, 219)"
+  }
+ ],
+ "fonts": [
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Headings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Títulos"
+    }
+   ],
+   "kind": "display",
+   "family": "LamboType",
+   "fallbacks": [],
+   "stack": "\"LamboType\", sans-serif",
+   "italic": false,
+   "source": null
+  },
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Body"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Corpo"
+    }
+   ],
+   "kind": "body",
+   "family": "Open Sans",
+   "fallbacks": [],
+   "stack": "\"Open Sans\", sans-serif",
+   "italic": true,
+   "source": {
+    "kind": "google",
+    "css": "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap",
+    "page": "https://fonts.google.com/specimen/Open+Sans",
+    "link": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap\">",
+    "import": "@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap');",
+    "npm": "npm i @fontsource/open-sans"
+   }
+  }
+ ],
+ "tokens": [
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Surface"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Superfície"
+    }
+   ],
+   "items": [
+    {
+     "name": "--bg",
+     "value": "#050505"
+    },
+    {
+     "name": "--surface",
+     "value": "#141414"
+    },
+    {
+     "name": "--surface-warm",
+     "value": "#211b0b"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Text"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Texto"
+    }
+   ],
+   "items": [
+    {
+     "name": "--fg",
+     "value": "#f8f4e6"
+    },
+    {
+     "name": "--fg-2",
+     "value": "#d8ceb0"
+    },
+    {
+     "name": "--muted",
+     "value": "#9b927d"
+    },
+    {
+     "name": "--meta",
+     "value": "#d4af37"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Border"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Borda"
+    }
+   ],
+   "items": [
+    {
+     "name": "--border",
+     "value": "#3a321d"
+    },
+    {
+     "name": "--border-soft",
+     "value": "#282315"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Accent"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Destaque"
+    }
+   ],
+   "items": [
+    {
+     "name": "--accent",
+     "value": "#d4af37"
+    },
+    {
+     "name": "--accent-on",
+     "value": "#050505"
+    },
+    {
+     "name": "--accent-hover",
+     "value": "color-mix(in oklab, var(--accent), black 8%)"
+    },
+    {
+     "name": "--accent-active",
+     "value": "color-mix(in oklab, var(--accent), black 14%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Semantic"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Semântico"
+    }
+   ],
+   "items": [
+    {
+     "name": "--success",
+     "value": "#39a852"
+    },
+    {
+     "name": "--warn",
+     "value": "#f7c948"
+    },
+    {
+     "name": "--danger",
+     "value": "#e63946"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Typography"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tipografia"
+    }
+   ],
+   "items": []
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Type scale"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Escala tipográfica"
+    }
+   ],
+   "items": [
+    {
+     "name": "--text-xs",
+     "value": "12px"
+    },
+    {
+     "name": "--text-sm",
+     "value": "14px"
+    },
+    {
+     "name": "--text-base",
+     "value": "16px"
+    },
+    {
+     "name": "--text-lg",
+     "value": "18px"
+    },
+    {
+     "name": "--text-xl",
+     "value": "26px"
+    },
+    {
+     "name": "--text-2xl",
+     "value": "42px"
+    },
+    {
+     "name": "--text-3xl",
+     "value": "64px"
+    },
+    {
+     "name": "--text-4xl",
+     "value": "90px"
+    },
+    {
+     "name": "--leading-body",
+     "value": "1.48"
+    },
+    {
+     "name": "--leading-tight",
+     "value": "0.96"
+    },
+    {
+     "name": "--tracking-display",
+     "value": "-0.025em"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Spacing"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Espaçamento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--space-1",
+     "value": "4px"
+    },
+    {
+     "name": "--space-2",
+     "value": "8px"
+    },
+    {
+     "name": "--space-3",
+     "value": "12px"
+    },
+    {
+     "name": "--space-4",
+     "value": "16px"
+    },
+    {
+     "name": "--space-5",
+     "value": "20px"
+    },
+    {
+     "name": "--space-6",
+     "value": "24px"
+    },
+    {
+     "name": "--space-8",
+     "value": "32px"
+    },
+    {
+     "name": "--space-12",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-desktop",
+     "value": "112px"
+    },
+    {
+     "name": "--section-y-tablet",
+     "value": "80px"
+    },
+    {
+     "name": "--section-y-phone",
+     "value": "56px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Radius"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Raio"
+    }
+   ],
+   "items": [
+    {
+     "name": "--radius-sm",
+     "value": "2px"
+    },
+    {
+     "name": "--radius-md",
+     "value": "6px"
+    },
+    {
+     "name": "--radius-lg",
+     "value": "10px"
+    },
+    {
+     "name": "--radius-pill",
+     "value": "9999px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Elevação"
+    }
+   ],
+   "items": [
+    {
+     "name": "--elev-flat",
+     "value": "none"
+    },
+    {
+     "name": "--elev-ring",
+     "value": "0 0 0 1px var(--border)"
+    },
+    {
+     "name": "--elev-raised",
+     "value": "0 28px 84px rgba(0, 0, 0, 0.54)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Focus"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Foco"
+    }
+   ],
+   "items": [
+    {
+     "name": "--focus-ring",
+     "value": "0 0 0 4px rgba(212, 175, 55, 0.32)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Motion"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Movimento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--motion-fast",
+     "value": "120ms"
+    },
+    {
+     "name": "--motion-base",
+     "value": "210ms"
+    },
+    {
+     "name": "--ease-standard",
+     "value": "cubic-bezier(0.16, 1, 0.3, 1)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "items": [
+    {
+     "name": "--container-max",
+     "value": "1240px"
+    },
+    {
+     "name": "--container-gutter-desktop",
+     "value": "40px"
+    },
+    {
+     "name": "--container-gutter-tablet",
+     "value": "28px"
+    },
+    {
+     "name": "--container-gutter-phone",
+     "value": "18px"
+    }
+   ]
+  }
+ ],
+ "vars": {
+  "--primary-500": "#ad8b0e",
+  "--primary-500-fg": "#111111",
+  "--neutral-400": "#969696",
+  "--neutral-400-fg": "#111111",
+  "--bg": "#050505",
+  "--surface": "#141414",
+  "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+  "--fg": "#f8f4e6",
+  "--fg-soft": "#d8ceb0",
+  "--muted": "#9b927d",
+  "--border": "#3a321d",
+  "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
+  "--accent": "#d4af37",
+  "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+  "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
+  "--accent-fg": "#050505",
+  "--solid": "var(--accent-strong)",
+  "--solid-fg": "#050505",
+  "--ok": "#39a852",
+  "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
+  "--warn": "#f7c948",
+  "--warn-weak": "color-mix(in oklab, var(--warn) 14%, var(--bg))",
+  "--danger": "#e63946",
+  "--danger-weak": "color-mix(in oklab, var(--danger) 12%, var(--bg))",
+  "--bw": "1px",
+  "--radius": "6px",
+  "--radius-sm": "2px",
+  "--radius-pill": "9999px",
+  "--shadow-card": "0 28px 84px rgba(0, 0, 0, 0.54)",
+  "--shadow-pop": "0 14px 40px rgba(0, 0, 0, 0.22)",
+  "--font-display": "\"LamboType\", sans-serif",
+  "--font-body": "\"Open Sans\", sans-serif",
+  "--font-code": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--font-mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--display-tracking": "-0.02em",
+  "--heading-weight": "600",
+  "--kicker-transform": "uppercase",
+  "--kicker-spacing": "0.08em",
+  "--hero-ground": "var(--surface-2)",
+  "--hero-ink": "var(--fg)"
+ },
+ "sections": [
+  {
+   "id": "visual-theme-atmosphere",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Visual Theme & Atmosphere"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tema visual e atmosfera"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Lamborghini's website is a cathedral of darkness — a digital stage where jet-black surfaces stretch infinitely and every element emerges from the void like a machine under a spotlight. The page is almost entirely black. Not dark gray, not near-black — true, uncompromising black (<code>#000000</code>) that saturates the viewport and refuses to yield. Into this abyss, white type and Lamborghini Gold (<code>#FFC000</code>) are deployed with surgical precision, creating a visual language that feels like walking through a nighttime motorsport event where every surface absorbs light except the things that matter.</p>\n<p>The hero is a full-viewport video — dark, cinematic, immersive — showing event footage or vehicle reveals with the Lamborghini bull logo floating ethereally above. The navigation is minimal: a centered bull logo, a &quot;MENU&quot; hamburger on the left, and search/bookmark icons on the right, all rendered in white against the black canvas. There are no borders, no visible nav containers, no background color on the header — just white marks floating in darkness. The overall mood is nocturnal luxury: exclusive, theatrical, and deliberately intimidating. Each section transition is a scroll through darkness into the next revelation.</p>\n<p>Typography is the voice of this darkness. LamboType — a custom Neo-Grotesk typeface created by Character Type and design agency Strichpunkt — is used for everything from 120px uppercase display headlines to 10px micro labels. Its distinctive 12° angled terminals are inspired by the aerodynamic lines of Lamborghini's super sports cars, and its proportions range from Normal to Ultracompressed width. Headlines SHOUT in uppercase at enormous scales with tight line-heights (0.92 at 120px), creating dense blocks of text that feel stamped from steel. The typeface carries hexagonal geometric DNA — constructed from hexagons, three-armed stars, and circles — that echoes throughout the interface in the hexagonal pause button and UI icons. Built on Bootstrap grid with 68 Element Plus/UI components, the technical infrastructure is substantial beneath the theatrical surface.</p>\n<p><strong>Key Characteristics:</strong></p>\n<ul><li>True black (<code>#000000</code>) dominant surfaces with white and gold as the only relief colors</li><li>LamboType custom Neo-Grotesk font with 12° angled terminals inspired by aerodynamic car lines</li><li>Lamborghini Gold (<code>#FFC000</code>) as the sole accent color — used exclusively for primary CTA buttons</li><li>All-uppercase display typography at extreme scales (120px, 80px, 54px) with tight line-heights</li><li>Full-viewport video heroes with cinematic event/vehicle content</li><li>Zero border-radius on buttons — sharp, angular, uncompromising rectangles</li><li>Hexagonal motifs in UI elements (pause button, icon system) echoing brand geometry</li><li>Bootstrap grid system + Element Plus/UI 68 components underneath</li><li>Transparent ghost buttons with white borders at 50% opacity as the secondary CTA pattern</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>O site da Lamborghini é uma catedral de escuridão — um palco digital em que superfícies preto-azeviche se estendem ao infinito e cada elemento emerge do vazio como uma máquina sob um holofote. A página é quase inteiramente preta. Não cinza-escuro, não quase preto — preto verdadeiro e sem concessões (<code>#000000</code>), que satura a viewport e se recusa a ceder. Nesse abismo, o texto branco e o Lamborghini Gold (<code>#FFC000</code>) são aplicados com precisão cirúrgica, criando uma linguagem visual que parece um evento noturno de automobilismo, em que toda superfície absorve a luz, exceto o que importa.</p>\n<p>O hero é um vídeo de viewport inteira — escuro, cinematográfico, imersivo — mostrando imagens de eventos ou revelações de veículos, com o logo do touro da Lamborghini flutuando de forma etérea acima. A navegação é mínima: um logo do touro centralizado, um hambúrguer &quot;MENU&quot; à esquerda e ícones de busca/favoritos à direita, todos em branco contra a tela preta. Não há bordas, contêineres de navegação visíveis nem cor de fundo no cabeçalho — só marcas brancas flutuando na escuridão. O clima geral é de luxo noturno: exclusivo, teatral e deliberadamente intimidador. Cada transição de seção é uma rolagem pela escuridão até a próxima revelação.</p>\n<p>A tipografia é a voz dessa escuridão. A LamboType — uma Neo-Grotesk personalizada criada pela Character Type e pela agência de design Strichpunkt — é usada em tudo, dos títulos de display em caixa-alta de 120px aos microrrótulos de 10px. Seus terminais característicos com ângulo de 12° são inspirados nas linhas aerodinâmicas dos superesportivos da Lamborghini, e suas proporções vão da largura Normal à Ultracompressed. Os títulos GRITAM em caixa-alta em escalas enormes, com alturas de linha justas (0.92 em 120px), criando blocos densos de texto que parecem estampados em aço. A fonte carrega um DNA geométrico hexagonal — construída a partir de hexágonos, estrelas de três braços e círculos — que ecoa pela interface no botão de pausa hexagonal e nos ícones. Construída sobre o grid do Bootstrap com 68 componentes Element Plus/UI, a infraestrutura técnica é substancial por baixo da superfície teatral.</p>\n<p><strong>Características principais:</strong></p>\n<ul><li>Superfícies dominantes em preto verdadeiro (<code>#000000</code>), com branco e dourado como únicas cores de alívio</li><li>Fonte Neo-Grotesk personalizada LamboType, com terminais em ângulo de 12° inspirados nas linhas aerodinâmicas dos carros</li><li>Lamborghini Gold (<code>#FFC000</code>) como única cor de destaque — usada exclusivamente em botões CTA principais</li><li>Tipografia de display toda em caixa-alta em escalas extremas (120px, 80px, 54px), com alturas de linha justas</li><li>Heroes em vídeo de viewport inteira com conteúdo cinematográfico de eventos/veículos</li><li>Border-radius zero nos botões — retângulos angulosos, afiados, sem concessões</li><li>Motivos hexagonais em elementos de interface (botão de pausa, sistema de ícones) ecoando a geometria da marca</li><li>Sistema de grid do Bootstrap + 68 componentes Element Plus/UI por baixo</li><li>Botões ghost transparentes com bordas brancas a 50% de opacidade como padrão de CTA secundário</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "color-palette-roles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Color Palette & Roles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Paleta de cores e papéis"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Primary</h3>\n<ul><li><strong>Lamborghini Gold</strong> (<code>#FFC000</code>): The signature accent color — a warm, saturated amber-gold (rgb 255, 192, 0) used exclusively for primary action buttons (&quot;Discover More&quot;, &quot;Tickets&quot;, &quot;Start Configuration&quot;). The only chromatic color in the entire interface, it ignites against the black canvas like a headlight cutting through night</li><li><strong>Pure White</strong> (<code>#FFFFFF</code>): Primary text color on dark surfaces, logo rendering, nav elements, and light-mode button fills — the voice that speaks from the darkness</li></ul>\n<h3>Secondary &amp; Accent</h3>\n<ul><li><strong>Dark Gold</strong> (<code>#917300</code>): Hover/pressed state for gold buttons — a deep amber (rgb 145, 115, 0) that darkens the gold to signal interaction</li><li><strong>Gold Text</strong> (<code>#FFCE3E</code>): Slightly lighter gold variant (rgb 255, 206, 62) used for inline text accents and highlighted labels</li><li><strong>Cyan Pulse</strong> (<code>#29ABE2</code>): Electric blue-cyan (rgb 41, 171, 226) appearing as an informational accent and interactive element highlight</li><li><strong>Link Blue</strong> (<code>#3860BE</code>): Medium blue (rgb 56, 96, 190) used universally for link hover states across all text colors</li></ul>\n<h3>Surface &amp; Background</h3>\n<ul><li><strong>Absolute Black</strong> (<code>#000000</code>): The dominant surface color — used for page background, hero sections, header, footer, and most containers</li><li><strong>Charcoal</strong> (<code>#202020</code>): Elevated dark surface (rgb 32, 32, 32) — the primary &quot;dark gray&quot; for cards, panels, and text containers sitting above the black canvas</li><li><strong>Dark Iron</strong> (<code>#181818</code>): Subtle surface variant (rgb 24, 24, 24) — barely distinguishable from black, used for footer and deep sections</li><li><strong>Overlay Black</strong> (<code>rgba(0,0,0,0.7)</code>): Semi-transparent overlay for modals and video dimming</li><li><strong>Near White</strong> (<code>#F8F8F8</code>): Rare light surface (rgb 248, 248, 248) for content blocks in white-mode sections</li><li><strong>Mist</strong> (<code>#E6E6E6</code>): Light gray surface for secondary light-mode containers</li></ul>\n<h3>Neutrals &amp; Text</h3>\n<ul><li><strong>Pure White</strong> (<code>#FFFFFF</code>): Primary text on dark backgrounds — headlines, body, nav labels</li><li><strong>Smoke</strong> (<code>#F5F5F5</code>): Secondary text on dark surfaces — slightly softer than pure white</li><li><strong>Graphite</strong> (<code>#494949</code>): Dark gray text on light surfaces (rgb 73, 73, 73)</li><li><strong>Ash</strong> (<code>#7D7D7D</code>): Mid-range gray for muted text, timestamps, and metadata (rgb 125, 125, 125)</li><li><strong>Steel</strong> (<code>#969696</code>): Lighter gray for disabled text and subtle labels (rgb 150, 150, 150)</li><li><strong>Slate</strong> (<code>#666666</code>): Alternative mid-gray for secondary content</li><li><strong>Iron</strong> (<code>#555555</code>): Dark mid-gray for body text variants</li><li><strong>Shadow</strong> (<code>#313131</code>): Very dark gray for text on dark surfaces where white is too strong</li></ul>\n<h3>Semantic &amp; Accent</h3>\n<ul><li><strong>Cyan Pulse</strong> (<code>#29ABE2</code>): Used for informational highlights and interactive feedback</li><li><strong>Link Blue</strong> (<code>#3860BE</code>): Universal hover state for all hyperlinks</li><li><strong>Teal Action</strong> (<code>#1EAEDB</code>): Button hover background for transparent/ghost variants (rgb 30, 174, 219)</li></ul>\n<h3>Gradient System</h3>\n<ul><li>No explicit gradients in the color palette — the dark-to-light progression is achieved through surface layering: <code>#000000</code> → <code>#181818</code> → <code>#202020</code> → <code>#494949</code> → <code>#7D7D7D</code></li><li>Video heroes use natural atmospheric gradients from the content itself</li><li>Top-of-page gradient: subtle dark-to-darker fade at the edges of full-bleed imagery</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Primárias</h3>\n<ul><li><strong>Lamborghini Gold</strong> (<code>#FFC000</code>): a cor de destaque característica — um âmbar-dourado quente e saturado (rgb 255, 192, 0) usado exclusivamente em botões de ação principal (&quot;Discover More&quot;, &quot;Tickets&quot;, &quot;Start Configuration&quot;). A única cor cromática de toda a interface, ela acende contra a tela preta como um farol cortando a noite</li><li><strong>Pure White</strong> (<code>#FFFFFF</code>): cor principal de texto sobre superfícies escuras, renderização do logo, elementos de navegação e preenchimento de botões no modo claro — a voz que fala da escuridão</li></ul>\n<h3>Secundárias e de destaque</h3>\n<ul><li><strong>Dark Gold</strong> (<code>#917300</code>): estado de hover/pressionado dos botões dourados — um âmbar profundo (rgb 145, 115, 0) que escurece o dourado para sinalizar a interação</li><li><strong>Gold Text</strong> (<code>#FFCE3E</code>): variante dourada um pouco mais clara (rgb 255, 206, 62) usada em destaques de texto inline e rótulos realçados</li><li><strong>Cyan Pulse</strong> (<code>#29ABE2</code>): azul-ciano elétrico (rgb 41, 171, 226) que aparece como destaque informativo e realce de elementos interativos</li><li><strong>Link Blue</strong> (<code>#3860BE</code>): azul médio (rgb 56, 96, 190) usado universalmente nos estados de hover de links, em todas as cores de texto</li></ul>\n<h3>Superfície e fundo</h3>\n<ul><li><strong>Absolute Black</strong> (<code>#000000</code>): a cor de superfície dominante — usada no fundo da página, seções hero, cabeçalho, rodapé e na maioria dos contêineres</li><li><strong>Charcoal</strong> (<code>#202020</code>): superfície escura elevada (rgb 32, 32, 32) — o principal &quot;cinza-escuro&quot; para cards, painéis e contêineres de texto acima da tela preta</li><li><strong>Dark Iron</strong> (<code>#181818</code>): variante sutil de superfície (rgb 24, 24, 24) — quase indistinguível do preto, usada no rodapé e em seções profundas</li><li><strong>Overlay Black</strong> (<code>rgba(0,0,0,0.7)</code>): sobreposição semitransparente para modais e escurecimento de vídeo</li><li><strong>Near White</strong> (<code>#F8F8F8</code>): superfície clara rara (rgb 248, 248, 248) para blocos de conteúdo em seções no modo claro</li><li><strong>Mist</strong> (<code>#E6E6E6</code>): superfície cinza-clara para contêineres secundários no modo claro</li></ul>\n<h3>Neutros e texto</h3>\n<ul><li><strong>Pure White</strong> (<code>#FFFFFF</code>): texto principal sobre fundos escuros — títulos, corpo, rótulos de navegação</li><li><strong>Smoke</strong> (<code>#F5F5F5</code>): texto secundário sobre superfícies escuras — um pouco mais suave que o branco puro</li><li><strong>Graphite</strong> (<code>#494949</code>): texto cinza-escuro sobre superfícies claras (rgb 73, 73, 73)</li><li><strong>Ash</strong> (<code>#7D7D7D</code>): cinza intermediário para texto esmaecido, carimbos de data/hora e metadados (rgb 125, 125, 125)</li><li><strong>Steel</strong> (<code>#969696</code>): cinza mais claro para texto desabilitado e rótulos sutis (rgb 150, 150, 150)</li><li><strong>Slate</strong> (<code>#666666</code>): cinza intermediário alternativo para conteúdo secundário</li><li><strong>Iron</strong> (<code>#555555</code>): cinza intermediário escuro para variantes de texto de corpo</li><li><strong>Shadow</strong> (<code>#313131</code>): cinza muito escuro para texto sobre superfícies escuras onde o branco é forte demais</li></ul>\n<h3>Semânticas e de destaque</h3>\n<ul><li><strong>Cyan Pulse</strong> (<code>#29ABE2</code>): usado em realces informativos e feedback interativo</li><li><strong>Link Blue</strong> (<code>#3860BE</code>): estado universal de hover de todos os hyperlinks</li><li><strong>Teal Action</strong> (<code>#1EAEDB</code>): fundo de hover dos botões nas variantes transparente/ghost (rgb 30, 174, 219)</li></ul>\n<h3>Sistema de gradientes</h3>\n<ul><li>Sem gradientes explícitos na paleta — a progressão do escuro ao claro é obtida por camadas de superfície: <code>#000000</code> → <code>#181818</code> → <code>#202020</code> → <code>#494949</code> → <code>#7D7D7D</code></li><li>Os heroes em vídeo usam gradientes atmosféricos naturais do próprio conteúdo</li><li>Gradiente no topo da página: esmaecimento sutil de escuro a mais escuro nas bordas das imagens de ponta a ponta</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "typography-rules",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Typography Rules"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Regras de tipografia"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Font Family</h3>\n<ul><li><strong>Display &amp; UI</strong>: <code>LamboType</code>, Roboto, Helvetica Neue, Arial — custom Neo-Grotesk typeface by Character Type for Lamborghini's 2024 brand refresh. Available in widths from Normal to Ultracompressed and weights from Light (300) to Black. Features 12° angled terminals inspired by aerodynamic car geometry, hexagonal construction logic, and support for 200+ languages including Latin, Cyrillic, and Greek</li><li><strong>Fallback/UI</strong>: <code>Open Sans</code> — used for some button/form contexts as system fallback</li><li><strong>No italic variants</strong> observed on the marketing site — the brand voice is always upright</li></ul>\n<h3>Hierarchy</h3>\n<table><thead><tr><th>Role</th><th>Size</th><th>Weight</th><th>Line Height</th><th>Letter Spacing</th><th>Notes</th></tr></thead><tbody><tr><td>Hero Display</td><td>120px (7.50rem)</td><td>400</td><td>0.92</td><td>normal</td><td>LamboType, uppercase, maximum impact</td></tr><tr><td>Display 2</td><td>80px (5.00rem)</td><td>400</td><td>1.13</td><td>normal</td><td>LamboType, uppercase, major section titles</td></tr><tr><td>Section Title</td><td>54px (3.38rem)</td><td>400</td><td>1.19</td><td>normal</td><td>LamboType, uppercase</td></tr><tr><td>Sub-section</td><td>40px (2.50rem)</td><td>400</td><td>1.15</td><td>normal</td><td>LamboType, uppercase</td></tr><tr><td>Feature Heading</td><td>27px (1.69rem)</td><td>400</td><td>1.37</td><td>normal</td><td>LamboType, uppercase</td></tr><tr><td>Card Title</td><td>24px (1.50rem)</td><td>400</td><td>—</td><td>normal</td><td>LamboType</td></tr><tr><td>Body Large</td><td>18px (1.13rem)</td><td>400</td><td>1.56</td><td>normal</td><td>LamboType, mixed case and uppercase variants</td></tr><tr><td>Body / UI</td><td>16px (1.00rem)</td><td>400/700</td><td>1.50</td><td>normal/0.16px</td><td>LamboType, primary body text</td></tr><tr><td>Button Large</td><td>16px (1.00rem)</td><td>400</td><td>1.50</td><td>normal</td><td>Gold CTA buttons</td></tr><tr><td>Button Standard</td><td>14.4px (0.90rem)</td><td>300/700</td><td>1.00</td><td>0.14–0.2px</td><td>LamboType, uppercase, ghost buttons</td></tr><tr><td>Button Small</td><td>13px (0.81rem)</td><td>300/500</td><td>1.20</td><td>0.13–0.2px</td><td>LamboType, compact button variant</td></tr><tr><td>Caption</td><td>14px (0.88rem)</td><td>600/700</td><td>1.14–1.50</td><td>-0.42px</td><td>LamboType, uppercase, negative tracking</td></tr><tr><td>Label</td><td>12px (0.75rem)</td><td>400/500</td><td>1.83</td><td>0.96px</td><td>LamboType, uppercase badges and micro labels</td></tr><tr><td>Micro</td><td>10px (0.63rem)</td><td>400</td><td>1.00–2.00</td><td>0.225px</td><td>LamboType, uppercase, smallest text</td></tr></tbody></table>\n<h3>Principles</h3>\n<ul><li><strong>ALL-CAPS is the default voice</strong>: Display and feature headings are universally uppercase. This creates a shouting, commanding tone that matches the brand's aggression</li><li><strong>Extreme scale range</strong>: From 120px heroes to 10px micro labels — a 12:1 ratio that creates dramatic visual hierarchy</li><li><strong>Tight line-heights at scale</strong>: Display sizes use 0.92-1.19 line-height, creating dense, compressed blocks of type that feel stamped rather than typeset</li><li><strong>Weight 400 dominates</strong>: Unlike many design systems that use bold for emphasis, Lamborghini's regular weight carries the headlines — the typeface itself is so distinctive it doesn't need weight variation</li><li><strong>Negative tracking on captions</strong>: -0.42px letter-spacing on 14px captions creates a compressed, technical aesthetic</li><li><strong>Positive tracking on micro text</strong>: +0.225px at 10px ensures legibility at the smallest sizes</li><li><strong>Single typeface discipline</strong>: LamboType handles everything — the 12° angled terminals and hexagonal geometry provide visual coherence across all sizes</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Família tipográfica</h3>\n<ul><li><strong>Display e interface</strong>: <code>LamboType</code>, Roboto, Helvetica Neue, Arial — fonte Neo-Grotesk personalizada da Character Type para a renovação de marca da Lamborghini em 2024. Disponível em larguras de Normal a Ultracompressed e pesos de Light (300) a Black. Tem terminais em ângulo de 12° inspirados na geometria aerodinâmica dos carros, lógica de construção hexagonal e suporte a mais de 200 idiomas, incluindo latim, cirílico e grego</li><li><strong>Fallback/interface</strong>: <code>Open Sans</code> — usada em alguns contextos de botões/formulários como fallback do sistema</li><li><strong>Sem variantes itálicas</strong> observadas no site de marketing — a voz da marca está sempre de pé</li></ul>\n<h3>Hierarquia</h3>\n<table><thead><tr><th>Papel</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display do hero</td><td>120px (7.50rem)</td><td>400</td><td>0.92</td><td>normal</td><td>LamboType, caixa-alta, impacto máximo</td></tr><tr><td>Display 2</td><td>80px (5.00rem)</td><td>400</td><td>1.13</td><td>normal</td><td>LamboType, caixa-alta, títulos das seções principais</td></tr><tr><td>Título de seção</td><td>54px (3.38rem)</td><td>400</td><td>1.19</td><td>normal</td><td>LamboType, caixa-alta</td></tr><tr><td>Subseção</td><td>40px (2.50rem)</td><td>400</td><td>1.15</td><td>normal</td><td>LamboType, caixa-alta</td></tr><tr><td>Título de recurso</td><td>27px (1.69rem)</td><td>400</td><td>1.37</td><td>normal</td><td>LamboType, caixa-alta</td></tr><tr><td>Título de card</td><td>24px (1.50rem)</td><td>400</td><td>—</td><td>normal</td><td>LamboType</td></tr><tr><td>Corpo grande</td><td>18px (1.13rem)</td><td>400</td><td>1.56</td><td>normal</td><td>LamboType, variantes em caixa mista e caixa-alta</td></tr><tr><td>Corpo / interface</td><td>16px (1.00rem)</td><td>400/700</td><td>1.50</td><td>normal/0.16px</td><td>LamboType, texto de corpo principal</td></tr><tr><td>Botão grande</td><td>16px (1.00rem)</td><td>400</td><td>1.50</td><td>normal</td><td>Botões CTA dourados</td></tr><tr><td>Botão padrão</td><td>14.4px (0.90rem)</td><td>300/700</td><td>1.00</td><td>0.14–0.2px</td><td>LamboType, caixa-alta, botões ghost</td></tr><tr><td>Botão pequeno</td><td>13px (0.81rem)</td><td>300/500</td><td>1.20</td><td>0.13–0.2px</td><td>LamboType, variante compacta de botão</td></tr><tr><td>Legenda</td><td>14px (0.88rem)</td><td>600/700</td><td>1.14–1.50</td><td>-0.42px</td><td>LamboType, caixa-alta, tracking negativo</td></tr><tr><td>Rótulo</td><td>12px (0.75rem)</td><td>400/500</td><td>1.83</td><td>0.96px</td><td>LamboType, badges e microrrótulos em caixa-alta</td></tr><tr><td>Micro</td><td>10px (0.63rem)</td><td>400</td><td>1.00–2.00</td><td>0.225px</td><td>LamboType, caixa-alta, menor texto</td></tr></tbody></table>\n<h3>Princípios</h3>\n<ul><li><strong>CAIXA-ALTA é a voz padrão</strong>: os títulos de display e de recursos são universalmente em caixa-alta. Isso cria um tom de grito e comando que combina com a agressividade da marca</li><li><strong>Faixa de escala extrema</strong>: de heroes de 120px a microrrótulos de 10px — uma razão de 12:1 que cria uma hierarquia visual dramática</li><li><strong>Alturas de linha justas em grande escala</strong>: os tamanhos de display usam altura de linha de 0.92–1.19, criando blocos de texto densos e comprimidos que parecem estampados, e não compostos</li><li><strong>O peso 400 domina</strong>: ao contrário de muitos design systems que usam negrito para ênfase, na Lamborghini o peso regular carrega os títulos — a fonte é tão marcante que não precisa variar de peso</li><li><strong>Tracking negativo nas legendas</strong>: -0.42px de espaçamento entre letras nas legendas de 14px cria uma estética comprimida e técnica</li><li><strong>Tracking positivo no microtexto</strong>: +0.225px em 10px garante a legibilidade nos menores tamanhos</li><li><strong>Disciplina de fonte única</strong>: a LamboType cuida de tudo — os terminais em ângulo de 12° e a geometria hexagonal dão coerência visual em todos os tamanhos</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "component-stylings",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Component Stylings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Estilo dos componentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Buttons</h3>\n<p>All buttons use <strong>zero border-radius</strong> — sharp, angular rectangles that echo the aggressive lines of Lamborghini vehicles.</p>\n<p><strong>Gold Accent CTA</strong> — The primary action:</p>\n<ul><li>Default: bg <code>#FFC000</code> (Lamborghini Gold), text <code>#000000</code>, padding 24px, fontSize 16px, fontWeight 400, borderRadius 0px, no border</li><li>Hover: bg <code>#917300</code> (Dark Gold), darkens significantly</li><li>Class: <code>btn-accent btn-large</code></li><li>Used for: &quot;Discover More&quot;, &quot;Tickets&quot;, &quot;Start Configuration&quot;</li></ul>\n<p><strong>Transparent Ghost</strong> — The secondary action on dark backgrounds:</p>\n<ul><li>Default: bg transparent, text <code>#FFFFFF</code>, border 1px solid <code>#FFFFFF</code>, padding 16px, opacity 0.5</li><li>Hover: bg <code>#1EAEDB</code> (Teal Action), text white, opacity 0.7</li><li>Focus: bg <code>#1EAEDB</code>, border 1px solid <code>#000000</code>, outline 2px solid <code>#000000</code></li><li>Used for: secondary CTAs on hero sections and dark panels</li></ul>\n<p><strong>White Filled</strong> — Light-mode primary:</p>\n<ul><li>Default: bg <code>#FFFFFF</code>, text <code>#202020</code>, no border</li><li>Used for: CTAs on dark sections where gold isn't appropriate</li></ul>\n<p><strong>Black Filled</strong> — Dark filled variant:</p>\n<ul><li>Default: bg <code>#000000</code>, text <code>#202020</code></li><li>Used for: Inverted CTA on light sections</li></ul>\n<p><strong>Gray Neutral</strong> — Subtle action:</p>\n<ul><li>Default: bg <code>#969696</code>, text <code>#202020</code></li><li>Used for: secondary/tertiary actions, badge-like buttons</li></ul>\n<h3>Cards &amp; Containers</h3>\n<ul><li>Background: <code>#202020</code> (Charcoal) on black canvas, or <code>#000000</code> on lighter sections</li><li>Border: <code>0px 1px solid #202020</code> bottom borders for section dividers</li><li>Border-radius: 0px (completely sharp corners)</li><li>Shadow: minimal, uses overlay opacity for depth</li><li>Content: full-bleed photography + overlaid text in white</li></ul>\n<h3>Inputs &amp; Forms</h3>\n<ul><li>Minimal form presence on the marketing site</li><li>Switch elements: border-radius 20px (the only rounded element), border 1px solid <code>#DDDDDD</code></li><li>Cookie banner input style: white text on black with <code>#7D7D7D</code> borders</li></ul>\n<h3>Navigation</h3>\n<ul><li><strong>Desktop</strong>: Centered bull logo, &quot;MENU&quot; hamburger with icon on left, search icon + bookmarks icon on right</li><li><strong>Background</strong>: Transparent (inherits black page background)</li><li><strong>Sticky</strong>: Fixed to top, floats above content</li><li><strong>No visible borders or shadows</strong> — elements float in the darkness</li><li><strong>&quot;MENU&quot; label</strong>: White text at 14px weight 400, uppercase, accompanies hamburger icon</li><li><strong>Hexagonal motifs</strong>: Pause button on hero sections uses hexagonal outline shape</li></ul>\n<h3>Image Treatment</h3>\n<ul><li><strong>Hero</strong>: Full-viewport video sections (100vh) with cinematic event/vehicle footage</li><li><strong>Event photography</strong>: Full-bleed aerial shots of Lamborghini Arena events</li><li><strong>Vehicle imagery</strong>: High-contrast studio shots on dark backgrounds, full-width</li><li><strong>Aspect ratios</strong>: Predominantly 16:9 and wider for cinematic feel</li><li><strong>Dark gradient overlays</strong>: Subtle darkening at top/bottom edges of video to ensure text legibility</li></ul>\n<h3>Distinctive Components</h3>\n<ul><li><strong>Hexagonal Pause Button</strong>: Video control uses a hexagonal outline (matching the brand's geometric DNA from the typeface), positioned bottom-right of hero sections</li><li><strong>Progress Bar</strong>: Thin white line at bottom of hero sections indicating video/slide progress</li><li><strong>Badge/Tag</strong>: bg <code>#969696</code>, text white, padding 8px, fontSize 10px, borderRadius 2px — tiny metallic pills</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Botões</h3>\n<p>Todos os botões usam <strong>border-radius zero</strong> — retângulos afiados e angulosos que ecoam as linhas agressivas dos veículos Lamborghini.</p>\n<p><strong>CTA de destaque dourado</strong> — a ação principal:</p>\n<ul><li>Padrão: fundo <code>#FFC000</code> (Lamborghini Gold), texto <code>#000000</code>, padding de 24px, fontSize 16px, fontWeight 400, borderRadius 0px, sem borda</li><li>Hover: fundo <code>#917300</code> (Dark Gold), escurece bastante</li><li>Classe: <code>btn-accent btn-large</code></li><li>Usado em: &quot;Discover More&quot;, &quot;Tickets&quot;, &quot;Start Configuration&quot;</li></ul>\n<p><strong>Ghost transparente</strong> — a ação secundária sobre fundos escuros:</p>\n<ul><li>Padrão: fundo transparente, texto <code>#FFFFFF</code>, borda 1px solid <code>#FFFFFF</code>, padding de 16px, opacidade 0.5</li><li>Hover: fundo <code>#1EAEDB</code> (Teal Action), texto branco, opacidade 0.7</li><li>Foco: fundo <code>#1EAEDB</code>, borda 1px solid <code>#000000</code>, contorno 2px solid <code>#000000</code></li><li>Usado em: CTAs secundários nas seções hero e painéis escuros</li></ul>\n<p><strong>Preenchimento branco</strong> — primário do modo claro:</p>\n<ul><li>Padrão: fundo <code>#FFFFFF</code>, texto <code>#202020</code>, sem borda</li><li>Usado em: CTAs em seções escuras onde o dourado não é apropriado</li></ul>\n<p><strong>Preenchimento preto</strong> — variante escura preenchida:</p>\n<ul><li>Padrão: fundo <code>#000000</code>, texto <code>#202020</code></li><li>Usado em: CTA invertido em seções claras</li></ul>\n<p><strong>Cinza neutro</strong> — ação sutil:</p>\n<ul><li>Padrão: fundo <code>#969696</code>, texto <code>#202020</code></li><li>Usado em: ações secundárias/terciárias, botões tipo badge</li></ul>\n<h3>Cards e contêineres</h3>\n<ul><li>Fundo: <code>#202020</code> (Charcoal) sobre a tela preta, ou <code>#000000</code> em seções mais claras</li><li>Borda: bordas inferiores <code>0px 1px solid #202020</code> como divisores de seção</li><li>Border-radius: 0px (cantos totalmente angulosos)</li><li>Sombra: mínima, usa a opacidade de sobreposição para profundidade</li><li>Conteúdo: fotografia de ponta a ponta + texto branco sobreposto</li></ul>\n<h3>Campos e formulários</h3>\n<ul><li>Presença mínima de formulários no site de marketing</li><li>Elementos de switch: border-radius de 20px (o único elemento arredondado), borda 1px solid <code>#DDDDDD</code></li><li>Estilo de campo do banner de cookies: texto branco sobre preto com bordas <code>#7D7D7D</code></li></ul>\n<h3>Navegação</h3>\n<ul><li><strong>Desktop</strong>: logo do touro centralizado, hambúrguer &quot;MENU&quot; com ícone à esquerda, ícone de busca + ícone de favoritos à direita</li><li><strong>Fundo</strong>: transparente (herda o fundo preto da página)</li><li><strong>Fixa</strong>: presa ao topo, flutua acima do conteúdo</li><li><strong>Sem bordas ou sombras visíveis</strong> — os elementos flutuam na escuridão</li><li><strong>Rótulo &quot;MENU&quot;</strong>: texto branco de 14px peso 400, em caixa-alta, acompanhando o ícone de hambúrguer</li><li><strong>Motivos hexagonais</strong>: o botão de pausa nas seções hero usa um contorno hexagonal</li></ul>\n<h3>Tratamento de imagens</h3>\n<ul><li><strong>Hero</strong>: seções de vídeo de viewport inteira (100vh) com imagens cinematográficas de eventos/veículos</li><li><strong>Fotografia de eventos</strong>: tomadas aéreas de ponta a ponta dos eventos da Lamborghini Arena</li><li><strong>Imagens de veículos</strong>: fotos de estúdio de alto contraste sobre fundos escuros, em largura total</li><li><strong>Proporções</strong>: predominantemente 16:9 ou mais largas, para uma sensação cinematográfica</li><li><strong>Sobreposições em gradiente escuro</strong>: escurecimento sutil nas bordas superior/inferior do vídeo para garantir a legibilidade do texto</li></ul>\n<h3>Componentes característicos</h3>\n<ul><li><strong>Botão de pausa hexagonal</strong>: o controle de vídeo usa um contorno hexagonal (combinando com o DNA geométrico da fonte), posicionado no canto inferior direito das seções hero</li><li><strong>Barra de progresso</strong>: linha branca fina na base das seções hero indicando o progresso do vídeo/slide</li><li><strong>Badge/tag</strong>: fundo <code>#969696</code>, texto branco, padding de 8px, fontSize 10px, borderRadius 2px — minúsculas pílulas metálicas</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "layout-principles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Layout Principles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Princípios de layout"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Spacing System</h3>\n<ul><li><strong>Base unit</strong>: 8px</li><li><strong>Full scale</strong>: 2px, 4px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 32px, 40px, 48px, 56px</li><li><strong>Button padding</strong>: 16px (ghost), 24px (gold accent)</li><li><strong>Section padding</strong>: 48–56px vertical, 40px horizontal</li><li><strong>Small spacing</strong>: 2–5px for fine adjustments (badge padding, border spacing)</li></ul>\n<h3>Grid &amp; Container</h3>\n<ul><li><strong>Framework</strong>: Bootstrap grid system (container + row + col)</li><li><strong>Max width</strong>: 1440px (largest breakpoint)</li><li><strong>Columns</strong>: Standard 12-column Bootstrap grid</li><li><strong>Full-bleed</strong>: Hero sections break out of grid to fill viewport edge-to-edge</li><li><strong>Content areas</strong>: Centered within 1200px max-width containers</li></ul>\n<h3>Whitespace Philosophy</h3>\n<p>Lamborghini uses darkness as whitespace. The generous black expanses between content blocks serve the same function as white space in a light design — creating breathing room that elevates each element to the status of exhibit. A model name floating in the middle of a black viewport has the same visual weight as a gallery piece on a white wall. The absence of color IS the design.</p>\n<h3>Border Radius Scale</h3>\n<table><thead><tr><th>Value</th><th>Context</th></tr></thead><tbody><tr><td>0px</td><td>Default for everything — buttons, cards, containers, images</td></tr><tr><td>1px</td><td>Subtle span elements</td></tr><tr><td>2px</td><td>Badges, close buttons, cookie elements — barely perceptible</td></tr><tr><td>20px</td><td>Toggle switches only — the sole rounded element</td></tr></tbody></table>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Sistema de espaçamento</h3>\n<ul><li><strong>Unidade base</strong>: 8px</li><li><strong>Escala completa</strong>: 2px, 4px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 32px, 40px, 48px, 56px</li><li><strong>Padding de botões</strong>: 16px (ghost), 24px (destaque dourado)</li><li><strong>Padding de seção</strong>: 48–56px na vertical, 40px na horizontal</li><li><strong>Espaçamento pequeno</strong>: 2–5px para ajustes finos (padding de badges, espaçamento de bordas)</li></ul>\n<h3>Grid e contêiner</h3>\n<ul><li><strong>Framework</strong>: sistema de grid do Bootstrap (container + row + col)</li><li><strong>Largura máxima</strong>: 1440px (maior breakpoint)</li><li><strong>Colunas</strong>: grid padrão de 12 colunas do Bootstrap</li><li><strong>De ponta a ponta</strong>: as seções hero saem do grid para preencher a viewport de borda a borda</li><li><strong>Áreas de conteúdo</strong>: centralizadas em contêineres com max-width de 1200px</li></ul>\n<h3>Filosofia do espaço em branco</h3>\n<p>A Lamborghini usa a escuridão como espaço em branco. As generosas extensões pretas entre os blocos de conteúdo cumprem a mesma função do espaço em branco num design claro — criam respiro e elevam cada elemento ao status de peça de exposição. Um nome de modelo flutuando no meio de uma viewport preta tem o mesmo peso visual de uma obra numa parede branca de galeria. A ausência de cor É o design.</p>\n<h3>Escala de raios de borda</h3>\n<table><thead><tr><th>Valor</th><th>Contexto</th></tr></thead><tbody><tr><td>0px</td><td>Padrão para tudo — botões, cards, contêineres, imagens</td></tr><tr><td>1px</td><td>Elementos span sutis</td></tr><tr><td>2px</td><td>Badges, botões de fechar, elementos de cookies — quase imperceptível</td></tr><tr><td>20px</td><td>Só nos switches — o único elemento arredondado</td></tr></tbody></table>"
+    }
+   ]
+  },
+  {
+   "id": "depth-elevation",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Depth & Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Profundidade e elevação"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<table><thead><tr><th>Level</th><th>Treatment</th><th>Use</th></tr></thead><tbody><tr><td>Level 0 (Abyss)</td><td><code>#000000</code> flat</td><td>Page background, deepest layer</td></tr><tr><td>Level 1 (Surface)</td><td><code>#181818</code> or <code>#202020</code></td><td>Cards, content panels, elevated sections</td></tr><tr><td>Level 2 (Overlay)</td><td><code>rgba(0,0,0,0.7)</code></td><td>Modal backdrops, video dimming</td></tr><tr><td>Level 3 (Fog)</td><td><code>rgba(0,0,0,0.5)</code></td><td>Lighter overlays, hover states</td></tr><tr><td>Level 4 (Mist)</td><td><code>rgba(0,0,0,0.25)</code></td><td>Subtle depth hints</td></tr></tbody></table>\n<h3>Shadow Philosophy</h3>\n<p>Lamborghini achieves depth through surface color layering rather than shadows. On a black canvas, traditional drop shadows are invisible — instead, the system creates elevation by shifting from absolute black to progressively lighter dark grays: <code>#000000</code> → <code>#181818</code> → <code>#202020</code> → <code>#494949</code>. This &quot;darkness gradient&quot; approach means that elevated elements are literally lighter than their surroundings, inverting the traditional shadow model.</p>\n<h3>Decorative Depth</h3>\n<ul><li>Full-bleed video provides atmospheric depth through cinematic lighting</li><li>The hexagonal pause button floats with a thin white outline stroke</li><li>Progress bars at hero section bottoms create a subtle horizon line</li><li>No gradients, glows, or blur effects on UI elements — the photography provides all visual richness</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Nível 0 (abismo)</td><td><code>#000000</code> chapado</td><td>Fundo da página, camada mais profunda</td></tr><tr><td>Nível 1 (superfície)</td><td><code>#181818</code> ou <code>#202020</code></td><td>Cards, painéis de conteúdo, seções elevadas</td></tr><tr><td>Nível 2 (sobreposição)</td><td><code>rgba(0,0,0,0.7)</code></td><td>Fundos de modais, escurecimento de vídeo</td></tr><tr><td>Nível 3 (névoa)</td><td><code>rgba(0,0,0,0.5)</code></td><td>Sobreposições mais leves, estados de hover</td></tr><tr><td>Nível 4 (bruma)</td><td><code>rgba(0,0,0,0.25)</code></td><td>Sugestões sutis de profundidade</td></tr></tbody></table>\n<h3>Filosofia das sombras</h3>\n<p>A Lamborghini obtém profundidade por camadas de cor de superfície, e não por sombras. Sobre uma tela preta, sombras projetadas tradicionais são invisíveis — em vez disso, o sistema cria elevação passando do preto absoluto a cinzas-escuros progressivamente mais claros: <code>#000000</code> → <code>#181818</code> → <code>#202020</code> → <code>#494949</code>. Essa abordagem de &quot;gradiente de escuridão&quot; faz os elementos elevados serem literalmente mais claros que o entorno, invertendo o modelo tradicional de sombras.</p>\n<h3>Profundidade decorativa</h3>\n<ul><li>O vídeo de ponta a ponta oferece profundidade atmosférica com iluminação cinematográfica</li><li>O botão de pausa hexagonal flutua com um fino traço de contorno branco</li><li>As barras de progresso na base das seções hero criam uma sutil linha do horizonte</li><li>Sem gradientes, brilhos ou desfoques nos elementos de interface — a fotografia oferece toda a riqueza visual</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "do-s-and-don-ts",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Do's and Don'ts"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "O que fazer e o que evitar"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Do</h3>\n<ul><li>Use absolute black (<code>#000000</code>) as the primary background — never dark gray as a substitute</li><li>Apply Lamborghini Gold (<code>#FFC000</code>) exclusively for primary CTA buttons — never for decorative purposes</li><li>Set all display headings in uppercase with LamboType — the brand voice is always SHOUTING</li><li>Use zero border-radius on buttons and cards — sharp angles are non-negotiable</li><li>Maintain tight line-heights (0.92–1.19) on display type to create dense, architectural text blocks</li><li>Use the transparent ghost button (white border, 50% opacity) as the secondary CTA on dark backgrounds</li><li>Let full-viewport video/photography carry emotional weight — UI is infrastructure, not decoration</li><li>Reserve hexagonal geometry for UI icons and the video control button</li><li>Use weight 400 (regular) for headlines — the typeface is distinctive enough without bold emphasis</li><li>Keep the gray palette achromatic — all neutrals are pure gray without color tinting</li></ul>\n<h3>Don't</h3>\n<ul><li>Introduce additional accent colors beyond gold — the monochrome-plus-gold system is sacred</li><li>Apply border-radius to buttons or cards — curved edges contradict the angular vehicle aesthetic</li><li>Use LamboType in italic or decorative styles — the brand is always upright and direct</li><li>Add gradients to buttons or surfaces — depth comes from surface layering, not blending</li><li>Use light backgrounds as the primary canvas — darkness is the default state, light is the exception</li><li>Mix lowercase into display headings — the uppercase convention communicates authority and power</li><li>Add hover animations with scale or translate — interactions should be color-only (background/opacity shifts)</li><li>Use Open Sans for display text — LamboType must handle all visible typography</li><li>Create busy layouts with many small elements — Lamborghini's design is about singular, bold statements</li><li>Apply shadows to elements — on a black canvas, shadows are meaningless; use surface color shifts instead</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Faça</h3>\n<ul><li>Use preto absoluto (<code>#000000</code>) como fundo principal — nunca cinza-escuro como substituto</li><li>Aplique o Lamborghini Gold (<code>#FFC000</code>) exclusivamente em botões CTA principais — nunca com fins decorativos</li><li>Componha todos os títulos de display em caixa-alta com LamboType — a voz da marca está sempre GRITANDO</li><li>Use border-radius zero em botões e cards — ângulos afiados são inegociáveis</li><li>Mantenha alturas de linha justas (0.92–1.19) no display para criar blocos de texto densos e arquitetônicos</li><li>Use o botão ghost transparente (borda branca, 50% de opacidade) como CTA secundário sobre fundos escuros</li><li>Deixe o vídeo/fotografia de viewport inteira carregar o peso emocional — a interface é infraestrutura, não decoração</li><li>Reserve a geometria hexagonal aos ícones da interface e ao botão de controle de vídeo</li><li>Use peso 400 (regular) nos títulos — a fonte já é marcante o suficiente sem ênfase em negrito</li><li>Mantenha a paleta de cinzas acromática — todos os neutros são cinza puro, sem tingimento</li></ul>\n<h3>Não faça</h3>\n<ul><li>Não introduza cores de destaque além do dourado — o sistema monocromático com dourado é sagrado</li><li>Não aplique border-radius em botões ou cards — bordas curvas contradizem a estética angulosa dos veículos</li><li>Não use a LamboType em itálico ou estilos decorativos — a marca está sempre de pé e direta</li><li>Não adicione gradientes a botões ou superfícies — a profundidade vem das camadas de superfície, não de misturas</li><li>Não use fundos claros como tela principal — a escuridão é o estado padrão, a luz é a exceção</li><li>Não misture minúsculas nos títulos de display — a convenção da caixa-alta comunica autoridade e poder</li><li>Não adicione animações de hover com escala ou translação — as interações devem ser só de cor (mudanças de fundo/opacidade)</li><li>Não use a Open Sans no texto de display — a LamboType precisa cuidar de toda a tipografia visível</li><li>Não crie layouts carregados com muitos elementos pequenos — o design da Lamborghini é feito de declarações únicas e ousadas</li><li>Não aplique sombras aos elementos — sobre uma tela preta, sombras não significam nada; use mudanças de cor de superfície</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "responsive-behavior",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Responsive Behavior"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Comportamento responsivo"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Name</th><th>Width</th><th>Key Changes</th></tr></thead><tbody><tr><td>Mobile Small</td><td>&lt;425px</td><td>Single column, reduced type scale, stacked buttons</td></tr><tr><td>Mobile</td><td>425-576px</td><td>Single column, hamburger nav, hero text ~40px</td></tr><tr><td>Tablet Small</td><td>576-768px</td><td>2-column grid begins, padding adjusts</td></tr><tr><td>Tablet</td><td>768-1024px</td><td>2-column layout, expanded hero, vehicle cards side-by-side</td></tr><tr><td>Desktop</td><td>1024-1280px</td><td>Full navigation, 3+ column grids, display text at 80px</td></tr><tr><td>Desktop Large</td><td>1280-1440px</td><td>Full layout, hero at 120px display, max-width containers</td></tr><tr><td>Wide</td><td>&gt;1440px</td><td>Content centered, margins expand, hero fills viewport</td></tr></tbody></table>\n<h3>Touch Targets</h3>\n<ul><li>Gold CTA buttons: 48px+ minimum height with 24px padding (exceeds WCAG 44×44px)</li><li>Ghost buttons: 48px+ with 16px padding</li><li>Hamburger menu: large touch target (~48px square)</li><li>Hexagonal pause button: approximately 48px diameter</li></ul>\n<h3>Collapsing Strategy</h3>\n<ul><li><strong>Navigation</strong>: Always hamburger-based (&quot;MENU&quot; + icon) — no horizontal nav expansion on any breakpoint</li><li><strong>Hero video</strong>: Maintains full-viewport height across all breakpoints, adjusting object-fit</li><li><strong>Display type</strong>: Scales from 120px (desktop) → 80px (tablet) → 54px/40px (mobile)</li><li><strong>Button layout</strong>: Side-by-side on desktop, stacks vertically on mobile</li><li><strong>Grid columns</strong>: 3-column → 2-column → 1-column progression</li><li><strong>Section spacing</strong>: Reduces from 56px → 40px → 24px vertical padding</li></ul>\n<h3>Image Behavior</h3>\n<ul><li>Hero videos use <code>object-fit: cover</code> to maintain cinematic framing at all sizes</li><li>Vehicle images scale within their containers with maintained aspect ratios</li><li>Event photography crops to viewport width on narrow screens</li><li>Background images darken at edges to maintain text contrast on all viewports</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile pequeno</td><td>&lt;425px</td><td>Coluna única, escala tipográfica reduzida, botões empilhados</td></tr><tr><td>Mobile</td><td>425-576px</td><td>Coluna única, navegação em hambúrguer, texto do hero ~40px</td></tr><tr><td>Tablet pequeno</td><td>576-768px</td><td>Começa o grid de 2 colunas, o padding se ajusta</td></tr><tr><td>Tablet</td><td>768-1024px</td><td>Layout de 2 colunas, hero expandido, cards de veículos lado a lado</td></tr><tr><td>Desktop</td><td>1024-1280px</td><td>Navegação completa, grids de 3+ colunas, texto de display em 80px</td></tr><tr><td>Desktop grande</td><td>1280-1440px</td><td>Layout completo, hero com display de 120px, contêineres de largura máxima</td></tr><tr><td>Largo</td><td>&gt;1440px</td><td>Conteúdo centralizado, as margens se ampliam, o hero preenche a viewport</td></tr></tbody></table>\n<h3>Áreas de toque</h3>\n<ul><li>Botões CTA dourados: altura mínima de 48px+ com padding de 24px (supera o WCAG de 44×44px)</li><li>Botões ghost: 48px+ com padding de 16px</li><li>Menu hambúrguer: área de toque grande (~48px quadrados)</li><li>Botão de pausa hexagonal: aproximadamente 48px de diâmetro</li></ul>\n<h3>Estratégia de recolhimento</h3>\n<ul><li><strong>Navegação</strong>: sempre baseada em hambúrguer (&quot;MENU&quot; + ícone) — sem expansão horizontal em nenhum breakpoint</li><li><strong>Vídeo do hero</strong>: mantém a altura de viewport inteira em todos os breakpoints, ajustando o object-fit</li><li><strong>Texto de display</strong>: vai de 120px (desktop) → 80px (tablet) → 54px/40px (mobile)</li><li><strong>Layout dos botões</strong>: lado a lado no desktop, empilhados na vertical no mobile</li><li><strong>Colunas do grid</strong>: progressão de 3 colunas → 2 colunas → 1 coluna</li><li><strong>Espaçamento das seções</strong>: o padding vertical reduz de 56px → 40px → 24px</li></ul>\n<h3>Comportamento das imagens</h3>\n<ul><li>Os vídeos do hero usam <code>object-fit: cover</code> para manter o enquadramento cinematográfico em todos os tamanhos</li><li>As imagens de veículos mudam de escala dentro dos contêineres, mantendo as proporções</li><li>A fotografia de eventos é recortada na largura da viewport em telas estreitas</li><li>As imagens de fundo escurecem nas bordas para manter o contraste do texto em todas as viewports</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "agent-prompt-guide",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Agent Prompt Guide"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Guia de prompts para agentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Quick Color Reference</h3>\n<ul><li>Primary CTA: &quot;Lamborghini Gold (#FFC000)&quot;</li><li>Background: &quot;Absolute Black (#000000)&quot;</li><li>Surface: &quot;Charcoal (#202020)&quot;</li><li>Heading text: &quot;Pure White (#FFFFFF)&quot;</li><li>Body text: &quot;Ash (#7D7D7D)&quot;</li><li>Link hover: &quot;Link Blue (#3860BE)&quot;</li><li>Accent: &quot;Cyan Pulse (#29ABE2)&quot;</li><li>Border: &quot;Pure White (#FFFFFF) at 50% opacity&quot;</li></ul>\n<h3>Example Component Prompts</h3>\n<ul><li>&quot;Create a hero section with a full-viewport black background, the model name 'TEMERARIO' in LamboType at 120px uppercase weight 400 white text with 0.92 line-height, centered vertically, with a Lamborghini Gold (#FFC000) 'Discover More' button below — sharp corners, 0px radius, 24px padding, black text&quot;</li><li>&quot;Design a transparent ghost button with 1px solid white border at 50% opacity, white text at 14.4px uppercase with 0.2px letter-spacing, padding 16px, on a black background — hover state changes to Teal Action (#1EAEDB) background with 70% opacity&quot;</li><li>&quot;Build a navigation bar with zero visible background on absolute black, a centered bull logo, 'MENU' text label with hamburger icon on the left, and search + bookmark icons on the right — all in white, sticky position&quot;</li><li>&quot;Create a news card grid on charcoal (#202020) background with white headlines at 27px uppercase, body text in #7D7D7D at 16px, and a white underlined 'Read More' link that turns #3860BE on hover&quot;</li><li>&quot;Design a section divider using a 1px solid bottom border in #202020 on a black canvas — the elevation difference is purely through surface color shift, not shadow&quot;</li></ul>\n<h3>Iteration Guide</h3>\n<p>When refining existing screens generated with this design system:</p>\n<ol><li>Focus on ONE component at a time — Lamborghini's system is extreme and every element must feel aggressive</li><li>Reference specific color names and hex codes from this document — the palette has only about 5 active colors</li><li>Use natural language descriptions, not CSS values — &quot;sharp-cut golden rectangle&quot; not &quot;border-radius: 0px; background: #FFC000&quot;</li><li>Describe the desired &quot;feel&quot; alongside specific measurements — &quot;floating in total darkness&quot; communicates the black canvas better than &quot;background: #000000&quot;</li><li>Remember that UPPERCASE IS THE DEFAULT — if text isn't uppercase at display sizes, it probably should be</li></ol>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Referência rápida de cores</h3>\n<ul><li>CTA principal: &quot;Lamborghini Gold (#FFC000)&quot;</li><li>Fundo: &quot;Absolute Black (#000000)&quot;</li><li>Superfície: &quot;Charcoal (#202020)&quot;</li><li>Texto de títulos: &quot;Pure White (#FFFFFF)&quot;</li><li>Texto de corpo: &quot;Ash (#7D7D7D)&quot;</li><li>Hover de link: &quot;Link Blue (#3860BE)&quot;</li><li>Destaque: &quot;Cyan Pulse (#29ABE2)&quot;</li><li>Borda: &quot;Pure White (#FFFFFF) a 50% de opacidade&quot;</li></ul>\n<h3>Exemplos de prompts de componentes</h3>\n<ul><li>&quot;Crie uma seção hero com fundo preto de viewport inteira, o nome do modelo 'TEMERARIO' em LamboType 120px caixa-alta peso 400, texto branco com line-height 0.92, centralizado na vertical, com um botão Lamborghini Gold (#FFC000) 'Discover More' abaixo — cantos afiados, raio de 0px, padding de 24px, texto preto&quot;</li><li>&quot;Desenhe um botão ghost transparente com borda branca 1px solid a 50% de opacidade, texto branco de 14.4px em caixa-alta com letter-spacing de 0.2px, padding de 16px, sobre fundo preto — o estado de hover muda para fundo Teal Action (#1EAEDB) com 70% de opacidade&quot;</li><li>&quot;Construa uma barra de navegação sem fundo visível sobre preto absoluto, com logo do touro centralizado, rótulo de texto 'MENU' com ícone de hambúrguer à esquerda e ícones de busca + favoritos à direita — tudo em branco, posição fixa&quot;</li><li>&quot;Crie uma grade de cards de notícias sobre fundo carvão (#202020) com títulos brancos de 27px em caixa-alta, texto de corpo em #7D7D7D de 16px e um link branco sublinhado 'Read More' que fica #3860BE no hover&quot;</li><li>&quot;Desenhe um divisor de seção usando uma borda inferior 1px solid em #202020 sobre a tela preta — a diferença de elevação vem puramente da mudança de cor de superfície, não de sombra&quot;</li></ul>\n<h3>Guia de iteração</h3>\n<p>Ao refinar telas existentes geradas com este design system:</p>\n<ol><li>Foque em UM componente por vez — o sistema da Lamborghini é extremo e cada elemento precisa parecer agressivo</li><li>Cite os nomes de cor e códigos hex específicos deste documento — a paleta tem só cerca de 5 cores ativas</li><li>Use descrições em linguagem natural, não valores CSS — &quot;retângulo dourado de corte afiado&quot;, e não &quot;border-radius: 0px; background: #FFC000&quot;</li><li>Descreva a &quot;sensação&quot; desejada junto com medidas específicas — &quot;flutuando na escuridão total&quot; comunica a tela preta melhor que &quot;background: #000000&quot;</li><li>Lembre-se de que a CAIXA-ALTA É O PADRÃO — se o texto não está em caixa-alta nos tamanhos de display, provavelmente deveria estar</li></ol>"
+    }
+   ]
+  }
+ ]
+}

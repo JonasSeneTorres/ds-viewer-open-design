@@ -1,0 +1,2147 @@
+[
+ {
+  "href": "/plugins/design-system-agentic/",
+  "name": "Agentic",
+  "category": "Themed & Unique",
+  "tagline": "Conversational AI-first interface with minimal controls, clear outcomes, and delegated task flows for agentic workflows.",
+  "preview": {
+   "bg": "#f6f6f1",
+   "surface": "#f6f6f1",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#ff5701",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-airbnb/",
+  "name": "Airbnb",
+  "category": "E-Commerce & Retail",
+  "tagline": "Travel marketplace. Warm coral accent, photography-driven, rounded UI.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#460479",
+   "muted": "rgba(70, 4, 121, 0.55)",
+   "line": "rgba(70, 4, 121, 0.12)",
+   "accent": "#e00b41",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-airtable/",
+  "name": "Airtable",
+  "category": "Design & Creative",
+  "tagline": "Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#181d26",
+   "muted": "rgba(24, 29, 38, 0.55)",
+   "line": "rgba(24, 29, 38, 0.12)",
+   "accent": "#006400",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-ant/",
+  "name": "Ant",
+  "category": "Professional & Corporate",
+  "tagline": "Structured, enterprise-focused design system emphasizing clarity, consistency, and efficiency for data-dense web applications.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-apple/",
+  "name": "Apple",
+  "category": "Media & Consumer",
+  "tagline": "Consumer electronics. Premium white space, SF Pro, cinematic imagery.",
+  "preview": {
+   "bg": "#f5f5f7",
+   "surface": "#f5f5f7",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#0071e3",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-application/",
+  "name": "Application",
+  "category": "Professional & Corporate",
+  "tagline": "App dashboard with purple-themed aesthetic, top-bar navigation, card-based layouts, and developer-first workflows.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#9333ea",
+   "muted": "rgba(147, 51, 234, 0.55)",
+   "line": "rgba(147, 51, 234, 0.12)",
+   "accent": "#f59e0b",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-arc/",
+  "name": "Arc Browser",
+  "category": "Productivity & SaaS",
+  "tagline": "\"The browser that browses for you.\" Translucent surfaces, gradient warmth, sidebar-first layout.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#e84393",
+   "muted": "rgba(232, 67, 147, 0.55)",
+   "line": "rgba(232, 67, 147, 0.12)",
+   "accent": "#16f2b3",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-artistic/",
+  "name": "Artistic",
+  "category": "Creative & Artistic",
+  "tagline": "High-contrast, expressive style with creative typography and bold color choices for visually striking interfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-atelier-zero/",
+  "name": "Atelier Zero",
+  "category": "Editorial · Studio",
+  "tagline": "A magazine-grade, collage-driven visual system: warm paper canvas, surreal plaster-and-architecture imagery, oversized display type, hairline rules, Roman-numeral section markers, and tiny editorial annotations. Inspired by the production values of high-end print magazines (Monocle, Apartamento, IDEA) translated into a working website.",
+  "preview": {
+   "bg": "#f7f1de",
+   "surface": "#f7f1de",
+   "ink": "#15140f",
+   "muted": "rgba(21, 20, 15, 0.55)",
+   "line": "rgba(21, 20, 15, 0.12)",
+   "accent": "#15140f",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-bento/",
+  "name": "Bento",
+  "category": "Layout & Structure",
+  "tagline": "Modular grid layout with card-like blocks, clear hierarchy, soft spacing, and subtle visual contrast for organized, scannable interfaces.",
+  "preview": {
+   "bg": "#fad4c0",
+   "surface": "#fad4c0",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-binance/",
+  "name": "Binance.US",
+  "category": "Fintech & Crypto",
+  "tagline": "Crypto exchange. Bold yellow accent on monochrome, trading-floor urgency.",
+  "preview": {
+   "bg": "#f8d12f",
+   "surface": "#f8d12f",
+   "ink": "#222126",
+   "muted": "rgba(34, 33, 38, 0.55)",
+   "line": "rgba(34, 33, 38, 0.12)",
+   "accent": "#ffd000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-bmw/",
+  "name": "BMW",
+  "category": "Automotive",
+  "tagline": "Luxury automotive. Dark premium surfaces, precise German engineering aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#262626",
+   "muted": "rgba(38, 38, 38, 0.55)",
+   "line": "rgba(38, 38, 38, 0.12)",
+   "accent": "#0653b6",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-bmw-m/",
+  "name": "BMW M",
+  "category": "Automotive",
+  "tagline": "Motorsport performance sub-brand. Near-black cockpit surfaces, BMW M tricolor accents, sharp engineering geometry.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0653b6",
+   "muted": "rgba(6, 83, 182, 0.55)",
+   "line": "rgba(6, 83, 182, 0.12)",
+   "accent": "#0066b1",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-bold/",
+  "name": "Bold",
+  "category": "Bold & Expressive",
+  "tagline": "Strong visual presence with heavyweight typography, high-contrast colors, and commanding layouts.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#0077bc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-brutalism/",
+  "name": "Brutalism",
+  "category": "Bold & Expressive",
+  "tagline": "Raw, anti-design aesthetic inspired by concrete architecture with unadorned elements, jarring layouts, and functional minimalism.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-bugatti/",
+  "name": "Bugatti",
+  "category": "Automotive",
+  "tagline": "Hypercar brand. Cinema-black canvas, monochrome austerity, monumental display type.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#0070cc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-cafe/",
+  "name": "Cafe",
+  "category": "Creative & Artistic",
+  "tagline": "Cozy cafe-inspired interface with warm tones, soft typography, and clean layouts for a relaxed browsing experience.",
+  "preview": {
+   "bg": "#e9e3dd",
+   "surface": "#e9e3dd",
+   "ink": "#5d4432",
+   "muted": "rgba(93, 68, 50, 0.55)",
+   "line": "rgba(93, 68, 50, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-cal/",
+  "name": "Cal.com",
+  "category": "Productivity & SaaS",
+  "tagline": "Open-source scheduling. Clean neutral UI, developer-oriented simplicity.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#0099ff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-canva/",
+  "name": "Canva",
+  "category": "Design & Creative",
+  "tagline": "Visual creation platform. Vivid purple-blue gradient, generous spacing, friendly geometry.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#7d2ae8",
+   "muted": "rgba(125, 42, 232, 0.55)",
+   "line": "rgba(125, 42, 232, 0.12)",
+   "accent": "#00c4cc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/systems/",
+  "name": "Cisco",
+  "category": "Backend & Data",
+  "tagline": "Enterprise infrastructure brand. Dark trust surfaces, Cisco Blue signal, technical clarity.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#39393b",
+   "muted": "rgba(57, 57, 59, 0.55)",
+   "line": "rgba(57, 57, 59, 0.12)",
+   "accent": "#005073",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-claude/",
+  "name": "Claude (Anthropic)",
+  "category": "AI & LLM",
+  "tagline": "Anthropic's AI assistant. Warm terracotta accent, clean editorial layout.",
+  "preview": {
+   "bg": "#f5f4ed",
+   "surface": "#f5f4ed",
+   "ink": "#4d4c48",
+   "muted": "rgba(77, 76, 72, 0.55)",
+   "line": "rgba(77, 76, 72, 0.12)",
+   "accent": "#c96442",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-clay/",
+  "name": "Clay",
+  "category": "Design & Creative",
+  "tagline": "Creative agency. Organic shapes, soft gradients, art-directed layout.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-claymorphism/",
+  "name": "Claymorphism",
+  "category": "Morphism & Effects",
+  "tagline": "Soft, rounded 3D-like shapes mimicking malleable clay with playful, puffy elements and colorful surfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-clean/",
+  "name": "Clean",
+  "category": "Modern & Minimal",
+  "tagline": "Simplicity-focused design with ample whitespace, legible typography, and a limited color palette to reduce visual clutter.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-clickhouse/",
+  "name": "ClickHouse",
+  "category": "Backend & Data",
+  "tagline": "Fast analytics database. Yellow-accented, technical documentation style.",
+  "preview": {
+   "bg": "#faff69",
+   "surface": "#faff69",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#166534",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-cohere/",
+  "name": "Cohere",
+  "category": "AI & LLM",
+  "tagline": "Enterprise AI platform. Vibrant gradients, data-rich dashboard aesthetic.",
+  "preview": {
+   "bg": "#e5e7eb",
+   "surface": "#e5e7eb",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#1863dc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-coinbase/",
+  "name": "Coinbase",
+  "category": "Fintech & Crypto",
+  "tagline": "Crypto exchange. Clean blue identity, trust-focused, institutional feel.",
+  "preview": {
+   "bg": "#eef0f3",
+   "surface": "#eef0f3",
+   "ink": "#0a0b0d",
+   "muted": "rgba(10, 11, 13, 0.55)",
+   "line": "rgba(10, 11, 13, 0.12)",
+   "accent": "#0052ff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-colorful/",
+  "name": "Colorful",
+  "category": "Bold & Expressive",
+  "tagline": "Vibrant, high-contrast palettes and gradients for engaging, memorable, and modern user experiences.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-composio/",
+  "name": "Composio",
+  "category": "Backend & Data",
+  "tagline": "Tool integration platform. Modern dark with colorful integration icons.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0f0f0f",
+   "muted": "rgba(15, 15, 15, 0.55)",
+   "line": "rgba(15, 15, 15, 0.12)",
+   "accent": "#00ffff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-contemporary/",
+  "name": "Contemporary",
+  "category": "Modern & Minimal",
+  "tagline": "Current-era minimalist design with bento grids, dark mode support, and high-performance accessible layouts.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#e60076",
+   "muted": "rgba(230, 0, 118, 0.55)",
+   "line": "rgba(230, 0, 118, 0.12)",
+   "accent": "#c800df",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-corporate/",
+  "name": "Corporate",
+  "category": "Professional & Corporate",
+  "tagline": "Professional, brand-aligned design with structured grids, minimalist layouts, and consistent enterprise patterns.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-cosmic/",
+  "name": "Cosmic",
+  "category": "Creative & Artistic",
+  "tagline": "Futuristic sci-fi aesthetic with dark themes, vibrant neon accents, and immersive spatial elements.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-creative/",
+  "name": "Creative",
+  "category": "Creative & Artistic",
+  "tagline": "Playful, character-driven design with expressive typography and bold graphics for landing pages and creative projects.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-cursor/",
+  "name": "Cursor",
+  "category": "Developer Tools",
+  "tagline": "AI-first code editor. Sleek dark interface, gradient accents.",
+  "preview": {
+   "bg": "#f2f1ed",
+   "surface": "#f2f1ed",
+   "ink": "#26251e",
+   "muted": "rgba(38, 37, 30, 0.55)",
+   "line": "rgba(38, 37, 30, 0.12)",
+   "accent": "#cf2d56",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-dashboard/",
+  "name": "Dashboard",
+  "category": "Professional & Corporate",
+  "tagline": "Dark-themed cloud-platform aesthetic with modular grids, glass-like panels, and strong data hierarchy for productivity dashboards.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0a4a8a",
+   "muted": "rgba(10, 74, 138, 0.55)",
+   "line": "rgba(10, 74, 138, 0.12)",
+   "accent": "#f59e0b",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-discord/",
+  "name": "Discord",
+  "category": "Productivity & SaaS",
+  "tagline": "Voice / chat platform. Deep blurple, dark-first surfaces, playful accent moments.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#1e1f22",
+   "muted": "rgba(30, 31, 34, 0.55)",
+   "line": "rgba(30, 31, 34, 0.12)",
+   "accent": "#4752c4",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-dithered/",
+  "name": "Dithered",
+  "category": "Retro & Nostalgic",
+  "tagline": "Dot-pattern rendering technique that simulates shades with a limited palette for nostalgic, retro, high-contrast visuals.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-doodle/",
+  "name": "Doodle",
+  "category": "Creative & Artistic",
+  "tagline": "Hand-drawn, sketch-like style with doodles, handwritten fonts, and imperfect lines for a playful, informal feel.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#263d5b",
+   "muted": "rgba(38, 61, 91, 0.55)",
+   "line": "rgba(38, 61, 91, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-dramatic/",
+  "name": "Dramatic",
+  "category": "Bold & Expressive",
+  "tagline": "High-contrast, theatrical design with bold layouts, immersive visuals, and unconventional compositions that command attention.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-duolingo/",
+  "name": "Duolingo",
+  "category": "Productivity & SaaS",
+  "tagline": "Language-learning platform. Bright owl green, chunky shadows, gamified joy.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#14110b",
+   "muted": "rgba(20, 17, 11, 0.55)",
+   "line": "rgba(20, 17, 11, 0.12)",
+   "accent": "#ff9600",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-editorial/",
+  "name": "Editorial",
+  "category": "Creative & Artistic",
+  "tagline": "Magazine-inspired editorial layout with refined serif typography, structured grids, and elegant reading experiences.",
+  "preview": {
+   "bg": "#f1f1f1",
+   "surface": "#f1f1f1",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-elegant/",
+  "name": "Elegant",
+  "category": "Professional & Corporate",
+  "tagline": "Graceful, refined aesthetic with delicate typography, minimal palettes, and polished layouts that exude sophistication.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-elevenlabs/",
+  "name": "ElevenLabs",
+  "category": "AI & LLM",
+  "tagline": "AI voice platform. Dark cinematic UI, audio-waveform aesthetics.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-energetic/",
+  "name": "Energetic",
+  "category": "Bold & Expressive",
+  "tagline": "Dynamic, vibrant style with thick borders, geometric shapes, high-contrast colors, and expressive typography conveying motion and vitality.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-enterprise/",
+  "name": "Enterprise",
+  "category": "Professional & Corporate",
+  "tagline": "Clean, high-contrast enterprise design for data-driven workflows with intuitive drag-and-drop patterns and structured layouts.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#072c2c",
+   "muted": "rgba(7, 44, 44, 0.55)",
+   "line": "rgba(7, 44, 44, 0.12)",
+   "accent": "#ff5f03",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-expo/",
+  "name": "Expo",
+  "category": "Developer Tools",
+  "tagline": "React Native platform. Dark theme, tight letter-spacing, code-centric.",
+  "preview": {
+   "bg": "#f0f0f3",
+   "surface": "#f0f0f3",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-expressive/",
+  "name": "Expressive",
+  "category": "Bold & Expressive",
+  "tagline": "Vibrant, personality-driven design with bold colors, playful graphics, and dynamic layouts that balance creativity with structure.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-fantasy/",
+  "name": "Fantasy",
+  "category": "Creative & Artistic",
+  "tagline": "Game-inspired fantasy aesthetic with bold, premium visuals, rich color palettes, and immersive thematic elements.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0250cc",
+   "muted": "rgba(2, 80, 204, 0.55)",
+   "line": "rgba(2, 80, 204, 0.12)",
+   "accent": "#fdc800",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-ferrari/",
+  "name": "Ferrari",
+  "category": "Automotive",
+  "tagline": "Luxury automotive. Chiaroscuro editorial, Ferrari Red accents, cinematic black.",
+  "preview": {
+   "bg": "#fff200",
+   "surface": "#fff200",
+   "ink": "#303030",
+   "muted": "rgba(48, 48, 48, 0.55)",
+   "line": "rgba(48, 48, 48, 0.12)",
+   "accent": "#da291c",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-figma/",
+  "name": "Figma",
+  "category": "Design & Creative",
+  "tagline": "Collaborative design tool. Vibrant multi-color, playful yet professional.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-flat/",
+  "name": "Flat",
+  "category": "Modern & Minimal",
+  "tagline": "Two-dimensional minimalist style with vibrant colors, clean typography, and no 3D effects for fast, user-friendly interfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-framer/",
+  "name": "Framer",
+  "category": "Design & Creative",
+  "tagline": "Website builder. Bold black and blue, motion-first, design-forward.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#0099ff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-friendly/",
+  "name": "Friendly",
+  "category": "Creative & Artistic",
+  "tagline": "Approachable, intuitive design with rounded elements, ample whitespace, and soft pastel color palettes.",
+  "preview": {
+   "bg": "#d9f2d8",
+   "surface": "#d9f2d8",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-futuristic/",
+  "name": "Futuristic",
+  "category": "Themed & Unique",
+  "tagline": "Forward-looking design with tech-inspired typography, modern layouts, and a sleek, innovation-driven aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-github/",
+  "name": "GitHub",
+  "category": "Developer Tools",
+  "tagline": "Code-forward platform. Functional density, blue-on-white precision, Primer foundations.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0d1117",
+   "muted": "rgba(13, 17, 23, 0.55)",
+   "line": "rgba(13, 17, 23, 0.12)",
+   "accent": "#0969da",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-glassmorphism/",
+  "name": "Glassmorphism",
+  "category": "Morphism & Effects",
+  "tagline": "Frosted glass effect with translucent layers, subtle blur, and luminous borders for depth and modern elegance.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#3a344e",
+   "muted": "rgba(58, 52, 78, 0.55)",
+   "line": "rgba(58, 52, 78, 0.12)",
+   "accent": "#07ca6b",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-gradient/",
+  "name": "Gradient",
+  "category": "Morphism & Effects",
+  "tagline": "Smooth color transitions and gradient-rich surfaces for modern, playful interfaces with visual depth.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#e60076",
+   "muted": "rgba(230, 0, 118, 0.55)",
+   "line": "rgba(230, 0, 118, 0.12)",
+   "accent": "#e60076",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-hashicorp/",
+  "name": "HashiCorp",
+  "category": "Backend & Data",
+  "tagline": "Infrastructure automation. Enterprise-clean, black and white.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0d0e12",
+   "muted": "rgba(13, 14, 18, 0.55)",
+   "line": "rgba(13, 14, 18, 0.12)",
+   "accent": "#14c6cb",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-huggingface/",
+  "name": "Hugging Face",
+  "category": "AI & LLM",
+  "tagline": "ML community hub. Sunny yellow accent, monospace identity, cheerful and dense.",
+  "preview": {
+   "bg": "#fafafa",
+   "surface": "#fafafa",
+   "ink": "#0d1117",
+   "muted": "rgba(13, 17, 23, 0.55)",
+   "line": "rgba(13, 17, 23, 0.12)",
+   "accent": "#ffd21e",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-ibm/",
+  "name": "IBM",
+  "category": "Media & Consumer",
+  "tagline": "Enterprise technology. Carbon design system, structured blue palette.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#161616",
+   "muted": "rgba(22, 22, 22, 0.55)",
+   "line": "rgba(22, 22, 22, 0.12)",
+   "accent": "#0f62fe",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-intercom/",
+  "name": "Intercom",
+  "category": "Productivity & SaaS",
+  "tagline": "Customer messaging. Friendly blue palette, conversational UI patterns.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#ff5600",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-kami/",
+  "name": "kami (紙 / 纸)",
+  "category": "Editorial & Print",
+  "tagline": "Editorial paper system: warm parchment canvas, ink-blue accent, serif-led hierarchy. Built for resumes, one-pagers, white papers, portfolios, slide decks — anything that should feel like high-quality print rather than UI. Multilingual by design (EN · zh-CN · ja).",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#1b365d",
+   "muted": "rgba(27, 54, 93, 0.55)",
+   "line": "rgba(27, 54, 93, 0.12)",
+   "accent": "#1b365d",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-kraken/",
+  "name": "Kraken",
+  "category": "Fintech & Crypto",
+  "tagline": "Crypto trading. Purple-accented dark UI, data-dense dashboards.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#101114",
+   "muted": "rgba(16, 17, 20, 0.55)",
+   "line": "rgba(16, 17, 20, 0.12)",
+   "accent": "#149e61",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-lamborghini/",
+  "name": "Lamborghini",
+  "category": "Automotive",
+  "tagline": "Supercar brand. True black surfaces, gold accents, dramatic uppercase typography.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#ffc000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-levels/",
+  "name": "Levels",
+  "category": "Layout & Structure",
+  "tagline": "Conversion-focused design that removes friction and guides users toward action through clarity, trust, and speed.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#27272a",
+   "muted": "rgba(39, 39, 42, 0.55)",
+   "line": "rgba(39, 39, 42, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-linear-app/",
+  "name": "Linear",
+  "category": "Productivity & SaaS",
+  "tagline": "Project management. Ultra-minimal, precise, purple accent.",
+  "preview": {
+   "bg": "#f7f8f8",
+   "surface": "#f7f8f8",
+   "ink": "#08090a",
+   "muted": "rgba(8, 9, 10, 0.55)",
+   "line": "rgba(8, 9, 10, 0.12)",
+   "accent": "#7170ff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-lingo/",
+  "name": "Lingo",
+  "category": "Creative & Artistic",
+  "tagline": "Playful, minimal design with bright colors, rounded shapes, tactile 3D borders, and friendly illustrations for approachable interfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#ff4b4b",
+   "muted": "rgba(255, 75, 75, 0.55)",
+   "line": "rgba(255, 75, 75, 0.12)",
+   "accent": "#ffc800",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-lovable/",
+  "name": "Lovable",
+  "category": "Developer Tools",
+  "tagline": "AI full-stack builder. Playful gradients, friendly dev aesthetic.",
+  "preview": {
+   "bg": "#fcfbf8",
+   "surface": "#fcfbf8",
+   "ink": "#1c1c1c",
+   "muted": "rgba(28, 28, 28, 0.55)",
+   "line": "rgba(28, 28, 28, 0.12)",
+   "accent": "#1c1c1c",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-luxury/",
+  "name": "Luxury",
+  "category": "Professional & Corporate",
+  "tagline": "High-end dark aesthetic with bold headings, monochromatic palette, and premium feel for luxury brand experiences.",
+  "preview": {
+   "bg": "#fafafa",
+   "surface": "#fafafa",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mastercard/",
+  "name": "Mastercard",
+  "category": "Fintech & Crypto",
+  "tagline": "Global payments network. Warm cream canvas, orbital pill shapes, editorial warmth.",
+  "preview": {
+   "bg": "#f3f0ee",
+   "surface": "#f3f0ee",
+   "ink": "#141413",
+   "muted": "rgba(20, 20, 19, 0.55)",
+   "line": "rgba(20, 20, 19, 0.12)",
+   "accent": "#eb001b",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-material/",
+  "name": "Material",
+  "category": "Professional & Corporate",
+  "tagline": "Google's Material Design with layered surfaces, dynamic theming, built-in motion, and responsive cross-platform patterns.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-meta/",
+  "name": "Meta (Store)",
+  "category": "E-Commerce & Retail",
+  "tagline": "Tech retail store. Photography-first, binary light/dark surfaces, Meta Blue CTAs.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0143b5",
+   "muted": "rgba(1, 67, 181, 0.55)",
+   "line": "rgba(1, 67, 181, 0.12)",
+   "accent": "#0064e0",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-minimal/",
+  "name": "Minimal",
+  "category": "Modern & Minimal",
+  "tagline": "Stripped-back design emphasizing whitespace, clean typography, and restrained color for maximum clarity and focus.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0c0c09",
+   "muted": "rgba(12, 12, 9, 0.55)",
+   "line": "rgba(12, 12, 9, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-minimax/",
+  "name": "MiniMax",
+  "category": "AI & LLM",
+  "tagline": "AI model provider. Bold dark interface with neon accents.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#1456f0",
+   "muted": "rgba(20, 86, 240, 0.55)",
+   "line": "rgba(20, 86, 240, 0.12)",
+   "accent": "#1456f0",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mintlify/",
+  "name": "Mintlify",
+  "category": "Productivity & SaaS",
+  "tagline": "Documentation platform. Clean, green-accented, reading-optimized.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0d0d0d",
+   "muted": "rgba(13, 13, 13, 0.55)",
+   "line": "rgba(13, 13, 13, 0.12)",
+   "accent": "#0fa76e",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-miro/",
+  "name": "Miro",
+  "category": "Design & Creative",
+  "tagline": "Visual collaboration. Bright yellow accent, infinite canvas aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#1c1c1e",
+   "muted": "rgba(28, 28, 30, 0.55)",
+   "line": "rgba(28, 28, 30, 0.12)",
+   "accent": "#00b473",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mission-control/",
+  "name": "Mission Control Design System",
+  "category": "Developer Tools",
+  "tagline": "Space/aerospace mission monitoring. Dark command center, amber telemetry, monospace precision. Functional clarity above all else.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0b1120",
+   "muted": "rgba(11, 17, 32, 0.55)",
+   "line": "rgba(11, 17, 32, 0.12)",
+   "accent": "#ffb800",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mistral-ai/",
+  "name": "Mistral AI",
+  "category": "AI & LLM",
+  "tagline": "Open-weight LLM provider. French-engineered minimalism, purple-toned.",
+  "preview": {
+   "bg": "#fffaeb",
+   "surface": "#fffaeb",
+   "ink": "#fa520f",
+   "muted": "rgba(250, 82, 15, 0.55)",
+   "line": "rgba(250, 82, 15, 0.12)",
+   "accent": "#ffd900",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-modern/",
+  "name": "Modern",
+  "category": "Modern & Minimal",
+  "tagline": "Contemporary editorial style with serif typography, minimal palettes, and clean layouts for polished digital products.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mongodb/",
+  "name": "MongoDB",
+  "category": "Backend & Data",
+  "tagline": "Document database. Green leaf branding, developer documentation focus.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#001e2b",
+   "muted": "rgba(0, 30, 43, 0.55)",
+   "line": "rgba(0, 30, 43, 0.12)",
+   "accent": "#00ed64",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-mono/",
+  "name": "Mono",
+  "category": "Modern & Minimal",
+  "tagline": "Monospace-driven, matrix-inspired design with high-contrast elements, compact density, and a hacker-chic aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#ff2157",
+   "muted": "rgba(255, 33, 87, 0.55)",
+   "line": "rgba(255, 33, 87, 0.12)",
+   "accent": "#00a6f4",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-neobrutalism/",
+  "name": "Neobrutalism",
+  "category": "Bold & Expressive",
+  "tagline": "Modern take on brutalism with bold borders, vivid accent colors, and raw, high-contrast layouts on warm surfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#432dd7",
+   "muted": "rgba(67, 45, 215, 0.55)",
+   "line": "rgba(67, 45, 215, 0.12)",
+   "accent": "#fdc800",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-neon/",
+  "name": "Neon",
+  "category": "Morphism & Effects",
+  "tagline": "Electric neon glow effects with high-contrast color pairings for bold, attention-grabbing interfaces.",
+  "preview": {
+   "bg": "#bbf351",
+   "surface": "#bbf351",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#00bcff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-neumorphism/",
+  "name": "Neumorphism",
+  "category": "Morphism & Effects",
+  "tagline": "Soft, extruded UI elements with inner and outer shadows on monochromatic surfaces for a tactile, embedded look.",
+  "preview": {
+   "bg": "#f1f2f5",
+   "surface": "#f1f2f5",
+   "ink": "#006666",
+   "muted": "rgba(0, 102, 102, 0.55)",
+   "line": "rgba(0, 102, 102, 0.12)",
+   "accent": "#006666",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-default/",
+  "name": "Neutral Modern",
+  "category": "Starter",
+  "tagline": "A clean, product-oriented default. Use when the brief doesn't call for a specific mood — good for B2B tools, dashboards, and utility pages.",
+  "preview": {
+   "bg": "#fafafa",
+   "surface": "#fafafa",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#2f6feb",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-nike/",
+  "name": "Nike",
+  "category": "E-Commerce & Retail",
+  "tagline": "Athletic retail. Monochrome UI, massive uppercase type, full-bleed photography.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-notion/",
+  "name": "Notion",
+  "category": "Productivity & SaaS",
+  "tagline": "All-in-one workspace. Warm minimalism, serif headings, soft surfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#31302e",
+   "muted": "rgba(49, 48, 46, 0.55)",
+   "line": "rgba(49, 48, 46, 0.12)",
+   "accent": "#31302e",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-nvidia/",
+  "name": "NVIDIA",
+  "category": "Media & Consumer",
+  "tagline": "GPU computing. Green-black energy, technical power aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#76b900",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-ollama/",
+  "name": "Ollama",
+  "category": "AI & LLM",
+  "tagline": "Run LLMs locally. Terminal-first, monochrome simplicity.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-openai/",
+  "name": "OpenAI",
+  "category": "AI & LLM",
+  "tagline": "Calm, near-monochrome system anchored in deep teal-black with generous white space and editorial typography.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0d0d0d",
+   "muted": "rgba(13, 13, 13, 0.55)",
+   "line": "rgba(13, 13, 13, 0.12)",
+   "accent": "#0d0d0d",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-opencode-ai/",
+  "name": "OpenCode",
+  "category": "AI & LLM",
+  "tagline": "AI coding platform. Developer-centric dark theme.",
+  "preview": {
+   "bg": "#fdfcfc",
+   "surface": "#fdfcfc",
+   "ink": "#201d1d",
+   "muted": "rgba(32, 29, 29, 0.55)",
+   "line": "rgba(32, 29, 29, 0.12)",
+   "accent": "#007aff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-pacman/",
+  "name": "Pacman",
+  "category": "Themed & Unique",
+  "tagline": "Retro arcade-inspired design with pixel fonts, dotted borders, playful high-contrast colors, and 8-bit game aesthetics.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#2a3fe5",
+   "muted": "rgba(42, 63, 229, 0.55)",
+   "line": "rgba(42, 63, 229, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-paper/",
+  "name": "Paper",
+  "category": "Retro & Nostalgic",
+  "tagline": "Paper-textured, print-inspired design with minimal colors, clean serif/sans typography, and tactile surface qualities.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#111111",
+   "muted": "rgba(17, 17, 17, 0.55)",
+   "line": "rgba(17, 17, 17, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-perplexity/",
+  "name": "Perplexity AI",
+  "category": "AI & LLM",
+  "tagline": "Conversational AI search engine. Deep-dark canvas, sharp typography, single violet accent, dense information hierarchy.",
+  "preview": {
+   "bg": "#f0f0f0",
+   "surface": "#f0f0f0",
+   "ink": "#0f0f10",
+   "muted": "rgba(15, 15, 16, 0.55)",
+   "line": "rgba(15, 15, 16, 0.12)",
+   "accent": "#0f0f10",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-perspective/",
+  "name": "Perspective",
+  "category": "Layout & Structure",
+  "tagline": "Spatial depth design with isometric views, vanishing points, and layered elements that guide attention through 3D-like realism.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#00bd7d",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-pinterest/",
+  "name": "Pinterest",
+  "category": "Media & Consumer",
+  "tagline": "Visual discovery. Red accent, masonry grid, image-first.",
+  "preview": {
+   "bg": "#e5e5e0",
+   "surface": "#e5e5e0",
+   "ink": "#211922",
+   "muted": "rgba(33, 25, 34, 0.55)",
+   "line": "rgba(33, 25, 34, 0.12)",
+   "accent": "#e60023",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-playstation/",
+  "name": "PlayStation",
+  "category": "Media & Consumer",
+  "tagline": "Gaming console retail. Three-surface channel layout, quiet-authority display type, cyan hover-scale.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#0070cc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-posthog/",
+  "name": "PostHog",
+  "category": "Backend & Data",
+  "tagline": "Product analytics. Playful hedgehog branding, developer-friendly dark UI.",
+  "preview": {
+   "bg": "#fdfdf8",
+   "surface": "#fdfdf8",
+   "ink": "#1e1f23",
+   "muted": "rgba(30, 31, 35, 0.55)",
+   "line": "rgba(30, 31, 35, 0.12)",
+   "accent": "#f54e00",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-premium/",
+  "name": "Premium",
+  "category": "Professional & Corporate",
+  "tagline": "Apple-inspired premium aesthetic with precise spacing, modern typography, and a refined, polished visual language.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-professional/",
+  "name": "Professional",
+  "category": "Professional & Corporate",
+  "tagline": "Polished, business-ready design with modern typography, structured layouts, and a trustworthy visual identity.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-publication/",
+  "name": "Publication",
+  "category": "Creative & Artistic",
+  "tagline": "Print-inspired visual language for books, magazines, and reports with editorial grids and expressive typography.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0a1829",
+   "muted": "rgba(10, 24, 41, 0.55)",
+   "line": "rgba(10, 24, 41, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-raycast/",
+  "name": "Raycast",
+  "category": "Developer Tools",
+  "tagline": "Productivity launcher. Sleek dark chrome, vibrant gradient accents.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#07080a",
+   "muted": "rgba(7, 8, 10, 0.55)",
+   "line": "rgba(7, 8, 10, 0.12)",
+   "accent": "#55b3ff",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-refined/",
+  "name": "Refined",
+  "category": "Modern & Minimal",
+  "tagline": "Carefully curated, modern minimal style with elegant serif typography and understated, sophisticated palettes.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-renault/",
+  "name": "Renault",
+  "category": "Automotive",
+  "tagline": "French automotive. Vibrant aurora gradients, NouvelR typography, bold energy.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#efdf00",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-replicate/",
+  "name": "Replicate",
+  "category": "AI & LLM",
+  "tagline": "Run ML models via API. Clean white canvas, code-forward.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#202020",
+   "muted": "rgba(32, 32, 32, 0.55)",
+   "line": "rgba(32, 32, 32, 0.12)",
+   "accent": "#ea2804",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-resend/",
+  "name": "Resend",
+  "category": "Productivity & SaaS",
+  "tagline": "Email API. Minimal dark theme, monospace accents.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#ff5900",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-retro/",
+  "name": "Retro",
+  "category": "Retro & Nostalgic",
+  "tagline": "Throwback design with vintage-inspired typography, high-contrast retro palettes, and nostalgic visual elements.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-revolut/",
+  "name": "Revolut",
+  "category": "Fintech & Crypto",
+  "tagline": "Digital banking. Sleek dark interface, gradient cards, fintech precision.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#e61e49",
+   "muted": "rgba(230, 30, 73, 0.55)",
+   "line": "rgba(230, 30, 73, 0.12)",
+   "accent": "#ec7e00",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-runwayml/",
+  "name": "Runway",
+  "category": "AI & LLM",
+  "tagline": "AI video generation. Cinematic dark UI, media-rich layout.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-sanity/",
+  "name": "Sanity",
+  "category": "Backend & Data",
+  "tagline": "Headless CMS. Red accent, content-first editorial layout.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0b0b0b",
+   "muted": "rgba(11, 11, 11, 0.55)",
+   "line": "rgba(11, 11, 11, 0.12)",
+   "accent": "#0b0b0b",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-sentry/",
+  "name": "Sentry",
+  "category": "Backend & Data",
+  "tagline": "Error monitoring. Dark dashboard, data-dense, pink-purple accent.",
+  "preview": {
+   "bg": "#c2ef4e",
+   "surface": "#c2ef4e",
+   "ink": "#150f23",
+   "muted": "rgba(21, 15, 35, 0.55)",
+   "line": "rgba(21, 15, 35, 0.12)",
+   "accent": "#c2ef4e",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-shadcn/",
+  "name": "Shadcn",
+  "category": "Modern & Minimal",
+  "tagline": "Shadcn/ui-inspired design with minimal, clean components, monochrome palette, and utility-first patterns.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-shopify/",
+  "name": "Shopify",
+  "category": "E-Commerce & Retail",
+  "tagline": "E-commerce platform. Dark-first cinematic, neon green accent, ultra-light type.",
+  "preview": {
+   "bg": "#c1fbd4",
+   "surface": "#c1fbd4",
+   "ink": "#02090a",
+   "muted": "rgba(2, 9, 10, 0.55)",
+   "line": "rgba(2, 9, 10, 0.12)",
+   "accent": "#36f4a4",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-simple/",
+  "name": "Simple",
+  "category": "Modern & Minimal",
+  "tagline": "Straightforward, no-frills design with clean typography, neutral colors, and intuitive layouts that stay out of the way.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-skeumorphism/",
+  "name": "Skeumorphism",
+  "category": "Morphism & Effects",
+  "tagline": "Real-world mimicry with textured surfaces, 3D effects, and familiar physical metaphors for intuitive digital interfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#fa3c00",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-sleek/",
+  "name": "Sleek",
+  "category": "Modern & Minimal",
+  "tagline": "Modern minimalist aesthetic with clean lines, intentional color palette, subtle interactions, and consistent spacing.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-spacex/",
+  "name": "SpaceX",
+  "category": "Media & Consumer",
+  "tagline": "Space technology. Stark black and white, full-bleed imagery, futuristic.",
+  "preview": {
+   "bg": "#f0f0fa",
+   "surface": "#f0f0fa",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-spacious/",
+  "name": "Spacious",
+  "category": "Layout & Structure",
+  "tagline": "Generous whitespace, consistent padding, and grid-based layouts for clean, readable, and breathing interfaces.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-spotify/",
+  "name": "Spotify",
+  "category": "Media & Consumer",
+  "tagline": "Music streaming. Vibrant green on dark, bold type, album-art-driven.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#121212",
+   "muted": "rgba(18, 18, 18, 0.55)",
+   "line": "rgba(18, 18, 18, 0.12)",
+   "accent": "#1ed760",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-starbucks/",
+  "name": "Starbucks",
+  "category": "E-Commerce & Retail",
+  "tagline": "Global coffee retail brand. Four-tier green system, warm cream canvas, full-pill buttons.",
+  "preview": {
+   "bg": "#f2f0eb",
+   "surface": "#f2f0eb",
+   "ink": "#006241",
+   "muted": "rgba(0, 98, 65, 0.55)",
+   "line": "rgba(0, 98, 65, 0.12)",
+   "accent": "#006241",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-storytelling/",
+  "name": "Storytelling",
+  "category": "Creative & Artistic",
+  "tagline": "Narrative-driven design using visuals, copy, and interaction to guide users through engaging, emotionally resonant journeys.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-stripe/",
+  "name": "Stripe",
+  "category": "Fintech & Crypto",
+  "tagline": "Payment infrastructure. Signature purple gradients, weight-300 elegance.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#061b31",
+   "muted": "rgba(6, 27, 49, 0.55)",
+   "line": "rgba(6, 27, 49, 0.12)",
+   "accent": "#ea2261",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-supabase/",
+  "name": "Supabase",
+  "category": "Backend & Data",
+  "tagline": "Open-source Firebase alternative. Dark emerald theme, code-first.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#0f0f0f",
+   "muted": "rgba(15, 15, 15, 0.55)",
+   "line": "rgba(15, 15, 15, 0.12)",
+   "accent": "#00c573",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-superhuman/",
+  "name": "Superhuman",
+  "category": "Developer Tools",
+  "tagline": "Fast email client. Premium dark UI, keyboard-first, purple glow.",
+  "preview": {
+   "bg": "#e9e5dd",
+   "surface": "#e9e5dd",
+   "ink": "#1b1938",
+   "muted": "rgba(27, 25, 56, 0.55)",
+   "line": "rgba(27, 25, 56, 0.12)",
+   "accent": "#714cb6",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-tesla/",
+  "name": "Tesla",
+  "category": "Automotive",
+  "tagline": "Electric automotive. Radical subtraction, full-viewport photography, near-zero UI.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#171a20",
+   "muted": "rgba(23, 26, 32, 0.55)",
+   "line": "rgba(23, 26, 32, 0.12)",
+   "accent": "#3e6ae1",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-tetris/",
+  "name": "Tetris",
+  "category": "Themed & Unique",
+  "tagline": "Classic block-game inspired design with playful colors, bold display fonts, and compact, high-energy layouts.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#1c202b",
+   "muted": "rgba(28, 32, 43, 0.55)",
+   "line": "rgba(28, 32, 43, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-theverge/",
+  "name": "The Verge",
+  "category": "Media & Consumer",
+  "tagline": "Tech editorial media. Acid-mint and ultraviolet accents, Manuka display, rave-flyer story tiles.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#131313",
+   "muted": "rgba(19, 19, 19, 0.55)",
+   "line": "rgba(19, 19, 19, 0.12)",
+   "accent": "#3cffd0",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-together-ai/",
+  "name": "Together AI",
+  "category": "AI & LLM",
+  "tagline": "Open-source AI infrastructure. Technical, blueprint-style design.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#010120",
+   "muted": "rgba(1, 1, 32, 0.55)",
+   "line": "rgba(1, 1, 32, 0.12)",
+   "accent": "#fc4c02",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-totality-festival/",
+  "name": "Totality Festival",
+  "category": "Themed & Unique",
+  "tagline": "Surface: web A cosmic-premium, glassmorphic dark system that captures the visceral awe of a solar eclipse — obsidian surfaces, amber \"corona\" highlights, and cyan atmospheric accents.",
+  "preview": {
+   "bg": "#fff6df",
+   "surface": "#fff6df",
+   "ink": "#14110b",
+   "muted": "rgba(20, 17, 11, 0.55)",
+   "line": "rgba(20, 17, 11, 0.12)",
+   "accent": "#ffd700",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-uber/",
+  "name": "Uber",
+  "category": "Media & Consumer",
+  "tagline": "Mobility platform. Bold black and white, tight type, urban energy.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-urdu/",
+  "name": "Urdu Modern (Indus Script System)",
+  "category": "Editorial / Personal / Publication",
+  "tagline": "",
+  "preview": {
+   "bg": "#f4f1ea",
+   "surface": "#f4f1ea",
+   "ink": "#1a202c",
+   "muted": "rgba(26, 32, 44, 0.55)",
+   "line": "rgba(26, 32, 44, 0.12)",
+   "accent": "#0f595e",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-vercel/",
+  "name": "Vercel",
+  "category": "Developer Tools",
+  "tagline": "Frontend deployment. Black and white precision, Geist font.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#171717",
+   "muted": "rgba(23, 23, 23, 0.55)",
+   "line": "rgba(23, 23, 23, 0.12)",
+   "accent": "#0a72ef",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-vibrant/",
+  "name": "Vibrant",
+  "category": "Bold & Expressive",
+  "tagline": "Lively, colorful design with bold playful typography, warm accents, and dynamic visual energy.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#d97706",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-vintage/",
+  "name": "Vintage",
+  "category": "Retro & Nostalgic",
+  "tagline": "1950s-1990s nostalgia with skeuomorphic touches, grainy textures, retro color palettes, and pixel-style typography.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#dc2626",
+   "muted": "rgba(220, 38, 38, 0.55)",
+   "line": "rgba(220, 38, 38, 0.12)",
+   "accent": "#008080",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-vodafone/",
+  "name": "Vodafone",
+  "category": "Media & Consumer",
+  "tagline": "Global telecom brand. Monumental uppercase display, Vodafone Red chapter bands.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#25282b",
+   "muted": "rgba(37, 40, 43, 0.55)",
+   "line": "rgba(37, 40, 43, 0.12)",
+   "accent": "#e60000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-warm-editorial/",
+  "name": "Warm Editorial",
+  "category": "Starter",
+  "tagline": "A serif-led magazine aesthetic. Terracotta accent on warm off-white paper — good for long-form, editorial, and brand-led marketing pages.",
+  "preview": {
+   "bg": "#faf7f2",
+   "surface": "#faf7f2",
+   "ink": "#1c1a17",
+   "muted": "rgba(28, 26, 23, 0.55)",
+   "line": "rgba(28, 26, 23, 0.12)",
+   "accent": "#c0512f",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-warp/",
+  "name": "Warp",
+  "category": "Developer Tools",
+  "tagline": "Modern terminal. Dark IDE-like interface, block-based command UI.",
+  "preview": {
+   "bg": "#faf9f6",
+   "surface": "#faf9f6",
+   "ink": "#353534",
+   "muted": "rgba(53, 53, 52, 0.55)",
+   "line": "rgba(53, 53, 52, 0.12)",
+   "accent": "#353534",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-webflow/",
+  "name": "Webflow",
+  "category": "Design & Creative",
+  "tagline": "Visual web builder. Blue-accented, polished marketing site aesthetic.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#080808",
+   "muted": "rgba(8, 8, 8, 0.55)",
+   "line": "rgba(8, 8, 8, 0.12)",
+   "accent": "#00d722",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-wired/",
+  "name": "WIRED",
+  "category": "Media & Consumer",
+  "tagline": "Tech magazine. Paper-white broadsheet density, custom serif display, mono kickers, ink-blue links.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#057dbc",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-wise/",
+  "name": "Wise",
+  "category": "Fintech & Crypto",
+  "tagline": "Money transfer. Bright green accent, friendly and clear.",
+  "preview": {
+   "bg": "#e2f6d5",
+   "surface": "#e2f6d5",
+   "ink": "#0e0f0c",
+   "muted": "rgba(14, 15, 12, 0.55)",
+   "line": "rgba(14, 15, 12, 0.12)",
+   "accent": "#163300",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-x-ai/",
+  "name": "xAI",
+  "category": "AI & LLM",
+  "tagline": "Elon Musk's AI lab. Stark monochrome, futuristic minimalism.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#000000",
+   "muted": "rgba(0, 0, 0, 0.55)",
+   "line": "rgba(0, 0, 0, 0.12)",
+   "accent": "#000000",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-xiaohongshu/",
+  "name": "Xiaohongshu",
+  "category": "Media & Consumer",
+  "tagline": "Lifestyle UGC social platform. Singular brand red, generous radius, content-first.",
+  "preview": {
+   "bg": "#ffffff",
+   "surface": "#ffffff",
+   "ink": "#ff2442",
+   "muted": "rgba(255, 36, 66, 0.55)",
+   "line": "rgba(255, 36, 66, 0.12)",
+   "accent": "#ff2442",
+   "radius": "10px"
+  }
+ },
+ {
+  "href": "/plugins/design-system-zapier/",
+  "name": "Zapier",
+  "category": "Productivity & SaaS",
+  "tagline": "Automation platform. Warm orange, friendly illustration-driven.",
+  "preview": {
+   "bg": "#fffefb",
+   "surface": "#fffefb",
+   "ink": "#201515",
+   "muted": "rgba(32, 21, 21, 0.55)",
+   "line": "rgba(32, 21, 21, 0.12)",
+   "accent": "#ff4f00",
+   "radius": "10px"
+  }
+ }
+]

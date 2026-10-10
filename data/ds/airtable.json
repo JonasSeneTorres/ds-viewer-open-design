@@ -1,0 +1,1078 @@
+{
+ "id": "airtable",
+ "name": "Airtable",
+ "source": {
+  "name": "Airtable",
+  "url": "https://open-design.ai/plugins/design-system-airtable/"
+ },
+ "category": [
+  {
+   "lang": "en-US",
+   "message": "Design & Creative"
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Design & criativo"
+  }
+ ],
+ "intro": [
+  {
+   "lang": "en-US",
+   "message": "Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic."
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Híbrido de planilha e banco de dados. Estética de dados estruturados, colorida e amigável."
+  }
+ ],
+ "roles": {
+  "primary": "Deep Navy",
+  "neutral": "Neutral",
+  "secondary": "Success Green"
+ },
+ "palettes": [
+  {
+   "name": "Deep Navy",
+   "base": "#1b61c9",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f2f7ff",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#e3eeff",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#c9defe",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#a6c9ff",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#77abfd",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#4e8df0",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#3073db",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#1b61c9",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#254fad",
+     "exact": true
+    },
+    {
+     "step": 900,
+     "hex": "#003078",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#181d26",
+     "exact": true
+    }
+   ]
+  },
+  {
+   "name": "Success Green",
+   "base": "#006400",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#e8fee5",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#daf6d7",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#c4e8c1",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#a8d6a4",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#83bc7e",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#5fa25a",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#408b3c",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#1f741c",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#006400",
+     "exact": true
+    },
+    {
+     "step": 900,
+     "hex": "#004200",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#002800",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Warning",
+   "base": "#eab308",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef6e4",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#feebc1",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffd77d",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#eab308",
+     "exact": true
+    },
+    {
+     "step": 400,
+     "hex": "#d5a205",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#b38809",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#967100",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#795b05",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#5f4600",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#453200",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#281e06",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Danger",
+   "base": "#dc2626",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef4f3",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee7e3",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fdd0ca",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#feb0a7",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#fe8073",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#f44941",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#dc2626",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#b70311",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#90000a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#6a0005",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#440001",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Neutral",
+   "base": "#333333",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f8fafc",
+     "exact": true
+    },
+    {
+     "step": 100,
+     "hex": "#ededed",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#e0e2e6",
+     "exact": true
+    },
+    {
+     "step": 300,
+     "hex": "#c7c7c7",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#ababab",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#8f8f8f",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#777777",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#606060",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#4a4a4a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#333333",
+     "exact": true
+    },
+    {
+     "step": 950,
+     "hex": "#1f1f1f",
+     "exact": false
+    }
+   ]
+  }
+ ],
+ "colors": [
+  {
+   "name": "Deep Navy",
+   "hex": "#181d26",
+   "role": "(#181d26): Primary text"
+  },
+  {
+   "name": "Airtable Blue",
+   "hex": "#1b61c9",
+   "role": "(#1b61c9): CTA buttons, links"
+  },
+  {
+   "name": "White",
+   "hex": "#ffffff",
+   "role": "(#ffffff): Primary surface"
+  },
+  {
+   "name": "Success Green",
+   "hex": "#006400",
+   "role": "(#006400): --theme_success-text"
+  },
+  {
+   "name": "Dark Gray",
+   "hex": "#333333",
+   "role": "(#333333): Secondary text"
+  },
+  {
+   "name": "Mid Blue",
+   "hex": "#254fad",
+   "role": "(#254fad): Link/accent blue variant"
+  },
+  {
+   "name": "Border",
+   "hex": "#e0e2e6",
+   "role": "(#e0e2e6): Card borders"
+  },
+  {
+   "name": "Light Surface",
+   "hex": "#f8fafc",
+   "role": "(#f8fafc): Subtle surface"
+  }
+ ],
+ "fonts": [
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Primary"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Principal"
+    }
+   ],
+   "kind": "primary",
+   "family": "Haas",
+   "fallbacks": [
+    "-apple-system",
+    "system-ui",
+    "Segoe UI",
+    "Roboto"
+   ],
+   "stack": "\"Haas\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif",
+   "italic": false,
+   "source": null
+  },
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Headings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Títulos"
+    }
+   ],
+   "kind": "display",
+   "family": "Haas Groot Disp",
+   "fallbacks": [
+    "Haas"
+   ],
+   "stack": "\"Haas Groot Disp\", Haas, sans-serif",
+   "italic": false,
+   "source": null
+  }
+ ],
+ "tokens": [
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Surface"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Superfície"
+    }
+   ],
+   "items": [
+    {
+     "name": "--bg",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--surface",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--surface-warm",
+     "value": "var(--surface)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Text"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Texto"
+    }
+   ],
+   "items": [
+    {
+     "name": "--fg",
+     "value": "#181d26"
+    },
+    {
+     "name": "--fg-2",
+     "value": "#333333"
+    },
+    {
+     "name": "--muted",
+     "value": "rgba(4, 14, 32, 0.69)"
+    },
+    {
+     "name": "--meta",
+     "value": "var(--muted)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Border"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Borda"
+    }
+   ],
+   "items": [
+    {
+     "name": "--border",
+     "value": "#e0e2e6"
+    },
+    {
+     "name": "--border-soft",
+     "value": "#eef0f3"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Accent"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Destaque"
+    }
+   ],
+   "items": [
+    {
+     "name": "--accent",
+     "value": "#1b61c9"
+    },
+    {
+     "name": "--accent-on",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--accent-hover",
+     "value": "#254fad"
+    },
+    {
+     "name": "--accent-active",
+     "value": "color-mix(in oklab, var(--accent), black 14%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Semantic"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Semântico"
+    }
+   ],
+   "items": [
+    {
+     "name": "--success",
+     "value": "#006400"
+    },
+    {
+     "name": "--warn",
+     "value": "#eab308"
+    },
+    {
+     "name": "--danger",
+     "value": "#dc2626"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Typography"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tipografia"
+    }
+   ],
+   "items": []
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Type scale"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Escala tipográfica"
+    }
+   ],
+   "items": [
+    {
+     "name": "--text-xs",
+     "value": "12px"
+    },
+    {
+     "name": "--text-sm",
+     "value": "14px"
+    },
+    {
+     "name": "--text-base",
+     "value": "16px"
+    },
+    {
+     "name": "--text-lg",
+     "value": "20px"
+    },
+    {
+     "name": "--text-xl",
+     "value": "24px"
+    },
+    {
+     "name": "--text-2xl",
+     "value": "32px"
+    },
+    {
+     "name": "--text-3xl",
+     "value": "40px"
+    },
+    {
+     "name": "--text-4xl",
+     "value": "48px"
+    },
+    {
+     "name": "--leading-body",
+     "value": "1.35"
+    },
+    {
+     "name": "--leading-tight",
+     "value": "1.2"
+    },
+    {
+     "name": "--tracking-display",
+     "value": "0"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Spacing"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Espaçamento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--space-1",
+     "value": "4px"
+    },
+    {
+     "name": "--space-2",
+     "value": "8px"
+    },
+    {
+     "name": "--space-3",
+     "value": "12px"
+    },
+    {
+     "name": "--space-4",
+     "value": "16px"
+    },
+    {
+     "name": "--space-5",
+     "value": "20px"
+    },
+    {
+     "name": "--space-6",
+     "value": "24px"
+    },
+    {
+     "name": "--space-8",
+     "value": "32px"
+    },
+    {
+     "name": "--space-12",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-desktop",
+     "value": "96px"
+    },
+    {
+     "name": "--section-y-tablet",
+     "value": "64px"
+    },
+    {
+     "name": "--section-y-phone",
+     "value": "48px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Radius"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Raio"
+    }
+   ],
+   "items": [
+    {
+     "name": "--radius-sm",
+     "value": "12px"
+    },
+    {
+     "name": "--radius-md",
+     "value": "16px"
+    },
+    {
+     "name": "--radius-lg",
+     "value": "24px"
+    },
+    {
+     "name": "--radius-pill",
+     "value": "9999px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Elevação"
+    }
+   ],
+   "items": [
+    {
+     "name": "--elev-flat",
+     "value": "none"
+    },
+    {
+     "name": "--elev-ring",
+     "value": "0 0 0 1px var(--border)"
+    },
+    {
+     "name": "--elev-raised",
+     "value": "0 0 1px rgba(0, 0, 0, 0.32), 0 0 2px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(45, 127, 249, 0.28), inset 0 0 0 0.5px rgba(0, 0, 0, 0.06)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Focus"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Foco"
+    }
+   ],
+   "items": [
+    {
+     "name": "--focus-ring",
+     "value": "0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Motion"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Movimento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--motion-fast",
+     "value": "150ms"
+    },
+    {
+     "name": "--motion-base",
+     "value": "200ms"
+    },
+    {
+     "name": "--ease-standard",
+     "value": "cubic-bezier(0.2, 0, 0, 1)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "items": [
+    {
+     "name": "--container-max",
+     "value": "1200px"
+    },
+    {
+     "name": "--container-gutter-desktop",
+     "value": "24px"
+    },
+    {
+     "name": "--container-gutter-tablet",
+     "value": "16px"
+    },
+    {
+     "name": "--container-gutter-phone",
+     "value": "12px"
+    }
+   ]
+  }
+ ],
+ "vars": {
+  "--primary-500": "#4e8df0",
+  "--primary-500-fg": "#111111",
+  "--neutral-400": "#ababab",
+  "--neutral-400-fg": "#111111",
+  "--bg": "#ffffff",
+  "--surface": "#ffffff",
+  "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+  "--fg": "#181d26",
+  "--fg-soft": "#333333",
+  "--muted": "rgba(4, 14, 32, 0.69)",
+  "--border": "#e0e2e6",
+  "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
+  "--accent": "#1b61c9",
+  "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+  "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
+  "--accent-fg": "#ffffff",
+  "--solid": "var(--accent-strong)",
+  "--solid-fg": "#ffffff",
+  "--ok": "#006400",
+  "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
+  "--warn": "#eab308",
+  "--warn-weak": "color-mix(in oklab, var(--warn) 14%, var(--bg))",
+  "--danger": "#dc2626",
+  "--danger-weak": "color-mix(in oklab, var(--danger) 12%, var(--bg))",
+  "--bw": "1px",
+  "--radius": "16px",
+  "--radius-sm": "12px",
+  "--radius-pill": "9999px",
+  "--shadow-card": "0 0 1px rgba(0, 0, 0, 0.32), 0 0 2px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(45, 127, 249, 0.28), inset 0 0 0 0.5px rgba(0, 0, 0, 0.06)",
+  "--shadow-pop": "0 14px 40px rgba(0, 0, 0, 0.22)",
+  "--font-display": "\"Haas Groot Disp\", Haas, sans-serif",
+  "--font-body": "\"Haas\", -apple-system, system-ui, \"Segoe UI\", Roboto, sans-serif",
+  "--font-code": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--font-mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--display-tracking": "-0.02em",
+  "--heading-weight": "600",
+  "--kicker-transform": "uppercase",
+  "--kicker-spacing": "0.08em",
+  "--hero-ground": "var(--surface-2)",
+  "--hero-ink": "var(--fg)"
+ },
+ "sections": [
+  {
+   "id": "visual-theme-atmosphere",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Visual Theme & Atmosphere"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tema visual e atmosfera"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Airtable's website is a clean, enterprise-friendly platform that communicates &quot;sophisticated simplicity&quot; through a white canvas with deep navy text (<code>#181d26</code>) and Airtable Blue (<code>#1b61c9</code>) as the primary interactive accent. The Haas font family (display + text variants) creates a Swiss-precision typography system with positive letter-spacing throughout.</p>\n<p><strong>Key Characteristics:</strong></p>\n<ul><li>White canvas with deep navy text (<code>#181d26</code>)</li><li>Airtable Blue (<code>#1b61c9</code>) as primary CTA and link color</li><li>Haas + Haas Groot Disp dual font system</li><li>Positive letter-spacing on body text (0.08px–0.28px)</li><li>12px radius buttons, 16px–32px for cards</li><li>Multi-layer blue-tinted shadow: <code>rgba(45,127,249,0.28) 0px 1px 3px</code></li><li>Semantic theme tokens: <code>--theme_*</code> CSS variable naming</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>O site da Airtable é uma plataforma limpa e amigável ao mundo corporativo, que comunica &quot;simplicidade sofisticada&quot; por meio de uma tela branca com texto azul-marinho profundo (<code>#181d26</code>) e o Airtable Blue (<code>#1b61c9</code>) como principal destaque interativo. A família tipográfica Haas (variantes de display + texto) cria um sistema tipográfico de precisão suíça, com espaçamento entre letras positivo em todo lugar.</p>\n<p><strong>Características principais:</strong></p>\n<ul><li>Tela branca com texto azul-marinho profundo (<code>#181d26</code>)</li><li>Airtable Blue (<code>#1b61c9</code>) como cor principal de CTAs e links</li><li>Sistema de duas fontes: Haas + Haas Groot Disp</li><li>Espaçamento entre letras positivo no texto de corpo (0.08px–0.28px)</li><li>Botões com raio de 12px, 16px–32px nos cards</li><li>Sombra em várias camadas tingida de azul: <code>rgba(45,127,249,0.28) 0px 1px 3px</code></li><li>Tokens semânticos de tema: variáveis CSS nomeadas como <code>--theme_*</code></li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "color-palette-roles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Color Palette & Roles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Paleta de cores e papéis"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Primary</h3>\n<ul><li><strong>Deep Navy</strong> (<code>#181d26</code>): Primary text</li><li><strong>Airtable Blue</strong> (<code>#1b61c9</code>): CTA buttons, links</li><li><strong>White</strong> (<code>#ffffff</code>): Primary surface</li><li><strong>Spotlight</strong> (<code>rgba(249,252,255,0.97)</code>): <code>--theme_button-text-spotlight</code></li></ul>\n<h3>Semantic</h3>\n<ul><li><strong>Success Green</strong> (<code>#006400</code>): <code>--theme_success-text</code></li><li><strong>Weak Text</strong> (<code>rgba(4,14,32,0.69)</code>): <code>--theme_text-weak</code></li><li><strong>Secondary Active</strong> (<code>rgba(7,12,20,0.82)</code>): <code>--theme_button-text-secondary-active</code></li></ul>\n<h3>Neutral</h3>\n<ul><li><strong>Dark Gray</strong> (<code>#333333</code>): Secondary text</li><li><strong>Mid Blue</strong> (<code>#254fad</code>): Link/accent blue variant</li><li><strong>Border</strong> (<code>#e0e2e6</code>): Card borders</li><li><strong>Light Surface</strong> (<code>#f8fafc</code>): Subtle surface</li></ul>\n<h3>Shadows</h3>\n<ul><li><strong>Blue-tinted</strong> (<code>rgba(0,0,0,0.32) 0px 0px 1px, rgba(0,0,0,0.08) 0px 0px 2px, rgba(45,127,249,0.28) 0px 1px 3px, rgba(0,0,0,0.06) 0px 0px 0px 0.5px inset</code>)</li><li><strong>Soft</strong> (<code>rgba(15,48,106,0.05) 0px 0px 20px</code>)</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Primárias</h3>\n<ul><li><strong>Deep Navy</strong> (<code>#181d26</code>): texto principal</li><li><strong>Airtable Blue</strong> (<code>#1b61c9</code>): botões de CTA, links</li><li><strong>White</strong> (<code>#ffffff</code>): superfície principal</li><li><strong>Spotlight</strong> (<code>rgba(249,252,255,0.97)</code>): <code>--theme_button-text-spotlight</code></li></ul>\n<h3>Semânticas</h3>\n<ul><li><strong>Success Green</strong> (<code>#006400</code>): <code>--theme_success-text</code></li><li><strong>Weak Text</strong> (<code>rgba(4,14,32,0.69)</code>): <code>--theme_text-weak</code></li><li><strong>Secondary Active</strong> (<code>rgba(7,12,20,0.82)</code>): <code>--theme_button-text-secondary-active</code></li></ul>\n<h3>Neutras</h3>\n<ul><li><strong>Dark Gray</strong> (<code>#333333</code>): texto secundário</li><li><strong>Mid Blue</strong> (<code>#254fad</code>): variante azul de link/destaque</li><li><strong>Border</strong> (<code>#e0e2e6</code>): bordas de cards</li><li><strong>Light Surface</strong> (<code>#f8fafc</code>): superfície sutil</li></ul>\n<h3>Sombras</h3>\n<ul><li><strong>Tingida de azul</strong> (<code>rgba(0,0,0,0.32) 0px 0px 1px, rgba(0,0,0,0.08) 0px 0px 2px, rgba(45,127,249,0.28) 0px 1px 3px, rgba(0,0,0,0.06) 0px 0px 0px 0.5px inset</code>)</li><li><strong>Suave</strong> (<code>rgba(15,48,106,0.05) 0px 0px 20px</code>)</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "typography-rules",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Typography Rules"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Regras de tipografia"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Font Families</h3>\n<ul><li><strong>Primary</strong>: <code>Haas</code>, fallbacks: <code>-apple-system, system-ui, Segoe UI, Roboto</code></li><li><strong>Display</strong>: <code>Haas Groot Disp</code>, fallback: <code>Haas</code></li></ul>\n<h3>Hierarchy</h3>\n<table><thead><tr><th>Role</th><th>Font</th><th>Size</th><th>Weight</th><th>Line Height</th><th>Letter Spacing</th></tr></thead><tbody><tr><td>Display Hero</td><td>Haas</td><td>48px</td><td>400</td><td>1.15</td><td>normal</td></tr><tr><td>Display Bold</td><td>Haas Groot Disp</td><td>48px</td><td>900</td><td>1.50</td><td>normal</td></tr><tr><td>Section Heading</td><td>Haas</td><td>40px</td><td>400</td><td>1.25</td><td>normal</td></tr><tr><td>Sub-heading</td><td>Haas</td><td>32px</td><td>400–500</td><td>1.15–1.25</td><td>normal</td></tr><tr><td>Card Title</td><td>Haas</td><td>24px</td><td>400</td><td>1.20–1.30</td><td>0.12px</td></tr><tr><td>Feature</td><td>Haas</td><td>20px</td><td>400</td><td>1.25–1.50</td><td>0.1px</td></tr><tr><td>Body</td><td>Haas</td><td>18px</td><td>400</td><td>1.35</td><td>0.18px</td></tr><tr><td>Body Medium</td><td>Haas</td><td>16px</td><td>500</td><td>1.30</td><td>0.08–0.16px</td></tr><tr><td>Button</td><td>Haas</td><td>16px</td><td>500</td><td>1.25–1.30</td><td>0.08px</td></tr><tr><td>Caption</td><td>Haas</td><td>14px</td><td>400–500</td><td>1.25–1.35</td><td>0.07–0.28px</td></tr></tbody></table>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Famílias tipográficas</h3>\n<ul><li><strong>Principal</strong>: <code>Haas</code>, fallbacks: <code>-apple-system, system-ui, Segoe UI, Roboto</code></li><li><strong>Display</strong>: <code>Haas Groot Disp</code>, fallback: <code>Haas</code></li></ul>\n<h3>Hierarquia</h3>\n<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th></tr></thead><tbody><tr><td>Display Hero</td><td>Haas</td><td>48px</td><td>400</td><td>1.15</td><td>normal</td></tr><tr><td>Display negrito</td><td>Haas Groot Disp</td><td>48px</td><td>900</td><td>1.50</td><td>normal</td></tr><tr><td>Título de seção</td><td>Haas</td><td>40px</td><td>400</td><td>1.25</td><td>normal</td></tr><tr><td>Subtítulo</td><td>Haas</td><td>32px</td><td>400–500</td><td>1.15–1.25</td><td>normal</td></tr><tr><td>Título de card</td><td>Haas</td><td>24px</td><td>400</td><td>1.20–1.30</td><td>0.12px</td></tr><tr><td>Destaque</td><td>Haas</td><td>20px</td><td>400</td><td>1.25–1.50</td><td>0.1px</td></tr><tr><td>Corpo</td><td>Haas</td><td>18px</td><td>400</td><td>1.35</td><td>0.18px</td></tr><tr><td>Corpo médio</td><td>Haas</td><td>16px</td><td>500</td><td>1.30</td><td>0.08–0.16px</td></tr><tr><td>Botão</td><td>Haas</td><td>16px</td><td>500</td><td>1.25–1.30</td><td>0.08px</td></tr><tr><td>Legenda</td><td>Haas</td><td>14px</td><td>400–500</td><td>1.25–1.35</td><td>0.07–0.28px</td></tr></tbody></table>"
+    }
+   ]
+  },
+  {
+   "id": "component-stylings",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Component Stylings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Estilo dos componentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Buttons</h3>\n<ul><li><strong>Primary Blue</strong>: <code>#1b61c9</code>, white text, 16px 24px padding, 12px radius</li><li><strong>White</strong>: white bg, <code>#181d26</code> text, 12px radius, 1px border white</li><li><strong>Cookie Consent</strong>: <code>#1b61c9</code> bg, 2px radius (sharp)</li></ul>\n<h3>Cards: <code>1px solid #e0e2e6</code>, 16px–24px radius</h3>\n<h3>Inputs: Standard Haas styling</h3>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Botões</h3>\n<ul><li><strong>Azul primário</strong>: <code>#1b61c9</code>, texto branco, padding de 16px 24px, raio de 12px</li><li><strong>Branco</strong>: fundo branco, texto <code>#181d26</code>, raio de 12px, borda branca de 1px</li><li><strong>Consentimento de cookies</strong>: fundo <code>#1b61c9</code>, raio de 2px (canto vivo)</li></ul>\n<h3>Cards: <code>1px solid #e0e2e6</code>, raio de 16px–24px</h3>\n<h3>Campos: estilo Haas padrão</h3>"
+    }
+   ]
+  },
+  {
+   "id": "layout",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<ul><li>Spacing: 1–48px (8px base)</li><li>Radius: 2px (small), 12px (buttons), 16px (cards), 24px (sections), 32px (large), 50% (circles)</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<ul><li>Espaçamento: 1–48px (base de 8px)</li><li>Raio: 2px (pequeno), 12px (botões), 16px (cards), 24px (seções), 32px (grande), 50% (círculos)</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "depth",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Depth"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Profundidade"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<ul><li>Blue-tinted multi-layer shadow system</li><li>Soft ambient: <code>rgba(15,48,106,0.05) 0px 0px 20px</code></li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<ul><li>Sistema de sombras em várias camadas tingido de azul</li><li>Ambiente suave: <code>rgba(15,48,106,0.05) 0px 0px 20px</code></li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "do-s-and-don-ts",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Do's and Don'ts"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "O que fazer e o que evitar"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Do: Use Airtable Blue for CTAs, Haas with positive tracking, 12px radius buttons</h3>\n<h3>Don't: Skip positive letter-spacing, use heavy shadows</h3>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Faça: use o Airtable Blue nos CTAs, Haas com tracking positivo, botões com raio de 12px</h3>\n<h3>Não faça: abrir mão do espaçamento entre letras positivo, usar sombras pesadas</h3>"
+    }
+   ]
+  },
+  {
+   "id": "responsive-behavior",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Responsive Behavior"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Comportamento responsivo"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Breakpoints: 425–1664px (23 breakpoints)</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>Breakpoints: 425–1664px (23 breakpoints)</p>"
+    }
+   ]
+  },
+  {
+   "id": "agent-prompt-guide",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Agent Prompt Guide"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Guia de prompts para agentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<ul><li>Text: Deep Navy (<code>#181d26</code>)</li><li>CTA: Airtable Blue (<code>#1b61c9</code>)</li><li>Background: White (<code>#ffffff</code>)</li><li>Border: <code>#e0e2e6</code></li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<ul><li>Texto: Deep Navy (<code>#181d26</code>)</li><li>CTA: Airtable Blue (<code>#1b61c9</code>)</li><li>Fundo: White (<code>#ffffff</code>)</li><li>Borda: <code>#e0e2e6</code></li></ul>"
+    }
+   ]
+  }
+ ]
+}

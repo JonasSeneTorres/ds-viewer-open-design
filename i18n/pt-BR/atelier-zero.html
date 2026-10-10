@@ -1,0 +1,199 @@
+<!-- design-system-atelier-zero · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Um sistema visual de padrão de revista, guiado por colagens: tela de papel quente, imagens surreais de gesso e arquitetura, tipografia de display superdimensionada, filetes finíssimos, marcadores de seção em algarismos romanos e pequenas anotações editoriais. Inspirado no padrão de produção de revistas impressas sofisticadas (Monocle, Apartamento, IDEA), traduzido para um site funcional.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O relatório anual de um pequeno estúdio de alto artesanato, renderizado como página web. A tela é papel artesanal quente. Cada superfície faz por merecer suas linhas. A tipografia faz o trabalho pesado; as colagens contam a história. O coral é a única faísca de calor; mostarda, oliva e osso são companheiros discretos. A página parece impressa, levemente envelhecida e intencionalmente contida — nunca barulhenta, nunca neon.</p>
+<ul><li><strong>Estilo visual:</strong> editorial, colagem, calma de catálogo de museu.</li><li><strong>Postura:</strong> assimétrica, generosa, puxada para o topo.</li><li><strong>Ritmo de leitura:</strong> algarismos romanos (I, II, III…) conduzem o leitor</li></ul>
+<p>  pela página como capítulos de um ensaio impresso.</p>
+<ul><li><strong>Clima:</strong> inteligente, tátil, levemente poético, inconfundivelmente</li></ul>
+<p>  internacional.</p>
+<h3>Referências de produção gráfica</h3>
+<p>As três revistas não são inspirações intercambiáveis — cada uma é dona de uma dimensão específica do sistema. Quando um briefing pedir &quot;deixe mais perto de X&quot;, consulte este mapa antes de mexer nos tokens:</p>
+<ul><li><strong>Monocle:</strong> papel quente (<code>#efe7d2</code>), entrelinha justa no corpo (~1.55),</li></ul>
+<p>  coordenadas e carimbos SHA em monoespaçada, a faixa internacional de   metadados (&quot;Filed under …&quot;), a pequena ★ na navegação.</p>
+<ul><li><strong>Apartamento:</strong> composição surreal em colagem (gesso + arquitetura</li></ul>
+<p>  + uma pequena figura humana), texturas de borda rasgada dentro das imagens, as   notas laterais giradas e a disposição de deixar um espaço negativo generoso   em torno de uma imagem.</p>
+<ul><li><strong>IDEA:</strong> percursos de seção em algarismos romanos (I → VIII), palavras</li></ul>
+<p>  superdimensionadas em serifa itálica misturadas na mesma linha com sem serifa em negrito (Playfair Italic 500   dentro de Inter Tight 800), filetes finíssimos atravessando os passos do método,   o rodapé de encerramento com uma megapalavra.</p>
+</section>
+
+<section data-section="color">
+<h2>Cor</h2>
+<p>Todos os valores são tokens. Não invente novos hex.</p>
+<ul><li><strong>Paper:</strong> <code>#efe7d2</code> — fundo principal, marfim quente.</li><li><strong>Paper-warm:</strong> <code>#ece4cf</code> — tom de superfície de segundo nível.</li><li><strong>Paper-dark:</strong> <code>#ddd2b6</code> — reentrâncias sutis, cards sobre cards.</li><li><strong>Bone:</strong> <code>#f7f1de</code> — superfície de card elevada (sempre sobre Paper).</li><li><strong>Ink:</strong> <code>#15140f</code> — texto de corpo, botões primários, filetes fortes.</li><li><strong>Ink-soft:</strong> <code>#2a2620</code> — texto secundário, parágrafos densos.</li><li><strong>Ink-mute:</strong> <code>#5a5448</code> — legendas, descrições de laboratório.</li><li><strong>Ink-faint:</strong> <code>#8b8676</code> — coordenadas, números de página, microtextos.</li><li><strong>Coral (destaque):</strong> <code>#ed6f5c</code> — único destaque quente. Preenchimento de CTAs,</li></ul>
+<p>  marcas de algarismos romanos, sublinhados de sobretítulos, pontos pulsantes, marcas de &quot;fin.&quot;.</p>
+<ul><li><strong>Coral-soft:</strong> <code>#f08e7c</code> — só para estados de hover/secundários do coral.</li><li><strong>Mustard:</strong> <code>#e9b94a</code> — usado com parcimônia: uma única ★ na navegação, um</li></ul>
+<p>  anel em destaque nas estatísticas, um ponto ocasional numa anotação numerada.</p>
+<ul><li><strong>Olive:</strong> <code>#6e7448</code> — terceiro destaque discreto para tags ou glifos de parceiros.</li></ul>
+<h3>Regras de cor</h3>
+<ul><li>Um momento <strong>coral</strong> a cada ~600vh. Se dois CTAs forem coral, os</li></ul>
+<p>  algarismos romanos devem ser ink-faint.</p>
+<ul><li>O mostarda nunca é usado num CTA. Ele é joia.</li><li>Branco puro (<code>#fff</code>) só dentro do painel escuro &quot;selected work&quot;, como</li></ul>
+<p>  texto invertido. Nunca sobre Paper.</p>
+<ul><li>Preto puro é proibido. O valor mais escuro é <code>Ink #15140f</code>.</li></ul>
+<h3>Por que um só destaque (e não vários)</h3>
+<p>Sistemas editoriais com vários destaques (ex.: a <em>The New Yorker</em> usando vermelho para Opinião e verde-azulado para Cultura) funcionam quando a publicação tem categorias de conteúdo estáveis e um leitor de longo prazo que aprende o código. Uma landing page pontual de estúdio não tem essa pista. Um momento coral a cada ~600vh obriga o agente a escolher a batida mais importante de cada viewport, em vez de equilibrar duas hierarquias cromáticas, e mantém a página calibrada à tela de papel quente. Mostarda e oliva existem como <strong>joias</strong> (≤1% da área de superfície: uma estrela, um ponto, um glifo de parceiro) — nunca como sinais semânticos e nunca como preenchimento de CTAs.</p>
+<h3>Ruído de superfície</h3>
+<p>Toda página DEVE sobrepor uma textura tênue de ruído de papel usando um pseudoelemento <code>::before</code> fixo, com pointer-events desativado, com uma turbulência SVG em modo multiply a ~5–7% de opacidade, mais dois gradientes radiais suaves em <code>rgba(106, 92, 56, 0.06)</code> para simular o calor de um papel prensado à mão.</p>
+</section>
+
+<section data-section="typography">
+<h2>Tipografia</h2>
+<h3>Famílias</h3>
+<ul><li><strong>Display / sem serifa:</strong> <code>Inter Tight</code> nos pesos 700–900 — títulos, títulos de</li></ul>
+<p>  seção, texto de botões. Espaçamento entre letras de <code>-0.025em</code> a <code>-0.04em</code> nos   tamanhos de display.</p>
+<ul><li><strong>Ênfase em itálico / serifa:</strong> <code>Playfair Display</code> Italic, peso 500.</li></ul>
+<p>  Usada inline dentro dos títulos de display em substantivos enfatizados, nos algarismos   romanos, nas citações de depoimentos e na marca <code>Ø</code>.</p>
+<ul><li><strong>Corpo:</strong> <code>Inter</code> 300–500 — texto de parágrafos, descrições de laboratório.</li><li><strong>Mono:</strong> <code>JetBrains Mono</code> 400–500 — trechos de código, coordenadas,</li></ul>
+<p>  SHAs, números de prancha (&quot;FIG. 01 / OD-26&quot;).</p>
+<h3>Escala (px)</h3>
+<p><code>9.5 · 10.5 · 11 · 13 · 14 · 16 · 17 · 22 · 26 · 38 · 54 · 66 · 78 · 90 · 200</code></p>
+<h3>Construção dos títulos</h3>
+<p>Os títulos de display misturam <strong>sem serifa em negrito</strong> e <strong>serifa em itálico</strong> na mesma linha. A serifa itálica carrega as palavras emocionais; a sem serifa carrega a estrutura. Termine todo H1/H2 de seção com um ponto coral — <code>&lt;span class=&quot;dot&quot;&gt;.&lt;/span&gt;</code>.</p>
+<pre><code>Designing intelligence with skills, taste, and code.
+^^^^^^^^^                ^^^^^^^^  ^^^^^      ^^^^
+sem serifa negrito       serifa itálica       ponto coral</code></pre>
+<h3>Microtextos</h3>
+<ul><li><strong>Sobretítulo / rótulo:</strong> Inter Tight 11px 600, <code>letter-spacing: 0.22em</code>,</li></ul>
+<p>  caixa-alta, coral, precedido por um filete coral de 18px.</p>
+<ul><li><strong>Coordenadas:</strong> JetBrains Mono 10px, <code>letter-spacing: 0.04em</code>,</li></ul>
+<p>  ink-faint, ex.: <code>52.5200° N · 13.4050° E</code>.</p>
+<ul><li><strong>Página de páginas:</strong> <code>004 / 008</code> em Inter Tight 11px ink-faint.</li><li><strong>Algarismos romanos:</strong> Playfair Italic 14px, coral, <code>I.</code> <code>II.</code> <code>III.</code> etc.</li></ul>
+<p>  no início de cada filete de seção.</p>
+</section>
+
+<section data-section="spacing-grid">
+<h2>Espaçamento e grid</h2>
+<ul><li><strong>Contêiner:</strong> largura máxima de <code>1360px</code>, padding lateral de <code>64px</code> no desktop,</li></ul>
+<p>  <code>44px</code> em ≤1280, <code>32px</code> em ≤1080, <code>24px</code> em ≤880.</p>
+<ul><li><strong>Padding das seções:</strong> <code>130px</code> em cima e embaixo no desktop, <code>90px</code> nas</li></ul>
+<p>  seções justas, <code>80px</code> em ≤560.</p>
+<ul><li><strong>Grid:</strong> 12 colunas conceituais, executadas como CSS Grid com</li></ul>
+<p>  proporções de colunas específicas para cada tarefa. O hero é <code>0.78fr 1.22fr</code>.</p>
+<ul><li><strong>Ritmo vertical:</strong> linha de base de 8px. Deixe 32–48px entre</li></ul>
+<p>  blocos de parágrafos.</p>
+<ul><li><strong>Trilhos laterais:</strong> duas faixas verticais fixas de 36px de largura nas bordas esquerda e</li></ul>
+<p>  direita da viewport, cada uma com um único rótulo de texto girado   em Inter Tight 10px 600 com espaçamento entre letras de 0.42em.</p>
+</section>
+
+<section data-section="layout-composition">
+<h2>Layout e composição</h2>
+<ul><li><strong>A faixa de metadados no topo</strong> é obrigatória: uma única barra horizontal acima</li></ul>
+<p>  da navegação, com o volume/edição, um badge &quot;Filed under …&quot; e um   pulso de status ao vivo com versão + localidade. Inter Tight 10.5px,   ink-faint, borda inferior de 1px na cor ink-line.</p>
+<ul><li><strong>O filete de seção</strong> é obrigatório no topo de toda seção:</li></ul>
+<p>  <code>[Romano.] · [meta no meio] · [página-de-008]</code>.</p>
+<ul><li><strong>Anotações nas imagens</strong>: toda imagem em destaque leva 4 colchetes</li></ul>
+<p>  de canto (filetes de 1px, 22×22), pelo menos 1 número de prancha   (&quot;Plate Nº 08&quot;) e uma coordenada ou SHA.</p>
+<ul><li><strong>O hero deve se estender acima da dobra</strong> em no mínimo 1440×900. A imagem</li></ul>
+<p>  preenche a viewport na vertical (<code>calc(100vh - 160px)</code>), alinhada à   borda direita.</p>
+<ul><li><strong>As seções de método</strong> devem usar um layout de 4 passos, com um filete</li></ul>
+<p>  horizontal finíssimo passando pelos cabeçalhos dos passos na mesma altura, com   separadores <code>→</code> entre os títulos.</p>
+</section>
+
+<section data-section="components">
+<h2>Componentes</h2>
+<h3>Botões</h3>
+<ul><li><strong>Primário:</strong> preenchimento coral <code>#ed6f5c</code>, rótulo branco, raio de <code>999px</code>,</li></ul>
+<p>  padding de <code>14px 22px</code>, com uma seta branca <code>↗</code> em SVG de 14px e uma   sombra rgba coral 0,14,26,-16.</p>
+<ul><li><strong>Ghost:</strong> transparente, borda <code>1px solid rgba(21,20,15,0.2)</code>,</li></ul>
+<p>  rótulo na cor ink, mesmo raio e padding.</p>
+<h3>Cards</h3>
+<ul><li><strong>Cards preenchidos em Bone</strong> (<code>#f7f1de</code>), raio de 18px, padding de 28×26,</li></ul>
+<p>  anel interno de 1px em ink a 6% + sombra ambiente 30/60/-30/15.</p>
+<ul><li>Cada card tem um número <code>01–04</code> em serifa itálica mais um sobretítulo de tag na</li></ul>
+<p>  mesma linha.</p>
+<ul><li>Uma marca circular de seta de 28px no canto inferior direito fica coral no hover.</li></ul>
+<h3>Filtros em pílula</h3>
+<ul><li>Padding de 10×18, 999px, borda <code>1px solid line</code>, transparente.</li><li>Estado ativo: preenchimento coral, rótulo branco, separador da contagem com opacidade 0.7.</li></ul>
+<h3>Anéis de estatística</h3>
+<ul><li>Anéis circulares tracejados de 32–34px com um número de 2 dígitos; um anel</li></ul>
+<p>  por linha pode ter traço coral para indicar a estatística em destaque.</p>
+<h3>Números de página / card de índice</h3>
+<ul><li>A arte do hero leva um pequeno card com borda na borda direita, com</li></ul>
+<p>  entradas de índice <code>01–04</code>. A entrada atual usa ink em negrito; as demais,   ink-faint. Cada item precede o dígito com um token coral <code>01</code>.</p>
+<h3>Trilhos laterais</h3>
+<ul><li>Faixas verticais fixas de 36px nas bordas esquerda + direita, ocultas abaixo de</li></ul>
+<p>  1280px. Cada uma contém texto em Inter Tight 10px, caixa-alta, girado,   com espaçamento entre letras de 0.42em, sem nunca quebrar linha.</p>
+<h3>Filetes de seção romanos</h3>
+<p>Toda seção abre com um <code>.sec-rule</code>: filete superior de 1px e, em seguida, uma linha flex contendo <code>[Romano]</code>, um grupo de metadados centralizado e o contador de página-de-008 à direita.</p>
+</section>
+
+<section data-section="motion-interaction">
+<h2>Movimento e interação</h2>
+<ul><li><strong>Ponto pulsante:</strong> círculo coral de 6×6 na barra de metadados do topo e no rodapé,</li></ul>
+<p>  <code>pulse 2.4s ease-in-out infinite</code> entre opacidade 1.0 e 0.35.</p>
+<ul><li><strong>Hover de card:</strong> translateY(-3px), a marca de seta se preenche de coral.</li><li><strong>Hover de botão:</strong> translateY(-1px), preenchimento coral mais escuro.</li><li><strong>Hover de pílula:</strong> lavagem de ink a 4%.</li><li><strong>Transições:</strong> <code>0.18s ease</code> em todo lugar; nunca mais longas que <code>0.25s</code>.</li><li><strong>Sem parallax, sem sequestro de rolagem, sem carrosséis automáticos.</strong> Páginas</li></ul>
+<p>  editoriais não se animam sozinhas na cara do usuário.</p>
+</section>
+
+<section data-section="voice-brand">
+<h2>Voz e marca</h2>
+<ul><li>Os títulos misturam palavras declarativas e palavras emocionais em itálico.</li><li>O texto de corpo é direto e específico. Cite números reais</li></ul>
+<p>  (12 / 31 / 72), coordenadas reais (52.5200° N · 13.4050° E),   comandos reais (<code>pnpm tools-dev</code>).</p>
+<ul><li>Os microtextos usam metáforas de publicação: &quot;Filed under&quot;, &quot;Plate Nº&quot;,</li></ul>
+<p>  &quot;Vol. 01 / Issue Nº 26&quot;, &quot;FIN.&quot;, &quot;MMXXVI&quot;, &quot;Edited by&quot;.</p>
+<ul><li>Numerais latinos — romanos nas seções, arábicos nas estatísticas.</li></ul>
+</section>
+
+<section data-section="anti-patterns">
+<h2>Antipadrões</h2>
+<ul><li>❌ Nenhuma sombra projetada com mais de 30px de desfoque. Nenhum gradiente no texto.</li><li>❌ Nenhum emoji nos textos do produto. A ★ é permitida uma vez, no CTA da navegação.</li><li>❌ Sem glassmorphism, sem neon, sem neumorfismo, sem cantos</li></ul>
+<p>  arredondados maiores que 24px (exceto 32px no painel escuro &quot;Selected Work&quot;).</p>
+<ul><li>❌ No máximo um CTA coral por viewport.</li><li>❌ Nenhuma colagem sem colchetes de canto e pelo menos uma</li></ul>
+<p>  anotação em monoespaçada.</p>
+<ul><li>❌ Nenhum algarismo romano pulado — as seções devem ser sequenciais.</li><li>❌ Sem branco puro, sem preto puro, sem destaque com 100% de saturação.</li></ul>
+<h3>Antipadrões específicos de imagens geradas por IA</h3>
+<p>Este sistema é usado com <code>gpt-image-fal</code> / <code>gpt-image-azure</code> por meio da skill open-design-landing. Vários padrões comuns dos modelos de imagem quebram silenciosamente a estética do Atelier Zero, por isso são proibidos em todo prompt de colagem e rejeitados na revisão visual:</p>
+<ul><li>❌ Sem lens flares, vazamentos de luz, bloom ou pós-efeitos cinematográficos. O</li></ul>
+<p>  clima de papel e museu é fosco, não cinematográfico.</p>
+<ul><li>❌ Sem glitch, datamosh, separação RGB ou artefatos de scanline.</li><li>❌ Sem rostos humanos fotorrealistas ou pessoas de banco de imagens. Apenas fragmentos</li></ul>
+<p>  de gesso, bustos e pequenas figuras em escala — os olhos nunca encaram   o espectador.</p>
+<ul><li>❌ Sem assinaturas visíveis de IA, marcas d'água, logos de geradores ou</li></ul>
+<p>  legendas de modelo alucinadas. A superfície renderizada deve ser lida como uma   página impressa, não como saída de um modelo.</p>
+<ul><li>❌ Sem bokeh de profundidade de campo rasa, estilo DSLR, nos fragmentos</li></ul>
+<p>  da colagem — todos os planos ficam em foco.</p>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<ul><li><strong>Desktop ≥ 1280px:</strong> contêiner completo, os dois trilhos laterais visíveis,</li></ul>
+<p>  a faixa de metadados mostra as três colunas.</p>
+<ul><li><strong>Notebook 1080–1279px:</strong> trilhos laterais ocultos, contêiner com 32–44px</li></ul>
+<p>  de padding, a coluna do meio da faixa de metadados recolhe.</p>
+<ul><li><strong>Tablet 880–1079px:</strong> os grids de hero / sobre / capacidades / depoimento</li></ul>
+<p>  / cta recolhem para 1 coluna com espaço de 50px. O método vira 2×2,   e o filete de ligação é removido. Os links de navegação + brand-meta somem;   a marca + o CTA permanecem.</p>
+<ul><li><strong>Celular &lt; 560px:</strong> todos os grids de várias colunas viram 1 coluna;</li></ul>
+<p>  o padding das seções cai para 80px.</p>
+</section>
+
+<section data-section="imagery">
+<h2>Imagens</h2>
+<p>Este sistema tem a colagem em primeiro lugar. Toda imagem no nível da página deve ser gerada de acordo com estas restrições:</p>
+<ul><li><strong>Fundo:</strong> papel marfim quente com granulado sutil, dobras verticais</li></ul>
+<p>  tênues, marcas de registro de desenho técnico.</p>
+<ul><li><strong>Tema:</strong> fragmentos de cabeças clássicas de gesso, blocos de concreto brutalista,</li></ul>
+<p>  arcos, escadas, árvore, recortes de céu, uma pequena figura humana.</p>
+<ul><li><strong>Sobreposição de cor:</strong> contida — creme, pedra, carvão, coral</li></ul>
+<p>  desbotado, mostarda ocasional, azul-claro dentro de pequenos recortes de céu.</p>
+<ul><li><strong>Anotações embutidas:</strong> círculos finíssimos, miras,</li></ul>
+<p>  matrizes pontilhadas, etiquetas numeradas. Nunca tipografia que conflite   com o texto da página.</p>
+<p>Veja <code>design-templates/open-design-landing/assets/imagegen-prompts.md</code> para o pacote de prompts em uso e as variantes por seção. Todos os renders devem ser em 16:9 (heros) ou 1:1 (cards / sobre / cta), salvos em PNG, com ≥1024px no lado maior.</p>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<p>Ao gerar com este design system:</p>
+<ul><li>A página é uma <strong>revista impressa</strong> que por acaso vai para o ar. Aposte</li></ul>
+<p>  em metáforas de impresso antes das metáforas da web.</p>
+<ul><li>Inclua sempre a faixa de metadados, os trilhos laterais, os filetes de seção</li></ul>
+<p>  romanos e um rodapé com uma palavra gigante <code>OpenDesign.</code> (ou a marca)   em clamp(70px, 13vw, 200px).</p>
+<ul><li>O coral é um único personagem em cena. Se você se pegar</li></ul>
+<p>  buscando um segundo elemento coral na mesma viewport, use   ink-faint ou mostarda.</p>
+<ul><li>As palavras em serifa itálica dentro dos títulos de display devem ser sempre</li></ul>
+<p>  substantivos emocionais: <em>inteligência</em>, <em>gosto</em>, <em>memorável</em>, <em>aberto</em>,   <em>visualmente</em>. Nunca verbos, nunca adjetivos.</p>
+<ul><li>Se pedirem algo &quot;mais dramático&quot;, a alavanca é o <strong>tamanho da tipografia</strong></li></ul>
+<p>  (clamp no topo de 90–110px) e a <strong>altura da imagem</strong> (levar a 100vh - navegação).   Não recorra à cor.</p>
+<ul><li>Se pedirem algo &quot;mais minimalista&quot;, remova as notas laterais decorativas e</li></ul>
+<p>  reduza as anotações a uma por imagem — nunca remova os filetes romanos   nem a faixa de metadados.</p>
+</section>

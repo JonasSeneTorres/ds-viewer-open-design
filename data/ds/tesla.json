@@ -1,0 +1,1076 @@
+{
+ "id": "tesla",
+ "name": "Tesla",
+ "source": {
+  "name": "Tesla",
+  "url": "https://open-design.ai/plugins/design-system-tesla/"
+ },
+ "category": [
+  {
+   "lang": "en-US",
+   "message": "Automotive"
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Automotivo"
+  }
+ ],
+ "intro": [
+  {
+   "lang": "en-US",
+   "message": "Electric automotive. Radical subtraction, full-viewport photography, near-zero UI."
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Automóveis elétricos. Subtração radical, fotografia de viewport inteira, interface quase zero."
+  }
+ ],
+ "roles": {
+  "primary": "Electric Blue",
+  "neutral": "Neutral",
+  "secondary": null
+ },
+ "palettes": [
+  {
+   "name": "Electric Blue",
+   "base": "#3e6ae1",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f3f7fe",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#e5edfe",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#cdddfd",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#adc7fe",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#82a8fe",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#5987fc",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#3e6ae1",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#2d55c6",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#1c3ea5",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#0e2882",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#171a20",
+     "exact": true
+    }
+   ]
+  },
+  {
+   "name": "Success",
+   "base": "#16a34a",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#e5ffe8",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#c1ffcb",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#9df5ad",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#7ee193",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#54c671",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#16a34a",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#05903e",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#047431",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#045a25",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#004217",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#00280b",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Warning",
+   "base": "#eab308",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef6e4",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#feebc1",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffd77d",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#eab308",
+     "exact": true
+    },
+    {
+     "step": 400,
+     "hex": "#d5a205",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#b38809",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#967100",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#795b05",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#5f4600",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#453200",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#281e06",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Danger",
+   "base": "#dc2626",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef4f3",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fee7e3",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fdd0ca",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#feb0a7",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#fe8073",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#f44941",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#dc2626",
+     "exact": true
+    },
+    {
+     "step": 700,
+     "hex": "#b70311",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#90000a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#6a0005",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#440001",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Neutral",
+   "base": "#5c5e62",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f4f4f4",
+     "exact": true
+    },
+    {
+     "step": 100,
+     "hex": "#ecedef",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#dbdcdf",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#d0d1d2",
+     "exact": true
+    },
+    {
+     "step": 400,
+     "hex": "#a9abae",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#8e8e8e",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#75777b",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#5c5e62",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#484a4e",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#393c41",
+     "exact": true
+    },
+    {
+     "step": 950,
+     "hex": "#1e1f22",
+     "exact": false
+    }
+   ]
+  }
+ ],
+ "colors": [
+  {
+   "name": "Electric Blue",
+   "hex": "#3e6ae1",
+   "role": "(#3E6AE1): Primary CTA button background — a confident, mid-saturation blue (rgb 62, 106, 225) that stands alone as the only chromatic color in the entire interface. Used exclusively for \"Order Now\" a"
+  },
+  {
+   "name": "Pure White",
+   "hex": "#ffffff",
+   "role": "(#FFFFFF): Dominant background color for all surfaces, panels, navigation, and secondary button fills — the canvas that lets photography breathe"
+  },
+  {
+   "name": "Light Ash",
+   "hex": "#f4f4f4",
+   "role": "(#F4F4F4): Subtle alternate surface for section differentiation — barely perceptible shift from pure white (rgb 244, 244, 244)"
+  },
+  {
+   "name": "Carbon Dark",
+   "hex": "#171a20",
+   "role": "(#171A20): Dark surface color for hero text overlays and potential dark-mode contexts (rgb 23, 26, 32) — a warm near-black with a blue undertone"
+  },
+  {
+   "name": "Graphite",
+   "hex": "#393c41",
+   "role": "(#393C41): Body text and secondary content (rgb 57, 60, 65) — the default paragraph color, slightly warmer than pure gray"
+  },
+  {
+   "name": "Pewter",
+   "hex": "#5c5e62",
+   "role": "(#5C5E62): Tertiary text for sub-links, secondary navigation links like \"Learn\" and \"Order\" (rgb 92, 94, 98)"
+  },
+  {
+   "name": "Silver Fog",
+   "hex": "#8e8e8e",
+   "role": "(#8E8E8E): Placeholder text in input fields and disabled states (rgb 142, 142, 142)"
+  },
+  {
+   "name": "Cloud Gray",
+   "hex": "#eeeeee",
+   "role": "(#EEEEEE): Light borders and divider lines (rgb 238, 238, 238)"
+  },
+  {
+   "name": "Pale Silver",
+   "hex": "#d0d1d2",
+   "role": "(#D0D1D2): Subtle UI borders and delineation (rgb 208, 209, 210)"
+  }
+ ],
+ "fonts": [
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Headings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Títulos"
+    }
+   ],
+   "kind": "display",
+   "family": "Universal Sans Display",
+   "fallbacks": [],
+   "stack": "\"Universal Sans Display\", sans-serif",
+   "italic": false,
+   "source": null
+  },
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Body"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Corpo"
+    }
+   ],
+   "kind": "body",
+   "family": "Universal Sans Text",
+   "fallbacks": [],
+   "stack": "\"Universal Sans Text\", sans-serif",
+   "italic": false,
+   "source": null
+  }
+ ],
+ "tokens": [
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Surface"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Superfície"
+    }
+   ],
+   "items": [
+    {
+     "name": "--bg",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--surface",
+     "value": "#f4f4f4"
+    },
+    {
+     "name": "--surface-warm",
+     "value": "var(--surface)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Text"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Texto"
+    }
+   ],
+   "items": [
+    {
+     "name": "--fg",
+     "value": "#171a20"
+    },
+    {
+     "name": "--fg-2",
+     "value": "#393c41"
+    },
+    {
+     "name": "--muted",
+     "value": "#5c5e62"
+    },
+    {
+     "name": "--meta",
+     "value": "#8e8e8e"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Border"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Borda"
+    }
+   ],
+   "items": [
+    {
+     "name": "--border",
+     "value": "#d0d1d2"
+    },
+    {
+     "name": "--border-soft",
+     "value": "#eeeeee"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Accent"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Destaque"
+    }
+   ],
+   "items": [
+    {
+     "name": "--accent",
+     "value": "#3e6ae1"
+    },
+    {
+     "name": "--accent-on",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--accent-hover",
+     "value": "color-mix(in oklab, var(--accent), black 8%)"
+    },
+    {
+     "name": "--accent-active",
+     "value": "color-mix(in oklab, var(--accent), black 14%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Semantic"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Semântico"
+    }
+   ],
+   "items": [
+    {
+     "name": "--success",
+     "value": "#16a34a"
+    },
+    {
+     "name": "--warn",
+     "value": "#eab308"
+    },
+    {
+     "name": "--danger",
+     "value": "#dc2626"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Typography"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tipografia"
+    }
+   ],
+   "items": []
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Type scale"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Escala tipográfica"
+    }
+   ],
+   "items": [
+    {
+     "name": "--text-xs",
+     "value": "11px"
+    },
+    {
+     "name": "--text-sm",
+     "value": "12px"
+    },
+    {
+     "name": "--text-base",
+     "value": "14px"
+    },
+    {
+     "name": "--text-lg",
+     "value": "16px"
+    },
+    {
+     "name": "--text-xl",
+     "value": "17px"
+    },
+    {
+     "name": "--text-2xl",
+     "value": "22px"
+    },
+    {
+     "name": "--text-3xl",
+     "value": "28px"
+    },
+    {
+     "name": "--text-4xl",
+     "value": "40px"
+    },
+    {
+     "name": "--leading-body",
+     "value": "1.43"
+    },
+    {
+     "name": "--leading-tight",
+     "value": "1.20"
+    },
+    {
+     "name": "--tracking-display",
+     "value": "normal"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Spacing"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Espaçamento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--space-1",
+     "value": "4px"
+    },
+    {
+     "name": "--space-2",
+     "value": "8px"
+    },
+    {
+     "name": "--space-3",
+     "value": "12px"
+    },
+    {
+     "name": "--space-4",
+     "value": "16px"
+    },
+    {
+     "name": "--space-5",
+     "value": "20px"
+    },
+    {
+     "name": "--space-6",
+     "value": "24px"
+    },
+    {
+     "name": "--space-8",
+     "value": "32px"
+    },
+    {
+     "name": "--space-12",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-desktop",
+     "value": "120px"
+    },
+    {
+     "name": "--section-y-tablet",
+     "value": "72px"
+    },
+    {
+     "name": "--section-y-phone",
+     "value": "48px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Radius"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Raio"
+    }
+   ],
+   "items": [
+    {
+     "name": "--radius-sm",
+     "value": "4px"
+    },
+    {
+     "name": "--radius-md",
+     "value": "12px"
+    },
+    {
+     "name": "--radius-lg",
+     "value": "12px"
+    },
+    {
+     "name": "--radius-pill",
+     "value": "9999px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Elevação"
+    }
+   ],
+   "items": [
+    {
+     "name": "--elev-flat",
+     "value": "none"
+    },
+    {
+     "name": "--elev-ring",
+     "value": "0 0 0 1px var(--border)"
+    },
+    {
+     "name": "--elev-raised",
+     "value": "0 2px 8px rgba(0, 0, 0, 0.05)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Focus"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Foco"
+    }
+   ],
+   "items": [
+    {
+     "name": "--focus-ring",
+     "value": "0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Motion"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Movimento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--motion-fast",
+     "value": "250ms"
+    },
+    {
+     "name": "--motion-base",
+     "value": "330ms"
+    },
+    {
+     "name": "--ease-standard",
+     "value": "cubic-bezier(0.5, 0, 0, 0.75)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "items": [
+    {
+     "name": "--container-max",
+     "value": "1383px"
+    },
+    {
+     "name": "--container-gutter-desktop",
+     "value": "24px"
+    },
+    {
+     "name": "--container-gutter-tablet",
+     "value": "16px"
+    },
+    {
+     "name": "--container-gutter-phone",
+     "value": "12px"
+    }
+   ]
+  }
+ ],
+ "vars": {
+  "--primary-500": "#5987fc",
+  "--primary-500-fg": "#111111",
+  "--neutral-400": "#a9abae",
+  "--neutral-400-fg": "#111111",
+  "--bg": "#ffffff",
+  "--surface": "#f4f4f4",
+  "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+  "--fg": "#171a20",
+  "--fg-soft": "#393c41",
+  "--muted": "#5c5e62",
+  "--border": "#d0d1d2",
+  "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
+  "--accent": "#3e6ae1",
+  "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+  "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
+  "--accent-fg": "#ffffff",
+  "--solid": "var(--accent-strong)",
+  "--solid-fg": "#ffffff",
+  "--ok": "#16a34a",
+  "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
+  "--warn": "#eab308",
+  "--warn-weak": "color-mix(in oklab, var(--warn) 14%, var(--bg))",
+  "--danger": "#dc2626",
+  "--danger-weak": "color-mix(in oklab, var(--danger) 12%, var(--bg))",
+  "--bw": "1px",
+  "--radius": "12px",
+  "--radius-sm": "4px",
+  "--radius-pill": "9999px",
+  "--shadow-card": "0 2px 8px rgba(0, 0, 0, 0.05)",
+  "--shadow-pop": "0 14px 40px rgba(0, 0, 0, 0.22)",
+  "--font-display": "\"Universal Sans Display\", sans-serif",
+  "--font-body": "\"Universal Sans Text\", sans-serif",
+  "--font-code": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--font-mono": "ui-monospace, SFMono-Regular, Menlo, monospace",
+  "--display-tracking": "-0.02em",
+  "--heading-weight": "600",
+  "--kicker-transform": "uppercase",
+  "--kicker-spacing": "0.08em",
+  "--hero-ground": "var(--surface-2)",
+  "--hero-ink": "var(--fg)"
+ },
+ "sections": [
+  {
+   "id": "visual-theme-atmosphere",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Visual Theme & Atmosphere"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tema visual e atmosfera"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Tesla's website is an exercise in radical subtraction — a digital showroom where the product is everything and the interface is almost nothing. The page opens with a full-viewport hero that fills the entire screen with cinematic car photography: three vehicles arranged on polished concrete against a hazy cityscape sky, with a single model name floating above in translucent white type. There are no decorative borders, no gradients, no patterns, no shadows. The UI exists only to provide just enough navigational structure to get out of the way. Every pixel that isn't product imagery is white space, and that restraint is the design system's most powerful statement.</p>\n<p>The color philosophy is almost ascetic: a single blue (<code>#3E6AE1</code>) for primary calls to action, three shades of dark gray for text hierarchy, and white for everything else. The entire emotional weight is carried by photography — sprawling landscape shots, studio-lit vehicle profiles, and atmospheric environmental compositions that stretch edge-to-edge across each viewport-height section. The UI chrome dissolves into the imagery. The navigation bar floats above the hero with no visible background, border, or shadow — the TESLA wordmark and five navigation labels simply exist in the space, trusting the content beneath them to provide sufficient contrast.</p>\n<p>Typography recently transitioned from Gotham to Universal Sans — a custom family split into &quot;Display&quot; for headlines and &quot;Text&quot; for body/UI elements — unifying the website, mobile app, and in-car software into a single typographic voice. The Display variant renders hero titles at 40px weight 500, while the Text variant handles everything from navigation (14px/500) to body copy (14px/400). The font carries a geometric precision with slightly humanist terminals that feels engineered rather than designed — exactly matching Tesla's brand identity of technology that doesn't need to announce itself. There are no text shadows, no text gradients, no decorative type treatments. Every letterform earns its place through clarity alone.</p>\n<p><strong>Key Characteristics:</strong></p>\n<ul><li>Full-viewport hero sections (100vh) dominated by cinematic car photography with minimal overlay UI</li><li>Near-zero UI decoration: no shadows, no gradients, no borders, no patterns anywhere on the page</li><li>Single accent color — Electric Blue (<code>#3E6AE1</code>) — used exclusively for primary CTA buttons</li><li>Universal Sans font family (Display + Text) unifying web, app, and in-car interfaces</li><li>Photography-first presentation where product imagery carries all emotional weight</li><li>Frosted-glass navigation concept with transparent/white nav that floats over hero content</li><li>0.33s cubic-bezier transitions as the universal timing for all interactive state changes</li><li>Carousel-driven hero with dot indicators and edge arrow navigation for multiple vehicle showcases</li><li>&quot;Ask a Question&quot; persistent chatbot bar anchored to the viewport bottom</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>O site da Tesla é um exercício de subtração radical — um showroom digital em que o produto é tudo e a interface é quase nada. A página abre com um hero de viewport inteira que preenche a tela toda com fotografia cinematográfica de carros: três veículos dispostos sobre concreto polido contra um céu urbano enevoado, com um único nome de modelo flutuando acima em texto branco translúcido. Não há bordas decorativas, gradientes, padrões nem sombras. A interface existe só para oferecer estrutura de navegação suficiente para sair do caminho. Cada pixel que não é imagem de produto é espaço em branco, e essa contenção é a declaração mais poderosa do design system.</p>\n<p>A filosofia de cor é quase ascética: um único azul (<code>#3E6AE1</code>) para as chamadas para ação principais, três tons de cinza-escuro para a hierarquia de texto e branco para todo o resto. Todo o peso emocional é carregado pela fotografia — paisagens amplas, perfis de veículos com iluminação de estúdio e composições ambientais atmosféricas que se estendem de ponta a ponta em cada seção com altura de viewport. O cromo da interface se dissolve nas imagens. A barra de navegação flutua sobre o hero sem fundo, borda ou sombra visíveis — o logotipo TESLA e cinco rótulos de navegação simplesmente existem no espaço, confiando que o conteúdo por baixo oferece contraste suficiente.</p>\n<p>A tipografia passou recentemente da Gotham para a Universal Sans — uma família personalizada dividida em &quot;Display&quot;, para títulos, e &quot;Text&quot;, para corpo/elementos de interface —, unificando site, app mobile e software do carro numa única voz tipográfica. A variante Display renderiza os títulos do hero em 40px peso 500, enquanto a variante Text cuida de tudo, da navegação (14px/500) ao texto de corpo (14px/400). A fonte carrega uma precisão geométrica com terminais levemente humanistas que parece projetada por engenharia, e não apenas desenhada — exatamente alinhada à identidade da Tesla, de tecnologia que não precisa se anunciar. Não há sombras de texto, gradientes de texto nem tratamentos tipográficos decorativos. Cada letra conquista seu lugar só pela clareza.</p>\n<p><strong>Características principais:</strong></p>\n<ul><li>Seções hero de viewport inteira (100vh) dominadas por fotografia cinematográfica de carros, com o mínimo de interface sobreposta</li><li>Decoração de interface quase zero: sem sombras, gradientes, bordas ou padrões em lugar nenhum da página</li><li>Uma única cor de destaque — Electric Blue (<code>#3E6AE1</code>) — usada exclusivamente em botões CTA principais</li><li>Família tipográfica Universal Sans (Display + Text) unificando as interfaces da web, do app e do carro</li><li>Apresentação com a fotografia em primeiro lugar, em que as imagens do produto carregam todo o peso emocional</li><li>Conceito de navegação em vidro fosco, com navegação transparente/branca flutuando sobre o conteúdo do hero</li><li>Transições cubic-bezier de 0.33s como tempo universal para todas as mudanças de estado interativas</li><li>Hero em carrossel com indicadores de pontos e setas de navegação nas bordas para exibir vários veículos</li><li>Barra de chatbot &quot;Ask a Question&quot; persistente, ancorada na base da viewport</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "color-palette-roles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Color Palette & Roles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Paleta de cores e papéis"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Primary</h3>\n<ul><li><strong>Electric Blue</strong> (<code>#3E6AE1</code>): Primary CTA button background — a confident, mid-saturation blue (rgb 62, 106, 225) that stands alone as the only chromatic color in the entire interface. Used exclusively for &quot;Order Now&quot; and other primary action buttons</li><li><strong>Pure White</strong> (<code>#FFFFFF</code>): Dominant background color for all surfaces, panels, navigation, and secondary button fills — the canvas that lets photography breathe</li></ul>\n<h3>Secondary &amp; Accent</h3>\n<ul><li><strong>Promo Blue</strong> (<code>#3E6AE1</code>): Blue also serves for promotional text (&quot;0% APR Available&quot;) displayed over hero imagery in the same hue as the CTA — creating a visual link between incentive messaging and action</li><li>No secondary accent colors exist. Tesla deliberately avoids color variety to maintain extreme visual discipline</li></ul>\n<h3>Surface &amp; Background</h3>\n<ul><li><strong>White Canvas</strong> (<code>#FFFFFF</code>): Page background, navigation panel, dropdown menus, and all surface containers</li><li><strong>Light Ash</strong> (<code>#F4F4F4</code>): Subtle alternate surface for section differentiation — barely perceptible shift from pure white (rgb 244, 244, 244)</li><li><strong>Carbon Dark</strong> (<code>#171A20</code>): Dark surface color for hero text overlays and potential dark-mode contexts (rgb 23, 26, 32) — a warm near-black with a blue undertone</li><li><strong>Frosted Glass</strong> (<code>rgba(255, 255, 255, 0.75)</code>): Semi-transparent white for navigation backdrop-filter effects on scroll</li></ul>\n<h3>Neutrals &amp; Text</h3>\n<ul><li><strong>Carbon Dark</strong> (<code>#171A20</code>): Primary heading and navigation text — the darkest text value (rgb 23, 26, 32), used for model names, nav labels, and hero titles on light backgrounds</li><li><strong>Graphite</strong> (<code>#393C41</code>): Body text and secondary content (rgb 57, 60, 65) — the default paragraph color, slightly warmer than pure gray</li><li><strong>Pewter</strong> (<code>#5C5E62</code>): Tertiary text for sub-links, secondary navigation links like &quot;Learn&quot; and &quot;Order&quot; (rgb 92, 94, 98)</li><li><strong>Silver Fog</strong> (<code>#8E8E8E</code>): Placeholder text in input fields and disabled states (rgb 142, 142, 142)</li><li><strong>Cloud Gray</strong> (<code>#EEEEEE</code>): Light borders and divider lines (rgb 238, 238, 238)</li><li><strong>Pale Silver</strong> (<code>#D0D1D2</code>): Subtle UI borders and delineation (rgb 208, 209, 210)</li></ul>\n<h3>Semantic &amp; Accent</h3>\n<ul><li>Tesla's marketing site avoids semantic color coding (no green/red/yellow status indicators). Error, success, and warning states follow standard browser defaults in form contexts</li><li>The blue CTA (<code>#3E6AE1</code>) serves as the sole interactive color signal</li></ul>\n<h3>Gradient System</h3>\n<ul><li>No gradients are used anywhere in the interface</li><li>Depth is achieved entirely through photography, whitespace, and the binary contrast between full-bleed imagery and clean white surfaces</li><li>The navigation achieves layering through opacity (frosted glass effect) rather than gradient or shadow</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Primárias</h3>\n<ul><li><strong>Electric Blue</strong> (<code>#3E6AE1</code>): fundo do botão CTA principal — um azul confiante de saturação média (rgb 62, 106, 225) que se sustenta sozinho como a única cor cromática de toda a interface. Usado exclusivamente em &quot;Order Now&quot; e outros botões de ação principal</li><li><strong>Pure White</strong> (<code>#FFFFFF</code>): cor de fundo dominante em todas as superfícies, painéis, navegação e preenchimento de botões secundários — a tela que deixa a fotografia respirar</li></ul>\n<h3>Secundárias e de destaque</h3>\n<ul><li><strong>Promo Blue</strong> (<code>#3E6AE1</code>): o azul também serve para o texto promocional (&quot;0% APR Available&quot;) exibido sobre as imagens do hero, no mesmo tom do CTA — criando um elo visual entre a mensagem de incentivo e a ação</li><li>Não existem cores de destaque secundárias. A Tesla evita deliberadamente a variedade de cores para manter uma disciplina visual extrema</li></ul>\n<h3>Superfície e fundo</h3>\n<ul><li><strong>White Canvas</strong> (<code>#FFFFFF</code>): fundo da página, painel de navegação, menus dropdown e todos os contêineres de superfície</li><li><strong>Light Ash</strong> (<code>#F4F4F4</code>): superfície alternativa sutil para diferenciar seções — uma mudança quase imperceptível em relação ao branco puro (rgb 244, 244, 244)</li><li><strong>Carbon Dark</strong> (<code>#171A20</code>): cor de superfície escura para texto sobreposto no hero e possíveis contextos de modo escuro (rgb 23, 26, 32) — um quase preto quente com subtom azul</li><li><strong>Frosted Glass</strong> (<code>rgba(255, 255, 255, 0.75)</code>): branco semitransparente para os efeitos de backdrop-filter da navegação na rolagem</li></ul>\n<h3>Neutros e texto</h3>\n<ul><li><strong>Carbon Dark</strong> (<code>#171A20</code>): texto principal de títulos e navegação — o valor de texto mais escuro (rgb 23, 26, 32), usado em nomes de modelos, rótulos de navegação e títulos do hero sobre fundos claros</li><li><strong>Graphite</strong> (<code>#393C41</code>): texto de corpo e conteúdo secundário (rgb 57, 60, 65) — a cor padrão de parágrafo, um pouco mais quente que o cinza puro</li><li><strong>Pewter</strong> (<code>#5C5E62</code>): texto terciário para sublinks, links de navegação secundária como &quot;Learn&quot; e &quot;Order&quot; (rgb 92, 94, 98)</li><li><strong>Silver Fog</strong> (<code>#8E8E8E</code>): texto de placeholder em campos e estados desabilitados (rgb 142, 142, 142)</li><li><strong>Cloud Gray</strong> (<code>#EEEEEE</code>): bordas claras e linhas divisórias (rgb 238, 238, 238)</li><li><strong>Pale Silver</strong> (<code>#D0D1D2</code>): bordas sutis de interface e delimitação (rgb 208, 209, 210)</li></ul>\n<h3>Semânticas e de destaque</h3>\n<ul><li>O site de marketing da Tesla evita a codificação semântica por cores (sem indicadores de status verdes/vermelhos/amarelos). Os estados de erro, sucesso e alerta seguem os padrões do navegador em contextos de formulário</li><li>O CTA azul (<code>#3E6AE1</code>) é o único sinal de cor interativa</li></ul>\n<h3>Sistema de gradientes</h3>\n<ul><li>Nenhum gradiente é usado em lugar nenhum da interface</li><li>A profundidade é obtida inteiramente pela fotografia, pelo espaço em branco e pelo contraste binário entre imagens de ponta a ponta e superfícies brancas limpas</li><li>A navegação cria camadas por opacidade (efeito de vidro fosco), e não por gradiente ou sombra</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "typography-rules",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Typography Rules"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Regras de tipografia"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Font Family</h3>\n<ul><li><strong>Display</strong>: <code>Universal Sans Display</code>, -apple-system, Arial, sans-serif — used for hero titles and large model names. A geometric sans-serif with precisely engineered proportions, recently replacing Gotham to unify Tesla's digital ecosystem (website, mobile app, vehicle interface)</li><li><strong>Text/UI</strong>: <code>Universal Sans Text</code>, -apple-system, Arial, sans-serif — used for navigation, body copy, buttons, and all UI text. Optimized for legibility at smaller sizes with slightly wider proportions than the Display variant</li><li><strong>No OpenType features</strong> detected — typography is completely unembellished</li><li><strong>No italic variants</strong> observed on the marketing site</li></ul>\n<h3>Hierarchy</h3>\n<table><thead><tr><th>Role</th><th>Size</th><th>Weight</th><th>Line Height</th><th>Letter Spacing</th><th>Notes</th></tr></thead><tbody><tr><td>Hero Title</td><td>40px (2.50rem)</td><td>500</td><td>48px (1.20)</td><td>normal</td><td>Universal Sans Display, white on dark hero imagery</td></tr><tr><td>Product Name</td><td>17px (1.06rem)</td><td>500</td><td>20px (1.18)</td><td>normal</td><td>Universal Sans Text, model names in nav panel and cards</td></tr><tr><td>Nav Item</td><td>14px (0.88rem)</td><td>500</td><td>16.8px (1.20)</td><td>normal</td><td>Universal Sans Text, primary navigation labels</td></tr><tr><td>Body Text</td><td>14px (0.88rem)</td><td>400</td><td>20px (1.43)</td><td>normal</td><td>Universal Sans Text, paragraph and descriptive content</td></tr><tr><td>Button Label</td><td>14px (0.88rem)</td><td>500</td><td>16.8px (1.20)</td><td>normal</td><td>Universal Sans Text, CTA button text</td></tr><tr><td>Sub-link</td><td>14px (0.88rem)</td><td>400</td><td>20px (1.43)</td><td>normal</td><td>Tertiary links (Learn, Order, Experience)</td></tr><tr><td>Promo Text</td><td>22px (1.38rem)</td><td>400</td><td>20px (0.91)</td><td>normal</td><td>White promotional text on hero (&quot;0% APR Available&quot;)</td></tr><tr><td>Category Label</td><td>16px (est.)</td><td>500</td><td>—</td><td>normal</td><td>White text labels on category cards (&quot;Sport Sedan&quot;)</td></tr></tbody></table>\n<h3>Principles</h3>\n<ul><li><strong>&quot;Normal&quot; letter-spacing everywhere</strong>: Unlike most modern tech brands that use negative tracking for headlines, Tesla uses default letter-spacing at every level. This reflects a philosophy that the typeface should speak for itself without manipulation</li><li><strong>Weight restraint</strong>: Only two weights appear — 500 (medium) for headings/UI and 400 (regular) for body. No bold (700), no light (300). The system avoids typographic drama</li><li><strong>Unified font sizing</strong>: Most UI text clusters at 14px with only hero titles (40px) and promo text (22px) breaking away. This extreme uniformity creates a sense of engineered consistency</li><li><strong>Display vs Text split</strong>: The two-variant system (Display for hero, Text for UI) creates subtle optical correction without visible stylistic difference — they appear as the same typeface at different sizes</li><li><strong>No text transforms</strong>: No uppercase text appears in the main navigation or CTAs — the lowercase approach reinforces Tesla's understated confidence</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Família tipográfica</h3>\n<ul><li><strong>Display</strong>: <code>Universal Sans Display</code>, -apple-system, Arial, sans-serif — usada nos títulos do hero e nos nomes de modelos grandes. Uma sem serifa geométrica de proporções precisamente projetadas, que substituiu recentemente a Gotham para unificar o ecossistema digital da Tesla (site, app mobile, interface do veículo)</li><li><strong>Texto/interface</strong>: <code>Universal Sans Text</code>, -apple-system, Arial, sans-serif — usada na navegação, no texto de corpo, nos botões e em todo texto de interface. Otimizada para legibilidade em tamanhos menores, com proporções um pouco mais largas que a variante Display</li><li><strong>Nenhum recurso OpenType</strong> detectado — a tipografia é completamente sem enfeites</li><li><strong>Sem variantes itálicas</strong> observadas no site de marketing</li></ul>\n<h3>Hierarquia</h3>\n<table><thead><tr><th>Papel</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Título do hero</td><td>40px (2.50rem)</td><td>500</td><td>48px (1.20)</td><td>normal</td><td>Universal Sans Display, branco sobre imagens escuras do hero</td></tr><tr><td>Nome do produto</td><td>17px (1.06rem)</td><td>500</td><td>20px (1.18)</td><td>normal</td><td>Universal Sans Text, nomes de modelos no painel de navegação e nos cards</td></tr><tr><td>Item de navegação</td><td>14px (0.88rem)</td><td>500</td><td>16.8px (1.20)</td><td>normal</td><td>Universal Sans Text, rótulos de navegação principais</td></tr><tr><td>Texto de corpo</td><td>14px (0.88rem)</td><td>400</td><td>20px (1.43)</td><td>normal</td><td>Universal Sans Text, parágrafos e conteúdo descritivo</td></tr><tr><td>Rótulo de botão</td><td>14px (0.88rem)</td><td>500</td><td>16.8px (1.20)</td><td>normal</td><td>Universal Sans Text, texto de botões CTA</td></tr><tr><td>Sublink</td><td>14px (0.88rem)</td><td>400</td><td>20px (1.43)</td><td>normal</td><td>Links terciários (Learn, Order, Experience)</td></tr><tr><td>Texto promocional</td><td>22px (1.38rem)</td><td>400</td><td>20px (0.91)</td><td>normal</td><td>Texto promocional branco sobre o hero (&quot;0% APR Available&quot;)</td></tr><tr><td>Rótulo de categoria</td><td>16px (est.)</td><td>500</td><td>—</td><td>normal</td><td>Rótulos de texto brancos nos cards de categoria (&quot;Sport Sedan&quot;)</td></tr></tbody></table>\n<h3>Princípios</h3>\n<ul><li><strong>Espaçamento entre letras &quot;normal&quot; em todo lugar</strong>: ao contrário da maioria das marcas de tecnologia modernas, que usam tracking negativo nos títulos, a Tesla usa o espaçamento padrão em todos os níveis. Isso reflete a filosofia de que a fonte deve falar por si, sem manipulação</li><li><strong>Contenção de peso</strong>: só dois pesos aparecem — 500 (médio) para títulos/interface e 400 (regular) para o corpo. Nada de negrito (700), nada de leve (300). O sistema evita drama tipográfico</li><li><strong>Tamanhos de fonte unificados</strong>: a maior parte do texto de interface se concentra em 14px, e só os títulos do hero (40px) e o texto promocional (22px) fogem disso. Essa uniformidade extrema cria uma sensação de consistência projetada</li><li><strong>Divisão Display vs Text</strong>: o sistema de duas variantes (Display para o hero, Text para a interface) cria uma correção óptica sutil sem diferença estilística visível — elas parecem a mesma fonte em tamanhos diferentes</li><li><strong>Sem transformações de texto</strong>: nenhum texto em caixa-alta aparece na navegação principal ou nos CTAs — a abordagem em minúsculas reforça a confiança discreta da Tesla</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "component-stylings",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Component Stylings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Estilo dos componentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Buttons</h3>\n<p>All buttons use barely-rounded rectangles (4px border-radius) — creating a sharp, technical aesthetic that mirrors the precision of the vehicles.</p>\n<p><strong>Primary CTA</strong> — The main action button:</p>\n<ul><li>Default: bg <code>#3E6AE1</code> (Electric Blue), text <code>#FFFFFF</code>, fontSize 14px, fontWeight 500, padding 4px with inner content centering, borderRadius 4px, minHeight 40px, width 200px</li><li>Border: 3px solid transparent (reserves space for focus/active border animation)</li><li>Box Shadow: <code>rgba(0,0,0,0) 0px 0px 0px 2px inset</code> (invisible at rest, animates to visible on focus)</li><li>Transition: <code>border-color 0.33s, background-color 0.33s, color 0.33s, box-shadow 0.25s</code></li><li>Hover: subtle darkening of blue background</li><li>Used for: &quot;Order Now&quot; calls to action</li></ul>\n<p><strong>Secondary CTA</strong> — The alternative action button:</p>\n<ul><li>Default: bg <code>#FFFFFF</code>, text <code>#393C41</code> (Graphite), same dimensions and border pattern as primary</li><li>Transition: identical timing to primary (0.33s)</li><li>Used for: &quot;View Inventory&quot; alongside primary CTA</li></ul>\n<p><strong>Nav Button</strong> — Top navigation items:</p>\n<ul><li>Default: bg transparent, text <code>#171A20</code> (Carbon Dark), fontSize 14px, fontWeight 500, borderRadius 4px, padding 4px 16px, minHeight 32px</li><li>Transition: <code>color 0.33s, background-color 0.33s</code></li><li>Active/expanded: subtle background highlight</li><li>Used for: &quot;Vehicles&quot;, &quot;Energy&quot;, &quot;Charging&quot;, &quot;Discover&quot;, &quot;Shop&quot;</li></ul>\n<p><strong>Text Link</strong> — In-content actions:</p>\n<ul><li>Default: text <code>#5C5E62</code> (Pewter), fontSize 14px, fontWeight 400, no background, no border</li><li>Hover: underline decoration with box-shadow transition</li><li>Transition: <code>box-shadow 0.33s cubic-bezier(0.5, 0, 0, 0.75), color 0.33s</code></li><li>Used for: &quot;Learn&quot;, &quot;Order&quot;, &quot;Experience&quot;, &quot;New&quot;, &quot;Pre-Owned&quot; links in dropdown panel</li></ul>\n<h3>Cards &amp; Containers</h3>\n<p><strong>Vehicle Card</strong> (Navigation panel):</p>\n<ul><li>Background: transparent (inherits panel white)</li><li>Border: none</li><li>Shadow: none</li><li>Content: vehicle image (transparent PNG) + model name centered below + two text links</li><li>Layout: 3-column grid within the dropdown panel</li><li>No hover animation on the card itself — interaction is via the text links beneath</li></ul>\n<p><strong>Category Card</strong> (Homepage lower section):</p>\n<ul><li>Background: full-bleed landscape photography</li><li>Border radius: approximately 12px (subtly rounded)</li><li>Overflow: hidden (clips image to rounded corners)</li><li>Text: white label in top-left corner (&quot;Sport Sedan&quot;, &quot;Midsize SUV&quot;)</li><li>Size: large format, approximately 2:1 aspect ratio</li><li>No shadow, no border, no overlay gradient — text relies on image darkness for contrast</li></ul>\n<h3>Inputs &amp; Forms</h3>\n<ul><li>Background: transparent</li><li>Text color: <code>#171A20</code> (Carbon Dark)</li><li>Placeholder color: <code>#8E8E8E</code> (Silver Fog)</li><li>Border: minimal, inherits from browser defaults</li><li>Font: Universal Sans Text, 14px</li><li>The &quot;Ask a Question&quot; chatbot input bar sits at the viewport bottom with a clean white background and subtle border</li></ul>\n<h3>Navigation</h3>\n<ul><li><strong>Desktop</strong>: Centered horizontal nav with TESLA wordmark (spaced uppercase letters) on the left, five category buttons center-aligned, and three icon buttons (help, globe/language, account) on the right</li><li><strong>Background</strong>: White (transitions from transparent over dark hero to opaque white on scroll via class toggle <code>tds-site-header--white-background</code>)</li><li><strong>Dropdown panel</strong>: Full-width white panel with 3-column vehicle grid + right sidebar text links, no shadow, no border — appears seamlessly below the nav</li><li><strong>Sticky behavior</strong>: <code>sticky-without-slide</code> class — stays at top without slide-in animation</li><li><strong>Mobile</strong>: Hamburger collapse pattern</li><li><strong>No visible separator</strong> between nav and content — the nav blends with the hero</li></ul>\n<h3>Image Treatment</h3>\n<ul><li><strong>Hero</strong>: Full-viewport (100vh) sections with cinematic photography — edge-to-edge, no padding, no margin</li><li><strong>Vehicle images</strong>: Transparent PNG renders on white background in dropdown panel, studio-quality 3/4 angle shots</li><li><strong>Category cards</strong>: Landscape photography with approximately 2:1 ratio, rounded corners (12px)</li><li><strong>Carousel</strong>: Auto-advancing with dot indicators (3 dots) and left/right arrow navigation on edges</li><li><strong>Lazy loading</strong>: Below-fold sections use lazy loading, rendering as blank white until scrolled into view</li></ul>\n<h3>Persistent Chat Bar</h3>\n<ul><li>Anchored to viewport bottom, visible across all sections</li><li>White background with subtle border</li><li>Contains: chat icon + &quot;Ask a Question&quot; label + placeholder text (&quot;What's Dog Mode?&quot;) + send icon + &quot;Schedule a Drive Today&quot; secondary CTA</li><li>Schedule CTA has a teal/blue icon accent</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Botões</h3>\n<p>Todos os botões usam retângulos quase sem arredondamento (border-radius de 4px) — criando uma estética afiada e técnica que espelha a precisão dos veículos.</p>\n<p><strong>CTA principal</strong> — o botão de ação principal:</p>\n<ul><li>Padrão: fundo <code>#3E6AE1</code> (Electric Blue), texto <code>#FFFFFF</code>, fontSize 14px, fontWeight 500, padding de 4px com o conteúdo centralizado por dentro, borderRadius 4px, minHeight 40px, largura de 200px</li><li>Borda: 3px solid transparent (reserva espaço para a animação de borda no foco/ativo)</li><li>Box-shadow: <code>rgba(0,0,0,0) 0px 0px 0px 2px inset</code> (invisível em repouso, anima até ficar visível no foco)</li><li>Transição: <code>border-color 0.33s, background-color 0.33s, color 0.33s, box-shadow 0.25s</code></li><li>Hover: leve escurecimento do fundo azul</li><li>Usado em: chamadas para ação &quot;Order Now&quot;</li></ul>\n<p><strong>CTA secundário</strong> — o botão de ação alternativa:</p>\n<ul><li>Padrão: fundo <code>#FFFFFF</code>, texto <code>#393C41</code> (Graphite), mesmas dimensões e padrão de borda do primário</li><li>Transição: tempo idêntico ao do primário (0.33s)</li><li>Usado em: &quot;View Inventory&quot;, ao lado do CTA principal</li></ul>\n<p><strong>Botão de navegação</strong> — itens da navegação superior:</p>\n<ul><li>Padrão: fundo transparente, texto <code>#171A20</code> (Carbon Dark), fontSize 14px, fontWeight 500, borderRadius 4px, padding 4px 16px, minHeight 32px</li><li>Transição: <code>color 0.33s, background-color 0.33s</code></li><li>Ativo/expandido: leve realce de fundo</li><li>Usado em: &quot;Vehicles&quot;, &quot;Energy&quot;, &quot;Charging&quot;, &quot;Discover&quot;, &quot;Shop&quot;</li></ul>\n<p><strong>Link de texto</strong> — ações no conteúdo:</p>\n<ul><li>Padrão: texto <code>#5C5E62</code> (Pewter), fontSize 14px, fontWeight 400, sem fundo, sem borda</li><li>Hover: sublinhado com transição de box-shadow</li><li>Transição: <code>box-shadow 0.33s cubic-bezier(0.5, 0, 0, 0.75), color 0.33s</code></li><li>Usado em: links &quot;Learn&quot;, &quot;Order&quot;, &quot;Experience&quot;, &quot;New&quot;, &quot;Pre-Owned&quot; no painel dropdown</li></ul>\n<h3>Cards e contêineres</h3>\n<p><strong>Card de veículo</strong> (painel de navegação):</p>\n<ul><li>Fundo: transparente (herda o branco do painel)</li><li>Borda: nenhuma</li><li>Sombra: nenhuma</li><li>Conteúdo: imagem do veículo (PNG transparente) + nome do modelo centralizado abaixo + dois links de texto</li><li>Layout: grade de 3 colunas dentro do painel dropdown</li><li>Sem animação de hover no próprio card — a interação acontece pelos links de texto abaixo</li></ul>\n<p><strong>Card de categoria</strong> (seção inferior da home):</p>\n<ul><li>Fundo: fotografia de paisagem de ponta a ponta</li><li>Raio da borda: aproximadamente 12px (levemente arredondado)</li><li>Overflow: hidden (recorta a imagem nos cantos arredondados)</li><li>Texto: rótulo branco no canto superior esquerdo (&quot;Sport Sedan&quot;, &quot;Midsize SUV&quot;)</li><li>Tamanho: formato grande, proporção de aproximadamente 2:1</li><li>Sem sombra, borda ou gradiente sobreposto — o texto depende da escuridão da imagem para o contraste</li></ul>\n<h3>Campos e formulários</h3>\n<ul><li>Fundo: transparente</li><li>Cor do texto: <code>#171A20</code> (Carbon Dark)</li><li>Cor do placeholder: <code>#8E8E8E</code> (Silver Fog)</li><li>Borda: mínima, herda os padrões do navegador</li><li>Fonte: Universal Sans Text, 14px</li><li>A barra de entrada do chatbot &quot;Ask a Question&quot; fica na base da viewport, com fundo branco limpo e borda sutil</li></ul>\n<h3>Navegação</h3>\n<ul><li><strong>Desktop</strong>: navegação horizontal centralizada com o logotipo TESLA (letras maiúsculas espaçadas) à esquerda, cinco botões de categoria alinhados ao centro e três botões de ícone (ajuda, globo/idioma, conta) à direita</li><li><strong>Fundo</strong>: branco (passa de transparente sobre o hero escuro para branco opaco na rolagem, via a classe <code>tds-site-header--white-background</code>)</li><li><strong>Painel dropdown</strong>: painel branco em largura total com grade de veículos de 3 colunas + links de texto numa barra lateral à direita, sem sombra nem borda — aparece de forma contínua abaixo da navegação</li><li><strong>Comportamento fixo</strong>: classe <code>sticky-without-slide</code> — fica no topo sem animação de deslizar</li><li><strong>Mobile</strong>: padrão de recolhimento em hambúrguer</li><li><strong>Sem separador visível</strong> entre a navegação e o conteúdo — a navegação se funde ao hero</li></ul>\n<h3>Tratamento de imagens</h3>\n<ul><li><strong>Hero</strong>: seções de viewport inteira (100vh) com fotografia cinematográfica — de ponta a ponta, sem padding, sem margem</li><li><strong>Imagens de veículos</strong>: renderizações em PNG transparente sobre fundo branco no painel dropdown, fotos de estúdio em ângulo de 3/4</li><li><strong>Cards de categoria</strong>: fotografia de paisagem com proporção de aproximadamente 2:1, cantos arredondados (12px)</li><li><strong>Carrossel</strong>: avanço automático com indicadores de pontos (3 pontos) e setas de navegação esquerda/direita nas bordas</li><li><strong>Carregamento lento</strong>: as seções abaixo da dobra usam lazy loading, aparecendo em branco até entrarem na tela</li></ul>\n<h3>Barra de chat persistente</h3>\n<ul><li>Ancorada na base da viewport, visível em todas as seções</li><li>Fundo branco com borda sutil</li><li>Contém: ícone de chat + rótulo &quot;Ask a Question&quot; + texto de placeholder (&quot;What's Dog Mode?&quot;) + ícone de enviar + CTA secundário &quot;Schedule a Drive Today&quot;</li><li>O CTA de agendamento tem um ícone de destaque verde-azulado/azul</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "layout-principles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Layout Principles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Princípios de layout"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Spacing System</h3>\n<ul><li><strong>Base unit</strong>: 8px</li><li><strong>Common values</strong>: 8px (0.5rem), 16px (1rem), 21.44px (1.34rem)</li><li><strong>Button padding</strong>: 4px (minimal outer) with content centering via flexbox, 4px 16px for nav items</li><li><strong>Section padding</strong>: Full-viewport sections with content centered vertically</li><li><strong>Card gap</strong>: approximately 16px between category cards</li></ul>\n<h3>Grid &amp; Container</h3>\n<ul><li><strong>Max width</strong>: approximately 1383px (full viewport width used for most content)</li><li><strong>Hero</strong>: Full-bleed, edge-to-edge, 100vh sections</li><li><strong>Navigation panel</strong>: 3-column grid for vehicle cards with right-aligned text sidebar (~70/30 split)</li><li><strong>Category cards</strong>: 2-up horizontal layout (large left card + smaller right card)</li></ul>\n<h3>Whitespace Philosophy</h3>\n<p>Tesla uses whitespace as a luxury signal. The generous vertical spacing between sections (each section is a full viewport height) means you can only see one &quot;message&quot; at a time — one car, one model name, one CTA pair. This creates a gallery-like browsing experience where each scroll is a deliberate transition, not a continuous feed. White space is not empty — it's the frame that elevates each vehicle to the status of art piece.</p>\n<h3>Border Radius Scale</h3>\n<table><thead><tr><th>Value</th><th>Context</th></tr></thead><tbody><tr><td>0px</td><td>Most elements — sharp edges are the default</td></tr><tr><td>4px</td><td>Buttons (primary, secondary, nav items) — barely perceptible rounding</td></tr><tr><td>~12px</td><td>Category cards — noticeable but restrained rounding on larger surfaces</td></tr><tr><td>50%</td><td>Carousel dot indicators — perfect circles</td></tr></tbody></table>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Sistema de espaçamento</h3>\n<ul><li><strong>Unidade base</strong>: 8px</li><li><strong>Valores comuns</strong>: 8px (0.5rem), 16px (1rem), 21.44px (1.34rem)</li><li><strong>Padding de botões</strong>: 4px (externo mínimo) com centralização do conteúdo via flexbox, 4px 16px nos itens de navegação</li><li><strong>Padding de seção</strong>: seções de viewport inteira com conteúdo centralizado na vertical</li><li><strong>Espaço entre cards</strong>: aproximadamente 16px entre os cards de categoria</li></ul>\n<h3>Grid e contêiner</h3>\n<ul><li><strong>Largura máxima</strong>: aproximadamente 1383px (a maior parte do conteúdo usa a largura total da viewport)</li><li><strong>Hero</strong>: seções de 100vh de ponta a ponta</li><li><strong>Painel de navegação</strong>: grade de 3 colunas para os cards de veículos, com barra lateral de texto alinhada à direita (divisão ~70/30)</li><li><strong>Cards de categoria</strong>: layout horizontal de 2 em linha (card grande à esquerda + card menor à direita)</li></ul>\n<h3>Filosofia do espaço em branco</h3>\n<p>A Tesla usa o espaço em branco como sinal de luxo. O espaçamento vertical generoso entre as seções (cada seção tem a altura da viewport) faz com que se veja só uma &quot;mensagem&quot; por vez — um carro, um nome de modelo, um par de CTAs. Isso cria uma navegação de galeria, em que cada rolagem é uma transição deliberada, e não um feed contínuo. O espaço em branco não é vazio — é a moldura que eleva cada veículo ao status de obra de arte.</p>\n<h3>Escala de raios de borda</h3>\n<table><thead><tr><th>Valor</th><th>Contexto</th></tr></thead><tbody><tr><td>0px</td><td>A maioria dos elementos — arestas vivas são o padrão</td></tr><tr><td>4px</td><td>Botões (primário, secundário, itens de navegação) — arredondamento quase imperceptível</td></tr><tr><td>~12px</td><td>Cards de categoria — arredondamento perceptível, mas contido, em superfícies maiores</td></tr><tr><td>50%</td><td>Indicadores de pontos do carrossel — círculos perfeitos</td></tr></tbody></table>"
+    }
+   ]
+  },
+  {
+   "id": "depth-elevation",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Depth & Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Profundidade e elevação"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<table><thead><tr><th>Level</th><th>Treatment</th><th>Use</th></tr></thead><tbody><tr><td>Level 0 (Flat)</td><td>No shadow, no border</td><td>Default state for all elements — cards, panels, buttons at rest</td></tr><tr><td>Level 1 (Frost)</td><td><code>rgba(255,255,255,0.75)</code> backdrop</td><td>Navigation bar on scroll — frosted glass transparency</td></tr><tr><td>Level 2 (Overlay)</td><td><code>rgba(128,128,128,0.65)</code></td><td>Modal overlays and region/cookie popups</td></tr><tr><td>Level 3 (Subtle)</td><td><code>rgba(0,0,0,0.05)</code></td><td>Minimal shadow hints on rare hover states</td></tr></tbody></table>\n<h3>Shadow Philosophy</h3>\n<p>Tesla's approach to elevation is essentially &quot;none.&quot; The site avoids box-shadows entirely in its primary interface. Depth is communicated through three alternative strategies:</p>\n<ol><li><strong>Z-index layering</strong>: The sticky navigation sits above hero content through positioning, not shadow</li><li><strong>Opacity-based transparency</strong>: The frosted glass nav and overlay modals use background-color opacity rather than shadow to indicate layering</li><li><strong>Photography-as-depth</strong>: The full-bleed images create their own visual depth through perspective, lighting, and composition — making UI shadows redundant</li></ol>\n<h3>Decorative Depth</h3>\n<ul><li>No gradients, glows, or atmospheric effects on UI elements</li><li>The hero imagery itself provides all visual richness — sunset skies, reflected light on car surfaces, ground shadows from studio lighting</li><li>The carousel arrow buttons use a semi-transparent white background to float above the hero imagery without disrupting it</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Nível 0 (plano)</td><td>Sem sombra, sem borda</td><td>Estado padrão de todos os elementos — cards, painéis, botões em repouso</td></tr><tr><td>Nível 1 (fosco)</td><td>Fundo <code>rgba(255,255,255,0.75)</code></td><td>Barra de navegação na rolagem — transparência de vidro fosco</td></tr><tr><td>Nível 2 (sobreposição)</td><td><code>rgba(128,128,128,0.65)</code></td><td>Sobreposições de modais e popups de região/cookies</td></tr><tr><td>Nível 3 (sutil)</td><td><code>rgba(0,0,0,0.05)</code></td><td>Sugestões mínimas de sombra em raros estados de hover</td></tr></tbody></table>\n<h3>Filosofia das sombras</h3>\n<p>A abordagem da Tesla para a elevação é essencialmente &quot;nenhuma&quot;. O site evita box-shadows por completo na interface principal. A profundidade é comunicada por três estratégias alternativas:</p>\n<ol><li><strong>Camadas por z-index</strong>: a navegação fixa fica acima do conteúdo do hero pelo posicionamento, não por sombra</li><li><strong>Transparência por opacidade</strong>: a navegação de vidro fosco e os modais sobrepostos usam a opacidade da cor de fundo, e não sombra, para indicar camadas</li><li><strong>Fotografia como profundidade</strong>: as imagens de ponta a ponta criam sua própria profundidade visual pela perspectiva, iluminação e composição — tornando as sombras de interface redundantes</li></ol>\n<h3>Profundidade decorativa</h3>\n<ul><li>Sem gradientes, brilhos ou efeitos atmosféricos nos elementos de interface</li><li>As próprias imagens do hero oferecem toda a riqueza visual — céus de pôr do sol, luz refletida nas superfícies dos carros, sombras no chão vindas da iluminação de estúdio</li><li>Os botões de seta do carrossel usam fundo branco semitransparente para flutuar sobre as imagens do hero sem atrapalhá-las</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "do-s-and-don-ts",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Do's and Don'ts"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "O que fazer e o que evitar"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Do</h3>\n<ul><li>Let photography dominate every screen — the product IS the design</li><li>Use Electric Blue (<code>#3E6AE1</code>) exclusively for primary CTAs — never for decorative purposes</li><li>Maintain viewport-height sections for major content blocks — one message per screen</li><li>Keep typography at weight 400-500 only — no bold, no light, no extremes</li><li>Use 4px border-radius for all interactive elements — precision over playfulness</li><li>Trust whitespace as a luxury signal — never fill available space just because it's empty</li><li>Keep all transitions at 0.33s — consistency in motion is as important as consistency in color</li><li>Use transparent PNG vehicle imagery on white backgrounds for product showcases</li><li>Center CTAs horizontally below model names — the vertical rhythm is model → subtitle → buttons</li><li>Maintain the Display/Text font split — Display for hero-scale text only, Text for everything else</li></ul>\n<h3>Don't</h3>\n<ul><li>Add shadows to any element — elevation through shadow contradicts the flat, gallery aesthetic</li><li>Use more than one chromatic color besides the blue CTA — the palette is intentionally monochrome-plus-one</li><li>Apply gradients, patterns, or decorative backgrounds to surfaces — white and photography are the only backgrounds</li><li>Use text larger than 40px on the web — the typography is deliberately restrained even at hero scale</li><li>Add borders to cards or containers — separation is achieved through spacing, not lines</li><li>Use uppercase text transforms — Tesla's confidence is expressed through lowercase calm</li><li>Introduce rounded-pill buttons or large border-radii — the 4px radius is deliberate and precise</li><li>Override the Universal Sans family with other typefaces — cross-platform consistency is a core brand value</li><li>Add hover animations with scale/translate transforms — Tesla's interactions are color-only (background and border transitions)</li><li>Clutter the viewport with multiple CTAs — every screen should have at most two action buttons</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Faça</h3>\n<ul><li>Deixe a fotografia dominar cada tela — o produto É o design</li><li>Use o Electric Blue (<code>#3E6AE1</code>) exclusivamente nos CTAs principais — nunca com fins decorativos</li><li>Mantenha seções com altura de viewport para os principais blocos de conteúdo — uma mensagem por tela</li><li>Mantenha a tipografia só nos pesos 400–500 — nada de negrito, nada de leve, nada de extremos</li><li>Use border-radius de 4px em todos os elementos interativos — precisão acima de ludicidade</li><li>Confie no espaço em branco como sinal de luxo — nunca preencha o espaço disponível só porque está vazio</li><li>Mantenha todas as transições em 0.33s — a consistência no movimento é tão importante quanto a consistência na cor</li><li>Use imagens de veículos em PNG transparente sobre fundos brancos nas vitrines de produto</li><li>Centralize os CTAs na horizontal abaixo dos nomes dos modelos — o ritmo vertical é modelo → subtítulo → botões</li><li>Mantenha a divisão de fontes Display/Text — Display só para texto em escala de hero, Text para todo o resto</li></ul>\n<h3>Não faça</h3>\n<ul><li>Não adicione sombras a nenhum elemento — a elevação por sombra contradiz a estética plana de galeria</li><li>Não use mais de uma cor cromática além do CTA azul — a paleta é intencionalmente monocromática mais um</li><li>Não aplique gradientes, padrões ou fundos decorativos às superfícies — branco e fotografia são os únicos fundos</li><li>Não use texto maior que 40px na web — a tipografia é deliberadamente contida mesmo na escala do hero</li><li>Não adicione bordas a cards ou contêineres — a separação vem do espaçamento, não de linhas</li><li>Não use transformações em caixa-alta — a confiança da Tesla se expressa pela calma das minúsculas</li><li>Não introduza botões em pílula arredondada ou raios grandes — o raio de 4px é deliberado e preciso</li><li>Não substitua a família Universal Sans por outras fontes — a consistência entre plataformas é um valor central da marca</li><li>Não adicione animações de hover com transforms de escala/translação — as interações da Tesla são só de cor (transições de fundo e borda)</li><li>Não sobrecarregue a viewport com vários CTAs — cada tela deve ter no máximo dois botões de ação</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "responsive-behavior",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Responsive Behavior"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Comportamento responsivo"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Name</th><th>Width</th><th>Key Changes</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;768px</td><td>Single-column layout, hamburger nav replaces horizontal labels, hero text scales to ~28px, CTA buttons stack vertically, category cards become full-width</td></tr><tr><td>Tablet</td><td>768-1024px</td><td>2-column nav panel, hero maintains full-viewport height, CTAs remain side-by-side, reduced horizontal padding</td></tr><tr><td>Desktop</td><td>1024-1440px</td><td>Full horizontal nav, 3-column vehicle grid in dropdown, hero at 40px, side-by-side CTAs at 200px/160px width</td></tr><tr><td>Large Desktop</td><td>&gt;1440px</td><td>Content remains centered, hero photography scales to fill wider viewports, max-width container for nav panel content</td></tr></tbody></table>\n<h3>Touch Targets</h3>\n<ul><li>Primary CTA buttons: 200px × 40px minimum (well above 44×44px WCAG requirement)</li><li>Nav buttons: minimum 32px height with 4px 16px padding — adequate touch targets</li><li>Carousel arrows: ~44px square white semi-transparent buttons at viewport edges</li><li>Text links (&quot;Learn&quot;, &quot;Order&quot;): 14px text with adequate line-height spacing for touch</li></ul>\n<h3>Collapsing Strategy</h3>\n<ul><li><strong>Navigation</strong>: Horizontal category buttons (Vehicles, Energy, Charging, Discover, Shop) collapse to a hamburger/drawer menu on mobile</li><li><strong>Hero CTA pair</strong>: Side-by-side buttons on desktop stack vertically on mobile</li><li><strong>Category cards</strong>: 2-up horizontal layout collapses to single-column full-width on mobile</li><li><strong>Vehicle grid</strong>: 3-column grid in desktop nav panel becomes 2-column on tablet, single-column on mobile</li><li><strong>Spacing</strong>: Section vertical padding remains generous (viewport-height sections) but horizontal padding reduces</li></ul>\n<h3>Image Behavior</h3>\n<ul><li>Hero images are fully responsive and fill the entire viewport at every breakpoint</li><li>Vehicle carousel images use <code>object-fit: cover</code> to maintain cinematic composition across widths</li><li>Transparent PNG vehicle images in the nav panel scale proportionally within their grid cells</li><li>Category card images maintain their landscape ratio and clip via <code>overflow: hidden</code> with border-radius</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;768px</td><td>Layout de coluna única, a navegação em hambúrguer substitui os rótulos horizontais, o texto do hero reduz para ~28px, os botões CTA empilham na vertical, os cards de categoria passam a ocupar a largura total</td></tr><tr><td>Tablet</td><td>768-1024px</td><td>Painel de navegação de 2 colunas, o hero mantém a altura de viewport inteira, os CTAs continuam lado a lado, padding horizontal reduzido</td></tr><tr><td>Desktop</td><td>1024-1440px</td><td>Navegação horizontal completa, grade de veículos de 3 colunas no dropdown, hero em 40px, CTAs lado a lado com 200px/160px de largura</td></tr><tr><td>Desktop grande</td><td>&gt;1440px</td><td>O conteúdo continua centralizado, a fotografia do hero se amplia para preencher viewports mais largas, contêiner de largura máxima no conteúdo do painel de navegação</td></tr></tbody></table>\n<h3>Áreas de toque</h3>\n<ul><li>Botões CTA principais: mínimo de 200px × 40px (bem acima da exigência WCAG de 44×44px)</li><li>Botões de navegação: altura mínima de 32px com padding de 4px 16px — áreas de toque adequadas</li><li>Setas do carrossel: botões brancos semitransparentes de ~44px quadrados nas bordas da viewport</li><li>Links de texto (&quot;Learn&quot;, &quot;Order&quot;): texto de 14px com espaçamento de altura de linha adequado para toque</li></ul>\n<h3>Estratégia de recolhimento</h3>\n<ul><li><strong>Navegação</strong>: os botões horizontais de categoria (Vehicles, Energy, Charging, Discover, Shop) recolhem num menu hambúrguer/gaveta no mobile</li><li><strong>Par de CTAs do hero</strong>: botões lado a lado no desktop empilham na vertical no mobile</li><li><strong>Cards de categoria</strong>: o layout horizontal de 2 em linha recolhe em coluna única de largura total no mobile</li><li><strong>Grade de veículos</strong>: a grade de 3 colunas do painel de navegação no desktop passa a 2 colunas no tablet e coluna única no mobile</li><li><strong>Espaçamento</strong>: o padding vertical das seções continua generoso (seções com altura de viewport), mas o padding horizontal diminui</li></ul>\n<h3>Comportamento das imagens</h3>\n<ul><li>As imagens do hero são totalmente responsivas e preenchem a viewport inteira em todos os breakpoints</li><li>As imagens do carrossel de veículos usam <code>object-fit: cover</code> para manter a composição cinematográfica em todas as larguras</li><li>As imagens de veículos em PNG transparente no painel de navegação mudam de escala proporcionalmente dentro das células da grade</li><li>As imagens dos cards de categoria mantêm a proporção paisagem e são recortadas via <code>overflow: hidden</code> com border-radius</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "agent-prompt-guide",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Agent Prompt Guide"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Guia de prompts para agentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Quick Color Reference</h3>\n<ul><li>Primary CTA: &quot;Electric Blue (#3E6AE1)&quot;</li><li>Background: &quot;Pure White (#FFFFFF)&quot;</li><li>Heading text: &quot;Carbon Dark (#171A20)&quot;</li><li>Body text: &quot;Graphite (#393C41)&quot;</li><li>Tertiary text: &quot;Pewter (#5C5E62)&quot;</li><li>Placeholder: &quot;Silver Fog (#8E8E8E)&quot;</li><li>Alternate surface: &quot;Light Ash (#F4F4F4)&quot;</li><li>Dark surface: &quot;Carbon Dark (#171A20)&quot;</li></ul>\n<h3>Example Component Prompts</h3>\n<ul><li>&quot;Create a hero section with a full-viewport background image, centered 'Model Y' title in Universal Sans Display at 40px weight 500 in white, a subtitle line below, and two buttons side by side: a primary Electric Blue (#3E6AE1) 'Order Now' button and a secondary white 'View Inventory' button, both with 4px border-radius and 40px height&quot;</li><li>&quot;Design a navigation bar with a spaced-letter wordmark on the left, five text buttons (14px, weight 500, Carbon Dark #171A20) centered, and three icon buttons on the right, all on a white background with no shadow or border&quot;</li><li>&quot;Build a vehicle card grid with 3 columns, each card showing a transparent-background car image above a model name (17px, weight 500, Carbon Dark) and two text links (14px, weight 400, Pewter #5C5E62) labeled 'Learn' and 'Order', on a pure white surface with no borders or shadows&quot;</li><li>&quot;Create a category card with full-bleed landscape photography, 12px border-radius, overflow hidden, and a white text label ('Sport Sedan') positioned in the top-left corner with no overlay gradient&quot;</li><li>&quot;Design a persistent bottom bar with a chat input ('Ask a Question' placeholder), a send icon, and a secondary CTA ('Schedule a Drive Today') with a teal icon, anchored to the viewport bottom on a white background&quot;</li></ul>\n<h3>Iteration Guide</h3>\n<p>When refining existing screens generated with this design system:</p>\n<ol><li>Focus on ONE component at a time — Tesla's system is so minimal that each element must be pixel-perfect</li><li>Reference specific color names and hex codes from this document — there are only 6-7 colors in the entire system</li><li>Use natural language descriptions, not CSS values — &quot;barely rounded corners&quot; not &quot;border-radius: 4px&quot;</li><li>Describe the desired &quot;feel&quot; alongside specific measurements — &quot;gallery-like silence between sections&quot; communicates the whitespace philosophy better than &quot;margin-bottom: 100vh&quot;</li><li>Always verify that photography is doing the emotional heavy-lifting — if the UI itself feels &quot;designed,&quot; it's too much</li></ol>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Referência rápida de cores</h3>\n<ul><li>CTA principal: &quot;Electric Blue (#3E6AE1)&quot;</li><li>Fundo: &quot;Pure White (#FFFFFF)&quot;</li><li>Texto de títulos: &quot;Carbon Dark (#171A20)&quot;</li><li>Texto de corpo: &quot;Graphite (#393C41)&quot;</li><li>Texto terciário: &quot;Pewter (#5C5E62)&quot;</li><li>Placeholder: &quot;Silver Fog (#8E8E8E)&quot;</li><li>Superfície alternativa: &quot;Light Ash (#F4F4F4)&quot;</li><li>Superfície escura: &quot;Carbon Dark (#171A20)&quot;</li></ul>\n<h3>Exemplos de prompts de componentes</h3>\n<ul><li>&quot;Crie uma seção hero com imagem de fundo de viewport inteira, título 'Model Y' centralizado em Universal Sans Display 40px peso 500 em branco, uma linha de subtítulo abaixo e dois botões lado a lado: um botão primário Electric Blue (#3E6AE1) 'Order Now' e um botão secundário branco 'View Inventory', ambos com border-radius de 4px e 40px de altura&quot;</li><li>&quot;Desenhe uma barra de navegação com logotipo de letras espaçadas à esquerda, cinco botões de texto (14px, peso 500, Carbon Dark #171A20) centralizados e três botões de ícone à direita, tudo sobre fundo branco, sem sombra nem borda&quot;</li><li>&quot;Construa uma grade de cards de veículos de 3 colunas, cada card mostrando uma imagem de carro com fundo transparente acima do nome do modelo (17px, peso 500, Carbon Dark) e dois links de texto (14px, peso 400, Pewter #5C5E62) com os rótulos 'Learn' e 'Order', sobre superfície branca pura, sem bordas nem sombras&quot;</li><li>&quot;Crie um card de categoria com fotografia de paisagem de ponta a ponta, border-radius de 12px, overflow hidden e um rótulo de texto branco ('Sport Sedan') posicionado no canto superior esquerdo, sem gradiente sobreposto&quot;</li><li>&quot;Desenhe uma barra inferior persistente com um campo de chat (placeholder 'Ask a Question'), um ícone de enviar e um CTA secundário ('Schedule a Drive Today') com ícone verde-azulado, ancorada na base da viewport sobre fundo branco&quot;</li></ul>\n<h3>Guia de iteração</h3>\n<p>Ao refinar telas existentes geradas com este design system:</p>\n<ol><li>Foque em UM componente por vez — o sistema da Tesla é tão mínimo que cada elemento precisa ser perfeito até o pixel</li><li>Cite os nomes de cor e códigos hex específicos deste documento — há só 6–7 cores no sistema inteiro</li><li>Use descrições em linguagem natural, não valores CSS — &quot;cantos quase sem arredondamento&quot;, e não &quot;border-radius: 4px&quot;</li><li>Descreva a &quot;sensação&quot; desejada junto com medidas específicas — &quot;silêncio de galeria entre as seções&quot; comunica a filosofia do espaço em branco melhor que &quot;margin-bottom: 100vh&quot;</li><li>Verifique sempre se a fotografia está fazendo o trabalho emocional pesado — se a própria interface parece &quot;desenhada&quot;, é demais</li></ol>"
+    }
+   ]
+  }
+ ]
+}

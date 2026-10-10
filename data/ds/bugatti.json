@@ -1,0 +1,1073 @@
+{
+ "id": "bugatti",
+ "name": "Bugatti",
+ "source": {
+  "name": "Bugatti",
+  "url": "https://open-design.ai/plugins/design-system-bugatti/"
+ },
+ "category": [
+  {
+   "lang": "en-US",
+   "message": "Automotive"
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Automotivo"
+  }
+ ],
+ "intro": [
+  {
+   "lang": "en-US",
+   "message": "Hypercar brand. Cinema-black canvas, monochrome austerity, monumental display type."
+  },
+  {
+   "lang": "pt-BR",
+   "message": "Marca de hipercarros. Tela preta de cinema, austeridade monocromática, tipografia de display monumental."
+  }
+ ],
+ "roles": {
+  "primary": "Accent",
+  "neutral": "Neutral",
+  "secondary": null
+ },
+ "palettes": [
+  {
+   "name": "Accent",
+   "base": "#1b4d8f",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f2f7fe",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#e2eeff",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#c8defe",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#accaf2",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#89ade0",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#6791cb",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#4b78b8",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#3060a2",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#1b4d8f",
+     "exact": true
+    },
+    {
+     "step": 900,
+     "hex": "#00336f",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#001c4a",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Success",
+   "base": "#2fbf71",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#e4ffeb",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#c0fed3",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#89f8b1",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#6ae499",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#2fbf71",
+     "exact": true
+    },
+    {
+     "step": 500,
+     "hex": "#0faa60",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#058f4f",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#00743e",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#045a30",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#004120",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#002810",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Warning",
+   "base": "#d9b45f",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fef6e4",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#ffebbf",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#fcd888",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#d9b45f",
+     "exact": true
+    },
+    {
+     "step": 400,
+     "hex": "#caa652",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#ab8a3d",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#90732e",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#755d23",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#5a481b",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#413314",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#251e0e",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Danger",
+   "base": "#c1121f",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#fdf5f4",
+     "exact": false
+    },
+    {
+     "step": 100,
+     "hex": "#fde7e4",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#ffcfca",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#feb0a8",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#ff7f75",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#eb554f",
+     "exact": false
+    },
+    {
+     "step": 600,
+     "hex": "#d33132",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#c1121f",
+     "exact": true
+    },
+    {
+     "step": 800,
+     "hex": "#900010",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#6a0008",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#430003",
+     "exact": false
+    }
+   ]
+  },
+  {
+   "name": "Neutral",
+   "base": "#999999",
+   "derived": true,
+   "scale": [
+    {
+     "step": 50,
+     "hex": "#f7fbff",
+     "exact": true
+    },
+    {
+     "step": 100,
+     "hex": "#ededed",
+     "exact": false
+    },
+    {
+     "step": 200,
+     "hex": "#dcdcdc",
+     "exact": false
+    },
+    {
+     "step": 300,
+     "hex": "#c7c7c7",
+     "exact": false
+    },
+    {
+     "step": 400,
+     "hex": "#ababab",
+     "exact": false
+    },
+    {
+     "step": 500,
+     "hex": "#999999",
+     "exact": true
+    },
+    {
+     "step": 600,
+     "hex": "#777777",
+     "exact": false
+    },
+    {
+     "step": 700,
+     "hex": "#606060",
+     "exact": false
+    },
+    {
+     "step": 800,
+     "hex": "#4a4a4a",
+     "exact": false
+    },
+    {
+     "step": 900,
+     "hex": "#353535",
+     "exact": false
+    },
+    {
+     "step": 950,
+     "hex": "#1f1f1f",
+     "exact": false
+    }
+   ]
+  }
+ ],
+ "colors": [
+  {
+   "name": "Velvet Black",
+   "hex": "#000000",
+   "role": "(#000000): The entire canvas. Not near-black, not warm black — the pure HTML #000. Bugatti treats this as a display-stand surface, the way a jewelry brand treats a black velvet cloth."
+  },
+  {
+   "name": "Showroom White",
+   "hex": "#ffffff",
+   "role": "(#ffffff): All text, all borders, all CTAs. White is the only color that appears at rest on the chrome. It has the weight of typeset print on a matte museum label."
+  },
+  {
+   "name": "Silver Mist",
+   "hex": "#999999",
+   "role": "(#999999): The single gray in the system. Used for secondary button borders, disabled states, and the thinnest hairline dividers. Treat this as the \"75%-volume\" version of white — never a color, just "
+  }
+ ],
+ "fonts": [
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Headings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Títulos"
+    }
+   ],
+   "kind": "display",
+   "family": "Bugatti Display",
+   "fallbacks": [
+    "ui-sans-serif",
+    "system-ui"
+   ],
+   "stack": "\"Bugatti Display\", ui-sans-serif, system-ui, sans-serif",
+   "italic": false,
+   "source": null
+  },
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Monospace"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Monoespaçada"
+    }
+   ],
+   "kind": "mono",
+   "family": "Bugatti Monospace",
+   "fallbacks": [
+    "ui-sans-serif",
+    "system-ui"
+   ],
+   "stack": "\"Bugatti Monospace\", ui-sans-serif, system-ui, monospace",
+   "italic": false,
+   "source": null
+  },
+  {
+   "role": [
+    {
+     "lang": "en-US",
+     "message": "Primary"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Principal"
+    }
+   ],
+   "kind": "primary",
+   "family": "Bugatti Text Regular",
+   "fallbacks": [
+    "ui-sans-serif",
+    "system-ui"
+   ],
+   "stack": "\"Bugatti Text Regular\", ui-sans-serif, system-ui, sans-serif",
+   "italic": false,
+   "source": null
+  }
+ ],
+ "tokens": [
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Surface"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Superfície"
+    }
+   ],
+   "items": [
+    {
+     "name": "--bg",
+     "value": "#07111f"
+    },
+    {
+     "name": "--surface",
+     "value": "#101d2f"
+    },
+    {
+     "name": "--surface-warm",
+     "value": "#16283f"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Text"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Texto"
+    }
+   ],
+   "items": [
+    {
+     "name": "--fg",
+     "value": "#f7fbff"
+    },
+    {
+     "name": "--fg-2",
+     "value": "#d6e0ee"
+    },
+    {
+     "name": "--muted",
+     "value": "#8fa1b7"
+    },
+    {
+     "name": "--meta",
+     "value": "#b7c7d9"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Border"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Borda"
+    }
+   ],
+   "items": [
+    {
+     "name": "--border",
+     "value": "#2c405c"
+    },
+    {
+     "name": "--border-soft",
+     "value": "#1c2d44"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Accent"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Destaque"
+    }
+   ],
+   "items": [
+    {
+     "name": "--accent",
+     "value": "#1b4d8f"
+    },
+    {
+     "name": "--accent-on",
+     "value": "#ffffff"
+    },
+    {
+     "name": "--accent-hover",
+     "value": "color-mix(in oklab, var(--accent), black 8%)"
+    },
+    {
+     "name": "--accent-active",
+     "value": "color-mix(in oklab, var(--accent), black 14%)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Semantic"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Semântico"
+    }
+   ],
+   "items": [
+    {
+     "name": "--success",
+     "value": "#2fbf71"
+    },
+    {
+     "name": "--warn",
+     "value": "#d9b45f"
+    },
+    {
+     "name": "--danger",
+     "value": "#c1121f"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Typography"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tipografia"
+    }
+   ],
+   "items": []
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Type scale"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Escala tipográfica"
+    }
+   ],
+   "items": [
+    {
+     "name": "--text-xs",
+     "value": "12px"
+    },
+    {
+     "name": "--text-sm",
+     "value": "14px"
+    },
+    {
+     "name": "--text-base",
+     "value": "16px"
+    },
+    {
+     "name": "--text-lg",
+     "value": "19px"
+    },
+    {
+     "name": "--text-xl",
+     "value": "26px"
+    },
+    {
+     "name": "--text-2xl",
+     "value": "42px"
+    },
+    {
+     "name": "--text-3xl",
+     "value": "64px"
+    },
+    {
+     "name": "--text-4xl",
+     "value": "88px"
+    },
+    {
+     "name": "--leading-body",
+     "value": "1.58"
+    },
+    {
+     "name": "--leading-tight",
+     "value": "1"
+    },
+    {
+     "name": "--tracking-display",
+     "value": "-0.015em"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Spacing"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Espaçamento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--space-1",
+     "value": "4px"
+    },
+    {
+     "name": "--space-2",
+     "value": "8px"
+    },
+    {
+     "name": "--space-3",
+     "value": "12px"
+    },
+    {
+     "name": "--space-4",
+     "value": "16px"
+    },
+    {
+     "name": "--space-5",
+     "value": "20px"
+    },
+    {
+     "name": "--space-6",
+     "value": "24px"
+    },
+    {
+     "name": "--space-8",
+     "value": "32px"
+    },
+    {
+     "name": "--space-12",
+     "value": "48px"
+    },
+    {
+     "name": "--section-y-desktop",
+     "value": "120px"
+    },
+    {
+     "name": "--section-y-tablet",
+     "value": "84px"
+    },
+    {
+     "name": "--section-y-phone",
+     "value": "60px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Radius"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Raio"
+    }
+   ],
+   "items": [
+    {
+     "name": "--radius-sm",
+     "value": "8px"
+    },
+    {
+     "name": "--radius-md",
+     "value": "14px"
+    },
+    {
+     "name": "--radius-lg",
+     "value": "22px"
+    },
+    {
+     "name": "--radius-pill",
+     "value": "9999px"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Elevação"
+    }
+   ],
+   "items": [
+    {
+     "name": "--elev-flat",
+     "value": "none"
+    },
+    {
+     "name": "--elev-ring",
+     "value": "0 0 0 1px var(--border)"
+    },
+    {
+     "name": "--elev-raised",
+     "value": "0 28px 86px rgba(0, 0, 0, 0.46)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Focus"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Foco"
+    }
+   ],
+   "items": [
+    {
+     "name": "--focus-ring",
+     "value": "0 0 0 4px rgba(183, 199, 217, 0.28)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Motion"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Movimento"
+    }
+   ],
+   "items": [
+    {
+     "name": "--motion-fast",
+     "value": "170ms"
+    },
+    {
+     "name": "--motion-base",
+     "value": "280ms"
+    },
+    {
+     "name": "--ease-standard",
+     "value": "cubic-bezier(0.16, 1, 0.3, 1)"
+    }
+   ]
+  },
+  {
+   "group": [
+    {
+     "lang": "en-US",
+     "message": "Layout"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Layout"
+    }
+   ],
+   "items": [
+    {
+     "name": "--container-max",
+     "value": "1200px"
+    },
+    {
+     "name": "--container-gutter-desktop",
+     "value": "42px"
+    },
+    {
+     "name": "--container-gutter-tablet",
+     "value": "30px"
+    },
+    {
+     "name": "--container-gutter-phone",
+     "value": "20px"
+    }
+   ]
+  }
+ ],
+ "vars": {
+  "--primary-500": "#6791cb",
+  "--primary-500-fg": "#111111",
+  "--neutral-400": "#ababab",
+  "--neutral-400-fg": "#111111",
+  "--bg": "#07111f",
+  "--surface": "#101d2f",
+  "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+  "--fg": "#f7fbff",
+  "--fg-soft": "#d6e0ee",
+  "--muted": "#8fa1b7",
+  "--border": "#2c405c",
+  "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
+  "--accent": "#1b4d8f",
+  "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+  "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
+  "--accent-fg": "#ffffff",
+  "--solid": "var(--accent-strong)",
+  "--solid-fg": "#ffffff",
+  "--ok": "#2fbf71",
+  "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
+  "--warn": "#d9b45f",
+  "--warn-weak": "color-mix(in oklab, var(--warn) 14%, var(--bg))",
+  "--danger": "#c1121f",
+  "--danger-weak": "color-mix(in oklab, var(--danger) 12%, var(--bg))",
+  "--bw": "1px",
+  "--radius": "14px",
+  "--radius-sm": "8px",
+  "--radius-pill": "9999px",
+  "--shadow-card": "0 28px 86px rgba(0, 0, 0, 0.46)",
+  "--shadow-pop": "0 14px 40px rgba(0, 0, 0, 0.22)",
+  "--font-display": "\"Bugatti Display\", ui-sans-serif, system-ui, sans-serif",
+  "--font-body": "\"Bugatti Text Regular\", ui-sans-serif, system-ui, sans-serif",
+  "--font-code": "\"Bugatti Monospace\", ui-sans-serif, system-ui, monospace",
+  "--font-mono": "\"Bugatti Monospace\", ui-sans-serif, system-ui, monospace",
+  "--display-tracking": "-0.02em",
+  "--heading-weight": "600",
+  "--kicker-transform": "uppercase",
+  "--kicker-spacing": "0.08em",
+  "--hero-ground": "var(--surface-2)",
+  "--hero-ink": "var(--fg)"
+ },
+ "sections": [
+  {
+   "id": "visual-theme-atmosphere",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Visual Theme & Atmosphere"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Tema visual e atmosfera"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<p>Bugatti.com does not behave like a website — it behaves like a feature-length car film that a visitor happens to be standing inside. The canvas is pure <code>#000000</code>, the only color that appears at rest is white, and the entire page is carried by full-bleed hero video and photography with a single typographic moment laid over the top. There are no cards, no grids, no promotional modules, no newsletter signups, no three-column editorial layouts. It is one continuous cinema-black channel, interrupted only by the cars themselves and a few pill-shaped calls to action that quietly say things like &quot;EXPLORE OUR OPPORTUNITIES&quot; in ALL CAPS monospace.</p>\n<p>The single most distinctive move in the entire system is <strong>scale</strong>: the <code>Bugatti Display</code> typeface runs at <strong>288px</strong> at hero moments. Two hundred and eighty-eight pixels. That is not a typo — the dembrandt sweep extracted a heading style rendered at an 18rem size, ALL CAPS, line-height 1.0, meant to be read the way you read a brand mark on the front of a Chiron: from across a showroom floor. At 288px the headline is no longer text, it is architecture. The secondary display scale of 60px feels almost miniature next to it, and the 36px mid-display feels like fine print. This typographic hierarchy is the most extreme of any production brand website in this catalog, and it is what gives Bugatti.com its sculptural, couture-showroom presence.</p>\n<p>The other signature is <strong>monochromatic austerity</strong>. The entire homepage uses exactly three colors at rest: <code>#000000</code>, <code>#ffffff</code>, and <code>#999999</code> (mid gray for disabled/tertiary states). There is no accent, no brand blue, no hazard color, no commerce orange, no gradient wash. The designers have made a conscious decision that Bugatti's color system should be the car paint itself — the page is a black velvet display stand, and the only color that exists is whatever blue-on-black lacquer the hero vehicle happens to be wearing today. This discipline is the exact opposite of PlayStation's PlayStation Blue or The Verge's Jelly Mint: Bugatti refuses to compete with its own product.</p>\n<p><strong>Key Characteristics:</strong></p>\n<ul><li>Cinema-black <code>#000000</code> canvas for the entire page — no gradients, no tints, no accents</li><li>288px <code>Bugatti Display</code> ALL-CAPS headline — the most extreme display scale in the catalog</li><li>Three-font custom family: <code>Bugatti Display</code> (sculptural), <code>Bugatti Monospace</code> (UI labels), <code>Bugatti Text Regular</code> (body)</li><li>Monochrome-only palette: black, white, and a single <code>#999999</code> mid gray for tertiary/disabled</li><li>Pill buttons at <code>9999px</code> radius — transparent with a 1px white border, padding <code>12px 24px</code></li><li>Video- and photography-first page — the chrome is almost silent so the product can speak</li><li>Mono UPPERCASE labels with 1.2–1.4px letter-spacing on every CTA, navigation link, and caption</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<p>O Bugatti.com não se comporta como um site — ele se comporta como um longa-metragem sobre carros dentro do qual o visitante, por acaso, está de pé. A tela é <code>#000000</code> puro, a única cor que aparece em repouso é o branco e a página inteira é sustentada por vídeo e fotografia de hero de ponta a ponta, com um único momento tipográfico sobreposto. Não há cards, grades, módulos promocionais, inscrições em newsletter nem layouts editoriais de três colunas. É um canal contínuo de preto de cinema, interrompido apenas pelos próprios carros e por alguns CTAs em formato de pílula que dizem baixinho coisas como &quot;EXPLORE OUR OPPORTUNITIES&quot; em monoespaçada TODA EM MAIÚSCULAS.</p>\n<p>O gesto mais marcante de todo o sistema é a <strong>escala</strong>: a fonte <code>Bugatti Display</code> chega a <strong>288px</strong> nos momentos de hero. Duzentos e oitenta e oito pixels. Não é erro de digitação — a varredura do dembrandt extraiu um estilo de título renderizado num tamanho de 18rem, TODO EM MAIÚSCULAS, com altura de linha de 1.0, feito para ser lido como se lê a marca na frente de um Chiron: do outro lado do salão de exposição. Em 288px, o título deixa de ser texto e vira arquitetura. A escala de display secundária, de 60px, parece quase miniatura ao lado dele, e o display intermediário de 36px parece letra miúda. Essa hierarquia tipográfica é a mais extrema de todos os sites de marca de produção deste catálogo, e é o que dá ao Bugatti.com sua presença escultural de showroom de alta-costura.</p>\n<p>A outra assinatura é a <strong>austeridade monocromática</strong>. A home inteira usa exatamente três cores em repouso: <code>#000000</code>, <code>#ffffff</code> e <code>#999999</code> (cinza intermediário para estados desabilitados/terciários). Não há destaque, azul de marca, cor de alerta, laranja de comércio nem lavagem em gradiente. Os designers decidiram conscientemente que o sistema de cores da Bugatti deve ser a própria pintura do carro — a página é um expositor de veludo preto, e a única cor que existe é a laca azul sobre preto que o veículo do hero estiver usando naquele dia. Essa disciplina é o exato oposto do PlayStation Blue da PlayStation ou do Jelly Mint do The Verge: a Bugatti se recusa a competir com o próprio produto.</p>\n<p><strong>Características principais:</strong></p>\n<ul><li>Tela em preto de cinema <code>#000000</code> na página inteira — sem gradientes, tons ou destaques</li><li>Título em <code>Bugatti Display</code> de 288px TODO EM MAIÚSCULAS — a escala de display mais extrema do catálogo</li><li>Família personalizada de três fontes: <code>Bugatti Display</code> (escultural), <code>Bugatti Monospace</code> (rótulos de interface), <code>Bugatti Text Regular</code> (corpo)</li><li>Paleta só monocromática: preto, branco e um único cinza intermediário <code>#999999</code> para terciário/desabilitado</li><li>Botões em pílula com raio de <code>9999px</code> — transparentes, com borda branca de 1px, padding de <code>12px 24px</code></li><li>Página com vídeo e fotografia em primeiro lugar — o cromo é quase silencioso para que o produto fale</li><li>Rótulos mono em MAIÚSCULAS com 1.2–1.4px de espaçamento entre letras em todo CTA, link de navegação e legenda</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "color-palette-roles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Color Palette & Roles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Paleta de cores e papéis"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Primary</h3>\n<ul><li><strong>Velvet Black</strong> (<code>#000000</code>): The entire canvas. Not near-black, not warm black — the pure HTML <code>#000</code>. Bugatti treats this as a display-stand surface, the way a jewelry brand treats a black velvet cloth.</li><li><strong>Showroom White</strong> (<code>#ffffff</code>): All text, all borders, all CTAs. White is the only color that appears at rest on the chrome. It has the weight of typeset print on a matte museum label.</li></ul>\n<h3>Secondary &amp; Accent</h3>\n<ul><li><strong>Silver Mist</strong> (<code>#999999</code>): The single gray in the system. Used for secondary button borders, disabled states, and the thinnest hairline dividers. Treat this as the &quot;75%-volume&quot; version of white — never a color, just a quieter version of the same voice.</li></ul>\n<h3>Surface &amp; Background</h3>\n<ul><li><strong>Velvet Black</strong> (<code>#000000</code>): The only surface. There is no secondary surface, no elevated card, no modal backdrop. If something needs to feel &quot;separate&quot;, it sits on the same black and is marked with a thin <code>#999999</code> border — no color change.</li></ul>\n<h3>Neutrals &amp; Text</h3>\n<ul><li><strong>Primary Text</strong> (<code>#ffffff</code>): All headlines, body copy, button labels, and navigation items.</li><li><strong>Tertiary Text</strong> (<code>#999999</code>): Disclaimer text, placeholder labels, and the faintest supporting metadata. Used sparingly — Bugatti prefers to hide secondary content rather than dim it.</li></ul>\n<h3>Semantic &amp; Accent</h3>\n<ul><li><strong>Tailwind Ring Leak</strong> (<code>rgba(59, 130, 246, 0.5)</code>): A Tailwind default <code>--tw-ring-color</code> leaks into the extracted tokens from the build system — this is <strong>not</strong> part of the Bugatti brand palette. Ignore it. If a real focus state is needed, use a 1px <code>#ffffff</code> ring instead.</li></ul>\n<h3>Gradient System</h3>\n<p>None. There are zero decorative gradients on Bugatti.com. The only &quot;gradient&quot; on the page is whatever natural light gradient exists inside the hero video of the car itself. The brand refuses to apply any chrome gradient that could compete with the atmospheric lighting of the product photography.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Primárias</h3>\n<ul><li><strong>Velvet Black</strong> (<code>#000000</code>): a tela inteira. Não é quase preto nem preto quente — é o <code>#000</code> puro do HTML. A Bugatti o trata como a superfície de um expositor, do jeito que uma joalheria trata um pano de veludo preto.</li><li><strong>Showroom White</strong> (<code>#ffffff</code>): todo o texto, todas as bordas, todos os CTAs. O branco é a única cor que aparece em repouso no cromo. Tem o peso de um texto impresso numa etiqueta fosca de museu.</li></ul>\n<h3>Secundárias e de destaque</h3>\n<ul><li><strong>Silver Mist</strong> (<code>#999999</code>): o único cinza do sistema. Usado em bordas de botões secundários, estados desabilitados e nos divisores finíssimos mais finos. Trate-o como a versão &quot;a 75% do volume&quot; do branco — nunca uma cor, só uma versão mais baixa da mesma voz.</li></ul>\n<h3>Superfície e fundo</h3>\n<ul><li><strong>Velvet Black</strong> (<code>#000000</code>): a única superfície. Não há superfície secundária, card elevado nem fundo de modal. Se algo precisa parecer &quot;separado&quot;, ele fica sobre o mesmo preto e é marcado por uma fina borda <code>#999999</code> — sem mudança de cor.</li></ul>\n<h3>Neutros e texto</h3>\n<ul><li><strong>Texto principal</strong> (<code>#ffffff</code>): todos os títulos, texto de corpo, rótulos de botões e itens de navegação.</li><li><strong>Texto terciário</strong> (<code>#999999</code>): texto de aviso legal, rótulos de placeholder e os metadados de apoio mais tênues. Usado com parcimônia — a Bugatti prefere esconder o conteúdo secundário a esmaecê-lo.</li></ul>\n<h3>Semânticas e de destaque</h3>\n<ul><li><strong>Vazamento do anel do Tailwind</strong> (<code>rgba(59, 130, 246, 0.5)</code>): um <code>--tw-ring-color</code> padrão do Tailwind vaza do sistema de build para os tokens extraídos — isso <strong>não</strong> faz parte da paleta da marca Bugatti. Ignore-o. Se um estado de foco real for necessário, use um anel <code>#ffffff</code> de 1px.</li></ul>\n<h3>Sistema de gradientes</h3>\n<p>Nenhum. Há zero gradientes decorativos no Bugatti.com. O único &quot;gradiente&quot; da página é o gradiente de luz natural que existir dentro do vídeo de hero do próprio carro. A marca se recusa a aplicar qualquer gradiente no cromo que possa competir com a iluminação atmosférica da fotografia do produto.</p>"
+    }
+   ]
+  },
+  {
+   "id": "typography-rules",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Typography Rules"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Regras de tipografia"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Font Family</h3>\n<ul><li><strong>Bugatti Display</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. A proprietary custom display typeface used only at very large sizes for hero and mid-display headlines. Designed to be read at architectural scale — at 288px, its geometry doubles as a visual element, not just text. The face carries a faint hint of early-20th-century Grand Prix typography (the period when Ettore Bugatti was racing) without ever becoming nostalgic.</li><li><strong>Bugatti Monospace</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. A custom monospaced face reserved for every UI label on the site. It handles all navigation links, all button labels, all captions, and all UPPERCASE metadata. The strict mono tracking (1.2–1.4px letter-spacing on all usages) gives the UI the appearance of a technical dossier or dashboard telemetry printout — appropriate for a company that builds 1600-horsepower hypercars.</li><li><strong>Bugatti Text Regular</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. The body copy workhorse, used for the rare paragraph and inline reading text. Weights and styles are restrained — this font exists to be invisible when the display type is shouting and the monospace is whispering.</li></ul>\n<h3>Hierarchy</h3>\n<table><thead><tr><th>Role</th><th>Font</th><th>Size</th><th>Weight</th><th>Line Height</th><th>Letter Spacing</th><th>Notes</th></tr></thead><tbody><tr><td>Hero Display (Monumental)</td><td>Bugatti Display</td><td>288px / 18.00rem</td><td>400</td><td>1.00</td><td>—</td><td>ALL CAPS — the largest display scale in this catalog, architectural in presence</td></tr><tr><td>Mid Display (Feature)</td><td>Bugatti Display</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>1.4px</td><td>Feature-panel headlines, ALL CAPS optional</td></tr><tr><td>Mid Display (Subfeature)</td><td>Bugatti Display</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>—</td><td>Secondary feature headlines</td></tr><tr><td>Section Heading</td><td>Bugatti Display</td><td>36px / 2.25rem</td><td>400</td><td>1.11</td><td>—</td><td>Section-level title</td></tr><tr><td>Monumental Mono Headline</td><td>Bugatti Monospace</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>—</td><td>UPPERCASE — reserved for technical/section labels at hero scale</td></tr><tr><td>Body Small (Display)</td><td>Bugatti Display</td><td>16px / 1.00rem</td><td>400</td><td>1.50</td><td>—</td><td>Display face used sparingly at body size for marketing copy</td></tr><tr><td>Lead Body</td><td>Bugatti Text Regular</td><td>20px / 1.25rem</td><td>400</td><td>1.40</td><td>—</td><td>Paragraph lead</td></tr><tr><td>Body Regular</td><td>Bugatti Text Regular</td><td>16px / 1.00rem</td><td>400</td><td>1.50</td><td>—</td><td>Standard reading body</td></tr><tr><td>Body Compact</td><td>Bugatti Text Regular</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Dense body</td></tr><tr><td>UI Link (Caps)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>UPPERCASE — primary navigation and primary link style</td></tr><tr><td>UI Link (Mono Plain)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Plain-case mono link — rare, used for disclaimer links</td></tr><tr><td>Button Label (CAPS)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>UPPERCASE — primary pill-button label</td></tr><tr><td>Button Label (Compact)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>1.2px</td><td>UPPERCASE — small pill-button label</td></tr><tr><td>Button Label (Unstyled)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>—</td><td>Plain-case mono — footer microbutton</td></tr><tr><td>Caption CAPS Wide</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>UPPERCASE — section eyebrows and tech-spec labels</td></tr><tr><td>Caption Plain Wide</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>Plain-case with 1.4px tracking — the &quot;mid-formal&quot; register</td></tr><tr><td>Caption Plain</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Plain mono caption</td></tr><tr><td>Caption Micro (Text)</td><td>Bugatti Text Regular</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Body-face caption</td></tr><tr><td>Caption Micro (CAPS)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>1.2px</td><td>UPPERCASE — smallest tagging label</td></tr><tr><td>Caption Micro (Plain)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>—</td><td>Smallest plain-case mono</td></tr></tbody></table>\n<h3>Principles</h3>\n<ul><li><strong>Bugatti Display is a sculpture, not a font.</strong> If you find yourself typesetting body copy or a button in Bugatti Display, you're using the wrong tool. Reserve this face for headlines at <strong>36px minimum</strong>, ideally 60px+, and at least once per page use it at 200px+ to create the monumental effect the brand is built around.</li><li><strong>Bugatti Monospace owns the UI.</strong> Every navigation link, every button, every caption, every eyebrow runs in Bugatti Monospace — usually UPPERCASE with 1.2–1.4px tracking. This mono-caps discipline is what makes the UI read like a Grand Prix telemetry panel rather than a luxury shopping cart.</li><li><strong>Bugatti Text Regular is invisible.</strong> It appears only in short paragraphs and inline reading copy, usually at 14–20px. It is never used for labels, buttons, or display.</li><li><strong>There is no bold.</strong> Every weight in the extracted tokens is regular (400). Bugatti does not use weight for hierarchy — it uses scale. When you need emphasis, make the type bigger, not heavier.</li><li><strong>Tracking has two registers.</strong> Mono caps always carry 1.2–1.4px letter-spacing. Display type at 60px+ sometimes carries 1.4px tracking at the hero scale. Body type has no tracking.</li><li><strong>Line-height is brutally tight at display.</strong> Every Bugatti Display usage runs at line-height 1.00 or 1.11. Headlines touch each other when they wrap — that's the design. Do not relax the leading.</li></ul>\n<h3>Note on Font Substitutes</h3>\n<p>The 1.00 line-height and 288px display scale both assume the <strong>proprietary Bugatti Display face</strong>, which is drawn with compact vertical metrics purpose-built for architectural scale. If you substitute with open-source extended geometric displays like <strong>Unbounded</strong>, <strong>Big Shoulders Display</strong>, or <strong>Archivo Black</strong>, make two adjustments: (1) <strong>loosen line-height to ~1.05–1.10</strong> to prevent ascender collisions, and (2) <strong>cap the maximum display size at ~104–128px</strong> on most viewports — these substitutes have wider horizontal metrics than Bugatti Display, so a 288px monumental headline will wrap across 4+ lines and overwhelm the layout. Reserve the 200px+ scale only for single-word monumental moments (e.g., &quot;BUGATTI&quot; alone). Bugatti Monospace substitutes (Space Mono, JetBrains Mono) and Bugatti Text Regular substitutes (Inter, DM Sans) work at the token values without adjustment.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Família tipográfica</h3>\n<ul><li><strong>Bugatti Display</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. Uma fonte de display personalizada e proprietária, usada só em tamanhos muito grandes, nos títulos de hero e de display intermediário. Projetada para ser lida em escala arquitetônica — em 288px, sua geometria também funciona como elemento visual, e não só como texto. A fonte carrega um leve eco da tipografia dos Grand Prix do início do século XX (a época em que Ettore Bugatti corria) sem jamais ficar nostálgica.</li><li><strong>Bugatti Monospace</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. Uma fonte monoespaçada personalizada reservada a todos os rótulos de interface do site. Ela cuida de todos os links de navegação, rótulos de botões, legendas e metadados em MAIÚSCULAS. O tracking mono rigoroso (1.2–1.4px de espaçamento entre letras em todos os usos) dá à interface a aparência de um dossiê técnico ou de uma impressão de telemetria de painel — apropriado para uma empresa que constrói hipercarros de 1600 cavalos.</li><li><strong>Bugatti Text Regular</strong> — fallback: <code>ui-sans-serif</code>, <code>system-ui</code>. A fonte burro de carga do texto de corpo, usada nos raros parágrafos e no texto de leitura inline. Os pesos e estilos são contidos — essa fonte existe para ser invisível enquanto o display grita e a monoespaçada sussurra.</li></ul>\n<h3>Hierarquia</h3>\n<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display do hero (monumental)</td><td>Bugatti Display</td><td>288px / 18.00rem</td><td>400</td><td>1.00</td><td>—</td><td>TODO EM MAIÚSCULAS — a maior escala de display deste catálogo, de presença arquitetônica</td></tr><tr><td>Display intermediário (destaque)</td><td>Bugatti Display</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>1.4px</td><td>Títulos de painéis de destaque, MAIÚSCULAS opcionais</td></tr><tr><td>Display intermediário (subdestaque)</td><td>Bugatti Display</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>—</td><td>Títulos de destaque secundários</td></tr><tr><td>Título de seção</td><td>Bugatti Display</td><td>36px / 2.25rem</td><td>400</td><td>1.11</td><td>—</td><td>Título no nível de seção</td></tr><tr><td>Título mono monumental</td><td>Bugatti Monospace</td><td>60px / 3.75rem</td><td>400</td><td>1.00</td><td>—</td><td>MAIÚSCULAS — reservado a rótulos técnicos/de seção em escala de hero</td></tr><tr><td>Corpo pequeno (display)</td><td>Bugatti Display</td><td>16px / 1.00rem</td><td>400</td><td>1.50</td><td>—</td><td>Fonte de display usada com parcimônia em tamanho de corpo para texto de marketing</td></tr><tr><td>Corpo de abertura</td><td>Bugatti Text Regular</td><td>20px / 1.25rem</td><td>400</td><td>1.40</td><td>—</td><td>Abertura de parágrafo</td></tr><tr><td>Corpo regular</td><td>Bugatti Text Regular</td><td>16px / 1.00rem</td><td>400</td><td>1.50</td><td>—</td><td>Corpo de leitura padrão</td></tr><tr><td>Corpo compacto</td><td>Bugatti Text Regular</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Corpo denso</td></tr><tr><td>Link de interface (maiúsculas)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>MAIÚSCULAS — navegação principal e estilo de link principal</td></tr><tr><td>Link de interface (mono simples)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Link mono em caixa normal — raro, usado em links de aviso legal</td></tr><tr><td>Rótulo de botão (maiúsculas)</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>MAIÚSCULAS — rótulo do botão em pílula principal</td></tr><tr><td>Rótulo de botão (compacto)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>1.2px</td><td>MAIÚSCULAS — rótulo de pequeno botão em pílula</td></tr><tr><td>Rótulo de botão (sem estilo)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>—</td><td>Mono em caixa normal — microbotão do rodapé</td></tr><tr><td>Legenda maiúsculas larga</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>MAIÚSCULAS — sobretítulos de seção e rótulos de especificações técnicas</td></tr><tr><td>Legenda simples larga</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>1.4px</td><td>Caixa normal com tracking de 1.4px — o registro &quot;semiformal&quot;</td></tr><tr><td>Legenda simples</td><td>Bugatti Monospace</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Legenda mono simples</td></tr><tr><td>Microlegenda (texto)</td><td>Bugatti Text Regular</td><td>14px / 0.88rem</td><td>400</td><td>1.43</td><td>—</td><td>Legenda na fonte de corpo</td></tr><tr><td>Microlegenda (maiúsculas)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>1.2px</td><td>MAIÚSCULAS — o menor rótulo de marcação</td></tr><tr><td>Microlegenda (simples)</td><td>Bugatti Monospace</td><td>12px / 0.75rem</td><td>400</td><td>1.33</td><td>—</td><td>A menor mono em caixa normal</td></tr></tbody></table>\n<h3>Princípios</h3>\n<ul><li><strong>A Bugatti Display é uma escultura, não uma fonte.</strong> Se você está compondo texto de corpo ou um botão em Bugatti Display, está usando a ferramenta errada. Reserve essa fonte para títulos de <strong>no mínimo 36px</strong>, idealmente 60px+, e use-a pelo menos uma vez por página em 200px+ para criar o efeito monumental em torno do qual a marca é construída.</li><li><strong>A Bugatti Monospace é dona da interface.</strong> Todo link de navegação, botão, legenda e sobretítulo usa Bugatti Monospace — geralmente em MAIÚSCULAS com tracking de 1.2–1.4px. É essa disciplina de mono em maiúsculas que faz a interface se ler como um painel de telemetria de Grand Prix, e não como um carrinho de compras de luxo.</li><li><strong>A Bugatti Text Regular é invisível.</strong> Ela aparece só em parágrafos curtos e texto de leitura inline, geralmente em 14–20px. Nunca é usada em rótulos, botões ou display.</li><li><strong>Não existe negrito.</strong> Todos os pesos nos tokens extraídos são regular (400). A Bugatti não usa peso para hierarquia — usa escala. Quando precisar de ênfase, aumente o texto, não o peso.</li><li><strong>O tracking tem dois registros.</strong> A mono em maiúsculas sempre carrega 1.2–1.4px de espaçamento entre letras. O display a partir de 60px às vezes carrega tracking de 1.4px na escala do hero. O texto de corpo não tem tracking.</li><li><strong>A altura de linha é brutalmente justa no display.</strong> Todo uso da Bugatti Display tem altura de linha de 1.00 ou 1.11. Os títulos se tocam quando quebram linha — esse é o design. Não afrouxe a entrelinha.</li></ul>\n<h3>Nota sobre fontes substitutas</h3>\n<p>A altura de linha de 1.00 e a escala de display de 288px pressupõem a <strong>fonte proprietária Bugatti Display</strong>, desenhada com métricas verticais compactas, feitas sob medida para a escala arquitetônica. Se você a substituir por displays geométricos estendidos open source como <strong>Unbounded</strong>, <strong>Big Shoulders Display</strong> ou <strong>Archivo Black</strong>, faça dois ajustes: (1) <strong>afrouxe a altura de linha para ~1.05–1.10</strong> para evitar colisões de ascendentes e (2) <strong>limite o tamanho máximo de display a ~104–128px</strong> na maioria das viewports — essas substitutas têm métricas horizontais mais largas que a Bugatti Display, então um título monumental de 288px vai quebrar em 4+ linhas e dominar o layout. Reserve a escala de 200px+ só a momentos monumentais de uma única palavra (ex.: &quot;BUGATTI&quot; sozinho). As substitutas da Bugatti Monospace (Space Mono, JetBrains Mono) e da Bugatti Text Regular (Inter, DM Sans) funcionam com os valores dos tokens sem ajuste.</p>"
+    }
+   ]
+  },
+  {
+   "id": "component-stylings",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Component Stylings"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Estilo dos componentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Buttons</h3>\n<p><strong>Primary — White Outlined Pill</strong></p>\n<ul><li>Background: transparent</li><li>Text: <code>#ffffff</code>, Bugatti Monospace 14px / 400 / 1.4px tracking, UPPERCASE</li><li>Border: <code>1px solid #ffffff</code></li><li>Border radius: <code>9999px</code> — full pill</li><li>Padding: <code>12px 24px</code></li><li>Outline: <code>rgb(255, 255, 255) none 0px</code> at rest</li><li>Hover: likely background fill to <code>#ffffff</code> with black text, or a subtle opacity dim (the extracted token set did not capture a bespoke hover — treat this as a safe assumption since the default Bugatti interaction is restraint)</li><li>Active: opacity drop to ~0.7</li><li>Focus: use a 1px <code>#ffffff</code> outer ring via <code>box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #000000</code> for contrast</li><li>Transition: 200–300ms ease on background/color — quiet, never bouncy</li></ul>\n<p><strong>Secondary — Gray Rounded Button</strong></p>\n<ul><li>Background: transparent</li><li>Text: <code>#ffffff</code>, Bugatti Monospace 12px / 400 / 1.2px tracking, UPPERCASE</li><li>Border: <code>1px solid #999999</code> (Silver Mist)</li><li>Border radius: <code>6px</code> — subtle corner, the only non-pill non-zero radius in the system</li><li>Padding: <code>6px 12px</code></li><li>Hover: border transitions to <code>#ffffff</code>, text stays white</li><li>Active: opacity 0.7</li><li>Used for compact utility buttons (menu toggles, closed-dialog buttons)</li></ul>\n<p><strong>Ghost — Unbordered Link Button</strong></p>\n<ul><li>Background: transparent</li><li>Text: <code>#ffffff</code>, Bugatti Monospace 12px / 400 — plain or UPPERCASE</li><li>No border, no padding beyond inline</li><li>Used in the footer and tertiary nav</li></ul>\n<h3>Cards &amp; Containers</h3>\n<ul><li><strong>There are no cards.</strong> Bugatti.com has no card component. The entire page is a sequence of full-bleed media blocks with a headline and optional CTA overlaid — more akin to a film chapter than a card grid.</li><li>The closest thing to a &quot;container&quot; is the rare bordered section that uses a <code>1px solid #999999</code> frame, a <code>6px</code> border radius, and <code>#000000</code> interior. These are reserved for cookie-consent notices and modal-style dialogues, not editorial content.</li><li>Hover state on media blocks: none. The video plays, the CTA becomes clickable, and that is the entire interaction vocabulary.</li></ul>\n<h3>Inputs &amp; Forms</h3>\n<ul><li>The extracted tokens captured <strong>zero input styles</strong> (<code>⚠ Inputs: 0 styles</code>). This is because Bugatti.com has essentially no forms on the homepage — no newsletter signup, no search bar, no contact form, no email capture. When forms do appear (on deeper pages), apply these defaults consistent with the rest of the system:</li></ul>\n<p>  - <strong>Default</strong>: <code>#000000</code> background, <code>1px solid #999999</code> border, <code>6px</code> radius, <code>#ffffff</code> text in Bugatti Text Regular 16px, placeholder <code>#999999</code>.   - <strong>Focus</strong>: border transitions to <code>#ffffff</code>, no glow — the border change IS the focus signal.   - <strong>Error</strong>: border stays white; add a <code>#999999</code> inline message below. Bugatti does not use red error colors — it stays in the monochrome palette.   - <strong>Transition</strong>: ~250ms ease on border-color.</p>\n<h3>Navigation</h3>\n<ul><li><strong>Top nav</strong>: black (<code>#000000</code>) thin strip with the Bugatti &quot;EB&quot; monogram or full &quot;BUGATTI&quot; wordmark centered, a hamburger &quot;MENU&quot; link left, and a &quot;STORE&quot; link right. Both nav links are Bugatti Monospace 14px UPPERCASE with 1.4px tracking.</li><li><strong>Logo</strong>: 128×29px at desktop scale — smaller than nearly every other brand in this catalog. Bugatti does not need to shout its name.</li><li><strong>Hover on nav links</strong>: color stays <code>#ffffff</code> — the hover signal is a subtle text-decoration underline or an opacity shift to ~0.75. No color change.</li><li><strong>Mobile</strong>: the full nav collapses to just three elements — &quot;MENU&quot;, the wordmark, and &quot;STORE&quot; — which is basically the desktop layout minus the separator spacing.</li><li><strong>Sticky behavior</strong>: the nav is pinned at the top on scroll and stays black-on-black. When it overlaps a dark video, it becomes nearly invisible, which is by design.</li></ul>\n<h3>Image &amp; Video Treatment</h3>\n<ul><li><strong>Aspect ratios</strong>: 16:9 and 21:9 for hero video, 4:3 for mid-feature photography, 1:1 for rare portrait shots.</li><li><strong>Corners</strong>: rare — most media is full-bleed with zero border radius. When radius appears, it's <code>6px</code>.</li><li><strong>Full-bleed</strong>: yes, always. The hero video fills the viewport. Secondary feature video fills 100% of the section width.</li><li><strong>Captions</strong>: Bugatti Monospace 12px UPPERCASE in <code>#ffffff</code> at ~1.2px tracking, placed below the media or in the lower-left corner.</li><li><strong>Hover</strong>: no zoom, no scale, no scrim. The video plays, that is the hover state.</li><li><strong>Lazy loading</strong>: <code>loading=&quot;lazy&quot;</code> on every image below the fold; hero video is preloaded.</li></ul>\n<h3>Atmospheric Overlay</h3>\n<ul><li>When type sits over photography or video that might threaten legibility, Bugatti uses a subtle <code>rgba(0, 0, 0, 0.4)</code> linear gradient from bottom (40% black) to top (transparent) — the only &quot;shadow-like&quot; effect in the system. It's a vignette, not a drop shadow.</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Botões</h3>\n<p><strong>Primário — pílula com contorno branco</strong></p>\n<ul><li>Fundo: transparente</li><li>Texto: <code>#ffffff</code>, Bugatti Monospace 14px / 400 / tracking 1.4px, MAIÚSCULAS</li><li>Borda: <code>1px solid #ffffff</code></li><li>Raio da borda: <code>9999px</code> — pílula completa</li><li>Padding: <code>12px 24px</code></li><li>Contorno: <code>rgb(255, 255, 255) none 0px</code> em repouso</li><li>Hover: provavelmente o fundo preenche com <code>#ffffff</code> e texto preto, ou há um leve esmaecimento de opacidade (o conjunto de tokens extraído não capturou um hover próprio — trate isso como uma suposição segura, já que a interação padrão da Bugatti é a contenção)</li><li>Ativo: opacidade cai para ~0.7</li><li>Foco: use um anel externo <code>#ffffff</code> de 1px via <code>box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #000000</code> para contraste</li><li>Transição: 200–300ms ease no fundo/cor — discreta, nunca elástica</li></ul>\n<p><strong>Secundário — botão cinza arredondado</strong></p>\n<ul><li>Fundo: transparente</li><li>Texto: <code>#ffffff</code>, Bugatti Monospace 12px / 400 / tracking 1.2px, MAIÚSCULAS</li><li>Borda: <code>1px solid #999999</code> (Silver Mist)</li><li>Raio da borda: <code>6px</code> — canto sutil, o único raio diferente de zero que não é pílula no sistema</li><li>Padding: <code>6px 12px</code></li><li>Hover: a borda passa a <code>#ffffff</code> e o texto continua branco</li><li>Ativo: opacidade 0.7</li><li>Usado em botões utilitários compactos (alternadores de menu, botões de fechar diálogo)</li></ul>\n<p><strong>Ghost — botão-link sem borda</strong></p>\n<ul><li>Fundo: transparente</li><li>Texto: <code>#ffffff</code>, Bugatti Monospace 12px / 400 — caixa normal ou MAIÚSCULAS</li><li>Sem borda, sem padding além do inline</li><li>Usado no rodapé e na navegação terciária</li></ul>\n<h3>Cards e contêineres</h3>\n<ul><li><strong>Não existem cards.</strong> O Bugatti.com não tem componente de card. A página inteira é uma sequência de blocos de mídia de ponta a ponta com um título e um CTA opcional sobrepostos — mais próxima de um capítulo de filme do que de uma grade de cards.</li><li>O mais próximo de um &quot;contêiner&quot; é a rara seção com borda que usa uma moldura <code>1px solid #999999</code>, border-radius de <code>6px</code> e interior <code>#000000</code>. Elas ficam reservadas a avisos de consentimento de cookies e diálogos em estilo modal, não a conteúdo editorial.</li><li>Estado de hover nos blocos de mídia: nenhum. O vídeo toca, o CTA fica clicável, e esse é todo o vocabulário de interação.</li></ul>\n<h3>Campos e formulários</h3>\n<ul><li>Os tokens extraídos capturaram <strong>zero estilos de campo</strong> (<code>⚠ Inputs: 0 styles</code>). Isso porque o Bugatti.com praticamente não tem formulários na home — nem inscrição em newsletter, nem barra de busca, nem formulário de contato, nem captura de e-mail. Quando os formulários aparecem (em páginas mais profundas), aplique estes padrões, consistentes com o resto do sistema:</li></ul>\n<p>  - <strong>Padrão</strong>: fundo <code>#000000</code>, borda <code>1px solid #999999</code>, raio de <code>6px</code>, texto <code>#ffffff</code> em Bugatti Text Regular 16px, placeholder <code>#999999</code>.   - <strong>Foco</strong>: a borda passa a <code>#ffffff</code>, sem brilho — a mudança da borda É o sinal de foco.   - <strong>Erro</strong>: a borda continua branca; acrescente uma mensagem inline <code>#999999</code> abaixo. A Bugatti não usa cores de erro vermelhas — ela permanece na paleta monocromática.   - <strong>Transição</strong>: ~250ms ease no border-color.</p>\n<h3>Navegação</h3>\n<ul><li><strong>Navegação superior</strong>: faixa fina preta (<code>#000000</code>) com o monograma &quot;EB&quot; da Bugatti ou o logotipo completo &quot;BUGATTI&quot; centralizado, um link de hambúrguer &quot;MENU&quot; à esquerda e um link &quot;STORE&quot; à direita. Os dois links de navegação são em Bugatti Monospace 14px MAIÚSCULAS com tracking de 1.4px.</li><li><strong>Logo</strong>: 128×29px na escala de desktop — menor que o de quase todas as outras marcas deste catálogo. A Bugatti não precisa gritar o próprio nome.</li><li><strong>Hover nos links de navegação</strong>: a cor continua <code>#ffffff</code> — o sinal de hover é um sutil sublinhado ou uma mudança de opacidade para ~0.75. Sem mudança de cor.</li><li><strong>Mobile</strong>: a navegação completa se reduz a três elementos — &quot;MENU&quot;, o logotipo e &quot;STORE&quot; —, que é basicamente o layout de desktop sem o espaçamento separador.</li><li><strong>Comportamento fixo</strong>: a navegação fica presa no topo durante a rolagem e permanece preta sobre preto. Quando se sobrepõe a um vídeo escuro, fica quase invisível, o que é proposital.</li></ul>\n<h3>Tratamento de imagens e vídeos</h3>\n<ul><li><strong>Proporções</strong>: 16:9 e 21:9 no vídeo do hero, 4:3 na fotografia de destaques intermediários, 1:1 em raras fotos de retrato.</li><li><strong>Cantos</strong>: raros — a maior parte da mídia vai de ponta a ponta com border-radius zero. Quando aparece um raio, ele é de <code>6px</code>.</li><li><strong>De ponta a ponta</strong>: sim, sempre. O vídeo do hero preenche a viewport. Os vídeos de destaque secundários preenchem 100% da largura da seção.</li><li><strong>Legendas</strong>: Bugatti Monospace 12px em MAIÚSCULAS em <code>#ffffff</code>, com tracking de ~1.2px, posicionadas abaixo da mídia ou no canto inferior esquerdo.</li><li><strong>Hover</strong>: sem zoom, sem escala, sem véu. O vídeo toca — esse é o estado de hover.</li><li><strong>Carregamento lento</strong>: <code>loading=&quot;lazy&quot;</code> em toda imagem abaixo da dobra; o vídeo do hero é pré-carregado.</li></ul>\n<h3>Sobreposição atmosférica</h3>\n<ul><li>Quando o texto fica sobre fotografia ou vídeo que possa ameaçar a legibilidade, a Bugatti usa um sutil gradiente linear <code>rgba(0, 0, 0, 0.4)</code> de baixo (40% de preto) para cima (transparente) — o único efeito &quot;tipo sombra&quot; do sistema. É uma vinheta, não uma sombra projetada.</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "layout-principles",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Layout Principles"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Princípios de layout"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Spacing System</h3>\n<ul><li><strong>Base unit</strong>: 8px.</li><li><strong>Scale</strong> (from tokens): 4, 6, 12, 36, 48, 64px. Six values. <strong>Six.</strong> This is one of the smallest spacing scales of any major brand site — Bugatti uses a handful of discrete gaps and refuses to invent in-between values.</li><li><strong>Section padding</strong>: typically 48–64px vertical. Hero panels are full-viewport-height, which bypasses the scale entirely.</li><li><strong>Button padding</strong>: 6px 12px (compact) or 12px 24px (primary). Nothing else.</li><li><strong>Inline spacing</strong>: 4–12px between stacked labels; the big jump to 36/48/64 happens between content blocks.</li></ul>\n<h3>Grid &amp; Container</h3>\n<ul><li><strong>Max width</strong>: 1720px (dembrandt detected breakpoints up to 1720). The site scales to ultra-wide for luxury showroom displays and wide cinema monitors.</li><li><strong>Column patterns</strong>: there is essentially no multi-column grid on the homepage — it is a stack of single full-width blocks. When deeper pages need columns (configurator, atelier, technical specs), they use a 12-column Tailwind-based grid.</li><li><strong>Outer padding</strong>: minimal. Most sections bleed to the viewport edge, with padding only applied to the overlaid text and CTA block (typically 48–64px from the bottom-center).</li></ul>\n<h3>Whitespace Philosophy</h3>\n<p>Bugatti's whitespace philosophy is <strong>cinematic negative space</strong> — the page is 90% empty even when content is present, because the content is usually a video or photograph of a single car. The rhythm is: full-bleed media → monumental headline → single pill CTA → scroll → next full-bleed media. There is no &quot;information density&quot; anywhere. The page breathes the way a museum breathes, with each exhibit getting its own silent room.</p>\n<h3>Border Radius Scale</h3>\n<ul><li><strong>0</strong> — default for all media and the hero canvas</li><li><strong>6px</strong> — secondary rounded buttons, bordered frames, small utility containers</li><li><strong>9999px</strong> — primary pill buttons</li></ul>\n<p>Three values. No <code>12px</code>, no <code>24px</code>, no <code>20px</code>. Bugatti's radius system is the most restrained of any site in this catalog — the brand has made an active decision that &quot;slightly rounded rectangle&quot; is a vulgar shape, and committed to either true rectangle or true pill.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Sistema de espaçamento</h3>\n<ul><li><strong>Unidade base</strong>: 8px.</li><li><strong>Escala</strong> (dos tokens): 4, 6, 12, 36, 48, 64px. Seis valores. <strong>Seis.</strong> É uma das menores escalas de espaçamento entre os grandes sites de marca — a Bugatti usa um punhado de espaços discretos e se recusa a inventar valores intermediários.</li><li><strong>Padding de seção</strong>: normalmente 48–64px na vertical. Os painéis do hero têm a altura total da viewport, o que contorna a escala por completo.</li><li><strong>Padding de botões</strong>: 6px 12px (compacto) ou 12px 24px (primário). Nada mais.</li><li><strong>Espaçamento inline</strong>: 4–12px entre rótulos empilhados; o grande salto para 36/48/64 acontece entre os blocos de conteúdo.</li></ul>\n<h3>Grid e contêiner</h3>\n<ul><li><strong>Largura máxima</strong>: 1720px (o dembrandt detectou breakpoints até 1720). O site escala para ultra-wide, pensando em telas de showroom de luxo e monitores de cinema largos.</li><li><strong>Padrões de colunas</strong>: praticamente não há grade de várias colunas na home — é uma pilha de blocos únicos em largura total. Quando páginas mais profundas precisam de colunas (configurador, ateliê, especificações técnicas), usam uma grade de 12 colunas baseada em Tailwind.</li><li><strong>Padding externo</strong>: mínimo. A maioria das seções sangra até a borda da viewport, com padding aplicado só ao bloco de texto e CTA sobreposto (normalmente 48–64px a partir do centro inferior).</li></ul>\n<h3>Filosofia do espaço em branco</h3>\n<p>A filosofia de espaço em branco da Bugatti é o <strong>espaço negativo cinematográfico</strong> — a página fica 90% vazia mesmo quando há conteúdo, porque o conteúdo geralmente é o vídeo ou a fotografia de um único carro. O ritmo é: mídia de ponta a ponta → título monumental → um único CTA em pílula → rolagem → próxima mídia de ponta a ponta. Não há &quot;densidade de informação&quot; em lugar nenhum. A página respira como um museu respira, com cada obra ganhando sua própria sala silenciosa.</p>\n<h3>Escala de raios de borda</h3>\n<ul><li><strong>0</strong> — padrão para toda mídia e para a tela do hero</li><li><strong>6px</strong> — botões secundários arredondados, molduras com borda, pequenos contêineres utilitários</li><li><strong>9999px</strong> — botões em pílula primários</li></ul>\n<p>Três valores. Nada de <code>12px</code>, <code>24px</code> ou <code>20px</code>. O sistema de raios da Bugatti é o mais contido de todos os sites deste catálogo — a marca decidiu ativamente que o &quot;retângulo levemente arredondado&quot; é uma forma vulgar e se comprometeu com o retângulo verdadeiro ou a pílula verdadeira.</p>"
+    }
+   ]
+  },
+  {
+   "id": "depth-elevation",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Depth & Elevation"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Profundidade e elevação"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<table><thead><tr><th>Level</th><th>Treatment</th><th>Use</th></tr></thead><tbody><tr><td>0</td><td>No shadow, no border</td><td>Default text and media on <code>#000000</code></td></tr><tr><td>1</td><td><code>1px solid #999999</code></td><td>Secondary containers, cookie-style dialogs</td></tr><tr><td>2</td><td><code>1px solid #ffffff</code></td><td>Primary button outline, active state indicators</td></tr><tr><td>3</td><td>Bottom-to-top <code>rgba(0, 0, 0, 0.4) → transparent</code> vignette</td><td>Text-legibility gradient when type sits over video</td></tr></tbody></table>\n<p><strong>That is the entire depth system.</strong> There are 1 shadows in the extracted token set (zero meaningful <code>box-shadow</code> values — just a placeholder). Bugatti does not use drop shadows. It does not use elevation rings. It does not use glowing focus states. Depth is implied by the 1px hairline of a border or the presence of a vignette gradient — nothing more.</p>\n<h3>Decorative Depth</h3>\n<p>None. Zero gradients (except the subtle text-legibility vignette), zero blurs, zero glows, zero atmospheric effects. The decorative depth of Bugatti's site comes entirely from the lighting baked into the product photography. The chrome does not compete.</p>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>0</td><td>Sem sombra, sem borda</td><td>Texto e mídia padrão sobre <code>#000000</code></td></tr><tr><td>1</td><td><code>1px solid #999999</code></td><td>Contêineres secundários, diálogos em estilo de cookies</td></tr><tr><td>2</td><td><code>1px solid #ffffff</code></td><td>Contorno do botão primário, indicadores de estado ativo</td></tr><tr><td>3</td><td>Vinheta de baixo para cima <code>rgba(0, 0, 0, 0.4) → transparent</code></td><td>Gradiente de legibilidade quando o texto fica sobre vídeo</td></tr></tbody></table>\n<p><strong>Esse é todo o sistema de profundidade.</strong> Há 1 sombra no conjunto de tokens extraído (nenhum valor de <code>box-shadow</code> significativo — só um placeholder). A Bugatti não usa sombras projetadas. Não usa anéis de elevação. Não usa estados de foco brilhantes. A profundidade é sugerida pelo fio de 1px de uma borda ou pela presença de uma vinheta em gradiente — nada além disso.</p>\n<h3>Profundidade decorativa</h3>\n<p>Nenhuma. Zero gradientes (exceto a sutil vinheta de legibilidade de texto), zero desfoques, zero brilhos, zero efeitos atmosféricos. A profundidade decorativa do site da Bugatti vem inteiramente da iluminação embutida na fotografia do produto. O cromo não compete.</p>"
+    }
+   ]
+  },
+  {
+   "id": "do-s-and-don-ts",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Do's and Don'ts"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "O que fazer e o que evitar"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Do</h3>\n<ul><li><strong>Do</strong> keep the entire canvas <code>#000000</code>. No off-black, no near-black, no warm black. Bugatti is pure black.</li><li><strong>Do</strong> use Bugatti Display at architectural scale — minimum 36px, ideally 60px+, and once per page land a monumental 200px+ headline.</li><li><strong>Do</strong> use Bugatti Monospace UPPERCASE with 1.2–1.4px tracking for every button, link, nav item, and caption.</li><li><strong>Do</strong> use only white text at rest. <code>#999999</code> is only for disabled, tertiary, and thin borders.</li><li><strong>Do</strong> use 9999px border radius for primary buttons — full pill, thin 1px white outline, transparent fill.</li><li><strong>Do</strong> use full-bleed video and photography for every hero section. The product is the UI.</li><li><strong>Do</strong> maintain line-height 1.00–1.11 on display headlines. Tight leading is the architecture.</li><li><strong>Do</strong> treat whitespace like cinematic negative space — give every block its own silent room.</li></ul>\n<h3>Don't</h3>\n<ul><li><strong>Don't</strong> introduce accent colors. No blue, no red, no commerce orange, no hover cyan, no warning red. The palette is black, white, and one gray.</li><li><strong>Don't</strong> use bold weights for hierarchy. Scale is the only hierarchy device — make it bigger, not heavier.</li><li><strong>Don't</strong> use drop shadows on any element. Bugatti has no <code>box-shadow</code> in its chrome.</li><li><strong>Don't</strong> use cards or elevated surfaces. Bugatti has no card component.</li><li><strong>Don't</strong> use rounded rectangles between 6px and 9999px. The radius system is rectangle, slightly-rounded utility, or full pill — nothing in between.</li><li><strong>Don't</strong> use Bugatti Display for body, buttons, or UI labels. Reserve it for headlines at 36px+.</li><li><strong>Don't</strong> use Bugatti Monospace in lowercase for primary UI. Buttons and nav links are always ALL CAPS.</li><li><strong>Don't</strong> add gradients, glows, blurs, or glassmorphism anywhere. The chrome is silent.</li><li><strong>Don't</strong> put text over photography without a <code>rgba(0, 0, 0, 0.4)</code> bottom-up vignette if legibility is at risk.</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Faça</h3>\n<ul><li><strong>Mantenha</strong> a tela inteira em <code>#000000</code>. Nada de off-black, quase preto ou preto quente. A Bugatti é preto puro.</li><li><strong>Use</strong> a Bugatti Display em escala arquitetônica — no mínimo 36px, idealmente 60px+, e uma vez por página entregue um título monumental de 200px+.</li><li><strong>Use</strong> a Bugatti Monospace em MAIÚSCULAS com tracking de 1.2–1.4px em todo botão, link, item de navegação e legenda.</li><li><strong>Use</strong> só texto branco em repouso. O <code>#999999</code> é só para desabilitado, terciário e bordas finas.</li><li><strong>Use</strong> border-radius de 9999px nos botões primários — pílula completa, contorno branco fino de 1px, preenchimento transparente.</li><li><strong>Use</strong> vídeo e fotografia de ponta a ponta em toda seção hero. O produto é a interface.</li><li><strong>Mantenha</strong> altura de linha de 1.00–1.11 nos títulos de display. A entrelinha justa é a arquitetura.</li><li><strong>Trate</strong> o espaço em branco como espaço negativo cinematográfico — dê a cada bloco sua própria sala silenciosa.</li></ul>\n<h3>Não faça</h3>\n<ul><li><strong>Não</strong> introduza cores de destaque. Nada de azul, vermelho, laranja de comércio, ciano de hover ou vermelho de alerta. A paleta é preto, branco e um cinza.</li><li><strong>Não</strong> use pesos em negrito para hierarquia. A escala é o único recurso de hierarquia — aumente o texto, não o peso.</li><li><strong>Não</strong> use sombras projetadas em nenhum elemento. A Bugatti não tem <code>box-shadow</code> no cromo.</li><li><strong>Não</strong> use cards ou superfícies elevadas. A Bugatti não tem componente de card.</li><li><strong>Não</strong> use retângulos arredondados entre 6px e 9999px. O sistema de raios é retângulo, utilitário levemente arredondado ou pílula completa — nada no meio.</li><li><strong>Não</strong> use a Bugatti Display no corpo, em botões ou rótulos de interface. Reserve-a para títulos de 36px+.</li><li><strong>Não</strong> use a Bugatti Monospace em minúsculas na interface principal. Botões e links de navegação estão sempre TODOS EM MAIÚSCULAS.</li><li><strong>Não</strong> adicione gradientes, brilhos, desfoques ou glassmorphism em lugar nenhum. O cromo é silencioso.</li><li><strong>Não</strong> coloque texto sobre fotografia sem uma vinheta de baixo para cima <code>rgba(0, 0, 0, 0.4)</code> se a legibilidade estiver em risco.</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "responsive-behavior",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Responsive Behavior"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Comportamento responsivo"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Name</th><th>Width</th><th>Key Changes</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;640px</td><td>Single column, hamburger &quot;MENU&quot;, hero video locked to 9:16 or 16:9, hero headline scales to ~48–72px</td></tr><tr><td>Small Tablet</td><td>640–767px</td><td>Still single column, padding opens slightly, typography scales up</td></tr><tr><td>Tablet</td><td>768–1023px</td><td>Still single column for content, nav expands to include wordmark, headline scales to ~120px</td></tr><tr><td>Small Desktop</td><td>1024–1279px</td><td>Full desktop nav, headline scales to ~200px</td></tr><tr><td>Desktop</td><td>1280–1535px</td><td>Full layout, headline at 240–260px</td></tr><tr><td>Large Desktop</td><td>1536–1719px</td><td>Max headline scale (288px), ultra-wide hero video</td></tr><tr><td>Ultra-Wide</td><td>≥1720px</td><td>Container caps, hero video locks at 21:9 or wider, everything else stays proportional</td></tr></tbody></table>\n<p>The dembrandt sweep detected 6 breakpoints (1720 → 1536 → 1280 → 1024 → 768 → 640). This is a narrower responsive set than PlayStation's 30 — Bugatti tunes for six clean thresholds rather than micro-adjusting every device boundary. The brand's assumption is that its visitors are either on a high-end laptop, a desktop monitor, or a phone, and the site doesn't need to fuss over everything in between.</p>\n<h3>Touch Targets</h3>\n<ul><li>Primary pill buttons are <code>12px 24px</code> padded with 14px text — approximately 38–42px tall. <strong>This falls slightly below WCAG AAA 44px recommendations</strong>. For derivative work, bump vertical padding to 14–16px to hit 44px+.</li><li>Secondary buttons at <code>6px 12px</code> padding are about 28–32px tall — definitely below touch-target minimums. Use these only on desktop pointer contexts.</li><li>Navigation links have no explicit padding — the tap area is the text box, which at 14px is too small. Add <code>12–14px</code> vertical padding on mobile to make them touchable.</li></ul>\n<h3>Collapsing Strategy</h3>\n<ul><li><strong>Nav</strong>: desktop shows <code>MENU / BUGATTI wordmark / STORE</code>. Mobile keeps the same layout — there is no drawer, because there are only three items.</li><li><strong>Grid</strong>: no grid to collapse. The page is already single-column at every breakpoint.</li><li><strong>Spacing</strong>: section padding tightens from 64 → 48 → 36 → 12px as viewport narrows.</li><li><strong>Type</strong>: Bugatti Display scales from 288px → 200px → 120px → 60px → 48px as viewport narrows. The scale curve is aggressive — losing 240px between the max and mobile hero.</li><li><strong>Video</strong>: art-direction swap between 21:9 desktop and 16:9 or 9:16 mobile hero cuts.</li></ul>\n<h3>Image &amp; Video Behavior</h3>\n<ul><li>Hero video uses adaptive bitrate streaming and <code>poster=</code> fallback.</li><li>Below-the-fold media uses <code>loading=&quot;lazy&quot;</code> with <code>srcset</code> art direction.</li><li>Bugatti serves high-density imagery through <code>imgix</code> — you'll see <code>bugatti.imgix.net</code> URLs with transformation parameters.</li></ul>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Breakpoints</h3>\n<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;640px</td><td>Coluna única, hambúrguer &quot;MENU&quot;, vídeo do hero travado em 9:16 ou 16:9, título do hero reduz para ~48–72px</td></tr><tr><td>Tablet pequeno</td><td>640–767px</td><td>Ainda coluna única, o padding se abre um pouco, a tipografia aumenta</td></tr><tr><td>Tablet</td><td>768–1023px</td><td>Ainda coluna única no conteúdo, a navegação se expande para incluir o logotipo, o título vai a ~120px</td></tr><tr><td>Desktop pequeno</td><td>1024–1279px</td><td>Navegação completa de desktop, título em ~200px</td></tr><tr><td>Desktop</td><td>1280–1535px</td><td>Layout completo, título em 240–260px</td></tr><tr><td>Desktop grande</td><td>1536–1719px</td><td>Escala máxima de título (288px), vídeo do hero ultra-wide</td></tr><tr><td>Ultra-wide</td><td>≥1720px</td><td>O contêiner trava, o vídeo do hero fica em 21:9 ou mais largo, todo o resto continua proporcional</td></tr></tbody></table>\n<p>A varredura do dembrandt detectou 6 breakpoints (1720 → 1536 → 1280 → 1024 → 768 → 640). É um conjunto responsivo mais enxuto que os 30 da PlayStation — a Bugatti ajusta seis limites limpos em vez de microajustar cada fronteira de dispositivo. A premissa da marca é que seus visitantes estão num notebook de alto padrão, num monitor de desktop ou num celular, e o site não precisa se preocupar com tudo que fica no meio.</p>\n<h3>Áreas de toque</h3>\n<ul><li>Os botões em pílula primários têm padding de <code>12px 24px</code> com texto de 14px — aproximadamente 38–42px de altura. <strong>Isso fica um pouco abaixo das recomendações de 44px do WCAG AAA</strong>. Em trabalhos derivados, aumente o padding vertical para 14–16px para chegar a 44px+.</li><li>Os botões secundários com padding de <code>6px 12px</code> têm cerca de 28–32px de altura — definitivamente abaixo dos mínimos de área de toque. Use-os só em contextos de ponteiro no desktop.</li><li>Os links de navegação não têm padding explícito — a área de toque é a caixa do texto, que em 14px é pequena demais. Adicione <code>12–14px</code> de padding vertical no mobile para torná-los tocáveis.</li></ul>\n<h3>Estratégia de recolhimento</h3>\n<ul><li><strong>Navegação</strong>: o desktop mostra <code>MENU / logotipo BUGATTI / STORE</code>. O mobile mantém o mesmo layout — não há gaveta, porque há só três itens.</li><li><strong>Grid</strong>: não há grade a recolher. A página já é de coluna única em todos os breakpoints.</li><li><strong>Espaçamento</strong>: o padding das seções aperta de 64 → 48 → 36 → 12px conforme a viewport se estreita.</li><li><strong>Tipografia</strong>: a Bugatti Display vai de 288px → 200px → 120px → 60px → 48px conforme a viewport se estreita. A curva de escala é agressiva — perde 240px entre o hero máximo e o mobile.</li><li><strong>Vídeo</strong>: troca de direção de arte entre os cortes de hero 21:9 no desktop e 16:9 ou 9:16 no mobile.</li></ul>\n<h3>Comportamento de imagens e vídeos</h3>\n<ul><li>O vídeo do hero usa streaming com taxa de bits adaptativa e fallback com <code>poster=</code>.</li><li>A mídia abaixo da dobra usa <code>loading=&quot;lazy&quot;</code> com direção de arte via <code>srcset</code>.</li><li>A Bugatti serve imagens de alta densidade pelo <code>imgix</code> — você verá URLs <code>bugatti.imgix.net</code> com parâmetros de transformação.</li></ul>"
+    }
+   ]
+  },
+  {
+   "id": "agent-prompt-guide",
+   "title": [
+    {
+     "lang": "en-US",
+     "message": "Agent Prompt Guide"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "Guia de prompts para agentes"
+    }
+   ],
+   "html": [
+    {
+     "lang": "en-US",
+     "message": "<h3>Quick Color Reference</h3>\n<ul><li><strong>Primary Canvas</strong>: &quot;Velvet Black (<code>#000000</code>)&quot;</li><li><strong>Primary Text</strong>: &quot;Showroom White (<code>#ffffff</code>)&quot;</li><li><strong>Secondary Text / Disabled / Hairline Border</strong>: &quot;Silver Mist (<code>#999999</code>)&quot;</li><li><strong>Accent</strong>: None. Do not add one.</li><li><strong>Hover Signal</strong>: Opacity shift or border-color shift — no color change</li></ul>\n<h3>Example Component Prompts</h3>\n<ol><li><em>&quot;Create a monumental hero headline using Bugatti Display at 288px, ALL CAPS, <code>#ffffff</code> text on a pure <code>#000000</code> canvas, line-height 1.0, no letter-spacing. Place a full-bleed 21:9 hero video behind it with a <code>rgba(0, 0, 0, 0.4) → transparent</code> bottom-up vignette for legibility.&quot;</em></li><li><em>&quot;Design a primary pill CTA button: transparent background, 1px solid <code>#ffffff</code> border, <code>9999px</code> border radius, 12px × 24px padding, Bugatti Monospace 14px / 400 / 1.4px letter-spacing UPPERCASE label in <code>#ffffff</code>. Hover state fills the background white with black text, 250ms ease.&quot;</em></li><li><em>&quot;Build a navigation bar: pure <code>#000000</code> background, <code>MENU</code> link left, centered <code>BUGATTI</code> wordmark (128×29px), <code>STORE</code> link right. All links in Bugatti Monospace 14px UPPERCASE with 1.4px letter-spacing in <code>#ffffff</code>. No dividers, no hover color — just a slight opacity dim on hover.&quot;</em></li><li><em>&quot;Create a mid-feature section heading: Bugatti Display 60px ALL CAPS in <code>#ffffff</code>, line-height 1.0, centered over a full-bleed photograph. Place a single primary pill CTA 48–64px below the headline.&quot;</em></li><li><em>&quot;Design a secondary utility button for a cookie dialog: transparent background, 1px solid <code>#999999</code> border, 6px border radius, 6px × 12px padding, Bugatti Monospace 12px / 400 / 1.2px tracking UPPERCASE label in <code>#ffffff</code>.&quot;</em></li></ol>\n<h3>Iteration Guide</h3>\n<p>When refining existing screens generated with this design system:</p>\n<ol><li><strong>Audit the canvas.</strong> If the background isn't pure <code>#000000</code>, change it. Bugatti does not tolerate off-black.</li><li><strong>Audit the palette.</strong> Any color that isn't <code>#000000</code>, <code>#ffffff</code>, or <code>#999999</code> is drift. Remove it — that includes ALL accent colors, including common defaults like <code>#0070cc</code> Tailwind blue.</li><li><strong>Audit display scale.</strong> If the largest headline on a page is smaller than 60px, it's under-scaled. Bugatti's minimum &quot;monumental moment&quot; is 60px; the maximum is 288px. Aim for the upper half.</li><li><strong>Audit mono-caps discipline.</strong> Every button, every nav link, every caption, every CTA should be Bugatti Monospace UPPERCASE with 1.2–1.4px letter-spacing. If you see sentence case or mixed case on a button, that's drift.</li><li><strong>Audit shadows and gradients.</strong> Strip every <code>box-shadow</code>. Strip every gradient except the one legibility vignette over video. Bugatti's chrome is silent.</li><li><strong>Audit radius.</strong> Every container should land on <code>0</code>, <code>6px</code>, or <code>9999px</code>. If you see <code>12px</code>, <code>16px</code>, <code>20px</code>, <code>24px</code>, correct to the nearest Bugatti value (almost always <code>6px</code> or <code>9999px</code>).</li><li><strong>Audit type weight.</strong> All weights should be 400. If you see <code>bold</code> or <code>700</code> anywhere, change it. Scale, not weight, is the hierarchy.</li><li><strong>Audit whitespace.</strong> If a section feels cramped, add 48–64px. If it feels airy, leave it — Bugatti's negative space is a feature.</li><li><strong>Audit product presence.</strong> Every hero section should have a vehicle — video or photograph — as the primary visual. The chrome should feel like it's framing the car, not competing with it.</li></ol>"
+    },
+    {
+     "lang": "pt-BR",
+     "message": "<h3>Referência rápida de cores</h3>\n<ul><li><strong>Tela principal</strong>: &quot;Velvet Black (<code>#000000</code>)&quot;</li><li><strong>Texto principal</strong>: &quot;Showroom White (<code>#ffffff</code>)&quot;</li><li><strong>Texto secundário / desabilitado / borda finíssima</strong>: &quot;Silver Mist (<code>#999999</code>)&quot;</li><li><strong>Destaque</strong>: nenhum. Não adicione um.</li><li><strong>Sinal de hover</strong>: mudança de opacidade ou de cor da borda — sem mudança de cor</li></ul>\n<h3>Exemplos de prompts de componentes</h3>\n<ol><li><em>&quot;Crie um título de hero monumental usando Bugatti Display de 288px, TODO EM MAIÚSCULAS, texto <code>#ffffff</code> sobre uma tela <code>#000000</code> pura, line-height 1.0, sem espaçamento entre letras. Coloque um vídeo de hero 21:9 de ponta a ponta atrás dele, com uma vinheta de baixo para cima <code>rgba(0, 0, 0, 0.4) → transparent</code> para legibilidade.&quot;</em></li><li><em>&quot;Desenhe um botão CTA primário em pílula: fundo transparente, borda 1px solid <code>#ffffff</code>, border radius de <code>9999px</code>, padding de 12px × 24px, rótulo em Bugatti Monospace 14px / 400 / letter-spacing 1.4px em MAIÚSCULAS em <code>#ffffff</code>. O estado de hover preenche o fundo de branco com texto preto, 250ms ease.&quot;</em></li><li><em>&quot;Construa uma barra de navegação: fundo <code>#000000</code> puro, link <code>MENU</code> à esquerda, logotipo <code>BUGATTI</code> centralizado (128×29px), link <code>STORE</code> à direita. Todos os links em Bugatti Monospace 14px MAIÚSCULAS com letter-spacing de 1.4px em <code>#ffffff</code>. Sem divisores, sem cor de hover — só um leve esmaecimento de opacidade no hover.&quot;</em></li><li><em>&quot;Crie um título de seção de destaque intermediário: Bugatti Display 60px TODO EM MAIÚSCULAS em <code>#ffffff</code>, line-height 1.0, centralizado sobre uma fotografia de ponta a ponta. Coloque um único CTA primário em pílula 48–64px abaixo do título.&quot;</em></li><li><em>&quot;Desenhe um botão utilitário secundário para um diálogo de cookies: fundo transparente, borda 1px solid <code>#999999</code>, border radius de 6px, padding de 6px × 12px, rótulo em Bugatti Monospace 12px / 400 / tracking 1.2px em MAIÚSCULAS em <code>#ffffff</code>.&quot;</em></li></ol>\n<h3>Guia de iteração</h3>\n<p>Ao refinar telas existentes geradas com este design system:</p>\n<ol><li><strong>Audite a tela.</strong> Se o fundo não for <code>#000000</code> puro, mude. A Bugatti não tolera off-black.</li><li><strong>Audite a paleta.</strong> Qualquer cor que não seja <code>#000000</code>, <code>#ffffff</code> ou <code>#999999</code> é desvio. Remova — isso inclui TODAS as cores de destaque, inclusive padrões comuns como o azul <code>#0070cc</code> do Tailwind.</li><li><strong>Audite a escala do display.</strong> Se o maior título de uma página for menor que 60px, está subdimensionado. O &quot;momento monumental&quot; mínimo da Bugatti é 60px; o máximo é 288px. Mire na metade superior.</li><li><strong>Audite a disciplina de mono em maiúsculas.</strong> Todo botão, link de navegação, legenda e CTA deve estar em Bugatti Monospace MAIÚSCULAS com 1.2–1.4px de espaçamento entre letras. Se você vir caixa de frase ou caixa mista num botão, é desvio.</li><li><strong>Audite sombras e gradientes.</strong> Remova toda <code>box-shadow</code>. Remova todo gradiente, exceto a vinheta de legibilidade sobre o vídeo. O cromo da Bugatti é silencioso.</li><li><strong>Audite o raio.</strong> Todo contêiner deve cair em <code>0</code>, <code>6px</code> ou <code>9999px</code>. Se você vir <code>12px</code>, <code>16px</code>, <code>20px</code> ou <code>24px</code>, corrija para o valor Bugatti mais próximo (quase sempre <code>6px</code> ou <code>9999px</code>).</li><li><strong>Audite o peso da tipografia.</strong> Todos os pesos devem ser 400. Se você vir <code>bold</code> ou <code>700</code> em qualquer lugar, mude. A escala, e não o peso, é a hierarquia.</li><li><strong>Audite o espaço em branco.</strong> Se uma seção parecer apertada, acrescente 48–64px. Se parecer arejada, deixe — o espaço negativo da Bugatti é um recurso.</li><li><strong>Audite a presença do produto.</strong> Toda seção hero deve ter um veículo — vídeo ou fotografia — como visual principal. O cromo deve parecer estar emoldurando o carro, e não competindo com ele.</li></ol>"
+    }
+   ]
+  }
+ ]
+}

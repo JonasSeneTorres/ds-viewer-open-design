@@ -1,0 +1,350 @@
+<!-- design-system-mission-control · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Monitoramento de missões espaciais/aeroespaciais. Centro de comando escuro, telemetria âmbar, precisão monoespaçada. Clareza funcional acima de tudo.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>Um <strong>centro de comando do espaço profundo</strong> — escuro, denso em informação, sem ambiguidade. Cada pixel precisa merecer seu lugar. A estética vem das salas de controle de missão da NASA, dos consoles de lançamento da SpaceX e do complexo de operações de missão da ISRO. Dados em âmbar sobre azul-marinho são o par de contraste central; todo o resto fica em segundo plano.</p>
+<table><thead><tr><th>Elemento</th><th>Hex</th><th>Papel</th></tr></thead><tbody><tr><td>Fundo</td><td><code>#0B1120</code></td><td>Azul-marinho do espaço profundo, tela principal</td></tr><tr><td>Superfície</td><td><code>#111827</code></td><td>Painéis elevados, cards</td></tr><tr><td>Superfície em hover</td><td><code>#1A2535</code></td><td>Hover de superfícies interativas</td></tr><tr><td>Borda</td><td><code>#1E3A5F</code></td><td>Divisores de painéis, estrutura sutil</td></tr><tr><td>Dado primário</td><td><code>#FFB800</code></td><td>Valores de telemetria, métricas-chave</td></tr><tr><td>Destaque</td><td><code>#00D4FF</code></td><td>Indicadores de ativo/saudável</td></tr><tr><td>Alerta</td><td><code>#FF4757</code></td><td>Avisos críticos, erros</td></tr><tr><td>Texto primário</td><td><code>#E8F0FE</code></td><td>Texto legível de alto contraste</td></tr><tr><td>Texto secundário</td><td><code>#8BA3C7</code></td><td>Rótulos, informação secundária</td></tr><tr><td>Texto terciário</td><td><code>#4A6080</code></td><td>Horários, metadados</td></tr></tbody></table>
+<p><em>Toda leitura precisa ser legível a 3 metros, com pouca luz, por alguém que não dorme há 18 horas.</em></p>
+<h3>Casos de uso</h3>
+<p>O Mission Control foi feito sob medida para:</p>
+<ul><li><strong>Dashboards de operações</strong> — saúde do sistema em tempo real, monitoramento de infraestrutura, painéis de status de plantão</li><li><strong>Telas de status de build e deploy</strong> — pipelines de CI/CD, coordenação de releases, resposta a incidentes</li><li><strong>Interfaces de monitoramento em tempo real</strong> — agregação de telemetria, redes de sensores, feeds de dados financeiros</li><li><strong>Qualquer tela densa em informação, com pouca luz e muito em jogo</strong></li></ul>
+<h3>Referências anteriores</h3>
+<p>O Controle de Missão da NASA (Houston), o ISTRAC da ISRO, os consoles Falcon/Dragon da SpaceX e o ESOC da ESA — todos compartilham telemetria âmbar sobre azul-marinho, campos de dados monoespaçados e sistemas hierárquicos de alerta. As restrições em comum (pouca luz, cansaço, decisões em frações de segundo) levam a um design convergente.</p>
+</section>
+
+<section data-section="color">
+<h2>Cor</h2>
+<h3>Paleta de superfícies</h3>
+<table><thead><tr><th>Token</th><th>Hex</th><th>Uso</th></tr></thead><tbody><tr><td>Background</td><td><code>#0B1120</code></td><td>Tela da página, profundidade principal</td></tr><tr><td>Surface</td><td><code>#111827</code></td><td>Painéis, cards, áreas elevadas</td></tr><tr><td>Surface Hover</td><td><code>#1A2535</code></td><td>Estado de superfície interativa</td></tr><tr><td>Surface Active</td><td><code>#1E3A5F</code></td><td>Painel selecionado, ativo</td></tr><tr><td>Border</td><td><code>#1E3A5F</code></td><td>Divisores de painéis, linhas de grade</td></tr><tr><td>Border Subtle</td><td><code>#162035</code></td><td>Divisores internos, separações menores</td></tr></tbody></table>
+<h3>Paleta de dados (valores de telemetria)</h3>
+<table><thead><tr><th>Token</th><th>Hex</th><th>Uso</th></tr></thead><tbody><tr><td>Primary</td><td><code>#FFB800</code></td><td>Valores principais de telemetria, métricas-chave</td></tr><tr><td>Secondary</td><td><code>#00D4FF</code></td><td>Indicadores de saudável/ativo, links</td></tr><tr><td>Alert Critical</td><td><code>#FF4757</code></td><td>Erros, alertas críticos, estados de aborto</td></tr><tr><td>Alert Warning</td><td><code>#FF9F43</code></td><td>Avisos, desempenho degradado</td></tr><tr><td>Success</td><td><code>#26DE81</code></td><td>Status nominal, ações concluídas</td></tr></tbody></table>
+<p>Todas as cores de dados sobre <code>#111827</code> passam no WCAG AA (mínimo de 4.5:1).</p>
+<h3>Paleta de texto</h3>
+<table><thead><tr><th>Token</th><th>Hex</th><th>Uso</th></tr></thead><tbody><tr><td>Primary</td><td><code>#E8F0FE</code></td><td>Legível à distância, conteúdo principal</td></tr><tr><td>Secondary</td><td><code>#8BA3C7</code></td><td>Rótulos, descritores</td></tr><tr><td>Tertiary</td><td><code>#4A6080</code></td><td>Horários, metadados, rótulos de grade</td></tr></tbody></table>
+<h3>Modo escuro</h3>
+<p>O modo escuro é o modo nativo. Não há variante clara, por definição — ambientes de controle de missão têm sempre pouca luz (o ISTRAC da ISRO, o FDO da NASA e os consoles de lançamento da SpaceX funcionam todos no escuro). Centros de operações diurnos, com muita luz ambiente, estão fora do escopo da v1; uma adaptação para modo claro exigiria repensar toda a camada de cores semânticas.</p>
+<pre><code>:root {
+  --bg-default: #0B1120;
+  --bg-surface: #111827;
+  --bg-surface-hover: #1A2535;
+  --bg-surface-active: #1E3A5F;
+  --border-default: #1E3A5F;
+  --border-subtle: #162035;
+  --data-primary: #FFB800;
+  --data-secondary: #00D4FF;
+  --data-alert-critical: #FF4757;
+  --data-alert-warning: #FF9F43;
+  --data-success: #26DE81;
+  --fg-primary: #E8F0FE;
+  --fg-secondary: #8BA3C7;
+  --fg-tertiary: #4A6080;
+}</code></pre>
+<p>Os bindings consumíveis em <code>tokens.css</code> espelham a paleta de telemetria como <code>--success</code> (<code>#26DE81</code>) e <code>--danger</code> (<code>#FF4757</code>).</p>
+</section>
+
+<section data-section="typography">
+<h2>Tipografia</h2>
+<h3>Pilha de fontes</h3>
+<pre><code>/* Monoespaçada em todas as leituras de dados — consistência na velocidade */
+--font-mono: &quot;JetBrains Mono&quot;, ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, monospace;
+
+/* Sem serifa em rótulos, navegação e texto corrido */
+--font-sans: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;</code></pre>
+<h3>Escala tipográfica</h3>
+<table><thead><tr><th>Papel</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Fonte</th></tr></thead><tbody><tr><td>Display</td><td>48px</td><td>700</td><td>1.0</td><td>JetBrains Mono</td></tr><tr><td>H1</td><td>18px</td><td>600</td><td>1.2</td><td>Inter</td></tr><tr><td>H2</td><td>13px</td><td>600</td><td>1.2</td><td>Inter, caixa-alta, com tracking</td></tr><tr><td>Corpo</td><td>14px</td><td>400</td><td>1.5</td><td>Inter</td></tr><tr><td>Legenda</td><td>12px</td><td>400</td><td>1.4</td><td>Inter</td></tr><tr><td>Micro</td><td>10px</td><td>600</td><td>1.0</td><td>Inter, caixa-alta</td></tr></tbody></table>
+<p><strong>Rótulos de fontes para extração no catálogo:</strong></p>
+<pre><code>Display: &quot;JetBrains Mono&quot;, ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, monospace
+Body: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif
+Mono: &quot;JetBrains Mono&quot;, ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, monospace</code></pre>
+</section>
+
+<section data-section="spacing">
+<h2>Espaçamento</h2>
+<p>Grid de linha de base de 4px para layouts densos de telemetria. 8px para o padding externo, 16px+ para os espaços entre seções.</p>
+<pre><code>--space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+--space-5: 20px;  --space-6: 24px;  --space-8: 32px;   --space-12: 48px;
+--space-16: 64px; --space-20: 80px;</code></pre>
+</section>
+
+<section data-section="layout-composition">
+<h2>Layout e composição</h2>
+<h3>Sistema de grid</h3>
+<p>Grid de 12 colunas, gutters de 4px. Layout de informação densa — sem espaço em branco desperdiçado, mas com agrupamento visual claro.</p>
+<pre><code>/* Painel padrão: ocupa 3, 4 ou 6 colunas */
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: var(--space-4);
+}
+
+/* Faixa de telemetria em largura total */
+.telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-2);
+}</code></pre>
+<h3>Estrutura dos painéis</h3>
+<pre><code>/* Os estilos base de .panel estão definidos na seção Sistema de grid acima. */
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-secondary);
+}</code></pre>
+</section>
+
+<section data-section="components">
+<h2>Componentes</h2>
+<h3>Badge de status</h3>
+<pre><code>/* Nominal — verde, tudo certo */
+.badge-nominal {
+  background: rgba(38, 222, 129, 0.15);
+  color: #26DE81;
+  border: 1px solid rgba(38, 222, 129, 0.3);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+/* Aviso — âmbar, requer atenção */
+.badge-warning {
+  background: rgba(255, 159, 67, 0.15);
+  color: #FF9F43;
+  border: 1px solid rgba(255, 159, 67, 0.3);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+/* Crítico — vermelho, ação imediata */
+.badge-critical {
+  background: rgba(255, 71, 87, 0.15);
+  color: #FF4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+}</code></pre>
+<h3>Bloco de dado</h3>
+<pre><code>/* Exibição de uma única métrica */
+.data-tile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: var(--space-3);
+}
+
+.data-tile-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.data-tile-value {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--data-primary);
+  line-height: 1.0;
+}
+
+.data-tile-unit {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--fg-tertiary);
+  margin-left: 4px;
+}</code></pre>
+<h3>Contagem regressiva</h3>
+<pre><code>/* Exibição de T-menos / T-mais */
+.countdown {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--data-primary);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.countdown-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-tertiary);
+}
+
+/* Delta positivo (T+) — tempo após o evento */
+.countdown.positive { color: var(--data-success); }
+
+/* Em T-0 */
+.countdown.zero { color: var(--data-secondary); animation: pulse-glow 2s ease-in-out infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 8px currentColor; }
+  50% { text-shadow: 0 0 20px currentColor, 0 0 40px currentColor; }
+}</code></pre>
+<h3>Indicador de intensidade do sinal</h3>
+<pre><code>/* Medidor de sinal em barras verticais */
+.signal-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 20px;
+}
+
+.signal-bar {
+  width: 4px;
+  background: var(--border-default);
+  border-radius: 1px;
+}
+
+.signal-bar.active.weak    { background: var(--data-alert-warning); }
+.signal-bar.active.moderate { background: var(--data-primary); }
+.signal-bar.active.strong  { background: var(--data-secondary); }
+
+.signal-bar:nth-child(1) { height: 5px; }
+.signal-bar:nth-child(2) { height: 8px; }
+.signal-bar:nth-child(3) { height: 12px; }
+.signal-bar:nth-child(4) { height: 16px; }</code></pre>
+<h3>Faixa de alerta</h3>
+<pre><code>/* Alerta crítico em largura total */
+.alert-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.4);
+  border-left: 4px solid #FF4757;
+  border-radius: 4px;
+  padding: var(--space-3) var(--space-4);
+}
+
+.alert-banner-icon {
+  color: #FF4757;
+  flex-shrink: 0;
+}
+
+.alert-banner-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FF4757;
+}
+
+.alert-banner-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-tertiary);
+  margin-left: auto;
+  flex-shrink: 0;
+}</code></pre>
+<h3>Exibição de coordenadas</h3>
+<pre><code>/* Leitura de latitude / longitude / altitude */
+.coordinate {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--data-secondary);
+}
+
+.coordinate-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-tertiary);
+  margin-bottom: 2px;
+}</code></pre>
+<h3>Barra de progresso</h3>
+<pre><code>/* Progresso de fase da missão / upload / carregamento */
+.progress-bar {
+  height: 4px;
+  background: var(--border-default);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--data-secondary);
+  border-radius: 2px;
+  transition: width 300ms ease-out;
+}
+
+.progress-bar-fill.warning { background: var(--data-alert-warning); }
+.progress-bar-fill.critical { background: var(--data-alert-critical); }</code></pre>
+<h3>Linha de gráfico de telemetria</h3>
+<pre><code>/* Gráfico sparkline para dados ao longo do tempo */
+.telemetry-chart {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.telemetry-chart-bar {
+  flex: 1;
+  background: var(--data-primary);
+  border-radius: 1px 1px 0 0;
+  min-width: 2px;
+}
+
+.telemetry-chart-bar.alert { background: var(--data-alert-critical); }
+.telemetry-chart-bar.warning { background: var(--data-alert-warning); }</code></pre>
+</section>
+
+<section data-section="motion-interaction">
+<h2>Movimento e interação</h2>
+<table><thead><tr><th>Interação</th><th>Duração</th><th>Easing</th><th>Efeito</th></tr></thead><tbody><tr><td>Pulso de alerta</td><td>2s</td><td>ease-in-out</td><td>Oscilação da intensidade do brilho (em loop)</td></tr><tr><td>Aparição de painel</td><td>200ms</td><td>ease-out</td><td>Opacidade 0→1</td></tr><tr><td>Mudança de valor</td><td>150ms</td><td>ease-out</td><td>Flash de fundo com dado novo</td></tr><tr><td>Preenchimento de progresso</td><td>300ms</td><td>ease-out</td><td>Transição de largura</td></tr><tr><td>Estado de hover</td><td>100ms</td><td>ease-in</td><td>A cor da borda clareia</td></tr></tbody></table>
+<pre><code>--transition-fast: 100ms ease-in;
+--transition-base: 150ms ease-out;
+--transition-slow: 300ms ease-out;</code></pre>
+<h3>prefers-reduced-motion</h3>
+<p>Ambientes estáticos são comuns em controle de missão. Substitua todas as animações por mudanças de estado instantâneas.</p>
+<pre><code>@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}</code></pre>
+</section>
+
+<section data-section="voice-brand">
+<h2>Voz e marca</h2>
+<h3>Iconografia</h3>
+<p>Iconografia mínima e funcional — ícones Lucide (traço de 1.5px, 16px por padrão). Sem ícones decorativos. Todo ícone precisa comunicar um estado operacional.</p>
+<h3>Tom</h3>
+<ul><li><strong>Preciso</strong>: dados em primeiro lugar, sem linguagem de marketing</li><li><strong>Econômico</strong>: a interface fala por meio de valores e cores, não de texto</li><li><strong>Hierárquico</strong>: a urgência visual corresponde diretamente à urgência operacional</li></ul>
+<h3>Sinais visuais</h3>
+<p>A cor é a principal portadora de sinais. Toda escolha de cor precisa comunicar um estado operacional — nunca decorativa.</p>
+</section>
+
+<section data-section="anti-patterns">
+<h2>Antipadrões</h2>
+<ul><li>Não use cores decorativas em exibições de dados — cada matiz precisa transmitir um significado operacional</li><li>Não use cantos arredondados &gt; 4px — o controle de missão é funcional, não amigável</li><li>Não use fontes proporcionais em valores de telemetria — use exclusivamente monoespaçada para dados</li><li>Não anime elementos que não sejam alertas — o movimento é reservado para sinais que importam</li><li>Não use modo claro — ambientes com pouca luz são o único contexto</li><li>Não use texto de baixo contraste sobre fundos escuros — o terciário <code>#4A6080</code> é só para metadados não críticos (horários, rótulos de grade)</li></ul>
+</section>
