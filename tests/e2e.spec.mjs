@@ -135,7 +135,7 @@ test("rota antiga e rota inexistente se comportam", async ({ page }) => {
 test("menu Exemplos lista as páginas de exemplo e a informação do tema segue o tema escolhido", async ({ page }) => {
   await page.goto("/#/");
   await page.click("#examplesBtn");
-  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja", "Entrar"]);
+  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja", "Login"]);
   await page.keyboard.press("Escape");
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
@@ -199,7 +199,12 @@ test("entrar: login, esqueci minha senha e nova senha", async ({ page }) => {
   const problems = watch(page);
   await page.goto("/#/entrar");
   await expect(page.locator(".logo-frame").first()).toBeVisible();
-  await expect(page.locator(".oauth")).toHaveCount(4);
+  // seletor no quadro da esquerda; OAuth só com ícone e SSO como link
+  await expect(page.locator(".auth-aside #authStates")).toBeVisible();
+  await expect(page.locator(".auth-aside .auth-demo")).toContainText("demonstração de layout");
+  await expect(page.locator(".oauth")).toHaveCount(3);
+  await expect(page.locator(".oauth").first()).toHaveAttribute("aria-label", /Google/);
+  await expect(page.locator(".sso-link")).toContainText("SSO");
 
   // login: valida e confirma
   await page.click('.auth-form button[type="submit"]');

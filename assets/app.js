@@ -47,7 +47,7 @@
     "nav.theme": { "en-US": "Theme info", "pt-BR": "Informações do tema" },
     "nav.examples": { "en-US": "Examples", "pt-BR": "Exemplos" },
     "nav.institutional": { "en-US": "Corporate", "pt-BR": "Institucional" },
-    "nav.signin": { "en-US": "Sign in", "pt-BR": "Entrar" },
+    "nav.signin": { "en-US": "Login", "pt-BR": "Login" },
     "nav.dashboard": { "en-US": "Dashboard", "pt-BR": "Dashboard" },
     "nav.shop": { "en-US": "Store", "pt-BR": "Loja" },
     "nav.blog": { "en-US": "Blog", "pt-BR": "Blog" },
@@ -204,7 +204,8 @@
     "inst.send": { "en-US": "Send message", "pt-BR": "Enviar mensagem" },
     "inst.sent": { "en-US": "Message sent! This form is only a demonstration.", "pt-BR": "Mensagem enviada! Este formulário é só uma demonstração." },
     "auth.state": { "en-US": "Screen", "pt-BR": "Tela" },
-    "auth.sLogin": { "en-US": "Sign in", "pt-BR": "Entrar" },
+    "auth.sLogin": { "en-US": "Login", "pt-BR": "Login" },
+    "auth.demoNote": { "en-US": "This page is only a layout demonstration. No data is sent or checked by any server.", "pt-BR": "Esta é uma página somente de demonstração de layout. Nenhum dado é enviado nem verificado por servidor." },
     "auth.sForgot": { "en-US": "Forgot password", "pt-BR": "Esqueci minha senha" },
     "auth.sReset": { "en-US": "New password", "pt-BR": "Nova senha" },
     "auth.loginTitle": { "en-US": "Sign in to your account", "pt-BR": "Entrar na sua conta" },
@@ -2357,11 +2358,13 @@
       '<button type="submit" class="btn btn-primary">' + esc(T("auth.signin")) + "</button>" +
       "</form>" +
       '<div class="divider"><span>' + esc(T("auth.or")) + "</span></div>" +
-      '<div class="oauth-grid">' +
-      [["google", "Google"], ["code", "GitHub"], ["windows", "Microsoft"], ["people", "SSO"]].map(function (o) {
-        return '<button type="button" class="btn btn-ghost oauth">' + oauthIconSVG(o[0]) + "<span>" + esc(T("auth.continueWith")) + " " + o[1] + "</span></button>";
+      '<div class="oauth-row">' +
+      [["google", "Google"], ["code", "GitHub"], ["windows", "Microsoft"]].map(function (o) {
+        var label = T("auth.continueWith") + " " + o[1];
+        return '<button type="button" class="btn btn-ghost oauth" aria-label="' + esc(label) + '" title="' + esc(label) + '">' + oauthIconSVG(o[0]) + "</button>";
       }).join("") +
       "</div>" +
+      '<p class="sso"><button type="button" class="link-btn sso-link">' + esc(T("auth.continueWith")) + " SSO</button></p>" +
       '<p class="auth-foot muted">' + esc(T("auth.noAccount")) + ' <a class="dead-link">' + esc(T("auth.create")) + "</a></p>"
     );
   }
@@ -2369,16 +2372,17 @@
   function authHTML(state) {
     return (
       '<section class="auth">' +
-      '<div class="auth-aside" aria-hidden="true">' +
-      '<div class="auth-aside-inner">' + logoFrameHTML() +
-      "<blockquote>" + esc(T("inst.lorem")) + "</blockquote>" +
-      '<p class="auth-aside-by">' + esc(AUTH_COMPANY) + " · Lorem Ipsum</p></div></div>" +
-      '<div class="auth-main">' +
+      '<div class="auth-aside">' +
       '<fieldset class="state-switch" id="authStates"><legend class="sr-only">' + esc(T("auth.state")) + "</legend>" +
       AUTH_STATES.map(function (st) {
         return '<label class="state-opt"><input type="radio" name="authState" value="' + st[0] + '"' + (st[0] === state ? " checked" : "") + "><span>" + esc(T(st[1])) + "</span></label>";
       }).join("") +
       "</fieldset>" +
+      '<div class="form-alert show warning auth-demo" role="note">' + esc(T("auth.demoNote")) + "</div>" +
+      '<div class="auth-aside-inner" aria-hidden="true">' + logoFrameHTML() +
+      "<blockquote>" + esc(T("inst.lorem")) + "</blockquote>" +
+      '<p class="auth-aside-by">' + esc(AUTH_COMPANY) + " · Lorem Ipsum</p></div></div>" +
+      '<div class="auth-main">' +
       '<div class="auth-card" id="authCard">' + authCardHTML(state) + "</div>" +
       "</div></section>"
     );

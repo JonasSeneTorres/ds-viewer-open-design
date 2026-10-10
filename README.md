@@ -4,7 +4,7 @@ SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo n
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão** (uma cópia do Vercel).
 
-O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Entrar).
+O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Login).
 
 Páginas:
 

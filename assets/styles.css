@@ -2971,7 +2971,10 @@ fieldset {
 
 .auth-aside {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
   padding: clamp(24px, 5vw, 64px);
   background:
     radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--accent) 40%, transparent), transparent 55%),
@@ -3141,19 +3144,39 @@ fieldset {
   background: var(--border-strong);
 }
 
-.oauth-grid {
-  display: grid;
-  gap: 10px;
+.oauth-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
 .oauth {
-  justify-content: flex-start;
-  gap: 12px;
-  width: 100%;
+  width: 52px;
+  height: 46px;
+  padding: 0;
 }
 
 .oauth svg {
   flex: none;
+}
+
+.sso {
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+.auth-aside .state-switch {
+  background: var(--surface);
+}
+
+.auth-demo {
+  max-width: 46ch;
+  margin: 0;
+}
+
+.sso + .auth-foot {
+  margin-top: 28px;
+  text-align: center;
 }
 
 .auth-foot {
@@ -3245,7 +3268,14 @@ fieldset {
     min-height: 0;
   }
 
+  /* no celular o quadro da esquerda vira uma faixa só com o seletor */
   .auth-aside {
+    padding: 16px var(--gutter-phone, 16px);
+    border-right: 0;
+    border-bottom: var(--bw) solid var(--border);
+  }
+
+  .auth-aside-inner {
     display: none;
   }
 }
