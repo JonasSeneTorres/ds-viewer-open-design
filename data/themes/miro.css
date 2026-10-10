@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/726aff3bac8e.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/726aff3bac8e.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/40ec04526bf3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/40ec04526bf3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/40ec04526bf3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/40ec04526bf3.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+[data-theme="miro"] {
+  --primary-500: #ad8b0d;
+  --primary-500-fg: #111111;
+  --neutral-400: #ababab;
+  --neutral-400-fg: #111111;
+  --ok-ink: color-mix(in oklab, var(--ok) 90%, var(--fg));
+  --ok-fg: #ffffff;
+  --warn-ink: color-mix(in oklab, var(--warn) 55%, var(--fg));
+  --warn-fg: #111111;
+  --danger-ink: color-mix(in oklab, var(--danger) 85%, var(--fg));
+  --danger-fg: #ffffff;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-h3: 1.5rem;
+  --fs-h2: 2.375rem;
+  --fs-h1: 3.5rem;
+  --fs-hero: 4.75rem;
+  --lh-body: 1.5;
+  --lh-tight: 1.05;
+  --display-tracking: -0.025em;
+  --section-y: 104px;
+  --section-y-tablet: 72px;
+  --container-max: 1220px;
+  --gutter: 36px;
+  --gutter-tablet: 28px;
+  --gutter-phone: 18px;
+  --motion-fast: 150ms;
+  --motion-base: 230ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-lg: 28px;
+  --focus-ring: 0 0 0 4px rgba(255, 208, 47, 0.38);
+  --bg: #fff7c2;
+  --surface: #ffffff;
+  --surface-2: #fff3a3;
+  --fg: #050038;
+  --fg-soft: #322b6b;
+  --muted: #605a8a;
+  --meta: color-mix(in oklab, #f7c600 50%, var(--fg));
+  --border: #ded9ff;
+  --border-soft: #eeeaff;
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #ffd02f;
+  --accent-strong: color-mix(in oklab, var(--accent) 50%, var(--fg));
+  --accent-weak: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  --accent-fg: #050038;
+  --solid: #ffd02f;
+  --solid-hover: #ffd553;
+  --solid-fg: #050038;
+  --ok: #1a7f37;
+  --ok-weak: color-mix(in oklab, var(--ok) 12%, var(--bg));
+  --warn: #ff9f1c;
+  --warn-weak: color-mix(in oklab, var(--warn) 14%, var(--bg));
+  --danger: #d92d20;
+  --danger-weak: color-mix(in oklab, var(--danger) 12%, var(--bg));
+  --bw: 1px;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 16px 40px rgba(5, 0, 56, 0.14);
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.22);
+  --font-display: "Roobert PRO Medium", blwf, cv03, cv04, cv09, cv11, sans-serif;
+  --font-body: "Noto Sans", "liga" 0", ss01, ss04, ss05, sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --heading-weight: 600;
+  --kicker-transform: uppercase;
+  --kicker-spacing: 0.08em;
+  --hero-ground: var(--surface-2);
+  --hero-ink: var(--fg);
+}

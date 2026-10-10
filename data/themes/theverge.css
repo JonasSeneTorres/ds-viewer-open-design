@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/8ed4bb5409af.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/8ed4bb5409af.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/0f7fcdc8ea1a.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/0f7fcdc8ea1a.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/0f7fcdc8ea1a.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../../assets/fonts/0f7fcdc8ea1a.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+[data-theme="theverge"] {
+  --primary-500: #ff00a8;
+  --primary-500-fg: #111111;
+  --neutral-400: #ababab;
+  --neutral-400-fg: #111111;
+  --ok-ink: var(--ok);
+  --ok-fg: #111111;
+  --warn-ink: var(--warn);
+  --warn-fg: #111111;
+  --danger-ink: var(--danger);
+  --danger-fg: #111111;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-h3: 1.625rem;
+  --fs-h2: 2.625rem;
+  --fs-h1: 4rem;
+  --fs-hero: 6rem;
+  --lh-body: 1.48;
+  --lh-tight: 1.05;
+  --display-tracking: -0.035em;
+  --section-y: 88px;
+  --section-y-tablet: 64px;
+  --container-max: 1240px;
+  --gutter: 36px;
+  --gutter-tablet: 28px;
+  --gutter-phone: 18px;
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --radius-lg: 12px;
+  --focus-ring: 0 0 0 4px rgba(255, 0, 168, 0.30);
+  --bg: #050505;
+  --surface: #111111;
+  --surface-2: #211022;
+  --fg: #ffffff;
+  --fg-soft: #e5e7eb;
+  --muted: #9ca3af;
+  --meta: #ff00a8;
+  --border: #2b2b2b;
+  --border-soft: #1d1d1d;
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #ff00a8;
+  --accent-strong: color-mix(in oklab, var(--accent) 85%, var(--fg));
+  --accent-weak: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  --accent-fg: #ffffff;
+  --solid: #ff00a8;
+  --solid-hover: #ff40b1;
+  --solid-fg: #111111;
+  --ok: #22c55e;
+  --ok-weak: color-mix(in oklab, var(--ok) 12%, var(--bg));
+  --warn: #facc15;
+  --warn-weak: color-mix(in oklab, var(--warn) 14%, var(--bg));
+  --danger: #ef4444;
+  --danger-weak: color-mix(in oklab, var(--danger) 12%, var(--bg));
+  --bw: 1px;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 24px 70px rgba(255, 0, 168, 0.12);
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.22);
+  --font-display: "Manuka", sans-serif;
+  --font-body: "PolySans", sans-serif;
+  --font-code: "PolySans Mono", monospace;
+  --font-mono: "PolySans Mono", monospace;
+  --heading-weight: 600;
+  --kicker-transform: uppercase;
+  --kicker-spacing: 0.08em;
+  --hero-ground: var(--surface-2);
+  --hero-ink: var(--fg);
+}

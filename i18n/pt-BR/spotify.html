@@ -1,0 +1,100 @@
+<!-- design-system-spotify · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Streaming de música. Verde vibrante sobre escuro, tipografia ousada, guiado pelas capas de álbuns.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>A interface web do Spotify é um player de música escuro e imersivo, que envolve os ouvintes num casulo quase preto (<code>#121212</code>, <code>#181818</code>, <code>#1f1f1f</code>), em que as capas dos álbuns e o conteúdo se tornam a principal fonte de cor. A filosofia de design é &quot;escuridão com o conteúdo em primeiro lugar&quot; — a interface recua para a sombra para que músicas, podcasts e playlists possam brilhar. Toda superfície é um tom de carvão, criando um ambiente de sala de cinema em que a única cor de verdade vem do icônico Spotify Green (<code>#1ed760</code>) e das próprias capas.</p>
+<p>A tipografia usa a SpotifyMixUI e a SpotifyMixUITitle — fontes proprietárias da família CircularSp (a Circular da Lineto, personalizada para o Spotify), com uma extensa pilha de fallbacks que inclui fontes árabes, hebraicas, cirílicas, gregas, devanágari e CJK, refletindo o alcance global do Spotify. O sistema tipográfico é compacto e funcional: 700 (negrito) para ênfase e navegação, 600 (seminegrito) para ênfase secundária e 400 (regular) para o corpo. Os botões usam caixa-alta com espaçamento entre letras positivo (1.4px–2px), com uma qualidade sistemática de rótulo.</p>
+<p>O que distingue o Spotify é sua geometria de pílulas e círculos. Os botões primários usam raio de 500px–9999px (pílula completa), os botões circulares de play usam raio de 50% e os campos de busca são pílulas de 500px. Junto com sombras pesadas (<code>rgba(0,0,0,0.5) 0px 8px 24px</code>) nos elementos elevados e uma combinação única de borda e sombra interna (<code>rgb(18,18,18) 0px 1px 0px, rgb(124,124,124) 0px 0px 0px 1px inset</code>), o resultado é uma interface que parece um aparelho de áudio premium — tátil, arredondada e feita para o toque.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Tema escuro imersivo quase preto (<code>#121212</code>–<code>#1f1f1f</code>) — a interface desaparece atrás do conteúdo</li><li>Spotify Green (<code>#1ed760</code>) como único destaque da marca — nunca decorativo, sempre funcional</li><li>Família tipográfica SpotifyMixUI/CircularSp com suporte a escritas do mundo todo</li><li>Botões em pílula (500px–9999px) e controles circulares (50%) — arredondados, otimizados para toque</li><li>Rótulos de botão em caixa-alta com espaçamento entre letras largo (1.4px–2px)</li><li>Sombras pesadas nos elementos elevados (<code>rgba(0,0,0,0.5) 0px 8px 24px</code>)</li><li>Cores semânticas: vermelho negativo (<code>#f3727f</code>), laranja de alerta (<code>#ffa42b</code>), azul de anúncio (<code>#539df5</code>)</li><li>As capas dos álbuns como principal fonte de cor — a interface é acromática por definição</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Marca principal</h3>
+<ul><li><strong>Spotify Green</strong> (<code>#1ed760</code>): principal destaque da marca — botões de play, estados ativos, CTAs</li><li><strong>Near Black</strong> (<code>#121212</code>): a superfície de fundo mais profunda</li><li><strong>Dark Surface</strong> (<code>#181818</code>): cards, contêineres, superfícies elevadas</li><li><strong>Mid Dark</strong> (<code>#1f1f1f</code>): fundos de botões, superfícies interativas</li></ul>
+<h3>Texto</h3>
+<ul><li><strong>White</strong> (<code>#ffffff</code>): <code>--text-base</code>, texto principal</li><li><strong>Silver</strong> (<code>#b3b3b3</code>): texto secundário, rótulos esmaecidos, navegação inativa</li><li><strong>Near White</strong> (<code>#cbcbcb</code>): texto secundário um pouco mais claro</li><li><strong>Light</strong> (<code>#fdfdfd</code>): branco quase puro para ênfase máxima</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Negative Red</strong> (<code>#f3727f</code>): <code>--text-negative</code>, estados de erro</li><li><strong>Warning Orange</strong> (<code>#ffa42b</code>): <code>--text-warning</code>, estados de alerta</li><li><strong>Announcement Blue</strong> (<code>#539df5</code>): <code>--text-announcement</code>, estados informativos</li></ul>
+<h3>Superfícies e bordas</h3>
+<ul><li><strong>Dark Card</strong> (<code>#252525</code>): superfície de card elevada</li><li><strong>Mid Card</strong> (<code>#272727</code>): superfície de card alternativa</li><li><strong>Border Gray</strong> (<code>#4d4d4d</code>): bordas de botões sobre escuro</li><li><strong>Light Border</strong> (<code>#7c7c7c</code>): bordas de botões com contorno, links esmaecidos</li><li><strong>Separator</strong> (<code>#b3b3b3</code>): linhas divisórias</li><li><strong>Light Surface</strong> (<code>#eeeeee</code>): botões do modo claro (raros)</li><li><strong>Spotify Green Border</strong> (<code>#1db954</code>): variante de borda com destaque verde</li></ul>
+<h3>Sombras</h3>
+<ul><li><strong>Pesada</strong> (<code>rgba(0,0,0,0.5) 0px 8px 24px</code>): diálogos, menus, painéis elevados</li><li><strong>Média</strong> (<code>rgba(0,0,0,0.3) 0px 8px 8px</code>): cards, dropdowns</li><li><strong>Borda interna</strong> (<code>rgb(18,18,18) 0px 1px 0px, rgb(124,124,124) 0px 0px 0px 1px inset</code>): combinação de borda e sombra dos campos</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Título</strong>: <code>SpotifyMixUITitle</code>, fallbacks: <code>CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, Helvetica Neue, helvetica, arial, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, MS Gothic</code></li><li><strong>Interface / corpo</strong>: <code>SpotifyMixUI</code>, mesma pilha de fallbacks</li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Título de seção</td><td>SpotifyMixUITitle</td><td>24px (1.50rem)</td><td>700</td><td>normal</td><td>normal</td><td>Peso de título em negrito</td></tr><tr><td>Título de recurso</td><td>SpotifyMixUI</td><td>18px (1.13rem)</td><td>600</td><td>1.30 (justa)</td><td>normal</td><td>Títulos de seção seminegrito</td></tr><tr><td>Corpo negrito</td><td>SpotifyMixUI</td><td>16px (1.00rem)</td><td>700</td><td>normal</td><td>normal</td><td>Texto enfatizado</td></tr><tr><td>Corpo</td><td>SpotifyMixUI</td><td>16px (1.00rem)</td><td>400</td><td>normal</td><td>normal</td><td>Corpo padrão</td></tr><tr><td>Botão em caixa-alta</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>600–700</td><td>1.00 (justa)</td><td>1.4px–2px</td><td><code>text-transform: uppercase</code></td></tr><tr><td>Botão</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>700</td><td>normal</td><td>0.14px</td><td>Botão padrão</td></tr><tr><td>Link de navegação negrito</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>700</td><td>normal</td><td>normal</td><td>Navegação</td></tr><tr><td>Link de navegação</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>400</td><td>normal</td><td>normal</td><td>Navegação inativa</td></tr><tr><td>Legenda negrito</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>700</td><td>1.50–1.54</td><td>normal</td><td>Metadados em negrito</td></tr><tr><td>Legenda</td><td>SpotifyMixUI</td><td>14px (0.88rem)</td><td>400</td><td>normal</td><td>normal</td><td>Metadados</td></tr><tr><td>Pequeno negrito</td><td>SpotifyMixUI</td><td>12px (0.75rem)</td><td>700</td><td>1.50</td><td>normal</td><td>Tags, contagens</td></tr><tr><td>Pequeno</td><td>SpotifyMixUI</td><td>12px (0.75rem)</td><td>400</td><td>normal</td><td>normal</td><td>Letras miúdas</td></tr><tr><td>Badge</td><td>SpotifyMixUI</td><td>10.5px (0.66rem)</td><td>600</td><td>1.33</td><td>normal</td><td><code>text-transform: capitalize</code></td></tr><tr><td>Micro</td><td>SpotifyMixUI</td><td>10px (0.63rem)</td><td>400</td><td>normal</td><td>normal</td><td>O menor texto</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Binário negrito/regular</strong>: a maior parte do texto é 700 (negrito) ou 400 (regular), com o 600 usado com parcimônia. Isso cria uma hierarquia visual clara pelo contraste de peso, em vez da variação de tamanho.</li><li><strong>Botões em caixa-alta como sistema</strong>: os rótulos de botão usam caixa-alta + espaçamento entre letras largo (1.4px–2px), criando uma voz sistemática de &quot;rótulo&quot;, distinta do texto de conteúdo.</li><li><strong>Tamanhos compactos</strong>: a faixa vai de 10px a 24px — mais estreita que na maioria dos sistemas. A tipografia do Spotify é compacta e funcional, feita para percorrer playlists, não para ler artigos.</li><li><strong>Suporte a escritas do mundo todo</strong>: a extensa pilha de fallbacks (árabe, hebraico, cirílico, grego, devanágari, CJK) reflete o alcance do Spotify em mais de 180 mercados.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Pílula escura</strong></p>
+<ul><li>Fundo: <code>#1f1f1f</code></li><li>Texto: <code>#ffffff</code> ou <code>#b3b3b3</code></li><li>Padding: 8px 16px</li><li>Raio: 9999px (pílula completa)</li><li>Uso: pílulas de navegação, ações secundárias</li></ul>
+<p><strong>Pílula escura grande</strong></p>
+<ul><li>Fundo: <code>#181818</code></li><li>Texto: <code>#ffffff</code></li><li>Padding: 0px 43px</li><li>Raio: 500px</li><li>Uso: botões principais de navegação do app</li></ul>
+<p><strong>Pílula clara</strong></p>
+<ul><li>Fundo: <code>#eeeeee</code></li><li>Texto: <code>#181818</code></li><li>Raio: 500px</li><li>Uso: CTAs no modo claro (consentimento de cookies, marketing)</li></ul>
+<p><strong>Pílula com contorno</strong></p>
+<ul><li>Fundo: transparente</li><li>Texto: <code>#ffffff</code></li><li>Borda: <code>1px solid #7c7c7c</code></li><li>Padding: 4px 16px 4px 36px (assimétrico, por causa do ícone)</li><li>Raio: 9999px</li><li>Uso: botões de seguir, ações secundárias</li></ul>
+<p><strong>Play circular</strong></p>
+<ul><li>Fundo: <code>#1f1f1f</code></li><li>Texto: <code>#ffffff</code></li><li>Padding: 12px</li><li>Raio: 50% (círculo)</li><li>Uso: controles de play/pause</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Fundo: <code>#181818</code> ou <code>#1f1f1f</code></li><li>Raio: 6px–8px</li><li>Sem bordas visíveis na maioria dos cards</li><li>Hover: o fundo clareia um pouco</li><li>Sombra: <code>rgba(0,0,0,0.3) 0px 8px 8px</code> quando elevado</li></ul>
+<h3>Campos</h3>
+<ul><li>Campo de busca: fundo <code>#1f1f1f</code>, texto <code>#ffffff</code></li><li>Raio: 500px (pílula)</li><li>Padding: 12px 96px 12px 48px (considera os ícones)</li><li>Foco: a borda passa a <code>#000000</code>, contorno <code>1px solid</code></li></ul>
+<h3>Navegação</h3>
+<ul><li>Barra lateral escura com SpotifyMixUI 14px peso 700 no item ativo e 400 nos inativos</li><li>Cor esmaecida <code>#b3b3b3</code> nos itens inativos, <code>#ffffff</code> no ativo</li><li>Botões de ícone circulares (raio de 50%)</li><li>Logo do Spotify no canto superior esquerdo, em verde</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 1px, 2px, 3px, 4px, 5px, 6px, 8px, 10px, 12px, 14px, 15px, 16px, 20px</li></ul>
+<h3>Grid e contêiner</h3>
+<ul><li>Barra lateral (fixa) + área de conteúdo principal</li><li>Cards de álbuns/playlists em grade</li><li>Barra de &quot;tocando agora&quot; em largura total, embaixo</li><li>A área de conteúdo responsiva ocupa o espaço restante</li></ul>
+<h3>Filosofia do espaço em branco</h3>
+<ul><li><strong>Compressão no escuro</strong>: o Spotify empacota o conteúdo de forma densa — grades de playlists, listas de faixas e navegação ficam todas bem juntas. O fundo escuro dá descanso visual entre os elementos sem precisar de espaços grandes.</li><li><strong>Densidade de conteúdo acima de respiro</strong>: isto é um app, não um site de marketing. Cada pixel serve à experiência de ouvir.</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Mínimo (2px): badges, tags de conteúdo explícito</li><li>Sutil (4px): campos, elementos pequenos</li><li>Padrão (6px): contêineres de capas de álbuns, cards</li><li>Confortável (8px): seções, diálogos</li><li>Médio (10px–20px): painéis, elementos sobrepostos</li><li>Grande (100px): botões grandes em pílula</li><li>Pílula (500px): botões primários, campo de busca</li><li>Pílula completa (9999px): pílulas de navegação, busca</li><li>Círculo (50%): botões de play, avatares, ícones</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Base (nível 0)</td><td>Fundo <code>#121212</code></td><td>Camada mais profunda, fundo da página</td></tr><tr><td>Superfície (nível 1)</td><td><code>#181818</code> ou <code>#1f1f1f</code></td><td>Cards, barra lateral, contêineres</td></tr><tr><td>Elevado (nível 2)</td><td><code>rgba(0,0,0,0.3) 0px 8px 8px</code></td><td>Menus dropdown, cards em hover</td></tr><tr><td>Diálogo (nível 3)</td><td><code>rgba(0,0,0,0.5) 0px 8px 24px</code></td><td>Modais, sobreposições, menus</td></tr><tr><td>Interno (borda)</td><td><code>rgb(18,18,18) 0px 1px 0px, rgb(124,124,124) 0px 0px 0px 1px inset</code></td><td>Bordas de campos</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: o Spotify usa sombras notavelmente pesadas para um app de tema escuro. A sombra de opacidade 0.5 com 24px de desfoque cria um efeito dramático de &quot;flutuar na escuridão&quot; para diálogos e menus, enquanto a de opacidade 0.3 com 8px de desfoque dá uma elevação mais sutil aos cards. A combinação única de borda e sombra interna nos campos cria uma qualidade tátil, rebaixada.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use fundos quase pretos (<code>#121212</code>–<code>#1f1f1f</code>) — profundidade pela variação de tom</li><li>Aplique o Spotify Green (<code>#1ed760</code>) só em controles de play, estados ativos e CTAs principais</li><li>Use formato de pílula (500px–9999px) em todos os botões — circular (50%) nos controles de play</li><li>Aplique caixa-alta + espaçamento entre letras largo (1.4px–2px) nos rótulos de botão</li><li>Mantenha a tipografia compacta (faixa de 10px–24px) — isto é um app, não uma revista</li><li>Use sombras pesadas (<code>opacidade de 0.3–0.5</code>) nos elementos elevados sobre fundos escuros</li><li>Deixe as capas dos álbuns trazerem a cor — a interface em si é acromática</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não use o Spotify Green de forma decorativa ou em fundos — ele é só funcional</li><li>Não use fundos claros nas superfícies principais — a imersão no escuro é essencial</li><li>Não abra mão da geometria de pílula/círculo nos botões — botões quadrados quebram a identidade</li><li>Não use sombras finas/sutis — sobre fundos escuros, as sombras precisam ser pesadas para aparecer</li><li>Não adicione outras cores de marca — verde + cinzas acromáticos é a paleta completa</li><li>Não use alturas de linha relaxadas — a tipografia do Spotify é compacta e densa</li><li>Não exponha bordas cinza cruas — use bordas baseadas em sombra ou internas</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile pequeno</td><td>&lt;425px</td><td>Layout mobile compacto</td></tr><tr><td>Mobile</td><td>425–576px</td><td>Mobile padrão</td></tr><tr><td>Tablet</td><td>576–768px</td><td>Grade de 2 colunas</td></tr><tr><td>Tablet grande</td><td>768–896px</td><td>Layout expandido</td></tr><tr><td>Desktop pequeno</td><td>896–1024px</td><td>Barra lateral visível</td></tr><tr><td>Desktop</td><td>1024–1280px</td><td>Layout desktop completo</td></tr><tr><td>Desktop grande</td><td>&gt;1280px</td><td>Grade expandida</td></tr></tbody></table>
+<h3>Estratégia de recolhimento</h3>
+<ul><li>Barra lateral: completa → recolhida → oculta</li><li>Grade de álbuns: 5 colunas → 3 → 2 → 1</li><li>Barra de &quot;tocando agora&quot;: mantida em todos os tamanhos</li><li>Busca: o campo em pílula é mantido, a largura se ajusta</li><li>Navegação: barra lateral → barra inferior no mobile</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Fundo: Near Black (<code>#121212</code>)</li><li>Superfície: Dark Card (<code>#181818</code>)</li><li>Texto: White (<code>#ffffff</code>)</li><li>Texto secundário: Silver (<code>#b3b3b3</code>)</li><li>Destaque: Spotify Green (<code>#1ed760</code>)</li><li>Borda: <code>#4d4d4d</code></li><li>Erro: Negative Red (<code>#f3727f</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um card escuro: fundo #181818, raio de 8px. Título em SpotifyMixUI 16px peso 700, texto branco. Subtítulo em 14px peso 400, #b3b3b3. Sombra rgba(0,0,0,0.3) 0px 8px 8px no hover.&quot;</li><li>&quot;Desenhe um botão em pílula: fundo #1f1f1f, texto branco, raio de 9999px, padding de 8px 16px. SpotifyMixUI 14px peso 700, caixa-alta, letter-spacing 1.4px.&quot;</li><li>&quot;Construa um botão circular de play: fundo Spotify Green (#1ed760), ícone #000000, raio de 50%, padding de 12px.&quot;</li><li>&quot;Crie um campo de busca: fundo #1f1f1f, texto branco, raio de 500px, padding de 12px 48px. Borda interna: rgb(124,124,124) 0px 0px 0px 1px inset.&quot;</li><li>&quot;Desenhe uma barra lateral de navegação: fundo #121212. Itens ativos: 14px peso 700, branco. Inativos: 14px peso 400, #b3b3b3.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Comece com #121212 — tudo vive na escuridão quase preta</li><li>Spotify Green só para destaques funcionais (play, ativo, CTA)</li><li>Pílula em tudo — 500px nos grandes, 9999px nos pequenos, 50% nos circulares</li><li>Caixa-alta + tracking largo nos botões — a voz sistemática de rótulo</li><li>Sombras pesadas (opacidade de 0.3–0.5) para elevação — sombras leves são invisíveis no escuro</li><li>As capas dos álbuns trazem toda a cor — a interface continua acromática</li></ol>
+</section>

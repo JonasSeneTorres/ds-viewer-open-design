@@ -1,0 +1,698 @@
+<!-- design-system-urdu · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline"></p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p><strong>&quot;Herança digital&quot;</strong> — uma estética limpa, espaçosa e respeitosa que faz a ponte entre a caligrafia urdu tradicional e o design minimalista contemporâneo.</p>
+<p>O sistema evita a poluição visual. Todo componente prioriza o <strong>espaço em branco</strong>, a <strong>legibilidade</strong> e a elegância inerente da escrita Nastaliq. A paleta de cores ecoa os tons terrosos e os símbolos culturais da região do Indo. A tipografia é a protagonista; todo o resto sustenta a legibilidade e a autenticidade cultural.</p>
+<p><strong>Filosofia de design:</strong></p>
+<ul><li>O urdu não é uma &quot;variante regional&quot; de outra língua; é a voz principal</li><li>O layout RTL não é uma reflexão tardia; é arquiteturalmente primário</li><li>A complexidade vertical da Nastaliq exige espaçamento generoso</li><li>A estética cultural (padrões tradicionais, terras quentes) eleva a experiência além da interface de tecnologia genérica</li></ul>
+<hr>
+</section>
+
+<section data-section="color-palette-cultural-modernism">
+<h2>Paleta de cores (modernismo cultural)</h2>
+<p>Todas as cores foram testadas quanto à conformidade de contraste WCAG AA (mínimo de 4.5:1 para texto de corpo, 3:1 para texto grande).</p>
+<h3>Cores primárias</h3>
+<table><thead><tr><th>Cor</th><th>Hex</th><th>Nome</th><th>Uso</th><th>Contraste WCAG (sobre Parchment)</th></tr></thead><tbody><tr><td><strong>Marca principal</strong></td><td><code>#0F595E</code></td><td>Deep Teal / Jungle Green</td><td>CTAs, ações principais, cabeçalhos</td><td>8.4:1 ✅ AA</td></tr><tr><td><strong>Fundo</strong></td><td><code>#F4F1EA</code></td><td>Parchment / Off-White</td><td>Tela principal, fundos de cards</td><td>—</td></tr><tr><td><strong>Destaque</strong></td><td><code>#C05621</code></td><td>Terracotta / Rust</td><td>CTAs secundários, realces, estados de foco</td><td>4.05:1 ✅ AA (grande)</td></tr><tr><td><strong>Texto principal</strong></td><td><code>#1A202C</code></td><td>Rich Slate</td><td>Texto de corpo, rótulos</td><td>15.1:1 ✅ AAA</td></tr><tr><td><strong>Texto secundário</strong></td><td><code>#4A5568</code></td><td>Warm Grey</td><td>Rótulos secundários, legendas</td><td>3.56:1 ✅ só interface</td></tr><tr><td><strong>Borda</strong></td><td><code>#E2E8F0</code></td><td>Light Silver</td><td>Bordas de componentes, divisores</td><td>—</td></tr></tbody></table>
+<h3>Por que essas cores?</h3>
+<ul><li><strong>Deep Teal (#0F595E):</strong> representa confiança, estabilidade e identidade nacional. Inspirado no SadaPay (fintech paquistanesa) e na tinta urdu tradicional.</li><li><strong>Parchment (#F4F1EA):</strong> branco quente que imita papel de alta qualidade e reduz o cansaço visual em longas sessões de leitura (crucial para conteúdo editorial).</li><li><strong>Terracotta (#C05621):</strong> ecoa a cerâmica tradicional do Vale do Indo. Usada para ênfase sem sobrecarregar.</li><li><strong>Rich Slate (#1A202C):</strong> contraste máximo para o texto em Nastaliq; os nuqtas (sinais diacríticos) da escrita exigem uma cor escura e nítida.</li></ul>
+<h3>Paleta estendida (semântica)</h3>
+<pre><code>:root {
+  /* Primárias */
+  --color-primary: #0F595E;
+  --color-primary-dark: #0D3F45;
+  --color-primary-light: #2B7A82;
+
+  /* Destaque */
+  --color-accent: #C05621;
+  --color-accent-dark: #A03F1C;
+  --color-accent-light: #E8754A;
+
+  /* Fundos */
+  --color-bg-primary: #F4F1EA;
+  --color-bg-secondary: #FAFAF8;
+
+  /* Texto */
+  --color-text-primary: #1A202C;
+  --color-text-secondary: #4A5568;
+  --color-text-tertiary: #718096;
+
+  /* Cores de status */
+  --color-success: #2D5B4A; /* Verde profundo */
+  --color-warning: #C05621; /* Terracota (também serve de alerta) */
+  --color-error: #8B3A3A;   /* Bordô profundo */
+  --color-info: #2B7A82;    /* Verde-azulado claro */
+
+  /* Bordas e divisores */
+  --color-border: #E2E8F0;
+  --color-border-dark: #CBD5E0;
+}</code></pre>
+<hr>
+</section>
+
+<section data-section="typography-the-heart-of-the-system">
+<h2>Tipografia (o coração do sistema)</h2>
+<p>A tipografia urdu é a camada fundamental. O sistema impõe a <strong>harmonia bilíngue</strong> — o urdu tem prioridade; o texto latino tem um papel de apoio.</p>
+<h3>Famílias tipográficas</h3>
+<h4>Escrita urdu (principal)</h4>
+<pre><code>font-family: &quot;Noto Nastaliq Urdu&quot;, &quot;Mehr Nastaliq&quot;, &quot;URW Chancery&quot;, serif;</code></pre>
+<p><strong>Justificativa da escolha das fontes:</strong></p>
+<ul><li><strong>Noto Nastaliq Urdu</strong> (Google Fonts): mantida profissionalmente, open source, otimizada para telas modernas. O peso pesado (700) dá a devida autoridade.</li><li><strong>Mehr Nastaliq</strong>: alternativa desenvolvida no Paquistão; excelente kerning específico para o urdu.</li><li><strong>URW Chancery</strong> (fallback do sistema): serifada com cara de desenho à mão; degradação elegante quando as fontes web falham.</li></ul>
+<p><strong>Importação (adicione ao <code>&lt;head&gt;</code>):</strong></p>
+<pre><code>&lt;link rel=&quot;preload&quot; href=&quot;https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&amp;display=swap&quot; as=&quot;style&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+<h4>Escrita latina (secundária)</h4>
+<pre><code>font-family: &quot;Inter&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, sans-serif;</code></pre>
+<p><strong>Uso:</strong> termos técnicos, trechos de código, dados numéricos, rótulos em inglês, nomes de APIs.</p>
+<p><strong>Por que a Inter:</strong> desenhada para telas, excelente kerning em todos os tamanhos, moderna e neutra.</p>
+<h3>Tamanhos de fonte e escala</h3>
+<p><strong>Unidade base:</strong> 16px</p>
+<table><thead><tr><th>Nível</th><th>Tamanho</th><th>Altura da linha</th><th>Uso</th></tr></thead><tbody><tr><td><strong>Display XL</strong></td><td>48px</td><td>1.2</td><td>Títulos de página</td></tr><tr><td><strong>Display grande</strong></td><td>36px</td><td>1.3</td><td>Cabeçalhos de seção</td></tr><tr><td><strong>Título 1</strong></td><td>32px</td><td>1.4</td><td>Títulos principais</td></tr><tr><td><strong>Título 2</strong></td><td>24px</td><td>1.5</td><td>Subtítulos de seção</td></tr><tr><td><strong>Título 3</strong></td><td>20px</td><td>1.6</td><td>Títulos de componentes</td></tr><tr><td><strong>Corpo grande</strong></td><td>18px</td><td>1.8</td><td>Parágrafos de abertura, texto de introdução</td></tr><tr><td><strong>Corpo</strong></td><td>16px</td><td>1.8</td><td>Texto de corpo padrão, editorial</td></tr><tr><td><strong>Corpo pequeno</strong></td><td>14px</td><td>1.8</td><td>Texto secundário, legendas</td></tr><tr><td><strong>Rótulo</strong></td><td>12px</td><td>1.8</td><td>Rótulos de formulário, microtexto</td></tr></tbody></table>
+<h3>Altura da linha (crucial para a Nastaliq)</h3>
+<p><strong>Altura de linha mínima: 1.8</strong></p>
+<p>A Nastaliq tem ascendentes verticais altas e descendentes profundas. As alturas de linha padrão da web (1.5) fazem os nuqtas (sinais diacríticos) serem cortados ou se sobreporem. </p>
+<p><strong>Aplicação:</strong></p>
+<pre><code>body {
+  line-height: 1.8;
+}
+
+/* Os títulos podem se comprimir um pouco, mas nunca abaixo de 1.4 */
+h1, h2, h3 {
+  line-height: 1.4;
+}
+
+/* Garanta que os parágrafos de corpo mantenham espaço para respirar */
+p {
+  line-height: 1.9; /* Um pouco mais, para legibilidade */
+}</code></pre>
+<h3>Renderização e suavização das fontes</h3>
+<pre><code>body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Mantém as curvas da Nastaliq nítidas e evita renderização borrada */
+  text-rendering: optimizeLegibility;
+}
+
+/* Evite mudanças de font-weight nos estados de hover */
+button, a {
+  transition: color 0.2s ease, background 0.2s ease;
+  /* NÃO anime o font-weight; isso causa deslocamento de layout */
+}</code></pre>
+<h3>Pesos da fonte</h3>
+<p>Use apenas:</p>
+<ul><li><strong>400 (Regular):</strong> texto de corpo, rótulos padrão</li><li><strong>700 (Bold):</strong> títulos, ênfase, texto forte</li></ul>
+<p><strong>Evite:</strong> 300, 500, 600 (a Noto Nastaliq não renderiza bem em pesos intermediários; o design sofre).</p>
+<hr>
+</section>
+
+<section data-section="spacing-layout-grid">
+<h2>Espaçamento e grid de layout</h2>
+<p><strong>Unidade base:</strong> 4px</p>
+<p>Todo espaçamento segue uma <strong>escala modular</strong> baseada em 4px. Isso permite tanto alinhamentos finos quanto em grande escala.</p>
+<h3>Escala de espaçamento</h3>
+<table><thead><tr><th>Nome</th><th>Valor</th><th>Uso</th></tr></thead><tbody><tr><td><strong>xs</strong></td><td>4px</td><td>Microespaçamento (elementos inline, espaços entre ícones)</td></tr><tr><td><strong>sm</strong></td><td>8px</td><td>Padding interno de componentes, agrupamentos justos</td></tr><tr><td><strong>md</strong></td><td>16px</td><td>Padding padrão, espaços padrão</td></tr><tr><td><strong>lg</strong></td><td>24px</td><td>Espaçamento entre seções, respiro moderado</td></tr><tr><td><strong>xl</strong></td><td>32px</td><td>Grandes espaços entre seções, espaçamento do hero</td></tr><tr><td><strong>2xl</strong></td><td>48px</td><td>Espaçamento no nível da página, grandes blocos de layout</td></tr><tr><td><strong>3xl</strong></td><td>64px</td><td>Espaçamento de tela cheia, espaços na escala da viewport</td></tr></tbody></table>
+<h3>Princípios de layout</h3>
+<h4>Horizontal (consciente do RTL)</h4>
+<p>No contexto RTL, a direção é invertida:</p>
+<ul><li><strong>margin-inline-start:</strong> vira a margem direita (propriedade lógica; inverte automaticamente em RTL)</li><li><strong>padding-inline-end:</strong> vira o padding esquerdo (propriedade lógica; inverte automaticamente em RTL)</li></ul>
+<p><strong>Use sempre propriedades lógicas:</strong></p>
+<pre><code>.component {
+  /* ✅ BOM: inverte automaticamente em RTL */
+  margin-inline: 16px;
+  padding-inline-start: 24px;
+
+  /* ❌ RUIM: LTR fixo no código; quebra em RTL */
+  margin-left: 16px;
+  padding-right: 24px;
+}</code></pre>
+<h4>Vertical</h4>
+<p>O espaçamento vertical <strong>não é afetado pelo RTL</strong>. Todas as margens e paddings verticais permanecem consistentes.</p>
+<pre><code>.card {
+  padding-block: 24px;      /* 24px em cima + embaixo */
+  margin-block: 16px;       /* 16px em cima + embaixo */
+}</code></pre>
+<h3>Espaçamento de contêineres e cards</h3>
+<pre><code>.card {
+  padding: 24px;            /* Espaçamento interno */
+  margin-block: 16px;       /* Espaçamento externo */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-secondary);
+}
+
+.section {
+  padding-block: 32px;      /* Padding vertical dentro da seção */
+  padding-inline: 24px;     /* Padding horizontal (seguro para RTL) */
+}</code></pre>
+<h3>Sistema de grid (opcional: 12 colunas)</h3>
+<p>Para layouts complexos, use um grid de 12 colunas:</p>
+<pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  direction: rtl;           /* O grid RTL inverte as colunas automaticamente */
+}
+
+.grid-col-6 {
+  grid-column: span 6;
+}
+
+.grid-col-4 {
+  grid-column: span 4;
+}</code></pre>
+<hr>
+</section>
+
+<section data-section="component-styles">
+<h2>Estilos dos componentes</h2>
+<h3>Botões</h3>
+<h4>Botão primário</h4>
+<pre><code>&lt;button class=&quot;button button-primary&quot;&gt;
+  &lt;span lang=&quot;ur&quot;&gt;موافقہ&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+<pre><code>.button-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-urdu);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.button-primary:active {
+  opacity: 0.9;
+}
+
+.button-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}</code></pre>
+<h4>Botão secundário</h4>
+<pre><code>&lt;button class=&quot;button button-secondary&quot;&gt;
+  &lt;span lang=&quot;ur&quot;&gt;منسوخ&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+<pre><code>.button-secondary {
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+  padding: 12px 24px;
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  font-family: var(--font-urdu);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.button-secondary:hover {
+  background: rgba(15, 89, 94, 0.1);
+}</code></pre>
+<h4>Posição dos ícones (consciente do RTL)</h4>
+<p>Em RTL, os ícones devem ficar à <strong>direita (direita lógica)</strong> do texto:</p>
+<pre><code>&lt;!-- Contexto urdu (RTL) --&gt;
+&lt;button class=&quot;button button-primary&quot;&gt;
+  &lt;icon class=&quot;icon-send&quot; aria-hidden=&quot;true&quot;&gt;&lt;/icon&gt;
+  &lt;span lang=&quot;ur&quot;&gt;بھیجیں&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;!-- HTML renderizado como: [ícone] [texto] (visualmente: [texto] [ícone] em RTL) --&gt;</code></pre>
+<pre><code>.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Em RTL, o flex inverte automaticamente; o ícone aparece à direita visualmente */
+}
+
+.button .icon {
+  width: 20px;
+  height: 20px;
+}</code></pre>
+<h3>Componentes de formulário</h3>
+<h4>Campos de entrada</h4>
+<pre><code>&lt;div class=&quot;form-group&quot;&gt;
+  &lt;label lang=&quot;ur&quot; for=&quot;username&quot;&gt;صارف کا نام&lt;/label&gt;
+  &lt;input
+    id=&quot;username&quot;
+    type=&quot;text&quot;
+    class=&quot;input&quot;
+    placeholder=&quot;اپنا صارف کا نام درج کریں&quot;
+    lang=&quot;ur&quot;
+    dir=&quot;rtl&quot;
+  /&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>.form-group {
+  margin-block: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: var(--font-urdu);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-block-end: 8px;
+  text-align: right;  /* Alinhado à direita para rótulos RTL */
+}
+
+.input {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-urdu);
+  font-size: 16px;
+  color: var(--color-text-primary);
+  line-height: 1.8;
+  direction: rtl;
+}
+
+.input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15, 89, 94, 0.1);
+}
+
+.input:disabled {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-tertiary);
+  cursor: not-allowed;
+}</code></pre>
+<h4>Acessibilidade: placeholder vs. rótulo</h4>
+<p><strong>Nunca</strong> dependa do placeholder como único rótulo. Os placeholders desaparecem no foco, quebrando a acessibilidade.</p>
+<pre><code>&lt;!-- ❌ RUIM: sem rótulo visível --&gt;
+&lt;input placeholder=&quot;صارف کا نام&quot; /&gt;
+
+&lt;!-- ✅ BOM: rótulo + placeholder presentes --&gt;
+&lt;label for=&quot;username&quot;&gt;صارف کا نام&lt;/label&gt;
+&lt;input id=&quot;username&quot; placeholder=&quot;مثال: احمد علی&quot; /&gt;
+
+&lt;!-- ✅ EXCELENTE: rótulo + aria-label para leitores de tela --&gt;
+&lt;label for=&quot;username&quot; lang=&quot;ur&quot;&gt;صارف کا نام&lt;/label&gt;
+&lt;input
+  id=&quot;username&quot;
+  aria-label=&quot;صارف کا نام درج کریں&quot;
+  placeholder=&quot;احمد علی&quot;
+/&gt;</code></pre>
+<h3>Cards</h3>
+<pre><code>&lt;div class=&quot;card&quot;&gt;
+  &lt;h3 lang=&quot;ur&quot;&gt;کارڈ کا عنوان&lt;/h3&gt;
+  &lt;p lang=&quot;ur&quot;&gt;یہاں کارڈ کا مواد ہے۔&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>.card {
+  padding: 24px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin-block-end: 12px;
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}</code></pre>
+<h3>Links</h3>
+<pre><code>&lt;a href=&quot;#&quot; lang=&quot;ur&quot;&gt;مزید معلومات پڑھیں&lt;/a&gt;</code></pre>
+<pre><code>a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-family: var(--font-urdu);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}</code></pre>
+<hr>
+</section>
+
+<section data-section="motion-animation">
+<h2>Movimento e animação</h2>
+<p>Todas as animações respeitam a direção RTL e mantêm a legibilidade.</p>
+<h3>Animações de entrada</h3>
+<pre><code>@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fade-in-up 0.3s ease-out;
+}</code></pre>
+<h3>Hover e estados interativos</h3>
+<pre><code>.button:hover {
+  background-color: var(--color-primary-dark);
+  transition: background-color 0.2s ease-in-out;
+  /* Evite mudanças de font-weight; elas causam deslocamento de layout */
+}
+
+.button:active {
+  transform: scale(0.98);
+  /* Dá um retorno tátil sem quebrar o layout */
+}</code></pre>
+<h3>Evite (antipadrões)</h3>
+<ul><li>❌ <strong>Parallax em texto urdu:</strong> quebra a legibilidade durante a rolagem; o texto se move em velocidades diferentes</li><li>❌ <strong>Rotação de elementos em urdu:</strong> as curvas da Nastaliq se distorcem quando giradas; fica ilegível</li><li>❌ <strong>Animações em itálico:</strong> o urdu não tem itálico verdadeiro; parece quebrado</li><li>❌ <strong>Transições rápidas (&lt; 150ms):</strong> os refluxos RTL precisam de tempo; animações rápidas engasgam</li></ul>
+<h3>Durações recomendadas</h3>
+<table><thead><tr><th>Tipo de animação</th><th>Duração</th><th>Easing</th></tr></thead><tbody><tr><td>Entrada</td><td>300ms</td><td>ease-out</td></tr><tr><td>Hover</td><td>200ms</td><td>ease-in-out</td></tr><tr><td>Saída</td><td>200ms</td><td>ease-in</td></tr><tr><td>Revelação na rolagem</td><td>600ms</td><td>ease-out</td></tr></tbody></table>
+<hr>
+</section>
+
+<section data-section="accessibility-a11y">
+<h2>Acessibilidade (A11y)</h2>
+<p>Este sistema foi construído para ser acessível. Todos os contrastes de cor foram verificados em relação aos padrões WCAG.</p>
+<h3>Contraste de cor (razões verificadas)</h3>
+<table><thead><tr><th>Combinação</th><th>Contraste</th><th>Padrão</th><th>Observações</th></tr></thead><tbody><tr><td>Deep Teal (#0F595E) sobre Parchment</td><td>8.4:1</td><td>✅ AAA</td><td>Seguro para todo texto</td></tr><tr><td>Rich Slate (#1A202C) sobre Parchment</td><td>15.1:1</td><td>✅ AAA</td><td>Seguro para todo texto</td></tr><tr><td>Terracotta (#C05621) sobre Parchment</td><td>4.05:1</td><td>⚠️ AA (grande)</td><td><strong>Só texto grande (18pt+) ou em negrito</strong></td></tr><tr><td>Muted Slate (#718096) sobre Parchment</td><td>3.56:1</td><td>❌ só interface</td><td>Só decorativo/bordas; evite em texto</td></tr></tbody></table>
+<h3>Tamanhos mínimos de texto</h3>
+<ul><li><strong>Texto de corpo:</strong> mínimo de 16px (a escrita Nastaliq fica ilegível em tamanhos menores).</li><li><strong>Rótulos:</strong> mínimo de 14px.</li><li><strong>Legendas:</strong> mínimo de 12px (só para informações não essenciais).</li></ul>
+<h3>Estados de foco (navegação por teclado)</h3>
+<p>Todos os elementos interativos precisam ter indicadores de foco visíveis para dar suporte a quem usa teclado:</p>
+<pre><code>button:focus,
+a:focus,
+input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}</code></pre>
+<h3>Rótulos ARIA (para leitores de tela)</h3>
+<p>Regras de nomes acessíveis (boas práticas de ARIA) — rótulos nativos primeiro: use sempre elementos &lt;label for=&quot;...&quot;&gt; padrão. Esse é o padrão-ouro para leitores de tela e garante que o nome acessível corresponda ao texto visível.</p>
+<p>Quando usar aria-label: use aria-label só quando um elemento interativo não tiver texto visível (ex.: um botão só com ícone).</p>
+<p>Evite sobrescrever: não use um aria-label que repita ou contradiga o texto visível. Isso evita incompatibilidades WCAG de &quot;Label-in-Name&quot;.</p>
+<pre><code>&lt;label for=&quot;email&quot; lang=&quot;ur&quot;&gt;ای میل&lt;/label&gt;
+&lt;input id=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;name@example.com&quot; /&gt;
+
+&lt;button class=&quot;icon-button&quot; aria-label=&quot;تلاش کریں&quot;&gt;
+  &lt;icon class=&quot;icon-search&quot;&gt;&lt;/icon&gt;
+&lt;/button&gt;
+
+&lt;label for=&quot;pass&quot; lang=&quot;ur&quot;&gt;پاس ورڈ&lt;/label&gt;
+&lt;input id=&quot;pass&quot; type=&quot;password&quot; aria-describedby=&quot;pass-hint&quot; /&gt;
+&lt;p id=&quot;pass-hint&quot; lang=&quot;ur&quot;&gt;کم از کم 8 حروف۔&lt;/p&gt;
+</code></pre>
+<h3>Declaração de idioma</h3>
+<p>Declarar corretamente o idioma do documento é crucial para a leitura de tela em urdu e para a renderização correta das fontes:</p>
+<pre><code>&lt;html lang=&quot;ur&quot; dir=&quot;rtl&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 lang=&quot;ur&quot;&gt;خیر مقدم&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<hr>
+</section>
+
+<section data-section="brand-voice-tone">
+<h2>Voz e tom da marca</h2>
+<p>O urdu é uma <strong>língua formal e respeitosa</strong>. O microtexto deve refletir isso.</p>
+<h3>Níveis de formalidade</h3>
+<h4>Formal (governo, bancos, oficial)</h4>
+<pre><code>✅ معافی چاہتے ہیں، آپ کی درخواست مکمل نہیں ہو سکی۔ براہ کرم دوبارہ کوشش کریں۔
+❌ خرابی ہوگئی</code></pre>
+<p>Tradução: &quot;Pedimos desculpas; sua solicitação não pôde ser concluída. Tente novamente.&quot;</p>
+<h4>Amigável (apps, produtos)</h4>
+<pre><code>✅ کوئی مسئلہ! دوبارہ کوشش کریں۔
+❌ Error 503</code></pre>
+<p>Tradução: &quot;Ops! Tente de novo.&quot;</p>
+<h4>Técnico (documentação para desenvolvedores, código)</h4>
+<pre><code>✅ API جواب میں خرابی: [error_code]
+❌ بھئی، غلط ہوا</code></pre>
+<p>Tradução: &quot;Erro na resposta da API: [error_code]&quot;</p>
+<h3>Moeda e localização</h3>
+<p>Use sempre a rupia paquistanesa (₨), e não a rupia genérica (₹):</p>
+<pre><code>&lt;!-- ✅ Correto --&gt;
+&lt;span lang=&quot;ur&quot;&gt;₨ ۲۵,۰۰۰&lt;/span&gt;
+
+&lt;!-- ❌ Errado --&gt;
+&lt;span lang=&quot;ur&quot;&gt;₹ 25,000&lt;/span&gt;</code></pre>
+<h3>Exemplos de microtexto</h3>
+<table><thead><tr><th>Inglês</th><th>Urdu</th><th>Contexto</th></tr></thead><tbody><tr><td>&quot;Submit&quot;</td><td>&quot;بھیجیں&quot; ou &quot;جمع کرائیں&quot;</td><td>Ação de formulário</td></tr><tr><td>&quot;Cancel&quot;</td><td>&quot;منسوخ کریں&quot; ou &quot;واپس جائیں&quot;</td><td>Dispensar</td></tr><tr><td>&quot;Loading...&quot;</td><td>&quot;لوڈ ہو رہا ہے...&quot;</td><td>Estado de espera</td></tr><tr><td>&quot;Error occurred&quot;</td><td>&quot;معافی چاہتے ہیں، کوئی مسئلہ واقع ہوا۔&quot;</td><td>Estado de erro</td></tr><tr><td>&quot;No results&quot;</td><td>&quot;کوئی نتیجہ نہیں ملا&quot;</td><td>Estado vazio</td></tr></tbody></table>
+<hr>
+</section>
+
+<section data-section="anti-patterns-do-not">
+<h2>Antipadrões (NÃO faça)</h2>
+<h3>❌ Layout e direção</h3>
+<ul><li><strong>margin-left/right fixos no código:</strong> quebram os layouts RTL. Use sempre propriedades lógicas como <code>margin-inline-start</code> ou <code>padding-inline-end</code>.</li><li><strong>Larguras fixas em contêineres de texto:</strong> a escrita urdu ocupa muito espaço vertical; alturas fixas vão cortar os &quot;nuqtas&quot; (pontos).</li></ul>
+<h3>✅ Padrões de sucesso bidirecionais (bidi)</h3>
+<ul><li><strong>Isole o conteúdo LTR:</strong> ao misturar urdu com nomes de produtos em inglês, URLs ou números, use sempre a tag <code>&lt;bdi&gt;</code> ou <code>dir=&quot;ltr&quot;</code> para impedir que a pontuação (como colchetes ou pontos) vá para o lado errado.</li></ul>
+<pre><code>&lt;p dir=&quot;rtl&quot;&gt;
+  Check our website &lt;bdi dir=&quot;ltr&quot;&gt;example.com&lt;/bdi&gt; for more details.
+&lt;/p&gt;</code></pre>
+<h3>❌ Tipografia</h3>
+<ul><li><strong>Fontes árabes genéricas (Almarai, Droid Arabic):</strong> não use Almarai nem Noto Naskh Arabic. Elas não suportam a natureza em cascata da Nastaliq e quebram o espaçamento.</li></ul>
+<ul><li><strong>Texto urdu em itálico:</strong> a Nastaliq não tem itálico verdadeiro. A renderização da fonte quebra. Use negrito ou cor para dar ênfase.</li></ul>
+<ul><li><strong>Altura de linha &lt; 1.8:</strong> alturas de linha estreitas cortam os pontos (nuqtas). Mantenha um mínimo de 1.8 em todo texto de corpo em urdu.</li></ul>
+<h3>❌ Design visual</h3>
+<ul><li><strong>Sombras suaves em texto urdu:</strong> as sombras tornam os nuqtas invisíveis. Use-as só em contêineres.</li></ul>
+<p>  ```css   /<em> ❌ RUIM </em>/   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);</p>
+<p>  /<em> ✅ BOM: sombras só em contêineres </em>/   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);   ```</p>
+<ul><li><strong>Emoji como ícones principais:</strong> o emoji é LTR por padrão; fica ambíguo em RTL. Use ícones SVG.</li><li><strong>Truncar texto com reticências em RTL:</strong> <code>text-overflow: ellipsis</code> se lê ao contrário. Use um botão de expandir ou o texto completo.</li></ul>
+<p>  ```html   &lt;!-- ❌ RUIM: as reticências se leem errado em RTL --&gt;   &lt;p style=&quot;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;&quot;&gt;     یہ بہت لمبا متن ہے...   &lt;/p&gt;</p>
+<p>  &lt;!-- ✅ BOM: texto completo ou botão de expandir --&gt;   &lt;details&gt;     &lt;summary lang=&quot;ur&quot;&gt;مزید دیکھیں&lt;/summary&gt;     &lt;p lang=&quot;ur&quot;&gt;یہ بہت لمبا متن ہے جو مکمل طور پر دیکھنے کے لیے کلک کریں۔&lt;/p&gt;   &lt;/details&gt;   ```</p>
+<ul><li><strong>Gradientes roxos agressivos:</strong> não combinam com a paleta do Indo. Use Deep Teal ou Terracotta.</li><li><strong>Fundos de baixo contraste:</strong> os nuqtas da Nastaliq precisam de alto contraste (7:1+).</li></ul>
+<h3>❌ Estrutura dos componentes</h3>
+<ul><li><strong>Ordem do ícone no código-fonte:</strong> nos botões RTL, o ícone deve ficar à direita do texto no código-fonte, para manter um fluxo visual natural.</li><li><strong>Ícones direcionais:</strong> inverta sempre manualmente os ícones direcionais (como setas) usando transform: scaleX(-1), para alinhá-los ao fluxo RTL.</li></ul>
+<p>  ``<code>html   &lt;!-- Ícone à direita no código-fonte; o flex inverte automaticamente --&gt;   &lt;button style=&quot;display: flex; gap: 8px;&quot;&gt;     &lt;icon name=&quot;arrow-left&quot; style=&quot;transform: scaleX(-1);&quot;&gt;&lt;/icon&gt;     &lt;span lang=&quot;ur&quot;&gt;بھیجیں&lt;/span&gt; &lt;/button&gt;   </code>``</p>
+<ul><li><strong>Campos de formulário sem rótulos explícitos:</strong> os placeholders desaparecem; a acessibilidade falha.</li></ul>
+<hr>
+</section>
+
+<section data-section="quick-start-rtl-bilingual-component">
+<h2>Início rápido: componente bilíngue RTL</h2>
+<p>Aqui está um exemplo completo, pronto para produção:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ur&quot; dir=&quot;rtl&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Urdu Modern - Quick Start&lt;/title&gt;
+
+  &lt;!-- Google Fonts: Noto Nastaliq Urdu --&gt;
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+
+  &lt;style&gt;
+    :root {
+      /* Cores */
+      --color-primary: #0F595E;
+      --color-primary-dark: #0D3F45;
+      --color-accent: #C05621;
+      --color-bg: #F4F1EA;
+      --color-text: #1A202C;
+      --color-border: #E2E8F0;
+
+      /* Tipografia */
+      --font-urdu: &quot;Noto Nastaliq Urdu&quot;, serif;
+      --font-latin: &quot;Inter&quot;, &quot;Segoe UI&quot;, sans-serif;
+
+      /* Espaçamento */
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-urdu);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.8;
+      direction: rtl;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-block-end: var(--space-lg);
+      color: var(--color-primary);
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-block-end: var(--space-md);
+      color: var(--color-text);
+    }
+
+    .button-group {
+      display: flex;
+      gap: var(--space-md);
+      margin-block-start: var(--space-lg);
+      flex-direction: row-reverse; /* Inverte a ordem dos botões para a hierarquia visual RTL */
+    }
+
+    .button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font-urdu);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      flex: 1;
+    }
+
+    .button-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--color-primary-dark);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+    }
+
+    .button-secondary:hover {
+      background: rgba(15, 89, 94, 0.1);
+    }
+
+    .button:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .code-block {
+      background: #f5f5f5;
+      padding: var(--space-md);
+      border-radius: 6px;
+      font-family: &quot;Courier New&quot;, monospace;
+      direction: ltr; /* O código é LTR, mesmo em páginas RTL */
+      text-align: left;
+      margin-block: var(--space-md);
+      border-inline-start: 4px solid var(--color-accent);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;خیر مقدم — Urdu Modern Quick Start&lt;/h1&gt;
+
+    &lt;p&gt;
+      یہ ایک مکمل مثال ہے جو دکھاتی ہے کہ کیسے Urdu Modern ڈیزائن سسٹم استعمال کریں۔
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      یہاں کچھ اہم خصوصیات ہیں:
+    &lt;/p&gt;
+
+    &lt;ul style=&quot;margin-block-start: var(--space-md); margin-inline-start: var(--space-lg);&quot;&gt;
+      &lt;li&gt;نسطعلیق فونٹ خودکار طور پر RTL کے لیے بہتر بنایا گیا ہے&lt;/li&gt;
+      &lt;li&gt;رنگ نقطے &lt;code&gt;#0F595E&lt;/code&gt; معلومات تنبیہی کے ساتھ منظم ہیں&lt;/li&gt;
+      &lt;li&gt;تمام اردو ٹیکسٹ &lt;code&gt;lang=&quot;ur&quot;&lt;/code&gt; کے ساتھ نشان زد ہے&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;code-block&quot;&gt;
+      &amp;lt;button class=&quot;button-primary&quot;&amp;gt;موافقہ&amp;lt;/button&amp;gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;button-group&quot;&gt;
+      &lt;button class=&quot;button button-primary&quot;&gt;موافقہ&lt;/button&gt;
+      &lt;button class=&quot;button button-secondary&quot;&gt;منسوخ&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<hr>
+</section>
+
+<section data-section="how-the-ai-agent-should-use-this-system">
+<h2>Como o agente de IA deve usar este sistema</h2>
+<p>Quando um agente gera interface usando o design system Urdu Modern, ele <strong>precisa</strong> seguir estas regras:</p>
+<ol><li><strong>Defina a direção do documento:</strong> o elemento raiz <code>&lt;html&gt;</code> sempre tem <code>dir=&quot;rtl&quot;</code> e <code>lang=&quot;ur&quot;</code></li></ol>
+<ol><li><strong>Envolva o texto em urdu:</strong> todas as strings em urdu ficam dentro de tags semânticas com <code>lang=&quot;ur&quot;</code>:</li></ol>
+<p>   ``<code>html    &lt;h1 lang=&quot;ur&quot;&gt;یہ ایک سرخ&lt;/h1&gt;    &lt;p lang=&quot;ur&quot;&gt;یہاں متن ہے۔&lt;/p&gt;    </code>``</p>
+<ol><li><strong>Use propriedades CSS lógicas:</strong> nunca fixe <code>left</code>/<code>right</code> no código; use os equivalentes lógicos:</li></ol>
+<p>   ``<code>css    margin-inline-start  /* em vez de margin-left */    padding-inline-end   /* em vez de padding-right */    inset-inline-start   /* em vez de left */    </code>``</p>
+<ol><li><strong>Respeite a altura da linha:</strong> mínimo de 1.8 no texto de corpo em urdu; nunca abaixo de 1.6</li></ol>
+<ol><li><strong>Teste o espelhamento de ícones:</strong> ícones direcionais (setas, botões de voltar) precisam ser invertidos no contexto RTL:</li></ol>
+<p>   ``<code>html    &lt;!-- O ícone se inverte automaticamente em RTL graças à direção do flex --&gt;    &lt;button&gt;      &lt;span lang=&quot;ur&quot;&gt;بھیجیں&lt;/span&gt;      &lt;svg class=&quot;icon-send&quot; aria-hidden=&quot;true&quot;&gt;&lt;!-- SVG --&gt;&lt;/svg&gt;    &lt;/button&gt;    </code>``</p>
+<ol><li><strong>Valide o contraste de cor:</strong> toda combinação de cor de texto precisa atender ao WCAG AA (mínimo de 4.5:1)</li></ol>
+<ol><li><strong>Teste o bilíngue:</strong> ao misturar urdu + inglês/código, garanta que:</li></ol>
+<p>   - O texto em urdu flua em RTL    - Os blocos de código/inglês permaneçam LTR    - Não haja refluxo de texto na mudança de direção</p>
+<ol><li><strong>Use os tokens do sistema:</strong> nunca fixe cores/espaçamentos no código; use variáveis CSS:</li></ol>
+<p>   ``<code>css    background: var(--color-primary);    padding: var(--space-md);    </code>``</p>
+<hr>
+</section>
+
+<section data-section="design-system-metadata-for-od-daemon">
+<h2>Metadados do design system (para o daemon do OD)</h2>
+<pre><code>name: Urdu Modern
+slug: urdu
+description: Premium design system for Urdu-first digital experiences
+category: Editorial / Personal / Publication
+language: Urdu (ur) + English
+rtl_primary: true
+fonts:
+  - name: Noto Nastaliq Urdu
+    url: https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700
+  - name: Inter
+    url: system
+primary_color: &quot;#0F595E&quot;
+accent_color: &quot;#C05621&quot;
+target_audience: Pakistani startups, news, education, government, global Urdu communities</code></pre>
+<hr>
+</section>
+
+<section data-section="resources-references">
+<h2>Recursos e referências</h2>
+<ul><li><strong>Fonte Noto Nastaliq Urdu:</strong> https://fonts.google.com/noto/specimen/Noto+Nastaliq+Urdu</li><li><strong>Diretrizes de acessibilidade WCAG:</strong> https://www.w3.org/WAI/WCAG21/quickref/</li><li><strong>Propriedades lógicas do CSS:</strong> https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties</li><li><strong>Boas práticas de RTL:</strong> https://www.w3.org/International/questions/qa-html-dir</li><li><strong>Guia de tipografia urdu:</strong> https://fonts.google.com/knowledge/glossary/nastaliq</li></ul>
+<hr>
+</section>
+
+<section data-section="version-history">
+<h2>Histórico de versões</h2>
+<table><thead><tr><th>Versão</th><th>Data</th><th>Alterações</th></tr></thead><tbody><tr><td>1.0</td><td>2025-05-07</td><td>Lançamento inicial; suporte completo a Nastaliq + RTL + bilíngue</td></tr></tbody></table>
+<p><strong>Última atualização:</strong> 2025-05-07   <strong>Status:</strong> pronto para produção ✅</p>
+</section>

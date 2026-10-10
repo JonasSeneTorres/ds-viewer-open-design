@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/27adaaaeefc8.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/27adaaaeefc8.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/0a7197f9e2dd.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../assets/fonts/0a7197f9e2dd.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../assets/fonts/0a7197f9e2dd.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/0a7197f9e2dd.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+[data-theme="perplexity"] {
+  --primary-500: #a855f7;
+  --primary-500-fg: #111111;
+  --neutral-400: #aaaaac;
+  --neutral-400-fg: #111111;
+  --ok-ink: var(--ok);
+  --ok-fg: #111111;
+  --warn-ink: var(--warn);
+  --warn-fg: #111111;
+  --danger-ink: color-mix(in oklab, var(--danger) 95%, var(--fg));
+  --danger-fg: #111111;
+  --fs-xs: 0.6875rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.9375rem;
+  --fs-h3: 1.125rem;
+  --fs-h2: 1.5rem;
+  --fs-h1: 2.125rem;
+  --fs-hero: 2.75rem;
+  --lh-body: 1.65;
+  --lh-tight: 1.2;
+  --display-tracking: -0.01em;
+  --section-y: 64px;
+  --section-y-tablet: 48px;
+  --container-max: 1100px;
+  --gutter: 24px;
+  --gutter-tablet: 16px;
+  --gutter-phone: 16px;
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --radius-lg: 12px;
+  --focus-ring: 0 0 0 2px var(--accent);
+  --bg: #0f0f10;
+  --surface: #19191a;
+  --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
+  --fg: #f0f0f0;
+  --fg-soft: #f0f0f0;
+  --muted: #9b9b9b;
+  --meta: color-mix(in oklab, #5c5c5e 70%, var(--fg));
+  --border: #2e2e30;
+  --border-soft: #232325;
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #a855f7;
+  --accent-strong: color-mix(in oklab, var(--accent) 85%, var(--fg));
+  --accent-weak: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  --accent-fg: #ffffff;
+  --solid: #a855f7;
+  --solid-hover: #c084fc;
+  --solid-fg: #111111;
+  --ok: #22c55e;
+  --ok-weak: color-mix(in oklab, var(--ok) 12%, var(--bg));
+  --warn: #f59e0b;
+  --warn-weak: color-mix(in oklab, var(--warn) 14%, var(--bg));
+  --danger: #ef4444;
+  --danger-weak: color-mix(in oklab, var(--danger) 12%, var(--bg));
+  --bw: 1px;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 0 0 1px var(--border);
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.22);
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+  --heading-weight: 600;
+  --kicker-transform: uppercase;
+  --kicker-spacing: 0.08em;
+  --hero-ground: var(--surface-2);
+  --hero-ink: var(--fg);
+}

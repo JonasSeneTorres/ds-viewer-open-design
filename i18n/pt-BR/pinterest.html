@@ -1,0 +1,100 @@
+<!-- design-system-pinterest · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Descoberta visual. Destaque vermelho, grade em alvenaria (masonry), imagem em primeiro lugar.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site do Pinterest é uma tela calorosa, movida por inspiração, que trata a descoberta visual como uma revista de estilo de vida. O design funciona sobre um fundo branco suave e levemente quente, com o Pinterest Red (<code>#e60023</code>) como único destaque ousado da marca. Diferente dos azuis frios da maioria das plataformas de tecnologia, a escala neutra do Pinterest tem um fundo nitidamente quente — os cinzas puxam para oliva/areia (<code>#91918c</code>, <code>#62625b</code>, <code>#e5e5e0</code>) em vez de aço frio, criando uma atmosfera aconchegante, artesanal, que convida a navegar.</p>
+<p>A tipografia usa a Pin Sans — uma fonte proprietária com uma ampla pilha de fallbacks que inclui fontes japonesas, refletindo o alcance global do Pinterest. Na escala de display (70px, peso 600), a Pin Sans cria títulos grandes e convidativos. Nos tamanhos menores, o sistema é compacto: botões em 12px, legendas em 12–14px. O sistema de nomes das variáveis CSS (<code>--comp-*</code>, <code>--sema-*</code>, <code>--base-*</code>) revela uma arquitetura sofisticada de tokens em três camadas: tokens de componente, semânticos e de base.</p>
+<p>O que distingue o Pinterest é seu sistema generoso de raios de borda (12px–40px, mais 50% para círculos) e os fundos de botão em tons quentes. O botão secundário (<code>#e5e5e0</code>) tem um tom nitidamente quente, de areia, em vez de um cinza frio. O botão vermelho primário usa raio de 16px — arredondado, mas não em pílula. Junto com os fundos quentes dos badges (<code>hsla(60,20%,98%,.5)</code> — uma lavagem sutil amarelada e quente) e layouts dominados pela fotografia, o resultado é um design que parece feito à mão e pessoal, não corporativo e estéril.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Tela branca quente com neutras em tons de oliva/areia — aconchegante, não clínica</li><li>Pinterest Red (<code>#e60023</code>) como único destaque ousado — nunca sutil, sempre confiante</li><li>Fonte própria Pin Sans com pilha de fallbacks global (incluindo CJK)</li><li>Arquitetura de tokens em três camadas: <code>--comp-*</code> / <code>--sema-*</code> / <code>--base-*</code></li><li>Superfícies secundárias quentes: cinza-areia (<code>#e5e5e0</code>), badge quente (<code>hsla(60,20%,98%,.5)</code>)</li><li>Border-radius generoso: 16px como padrão, até 40px em contêineres grandes</li><li>Conteúdo com a fotografia em primeiro lugar — pins/imagens são o principal elemento visual</li><li>Texto escuro quase roxo (<code>#211922</code>) — quente, com um toque de ameixa</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Marca principal</h3>
+<ul><li><strong>Pinterest Red</strong> (<code>#e60023</code>): CTA principal, destaque da marca — um vermelho ousado e confiante</li><li><strong>Green 700</strong> (<code>#103c25</code>): <code>--base-color-green-700</code>, destaque de sucesso/natureza</li><li><strong>Green 700 Hover</strong> (<code>#0b2819</code>): <code>--base-color-hover-green-700</code>, verde pressionado</li></ul>
+<h3>Texto</h3>
+<ul><li><strong>Plum Black</strong> (<code>#211922</code>): texto principal — quase preto quente com fundo de ameixa</li><li><strong>Black</strong> (<code>#000000</code>): texto secundário, texto de botões</li><li><strong>Olive Gray</strong> (<code>#62625b</code>): descrições secundárias, texto esmaecido</li><li><strong>Warm Silver</strong> (<code>#91918c</code>): <code>--comp-button-color-text-transparent-disabled</code>, texto desabilitado, bordas de campos</li><li><strong>White</strong> (<code>#ffffff</code>): texto sobre superfícies escuras/coloridas</li></ul>
+<h3>Interativas</h3>
+<ul><li><strong>Focus Blue</strong> (<code>#435ee5</code>): <code>--comp-button-color-border-focus-outer-transparent</code>, anéis de foco</li><li><strong>Performance Purple</strong> (<code>#6845ab</code>): <code>--sema-color-hover-icon-performance-plus</code>, recursos de desempenho</li><li><strong>Recommendation Purple</strong> (<code>#7e238b</code>): <code>--sema-color-hover-text-recommendation</code>, recomendação por IA</li><li><strong>Link Blue</strong> (<code>#2b48d4</code>): cor do texto dos links</li><li><strong>Facebook Blue</strong> (<code>#0866ff</code>): <code>--facebook-background-color</code>, login social</li><li><strong>Pressed Blue</strong> (<code>#617bff</code>): <code>--base-color-pressed-blue-200</code>, estado pressionado</li></ul>
+<h3>Superfícies e bordas</h3>
+<ul><li><strong>Sand Gray</strong> (<code>#e5e5e0</code>): fundo do botão secundário — quente, artesanal</li><li><strong>Warm Light</strong> (<code>#e0e0d9</code>): fundos de botões circulares, badges</li><li><strong>Warm Wash</strong> (<code>hsla(60, 20%, 98%, 0.5)</code>): <code>--comp-badge-color-background-wash-light</code>, fundo quente e sutil de badges</li><li><strong>Fog</strong> (<code>#f6f6f3</code>): superfície clara (a 50% de opacidade)</li><li><strong>Border Disabled</strong> (<code>#c8c8c1</code>): <code>--sema-color-border-disabled</code>, bordas desabilitadas</li><li><strong>Hover Gray</strong> (<code>#bcbcb3</code>): <code>--base-color-hover-grayscale-150</code>, borda no hover</li><li><strong>Dark Surface</strong> (<code>#33332e</code>): fundos das seções escuras</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Error Red</strong> (<code>#9e0a0a</code>): estados de erro de checkbox/formulário</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Família tipográfica</h3>
+<ul><li><strong>Principal</strong>: <code>Pin Sans</code>, fallbacks: <code>-apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, ヒラギノ角ゴ Pro W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, Arial</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display Hero</td><td>Pin Sans</td><td>70px (4.38rem)</td><td>600</td><td>normal</td><td>normal</td><td>Impacto máximo</td></tr><tr><td>Título de seção</td><td>Pin Sans</td><td>28px (1.75rem)</td><td>700</td><td>normal</td><td>-1.2px</td><td>Tracking negativo</td></tr><tr><td>Corpo</td><td>Pin Sans</td><td>16px (1.00rem)</td><td>400</td><td>1.40</td><td>normal</td><td>Leitura padrão</td></tr><tr><td>Legenda negrito</td><td>Pin Sans</td><td>14px (0.88rem)</td><td>700</td><td>normal</td><td>normal</td><td>Metadados fortes</td></tr><tr><td>Legenda</td><td>Pin Sans</td><td>12px (0.75rem)</td><td>400–500</td><td>1.50</td><td>normal</td><td>Texto pequeno, tags</td></tr><tr><td>Botão</td><td>Pin Sans</td><td>12px (0.75rem)</td><td>400</td><td>normal</td><td>normal</td><td>Rótulos de botões</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Escala tipográfica compacta</strong>: a faixa vai de 12px a 70px com um salto dramático — a maior parte do texto funcional fica entre 12–16px, criando uma hierarquia de informação densa, de aplicativo.</li><li><strong>Distribuição de pesos calorosa</strong>: 600–700 nos títulos, 400–500 no corpo. Sem pesos ultraleves — a tipografia sempre parece substancial.</li><li><strong>Tracking negativo nos títulos</strong>: -1.2px nos títulos de 28px cria títulos de seção aconchegantes e íntimos.</li><li><strong>Família única</strong>: a Pin Sans cuida de tudo — nenhuma fonte de display secundária ou monoespaçada foi detectada.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Vermelho primário</strong></p>
+<ul><li>Fundo: <code>#e60023</code> (Pinterest Red)</li><li>Texto: <code>#000000</code> (preto — uma escolha incomum para contraste sobre vermelho)</li><li>Padding: 6px 14px</li><li>Raio: 16px (generosamente arredondado, não em pílula)</li><li>Borda: <code>2px solid rgba(255, 255, 255, 0)</code> (transparente)</li><li>Foco: borda semântica + contorno via variáveis CSS</li></ul>
+<p><strong>Areia secundário</strong></p>
+<ul><li>Fundo: <code>#e5e5e0</code> (cinza-areia quente)</li><li>Texto: <code>#000000</code></li><li>Padding: 6px 14px</li><li>Raio: 16px</li><li>Foco: o mesmo sistema de borda semântica</li></ul>
+<p><strong>Ação circular</strong></p>
+<ul><li>Fundo: <code>#e0e0d9</code> (claro quente)</li><li>Texto: <code>#211922</code> (preto-ameixa)</li><li>Raio: 50% (círculo)</li><li>Uso: ações dos pins, controles de navegação</li></ul>
+<p><strong>Ghost / transparente</strong></p>
+<ul><li>Fundo: transparente</li><li>Texto: <code>#000000</code></li><li>Sem borda</li><li>Uso: ações terciárias</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Cards de pins com a fotografia em primeiro lugar e raio generoso (12px–20px)</li><li>Sem box-shadow tradicional na maioria dos cards</li><li>Fundos brancos ou de névoa quente</li><li>Borda branca grossa de 8px em alguns contêineres de imagem</li></ul>
+<h3>Campos</h3>
+<ul><li>Campo de e-mail: fundo branco, borda <code>1px solid #91918c</code>, raio de 16px, padding de 11px 15px</li><li>Foco: sistema de borda semântica + contorno via variáveis CSS</li></ul>
+<h3>Navegação</h3>
+<ul><li>Cabeçalho limpo sobre fundo branco ou quente</li><li>Logo do Pinterest + barra de busca centralizada</li><li>Pin Sans 16px nos links de navegação</li><li>Destaques em Pinterest Red nos estados ativos</li></ul>
+<h3>Tratamento de imagens</h3>
+<ul><li>Grade masonry no estilo de pins (o layout característico do Pinterest)</li><li>Cantos arredondados: 12px–20px nas imagens</li><li>Fotografia como conteúdo principal — todo pin é uma imagem</li><li>Bordas brancas grossas (8px) nos contêineres de imagens em destaque</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 4px, 6px, 7px, 8px, 10px, 11px, 12px, 16px, 18px, 20px, 22px, 24px, 32px, 80px, 100px</li><li>Saltos grandes: 32px → 80px → 100px no espaçamento entre seções</li></ul>
+<h3>Grid e contêiner</h3>
+<ul><li>Grade masonry para o conteúdo dos pins (layout característico)</li><li>Seções de conteúdo centralizadas com largura máxima generosa</li><li>Rodapé escuro em largura total</li><li>Barra de busca como principal elemento de navegação</li></ul>
+<h3>Filosofia do espaço em branco</h3>
+<ul><li><strong>Densidade de inspiração</strong>: a grade masonry empacota os pins bem juntos — a densidade de conteúdo É a proposta de valor. O espaço em branco existe entre as seções, não dentro da grade.</li><li><strong>Respiro em cima, densidade embaixo</strong>: as seções hero/de recursos ganham padding generoso; a grade de pins é compacta e imersiva.</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Padrão (12px): cards pequenos, links</li><li>Botão (16px): botões, campos, cards médios</li><li>Confortável (20px): cards de recursos</li><li>Grande (28px): contêineres grandes</li><li>Seção (32px): elementos de abas, painéis grandes</li><li>Hero (40px): contêineres do hero, grandes blocos de recursos</li><li>Círculo (50%): botões de ação, indicadores de abas</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Plano (nível 0)</td><td>Sem sombra</td><td>Padrão — os pins dependem do conteúdo, não da sombra</td></tr><tr><td>Sutil (nível 1)</td><td>Sombra mínima (dos tokens)</td><td>Sobreposições elevadas, dropdowns</td></tr><tr><td>Foco (acessibilidade)</td><td>Anel <code>--sema-color-border-focus-outer-default</code></td><td>Estados de foco</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: o Pinterest usa sombras mínimas. A grade masonry depende do conteúdo (fotografia) para criar interesse visual, em vez de efeitos de elevação. A profundidade vem do calor das cores das superfícies e do arredondamento generoso dos contêineres.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use neutras quentes (<code>#e5e5e0</code>, <code>#e0e0d9</code>, <code>#91918c</code>) — o tom quente de oliva/areia é a identidade</li><li>Aplique o Pinterest Red (<code>#e60023</code>) só nos CTAs principais — ele é ousado e único</li><li>Use exclusivamente a Pin Sans — uma fonte para tudo</li><li>Aplique border-radius generoso: 16px em botões/campos, 20px+ em cards</li><li>Mantenha a grade masonry densa — a densidade de conteúdo é o valor</li><li>Use fundos quentes de badge (<code>hsla(60,20%,98%,.5)</code>) para lavagens quentes e sutis</li><li>Use <code>#211922</code> (preto-ameixa) no texto principal — é mais quente que o preto puro</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não use neutras cinza frias — sempre em tons quentes/de oliva</li><li>Não use preto puro (<code>#000000</code>) como texto principal — use o preto-ameixa (<code>#211922</code>)</li><li>Não use botões em pílula — o raio de 16px é arredondado, mas não pílula</li><li>Não adicione sombras pesadas — o Pinterest é plano por definição, a profundidade vem do conteúdo</li><li>Não use border-radius pequeno (&lt;12px) nos cards — o arredondamento generoso é essencial</li><li>Não introduza outras cores de marca — vermelho + neutras quentes é a paleta completa</li><li>Não use pesos de fonte finos — Pin Sans em 400 no mínimo</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;576px</td><td>Coluna única, layout compacto</td></tr><tr><td>Mobile grande</td><td>576–768px</td><td>Grade de pins em 2 colunas</td></tr><tr><td>Tablet</td><td>768–890px</td><td>Grade expandida</td></tr><tr><td>Desktop pequeno</td><td>890–1312px</td><td>Grade masonry padrão</td></tr><tr><td>Desktop</td><td>1312–1440px</td><td>Layout completo</td></tr><tr><td>Desktop grande</td><td>1440–1680px</td><td>Mais colunas na grade</td></tr><tr><td>Ultralarga</td><td>&gt;1680px</td><td>Densidade máxima da grade</td></tr></tbody></table>
+<h3>Estratégia de recolhimento</h3>
+<ul><li>Grade de pins: 5+ colunas → 3 → 2 → 1</li><li>Navegação: barra de busca + ícones → navegação mobile simplificada</li><li>Seções de recursos: lado a lado → empilhadas</li><li>Hero: 70px → reduz proporcionalmente</li><li>Rodapé: escuro em várias colunas → empilhado</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Marca: Pinterest Red (<code>#e60023</code>)</li><li>Fundo: White (<code>#ffffff</code>)</li><li>Texto: Plum Black (<code>#211922</code>)</li><li>Texto secundário: Olive Gray (<code>#62625b</code>)</li><li>Superfície de botões: Sand Gray (<code>#e5e5e0</code>)</li><li>Borda: Warm Silver (<code>#91918c</code>)</li><li>Foco: Focus Blue (<code>#435ee5</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um hero: fundo branco. Título em Pin Sans 70px peso 600, preto-ameixa (#211922). Botão CTA vermelho (#e60023, raio de 16px, padding de 6px 14px). Botão secundário areia (#e5e5e0, raio de 16px).&quot;</li><li>&quot;Desenhe um card de pin: fundo branco, raio de 16px, sem sombra. A fotografia preenche o topo; descrição em Pin Sans 16px peso 400 abaixo, em #62625b.&quot;</li><li>&quot;Construa um botão de ação circular: fundo #e0e0d9, raio de 50%, ícone #211922.&quot;</li><li>&quot;Crie um campo de entrada: fundo branco, 1px solid #91918c, raio de 16px, padding de 11px 15px. Foco: contorno azul via tokens semânticos.&quot;</li><li>&quot;Desenhe o rodapé escuro: fundo #33332e. Logo em script do Pinterest em branco. Links em Pin Sans 12px na cor #91918c.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Neutras quentes em todo lugar — cinzas oliva/areia, nunca aço frio</li><li>Pinterest Red só nos CTAs — ousado e único</li><li>Raio de 16px em botões/campos, 20px+ em cards — generoso, mas não pílula</li><li>A Pin Sans é a única fonte — compacta em 12px na interface, 70px no display</li><li>A fotografia carrega o design — a interface continua quente e mínima</li><li>Preto-ameixa (#211922) no texto — mais quente que o preto puro</li></ol>
+</section>

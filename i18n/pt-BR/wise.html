@@ -1,0 +1,82 @@
+<!-- design-system-wise · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Transferência de dinheiro. Destaque verde vivo, amigável e claro.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site da Wise é uma plataforma fintech ousada e confiante, que comunica &quot;dinheiro sem fronteiras&quot; por meio de tipografia gigante e um destaque verde-limão característico. O design funciona sobre uma tela off-white quente, com texto quase preto (<code>#0e0f0c</code>) e o característico Wise Green (<code>#9fe870</code>) — uma cor fresca, viva como limão, que parece cheia de vida e otimista, ao contrário dos azuis corporativos dos bancos tradicionais.</p>
+<p>A tipografia usa a Wise Sans — uma fonte proprietária usada no peso extremo 900 (black) nos títulos de display, com uma altura de linha notavelmente justa de 0.85 e o recurso OpenType <code>&quot;calt&quot;</code> (alternativas contextuais). Em 126px, o texto é tão denso que parece uma placa de protesto — ousado, urgente e impossível de ignorar. A Inter é a fonte de corpo, com peso 600 como padrão para ênfase, criando uma voz consistentemente confiante.</p>
+<p>O que distingue a Wise é sua paleta material de verde sobre branco sobre preto. O Lime Green (<code>#9fe870</code>) aparece nos botões com texto verde-escuro (<code>#163300</code>), criando um CTA inspirado na natureza que parece fresco. Os estados de hover usam a expansão <code>scale(1.05)</code> em vez de mudança de cor — os botões crescem fisicamente na interação. O sistema de raios usa 9999px nos botões (pílula) e 30px–40px nos cards, e o sistema de sombras é mínimo — apenas sombras em anel <code>rgba(14,15,12,0.12) 0px 0px 0px 1px</code>.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Wise Sans em peso 900, altura de linha 0.85 — títulos ousados em escala de outdoor</li><li>Destaque Lime Green (<code>#9fe870</code>) com texto verde-escuro (<code>#163300</code>) — fintech inspirada na natureza</li><li>Inter no corpo com peso 600 como padrão — confiante, não leve</li><li>Quase preto (<code>#0e0f0c</code>) como primária, com fundo esverdeado quente</li><li>Animações de hover com scale(1.05) — os botões crescem fisicamente</li><li>OpenType <code>&quot;calt&quot;</code> em todo o texto</li><li>Botões em pílula (9999px) e cards grandes arredondados (30px–40px)</li><li>Sistema de cores semânticas com gestão abrangente de estados</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Marca principal</h3>
+<ul><li><strong>Near Black</strong> (<code>#0e0f0c</code>): texto principal, fundo das seções escuras</li><li><strong>Wise Green</strong> (<code>#9fe870</code>): botão de CTA principal, destaque da marca</li><li><strong>Dark Green</strong> (<code>#163300</code>): texto de botão sobre verde, destaque verde profundo</li><li><strong>Light Mint</strong> (<code>#e2f6d5</code>): superfície verde suave, fundos de badges</li><li><strong>Pastel Green</strong> (<code>#cdffad</code>): <code>--color-interactive-contrast-hover</code>, destaque de hover</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Positive Green</strong> (<code>#054d28</code>): <code>--color-sentiment-positive-primary</code>, sucesso</li><li><strong>Danger Red</strong> (<code>#d03238</code>): <code>--color-interactive-negative-hover</code>, erro/destrutivo</li><li><strong>Warning Yellow</strong> (<code>#ffd11a</code>): <code>--color-sentiment-warning-hover</code>, avisos</li><li><strong>Background Cyan</strong> (<code>rgba(56,200,255,0.10)</code>): <code>--color-background-accent</code>, tom informativo</li><li><strong>Bright Orange</strong> (<code>#ffc091</code>): <code>--color-bright-orange</code>, destaque quente</li></ul>
+<h3>Neutras</h3>
+<ul><li><strong>Warm Dark</strong> (<code>#454745</code>): texto secundário, bordas</li><li><strong>Gray</strong> (<code>#868685</code>): texto esmaecido, terciário</li><li><strong>Light Surface</strong> (<code>#e8ebe6</code>): superfície clara sutil, tingida de verde</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Display</strong>: <code>Wise Sans</code>, fallback: <code>Inter</code> — OpenType <code>&quot;calt&quot;</code> em todo o texto</li><li><strong>Corpo / interface</strong>: <code>Inter</code>, fallbacks: <code>Helvetica, Arial</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display mega</td><td>Wise Sans</td><td>126px (7.88rem)</td><td>900</td><td>0.85 (ultrajusta)</td><td>normal</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Display Hero</td><td>Wise Sans</td><td>96px (6.00rem)</td><td>900</td><td>0.85</td><td>normal</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Título de seção</td><td>Wise Sans</td><td>64px (4.00rem)</td><td>900</td><td>0.85</td><td>normal</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Subtítulo</td><td>Wise Sans</td><td>40px (2.50rem)</td><td>900</td><td>0.85</td><td>normal</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Título alternativo</td><td>Inter</td><td>78px (4.88rem)</td><td>600</td><td>1.10 (justa)</td><td>-2.34px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Título de card</td><td>Inter</td><td>26px (1.62rem)</td><td>600</td><td>1.23 (justa)</td><td>-0.39px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Título de recurso</td><td>Inter</td><td>22px (1.38rem)</td><td>600</td><td>1.25 (justa)</td><td>-0.396px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Corpo</td><td>Inter</td><td>18px (1.13rem)</td><td>400</td><td>1.44</td><td>0.18px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Corpo seminegrito</td><td>Inter</td><td>18px (1.13rem)</td><td>600</td><td>1.44</td><td>-0.108px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Botão</td><td>Inter</td><td>18px–22px</td><td>600</td><td>1.00–1.44</td><td>-0.108px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Legenda</td><td>Inter</td><td>14px (0.88rem)</td><td>400–600</td><td>1.50–1.86</td><td>-0.084px a -0.108px</td><td><code>&quot;calt&quot;</code></td></tr><tr><td>Pequeno</td><td>Inter</td><td>12px (0.75rem)</td><td>400–600</td><td>1.00–2.17</td><td>-0.084px a -0.108px</td><td><code>&quot;calt&quot;</code></td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Peso 900 como identidade</strong>: a Wise Sans Black (900) é usada exclusivamente no display — o peso mais pesado entre todos os sistemas analisados. Cria um texto que parece carimbado, prensado, físico.</li><li><strong>Altura de linha 0.85</strong>: a altura de linha de display mais justa analisada. As letras se sobrepõem na vertical, criando blocos de texto densos, de outdoor.</li><li><strong>&quot;calt&quot; em todo lugar</strong>: alternativas contextuais ativadas em TODO o texto — tanto na Wise Sans quanto na Inter.</li><li><strong>Peso 600 como padrão do corpo</strong>: a Inter Semibold é o peso de leitura padrão — confiante, não leve.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Pílula verde primária</strong></p>
+<ul><li>Fundo: <code>#9fe870</code> (Wise Green)</li><li>Texto: <code>#163300</code> (Dark Green)</li><li>Padding: 5px 16px</li><li>Raio: 9999px</li><li>Hover: scale(1.05) — o botão cresce fisicamente</li><li>Ativo: scale(0.95) — o botão se comprime</li><li>Foco: anel interno + contorno</li></ul>
+<p><strong>Pílula secundária sutil</strong></p>
+<ul><li>Fundo: <code>rgba(22, 51, 0, 0.08)</code> (verde-escuro a 8% de opacidade)</li><li>Texto: <code>#0e0f0c</code></li><li>Padding: 8px 12px 8px 16px</li><li>Raio: 9999px</li><li>Mesmo comportamento de escala no hover/ativo</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Raio: 16px (pequeno), 30px (médio), 40px (cards/tabelas grandes)</li><li>Borda: <code>1px solid rgba(14,15,12,0.12)</code> ou <code>1px solid #9fe870</code> (destaque verde)</li><li>Sombra: <code>rgba(14,15,12,0.12) 0px 0px 0px 1px</code> (sombra em anel)</li></ul>
+<h3>Navegação</h3>
+<ul><li>Hover da navegação tingido de verde: <code>rgba(211,242,192,0.4)</code></li><li>Cabeçalho limpo com o logotipo da Wise</li><li>CTAs em pílula alinhados à direita</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 1px, 2px, 3px, 4px, 5px, 8px, 10px, 11px, 12px, 16px, 18px, 19px, 20px, 22px, 24px</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Mínimo (2px): links, campos</li><li>Padrão (10px): comboboxes, campos</li><li>Card (16px): cards pequenos, botões, radio</li><li>Médio (20px): links, cards médios</li><li>Grande (30px): cards de recursos</li><li>Seção (40px): tabelas, cards grandes</li><li>Mega (1000px): elementos de apresentação</li><li>Pílula (9999px): todos os botões, imagens</li><li>Círculo (50%): ícones, badges</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Plano (nível 0)</td><td>Sem sombra</td><td>Padrão</td></tr><tr><td>Anel (nível 1)</td><td><code>rgba(14,15,12,0.12) 0px 0px 0px 1px</code></td><td>Bordas de cards</td></tr><tr><td>Interno (nível 2)</td><td><code>rgb(134,134,133) 0px 0px 0px 1px inset</code></td><td>Foco de campos</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: a Wise usa sombras mínimas — só sombras em anel. A profundidade vem do destaque verde ousado contra a tela neutra.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use a Wise Sans em peso 900 no display — a ousadia extrema É a marca</li><li>Aplique altura de linha 0.85 no display em Wise Sans — o ultrajusto é intencional</li><li>Use o Lime Green (#9fe870) nos CTAs principais, com texto Dark Green (#163300)</li><li>Aplique scale(1.05) no hover e scale(0.95) no ativo dos botões</li><li>Ative &quot;calt&quot; em todo o texto</li><li>Use a Inter em peso 600 como padrão do corpo</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não use pesos leves na Wise Sans — só 900</li><li>Não relaxe a altura de linha 0.85 do display — a densidade é a identidade</li><li>Não use o Wise Green como fundo de superfícies grandes — ele é para botões e destaques</li><li>Não abra mão da animação de escala nos botões</li><li>Não use sombras tradicionais — só sombras em anel</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt;576px</td><td>Coluna única</td></tr><tr><td>Tablet</td><td>576–992px</td><td>2 colunas</td></tr><tr><td>Desktop</td><td>992–1440px</td><td>Layout completo</td></tr><tr><td>Grande</td><td>&gt;1440px</td><td>Expandido</td></tr></tbody></table>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Texto: Near Black (<code>#0e0f0c</code>)</li><li>Fundo: White (<code>#ffffff</code> / off-white)</li><li>Destaque: Wise Green (<code>#9fe870</code>)</li><li>Texto do botão: Dark Green (<code>#163300</code>)</li><li>Secundária: Gray (<code>#868685</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um hero: fundo branco. Título em Wise Sans 96px peso 900, line-height 0.85, 'calt' ativado, texto #0e0f0c. CTA verde em pílula (#9fe870, raio de 9999px, padding de 5px 16px, texto #163300). Hover: scale(1.05).&quot;</li><li>&quot;Construa um card: raio de 30px, 1px solid rgba(14,15,12,0.12). Título em Inter 22px peso 600, corpo em 18px peso 400.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Wise Sans 900 com altura de linha 0.85 — o peso extremo É a marca</li><li>Lime Green só nos botões — texto verde-escuro sobre fundo verde</li><li>Animações de escala (1.05 no hover, 0.95 no ativo) em todos os elementos interativos</li><li>&quot;calt&quot; em tudo — as alternativas contextuais são obrigatórias</li><li>Inter 600 no corpo — peso de leitura confiante</li></ol>
+</section>

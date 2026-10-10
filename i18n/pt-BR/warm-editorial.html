@@ -1,0 +1,51 @@
+<!-- design-system-warm-editorial · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Uma estética de revista guiada pela serifa. Destaque terracota sobre papel off-white quente — bom para textos longos, conteúdo editorial e páginas de marketing guiadas pela marca.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>Quente, sem pressa, com cara de revista. Pense em &quot;uma coluna de entrevistas da New Yorker na internet&quot;. Espaço em branco generoso, boa legibilidade em textos longos, moldura contida. Lúdico, mas nunca caricato.</p>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<ul><li><strong>Fundo:</strong> <code>#FAF7F2</code> (papel off-white quente)</li><li><strong>Primeiro plano:</strong> <code>#1C1A17</code> (quase preto, levemente quente)</li><li><strong>Destaque (primário):</strong> <code>#C0512F</code> (terracota) — usado em links, CTAs principais, no máximo 1 elemento de destaque por página</li><li><strong>Destaque (secundário):</strong> <code>#2F5B4F</code> (verde-floresta) — divisores de seção, tags</li><li><strong>Esmaecido:</strong> <code>#8A817A</code> (cinza quente médio) — datas e horários, metadados</li><li><strong>Superfície:</strong> <code>#FFFFFF</code> — só em cards elevados</li></ul>
+<p>Nunca use preto puro nem branco puro em nada que o usuário veja.</p>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<ul><li><strong>Display / títulos:</strong> &quot;GT Sectra&quot; ou uma serifa de fallback (<code>'GT Sectra', 'Times New Roman', serif</code>)</li><li><strong>Corpo:</strong> &quot;Söhne&quot; ou uma sem serifa de fallback (<code>'Söhne', -apple-system, system-ui, sans-serif</code>)</li><li><strong>Mono:</strong> <code>'JetBrains Mono', ui-monospace, monospace</code> só para código</li><li>Escala (px): 12 · 14 · 16 · 20 · 28 · 40 · 56 · 80</li><li>Altura da linha: 1.6 no corpo, 1.2 no display</li><li>Espaçamento entre letras: -0.02em nos tamanhos de display acima de 40px; padrão no restante</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<ul><li><strong>Botões:</strong> preenchimento chapado, raio de 12px, padding-block de 14px, padding-inline de 20px. Primário = preenchimento terracota, rótulo off-white. Secundário = contorno de 1px na cor de primeiro plano, preenchimento transparente.</li><li><strong>Cards:</strong> fundo off-white, borda de 1px em verde-floresta a 8% de opacidade, raio de 16px, padding interno de 24–32px. Sem sombra, exceto no hover (y+2px, desfoque 16, primeiro plano a 6%).</li><li><strong>Campos:</strong> só sublinhado (sem caixa), linha de base de 1px na cor esmaecida, linha de base terracota no foco, padding vertical de 16px.</li><li><strong>Links:</strong> terracota, sublinhado de 1px em terracota a 40%, sem sublinhado no hover (troca por fundo terracota a 8%).</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<ul><li>Grid de 12 colunas, largura máxima de 1200px, gutters de 24px.</li><li>Seções hero: mínimo de 72vh, máximo de 120vh. Conteúdo puxado para o topo, nunca centralizado na vertical.</li><li>Seções de corpo: espaçamento de 80px em cima e embaixo no desktop; 48px no tablet; 32px no celular.</li><li>Uma cor de destaque por tela. Se a página tem um hero terracota, os CTAs secundários usam só a cor de primeiro plano, não o verde-floresta.</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<p>Mínima. Apenas dois níveis de elevação:</p>
+<ul><li><strong>Plano (0):</strong> tudo, por padrão.</li><li><strong>Elevado (1):</strong> cards no hover, menus dropdown, CTAs flutuantes. Deslocamento y de 2px, desfoque de 16px, cor de primeiro plano com 6% de opacidade.</li></ul>
+<p>Sem sombras nos campos. Sem sombras no hero. Sem neumorfismo, sem glassmorphism.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<ul><li>✅ Deixe o espaço em branco respirar. Um título curto ocupando 50% da altura da viewport está correto.</li><li>✅ Use serifa nos números quando eles importam (preços, estatísticas).</li><li>✅ Coloque um elemento de destaque por página; o resto fica na cor de primeiro plano.</li><li>❌ Sem gradientes.</li><li>❌ Sem emojis nos textos do produto.</li><li>❌ Não use só a primeira letra maiúscula nos títulos — use iniciais maiúsculas em H1/H2 e só a primeira letra maiúscula do H3 para baixo.</li><li>❌ Nenhum border-radius acima de 24px; nenhum border-radius abaixo de 8px.</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<ul><li><strong>Desktop ≥ 1024px:</strong> grid de 12 colunas, heros em altura total, colunas lado a lado.</li><li><strong>Tablet 640–1023px:</strong> grid de 8 colunas; o hero cai para 60vh; colunas empilham a partir de 3.</li><li><strong>Celular &lt; 640px:</strong> grid de 4 colunas; layout de coluna única; o hero cai para 50vh; todo o padding -33%.</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<p>Ao gerar artefatos com este design system:</p>
+<ul><li>Comece pela tipografia e pelo espaço em branco; a moldura (bordas, sombras) é algo a subtrair.</li><li>Se você precisa de mais de um elemento de destaque numa tela, está exagerando — corte um.</li><li>Quando pedirem algo &quot;profissional&quot; ou &quot;sério&quot;, aposte ainda mais em serifa + espaço em branco. Quando pedirem algo &quot;moderno&quot;, este sistema não é a resposta certa; escolha outro DESIGN.md.</li><li>Os tokens de cor são inegociáveis. Não invente novos valores hex. Se o pedido precisar de uma cor fora desta paleta, deixe um comentário de aviso no artefato e use o token existente mais próximo.</li><li>Prefira 1 hero + 3–5 seções de corpo a 1 hero + 8 ou mais seções. Editorial significa contenção.</li></ul>
+</section>

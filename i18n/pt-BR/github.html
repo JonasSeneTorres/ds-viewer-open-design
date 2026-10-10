@@ -1,0 +1,71 @@
+<!-- design-system-github · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Plataforma centrada em código. Densidade funcional, precisão de azul sobre branco, fundações do Primer.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>A superfície do GitHub é projetada, não decorada. Cada pixel anuncia uma postura: esta é uma ferramenta para quem se importa com diffs, builds e pull requests. O fundo da página é um <code>#ffffff</code> limpo (claro) ou <code>#0d1117</code> (escuro), com o conteúdo organizado em painéis retangulares densos, separados por bordas finíssimas em vez de espaço negativo. A densidade de informação é a marca — linhas de listas, linhas de código, cabeçalhos de repositórios e cards de notificação ficam todos bem juntos, para que um usuário avançado percorra cem itens sem rolar a página.</p>
+<p>Os destaques característicos são o <strong>azul do Primer</strong> (<code>#0969da</code>) para links e ações principais e o <strong>verde do GitHub</strong> (<code>#1a7f37</code>) para estados de merge, sucesso e o próprio botão de merge. Ambos parecem um pouco mais apagados que os azuis e verdes de produtos de consumo — saturados o bastante para se destacar contra o texto cinza denso, contidos o bastante para sumir no fundo quando vários aparecem na mesma viewport.</p>
+<p>A tipografia usa a pilha <strong>system-ui</strong> em todo o produto, para que o texto seja renderizado com nitidez em qualquer sistema operacional, combinada com <strong>SFMono / Menlo / Consolas</strong> para código. Não há fonte de display editorial; a voz do GitHub é a voz do sistema que você já está usando.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Tela de branco verdadeiro (<code>#ffffff</code>) ou preto-azulado profundo (<code>#0d1117</code>) — sem calor, sem tingimento</li><li>Bordas cinza finíssimas (<code>#d0d7de</code>) definem todo painel e quadro</li><li>Azul do Primer (<code>#0969da</code>) para links/ações principais; verde do GitHub (<code>#1a7f37</code>) para sucesso/merge</li><li>system-ui no texto; SFMono no código — nenhuma fonte própria</li><li>Linhas de listas densas, com padding mínimo; espaço em branco é raro</li><li>Iconografia Octicon em 16px / 24px — traço único, geométrica, consistente</li><li>Badges de status em formato de pílula com semântica de cor forte</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Primárias</h3>
+<ul><li><strong>Canvas Default</strong> (<code>#ffffff</code>): fundo principal da página, tema claro.</li><li><strong>Canvas Subtle</strong> (<code>#f6f8fa</code>): superfície secundária, barra lateral, fundo de campos, faixa de cabeçalho.</li><li><strong>Canvas Inset</strong> (<code>#eaeef2</code>): fundo de blocos de código, superfície bem embutida.</li><li><strong>Fg Default</strong> (<code>#1f2328</code>): texto principal, títulos, tinta.</li><li><strong>Fg Muted</strong> (<code>#656d76</code>): texto secundário, legendas, caminhos de arquivos.</li></ul>
+<h3>Destaque da marca</h3>
+<ul><li><strong>Primer Blue</strong> (<code>#0969da</code>): links, CTAs principais, base do anel de foco — a cor interativa universal.</li><li><strong>Primer Blue Hover</strong> (<code>#0550ae</code>): hover/pressionado do azul primário.</li><li><strong>Accent Subtle</strong> (<code>#ddf4ff</code>): superfície azul suave para chamadas e faixas informativas.</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Success / Merge Green</strong> (<code>#1a7f37</code>): PRs mesclados, badges de sucesso, botão de merge.</li><li><strong>Success Subtle</strong> (<code>#dafbe1</code>): tom de superfície de sucesso.</li><li><strong>Open Green</strong> (<code>#1a7f37</code>): estado &quot;Open&quot; de issue/PR.</li><li><strong>Closed / Danger Red</strong> (<code>#cf222e</code>): PRs fechados, ação destrutiva, erro de validação.</li><li><strong>Danger Subtle</strong> (<code>#ffebe9</code>): superfície de faixa de erro.</li><li><strong>Attention / Warning Yellow</strong> (<code>#9a6700</code>): texto de aviso sobre superfície âmbar.</li><li><strong>Attention Subtle</strong> (<code>#fff8c5</code>): superfície de faixa de aviso.</li><li><strong>Done Purple</strong> (<code>#8250df</code>): mesclado e arquivado, estado &quot;concluído&quot;, badge premium.</li><li><strong>Sponsor Pink</strong> (<code>#bf3989</code>): coração do Sponsors, marca do GitHub Sponsors.</li></ul>
+<h3>Bordas e divisores</h3>
+<ul><li><strong>Border Default</strong> (<code>#d0d7de</code>): borda finíssima padrão, contorno de painel.</li><li><strong>Border Muted</strong> (<code>#d8dee4</code>): divisores internos de um painel.</li><li><strong>Border Subtle</strong> (<code>#eaeef2</code>): divisores tênues entre linhas de tabela.</li></ul>
+<h3>Tema escuro</h3>
+<ul><li><strong>Dark Canvas</strong> (<code>#0d1117</code>): fundo escuro da página.</li><li><strong>Dark Surface</strong> (<code>#161b22</code>): barra lateral, cabeçalho, superfície secundária.</li><li><strong>Dark Border</strong> (<code>#30363d</code>): borda padrão do modo escuro.</li><li><strong>Dark Fg</strong> (<code>#e6edf3</code>): texto principal sobre escuro.</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Família tipográfica</h3>
+<ul><li><strong>Corpo / interface</strong>: <code>-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif</code></li><li><strong>Código / mono</strong>: <code>ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace</code></li><li><strong>Emoji</strong>: <code>&quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display</td><td>system-ui</td><td>32px (2rem)</td><td>600</td><td>1.25</td><td>-0.01em</td><td>Cabeçalho do repositório, hero de marketing</td></tr><tr><td>H1</td><td>system-ui</td><td>24px (1.5rem)</td><td>600</td><td>1.25</td><td>normal</td><td>Título da página</td></tr><tr><td>H2</td><td>system-ui</td><td>20px (1.25rem)</td><td>600</td><td>1.25</td><td>normal</td><td>Título de seção</td></tr><tr><td>H3</td><td>system-ui</td><td>16px (1rem)</td><td>600</td><td>1.25</td><td>normal</td><td>Subseção, cabeçalho de painel</td></tr><tr><td>Corpo</td><td>system-ui</td><td>14px (0.875rem)</td><td>400</td><td>1.5</td><td>normal</td><td>Tamanho de texto padrão — não 16px</td></tr><tr><td>Corpo pequeno</td><td>system-ui</td><td>12px (0.75rem)</td><td>400</td><td>1.4</td><td>normal</td><td>Legendas, metadados de arquivos</td></tr><tr><td>Código</td><td>SFMono</td><td>12px (0.75rem)</td><td>400</td><td>1.45</td><td>normal</td><td>Blocos de código, diff</td></tr><tr><td>Código inline</td><td>SFMono</td><td>0.85em</td><td>400</td><td>inherit</td><td>normal</td><td>Trechos <code>code</code> inline</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Corpo em 14px, não 16px</strong>: a densidade do texto do GitHub é sua identidade. O produto é lido em 14px para caber mais linhas numa viewport.</li><li><strong>Peso binário</strong>: 400 para tudo por padrão; 600 para títulos e ênfase. Nada de 500, nada de 700.</li><li><strong>Sempre fontes do sistema</strong>: nunca carregue uma webfont para a moldura — o texto precisa aparecer na hora, mesmo em conexões lentas.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Primário (verde)</strong></p>
+<ul><li>Fundo: <code>#1f883d</code></li><li>Texto: <code>#ffffff</code></li><li>Borda: 1px solid <code>rgba(31, 35, 40, 0.15)</code></li><li>Padding: 5px 16px</li><li>Raio: 6px</li><li>Sombra: <code>0 1px 0 rgba(31,35,40,0.1)</code></li><li>Hover: fundo <code>#1a7f37</code></li><li>Uso: &quot;Create repository&quot;, &quot;Merge pull request&quot;</li></ul>
+<p><strong>Padrão</strong></p>
+<ul><li>Fundo: <code>#f6f8fa</code></li><li>Texto: <code>#1f2328</code></li><li>Borda: 1px solid <code>#d0d7de</code></li><li>Padding: 5px 16px</li><li>Raio: 6px</li><li>Hover: fundo <code>#f3f4f6</code>, borda <code>#d0d7de</code></li></ul>
+<p><strong>Com contorno (estilo de link azul)</strong></p>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Texto: <code>#0969da</code></li><li>Borda: 1px solid <code>#d0d7de</code></li><li>Hover: fundo <code>#0969da</code>, texto <code>#ffffff</code></li></ul>
+<p><strong>Perigo</strong></p>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Texto: <code>#cf222e</code></li><li>Borda: 1px solid <code>#d0d7de</code></li><li>Hover: fundo <code>#a40e26</code>, texto <code>#ffffff</code>, borda <code>#a40e26</code></li></ul>
+<h3>Cards / caixas</h3>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid <code>#d0d7de</code></li><li>Raio: 6px</li><li>Padding: 16px (cabeçalho) + 16px (corpo)</li><li>O cabeçalho tem uma faixa <code>#f6f8fa</code> com borda inferior.</li></ul>
+<h3>Campos</h3>
+<ul><li>Fundo: <code>#ffffff</code></li><li>Borda: 1px solid <code>#d0d7de</code></li><li>Raio: 6px</li><li>Padding: 5px 12px</li><li>Foco: borda <code>#0969da</code>, anel <code>0 0 0 3px rgba(9,105,218,0.3)</code></li></ul>
+<h3>Pílulas de status (issue / PR)</h3>
+<ul><li><strong>Open</strong>: fundo <code>#1a7f37</code>, texto branco, padding 4px 10px, raio 9999px.</li><li><strong>Closed</strong>: fundo <code>#cf222e</code>, texto branco.</li><li><strong>Merged</strong>: fundo <code>#8250df</code>, texto branco.</li><li><strong>Draft</strong>: fundo <code>#6e7781</code>, texto branco.</li></ul>
+<h3>Labels (tags em issues/PRs)</h3>
+<ul><li>Padding: 0 7px</li><li>Raio: 9999px</li><li>Fonte: 12px / 500</li><li>Fundo e texto são programáticos (cor do label → texto calculado para contraste).</li></ul>
+</section>
+
+<section data-section="spacing-layout">
+<h2>Espaçamento e layout</h2>
+<ul><li><strong>Unidade base</strong>: 4px. Escala de espaçamento: 4, 8, 12, 16, 24, 32, 40, 48.</li><li><strong>Largura máxima da página</strong>: 1280px (<code>Container-xl</code>).</li><li><strong>Barra lateral</strong>: 296px no desktop, recolhe abaixo de 1012px.</li><li><strong>Padding das linhas</strong>: 16px na horizontal, 12px na vertical (as listas são densas por definição).</li></ul>
+</section>
+
+<section data-section="motion">
+<h2>Movimento</h2>
+<ul><li><strong>Duração</strong>: 80ms no hover; 200ms ao abrir menus/popovers.</li><li><strong>Easing</strong>: <code>ease-out</code> ao abrir, <code>ease-in</code> ao fechar.</li><li><strong>Evitado</strong>: animação no carregamento da página, parallax, microinterações persistentes. As coisas aparecem; não fazem apresentação.</li></ul>
+</section>
+
+<section data-section="usage-guardrails">
+<h2>Limites de uso</h2>
+<ul><li>Mantenha juntas as listas densas, as caixas com borda e a tipografia do sistema; botões verdes isolados não bastam para criar uma superfície de produto com cara de GitHub.</li><li>Use verde para ações construtivas no repositório, azul para links e foco, e vermelho/roxo/cinza só para estados de issues, PRs e workflows.</li><li>Prefira moldura discreta, bordas explícitas e espaçamento compacto a sombras decorativas ou cards grandes no estilo de marketing.</li></ul>
+</section>

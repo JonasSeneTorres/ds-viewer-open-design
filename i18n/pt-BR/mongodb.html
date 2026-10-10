@@ -1,0 +1,105 @@
+<!-- design-system-mongodb · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Banco de dados de documentos. Marca da folha verde, foco em documentação para desenvolvedores.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site do MongoDB é uma experiência de floresta profunda encontrando o terminal — um design system enraizado no preto-azulado mais escuro (<code>#001e2b</code>), que evoca ao mesmo tempo a densidade de um banco de dados e a profundidade da copa de uma floresta. Sobre essa tela quase preta, um verde neon marcante (<code>#00ed64</code>) pulsa como destaque da marca — vivo o bastante para parecer elétrico, orgânico o bastante para parecer vivo. Não é o neon frio do cyberpunk; é o verde bioluminescente de algo crescendo no escuro.</p>
+<p>O sistema tipográfico é arquitetonicamente ambicioso: a MongoDB Value Serif nos enormes títulos do hero (96px) cria uma presença editorial e cheia de autoridade — tipografia serifada na escala de uma empresa de banco de dados é uma escolha ousada que diz &quot;não somos só mais uma empresa de tecnologia&quot;. A Euclid Circular A faz o trabalho pesado do texto de corpo e da interface, com uma faixa de pesos incomumente ampla (300–700), enquanto a Source Code Pro é a fonte de código e rótulos, com tratamentos característicos em caixa-alta e espaçamento entre letras bem largo (1px–3px). Esse sistema de três fontes cria uma hierarquia que vai da elegância editorial → ao profissionalismo geométrico → à precisão de engenharia.</p>
+<p>O que torna o MongoDB distinto é seu design de dois modos: um mundo escuro de hero/recursos (<code>#001e2b</code> com destaques em verde neon) e um mundo claro de conteúdo (branco, com bordas cinza-azuladas <code>#b8c4c2</code>). A transição entre esses modos cria um contraste dramático. O sistema de sombras usa sombras escuras tingidas de azul-esverdeado (<code>rgba(0, 30, 43, 0.12)</code>) que mantêm a atmosfera de floresta escura mesmo sobre superfícies claras. Os botões usam formato de pílula (raio de 100px–999px) com bordas em MongoDB Green (<code>#00684a</code>), e todo o sistema de componentes faz referência ao design system LeafyGreen.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Fundos em preto-azulado profundo (<code>#001e2b</code>) — escuro de floresta, não escuro de espaço sideral</li><li>MongoDB Green neon (<code>#00ed64</code>) como único destaque da marca — elétrico e orgânico</li><li>MongoDB Value Serif nos títulos do hero — autoridade editorial em escala de tecnologia</li><li>Euclid Circular A no corpo, com peso 300 (leve) como peso de corpo característico</li><li>Source Code Pro com espaçamento entre letras largo em caixa-alta (1px–3px) nos rótulos técnicos</li><li>Sombras tingidas de azul-esverdeado: <code>rgba(0, 30, 43, 0.12)</code> — as sombras carregam a cor da floresta</li><li>Dois modos: seções hero em azul-esverdeado escuro + seções de conteúdo brancas e claras</li><li>Botões em pílula (raio de 100px) com bordas verdes (<code>#00684a</code>)</li><li>Link Blue (<code>#006cfa</code>) com transição no hover para <code>#3860be</code></li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Marca principal</h3>
+<ul><li><strong>Forest Black</strong> (<code>#001e2b</code>): fundo escuro principal — o preto-azulado mais profundo</li><li><strong>MongoDB Green</strong> (<code>#00ed64</code>): principal destaque da marca — verde neon para realces, sublinhados, gradientes</li><li><strong>Dark Green</strong> (<code>#00684a</code>): bordas de botões, texto de links sobre claro — verde apagado para uso funcional</li></ul>
+<h3>Interativas</h3>
+<ul><li><strong>Action Blue</strong> (<code>#006cfa</code>): destaque secundário — links, realces interativos</li><li><strong>Hover Blue</strong> (<code>#3860be</code>): todos os estados de hover de links passam para este azul</li><li><strong>Teal Active</strong> (<code>#1eaedb</code>): fundo de botão no hover — azul-esverdeado vivo</li></ul>
+<h3>Escala neutra</h3>
+<ul><li><strong>Deep Teal</strong> (<code>#1c2d38</code>): fundos de botões escuros, superfícies escuras secundárias</li><li><strong>Teal Gray</strong> (<code>#3d4f58</code>): bordas escuras sobre superfícies escuras</li><li><strong>Dark Slate</strong> (<code>#21313c</code>): variante escura do texto de links</li><li><strong>Cool Gray</strong> (<code>#5c6c75</code>): texto esmaecido sobre escuro, texto de botões secundários</li><li><strong>Silver Teal</strong> (<code>#b8c4c2</code>): bordas sobre superfícies claras, divisores</li><li><strong>Light Input</strong> (<code>#e8edeb</code>): texto de campos sobre superfícies escuras</li><li><strong>Pure White</strong> (<code>#ffffff</code>): fundo das seções claras, texto de botões sobre escuro</li><li><strong>Black</strong> (<code>#000000</code>): texto sobre superfícies claras, os elementos mais escuros</li></ul>
+<h3>Sombras</h3>
+<ul><li><strong>Sombra de floresta</strong> (<code>rgba(0, 30, 43, 0.12) 0px 26px 44px, rgba(0, 0, 0, 0.13) 0px 7px 13px</code>): elevação principal dos cards — tingida de azul-esverdeado</li><li><strong>Sombra padrão</strong> (<code>rgba(0, 0, 0, 0.15) 0px 3px 20px</code>): elevação geral</li><li><strong>Sombra sutil</strong> (<code>rgba(0, 0, 0, 0.1) 0px 2px 4px</code>): leve elevação de cards</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Serifa de display</strong>: <code>MongoDB Value Serif</code> — títulos editoriais do hero</li><li><strong>Corpo / interface</strong>: <code>Euclid Circular A</code> — sem serifa geométrica, burro de carga</li><li><strong>Código / rótulos</strong>: <code>Source Code Pro</code> — monoespaçada com tratamento de rótulos em caixa-alta</li><li><strong>Fallbacks</strong>: <code>Akzidenz-Grotesk Std</code> (com CJK: Noto Sans KR/SC/JP), <code>Times</code>, <code>Arial</code>, <code>system-ui</code></li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display Hero</td><td>MongoDB Value Serif</td><td>96px (6.00rem)</td><td>400</td><td>1.20 (justa)</td><td>normal</td><td>Autoridade serifada</td></tr><tr><td>Display secundário</td><td>MongoDB Value Serif</td><td>64px (4.00rem)</td><td>400</td><td>1.00 (justa)</td><td>normal</td><td>Sub-hero serifado</td></tr><tr><td>Título de seção</td><td>Euclid Circular A</td><td>36px (2.25rem)</td><td>500</td><td>1.33</td><td>normal</td><td>Precisão geométrica</td></tr><tr><td>Subtítulo</td><td>Euclid Circular A</td><td>24px (1.50rem)</td><td>500</td><td>1.33</td><td>normal</td><td>Títulos de recursos</td></tr><tr><td>Corpo grande</td><td>Euclid Circular A</td><td>20px (1.25rem)</td><td>400</td><td>1.60 (relaxada)</td><td>normal</td><td>Introduções</td></tr><tr><td>Corpo</td><td>Euclid Circular A</td><td>18px (1.13rem)</td><td>400</td><td>1.33</td><td>normal</td><td>Corpo padrão</td></tr><tr><td>Corpo leve</td><td>Euclid Circular A</td><td>16px (1.00rem)</td><td>300</td><td>1.50–2.00</td><td>normal</td><td>Texto de leitura em peso leve</td></tr><tr><td>Navegação / interface</td><td>Euclid Circular A</td><td>16px (1.00rem)</td><td>500</td><td>1.00–1.88</td><td>0.16px</td><td>Navegação, enfatizado</td></tr><tr><td>Corpo negrito</td><td>Euclid Circular A</td><td>15px (0.94rem)</td><td>700</td><td>1.50</td><td>normal</td><td>Ênfase forte</td></tr><tr><td>Botão</td><td>Euclid Circular A</td><td>13.5px–16px</td><td>500–700</td><td>1.00</td><td>0.135px–0.9px</td><td>Rótulos de CTA</td></tr><tr><td>Legenda</td><td>Euclid Circular A</td><td>14px (0.88rem)</td><td>400</td><td>1.71 (relaxada)</td><td>normal</td><td>Metadados</td></tr><tr><td>Pequeno</td><td>Euclid Circular A</td><td>11px (0.69rem)</td><td>600</td><td>1.82 (relaxada)</td><td>0.2px</td><td>Tags, anotações</td></tr><tr><td>Título de código</td><td>Source Code Pro</td><td>40px (2.50rem)</td><td>400</td><td>1.60 (relaxada)</td><td>normal</td><td>Títulos de vitrines de código</td></tr><tr><td>Corpo de código</td><td>Source Code Pro</td><td>16px (1.00rem)</td><td>400</td><td>1.50</td><td>normal</td><td>Blocos de código</td></tr><tr><td>Rótulo de código</td><td>Source Code Pro</td><td>14px (0.88rem)</td><td>400–500</td><td>1.14 (justa)</td><td>1px–2px</td><td><code>text-transform: uppercase</code></td></tr><tr><td>Código micro</td><td>Source Code Pro</td><td>9px (0.56rem)</td><td>600</td><td>2.67 (relaxada)</td><td>2.5px</td><td><code>text-transform: uppercase</code></td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Serifa para autoridade</strong>: a MongoDB Value Serif em escala de hero cria uma presença editorial incomum em tecnologia — comunica que o MongoDB é uma instituição, não uma startup.</li><li><strong>Peso 300 como padrão do corpo</strong>: a Euclid Circular A usa o leve (300) no texto de corpo, criando uma experiência de leitura arejada que contrasta com os fundos densos e escuros.</li><li><strong>Rótulos monoespaçados com tracking largo</strong>: a Source Code Pro em caixa-alta com espaçamento entre letras de 1px–3px cria sinalizações técnicas que parecem rótulos de campos de banco de dados — sistemáticas, estruturadas, classificadas.</li><li><strong>Faixa de quatro pesos</strong>: 300 (corpo leve) → 400 (padrão) → 500 (interface/navegação) → 700 (CTA em negrito) — uma faixa mais ampla que a da maioria dos sistemas, permitindo uma hierarquia refinada.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Verde primário (superfície escura)</strong></p>
+<ul><li>Fundo: <code>#00684a</code> (verde MongoDB apagado)</li><li>Texto: <code>#000000</code></li><li>Raio: 50% (circular) ou 100px (pílula)</li><li>Borda: <code>1px solid #00684a</code></li><li>Sombra: <code>rgba(0,0,0,0.06) 0px 1px 6px</code></li><li>Hover: escala 1.1</li><li>Ativo: escala 0.85</li></ul>
+<p><strong>Botão azul-esverdeado escuro</strong></p>
+<ul><li>Fundo: <code>#1c2d38</code></li><li>Texto: <code>#5c6c75</code></li><li>Raio: 100px (pílula)</li><li>Borda: <code>1px solid #3d4f58</code></li><li>Hover: fundo <code>#1eaedb</code>, texto branco, translateX(5px)</li></ul>
+<p><strong>Botão com contorno (superfície clara)</strong></p>
+<ul><li>Fundo: transparente</li><li>Texto: <code>#001e2b</code></li><li>Borda: <code>1px solid #b8c4c2</code></li><li>Raio: 4px–8px</li><li>Hover: tom de fundo</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Modo claro: fundo branco com borda <code>1px solid #b8c4c2</code></li><li>Modo escuro: fundo <code>#001e2b</code> ou <code>#1c2d38</code> com <code>1px solid #3d4f58</code></li><li>Raio: 16px (padrão), 24px (médio), 48px (grande/hero)</li><li>Sombra: <code>rgba(0,30,43,0.12) 0px 26px 44px</code> (tingida de floresta)</li><li>Contêineres de imagem: raio de 30px–32px</li></ul>
+<h3>Campos e formulários</h3>
+<ul><li>Textarea: texto <code>#e8edeb</code>, padding de 12px 12px 12px 8px</li><li>Bordas: <code>1px solid #b8c4c2</code> no claro, <code>1px solid #3d4f58</code> no escuro</li><li>Raio dos campos: 4px</li></ul>
+<h3>Navegação</h3>
+<ul><li>Cabeçalho escuro sobre fundo preto de floresta</li><li>Euclid Circular A 16px peso 500 nos links de navegação</li><li>Logo do MongoDB (ícone de folha + logotipo) alinhado à esquerda</li><li>Botões CTA verdes em pílula alinhados à direita</li><li>Megamenus em dropdown com categorias de produtos</li></ul>
+<h3>Tratamento de imagens</h3>
+<ul><li>Capturas de dashboards sobre fundos escuros</li><li>Elementos de interface com destaque verde nas capturas</li><li>Raio de 30px–32px nos contêineres de imagem</li><li>Seções escuras em largura total para vitrines do produto</li></ul>
+<h3>Componentes característicos</h3>
+<p><strong>Sublinhados de destaque em verde neon</strong></p>
+<ul><li><code>0px 2px 2px 0px solid #00ed64</code> — borda inferior + direita criando sublinhados de destaque</li><li>Usados em títulos de recursos e texto realçado</li><li>Também aparecem na variante <code>#006cfa</code> (azul)</li></ul>
+<p><strong>Sistema de rótulos em Source Code</strong></p>
+<ul><li>Source Code Pro 14px em caixa-alta com espaçamento entre letras de 1px–2px</li><li>Usados como marcadores de categoria de seção acima dos títulos</li><li>Criam uma estética de &quot;rótulo de campo de banco de dados&quot;</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 1px, 4px, 7px, 8px, 10px, 12px, 14px, 15px, 16px, 18px, 20px, 24px, 32px</li></ul>
+<h3>Grid e contêiner</h3>
+<ul><li>Largura máxima do conteúdo centralizada</li><li>Seção hero escura com conteúdo contido</li><li>Seções de conteúdo claras abaixo</li><li>Grades de cards: 2–3 colunas</li><li>Rodapé escuro em largura total</li></ul>
+<h3>Filosofia do espaço em branco</h3>
+<ul><li><strong>Transições dramáticas de modo</strong>: a passagem das seções em azul-esverdeado escuro para o conteúdo branco cria um respiro visual embutido pelo contraste, não só pelo espaço.</li><li><strong>Seções escuras generosas</strong>: as áreas escuras de hero e de recursos usam padding vertical extra (80px+) para deixar o fundo escuro de floresta respirar.</li><li><strong>Seções claras compactas</strong>: as áreas de conteúdo brancas são mais densas, com grades de cards mais justas e menos espaçamento vertical.</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Mínimo (1px–2px): spans pequenos, badges</li><li>Sutil (4px): campos, botões pequenos</li><li>Padrão (8px): cards, links</li><li>Card (16px): cards padrão, contêineres</li><li>Alternador (20px): elementos de switch</li><li>Grande (24px): painéis grandes</li><li>Imagem (30px–32px): contêineres de imagem</li><li>Hero (48px): cards do hero</li><li>Pílula (100px–999px): botões, pílulas de navegação</li><li>Completo (9999px): pílula máxima</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Plano (nível 0)</td><td>Sem sombra</td><td>Superfícies padrão</td></tr><tr><td>Sutil (nível 1)</td><td><code>rgba(0,0,0,0.1) 0px 2px 4px</code></td><td>Leve elevação de cards</td></tr><tr><td>Padrão (nível 2)</td><td><code>rgba(0,0,0,0.15) 0px 3px 9px</code></td><td>Cards padrão</td></tr><tr><td>Marcante (nível 3)</td><td><code>rgba(0,0,0,0.15) 0px 3px 20px</code></td><td>Painéis elevados</td></tr><tr><td>Floresta (nível 4)</td><td><code>rgba(0,30,43,0.12) 0px 26px 44px, rgba(0,0,0,0.13) 0px 7px 13px</code></td><td>Cards do hero — tingidos de azul-esverdeado</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: o sistema de sombras do MongoDB é único porque a sombra principal de elevação usa <code>rgba(0, 30, 43, 0.12)</code> — uma sombra tingida de azul-esverdeado que leva a cor escura de floresta da marca para o sistema de profundidade. Assim, mesmo sobre superfícies brancas, as sombras parecem pertencer ao mundo de cores do MongoDB, em vez de serem um preto neutro genérico.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use <code>#001e2b</code> (preto de floresta) nas seções escuras — não preto puro</li><li>Aplique o MongoDB Green (<code>#00ed64</code>) com parcimônia, para o máximo impacto elétrico</li><li>Use a MongoDB Value Serif SÓ nos títulos de hero/display — Euclid Circular A para todo o resto</li><li>Aplique a Source Code Pro em caixa-alta com tracking largo (1px–3px) nos rótulos técnicos</li><li>Use sombras tingidas de azul-esverdeado (<code>rgba(0,30,43,0.12)</code>) na elevação principal dos cards</li><li>Mantenha a dualidade de seções escuras/claras — contraste dramático entre os modos</li><li>Use peso 300 no texto de corpo — o peso leve é a voz de leitura</li><li>Aplique raio de pílula (100px) nos botões de ação principal</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não use preto puro (<code>#000000</code>) em fundos escuros — use sempre o preto-azulado (<code>#001e2b</code>)</li><li>Não use o MongoDB Green (<code>#00ed64</code>) em fundos — ele é um destaque para texto, sublinhados e pequenos realces</li><li>Não use sombras cinza padrão — use sempre as tingidas de azul-esverdeado (<code>rgba(0,30,43,...)</code>)</li><li>Não aplique a fonte serifada no texto de corpo — a MongoDB Value Serif é só para o hero</li><li>Não use espaçamento entre letras estreito nos rótulos em Source Code Pro — o tracking largo É a identidade</li><li>Não misture tratamentos de seção escura e clara na mesma seção</li><li>Não use cores quentes — a paleta é estritamente fria (azul-esverdeado, verde, azul)</li><li>Não se esqueça dos sublinhados de destaque em verde — são o elemento decorativo característico</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile pequeno</td><td>&lt;425px</td><td>Coluna única justa</td></tr><tr><td>Mobile</td><td>425–768px</td><td>Mobile padrão</td></tr><tr><td>Tablet</td><td>768–1024px</td><td>Começam os grids de 2 colunas</td></tr><tr><td>Desktop</td><td>1024–1280px</td><td>Layout padrão</td></tr><tr><td>Desktop grande</td><td>1280–1440px</td><td>Layout expandido</td></tr><tr><td>Ultralarga</td><td>&gt;1440px</td><td>Largura máxima, margens generosas</td></tr></tbody></table>
+<h3>Áreas de toque</h3>
+<ul><li>Botões em pílula com padding generoso</li><li>Links de navegação em 16px com espaçamento adequado</li><li>Superfícies dos cards como áreas de toque inteiras</li></ul>
+<h3>Estratégia de recolhimento</h3>
+<ul><li>Hero: MongoDB Value Serif 96px → 64px → reduz ainda mais</li><li>Navegação: megamenu horizontal → hambúrguer</li><li>Cards de recursos: várias colunas → empilhados</li><li>As seções escuras/claras mantêm seu modo em todos os tamanhos</li><li>Os rótulos em Source Code Pro mantêm o tratamento em caixa-alta</li></ul>
+<h3>Comportamento das imagens</h3>
+<ul><li>As capturas de dashboards mudam de escala proporcionalmente</li><li>Os fundos das seções escuras se mantêm em largura total</li><li>O raio das imagens é mantido em todos os breakpoints</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Fundo escuro: Forest Black (<code>#001e2b</code>)</li><li>Destaque da marca: MongoDB Green (<code>#00ed64</code>)</li><li>Verde funcional: Dark Green (<code>#00684a</code>)</li><li>Azul de links: Action Blue (<code>#006cfa</code>)</li><li>Texto sobre claro: Black (<code>#000000</code>)</li><li>Texto sobre escuro: White (<code>#ffffff</code>) ou Light Input (<code>#e8edeb</code>)</li><li>Borda clara: Silver Teal (<code>#b8c4c2</code>)</li><li>Borda escura: Teal Gray (<code>#3d4f58</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um hero sobre fundo preto de floresta (#001e2b). Título em MongoDB Value Serif 96px peso 400, line-height 1.20, texto branco com 'potential' realçado em MongoDB Green (#00ed64). Subtítulo em Euclid Circular A 18px peso 400. CTA verde em pílula (#00684a, raio de 100px). Brilho em gradiente verde neon atrás da captura do produto.&quot;</li><li>&quot;Desenhe um card sobre fundo branco: borda 1px solid #b8c4c2, raio de 16px, sombra rgba(0,30,43,0.12) 0px 26px 44px. Título em Euclid Circular A 24px peso 500. Corpo em 16px peso 300. Rótulo em Source Code Pro 14px caixa-alta acima do título, com letter-spacing de 2px.&quot;</li><li>&quot;Construa uma seção escura: fundo #001e2b, borda 1px solid #3d4f58 nos cards. Texto branco. Sublinhados de destaque em MongoDB Green (#00ed64) nos títulos usando borda inferior de 2px solid.&quot;</li><li>&quot;Crie um rótulo técnico: Source Code Pro 14px, text-transform uppercase, letter-spacing 2px, peso 500, cor #00ed64 sobre fundo escuro.&quot;</li><li>&quot;Desenhe um botão em pílula: fundo #1c2d38, borda 1px solid #3d4f58, raio de 100px, texto #5c6c75. Hover: fundo #1eaedb, texto branco, translateX(5px).&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Comece pela decisão de modo: escuro (#001e2b) para hero/recursos, branco para conteúdo</li><li>O MongoDB Green (#00ed64) é elétrico — use uma vez por seção para o máximo impacto</li><li>Os títulos serifados (MongoDB Value Serif) criam a autoridade editorial — nunca use no corpo</li><li>O texto de corpo em peso 300 cria a experiência de leitura arejada — não caia no 400 por padrão</li><li>Source Code Pro em caixa-alta com tracking largo nos rótulos técnicos — a voz do banco de dados</li><li>As sombras tingidas de azul-esverdeado mantêm tudo no mundo de cores do MongoDB</li></ol>
+</section>

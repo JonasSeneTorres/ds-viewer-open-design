@@ -1,0 +1,89 @@
+<!-- design-system-bmw · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Automóveis de luxo. Superfícies escuras premium, estética de engenharia alemã precisa.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site da BMW é engenharia automotiva transformada em visual — um design system que comunica precisão, desempenho e a confiança industrial alemã. A página alterna seções hero bem escuras (com fotografia automotiva de ponta a ponta) e áreas de conteúdo brancas e limpas, criando um ritmo cinematográfico que lembra um showroom de carros de luxo, em que os veículos são iluminados contra a escuridão. A linguagem de design BMW CI2020 (a renovação da identidade corporativa) define cada elemento.</p>
+<p>A tipografia é construída sobre a BMWTypeNextLatin — uma fonte proprietária em duas variantes: BMWTypeNextLatin Light (peso 300) para os enormes títulos de display em caixa-alta e BMWTypeNextLatin Regular para o corpo e a interface. O título de 60px em caixa-alta e peso 300 é o gesto tipográfico definidor — uma tipografia leve que sussurra autoridade em vez de gritá-la. A pilha de fallbacks inclui Helvetica e fontes japonesas (Hiragino, Meiryo), refletindo a presença global da BMW.</p>
+<p>O que torna a BMW distinta é seu sistema de temas guiado por variáveis CSS. Variáveis sensíveis ao contexto (<code>--site-context-highlight-color: #1c69d4</code>, <code>--site-context-focus-color: #0653b6</code>, <code>--site-context-metainfo-color: #757575</code>) sugerem um design system feito para implantação em várias marcas e contextos, em que as cores podem ser trocadas globalmente. A cor de destaque azul (<code>#1c69d4</code>) é o azul característico da BMW — usado com parcimônia em elementos interativos e estados de foco, nunca de forma decorativa. Nenhum border-radius foi detectado — o design da BMW é anguloso, de cantos vivos e intransigentemente geométrico.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>BMWTypeNextLatin Light (peso 300) em caixa-alta no display — autoridade sussurrada</li><li>BMW Blue (<code>#1c69d4</code>) como único destaque — usado só em elementos interativos</li><li>Nenhum border-radius detectado — geometria industrial angulosa, de cantos vivos</li><li>Fotografia escura no hero + seções de conteúdo brancas — ritmo de iluminação de showroom</li><li>Temas guiados por variáveis CSS: tokens <code>--site-context-*</code> para flexibilidade de marca</li><li>Peso 900 para ênfase na navegação — contraste extremo com o display em 300</li><li>Alturas de linha justas (1.15–1.30) em todo lugar — comprimido, eficiente, engenharia alemã</li><li>Fotografia automotiva de ponta a ponta como principal conteúdo visual</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Marca principal</h3>
+<ul><li><strong>Pure White</strong> (<code>#ffffff</code>): <code>--site-context-theme-color</code>, superfície principal, fundos de cards</li><li><strong>BMW Blue</strong> (<code>#1c69d4</code>): <code>--site-context-highlight-color</code>, principal destaque interativo</li><li><strong>BMW Focus Blue</strong> (<code>#0653b6</code>): <code>--site-context-focus-color</code>, foco de teclado e estados ativos</li></ul>
+<h3>Escala neutra</h3>
+<ul><li><strong>Near Black</strong> (<code>#262626</code>): texto principal sobre superfícies claras, texto de links escuros</li><li><strong>Meta Gray</strong> (<code>#757575</code>): <code>--site-context-metainfo-color</code>, texto secundário, metadados</li><li><strong>Silver</strong> (<code>#bbbbbb</code>): texto terciário, links esmaecidos, elementos do rodapé</li></ul>
+<h3>Estados interativos</h3>
+<ul><li>Todos os links ficam brancos (<code>#ffffff</code>) no hover — sugerindo navegação principalmente sobre superfícies escuras</li><li>Os links de texto usam underline: none no hover — interação limpa</li></ul>
+<h3>Sombras</h3>
+<ul><li>Sistema de sombras mínimo — a profundidade vem da fotografia e do contraste entre seções escuras e claras</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Display leve</strong>: <code>BMWTypeNextLatin Light</code>, fallbacks: <code>Helvetica, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo</code></li><li><strong>Corpo / interface</strong>: <code>BMWTypeNextLatin</code>, mesma pilha de fallbacks</li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Observações</th></tr></thead><tbody><tr><td>Display Hero</td><td>BMWTypeNextLatin Light</td><td>60px (3.75rem)</td><td>300</td><td>1.30 (justa)</td><td><code>text-transform: uppercase</code></td></tr><tr><td>Título de seção</td><td>BMWTypeNextLatin</td><td>32px (2.00rem)</td><td>400</td><td>1.30 (justa)</td><td>Títulos das seções principais</td></tr><tr><td>Ênfase da navegação</td><td>BMWTypeNextLatin</td><td>18px (1.13rem)</td><td>900</td><td>1.30 (justa)</td><td>Itens de navegação em negrito</td></tr><tr><td>Corpo</td><td>BMWTypeNextLatin</td><td>16px (1.00rem)</td><td>400</td><td>1.15 (justa)</td><td>Texto de corpo padrão</td></tr><tr><td>Botão negrito</td><td>BMWTypeNextLatin</td><td>16px (1.00rem)</td><td>700</td><td>1.20–2.88</td><td>Botões de CTA</td></tr><tr><td>Botão</td><td>BMWTypeNextLatin</td><td>16px (1.00rem)</td><td>400</td><td>1.15 (justa)</td><td>Botões padrão</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Display leve, navegação pesada</strong>: o peso 300 nos títulos do hero cria uma elegância sussurrada; o peso 900 na navegação cria uma autoridade crua. Esse contraste extremo de pesos (300 vs 900) é a tensão tipográfica característica.</li><li><strong>Display sempre em caixa-alta</strong>: o hero de 60px é sempre em caixa-alta — criando uma qualidade monumental, arquitetônica.</li><li><strong>Tudo justo</strong>: alturas de linha de 1.15 a 1.30 em todo o sistema. Nada respira — cada linha é comprimida, eficiente, projetada à alemã.</li><li><strong>Família única</strong>: a BMWTypeNextLatin cuida de tudo, do display de 60px ao corpo de 16px — unidade por meio de uma só fonte em pesos diferentes.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<ul><li>Texto: BMWTypeNextLatin 16px, peso 700 no primário, 400 no secundário</li><li>Altura da linha: 1.15–2.88 (a grande variação sugere tamanho definido pelo padding)</li><li>Borda: borda inferior branca sobre superfícies escuras (<code>1px solid #ffffff</code>)</li><li>Sem border-radius — botões retangulares de cantos vivos</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Sem border-radius — todos os contêineres são retângulos de cantos vivos</li><li>Fundos brancos nas seções claras</li><li>Fundos escuros nas seções hero/de recursos</li><li>Sem bordas visíveis na maioria dos elementos</li></ul>
+<h3>Navegação</h3>
+<ul><li>BMWTypeNextLatin 18px peso 900 nos links de navegação principais</li><li>Texto branco sobre cabeçalho escuro</li><li>Logo da BMW com 54x54px</li><li>Hover: continua branco, text-decoration none</li><li>Link de texto &quot;Home&quot; no cabeçalho</li></ul>
+<h3>Tratamento de imagens</h3>
+<ul><li>Fotografia automotiva de ponta a ponta</li><li>Iluminação escura e cinematográfica</li><li>Imagens de hero de borda a borda</li><li>Fotografia de carros como principal conteúdo visual</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 1px, 5px, 8px, 10px, 12px, 15px, 16px, 20px, 24px, 30px, 32px, 40px, 45px, 56px, 60px</li></ul>
+<h3>Grid e contêiner</h3>
+<ul><li>Fotografia de hero em largura total</li><li>Seções de conteúdo centralizadas</li><li>Rodapé: grade de links em várias colunas</li></ul>
+<h3>Filosofia do espaço em branco</h3>
+<ul><li><strong>Ritmo de showroom</strong>: seções hero escuras com padding generoso criam a sensação de caminhar por um showroom em que cada veículo é iluminado em seu próprio espaço.</li><li><strong>Conteúdo comprimido</strong>: as áreas de texto de corpo usam alturas de linha justas e espaçamento compacto — densas em informação, sem desperdício.</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li><strong>Nenhum detectado.</strong> A BMW usa exclusivamente cantos vivos — cada elemento é um retângulo preciso. É o design system mais anguloso analisado.</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Fotografia (nível 0)</td><td>Imagens escuras de ponta a ponta</td><td>Fundos de hero</td></tr><tr><td>Plano (nível 1)</td><td>Superfície branca, sem sombra</td><td>Seções de conteúdo</td></tr><tr><td>Foco (acessibilidade)</td><td>BMW Focus Blue (<code>#0653b6</code>)</td><td>Estados de foco</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: a BMW praticamente não usa sombras. A profundidade é criada inteiramente pelo contraste entre as seções fotográficas escuras e as seções de conteúdo brancas — a iluminação automotiva faz o trabalho de elevação.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use BMWTypeNextLatin Light (300) em caixa-alta em todos os títulos de display</li><li>Mantenha TODOS os cantos vivos (raio de 0px) — a geometria angulosa é inegociável</li><li>Use o BMW Blue (<code>#1c69d4</code>) só em elementos interativos — nunca de forma decorativa</li><li>Aplique peso 900 para ênfase na navegação — o contraste extremo de pesos é intencional</li><li>Use fotografia automotiva de ponta a ponta nas seções hero</li><li>Mantenha as alturas de linha justas (1.15–1.30) em todo lugar</li><li>Use as variáveis CSS <code>--site-context-*</code> para os temas</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não arredonde cantos — o raio zero é a identidade da BMW</li><li>Não use o BMW Blue em fundos ou superfícies grandes — ele é só um destaque</li><li>Não use pesos médios (500–600) — o sistema usa os extremos 300, 400, 700, 900</li><li>Não adicione elementos decorativos — a fotografia e a tipografia carregam tudo</li><li>Não use alturas de linha relaxadas — o texto da BMW é sempre comprimido</li><li>Não clareie as seções hero escuras — o contraste com o branco É o design</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile pequeno</td><td>&lt;375px</td><td>Mínimo suportado</td></tr><tr><td>Mobile</td><td>375–480px</td><td>Coluna única</td></tr><tr><td>Mobile grande</td><td>480–640px</td><td>Pequenos ajustes</td></tr><tr><td>Tablet pequeno</td><td>640–768px</td><td>Começam as 2 colunas</td></tr><tr><td>Tablet</td><td>768–920px</td><td>Tablet padrão</td></tr><tr><td>Desktop pequeno</td><td>920–1024px</td><td>Começa o layout desktop</td></tr><tr><td>Desktop</td><td>1024–1280px</td><td>Desktop padrão</td></tr><tr><td>Desktop grande</td><td>1280–1440px</td><td>Expandido</td></tr><tr><td>Ultralarga</td><td>1440–1600px</td><td>Layout máximo</td></tr></tbody></table>
+<h3>Estratégia de recolhimento</h3>
+<ul><li>Hero: 60px → reduz de escala, mantém a caixa-alta</li><li>Navegação: horizontal → hambúrguer</li><li>Fotografia: de ponta a ponta em todos os tamanhos</li><li>Seções de conteúdo: empilham na vertical</li><li>Rodapé: várias colunas → empilhado</li></ul>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Fundo: Pure White (<code>#ffffff</code>)</li><li>Texto: Near Black (<code>#262626</code>)</li><li>Texto secundário: Meta Gray (<code>#757575</code>)</li><li>Destaque: BMW Blue (<code>#1c69d4</code>)</li><li>Foco: BMW Focus Blue (<code>#0653b6</code>)</li><li>Esmaecido: Silver (<code>#bbbbbb</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um hero: fundo de fotografia automotiva escura em largura total. Título em BMWTypeNextLatin Light 60px peso 300, caixa-alta, line-height 1.30, texto branco. Nenhum border-radius em lugar algum.&quot;</li><li>&quot;Desenhe a navegação: fundo escuro. BMWTypeNextLatin 18px peso 900 nos links, texto branco. Logo da BMW 54x54. Layout retangular de cantos vivos.&quot;</li><li>&quot;Construa um botão: BMWTypeNextLatin 16px peso 700, line-height 1.20. Cantos vivos (raio de 0px). Borda inferior branca sobre superfície escura.&quot;</li><li>&quot;Crie uma seção de conteúdo: fundo branco. Título em 32px peso 400, line-height 1.30, #262626. Corpo em 16px peso 400, line-height 1.15.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Border-radius zero — todo canto é vivo, sem exceções</li><li>Extremos de peso: 300 (display), 400 (corpo), 700 (botões), 900 (navegação)</li><li>BMW Blue só em elementos interativos — nunca como fundo ou decoração</li><li>A fotografia carrega a emoção — a interface é pura precisão</li><li>Alturas de linha justas em todo lugar — de 1.15 a 1.30</li></ol>
+</section>

@@ -1,0 +1,40 @@
+/* Valores-base (fallback). Cada design system sobrescreve estas variáveis em [data-theme="<id>"]
+   no próprio CSS, data/themes/<id>.css (gerado por scripts/build_ds_details.py, carregado por assets/app.js). */
+:root {
+  --bg: oklch(99% 0.002 240);
+  --surface: #ffffff;
+  --surface-2: oklch(97% 0.003 250);
+  --fg: oklch(18% 0.012 250);
+  --fg-soft: oklch(38% 0.012 250);
+  --muted: oklch(54% 0.012 250);
+  --border: oklch(92% 0.005 250);
+  --border-strong: oklch(84% 0.006 250);
+  --accent: oklch(58% 0.18 255);
+  --accent-strong: oklch(48% 0.19 258);
+  --accent-weak: oklch(95% 0.03 255);
+  --accent-fg: #ffffff;
+  --solid: oklch(48% 0.19 258);
+  --solid-fg: #ffffff;
+  --ok: oklch(58% 0.15 150);
+  --ok-weak: oklch(95% 0.04 150);
+  --warn: oklch(66% 0.14 75);
+  --warn-weak: oklch(96% 0.04 80);
+  --danger: oklch(56% 0.2 25);
+  --danger-weak: oklch(96% 0.03 25);
+  --bw: 1px;
+  --radius: 10px;
+  --radius-sm: 7px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-pop: 0 14px 40px rgba(15, 23, 42, 0.18);
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --display-tracking: -0.02em;
+  --heading-weight: 650;
+  --kicker-transform: none;
+  --kicker-spacing: 0.04em;
+  --hero-ground: var(--surface-2);
+  --hero-ink: var(--fg);
+}

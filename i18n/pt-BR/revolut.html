@@ -1,0 +1,88 @@
+<!-- design-system-revolut · pt-BR. Traduza só o texto; mantenha tags, data-section, <code> e valores. -->
+<p data-field="tagline">Banco digital. Interface escura e elegante, cards em gradiente, precisão de fintech.</p>
+
+<section data-section="visual-theme-atmosphere">
+<h2>Tema visual e atmosfera</h2>
+<p>O site da Revolut é a confiança de uma fintech destilada em pixels — um design system que comunica &quot;seu dinheiro está em boas mãos&quot; por meio de tipografia gigante, espaço em branco generoso e uma paleta neutra disciplinada. A linguagem visual é construída sobre a Aeonik Pro, uma grotesca geométrica que cria títulos em escala de outdoor, com 136px, peso 500 e tracking negativo agressivo (-2.72px). Não é uma marca sutil; é fintech em escala de estádio.</p>
+<p>O sistema de cores é construído sobre uma arquitetura abrangente de tokens <code>--rui-*</code> (Revolut UI), com nomes semânticos para cada estado: perigo (<code>#e23b4a</code>), alerta (<code>#ec7e00</code>), verde-azulado (<code>#00a87e</code>), azul (<code>#494fdf</code>), rosa profundo (<code>#e61e49</code>) e mais. Mas a superfície de marketing em si é notavelmente contida — quase preto (<code>#191c1f</code>) e branco puro (<code>#ffffff</code>) dominam, e os tokens semânticos coloridos ficam reservados para a interface do produto, não para a página de marketing.</p>
+<p>O que distingue a Revolut é seu sistema de botões em que tudo é pílula. Todo botão usa raio de 9999px — primário escuro (<code>#191c1f</code>), secundário claro (<code>#f4f4f4</code>), com contorno (<code>transparent + 2px solid</code>) e ghost sobre escuro (<code>rgba(244,244,244,0.1) + 2px solid</code>). O padding é generoso (14px 32px–34px), criando áreas de toque grandes e confiantes. Junto com a Inter no texto de corpo em vários pesos e espaçamento entre letras positivo (0.16px–0.24px), o resultado é um design que parece ao mesmo tempo premium e acessível — banco para a era moderna.</p>
+<p><strong>Características principais:</strong></p>
+<ul><li>Display em Aeonik Pro a 136px, peso 500 — títulos de fintech em escala de outdoor</li><li>Binário quase preto (<code>#191c1f</code>) + branco, com tokens semânticos <code>--rui-*</code> abrangentes</li><li>Botões em pílula universais (raio de 9999px) com padding generoso (14px 32px)</li><li>Inter no texto de corpo com espaçamento entre letras positivo (0.16px–0.24px)</li><li>Sistema rico de cores semânticas: azul, verde-azulado, rosa, amarelo, verde, marrom, perigo, alerta</li><li>Nenhuma sombra detectada — profundidade só pelo contraste de cor</li><li>Alturas de linha justas no display (1.00) e relaxadas no corpo (1.50–1.56)</li></ul>
+</section>
+
+<section data-section="color-palette-roles">
+<h2>Paleta de cores e papéis</h2>
+<h3>Primárias</h3>
+<ul><li><strong>Revolut Dark</strong> (<code>#191c1f</code>): superfície escura principal, fundo de botões, texto quase preto</li><li><strong>Pure White</strong> (<code>#ffffff</code>): <code>--rui-color-action-label</code>, superfície clara principal</li><li><strong>Light Surface</strong> (<code>#f4f4f4</code>): fundo de botões secundários, superfície sutil</li></ul>
+<h3>Marca / interativas</h3>
+<ul><li><strong>Revolut Blue</strong> (<code>#494fdf</code>): <code>--rui-color-blue</code>, azul principal da marca</li><li><strong>Action Blue</strong> (<code>#4f55f1</code>): <code>--rui-color-action-photo-header-text</code>, destaque de cabeçalho</li><li><strong>Blue Text</strong> (<code>#376cd5</code>): <code>--website-color-blue-text</code>, azul de links</li></ul>
+<h3>Semânticas</h3>
+<ul><li><strong>Danger Red</strong> (<code>#e23b4a</code>): <code>--rui-color-danger</code>, erro/destrutivo</li><li><strong>Deep Pink</strong> (<code>#e61e49</code>): <code>--rui-color-deep-pink</code>, destaque crítico</li><li><strong>Warning Orange</strong> (<code>#ec7e00</code>): <code>--rui-color-warning</code>, estados de alerta</li><li><strong>Yellow</strong> (<code>#b09000</code>): <code>--rui-color-yellow</code>, atenção</li><li><strong>Teal</strong> (<code>#00a87e</code>): <code>--rui-color-teal</code>, sucesso/positivo</li><li><strong>Light Green</strong> (<code>#428619</code>): <code>--rui-color-light-green</code>, sucesso secundário</li><li><strong>Green Text</strong> (<code>#006400</code>): <code>--website-color-green-text</code>, texto verde</li><li><strong>Light Blue</strong> (<code>#007bc2</code>): <code>--rui-color-light-blue</code>, informativo</li><li><strong>Brown</strong> (<code>#936d62</code>): <code>--rui-color-brown</code>, destaque neutro quente</li><li><strong>Red Text</strong> (<code>#8b0000</code>): <code>--website-color-red-text</code>, texto vermelho-escuro</li></ul>
+<h3>Escala neutra</h3>
+<ul><li><strong>Mid Slate</strong> (<code>#505a63</code>): texto secundário</li><li><strong>Cool Gray</strong> (<code>#8d969e</code>): texto esmaecido, terciário</li><li><strong>Gray Tone</strong> (<code>#c9c9cd</code>): <code>--rui-color-grey-tone-20</code>, bordas/divisores</li></ul>
+</section>
+
+<section data-section="typography-rules">
+<h2>Regras de tipografia</h2>
+<h3>Famílias tipográficas</h3>
+<ul><li><strong>Display</strong>: <code>Aeonik Pro</code> — grotesca geométrica, sem fallbacks detectados</li><li><strong>Corpo / interface</strong>: <code>Inter</code> — sem serifa padrão de sistema</li><li><strong>Fallback</strong>: <code>Arial</code> em contextos específicos de botões</li></ul>
+<h3>Hierarquia</h3>
+<table><thead><tr><th>Papel</th><th>Fonte</th><th>Tamanho</th><th>Peso</th><th>Altura da linha</th><th>Espaçamento entre letras</th><th>Observações</th></tr></thead><tbody><tr><td>Display mega</td><td>Aeonik Pro</td><td>136px (8.50rem)</td><td>500</td><td>1.00 (justa)</td><td>-2.72px</td><td>Hero em escala de estádio</td></tr><tr><td>Display Hero</td><td>Aeonik Pro</td><td>80px (5.00rem)</td><td>500</td><td>1.00 (justa)</td><td>-0.8px</td><td>Hero principal</td></tr><tr><td>Título de seção</td><td>Aeonik Pro</td><td>48px (3.00rem)</td><td>500</td><td>1.21 (justa)</td><td>-0.48px</td><td>Seções de recursos</td></tr><tr><td>Subtítulo</td><td>Aeonik Pro</td><td>40px (2.50rem)</td><td>500</td><td>1.20 (justa)</td><td>-0.4px</td><td>Subseções</td></tr><tr><td>Título de card</td><td>Aeonik Pro</td><td>32px (2.00rem)</td><td>500</td><td>1.19 (justa)</td><td>-0.32px</td><td>Títulos de cards</td></tr><tr><td>Título de recurso</td><td>Aeonik Pro</td><td>24px (1.50rem)</td><td>400</td><td>1.33</td><td>normal</td><td>Títulos leves</td></tr><tr><td>Navegação / interface</td><td>Aeonik Pro</td><td>20px (1.25rem)</td><td>500</td><td>1.40</td><td>normal</td><td>Navegação, botões</td></tr><tr><td>Corpo grande</td><td>Inter</td><td>18px (1.13rem)</td><td>400</td><td>1.56</td><td>-0.09px</td><td>Introduções</td></tr><tr><td>Corpo</td><td>Inter</td><td>16px (1.00rem)</td><td>400</td><td>1.50</td><td>0.24px</td><td>Leitura padrão</td></tr><tr><td>Corpo seminegrito</td><td>Inter</td><td>16px (1.00rem)</td><td>600</td><td>1.50</td><td>0.16px</td><td>Corpo enfatizado</td></tr><tr><td>Link negrito no corpo</td><td>Inter</td><td>16px (1.00rem)</td><td>700</td><td>1.50</td><td>0.24px</td><td>Links em negrito</td></tr></tbody></table>
+<h3>Princípios</h3>
+<ul><li><strong>Peso 500 como padrão do display</strong>: a Aeonik Pro usa médio (500) em TODOS os títulos — nada de negrito. Isso cria autoridade pelo tamanho e pelo tracking, não pelo peso.</li><li><strong>Tracking de outdoor</strong>: -2.72px em 136px é extremamente comprimido — texto feito para ser lido num relance, como a sinalização de um aeroporto.</li><li><strong>Tracking positivo no corpo</strong>: a Inter usa de +0.16px a +0.24px, criando um texto de leitura arejado e bem espaçado, em contraste com os títulos comprimidos.</li></ul>
+</section>
+
+<section data-section="component-stylings">
+<h2>Estilo dos componentes</h2>
+<h3>Botões</h3>
+<p><strong>Pílula escura primária</strong></p>
+<ul><li>Fundo: <code>#191c1f</code></li><li>Texto: <code>#ffffff</code></li><li>Padding: 14px 32px</li><li>Raio: 9999px (pílula completa)</li><li>Hover: opacidade 0.85</li><li>Foco: anel <code>0 0 0 0.125rem</code></li></ul>
+<p><strong>Pílula clara secundária</strong></p>
+<ul><li>Fundo: <code>#f4f4f4</code></li><li>Texto: <code>#000000</code></li><li>Padding: 14px 34px</li><li>Raio: 9999px</li><li>Hover: opacidade 0.85</li></ul>
+<p><strong>Pílula com contorno</strong></p>
+<ul><li>Fundo: transparente</li><li>Texto: <code>#191c1f</code></li><li>Borda: <code>2px solid #191c1f</code></li><li>Padding: 14px 32px</li><li>Raio: 9999px</li></ul>
+<p><strong>Ghost sobre escuro</strong></p>
+<ul><li>Fundo: <code>rgba(244, 244, 244, 0.1)</code></li><li>Texto: <code>#f4f4f4</code></li><li>Borda: <code>2px solid #f4f4f4</code></li><li>Padding: 14px 32px</li><li>Raio: 9999px</li></ul>
+<h3>Cards e contêineres</h3>
+<ul><li>Raio: 12px (pequeno), 20px (cards)</li><li>Sem sombras — superfícies planas com contraste de cor</li><li>Alternância de seções escuras e claras</li></ul>
+<h3>Navegação</h3>
+<ul><li>Aeonik Pro 20px peso 500</li><li>Cabeçalho limpo, botão de menu hambúrguer com raio de 12px</li><li>CTAs em pílula alinhados à direita</li></ul>
+</section>
+
+<section data-section="layout-principles">
+<h2>Princípios de layout</h2>
+<h3>Sistema de espaçamento</h3>
+<ul><li>Unidade base: 8px</li><li>Escala: 4px, 6px, 8px, 14px, 16px, 20px, 24px, 32px, 40px, 48px, 80px, 88px, 120px</li><li>Espaçamento grande entre seções: 80px–120px</li></ul>
+<h3>Escala de raios de borda</h3>
+<ul><li>Padrão (12px): navegação, botões pequenos</li><li>Card (20px): cards de recursos</li><li>Pílula (9999px): todos os botões</li></ul>
+</section>
+
+<section data-section="depth-elevation">
+<h2>Profundidade e elevação</h2>
+<table><thead><tr><th>Nível</th><th>Tratamento</th><th>Uso</th></tr></thead><tbody><tr><td>Plano (nível 0)</td><td>Sem sombra</td><td>Tudo — a Revolut não usa nenhuma sombra</td></tr><tr><td>Foco</td><td>Anel <code>0 0 0 0.125rem</code></td><td>Foco de acessibilidade</td></tr></tbody></table>
+<p><strong>Filosofia das sombras</strong>: a Revolut usa ZERO sombras. A profundidade vem inteiramente do contraste entre seções escuras e claras e do espaço em branco generoso entre os elementos.</p>
+</section>
+
+<section data-section="do-s-and-don-ts">
+<h2>O que fazer e o que evitar</h2>
+<h3>Faça</h3>
+<ul><li>Use a Aeonik Pro em peso 500 em todos os títulos de display</li><li>Aplique raio de 9999px em todos os botões — o formato de pílula é universal</li><li>Use padding generoso nos botões (14px 32px)</li><li>Mantenha a paleta em quase preto + branco nas superfícies de marketing</li><li>Aplique espaçamento entre letras positivo no texto de corpo em Inter</li></ul>
+<h3>Não faça</h3>
+<ul><li>Não use sombras — a Revolut é plana por definição</li><li>Não use negrito (700) nos títulos em Aeonik Pro — o peso é 500</li><li>Não use botões pequenos — o padding generoso é intencional</li><li>Não aplique cores semânticas nas superfícies de marketing — elas são para o produto</li></ul>
+</section>
+
+<section data-section="responsive-behavior">
+<h2>Comportamento responsivo</h2>
+<h3>Breakpoints</h3>
+<table><thead><tr><th>Nome</th><th>Largura</th><th>Principais mudanças</th></tr></thead><tbody><tr><td>Mobile pequeno</td><td>&lt;400px</td><td>Compacto, coluna única</td></tr><tr><td>Mobile</td><td>400–720px</td><td>Mobile padrão</td></tr><tr><td>Tablet</td><td>720–1024px</td><td>Layouts de 2 colunas</td></tr><tr><td>Desktop</td><td>1024–1280px</td><td>Desktop padrão</td></tr><tr><td>Grande</td><td>1280–1920px</td><td>Layout completo</td></tr></tbody></table>
+</section>
+
+<section data-section="agent-prompt-guide">
+<h2>Guia de prompts para agentes</h2>
+<h3>Referência rápida de cores</h3>
+<ul><li>Escuro: Revolut Dark (<code>#191c1f</code>)</li><li>Claro: White (<code>#ffffff</code>)</li><li>Superfície: Light (<code>#f4f4f4</code>)</li><li>Azul: Revolut Blue (<code>#494fdf</code>)</li><li>Perigo: Red (<code>#e23b4a</code>)</li><li>Sucesso: Teal (<code>#00a87e</code>)</li></ul>
+<h3>Exemplos de prompts de componentes</h3>
+<ul><li>&quot;Crie um hero: fundo branco. Título em Aeonik Pro 136px peso 500, line-height 1.00, letter-spacing -2.72px, texto #191c1f. CTA escuro em pílula (#191c1f, 9999px, 14px 32px). Secundário em pílula com contorno (transparente, 2px solid #191c1f).&quot;</li><li>&quot;Construa um botão em pílula: fundo #191c1f, texto branco, raio de 9999px, padding de 14px 32px, Aeonik Pro 20px peso 500. Hover: opacidade 0.85.&quot;</li></ul>
+<h3>Guia de iteração</h3>
+<ol><li>Aeonik Pro 500 nos títulos — nunca negrito</li><li>Todos os botões são pílulas (9999px) com padding generoso</li><li>Zero sombras — o plano é a identidade da Revolut</li><li>Quase preto + branco no marketing, cores semânticas no produto</li></ol>
+</section>

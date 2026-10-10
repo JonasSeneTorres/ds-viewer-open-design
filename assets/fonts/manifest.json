@@ -1,0 +1,1986 @@
+{
+ "https://fonts.googleapis.com/css2?family=Abril+Fatface:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Abril Fatface",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "f6c1b862535e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Anonymous Pro",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "bba5ce244b51.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Anonymous Pro",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "cb7886655093.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Anonymous Pro",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "59737000faa8.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Anonymous Pro",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "6a8d4e47688e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Archivo+Black:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Archivo Black",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "45f5d465bd2e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Audiowide:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Audiowide",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "51a0d4595427.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Azeret Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "1880d99d1c73.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Azeret Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "1880d99d1c73.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Azeret Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "b9eb4ac078ab.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Azeret Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "b9eb4ac078ab.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Azeret Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "b9eb4ac078ab.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Azeret Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "b9eb4ac078ab.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Bangers:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Bangers",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "0d85d03e1efc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Cal+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Cal Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "3ad22f24b45f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "DM Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "5224995c06ec.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "DM Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "5224995c06ec.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "DM Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "002a94d0e22f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "DM Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "002a94d0e22f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "DM Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "002a94d0e22f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "DM Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "002a94d0e22f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Darker+Grotesque:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Darker Grotesque",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "53fc43aac384.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Darker Grotesque",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "53fc43aac384.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Darker Grotesque",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "53fc43aac384.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Darker Grotesque",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "53fc43aac384.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Delius+Swash+Caps:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Delius Swash Caps",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "136f9c009e79.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Fascinate:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Fascinate",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "96fa8a66c9fa.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Fira+Code:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Fira Code",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "cd8e77acadce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Fira Code",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "cd8e77acadce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Fira Code",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "cd8e77acadce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Fira Code",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "cd8e77acadce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Geist Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "b690ff3f5a0e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "b690ff3f5a0e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "749b501ebd03.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "749b501ebd03.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "749b501ebd03.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "749b501ebd03.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Geist",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "5505dc225695.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "5505dc225695.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "04ce1a617bac.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "04ce1a617bac.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "04ce1a617bac.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Geist",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "04ce1a617bac.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Gelasio",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "6d53000d3cb9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Gelasio",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "6d53000d3cb9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Gelasio",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "f35a0630b88f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Gelasio",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "f35a0630b88f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Gelasio",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "f35a0630b88f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Gelasio",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "f35a0630b88f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Germania+One:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Germania One",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "c1e5895c394a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Google Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "3787d3c5675a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Google Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "3787d3c5675a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Google Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "59c54e1a01e6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Google Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "59c54e1a01e6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Google Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "59c54e1a01e6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Google Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "59c54e1a01e6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "IBM Plex Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "863c73553b8d.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "36280638603c.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "e2661bcc0d77.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "0bc96cd0d5b0.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "1b581b151893.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "0445e586fd72.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "IBM Plex Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "f036af2c9b99.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "f036af2c9b99.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "868a235a9c8b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "868a235a9c8b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "868a235a9c8b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "868a235a9c8b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "IBM Plex Serif",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "86bbdc548bec.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Serif",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "ff01d28c13bf.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Serif",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "f8b57d44f1db.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Serif",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "159158a47a6d.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Serif",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "6d6890039652.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Serif",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "769eb41aa754.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Inconsolata:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Inconsolata",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "29761318c10e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inconsolata",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "29761318c10e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inconsolata",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "29761318c10e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inconsolata",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "29761318c10e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Inter",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "85a0222926e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inter",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "85a0222926e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inter",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "6ab57b19c69b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inter",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "6ab57b19c69b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inter",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "6ab57b19c69b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Inter",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "6ab57b19c69b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "JetBrains Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "27adaaaeefc8.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "JetBrains Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "27adaaaeefc8.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "JetBrains Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "0a7197f9e2dd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "JetBrains Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "0a7197f9e2dd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "JetBrains Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "0a7197f9e2dd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "JetBrains Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "0a7197f9e2dd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Jost",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "e1618f6f28ce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Jost",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "e1618f6f28ce.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Jost",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "b58a5805e17f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Jost",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "b58a5805e17f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Jost",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "b58a5805e17f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Jost",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "b58a5805e17f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Kalam:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Kalam",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "e06acc31d479.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Kalam",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "d508014183cd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Limelight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Limelight",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "7462c2251a07.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Macondo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Macondo",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "80e69e8d6907.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Mona Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "e7cb39ad42d4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Mona Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "e7cb39ad42d4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Mona Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "12971afdab27.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Mona Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "12971afdab27.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Mona Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "12971afdab27.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Mona Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "12971afdab27.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Montserrat",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "76393105b494.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Montserrat",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "76393105b494.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Montserrat",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "49e242afe593.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Montserrat",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "49e242afe593.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Montserrat",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "49e242afe593.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Montserrat",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "49e242afe593.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=New+Rocker:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "New Rocker",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "fa21eced09ed.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Noto Nastaliq Urdu",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "6147f94b647b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Nastaliq Urdu",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "6147f94b647b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Nastaliq Urdu",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "6147f94b647b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Nastaliq Urdu",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "6147f94b647b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Noto Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "726aff3bac8e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "726aff3bac8e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "40ec04526bf3.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "40ec04526bf3.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "40ec04526bf3.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "40ec04526bf3.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Noto Serif Display",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "2e52ea2a473c.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Serif Display",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "2e52ea2a473c.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Serif Display",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "6b822e4d6a9a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Serif Display",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "6b822e4d6a9a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Serif Display",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "6b822e4d6a9a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Noto Serif Display",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "6b822e4d6a9a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Nunito",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "c54cc158e53b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Nunito",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "c54cc158e53b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Nunito",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "ff573f5680f2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Nunito",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "ff573f5680f2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Nunito",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "ff573f5680f2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Nunito",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "ff573f5680f2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Open Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "190d4f630ec7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Open Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "190d4f630ec7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Open Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "c79c2f578356.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Open Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "c79c2f578356.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Open Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "c79c2f578356.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Open Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "c79c2f578356.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Oswald",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "78c7a4ddadb6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Oswald",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "78c7a4ddadb6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Oswald",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "78c7a4ddadb6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Oswald",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "78c7a4ddadb6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Outfit",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "97312486bc63.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Outfit",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "97312486bc63.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Outfit",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "97312486bc63.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Outfit",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "97312486bc63.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Overpass+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Overpass Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "91f95c70e6cc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Overpass Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "91f95c70e6cc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Overpass Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "91f95c70e6cc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Overpass Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "91f95c70e6cc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=PT+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "PT Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "cc5bfe7b89c4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Playfair Display",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "d143613668d4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Playfair Display",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "d143613668d4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Playfair Display",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "61a963590a11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Playfair Display",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "61a963590a11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Playfair Display",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "61a963590a11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Playfair Display",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "61a963590a11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "a2b0c2e3157f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "a2b0c2e3157f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "d4d84dd169e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "d4d84dd169e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "d4d84dd169e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Plus Jakarta Sans",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "d4d84dd169e7.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Poppins",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "60aca29ce1c4.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Poppins",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "638b5d9dc3c6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Poppins",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "e6a077c34deb.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Poppins",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "57e843b6b6fe.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Poppins",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "93818c379851.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Poppins",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "742b18be16f6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Press+Start+2P:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Press Start 2P",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "39332efa7a67.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Roboto Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "10af3e2248cd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "10af3e2248cd.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "b676853f33e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto Mono",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "b676853f33e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto Mono",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "b676853f33e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "b676853f33e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Roboto",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "8ed4bb5409af.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "8ed4bb5409af.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "100%",
+   "file": "0f7fcdc8ea1a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "100%",
+   "file": "0f7fcdc8ea1a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "100%",
+   "file": "0f7fcdc8ea1a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Roboto",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "100%",
+   "file": "0f7fcdc8ea1a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Rubik",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "6965eea27d8a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Rubik",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "6965eea27d8a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Rubik",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "0ae40db16a01.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Rubik",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "0ae40db16a01.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Rubik",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "0ae40db16a01.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Rubik",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "0ae40db16a01.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Silkscreen:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Silkscreen",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "4d704351451a.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Silkscreen",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "e0d71d5a35d8.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Source Code Pro",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "62dcbb710aa2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Code Pro",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "62dcbb710aa2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Code Pro",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "09f76b0499e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Code Pro",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "09f76b0499e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Code Pro",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "09f76b0499e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Code Pro",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "09f76b0499e9.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Source Sans Pro",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "3406f34d95dc.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Sans Pro",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "77ce29e42e59.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Sans Pro",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "71cee82e1fa2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Sans Pro",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "07cf4023c0e1.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Sans Pro",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "f9c346c3c227.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Source Serif Pro",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "96d8240a12a2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Serif Pro",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "a7d45a2ded28.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Serif Pro",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "8a4959391c11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Serif Pro",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "9b9f35be4443.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Source Serif Pro",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "d0d88977106b.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Space Grotesk",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "4ecc7e89b711.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Grotesk",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "4ecc7e89b711.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Grotesk",
+   "style": "normal",
+   "weight": "600",
+   "stretch": "",
+   "file": "4ecc7e89b711.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Grotesk",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "4ecc7e89b711.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Space Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "ff30b5a7016f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "4b3f6f0680e6.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "b354aaaeb529.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Space Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "e3882d2a2cb3.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Ubuntu Mono",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "eeda53765422.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu Mono",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "281335a380d0.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu Mono",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "afee1bd9b40c.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu Mono",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "edcd8f6c983e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Ubuntu",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "42fa0b5b8f87.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "eff301d7a3a8.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "0c5ca88f2dc2.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu",
+   "style": "normal",
+   "weight": "500",
+   "stretch": "",
+   "file": "81460768bf05.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Ubuntu",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "50a3d1d03f5f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Helvetica+Neue:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Helvetica Neue",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "abf837ae4048.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica Neue",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "c47e2524c992.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica Neue",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "4e809c7f51aa.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica Neue",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "dcd0f68deb11.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "https://fonts.googleapis.com/css2?family=Helvetica:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap": [
+  {
+   "family": "Helvetica",
+   "style": "italic",
+   "weight": "400",
+   "stretch": "",
+   "file": "84ffb030468e.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica",
+   "style": "italic",
+   "weight": "700",
+   "stretch": "",
+   "file": "e51ac6688147.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica",
+   "style": "normal",
+   "weight": "400",
+   "stretch": "",
+   "file": "95b8bfa044ab.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "Helvetica",
+   "style": "normal",
+   "weight": "700",
+   "stretch": "",
+   "file": "659f4dcd664f.woff2",
+   "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ]
+}

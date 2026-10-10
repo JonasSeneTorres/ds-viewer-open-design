@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/85a0222926e7.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../assets/fonts/6ab57b19c69b.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+[data-theme="shopify"] {
+  --primary-500: #0aa96e;
+  --primary-500-fg: #111111;
+  --neutral-400: #aaaaaf;
+  --neutral-400-fg: #111111;
+  --ok-ink: var(--ok);
+  --ok-fg: #111111;
+  --warn-ink: var(--warn);
+  --warn-fg: #111111;
+  --danger-ink: color-mix(in oklab, var(--danger) 90%, var(--fg));
+  --danger-fg: #ffffff;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1.125rem;
+  --fs-h3: 1.75rem;
+  --fs-h2: 2.75rem;
+  --fs-h1: 4rem;
+  --fs-hero: 6rem;
+  --lh-body: 1.56;
+  --lh-tight: 1.05;
+  --display-tracking: 0em;
+  --section-y: 96px;
+  --section-y-tablet: 64px;
+  --container-max: 1280px;
+  --gutter: 48px;
+  --gutter-tablet: 32px;
+  --gutter-phone: 16px;
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --ease: ease;
+  --radius-lg: 12px;
+  --focus-ring: 0 0 0 2px #36f4a4;
+  --bg: #000000;
+  --surface: #02090a;
+  --surface-2: #061a1c;
+  --fg: #ffffff;
+  --fg-soft: #ffffff;
+  --muted: #a1a1aa;
+  --meta: color-mix(in oklab, #71717a 85%, var(--fg));
+  --border: #1e2c31;
+  --border-soft: #3f3f46;
+  --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);
+  --accent: #36f4a4;
+  --accent-strong: color-mix(in oklab, var(--accent) 85%, var(--fg));
+  --accent-weak: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  --accent-fg: #000000;
+  --solid: #36f4a4;
+  --solid-hover: #2de097;
+  --solid-fg: #000000;
+  --ok: #36f4a4;
+  --ok-weak: color-mix(in oklab, var(--ok) 12%, var(--bg));
+  --warn: #eab308;
+  --warn-weak: color-mix(in oklab, var(--warn) 14%, var(--bg));
+  --danger: #dc2626;
+  --danger-weak: color-mix(in oklab, var(--danger) 12%, var(--bg));
+  --bw: 1px;
+  --radius: 8px;
+  --radius-sm: 9999px;
+  --radius-pill: 9999px;
+  --shadow-card: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 2px 2px, rgba(0, 0, 0, 0.1) 0px 4px 4px, rgba(0, 0, 0, 0.1) 0px 8px 8px, rgba(255, 255, 255, 0.03) 0px 1px 0px inset;
+  --shadow-pop: 0 14px 40px rgba(0, 0, 0, 0.22);
+  --font-display: "NeueHaasGrotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --heading-weight: 600;
+  --kicker-transform: uppercase;
+  --kicker-spacing: 0.08em;
+  --hero-ground: var(--surface-2);
+  --hero-ink: var(--fg);
+}
