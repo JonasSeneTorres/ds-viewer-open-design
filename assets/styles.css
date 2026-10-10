@@ -2545,12 +2545,13 @@ fieldset {
 }
 
 .product-body .btn {
-  justify-self: start;
+  justify-self: stretch;
   align-items: center;
-  max-width: 100%;
+  justify-content: center;
+  width: 100%;
   margin-top: 4px;
   padding-inline: 12px;
-  text-align: left;
+  text-align: center;
 }
 
 /* o rótulo do botão ocupa até duas linhas; o que passar vira reticências */
