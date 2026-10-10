@@ -135,7 +135,7 @@ test("rota antiga e rota inexistente se comportam", async ({ page }) => {
 test("menu Exemplos lista as páginas de exemplo e a informação do tema segue o tema escolhido", async ({ page }) => {
   await page.goto("/#/");
   await page.click("#examplesBtn");
-  await expect(page.locator("#examplesMenu a")).toHaveText(["Blog", "Tabela", "Formulário", "Dashboard", "Loja"]);
+  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja"]);
   await page.keyboard.press("Escape");
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
@@ -175,4 +175,22 @@ test("loja: categorias, ordenação e carrinho", async ({ page }) => {
   await expect(page.locator(".thumb svg.no-image").first()).toBeVisible();
   // ícone de carrinho à direita do rótulo do botão
   await expect(page.locator("[data-add] svg.cart-icon").first()).toBeVisible();
+});
+
+test("página institucional tem as seções e o contato de mentira", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/");
+  await page.click("#examplesBtn");
+  await page.click('#examplesMenu a[href="#/institucional"]');
+  await expect(page).toHaveURL(/#\/institucional$/);
+  for (const id of ["sobre", "valores", "servicos", "opinioes", "chamada", "contato"]) {
+    await expect(page.locator("#" + id)).toBeVisible();
+  }
+  await expect(page.locator(".info-card.service")).toHaveCount(6);
+  await expect(page.locator(".quote")).toHaveCount(3);
+  await page.fill('.contact-form input[name="nome"]', "Maria");
+  await page.click(".contact-form button[type=submit]");
+  await expect(page.locator(".contact-form .form-alert")).toBeVisible();
+  expect(page.url()).toMatch(/#\/institucional$/);
+  expect(problems).toEqual([]);
 });

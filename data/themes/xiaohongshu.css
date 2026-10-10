@@ -35,7 +35,7 @@
   --surface-2: #fafafa;
   --fg: rgba(0, 0, 0, 0.8);
   --fg-soft: color-mix(in oklab, var(--fg) 78%, var(--bg));
-  --muted: color-mix(in oklab, var(--fg) 60%, var(--bg));
+  --muted: color-mix(in oklab, var(--fg) 65%, var(--bg));
   --meta: var(--muted);
   --border: rgba(0, 0, 0, 0.08);
   --border-soft: rgba(0, 0, 0, 0.05);

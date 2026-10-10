@@ -139,7 +139,7 @@
   --surface-2: #eef2f7;
   --fg: #0f172a;
   --fg-soft: #334155;
-  --muted: color-mix(in oklab, #64748b 90%, var(--fg));
+  --muted: color-mix(in oklab, #64748b 85%, var(--fg));
   --meta: #1d4ed8;
   --border: #d8dee8;
   --border-soft: #edf1f6;

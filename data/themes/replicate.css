@@ -36,7 +36,7 @@
   --fg: #202020;
   --fg-soft: #4e4e4e;
   --muted: #646464;
-  --meta: color-mix(in oklab, #8d8d8d 70%, var(--fg));
+  --meta: color-mix(in oklab, #8d8d8d 65%, var(--fg));
   --border: #202020;
   --border-soft: #e5e5e5;
   --border-strong: color-mix(in oklab, var(--fg) 22%, transparent);

@@ -94,6 +94,11 @@ const MEASURE = () => {
   probe("campo", ".field input, .toolbar, #dsSearch");
   probe("pilula", ".pill");
   probe("th", "th");
+  probe("faixa-solida", ".band-solid p");
+  probe("botao-invertido", ".btn-invert");
+  probe("estatistica", ".stats-row dd");
+  probe("opiniao-autor", ".quote .muted");
+  probe("icone", ".icon-bubble");
   out.overflowX = document.documentElement.scrollWidth > document.documentElement.clientWidth + 1;
   out.fonteH1 = out.h1 ? out.h1.family : null;
   out.carregadas = [...new Set([...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family.replace(/["']/g, "")))];
@@ -105,6 +110,7 @@ const ROUTES = (id) => [
   ["ds", `/#/design-system/${id}`],
   ["tabela", "/#/tabela"],
   ["formulario", "/#/formulario"],
+  ["institucional", "/#/institucional"],
   ["dashboard", "/#/dashboard"],
   ["loja", "/#/loja"],
 ];

@@ -820,7 +820,10 @@ def theme_vars(tokens, palettes, roles, fonts):
                     and contrast(hex_to_rgb(fg_c), hex_to_rgb(surface_warm)) >= 4.5)
     surface2_rgb = hex_to_rgb(surface_warm) if use_warm else mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(fg_c), 0.04)
     surface2_css = surface_warm if use_warm else "color-mix(in oklab, var(--bg), var(--fg) 4%)"
-    base_bgs = [hex_to_rgb(bg_c), hex_to_rgb(surf_c), surface2_rgb]
+    accent_weak_rgb = None
+    if parse_hex(accent):
+        accent_weak_rgb = mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(parse_hex(accent)), 0.12)  # faixa --accent-weak
+    base_bgs = [hex_to_rgb(bg_c), hex_to_rgb(surf_c), surface2_rgb] + ([accent_weak_rgb] if accent_weak_rgb else [])
 
     def readable(key, fallback_css, target=4.7):
         """Cor do token se tiver contraste suficiente sobre fundo, superfície e fundo secundário;

@@ -55,6 +55,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **29.** Barra lateral ilustrativa no blog — _Feito: busca, tópicos, últimos artigos, grade de botões de redes sociais, newsletter e nuvem de tags (16 tags em 5 tamanhos), na lista do blog e nos artigos. Nada funciona (busca, links e assinatura são de enfeite)._
 
+- [x] **30.** Página institucional de exemplo, a primeira do menu Exemplos — _Feito: hero, sobre (com números), valores, serviços (6 cartões com imagem de exemplo), opiniões de clientes, faixa de chamada e contato fake (o formulário só confirma na tela). Fundos alternados com as cores do tema; o texto das faixas é garantido pelo build (inclui `--accent-weak` nas checagens de contraste). Teste E2E novo (13 no total)._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16
