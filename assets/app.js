@@ -2428,16 +2428,18 @@
   function authHTML(state) {
     return (
       '<section class="auth">' +
-      '<div class="auth-aside">' +
+      '<div class="auth-aside"><div class="auth-aside-sticky">' +
+      '<div class="auth-aside-controls">' +
       '<fieldset class="state-switch" id="authStates"><legend class="sr-only">' + esc(T("auth.state")) + "</legend>" +
       AUTH_STATES.map(function (st) {
         return '<label class="state-opt"><input type="radio" name="authState" value="' + st[0] + '"' + (st[0] === state ? " checked" : "") + "><span>" + esc(T(st[1])) + "</span></label>";
       }).join("") +
       "</fieldset>" +
       '<div class="form-alert show warning auth-demo" role="note">' + esc(T("auth.demoNote")) + "</div>" +
+      "</div>" +
       '<div class="auth-aside-inner" aria-hidden="true">' + logoFrameHTML() +
       "<blockquote>" + esc(T("inst.lorem")) + "</blockquote>" +
-      '<p class="auth-aside-by">' + esc(AUTH_COMPANY) + " · Lorem Ipsum</p></div></div>" +
+      '<p class="auth-aside-by">' + esc(AUTH_COMPANY) + " · Lorem Ipsum</p></div></div></div>" +
       '<div class="auth-main">' +
       '<div class="auth-card" id="authCard">' + authCardHTML(state) + "</div>" +
       "</div></section>"
@@ -2889,6 +2891,17 @@
     langBtn.addEventListener("click", function () {
       setLanguage(lang === "pt-BR" ? "en-US" : "pt-BR");
     });
+  }
+
+  // ---- altura do cabeçalho em --header-h (usada pelo painel fixo das telas de login) ----
+  function updateHeaderHeight() {
+    var header = document.querySelector(".site-header");
+    if (header) document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+  }
+  updateHeaderHeight();
+  window.addEventListener("resize", updateHeaderHeight);
+  if (window.ResizeObserver && document.querySelector(".site-header")) {
+    new ResizeObserver(updateHeaderHeight).observe(document.querySelector(".site-header"));
   }
 
   // ---- botão "voltar ao topo": aparece depois de rolar a página ----

@@ -2966,21 +2966,39 @@ fieldset {
 .auth {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - var(--header-h, 68px));
+  min-height: calc(100dvh - var(--header-h, 68px));
 }
 
 .auth-aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 32px;
-  padding: clamp(24px, 5vw, 64px);
   background:
     radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--accent) 40%, transparent), transparent 55%),
     linear-gradient(150deg, color-mix(in oklab, var(--accent-strong) 28%, var(--surface-2)), color-mix(in oklab, var(--accent) 14%, var(--bg)));
   color: var(--fg);
   border-right: var(--bw) solid var(--border);
+}
+
+/* Painel da esquerda: altura da janela menos o cabeçalho, fixo ao rolar. O quadro com o logo e a
+   citação fica a 4px do fundo da janela (100dvh - altura do quadro - 4px, contado do topo). */
+.auth-aside-sticky {
+  position: sticky;
+  top: var(--header-h, 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  height: calc(100vh - var(--header-h, 68px));
+  height: calc(100dvh - var(--header-h, 68px));
+  padding: clamp(24px, 5vw, 64px) clamp(24px, 5vw, 64px) 4px;
+}
+
+/* seletor e aviso na mesma largura: o aviso segue o contêiner dos links das telas */
+.auth-aside-controls {
+  display: grid;
+  gap: 16px;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .auth-aside-inner {
@@ -3170,7 +3188,8 @@ fieldset {
 }
 
 .auth-demo {
-  max-width: 46ch;
+  width: 0;
+  min-width: 100%;
   margin: 0;
 }
 
@@ -3268,11 +3287,16 @@ fieldset {
     min-height: 0;
   }
 
-  /* no celular o quadro da esquerda vira uma faixa só com o seletor */
+  /* no celular o quadro da esquerda vira uma faixa com o seletor e o aviso */
   .auth-aside {
-    padding: 16px var(--gutter-phone, 16px);
     border-right: 0;
     border-bottom: var(--bw) solid var(--border);
+  }
+
+  .auth-aside-sticky {
+    position: static;
+    height: auto;
+    padding: 16px var(--gutter-phone, 16px);
   }
 
   .auth-aside-inner {
