@@ -163,6 +163,37 @@ def feedback_ink(color, fg, backgrounds, target=4.6):
     return best
 
 
+def readable_pct(color, toward, backgrounds, target=4.6, start=0):
+    """Menor % (de `start` a 100, de 5 em 5) de `toward` misturado em `color` com contraste >= target
+    sobre todos os fundos; se nenhum serve, o melhor compromisso."""
+    c, f = hex_to_rgb(color), hex_to_rgb(toward)
+    best, best_min = start, 0.0
+    for pct in range(start, 101, 5):
+        rgb = mix_oklab(c, f, pct / 100)
+        worst = min(contrast(rgb, bg) for bg in backgrounds)
+        if worst >= target:
+            return pct
+        if worst > best_min:
+            best, best_min = pct, worst
+    return best
+
+
+def solid_pair(accent, on):
+    """Fundo e texto do botão principal: a cor do DS com o texto indicado por ele, se passar de 4,5:1;
+    senão a mesma cor com a melhor tinta; senão a cor escurecida/clareada até passar."""
+    a = hex_to_rgb(accent)
+    for ink_ in (on, ink_for(accent)):
+        if ink_ and contrast(a, hex_to_rgb(ink_)) >= 4.5:
+            return accent, ink_
+    ink_ = ink_for(accent)
+    target = "#000000" if ink_ == "#ffffff" else "#ffffff"  # escurece p/ texto claro, clareia p/ texto escuro
+    for pct in range(5, 101, 5):
+        rgb = mix_oklab(a, hex_to_rgb(target), pct / 100)
+        if contrast(rgb, hex_to_rgb(ink_)) >= 4.5:
+            return to_hex(rgb), ink_
+    return accent, ink_
+
+
 def build_scale(base, anchors=()):
     """Escala 50–950 derivada de `base`; cores informadas (`anchors`) ocupam o degrau mais próximo."""
     bL, bC, bH = rgb_to_oklch(hex_to_rgb(base))
@@ -577,9 +608,30 @@ def font_role(roles):
     return i18n(en, " / ".join(dict.fromkeys(pt)) if ok else None)
 
 
+_GENERIC_FAMILIES = {"serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-serif", "ui-sans-serif",
+                     "ui-monospace", "ui-rounded", "-apple-system", "blinkmacsystemfont", "emoji", "math", "fangsong"}
+
+
+def normalize_fallbacks(items, family):
+    """Separa fallbacks "colados" (uma string com vírgulas vira várias famílias), tira aspas e repetições."""
+    out = []
+    for item in items:
+        for part in re.split(r",\s*", item):
+            part = part.strip().strip("\"'").strip()
+            if part and part.lower() != family.lower() and part.lower() not in (x.lower() for x in out):
+                out.append(part)
+    return out
+
+
+def css_family(name):
+    """Nome de família pronto para font-family: aspas só quando precisa."""
+    return name if name.lower() in _GENERIC_FAMILIES or re.fullmatch(r"[\w-]+", name) else f'"{name}"'
+
+
 def describe_fonts(fonts):
     out = []
     for f in fonts:
+        f = {**f, "fallbacks": normalize_fallbacks(f["fallbacks"], f["family"])}
         kinds = [kind_of(r) for r in f["roles"]]
         kind = "mono" if "mono" in kinds else ("display" if "display" in kinds else ("body" if "body" in kinds else "primary"))
         generic = "monospace" if kind == "mono" else "sans-serif"
@@ -589,7 +641,7 @@ def describe_fonts(fonts):
             "kind": kind,
             "family": f["family"],
             "fallbacks": f["fallbacks"],
-            "stack": ", ".join([f'"{f["family"]}"'] + [f'"{x}"' if " " in x else x for x in f["fallbacks"]] + [generic]),
+            "stack": ", ".join(dict.fromkeys([f'"{f["family"]}"'] + [css_family(x) for x in f["fallbacks"]] + [generic])),
             "italic": bool(g and g["italic"]),
             "source": None,
         }
@@ -699,8 +751,22 @@ def theme_vars(tokens, palettes, roles, fonts):
     """Variáveis CSS do site para este DS. Derivados usam color-mix para funcionar em temas claros e escuros."""
     tk = token_map(tokens)
 
-    def g(key, default):
-        return tk.get(key, default)
+    def g(key, default=None):
+        """Valor do token, seguindo referências simples (--a: var(--b))."""
+        v = tk.get(key, default)
+        for _ in range(6):
+            m = re.fullmatch(r"var\((--[\w-]+)\)", (v or "").strip())
+            if not m or m.group(1) not in tk or m.group(1) == key:
+                break
+            v = tk[m.group(1)]
+        return v
+
+    def num(key, unit):
+        m = re.fullmatch(r"(-?[\d.]+)" + unit, (g(key) or "").strip())
+        return float(m.group(1)) if m else None
+
+    def clamp(v, lo, hi, default):
+        return default if v is None else min(max(v, lo), hi)
 
     def font(*kinds):
         for k in kinds:
@@ -727,6 +793,11 @@ def theme_vars(tokens, palettes, roles, fonts):
     ink = {}
     fg_hex, bg_hex = parse_hex(g("--fg", "#171717")), parse_hex(g("--bg", "#ffffff"))
     sf_hex = parse_hex(g("--surface", g("--bg", "#ffffff"))) or bg_hex
+    surface_css = g("--surface", g("--bg", "#ffffff"))
+    if fg_hex and sf_hex and contrast(hex_to_rgb(fg_hex), hex_to_rgb(sf_hex)) < 3:
+        # o texto do tema não é legível sobre a superfície do DS: usa uma superfície derivada do fundo
+        sf_rgb = mix_oklab(hex_to_rgb(bg_hex or "#ffffff"), hex_to_rgb(fg_hex), 0.06)
+        sf_hex, surface_css = to_hex(sf_rgb), to_hex(sf_rgb)
     for name, key, default, weak in (("ok", "--success", "#16a34a", 0.12), ("warn", "--warn", "#eab308", 0.14),
                                      ("danger", "--danger", "#dc2626", 0.12)):
         col = parse_hex(g(key, default))
@@ -739,21 +810,112 @@ def theme_vars(tokens, palettes, roles, fonts):
         ink[f"--{name}-ink"] = f"var(--{name})" if pct == 0 else f"color-mix(in oklab, var(--{name}) {100 - pct}%, var(--fg))"
         if col:
             ink[f"--{name}-fg"] = ink_for(col)  # texto sobre o botão preenchido com a cor
-    return {**shades, **ink, **{
+    # ---- detalhes do guia (seções 2 a 6): superfícies, texto secundário, botão principal e links
+    bg_c = bg_hex or "#ffffff"
+    surf_c = sf_hex or bg_c
+    fg_c = fg_hex or "#171717"
+    surface_warm = parse_hex(g("--surface-warm"))
+    # fundo secundário (hero, cabeçalhos de tabela, hover): o "surface-warm" do DS, se o texto for legível sobre ele
+    use_warm = bool(surface_warm and surface_warm.lower() not in (bg_c.lower(), surf_c.lower())
+                    and contrast(hex_to_rgb(fg_c), hex_to_rgb(surface_warm)) >= 4.5)
+    surface2_rgb = hex_to_rgb(surface_warm) if use_warm else mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(fg_c), 0.04)
+    surface2_css = surface_warm if use_warm else "color-mix(in oklab, var(--bg), var(--fg) 4%)"
+    base_bgs = [hex_to_rgb(bg_c), hex_to_rgb(surf_c), surface2_rgb]
+
+    def readable(key, fallback_css, target=4.7):
+        """Cor do token se tiver contraste suficiente sobre fundo, superfície e fundo secundário;
+        senão a mesma cor misturada com --fg até ter."""
+        col = parse_hex(g(key))
+        if not col:
+            return fallback_css
+        pct = readable_pct(col, fg_c, base_bgs, target)
+        return col if pct == 0 else f"color-mix(in oklab, {col} {100 - pct}%, var(--fg))"
+
+    def derived(start_pct, target=4.7):
+        """Texto secundário derivado (--fg misturado ao fundo), com a parte de --fg subindo até ter contraste."""
+        for pct in range(start_pct, 101, 5):
+            rgb = mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(fg_c), pct / 100)
+            if all(contrast(rgb, b) >= target for b in base_bgs):
+                return f"color-mix(in oklab, var(--fg) {pct}%, var(--bg))"
+        return "var(--fg)"
+
+    accent_hex = parse_hex(accent)
+    if accent_hex:
+        acc_pct = readable_pct(accent_hex, fg_c, base_bgs + [mix_oklab(hex_to_rgb(bg_c), hex_to_rgb(accent_hex), 0.12)],
+                               4.8, start=15)
+        accent_strong = f"color-mix(in oklab, var(--accent) {100 - acc_pct}%, var(--fg))"
+        solid_bg, solid_fg = solid_pair(accent_hex, parse_hex(g("--accent-on", "#ffffff")))
+        solid_hover = None
+        for key in ("--accent-hover",):
+            cand = parse_hex(g(key))
+            if cand and contrast(hex_to_rgb(cand), hex_to_rgb(solid_fg)) >= 4.5 and solid_bg == accent_hex:
+                solid_hover = cand
+        if not solid_hover:
+            toward = "#000000" if solid_fg == "#ffffff" else "#ffffff"
+            solid_hover = to_hex(mix_oklab(hex_to_rgb(solid_bg), hex_to_rgb(toward), 0.10))
+    else:  # cor do DS em outro formato: mantém a regra antiga
+        accent_strong = "color-mix(in oklab, var(--accent), var(--fg) 16%)"
+        solid_bg, solid_fg = "var(--accent-strong)", g("--accent-on", "#ffffff")
+        solid_hover = "color-mix(in oklab, var(--solid) 86%, var(--fg))"
+
+    # ---- escala tipográfica, espaçamento, layout, movimento (seções 3, 5 e 6)
+    def rem(px):
+        return f"{px / 16:.4g}rem"
+
+    px_h1 = clamp(num("--text-3xl", "px"), 34, 64, 48)
+    trk_raw = (g("--tracking-display") or "").strip()
+    if trk_raw.endswith("px") and num("--tracking-display", "px") is not None:
+        trk = num("--tracking-display", "px") / px_h1
+    elif trk_raw.endswith("em") and num("--tracking-display", "em") is not None:
+        trk = num("--tracking-display", "em")
+    else:
+        trk = 0.0
+    scale = {
+        "--fs-xs": rem(clamp(num("--text-xs", "px"), 11, 13, 12)),
+        "--fs-sm": rem(clamp(num("--text-sm", "px"), 12, 15, 14)),
+        "--fs-base": rem(clamp(num("--text-base", "px"), 15, 18, 16)),
+        "--fs-h3": rem(clamp(num("--text-xl", "px"), 18, 28, 22)),
+        "--fs-h2": rem(clamp(num("--text-2xl", "px"), 24, 44, 32)),
+        "--fs-h1": rem(px_h1),
+        "--fs-hero": rem(clamp(num("--text-4xl", "px"), 44, 96, 64)),
+        "--lh-body": f"{clamp(num('--leading-body', ''), 1.4, 1.7, 1.6):g}",
+        "--lh-tight": f"{clamp(num('--leading-tight', ''), 1.05, 1.25, 1.15):g}",
+        "--display-tracking": f"{max(-0.04, min(0.02, trk)):.3g}em",
+        "--section-y": f"{clamp(num('--section-y-desktop', 'px'), 40, 112, 80):g}px",
+        "--section-y-tablet": f"{clamp(num('--section-y-tablet', 'px'), 32, 80, 56):g}px",
+        "--container-max": f"{clamp(num('--container-max', 'px'), 960, 1360, 1120):g}px",
+        "--gutter": f"{clamp(num('--container-gutter-desktop', 'px'), 16, 48, 24):g}px",
+        "--gutter-tablet": f"{clamp(num('--container-gutter-tablet', 'px'), 16, 32, 24):g}px",
+        "--gutter-phone": f"{clamp(num('--container-gutter-phone', 'px'), 12, 24, 16):g}px",
+        "--motion-fast": f"{clamp(num('--motion-fast', 'ms'), 80, 250, 160):g}ms",
+        "--motion-base": f"{clamp(num('--motion-base', 'ms'), 140, 330, 180):g}ms",
+    }
+    ease = (g("--ease-standard") or "").strip()
+    scale["--ease"] = ease if re.fullmatch(r"cubic-bezier\([\d., -]+\)|ease(-in|-out|-in-out)?|linear", ease) else "ease-out"
+    rl = num("--radius-lg", "px")
+    scale["--radius-lg"] = f"{clamp(rl, 0, 28, 12):g}px" if rl is not None else "var(--radius)"
+    ring = (g("--focus-ring") or "").strip()
+    if ring and ";" not in ring and "{" not in ring:
+        scale["--focus-ring"] = ring
+
+    return {**shades, **ink, **scale, **{
         "--bg": g("--bg", "#ffffff"),
-        "--surface": g("--surface", g("--bg", "#ffffff")),
-        "--surface-2": "color-mix(in oklab, var(--bg), var(--fg) 4%)",
+        "--surface": surface_css,
+        "--surface-2": surface2_css,
         "--fg": g("--fg", "#171717"),
-        "--fg-soft": g("--fg-2", "color-mix(in oklab, var(--fg) 78%, var(--bg))"),
-        "--muted": g("--muted", "color-mix(in oklab, var(--fg) 60%, var(--bg))"),
+        "--fg-soft": readable("--fg-2", derived(78)),
+        "--muted": readable("--muted", derived(60)),
+        "--meta": readable("--meta", "var(--muted)"),
         "--border": g("--border", "color-mix(in oklab, var(--fg) 12%, transparent)"),
+        "--border-soft": g("--border-soft", "var(--border)"),
         "--border-strong": "color-mix(in oklab, var(--fg) 22%, transparent)",
         "--accent": accent,
-        "--accent-strong": "color-mix(in oklab, var(--accent), var(--fg) 16%)",
+        "--accent-strong": accent_strong,
         "--accent-weak": "color-mix(in oklab, var(--accent) 12%, var(--bg))",
         "--accent-fg": g("--accent-on", "#ffffff"),
-        "--solid": "var(--accent-strong)",
-        "--solid-fg": g("--accent-on", "#ffffff"),
+        "--solid": solid_bg,
+        "--solid-hover": solid_hover,
+        "--solid-fg": solid_fg,
         "--ok": g("--success", "#16a34a"),
         "--ok-weak": "color-mix(in oklab, var(--ok) 12%, var(--bg))",
         "--warn": g("--warn", "#eab308"),
@@ -770,7 +932,6 @@ def theme_vars(tokens, palettes, roles, fonts):
         "--font-body": body,
         "--font-code": code,
         "--font-mono": code,
-        "--display-tracking": "-0.02em",
         "--heading-weight": "600",
         "--kicker-transform": "uppercase",
         "--kicker-spacing": "0.08em",

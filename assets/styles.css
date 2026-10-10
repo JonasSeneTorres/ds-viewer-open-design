@@ -14,8 +14,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: var(--fs-base, 1rem);
+  line-height: var(--lh-body, 1.6);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
@@ -53,21 +53,21 @@ h4 {
   font-family: var(--font-display);
   font-weight: var(--heading-weight);
   letter-spacing: var(--display-tracking);
-  line-height: 1.15;
+  line-height: var(--lh-tight, 1.15);
   margin: 0 0 0.5em;
   overflow-wrap: anywhere;
 }
 
 h1 {
-  font-size: clamp(2rem, 1.2rem + 3.4vw, 3.4rem);
+  font-size: clamp(max(1.75rem, calc(var(--fs-h1, 3.4rem) * 0.6)), 1.2rem + 3.4vw, var(--fs-h1, 3.4rem));
 }
 
 h2 {
-  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.2rem);
+  font-size: clamp(max(1.35rem, calc(var(--fs-h2, 2.2rem) * 0.7)), 1.1rem + 1.8vw, var(--fs-h2, 2.2rem));
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: var(--fs-h3, 1.2rem);
 }
 
 p {
@@ -91,14 +91,20 @@ pre {
 
 .wrap {
   width: 100%;
-  max-width: 1120px;
+  max-width: var(--container-max, 1120px);
   margin-inline: auto;
-  padding-inline: 24px;
+  padding-inline: var(--gutter, 24px);
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    padding-inline: var(--gutter-tablet, 24px);
+  }
 }
 
 @media (max-width: 560px) {
   .wrap {
-    padding-inline: 16px;
+    padding-inline: var(--gutter-phone, 16px);
   }
 }
 
@@ -111,7 +117,7 @@ pre {
   color: var(--solid-fg);
   padding: 10px 16px;
   border-radius: var(--radius-sm);
-  transition: top 160ms ease-out;
+  transition: top var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .skip-link:focus {
@@ -122,6 +128,7 @@ pre {
   outline: 2px solid var(--accent-strong);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
+  box-shadow: var(--focus-ring, none); /* anel do DS, somado ao contorno (que garante o contraste) */
 }
 
 .site-header {
@@ -207,17 +214,21 @@ pre {
   border-radius: var(--radius-sm);
   font-size: 0.94rem;
   font-weight: 550;
-  transition: background 160ms ease-out, color 160ms ease-out;
+  transition: background var(--motion-fast, 160ms) var(--ease, ease-out), color var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .main-nav a:hover {
   color: var(--header-fg);
-  background: color-mix(in oklab, var(--header-fg) 10%, transparent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
 }
 
 .main-nav a[aria-current="page"] {
   color: var(--header-fg);
-  background: color-mix(in oklab, var(--header-fg) 16%, transparent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 .header-tools {
@@ -258,7 +269,7 @@ pre {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 550;
-  transition: border-color 160ms ease-out, background 160ms ease-out;
+  transition: border-color var(--motion-fast, 160ms) var(--ease, ease-out), background var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .combobox-btn:hover {
@@ -276,13 +287,16 @@ pre {
 
 .combobox-label {
   white-space: nowrap;
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .combobox-caret {
   width: 14px;
   height: 14px;
   flex: none;
-  transition: transform 160ms ease-out;
+  transition: transform var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .combobox-btn[aria-expanded="true"] .combobox-caret {
@@ -399,7 +413,7 @@ main:focus {
 }
 
 .page {
-  padding-block: 40px 72px;
+  padding-block: calc(var(--section-y, 80px) * 0.5) var(--section-y, 72px);
 }
 
 .kicker {
@@ -447,7 +461,7 @@ main:focus {
   font-size: 0.94rem;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 140ms ease-out, background 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
+  transition: transform var(--motion-fast, 160ms) var(--ease, ease-out), background var(--motion-fast, 160ms) var(--ease, ease-out), border-color var(--motion-fast, 160ms) var(--ease, ease-out), color var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .btn:active {
@@ -460,7 +474,7 @@ main:focus {
 }
 
 .btn-primary:hover {
-  background: color-mix(in oklab, var(--solid) 86%, var(--fg));
+  background: var(--solid-hover, color-mix(in oklab, var(--solid) 86%, var(--fg)));
   color: var(--solid-fg);
 }
 
@@ -524,11 +538,12 @@ main:focus {
   background: var(--hero-ground);
   color: var(--hero-ink);
   border-block: var(--bw) solid var(--border);
-  padding-block: clamp(28px, 5vw, 60px);
+  padding-block: clamp(28px, 5vw, calc(var(--section-y, 100px) * 0.6));
 }
 
 .hero h1 {
   max-width: 28ch;
+  font-size: clamp(max(2rem, calc(var(--fs-hero, 3.4rem) * 0.55)), 1.2rem + 4.4vw, var(--fs-hero, 3.4rem));
 }
 
 .hero-actions {
@@ -569,7 +584,7 @@ main:focus {
   box-shadow: var(--shadow-card);
   text-decoration: none;
   color: var(--fg);
-  transition: transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
+  transition: transform var(--motion-base, 180ms) var(--ease, ease-out), border-color var(--motion-base, 180ms) var(--ease, ease-out), box-shadow var(--motion-base, 180ms) var(--ease, ease-out);
 }
 
 .article-card:hover {
@@ -595,7 +610,7 @@ main:focus {
   gap: 8px 14px;
   align-items: center;
   font-size: 0.78rem;
-  color: var(--muted);
+  color: var(--meta, var(--muted));
   font-family: var(--font-mono);
   letter-spacing: 0.02em;
 }
@@ -925,6 +940,7 @@ dialog::backdrop {
 }
 
 .field {
+  min-width: 0;
   display: grid;
   gap: 6px;
 }
@@ -939,7 +955,7 @@ dialog::backdrop {
 
 .field .hint {
   font-size: 0.78rem;
-  color: var(--muted);
+  color: var(--meta, var(--muted));
 }
 
 .field .error {
@@ -963,6 +979,7 @@ dialog::backdrop {
 .field textarea,
 .field input[type="file"] {
   width: 100%;
+  min-width: 0;
   padding: 9px 12px;
   background: var(--surface);
   border: var(--bw) solid var(--border-strong);
@@ -1059,7 +1076,7 @@ dialog::backdrop {
   background: var(--border-strong);
   position: relative;
   flex: none;
-  transition: background 180ms ease-out;
+  transition: background var(--motion-base, 180ms) var(--ease, ease-out);
 }
 
 .switch-track::after {
@@ -1072,7 +1089,7 @@ dialog::backdrop {
   border-radius: 50%;
   background: var(--surface);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  transition: transform 180ms ease-out;
+  transition: transform var(--motion-base, 180ms) var(--ease, ease-out);
 }
 
 .switch input:checked + .switch-track {
@@ -1200,7 +1217,7 @@ legend {
 
 @media (max-width: 900px) {
   .featured {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .featured-visual {
@@ -1212,7 +1229,7 @@ legend {
 
 @media (max-width: 760px) {
   .page {
-    padding-block: 28px 56px;
+    padding-block: calc(var(--section-y-tablet, 56px) * 0.5) var(--section-y-tablet, 56px);
   }
 
   .main-nav {
@@ -1232,7 +1249,7 @@ legend {
   }
 
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .section-head {
@@ -1243,6 +1260,10 @@ legend {
 }
 
 @media (max-width: 560px) {
+  .combobox-label {
+    max-width: 11ch;
+  }
+
   .brand-sub {
     display: none;
   }
@@ -1267,7 +1288,7 @@ legend {
   }
 
   .article-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1437,6 +1458,16 @@ legend {
 .ds-search input {
   width: 100%;
   box-sizing: border-box;
+  min-height: 42px;
+  padding: 9px 12px;
+  background: var(--surface);
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.ds-search input::placeholder {
+  color: var(--muted);
 }
 
 .ds-filters {
@@ -1796,7 +1827,7 @@ legend {
   border-radius: var(--radius);
   box-shadow: var(--shadow-pop);
   cursor: pointer;
-  transition: transform 160ms ease-out, opacity 160ms ease-out;
+  transition: transform var(--motion-fast, 160ms) var(--ease, ease-out), opacity var(--motion-fast, 160ms) var(--ease, ease-out);
 }
 
 .to-top[hidden] {
@@ -1977,8 +2008,14 @@ progress {
   color: var(--danger-ink, var(--danger));
 }
 
+fieldset {
+  min-width: 0; /* sem isso, o conteúdo mais largo (fontes largas, celular) estoura a página */
+}
+
 .state-switch {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   gap: 4px;
   margin: 0;
   padding: 3px;
