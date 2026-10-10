@@ -1,0 +1,59 @@
+# Testa o site e, na branch main, publica no GitHub Pages.
+# Para ativar: Settings > Pages > Build and deployment > Source: "GitHub Actions".
+name: Testar e publicar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sintaxe do JavaScript
+        run: node --check assets/app.js
+      - name: Consistência dos dados
+        run: python scripts/check_data.py
+      - name: HTML dos guias
+        run: python scripts/check_html.py
+
+  deploy:
+    needs: test
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Montar o site (só o que o navegador usa)
+        run: |
+          mkdir -p _site/data
+          cp index.html _site/
+          cp -r assets _site/assets
+          cp -r data/ds data/themes _site/data/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
