@@ -410,3 +410,12 @@ test("tema na URL: link compartilhável, voltar desfaz a troca e o seletor acomp
   await expect(page.locator(".combobox-label")).toContainText("Ferrari");
   expect(problems).toEqual([]);
 });
+
+test("o botão de abrir no open-design só aparece nos DS que existem lá", async ({ page }) => {
+  await page.goto("/#/design-system/padrao"); // o Padrão é do projeto
+  await expect(page.locator(".ds-actions .btn-primary")).toBeVisible();
+  await expect(page.locator(".ds-actions a")).toHaveCount(0);
+
+  await page.goto("/#/design-system/airbnb");
+  await expect(page.locator('.ds-actions a[target="_blank"]')).toHaveCount(1);
+});

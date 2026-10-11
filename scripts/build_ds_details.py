@@ -1299,7 +1299,8 @@ def build_one(ds_id, page_path, entry, slug):
     data = {
         "id": ds_id,
         "name": i18n("Default", "Padrão") if ds_id == "padrao" else name,
-        "source": ({"name": "Expo + Vercel + Futuristic", "url": "https://open-design.ai/plugins/systems/"}
+        # o Padrão é do projeto e não existe no open-design.ai: sem URL, a página não mostra o botão de abrir lá
+        "source": ({"name": "Expo + Vercel + Futuristic", "url": ""}
                    if ds_id == "padrao" else {"name": name, "url": "https://open-design.ai" + entry["href"]}),
         "category": category,
         "intro": intro,

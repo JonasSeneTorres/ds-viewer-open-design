@@ -187,6 +187,7 @@ Não é cópia de nenhum design system: é montado no build (`compose_default` e
 
 Pontos de atenção:
 
+- **Sem link para o open-design.ai:** o Padrão não existe lá, então a página dele não mostra o botão "Abrir no open-design.ai" (`source.url` vazio).
 - **Cabeçalho:** texto branco sobre `#6b7280`, 4,8:1, acima do mínimo AA. Trocar o cinza (`DEFAULT_HEADER`) exige conferir o contraste com o branco.
 - **Contraste:** o build ajusta as cores do Padrão como as de qualquer tema, mas o aviso de contraste não aparece nele (`padrao.contrast.json` fica vazio).
 - **Escuro derivado:** nenhum guia traz modo escuro para o Padrão. Os valores estão em [`data/modes.json`](data/modes.json), com o que foi deduzido em `derived`.
