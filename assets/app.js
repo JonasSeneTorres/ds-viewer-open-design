@@ -337,6 +337,22 @@
       "en-US": "This theme originally uses proprietary fonts ({fonts}). What you see here uses fallback fonts, not the originals.",
       "pt-BR": "Este tema, originalmente, utiliza fontes proprietárias ({fonts}). O que você vê aqui usa fontes de reserva (fallback), não as originais."
     },
+    "contrastnote.text": {
+      "en-US": "To reach the minimum contrast of 4.5:1 (WCAG 2.2, level AA), {n} colors of this theme were adjusted:",
+      "pt-BR": "Para atingir o contraste mínimo de 4,5:1 (WCAG 2.2, nível AA), {n} cores deste tema foram ajustadas:"
+    },
+    "contrastnote.on": { "en-US": "text on it", "pt-BR": "texto sobre ela" },
+    "contrastnote.word": { "en-US": "text", "pt-BR": "texto" },
+    "contrastnote.limit": { "en-US": "best possible for this theme's backgrounds", "pt-BR": "o melhor possível para os fundos deste tema" },
+    "ctok.--solid": { "en-US": "Primary button", "pt-BR": "Botão principal" },
+    "ctok.--accent-strong": { "en-US": "Links and highlights", "pt-BR": "Links e destaques" },
+    "ctok.--muted": { "en-US": "Secondary text", "pt-BR": "Texto secundário" },
+    "ctok.--fg-soft": { "en-US": "Soft text", "pt-BR": "Texto suave" },
+    "ctok.--meta": { "en-US": "Supporting text (dates, captions)", "pt-BR": "Texto de apoio (datas, legendas)" },
+    "ctok.--ok-ink": { "en-US": "Success text", "pt-BR": "Texto de sucesso" },
+    "ctok.--warn-ink": { "en-US": "Warning text", "pt-BR": "Texto de atenção" },
+    "ctok.--danger-ink": { "en-US": "Error text", "pt-BR": "Texto de erro" },
+    "ctok.--surface": { "en-US": "Surface (cards)", "pt-BR": "Superfície (cartões)" },
     "top.label": { "en-US": "Back to top", "pt-BR": "Voltar ao topo" },
     "close": { "en-US": "Close", "pt-BR": "Fechar" },
     "cancel": { "en-US": "Cancel", "pt-BR": "Cancelar" },
@@ -355,7 +371,6 @@
     },
     "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
     "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
-    "home.blog": { "en-US": "Read the blog", "pt-BR": "Ler o blog" },
     "blog.kicker": { "en-US": "Blog", "pt-BR": "Blog" },
     "blog.h1": { "en-US": "Latest posts", "pt-BR": "Últimas publicações" },
     "home.featured": { "en-US": "Featured", "pt-BR": "Destaque" },
@@ -697,8 +712,53 @@
   // Aviso no topo para temas cujo guia usa fontes proprietárias: o site usa as fontes de reserva.
   var FONT_NOTICE_KEY = "odv-font-notice-closed";
 
-  function closedNotices() {
-    try { return JSON.parse(sessionStorage.getItem(FONT_NOTICE_KEY) || "[]"); } catch (e) { return []; }
+  var CONTRAST_NOTICE_KEY = "odv-contrast-notice-closed";
+
+  function closedNotices(key) {
+    try { return JSON.parse(sessionStorage.getItem(key || FONT_NOTICE_KEY) || "[]"); } catch (e) { return []; }
+  }
+
+  // Aviso de contraste: tokens do DS abaixo de 4,5:1 (WCAG 2.2 AA) que o build trocou.
+  // Os dados vêm de data/themes/<id>.contrast.json, gerado por scripts/build_ds_details.py.
+  var CONTRAST_DATA = {};
+
+  function loadContrast(id) {
+    if (CONTRAST_DATA[id]) return Promise.resolve(CONTRAST_DATA[id]);
+    return fetch("data/themes/" + encodeURIComponent(id) + ".contrast.json", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .catch(function () { return []; })
+      .then(function (list) { return (CONTRAST_DATA[id] = Array.isArray(list) ? list : []); });
+  }
+
+  function ratioText(n) { return String(n).replace(".", lang === "pt-BR" ? "," : ".") + ":1"; }
+
+  function updateContrastNotice(id) {
+    var box = document.getElementById("contrastNotice");
+    if (!box) return;
+    box.hidden = true;
+    box.innerHTML = "";
+    if (closedNotices(CONTRAST_NOTICE_KEY).indexOf(id) !== -1) return;
+    loadContrast(id).then(function (list) {
+      if (wantedTheme !== id || !list.length) return;
+      var HEX = /^#[0-9a-f]{6}$/;
+      function chip(hex) { return '<span class="cn-chip" style="background:' + esc(hex) + '"></span><code>' + esc(hex) + "</code>"; }
+      var rows = list.filter(function (a) { return HEX.test(a.from) && HEX.test(a.to); }).map(function (a) {
+        var hasOn = a.onFrom && HEX.test(a.onFrom) && HEX.test(a.onTo);
+        var same = a.from === a.to; // só o texto do botão mudou: mostra a troca do texto sobre a cor do tema
+        var on = hasOn ? ' <span class="cn-on">(' + esc(T(same ? "contrastnote.word" : "contrastnote.on")) + ": " +
+          chip(a.onFrom) + " → " + chip(a.onTo) + ")</span>" : "";
+        var limit = a.ratioTo < 4.5 ? ' <em>(' + esc(T("contrastnote.limit")) + ")</em>" : "";
+        return "<li><strong>" + esc(T("ctok." + a.token)) + "</strong>: " + (same && hasOn ? chip(a.from) : chip(a.from) + " → " + chip(a.to)) + on +
+          ' <span class="cn-ratio">' + esc(ratioText(a.ratioFrom)) + " → " + esc(ratioText(a.ratioTo)) + limit + "</span></li>";
+      });
+      if (!rows.length) return;
+      box.innerHTML =
+        '<div class="wrap font-notice-inner"><details><summary>' + esc(T("contrastnote.text").replace("{n}", String(rows.length))) +
+        '</summary><ul class="cn-list">' + rows.join("") + "</ul></details>" +
+        '<button type="button" class="font-notice-close" data-close-notice="' + esc(id) + '" data-notice-key="' + CONTRAST_NOTICE_KEY +
+        '" data-notice-box="contrastNotice" aria-label="' + esc(T("close")) + '">&times;</button></div>';
+      box.hidden = false;
+    });
   }
 
   function updateFontNotice(id) {
@@ -721,10 +781,11 @@
   document.addEventListener("click", function (e) {
     var btn = e.target.closest && e.target.closest("[data-close-notice]");
     if (!btn) return;
-    var list = closedNotices();
+    var key = btn.getAttribute("data-notice-key") || FONT_NOTICE_KEY;
+    var list = closedNotices(key);
     list.push(btn.getAttribute("data-close-notice"));
-    try { sessionStorage.setItem(FONT_NOTICE_KEY, JSON.stringify(list)); } catch (err) {}
-    var box = document.getElementById("fontNotice");
+    try { sessionStorage.setItem(key, JSON.stringify(list)); } catch (err) {}
+    var box = document.getElementById(btn.getAttribute("data-notice-box") || "fontNotice");
     box.hidden = true;
     box.innerHTML = "";
   });
@@ -741,6 +802,7 @@
       });
       body.classList.add("theme-" + id);
       updateFontNotice(id);
+      updateContrastNotice(id);
     }
     if (link.hasAttribute("data-loaded") || link.sheet) swap();
     else {
@@ -968,9 +1030,6 @@
       "<h1>" + esc(T("home.h1")) + "</h1>" +
       '<p class="lede">' + esc(T("home.lede")) + "</p>" +
       '<p class="lede">' + esc(T("home.note")).replace("{link}", openDesignLinkHTML()) + "</p>" +
-      '<div class="hero-actions">' +
-      '<a class="btn btn-ghost" href="#/blog">' + esc(T("home.blog")) + "</a>" +
-      "</div>" +
       "</div></section>" +
       '<div class="wrap page">' + renderDSList(true) + "</div>"
     );

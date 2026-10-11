@@ -39,7 +39,8 @@ data/
   systems-raw.json      lista do catálogo (nome, categoria, link) extraída de open-design.ai (entrada do build)
   ds/index.json         lista dos DS na ordem do seletor: nome, categoria, tagline e cores (~68 KB)
   ds/<id>.<lang>.json   detalhes de cada DS, um arquivo por idioma (en-US e pt-BR), minificado; carregado só ao abrir a página dele (~26 KB em média)
-  themes/<id>.css       tema de cada DS: @import das fontes + variáveis CSS (carregado ao aplicar o tema)
+  themes/<id>.css       tema de cada DS: @font-face das fontes + variáveis CSS (carregado ao aplicar o tema)
+  themes/<id>.contrast.json  tokens do DS que o build ajustou para passar de 4,5:1 (alimenta o aviso de contraste)
 i18n/pt-BR/<slug>.html  traduções do conteúdo de cada DS
 scripts/
   build_ds_fetch.py     baixa a página de cada DS para .cache/pages/
@@ -104,7 +105,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `node --check assets/app.js`
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 16 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 18 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
@@ -127,6 +128,10 @@ Além das cores, cada tema leva os detalhes do guia que o site usa (seções 3 a
 | `--surface-2`, `--border-soft` | `--surface-warm`, `--border-soft` | fundo secundário (hero, cabeçalho de tabela) e divisórias suaves |
 
 A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que foi ajustado em cada um) está em [`docs/revisao-estilos.md`](docs/revisao-estilos.md), gerada por `npm run audit:themes` e `scripts/review_styles.py`.
+
+### Aviso de contraste (WCAG 2.2 AA)
+
+Quando uma cor do DS fica abaixo de **4,5:1** (nível AA para texto) sobre os fundos em que é usada, o build troca por uma variante que passa, e a página avisa: um quadro recolhível, abaixo do aviso de fontes, lista **cada token alterado, a cor antes e depois e a razão de contraste antes e depois**. O relatório de cada tema fica em `data/themes/<id>.contrast.json`, gerado por `npm run data:update`. Os tokens cobertos são o botão principal (`--solid`, cor e texto), links e destaques (`--accent-strong`), textos secundário, de apoio e suave (`--muted`, `--meta`, `--fg-soft`), textos de sucesso, atenção e erro (`--ok-ink`, `--warn-ink`, `--danger-ink`) e a superfície (`--surface`, só quando o texto do tema não é legível sobre ela). Ajustes de margem (de 4,5 a 4,7:1, que o build faz por segurança) não entram na lista. Onde nenhuma cor serve a todos os fundos (PlayStation, em sucesso e atenção), o aviso mostra a razão obtida e diz que é o melhor possível.
 
 Cada tema também gera cores de feedback legíveis: `--ok-ink`, `--warn-ink` e `--danger-ink` (a cor do tema misturada com `--fg` até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do alerta) e `--ok-fg`, `--danger-fg` (texto sobre botões preenchidos). Quando o texto do tema não é legível sobre a superfície do DS (caso do PlayStation, com superfície branca e texto branco), o build deriva uma superfície a partir do fundo.
 
@@ -254,10 +259,9 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
 1. **Tema na URL** (por exemplo `?tema=bugatti`): hoje a escolha fica só no navegador, então não dá para compartilhar um link com o tema aplicado, e o botão voltar não desfaz a troca.
-2. **Decidir a fidelidade dos temas** (itens 25 e 26 do TODO): em 61 dos 143 temas o guia usa uma fonte de marca proprietária (a lista está na seção "Fontes proprietárias dos temas") e o site cai na reserva do guia (dá para escolher uma fonte aberta parecida por tema), e em 37 temas o botão principal foi ajustado para passar de 4,5:1 de contraste (fidelidade à marca ou acessibilidade).
-3. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
-4. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
-5. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), alternância claro/escuro por design system, suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
+2. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
+3. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
+4. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), alternância claro/escuro por design system, suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
 ## Créditos
 
