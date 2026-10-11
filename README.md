@@ -4,9 +4,9 @@
 
 SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 143 design systems** open-source, extraídos de <https://open-design.ai/plugins/systems/>.
 
-Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão** (uma cópia do Vercel).
+Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão**, uma mistura própria: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic, com variante escura.
 
-O cabeçalho tem três itens: **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Login).
+O cabeçalho tem três itens (e, à direita, o seletor de temas, o botão sol/lua e o de idioma): **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Login).
 
 Páginas:
 
@@ -15,7 +15,7 @@ Páginas:
 | `#/` | Início: hero e o catálogo de design systems, com busca e filtros por categoria (o Padrão vem primeiro; o tema ativo fica destacado) |
 | `#/institucional` | Página institucional genérica (a primeira dos exemplos): hero, sobre, valores, serviços, opiniões de clientes, chamada e contato fake. Faixas de largura total com fundos alternados (`--surface-2`, `--bg`, `--accent-weak` e `--solid`); imagens com o degradê e o ícone de imagem não encontrada. O conteúdo é Lorem ipsum: quem dita o estilo é o design system |
 | `#/entrar`, `#/entrar/cadastro`, `#/entrar/esqueci` e `#/entrar/nova-senha` | Telas de autenticação da empresa fictícia "XPTO Ink" (logo do visualizador em contorno, numa moldura): login com botões de OAuth, criar conta (nome, e-mail e senha, avisando do e-mail de confirmação), esqueci minha senha e nova senha (código de 6 dígitos e a senha duas vezes, com requisitos). Seletor de estados igual ao da tabela; nada é enviado |
-| `#/licencas` e `#/privacidade` | Páginas do rodapé (fora do menu Exemplos), com o tema selecionado: licenças e créditos (MIT, Apache 2.0 do Open Design, fontes, marcas) e privacidade/LGPD (o site não coleta nem envia dados; só guarda tema, idioma e a tabela de exemplo no navegador) |
+| `#/licencas` e `#/privacidade` | Páginas do rodapé (fora do menu Exemplos), com o tema selecionado: licenças e créditos (MIT, Apache 2.0 do Open Design, fontes, marcas) e privacidade/LGPD (o site não coleta nem envia dados; só guarda tema, idioma, modo claro/escuro e a tabela de exemplo no navegador, e os avisos dispensados na sessão) |
 | `#/blog` | Blog: destaque e lista de artigos de exemplo, com barra lateral ilustrativa (busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags; nada nela funciona) |
 | `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com a mesma barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
@@ -36,6 +36,7 @@ assets/
   logo.svg
   fonts/                fontes dos temas (woff2, self-host) e manifest.json
 data/
+  modes.json            variante clara/escura dos temas que a têm (ver "Claro e escuro")
   systems-raw.json      lista do catálogo (nome, categoria, link) extraída de open-design.ai (entrada do build)
   ds/index.json         lista dos DS na ordem do seletor: nome, categoria, tagline e cores (~68 KB)
   ds/<id>.<lang>.json   detalhes de cada DS, um arquivo por idioma (en-US e pt-BR), minificado; carregado só ao abrir a página dele (~26 KB em média)
@@ -105,11 +106,15 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `node --check assets/app.js`
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 18 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 20 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
 ## Temas
+
+O tema padrão (**Padrão**) é próprio do projeto e está descrito em [O tema Padrão](#o-tema-padrão), abaixo.
+
+**Tema na URL:** a escolha vai em `?tema=<id>` (por exemplo `/?tema=bugatti#/loja`), então o link compartilha o tema aplicado. A URL manda sobre o que ficou guardado no `localStorage`; cada troca é uma entrada do histórico, e o botão voltar desfaz a troca. Os links internos mantêm o parâmetro.
 
 Cada DS vira um arquivo `data/themes/<id>.css` com as fontes (`@font-face` apontando para `assets/fonts/`) e as variáveis CSS (`--bg`, `--fg`, `--accent`, `--radius`, `--font-display`…) em `[data-theme="<id>"] { … }`. O `styles.css` só usa essas variáveis, por isso qualquer tema funciona em qualquer página.
 
@@ -127,11 +132,27 @@ Além das cores, cada tema leva os detalhes do guia que o site usa (seções 3 a
 | `--accent-strong`, `--muted`, `--fg-soft`, `--meta` | `--accent`, `--muted`, `--fg-2`, `--meta` | links, kicker e textos secundários, garantidos acima de 4,7:1 sobre fundo, superfície e fundo secundário |
 | `--surface-2`, `--border-soft` | `--surface-warm`, `--border-soft` | fundo secundário (hero, cabeçalho de tabela) e divisórias suaves |
 
+Algumas variáveis são opcionais: o tema só as define quando quer mudar o padrão, e o CSS tem um fallback para as demais.
+
+| Variável | Uso | Fallback |
+|---|---|---|
+| `--field-bg` | fundo dos campos habilitados (inputs, textareas, selects, busca, seletores) | `--surface` (`--bg` em alguns campos) |
+| `--grad-1`, `--grad-2` | cores dos degradês dos cartões de imagem de exemplo | `--accent`, `--accent-strong` |
+| `--row-bg`, `--row-stripe`, `--row-hover` | linhas, zebra e hover da tabela de exemplo | transparente; hover em `--surface-2` |
+| `--cta-bg`, `--cta-btn-fg` | fundo da faixa de chamada e texto do botão dela | `--solid` |
+| `color-scheme` | `dark` ou `light` conforme a luminância do fundo; deixa ícones de calendário e relógio, barras de rolagem e controles do navegador legíveis | gerado em todos os temas |
+
 A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que foi ajustado em cada um) está em [`docs/revisao-estilos.md`](docs/revisao-estilos.md), gerada por `npm run audit:themes` e `scripts/review_styles.py`.
+
+### Claro e escuro
+
+O botão de sol e lua do cabeçalho alterna a variante clara/escura do tema, mas **só nos temas cujo guia descreve uma segunda paleta**: Padrão, Discord, GitHub, IBM, Linear, Perplexity e Xiaohongshu. Nos demais o botão fica desabilitado, com a dica "Este tema não tem variante clara/escura" (o Mission Control declara não ter modo claro "por design", e o Supabase só descreve o escuro).
+
+As cores da outra variante estão em [`data/modes.json`](data/modes.json), copiadas da seção de cores do guia (o que o guia não dá, como o texto do modo claro do Discord e do Linear, está em `derived` e marcado como dedução). `npm run data:update` roda as mesmas regras de contraste sobre a variante e grava um bloco extra em `data/themes/<id>.css`, `[data-theme="<id>"][data-scheme="dark|light"]`, e o campo `schemes` no `index.json`. A escolha fica em `localStorage` (`odv-scheme`) e vale para qualquer tema que tenha a variante. O aviso de contraste lista os ajustes da variante que está na tela. O escuro do Padrão não vem de nenhum guia: é derivado da paleta do Expo e marcado como tal no `modes.json`. Para incluir um tema, adicione a entrada em `data/modes.json`.
 
 ### Aviso de contraste (WCAG 2.2 AA)
 
-Quando uma cor do DS fica abaixo de **4,5:1** (nível AA para texto) sobre os fundos em que é usada, o build troca por uma variante que passa, e a página avisa: um quadro recolhível, abaixo do aviso de fontes, lista **cada token alterado, a cor antes e depois e a razão de contraste antes e depois**. O relatório de cada tema fica em `data/themes/<id>.contrast.json`, gerado por `npm run data:update`. Os tokens cobertos são o botão principal (`--solid`, cor e texto), links e destaques (`--accent-strong`), textos secundário, de apoio e suave (`--muted`, `--meta`, `--fg-soft`), textos de sucesso, atenção e erro (`--ok-ink`, `--warn-ink`, `--danger-ink`) e a superfície (`--surface`, só quando o texto do tema não é legível sobre ela). Ajustes de margem (de 4,5 a 4,7:1, que o build faz por segurança) não entram na lista. Onde nenhuma cor serve a todos os fundos (PlayStation, em sucesso e atenção), o aviso mostra a razão obtida e diz que é o melhor possível.
+Quando uma cor do DS fica abaixo de **4,5:1** (nível AA para texto) sobre os fundos em que é usada, o build troca por uma variante que passa, e a página avisa: um quadro recolhível, abaixo do aviso de fontes, lista **cada token alterado, a cor antes e depois e a razão de contraste antes e depois**. O relatório de cada tema fica em `data/themes/<id>.contrast.json`, gerado por `npm run data:update`. Os tokens cobertos são o botão principal (`--solid`, cor e texto), links e destaques (`--accent-strong`), textos secundário, de apoio e suave (`--muted`, `--meta`, `--fg-soft`), textos de sucesso, atenção e erro (`--ok-ink`, `--warn-ink`, `--danger-ink`) e a superfície (`--surface`, só quando o texto do tema não é legível sobre ela). Ajustes de margem (de 4,5 a 4,7:1, que o build faz por segurança) não entram na lista. Onde nenhuma cor serve a todos os fundos (PlayStation, em sucesso e atenção), o aviso mostra a razão obtida e diz que é o melhor possível. O tema **Padrão** é a exceção: as cores são do projeto, então o build ajusta o contraste do mesmo jeito, mas o aviso não aparece (`padrao.contrast.json` fica vazio).
 
 Cada tema também gera cores de feedback legíveis: `--ok-ink`, `--warn-ink` e `--danger-ink` (a cor do tema misturada com `--fg` até passar de 4,5:1 sobre o fundo, a superfície e o fundo suave do alerta) e `--ok-fg`, `--danger-fg` (texto sobre botões preenchidos). Quando o texto do tema não é legível sobre a superfície do DS (caso do PlayStation, com superfície branca e texto branco), o build deriva uma superfície a partir do fundo.
 
@@ -143,6 +164,34 @@ Além disso, cada tema expõe dois tons da paleta, usados no header e no footer:
 | `--neutral-400` / `--neutral-400-fg` | fundo e texto do footer | `--bg` / `--fg` |
 
 As cores `-fg` são `#111111` ou branco, a que tiver mais contraste com o fundo; o pior caso no catálogo é 4,77:1, acima do mínimo AA. Por isso o texto do header e do footer não deve ganhar transparência nem ser misturado com o fundo.
+
+### O tema Padrão
+
+Não é cópia de nenhum design system: é montado no build (`compose_default` em `scripts/build_ds_details.py`) a partir de três do catálogo, mais decisões do projeto. O guia que aparece na página dele continua sendo o do Vercel, precedido de uma seção "Sobre este tema"; as cores e fontes daquele guia não valem para o Padrão.
+
+| Aspecto | Claro | Escuro (botão sol/lua) | Origem |
+|---|---|---|---|
+| Fundo, superfícies | `#ffffff`, `#f6f7f9`, `#eef2ff` | `#0b0d12`, `#12151c`, `#1a1f2e` | Expo; o escuro é derivado |
+| Texto | `#0b0d12`, `#353945`; secundário `#6b7280` (o build escurece até 4,5:1) | `#f6f7f9`, `#cfd3dc`, `#9aa1b2` | Expo; o escuro é derivado |
+| Destaque (botões, links, foco) | `#4630eb` | `#8f85ff` | Roxo do Expo (`DEFAULT_ACCENT`); o escuro é derivado |
+| Sucesso, atenção, erro | `#00a36c`, `#f59e0b`, `#e5484d` | `#34d399`, `#fbbf24`, `#f87171` | Expo; o escuro é derivado |
+| Bordas | `rgba(0,0,0,.08)` e `.04` | `rgba(255,255,255,.12)` e `.06` | Vercel |
+| Raios, sombra, foco, animação | 6/8/12 px, sombra em camadas, anel de 2 px, 150/200 ms | iguais; sombra com branco translúcido | Vercel |
+| Fontes e escala tipográfica | Audiowide (títulos), Roboto (corpo), Anonymous Pro (código) | iguais | Futuristic |
+| Cabeçalho | fundo `#6b7280` (cinza) e texto branco (4,8:1) | fundo e texto do tema | Projeto (`DEFAULT_HEADER`) |
+| Campos habilitados | branco (`--field-bg`) | `--bg` | Projeto |
+| Degradês dos cartões de imagem | Secondary `#8145b5` (`--grad-1`, `--grad-2`) | `#a77ad6` | Projeto |
+| Tabela de exemplo | linhas brancas, zebra `#eef2ff`, hover em Secondary a 14% | `--bg`, `--surface-2`, hover em Secondary clareado | Projeto (`--row-*`) |
+| Faixa "Pronto para começar?" (institucional) | padrão do tema | fundo e texto do botão `#f2e8fd` (`--cta-*`) | Projeto |
+| Nomes das paletas na página do tema | Primary, Secondary, Warning, Danger, Success, Neutral | | Projeto (`DEFAULT_PALETTE_NAMES`) |
+
+Pontos de atenção:
+
+- **Sem link para o open-design.ai:** o Padrão não existe lá, então a página dele não mostra o botão "Abrir no open-design.ai" (`source.url` vazio).
+- **Cabeçalho:** texto branco sobre `#6b7280`, 4,8:1, acima do mínimo AA. Trocar o cinza (`DEFAULT_HEADER`) exige conferir o contraste com o branco.
+- **Contraste:** o build ajusta as cores do Padrão como as de qualquer tema, mas o aviso de contraste não aparece nele (`padrao.contrast.json` fica vazio).
+- **Escuro derivado:** nenhum guia traz modo escuro para o Padrão. Os valores estão em [`data/modes.json`](data/modes.json), com o que foi deduzido em `derived`.
+- **Onde mudar:** as origens e as decisões são constantes no topo de `compose_default` (`DEFAULT_PALETTE_FROM`, `DEFAULT_TYPE_FROM`, `DEFAULT_ACCENT`, `DEFAULT_HEADER`, `DEFAULT_PALETTE_NAMES`) e o escuro, em `data/modes.json`. Depois, `npm run data:update`.
 
 ### Ajustes para um tema específico
 
@@ -247,7 +296,7 @@ O botão de idioma do topo alterna pt-BR / en-US (o padrão segue o idioma do si
   3. Remova o marcador `TRADUCAO-PENDENTE` do arquivo. Enquanto ele existir, o arquivo é ignorado.
   4. `npm run data:update`. Seções sem tradução continuam em inglês.
 
-  Todos os 143 DS já estão traduzidos para pt-BR (o Padrão usa a tradução de `vercel`).
+  Todos os 143 DS já estão traduzidos para pt-BR (o Padrão usa a tradução do guia do `vercel`, com uma seção "Sobre este tema" no início).
 - **Artigos:** o conteúdo é Lorem ipsum (autor: Jonas Torres), igual em qualquer idioma; só os rótulos da interface são traduzidos. A barra lateral do blog (busca, categorias, posts recentes e tags) é de enfeite, com links sem destino.
 
 ## Categorias
@@ -258,10 +307,9 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
-1. **Tema na URL** (por exemplo `?tema=bugatti`): hoje a escolha fica só no navegador, então não dá para compartilhar um link com o tema aplicado, e o botão voltar não desfaz a troca.
-2. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
-3. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
-4. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), alternância claro/escuro por design system, suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
+1. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
+2. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
+3. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
 ## Créditos
 
@@ -292,7 +340,7 @@ Em conformidade com a Apache 2.0: o conteúdo do Open Design mantém a licença 
 
 Verificado no repositório [nexu-io/open-design](https://github.com/nexu-io/open-design) (licença `Apache-2.0` confirmada pela API do GitHub):
 
-- Os 142 design systems deste catálogo (todos, exceto o **Padrão**, que é uma cópia do Vercel) existem em `design-systems/<id>/` do repositório.
+- Os 142 design systems deste catálogo (todos, exceto o **Padrão**, composto por Expo, Vercel e Futuristic) existem em `design-systems/<id>/` do repositório.
 - O `manifest.json` de cada um deles declara a origem `OpenDesign curated bundled fixture`, ou seja, material curado e incluído pelo próprio projeto. Nenhum pacote do repositório traz arquivo de licença próprio.
 - Só dois pacotes do Open Design declaram origem externa, e **nenhum está neste catálogo**: `cloudflare-kumo` (integração de [`cloudflare/kumo`](https://github.com/cloudflare/kumo), MIT) e `tom-modern` ([`Tom-Opencart/tom-modern-html-style-rule`](https://github.com/Tom-Opencart/tom-modern-html-style-rule)).
 

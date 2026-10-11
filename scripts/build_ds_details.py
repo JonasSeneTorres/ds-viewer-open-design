@@ -1028,7 +1028,14 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
     )
     weights = {"font-synthesis-weight": "none"} if no_bold else {}
 
-    return {**weights, **shades, **ink, **scale, **{
+    # opcionais: fundo dos campos habilitados (sem ele o CSS usa --surface) e cores dos degradês dos cartões
+    # (sem eles o CSS usa --accent e --accent-strong)
+    extras = {k: g(k) for k in ("--field-bg", "--grad-1", "--grad-2", "--row-bg", "--row-stripe", "--row-hover",
+                                  "--cta-bg", "--cta-btn-fg") if g(k)}
+    # esquema de cores nativo: ícones de calendário e relógio, barras de rolagem e controles do navegador
+    # ficam claros sobre fundo escuro
+    scheme = {"color-scheme": "dark" if bg_hex and luminance(hex_to_rgb(bg_hex)) < 0.18 else "light"}
+    return {**scheme, **weights, **shades, **ink, **scale, **extras, **{
         "--bg": g("--bg", "#ffffff"),
         "--surface": surface_css,
         "--surface-2": surface2_css,
@@ -1139,8 +1146,35 @@ def write_ds_json(ds_id, data):
         os.remove(old)
 
 
-def write_theme_css(ds_id, theme_vars_, fonts):
-    """data/themes/<id>.css: fontes (@font-face locais, ou @import se faltar o download) + variáveis do tema."""
+def load_modes():
+    """data/modes.json: variante clara/escura dos temas cujo guia descreve uma segunda paleta."""
+    path = os.path.join("data", "modes.json")
+    modes = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    return {k: v for k, v in modes.items() if not k.startswith("_")}
+
+
+def override_tokens(groups, overrides):
+    """Cópia dos grupos de tokens com `overrides` aplicados ({nome: valor}; None remove o token)."""
+    out, seen = [], set()
+    for g in groups:
+        items = []
+        for i in g["items"]:
+            if i["name"] in overrides:
+                seen.add(i["name"])
+                if overrides[i["name"]] is not None:
+                    items.append({**i, "value": overrides[i["name"]]})
+            else:
+                items.append(i)
+        out.append({**g, "items": items})
+    extra = [{"name": k, "value": v} for k, v in overrides.items() if k not in seen and v is not None]
+    if extra:
+        out.append({"group": "alt", "items": extra})
+    return out
+
+
+def write_theme_css(ds_id, theme_vars_, fonts, alt=None):
+    """data/themes/<id>.css: fontes (@font-face locais, ou @import se faltar o download) + variáveis do tema.
+    `alt` = (nome do modo, variáveis): bloco extra `[data-theme][data-scheme="<modo>"]`, aplicado pelo botão sol/lua."""
     os.makedirs(os.path.join("data", "themes"), exist_ok=True)
     css = []
     for f in fonts:
@@ -1151,12 +1185,73 @@ def write_theme_css(ds_id, theme_vars_, fonts):
     css.append(f'[data-theme="{ds_id}"] {{')
     css += [f"  {k}: {v};" for k, v in theme_vars_.items()]
     css.append("}")
+    if alt:
+        css.append(f'[data-theme="{ds_id}"][data-scheme="{alt[0]}"] {{')
+        css += [f"  {k}: {v};" for k, v in alt[1].items()]
+        css.append("}")
     open(os.path.join("data", "themes", f"{ds_id}.css"), "w", encoding="utf-8").write("\n".join(css) + "\n")
 
 
 def slug_of(href):
     m = re.search(r"design-system-([a-z0-9-]+)/?$", href)
     return m.group(1) if m else None
+
+
+# Tema padrão: base do Vercel (bordas, raios, sombras, foco, movimento, espaçamento e layout), com a paleta
+# do Expo e as fontes e a escala tipográfica do Futuristic. Dá para trocar as fontes de origem aqui.
+DEFAULT_PALETTE_FROM = ("expo", ("--bg", "--surface", "--surface-warm", "--fg", "--fg-2", "--muted", "--meta",
+                                 "--accent", "--accent-on", "--success", "--warn", "--danger"))
+DEFAULT_TYPE_FROM = ("futuristic", ("--text-xs", "--text-sm", "--text-base", "--text-lg", "--text-xl", "--text-2xl",
+                                    "--text-3xl", "--text-4xl", "--leading-body", "--leading-tight", "--tracking-display"))
+DEFAULT_ACCENT = "#4630eb"
+DEFAULT_HEADER = "#6b7280"  # fundo do cabeçalho do Padrão: cinza com 4,8:1 de contraste para o texto branco
+# Nomes das paletas do Padrão (o guia do Expo as chama de "Link Cobalt" etc.). None remove a paleta.
+DEFAULT_PALETTE_NAMES = {"Legal Blue": "Primary", "Link Cobalt": None, "Preview Purple": "Secondary",
+                         "Warning Amber": "Warning", "Destructive Rose": "Danger", "Widget Sky": None}
+DEFAULT_TAGLINE = i18n(
+    "Default theme: Expo's palette, Vercel's borders, shadows and motion, and Futuristic's fonts. Has a dark variant.",
+    "Tema padrão: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic. Tem variante escura.")
+DEFAULT_ORIGIN_HTML = i18n(
+    "<p>This is the project's own default theme, a mix of three catalog design systems plus project decisions:</p>"
+    "<ul><li><strong>Colors:</strong> <code>Expo</code> (background, surfaces, text and semantic colors), with <code>#4630eb</code> as the accent for buttons and links.</li>"
+    "<li><strong>Borders, radii, shadows, focus and motion:</strong> <code>Vercel</code>.</li>"
+    "<li><strong>Fonts and type scale:</strong> <code>Futuristic</code> (Audiowide, Roboto and Anonymous Pro).</li>"
+    "<li><strong>Project decisions:</strong> gray header with white text, white form fields, card gradients in Secondary, "
+    "zebra table with Secondary hover.</li></ul>"
+    "<p>The dark variant (sun/moon button in the header) is derived from this palette; it is not part of any original guide. "
+    "The sections below are the original Vercel guide, kept as a reference for spacing and components; its colors and fonts do not apply here.</p>",
+    "<p>Este é o tema padrão do projeto, uma mistura de três design systems do catálogo mais decisões do projeto:</p>"
+    "<ul><li><strong>Cores:</strong> <code>Expo</code> (fundo, superfícies, texto e cores semânticas), com <code>#4630eb</code> como destaque de botões e links.</li>"
+    "<li><strong>Bordas, raios, sombras, foco e animação:</strong> <code>Vercel</code>.</li>"
+    "<li><strong>Fontes e escala tipográfica:</strong> <code>Futuristic</code> (Audiowide, Roboto e Anonymous Pro).</li>"
+    "<li><strong>Decisões do projeto:</strong> cabeçalho cinza com texto branco, campos de formulário brancos, degradês dos cartões em Secondary, "
+    "tabela zebrada com hover em Secondary.</li></ul>"
+    "<p>A variante escura (botão de sol e lua no cabeçalho) é derivada desta paleta e não faz parte de nenhum guia original. "
+    "As seções abaixo são o guia original do Vercel, mantido como referência de espaçamento e componentes; as cores e fontes dele não valem aqui.</p>")
+
+
+def cached_page(slug):
+    return decode_cf_emails(open(os.path.join(".cache", "pages", f"design-system-{slug}.html"), encoding="utf-8", errors="replace").read())
+
+
+def compose_default(tokens):
+    """Tokens, cores do guia e fontes do tema padrão (ver DEFAULT_*_FROM)."""
+    p_slug, p_keys = DEFAULT_PALETTE_FROM
+    t_slug, t_keys = DEFAULT_TYPE_FROM
+    p_page, t_page = cached_page(p_slug), cached_page(t_slug)
+    p_map, t_map = token_map(parse_tokens(p_page)), token_map(parse_tokens(t_page))
+    overrides = {k: p_map[k] for k in p_keys if k in p_map}
+    overrides.update({k: t_map[k] for k in t_keys if k in t_map})
+    overrides["--accent"] = DEFAULT_ACCENT  # cor dos botões: o roxo do Expo (no guia dele é o foco e o "meta")
+    overrides["--field-bg"] = "#ffffff"      # campos habilitados em branco
+    overrides["--row-bg"] = "#ffffff"            # tabela: linhas brancas e zebra no azulzinho do tema,
+    overrides["--row-stripe"] = "var(--surface-2)"  # hover num tom do Secondary
+    overrides["--row-hover"] = "color-mix(in oklab, #8145b5 14%, #ffffff)"
+    overrides["--grad-1"] = "#8145b5"        # degradês dos cartões na cor Secondary
+    overrides["--grad-2"] = "color-mix(in oklab, #8145b5 85%, var(--fg))"
+    colors = guide_colors(block(p_page, "designmd-body"))
+    fonts = describe_fonts(parse_fonts(block(t_page, "designmd-body")))
+    return override_tokens(tokens, overrides), colors, fonts
 
 
 def build_one(ds_id, page_path, entry, slug):
@@ -1166,22 +1261,33 @@ def build_one(ds_id, page_path, entry, slug):
     raw_guide = block(page, "designmd-body")
     _intro, sections = split_sections(raw_guide)
     colors = guide_colors(raw_guide)
+    fonts = describe_fonts(parse_fonts(raw_guide))
+    if ds_id == "padrao":
+        tokens, colors, fonts = compose_default(tokens)
     # cores do preview do catálogo entram como candidatas se o guia não nomear nada
     palettes, roles = build_palettes(tokens, colors)
-    fonts = describe_fonts(parse_fonts(raw_guide))
+    if ds_id == "padrao":
+        palettes = [{**p, "name": DEFAULT_PALETTE_NAMES.get(p["name"], p["name"])} for p in palettes
+                    if DEFAULT_PALETTE_NAMES.get(p["name"], p["name"]) is not None]
+        roles = {k: DEFAULT_PALETTE_NAMES.get(v, v) for k, v in roles.items()}
+        if any(p["name"] == "Secondary" for p in palettes):
+            roles["secondary"] = "Secondary"
     name = entry["name"]
     cat_en = "Default" if ds_id == "padrao" else entry["category"]
     cat_pt = "Padrão" if ds_id == "padrao" else CAT_PT.get(entry["category"], entry["category"])
     category = i18n(cat_en, cat_pt if cat_pt != cat_en else None)
-    intro = i18n(entry["tagline"])
+    intro = DEFAULT_TAGLINE if ds_id == "padrao" else i18n(entry["tagline"])
     for sec in sections:
         sec["title"] = i18n(sec["title"], TITLE_PT.get(sec["title"]))
         sec["html"] = i18n(sec["html"])
+    if ds_id == "padrao":  # a explicação da mistura vem antes do guia do Vercel
+        sections.insert(0, {"id": "origem", "title": i18n("About this theme", "Sobre este tema"), "html": DEFAULT_ORIGIN_HTML})
     for lang in TRANSLATED_LANGS:
         tr = load_translation(slug, lang)
         if not tr:
             continue
-        intro = add_lang(intro, lang, tr["tagline"])
+        if ds_id != "padrao":
+            intro = add_lang(intro, lang, tr["tagline"])
         for sec in sections:
             t = tr["sections"].get(sec["id"])
             if t:
@@ -1192,8 +1298,10 @@ def build_one(ds_id, page_path, entry, slug):
     adjustments = []
     data = {
         "id": ds_id,
-        "name": i18n(f"{name} (Default)", f"{name} (Padrão)") if ds_id == "padrao" else name,
-        "source": {"name": name, "url": "https://open-design.ai" + entry["href"]},
+        "name": i18n("Default", "Padrão") if ds_id == "padrao" else name,
+        # o Padrão é do projeto e não existe no open-design.ai: sem URL, a página não mostra o botão de abrir lá
+        "source": ({"name": "Expo + Vercel + Futuristic", "url": ""}
+                   if ds_id == "padrao" else {"name": name, "url": "https://open-design.ai" + entry["href"]}),
         "category": category,
         "intro": intro,
         "roles": roles,
@@ -1204,8 +1312,21 @@ def build_one(ds_id, page_path, entry, slug):
         "vars": theme_vars(tokens, palettes, roles, fonts, adjustments),
         "sections": sections,
     }
+    if ds_id == "padrao":  # cabeçalho no cinza de sempre, não no tom 500 da paleta Primary
+        data["vars"]["--primary-500"] = DEFAULT_HEADER
+        data["vars"]["--primary-500-fg"] = "#ffffff"  # texto do cabeçalho em branco (escolha do projeto)
     write_ds_json(ds_id, data)
-    write_theme_css(ds_id, data["vars"], fonts)
+    mode = load_modes().get(ds_id)
+    alt = None
+    alt_adjustments = []
+    if mode:
+        alt_vars = theme_vars(override_tokens(tokens, mode["tokens"]), palettes, roles, fonts, alt_adjustments)
+        # os tons 500/400 da escala (cabeçalho e rodapé) vêm da paleta do modo base; na variante o fundo e o texto
+        for shade in ("--primary-500", "--neutral-400"):
+            if shade in alt_vars:
+                alt_vars[shade], alt_vars[shade + "-fg"] = "var(--bg)", "var(--fg)"
+        alt = (mode["alt"], alt_vars)
+    write_theme_css(ds_id, data["vars"], fonts, alt)
     p = entry.get("preview", {})
     pal = {x["name"]: x for x in palettes}
     if ds_id == "padrao":  # o padrão mostra as cores dos papéis (primária, secundária, neutra)
@@ -1221,11 +1342,16 @@ def build_one(ds_id, page_path, entry, slug):
         "swatches": swatches,
     }
     # fontes proprietárias do guia que o site não tem: o aviso do topo e o README usam esta lista
+    if mode:  # o botão sol/lua do cabeçalho só fica ativo nos temas com variante
+        entry_out["schemes"] = {"base": mode["base"], "alt": mode["alt"]}
     prop = [f["family"] for f in fonts if f.get("proprietary")]
     if prop:
         entry_out["proprietaryFonts"] = prop
     # tokens do DS abaixo de 4,5:1 (WCAG 2.2 AA) que o build trocou: o aviso da página lista cada um.
     # Fica num arquivo à parte (carregado ao aplicar o tema) para não engordar o index.json.
+    adjustments += [{**a, "mode": "alt"} for a in alt_adjustments]
+    if ds_id == "padrao":  # as cores do tema padrão são do projeto: o build ajusta o contraste, mas não avisa
+        adjustments = []
     json.dump(adjustments, open(os.path.join("data", "themes", f"{ds_id}.contrast.json"), "w", encoding="utf-8"),
               ensure_ascii=False, separators=(",", ":"))
     return entry_out
@@ -1238,7 +1364,7 @@ def main():
         sl = slug_of(d["href"])
         if sl and sl not in by_slug and os.path.exists(os.path.join(".cache", "pages", f"design-system-{sl}.html")):
             by_slug[sl] = d
-    order = [("padrao", "Padrão", "Vercel (Padrão)")]
+    order = [("padrao", "Padrão", "Padrão")]
     cats = sorted({d["category"] for d in by_slug.values()}, key=lambda c: CATEGORY_ORDER.index(c) if c in CATEGORY_ORDER else 99)
     for c in cats:
         order += [(sl, CAT_PT.get(c, c), d["name"]) for sl, d in by_slug.items() if d["category"] == c]

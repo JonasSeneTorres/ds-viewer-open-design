@@ -284,10 +284,13 @@
     "pri.s1Title": { "en-US": "What the site does not do", "pt-BR": "O que o site não faz" },
     "pri.s1Text": { "en-US": "It uses no cookies, has no usage analytics or advertising, and calls no third-party services while you browse: fonts and data are served by the site itself.", "pt-BR": "Não usa cookies, não tem análise de uso nem publicidade e não chama serviços de terceiros enquanto você navega: as fontes e os dados são servidos pelo próprio site." },
     "pri.s2Title": { "en-US": "What stays in your browser", "pt-BR": "O que fica no seu navegador" },
-    "pri.s2Text": { "en-US": "Three preferences are saved only on your device, in the browser's local storage:", "pt-BR": "Três preferências ficam salvas só no seu dispositivo, no armazenamento local do navegador:" },
+    "pri.s2Text": { "en-US": "Four preferences are saved only on your device, in the browser's local storage:", "pt-BR": "Quatro preferências ficam salvas só no seu dispositivo, no armazenamento local do navegador:" },
     "pri.li1": { "en-US": "the selected theme;", "pt-BR": "o tema escolhido;" },
     "pri.li2": { "en-US": "the language;", "pt-BR": "o idioma;" },
-    "pri.li3": { "en-US": "the records of the sample table.", "pt-BR": "os registros da tabela de exemplo." },
+    "pri.li3": { "en-US": "the light or dark mode;", "pt-BR": "o modo claro ou escuro;" },
+    "pri.li4": { "en-US": "the records of the sample table.", "pt-BR": "os registros da tabela de exemplo." },
+    "pri.s2Session": { "en-US": "Which notices you dismissed (fonts and contrast) are kept only while the tab is open, in the browser's session storage, and disappear when you close it.", "pt-BR": "Os avisos que você dispensa (fontes e contraste) ficam só enquanto a aba estiver aberta, no armazenamento de sessão do navegador, e somem quando você a fecha." },
+    "pri.s2Url": { "en-US": "The selected theme also appears in the address (?tema=), so a shared link opens with the same theme. Nothing else goes in the address.", "pt-BR": "O tema escolhido também aparece no endereço (?tema=), para que um link compartilhado abra com o mesmo tema. Nada além disso vai no endereço." },
     "pri.s2Note": { "en-US": "You can erase them at any time by clearing this site's data in your browser.", "pt-BR": "Você pode apagá-las quando quiser, limpando os dados deste site no navegador." },
     "pri.s3Title": { "en-US": "Sample forms", "pt-BR": "Formulários de exemplo" },
     "pri.s3Text": { "en-US": "The contact, newsletter, sign in, forgot password, new password and quick draft forms are demonstrations: nothing is sent anywhere. Do not type real data in them.", "pt-BR": "Os formulários de contato, newsletter, entrar, esqueci minha senha, nova senha e rascunho rápido são demonstrações: nada é enviado a lugar nenhum. Não digite dados reais neles." },
@@ -353,6 +356,9 @@
     "ctok.--warn-ink": { "en-US": "Warning text", "pt-BR": "Texto de atenção" },
     "ctok.--danger-ink": { "en-US": "Error text", "pt-BR": "Texto de erro" },
     "ctok.--surface": { "en-US": "Surface (cards)", "pt-BR": "Superfície (cartões)" },
+    "scheme.toDark": { "en-US": "Switch to dark mode", "pt-BR": "Mudar para o modo escuro" },
+    "scheme.toLight": { "en-US": "Switch to light mode", "pt-BR": "Mudar para o modo claro" },
+    "scheme.none": { "en-US": "This theme has no light/dark variant", "pt-BR": "Este tema não tem variante clara/escura" },
     "top.label": { "en-US": "Back to top", "pt-BR": "Voltar ao topo" },
     "close": { "en-US": "Close", "pt-BR": "Fechar" },
     "cancel": { "en-US": "Cancel", "pt-BR": "Cancelar" },
@@ -490,7 +496,8 @@
       hint: d.tagline,
       category: d.category,
       swatches: d.swatches,
-      proprietary: d.proprietaryFonts || []
+      proprietary: d.proprietaryFonts || [],
+      schemes: d.schemes || null   // {base, alt}: o botão sol/lua só funciona nos temas com variante (data/modes.json)
     });
     if (d.id !== DEFAULT_THEME) {
       CATALOG.push({ id: d.id, name: d.name, category: d.category, tagline: d.tagline, swatches: d.swatches });
@@ -722,6 +729,48 @@
   // Os dados vêm de data/themes/<id>.contrast.json, gerado por scripts/build_ds_details.py.
   var CONTRAST_DATA = {};
 
+  // Claro/escuro: a escolha (odv-scheme) vale para qualquer tema que tenha a variante.
+  var SCHEME_KEY = "odv-scheme";
+
+  function storedScheme() {
+    try { return localStorage.getItem(SCHEME_KEY); } catch (e) { return null; }
+  }
+
+  function themeById(id) {
+    return THEMES.filter(function (t) { return t.id === id; })[0] || null;
+  }
+
+  // true quando o tema tem variante e a escolha do visitante é justamente o modo alternativo
+  function altApplied(id) {
+    var t = themeById(id);
+    return !!(t && t.schemes && storedScheme() === t.schemes.alt);
+  }
+
+  function updateSchemeButton(id) {
+    var btn = document.getElementById("schemeBtn");
+    var t = themeById(id);
+    if (!btn) return;
+    var has = !!(t && t.schemes);
+    var now = has ? (altApplied(id) ? t.schemes.alt : t.schemes.base) : "light";
+    var target = now === "light" ? "dark" : "light";
+    var label = has ? T(target === "dark" ? "scheme.toDark" : "scheme.toLight") : T("scheme.none");
+    btn.setAttribute("data-target", has ? target : "dark");
+    btn.setAttribute("aria-disabled", String(!has));
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
+  }
+
+  var schemeBtn = document.getElementById("schemeBtn");
+  if (schemeBtn) {
+    schemeBtn.addEventListener("click", function () {
+      var t = themeById(wantedTheme);
+      if (!t || !t.schemes) return;
+      var now = altApplied(t.id) ? t.schemes.alt : t.schemes.base;
+      try { localStorage.setItem(SCHEME_KEY, now === "light" ? "dark" : "light"); } catch (e) {}
+      applyTheme(t.id);
+    });
+  }
+
   function loadContrast(id) {
     if (CONTRAST_DATA[id]) return Promise.resolve(CONTRAST_DATA[id]);
     return fetch("data/themes/" + encodeURIComponent(id) + ".contrast.json", { credentials: "same-origin" })
@@ -738,7 +787,9 @@
     box.hidden = true;
     box.innerHTML = "";
     if (closedNotices(CONTRAST_NOTICE_KEY).indexOf(id) !== -1) return;
-    loadContrast(id).then(function (list) {
+    var alt = altApplied(id);
+    loadContrast(id).then(function (all) {
+      var list = all.filter(function (a) { return (a.mode === "alt") === alt; });
       if (wantedTheme !== id || !list.length) return;
       var HEX = /^#[0-9a-f]{6}$/;
       function chip(hex) { return '<span class="cn-chip" style="background:' + esc(hex) + '"></span><code>' + esc(hex) + "</code>"; }
@@ -801,6 +852,10 @@
         if (c.indexOf("theme-") === 0) body.classList.remove(c);
       });
       body.classList.add("theme-" + id);
+      var th = themeById(id);
+      if (altApplied(id)) document.documentElement.setAttribute("data-scheme", th.schemes.alt);
+      else document.documentElement.removeAttribute("data-scheme");
+      updateSchemeButton(id);
       updateFontNotice(id);
       updateContrastNotice(id);
     }
@@ -811,23 +866,51 @@
     }
   }
 
-  function setTheme(id) {
-    var theme = THEMES.filter(function (t) { return t.id === id; })[0] ||
-      THEMES.filter(function (t) { return t.id === DEFAULT_THEME; })[0] || THEMES[0];
+  // O seletor mostra sempre o tema que está na tela (inclusive a prévia de uma página de DS).
+  function syncPicker(id) {
+    var theme = themeById(id);
+    if (!theme) return;
+    var label = themePicker.querySelector(".combobox-label");
+    if (label) label.textContent = L(theme.label);
+    themePicker.querySelectorAll(".combobox-option").forEach(function (opt) {
+      opt.setAttribute("aria-selected", String(opt.dataset.themeId === id));
+    });
+  }
+
+  // Tema na URL (?tema=<id>): a escolha é compartilhável e cada troca vira uma entrada do histórico,
+  // então o botão voltar desfaz a troca. A URL manda; sem ela vale o tema guardado no navegador.
+  function themeFromURL() {
+    try {
+      var t = new URLSearchParams(location.search).get("tema");
+      return t && themeById(t) ? t : null;
+    } catch (e) { return null; }
+  }
+
+  function writeThemeURL(id, push) {
+    try {
+      var url = new URL(location.href);
+      url.searchParams.set("tema", id);
+      history[push ? "pushState" : "replaceState"](null, "", url.pathname + url.search + url.hash);
+    } catch (e) {}
+  }
+
+  // opts.history: "none" ao reagir ao voltar/avançar (a URL já está certa).
+  function setTheme(id, opts) {
+    var theme = themeById(id) || themeById(DEFAULT_THEME) || THEMES[0];
     currentTheme = theme.id;
     updateThemeLink();
     applyTheme(theme.id);
     try {
       localStorage.setItem(THEME_KEY, theme.id);
     } catch (e) {}
-    var label = themePicker.querySelector(".combobox-label");
-    if (label) label.textContent = L(theme.label);
+    if (!(opts && opts.history === "none")) {
+      var inUrl = themeFromURL();
+      if (inUrl !== theme.id) writeThemeURL(theme.id, !!inUrl); // sem ?tema na URL (1ª carga): só completa
+    }
+    syncPicker(theme.id);
     // Destaca o card do tema ativo na página de Design System (se estiver aberta).
     document.querySelectorAll(".ds-card-cat").forEach(function (card) {
       card.classList.toggle("is-current", card.dataset.id === theme.id);
-    });
-    themePicker.querySelectorAll(".combobox-option").forEach(function (opt) {
-      opt.setAttribute("aria-selected", String(opt.dataset.themeId === theme.id));
     });
   }
 
@@ -1893,7 +1976,7 @@
       (L(d.intro) ? '<p class="lede">' + esc(L(d.intro)) + "</p>" : "") +
       '<div class="ds-actions">' +
       '<button type="button" class="btn btn-primary" data-apply="' + esc(id) + '">' + esc(T("ds.apply")) + "</button>" +
-      '<a class="btn btn-ghost" href="' + esc(d.source.url) + '" target="_blank" rel="noopener">' + esc(T("ds.open")) + ' <svg class="ext-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">' + esc(T("ds.newTab")) + '</span></a>' +
+      (d.source.url ? '<a class="btn btn-ghost" href="' + esc(d.source.url) + '" target="_blank" rel="noopener">' + esc(T("ds.open")) + ' <svg class="ext-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">' + esc(T("ds.newTab")) + '</span></a>' : "") +
       "</div>" +
       dsPager(id) +
       '<section class="ds-section" id="' + atmos.id + '">' +
@@ -2185,7 +2268,7 @@
     var angle = 110 + (i * 37) % 80;
     var a = 20 + (i * 13) % 28;
     var b = 8 + (i * 7) % 18;
-    var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--accent) " + a + "%, var(--surface)), color-mix(in oklab, var(--accent-strong) " + b + "%, var(--surface-2)))";
+    var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
     return (
       '<article class="product">' +
       '<div class="thumb" style="background:' + grad + '">' + noImageSVG() +
@@ -2301,7 +2384,7 @@
     var angle = 110 + (i * 37) % 80;
     var a = 20 + (i * 13) % 28;
     var b = 8 + (i * 7) % 18;
-    var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--accent) " + a + "%, var(--surface)), color-mix(in oklab, var(--accent-strong) " + b + "%, var(--surface-2)))";
+    var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
     return '<div class="ph ' + (cls || "") + '" style="background:' + grad + '" role="img" aria-label="' + esc(T("inst.imageAlt")) + '">' + noImageSVG() + "</div>";
   }
 
@@ -2365,7 +2448,7 @@
       '<div class="card-grid card-grid-3">' + people.map(function (p, i) {
         return '<figure class="info-card quote"><span class="quote-mark">' + iconSVG("quote") + "</span>" +
           "<blockquote>" + esc(lorem) + "</blockquote>" +
-          '<figcaption><span class="avatar" style="' + "background:linear-gradient(135deg, color-mix(in oklab, var(--accent) " + (30 + i * 12) + "%, var(--surface)), color-mix(in oklab, var(--accent-strong) 18%, var(--surface-2)))" + '" aria-hidden="true">' + p[2] + "</span>" +
+          '<figcaption><span class="avatar" style="' + "background:linear-gradient(135deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + (30 + i * 12) + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) 18%, var(--surface-2)))" + '" aria-hidden="true">' + p[2] + "</span>" +
           "<span><strong>" + esc(p[0]) + "</strong><br><span class=\"muted\">" + esc(p[1]) + "</span></span></figcaption></figure>";
       }).join("") + "</div></div></section>" +
       // chamada
@@ -2762,8 +2845,10 @@
       '<div class="legal">' +
       "<section><h2>" + esc(T("pri.s1Title")) + "</h2><p>" + esc(T("pri.s1Text")) + "</p></section>" +
       "<section><h2>" + esc(T("pri.s2Title")) + "</h2><p>" + esc(T("pri.s2Text")) + "</p>" +
-      "<ul><li>" + esc(T("pri.li1")) + "</li><li>" + esc(T("pri.li2")) + "</li><li>" + esc(T("pri.li3")) + "</li></ul>" +
-      "<p>" + esc(T("pri.s2Note")) + "</p></section>" +
+      "<ul><li>" + esc(T("pri.li1")) + "</li><li>" + esc(T("pri.li2")) + "</li><li>" + esc(T("pri.li3")) + "</li><li>" + esc(T("pri.li4")) + "</li></ul>" +
+      "<p>" + esc(T("pri.s2Note")) + "</p>" +
+      "<p>" + esc(T("pri.s2Session")) + "</p>" +
+      "<p>" + esc(T("pri.s2Url")) + "</p></section>" +
       "<section><h2>" + esc(T("pri.s3Title")) + "</h2><p>" + esc(T("pri.s3Text")) + "</p></section>" +
       "<section><h2>" + esc(T("pri.s4Title")) + "</h2><p>" + esc(T("pri.s4Text")) + "</p></section>" +
       "<section><h2>" + esc(T("pri.s5Title")) + "</h2><p>" + esc(T("pri.s5Text")) + '</p><p class="muted">' + esc(T("pri.s5Note")) + "</p></section>" +
@@ -2858,6 +2943,7 @@
     var previewId = hash.indexOf("/design-system/") === 0 ? hash.replace("/design-system/", "") : "";
     var previewable = THEMES.some(function (t) { return t.id === previewId; });
     applyTheme(previewable ? previewId : currentTheme);
+    syncPicker(previewable ? previewId : currentTheme);
     if (!hash || hash === "/") {
       app.innerHTML = homeHTML();
       setTitle("");
@@ -3027,8 +3113,16 @@
   loadData().then(function () {
     buildCombobox();
     applyStaticI18n();
-    setTheme(getStoredTheme());
+    setTheme(themeFromURL() || getStoredTheme());
     window.addEventListener("hashchange", function () { router(true); });
+    // Voltar/avançar entre trocas de tema (a entrada só difere no ?tema=): reaplica o da URL.
+    window.addEventListener("popstate", function () {
+      var t = themeFromURL();
+      if (t && t !== currentTheme) {
+        setTheme(t, { history: "none" });
+        router();
+      }
+    });
     router();
   });
 })();

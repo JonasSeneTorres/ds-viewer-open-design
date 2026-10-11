@@ -246,6 +246,26 @@ pre {
   gap: 8px;
 }
 
+/* Alternância claro/escuro: o ícone mostra o modo para onde o clique leva */
+.scheme-btn {
+  padding-inline: 10px;
+}
+
+.scheme-btn[data-target="dark"] .ic-sun,
+.scheme-btn[data-target="light"] .ic-moon {
+  display: none;
+}
+
+.scheme-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.scheme-btn[aria-disabled="true"]:hover {
+  border-color: var(--border-strong);
+  background: var(--field-bg, var(--surface));
+}
+
 .lang-code {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -262,7 +282,7 @@ pre {
   gap: 10px;
   min-height: 40px;
   padding: 6px 12px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -326,7 +346,7 @@ pre {
   min-height: 40px;
   margin-bottom: 6px;
   padding: 8px 12px;
-  background: var(--bg);
+  background: var(--field-bg, var(--bg));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -462,6 +482,10 @@ main:focus {
   cursor: pointer;
   text-decoration: none;
   transition: transform var(--motion-fast, 160ms) var(--ease, ease-out), background var(--motion-fast, 160ms) var(--ease, ease-out), border-color var(--motion-fast, 160ms) var(--ease, ease-out), color var(--motion-fast, 160ms) var(--ease, ease-out);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn:active {
@@ -632,8 +656,8 @@ main:focus {
 .featured-visual {
   min-height: 260px;
   background:
-    radial-gradient(circle at 30% 30%, color-mix(in oklab, var(--accent) 45%, var(--surface)), transparent 60%),
-    linear-gradient(135deg, var(--surface-2), color-mix(in oklab, var(--accent-weak) 60%, var(--surface-2)));
+    radial-gradient(circle at 30% 30%, color-mix(in oklab, var(--grad-1, var(--accent)) 45%, var(--surface)), transparent 60%),
+    linear-gradient(135deg, var(--surface-2), color-mix(in oklab, color-mix(in oklab, var(--grad-1, var(--accent)) 12%, var(--bg)) 60%, var(--surface-2)));
   display: grid;
   place-items: center;
   padding: 32px;
@@ -815,6 +839,19 @@ tbody tr:hover {
   background: color-mix(in oklab, var(--surface-2) 70%, var(--surface));
 }
 
+/* Tabela de exemplo: linhas, zebra e hover podem ser definidos pelo tema (--row-bg, --row-stripe, --row-hover) */
+#recordsTable tbody tr {
+  background: var(--row-bg, transparent);
+}
+
+#recordsTable tbody tr:nth-child(even) {
+  background: var(--row-stripe, var(--row-bg, transparent));
+}
+
+#recordsTable tbody tr:hover {
+  background: var(--row-hover, color-mix(in oklab, var(--surface-2) 70%, var(--surface)));
+}
+
 td.num,
 th.num {
   font-family: var(--font-mono);
@@ -981,7 +1018,7 @@ dialog::backdrop {
   width: 100%;
   min-width: 0;
   padding: 9px 12px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
   color: var(--fg);
@@ -1213,6 +1250,41 @@ legend {
 
 .footer-inner a {
   color: var(--footer-fg);
+}
+
+/* Elevação leve no hover de botões e links de navegação (links em texto corrido não se movem) */
+.main-nav a,
+.footer-inner a,
+.breadcrumbs a,
+.nav-menu-btn,
+.combobox-btn {
+  transition-property: transform, background, border-color, color;
+  transition-duration: var(--motion-fast, 160ms);
+  transition-timing-function: var(--ease, ease-out);
+}
+
+.footer-inner a,
+.breadcrumbs a {
+  display: inline-block;
+}
+
+.main-nav a:hover,
+.footer-inner a:hover,
+.breadcrumbs a:hover,
+.nav-menu-btn:hover,
+.combobox-btn:not([aria-disabled="true"]):hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .main-nav a:hover,
+  .footer-inner a:hover,
+  .breadcrumbs a:hover,
+  .nav-menu-btn:hover,
+  .combobox-btn:hover {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1470,7 +1542,7 @@ legend {
   box-sizing: border-box;
   min-height: 42px;
   padding: 9px 12px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -1869,7 +1941,7 @@ legend {
   min-width: 0;
   min-height: 36px;
   padding: 6px 10px;
-  background: var(--bg);
+  background: var(--field-bg, var(--bg));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -2364,7 +2436,7 @@ fieldset {
 .draft-form textarea {
   width: 100%;
   padding: 9px 12px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -2432,7 +2504,7 @@ fieldset {
 .shop-sort select {
   min-height: 38px;
   padding: 6px 10px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -2666,7 +2738,7 @@ fieldset {
   width: 100%;
   min-height: 38px;
   padding: 6px 10px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -2713,7 +2785,7 @@ fieldset {
 .band-c { background: var(--accent-weak); }
 
 .band-solid {
-  background: var(--solid);
+  background: var(--cta-bg, var(--solid));
   color: var(--solid-fg);
 }
 
@@ -2915,13 +2987,13 @@ fieldset {
 
 .btn-invert {
   background: var(--solid-fg);
-  color: var(--solid);
+  color: var(--cta-btn-fg, var(--solid));
   border-color: var(--solid-fg);
 }
 
 .btn-invert:hover {
   background: var(--solid-fg);
-  color: var(--solid);
+  color: var(--cta-btn-fg, var(--solid));
   text-decoration: underline;
 }
 
@@ -2961,7 +3033,7 @@ fieldset {
 .contact-form .field textarea {
   width: 100%;
   padding: 9px 12px;
-  background: var(--bg);
+  background: var(--field-bg, var(--bg));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -2997,8 +3069,8 @@ fieldset {
 
 .auth-aside {
   background:
-    radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--accent) 40%, transparent), transparent 55%),
-    linear-gradient(150deg, color-mix(in oklab, var(--accent-strong) 28%, var(--surface-2)), color-mix(in oklab, var(--accent) 14%, var(--bg)));
+    radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--grad-1, var(--accent)) 40%, transparent), transparent 55%),
+    linear-gradient(150deg, color-mix(in oklab, var(--grad-2, var(--accent-strong)) 28%, var(--surface-2)), color-mix(in oklab, var(--grad-1, var(--accent)) 14%, var(--bg)));
   color: var(--fg);
   border-right: var(--bw) solid var(--border);
 }
@@ -3108,7 +3180,7 @@ fieldset {
   width: 100%;
   min-height: 42px;
   padding: 9px 12px;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
@@ -3267,7 +3339,7 @@ fieldset {
   text-align: center;
   font-family: var(--font-mono);
   font-size: 1.3rem;
-  background: var(--surface);
+  background: var(--field-bg, var(--surface));
   color: var(--fg);
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius-sm);
