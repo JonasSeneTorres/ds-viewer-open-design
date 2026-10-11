@@ -1,0 +1,153 @@
+{
+  "_doc": "Variante clara/escura por tema: só os temas cujo guia descreve uma segunda paleta. 'base' é o modo do tema como publicado; 'alt', o outro. 'tokens' troca/remove (null) tokens do DS só na variante. Valores copiados do guia (seção de cores); 'derived' lista o que o guia não dá e foi deduzido. O build roda as mesmas regras de contraste (AA) sobre a variante.",
+  "discord": {
+    "base": "dark",
+    "alt": "light",
+    "source": "Surface (Light Theme)",
+    "derived": [
+      "--fg: Background Primary escuro (#313338) como texto sobre o claro; --muted e --fg-2 o build ajusta"
+    ],
+    "tokens": {
+      "--bg": "#ffffff",
+      "--surface": "#f2f3f5",
+      "--surface-warm": "#e3e5e8",
+      "--fg": "#313338",
+      "--muted": "#949ba4",
+      "--border": "#e3e5e8",
+      "--border-soft": "#f2f3f5"
+    }
+  },
+  "github": {
+    "base": "light",
+    "alt": "dark",
+    "source": "Dark Theme",
+    "derived": [
+      "--muted e --fg-2: o build ajusta os tons do claro para o fundo escuro"
+    ],
+    "tokens": {
+      "--bg": "#0d1117",
+      "--surface": "#161b22",
+      "--surface-warm": null,
+      "--fg": "#e6edf3",
+      "--border": "#30363d",
+      "--border-soft": "#30363d"
+    }
+  },
+  "ibm": {
+    "base": "light",
+    "alt": "dark",
+    "source": "Dark Theme (Gray 100 Theme)",
+    "derived": [
+      "--muted: Gray 50 (#8d8d8d)"
+    ],
+    "tokens": {
+      "--bg": "#161616",
+      "--surface": "#262626",
+      "--surface-warm": "#393939",
+      "--fg": "#f4f4f4",
+      "--fg-2": "#c6c6c6",
+      "--muted": "#8d8d8d",
+      "--border": "#393939",
+      "--border-soft": "#393939",
+      "--accent": "#78a9ff",
+      "--accent-hover": null,
+      "--accent-on": null
+    }
+  },
+  "linear-app": {
+    "base": "dark",
+    "alt": "light",
+    "source": "Light Mode Neutrals",
+    "derived": [
+      "--fg: Marketing Black (#08090a) como texto sobre o claro",
+      "--muted: Quaternary Text (#62666d)"
+    ],
+    "tokens": {
+      "--bg": "#f7f8f8",
+      "--surface": "#ffffff",
+      "--surface-warm": "#f3f4f5",
+      "--fg": "#08090a",
+      "--muted": "#62666d",
+      "--border": "#d0d6e0",
+      "--border-soft": "#e6e6e6"
+    }
+  },
+  "perplexity": {
+    "base": "dark",
+    "alt": "light",
+    "source": "Light surface",
+    "derived": [],
+    "tokens": {
+      "--bg": "#ffffff",
+      "--surface": "#f8f8f8",
+      "--surface-warm": "#f0f0f0",
+      "--fg": "#0f0f10",
+      "--fg-2": "#5c5c5e",
+      "--muted": "#5c5c5e",
+      "--border": "#e0e0e0",
+      "--border-soft": "#e0e0e0",
+      "--accent": "#7c3aed",
+      "--accent-hover": null
+    }
+  },
+  "xiaohongshu": {
+    "base": "light",
+    "alt": "dark",
+    "source": "Dark Mode",
+    "derived": [
+      "textos e separador: o guia dá branco com 84%, 56% e 7% de opacidade; aqui vão achatados sobre o canvas (#0e0e11)"
+    ],
+    "tokens": {
+      "--bg": "#0e0e11",
+      "--surface": "#19191e",
+      "--surface-warm": null,
+      "--fg": "#d8d8d9",
+      "--fg-2": "#959596",
+      "--muted": "#959596",
+      "--border": "#1f1f22",
+      "--border-soft": "#1f1f22",
+      "--accent": "#ff2e4d",
+      "--accent-hover": null
+    }
+  },
+  "padrao": {
+    "base": "light",
+    "alt": "dark",
+    "source": "derivada da paleta do Expo e do estilo do Vercel (nenhum guia traz modo escuro para o padrão)",
+    "derived": [
+      "fundo = tinta do Expo (#0b0d12); texto = superfície do Expo (#f6f7f9)",
+      "superfícies, texto secundário e destaque (#4630eb do Expo clareado) deduzidos; o build ajusta o contraste AA",
+      "bordas e sombra no estilo do Vercel, com branco translúcido",
+      "campos habilitados: fundo = --bg (no claro são brancos)",
+      "degradês: Secondary clareado (#a77ad6)",
+      "tabela: linhas no --bg, zebra no --surface-2 e hover em Secondary clareado",
+      "faixa \"Pronto para começar?\" da página institucional: fundo e texto do botão em #f2e8fd (pedido do projeto)"
+    ],
+    "tokens": {
+      "--bg": "#0b0d12",
+      "--surface": "#12151c",
+      "--surface-warm": "#1a1f2e",
+      "--fg": "#f6f7f9",
+      "--fg-2": "#cfd3dc",
+      "--muted": "#9aa1b2",
+      "--meta": "#8f85ff",
+      "--border": "rgba(255, 255, 255, 0.12)",
+      "--border-soft": "rgba(255, 255, 255, 0.06)",
+      "--accent": "#8f85ff",
+      "--accent-on": "#0b0d12",
+      "--accent-hover": null,
+      "--elev-raised": "0 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 2px rgba(0, 0, 0, 0.3), 0 8px 8px -8px rgba(0, 0, 0, 0.3)",
+      "--success": "#34d399",
+      "--warn": "#fbbf24",
+      "--danger": "#f87171",
+      "--field-bg": "var(--bg)",
+      "--grad-1": "#a77ad6",
+      "--grad-2": "#a77ad6",
+      "--row-bg": "var(--bg)",
+      "--row-stripe": "var(--surface-2)",
+      "--row-hover": "color-mix(in oklab, #a77ad6 22%, var(--bg))",
+      "--cta-bg": "#f2e8fd",
+      "--cta-btn-fg": "#f2e8fd"
+    }
+  }
+}

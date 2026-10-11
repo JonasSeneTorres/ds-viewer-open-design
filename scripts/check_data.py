@@ -67,6 +67,24 @@ themes_on_disk = {os.path.basename(p)[:-4] for p in glob.glob(os.path.join(THEME
 for extra in sorted(themes_on_disk - set(ids)):
     err(f"data/themes/{extra}.css existe mas não está no index.json")
 
+# variantes claro/escuro (data/modes.json): tema existente, modos opostos e bloco extra no CSS do tema
+modes_path = os.path.join("data", "modes.json")
+if os.path.exists(modes_path):
+    for mid, m in (load(modes_path) or {}).items():
+        if mid.startswith("_"):
+            continue
+        entry = next((d for d in index if d.get("id") == mid), None)
+        if not entry:
+            err(f"modes.json · {mid}: tema não está no index.json")
+            continue
+        if {m.get("base"), m.get("alt")} != {"light", "dark"}:
+            err(f"modes.json · {mid}: base e alt precisam ser light e dark")
+        if entry.get("schemes") != {"base": m.get("base"), "alt": m.get("alt")}:
+            err(f"modes.json · {mid}: index.json sem o campo schemes (rode npm run data:update)")
+        css_path = os.path.join(THEME_DIR, f"{mid}.css")
+        if os.path.exists(css_path) and f'[data-scheme="{m.get("alt")}"]' not in open(css_path, encoding="utf-8").read():
+            err(f"{css_path}: sem o bloco da variante {m.get('alt')}")
+
 # cada tema tem o relatório de ajustes de contraste (aviso do topo): lista de {token, from, to, ratioFrom, ratioTo}
 for ds_id in ids:
     cpath = os.path.join(THEME_DIR, f"{ds_id}.contrast.json")

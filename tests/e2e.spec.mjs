@@ -314,7 +314,11 @@ test("aviso de contraste lista os tokens ajustados e fecha", async ({ page }) =>
   const problems = watch(page);
   await page.goto("/#/");
   const notice = page.locator("#contrastNotice");
-  await expect(notice).toBeVisible(); // o tema padrão também tem tokens abaixo de 4,5:1
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "padrao");
+  await expect(notice).toBeHidden(); // o padrão é do projeto: ajusta o contraste, mas não avisa
+
+  await page.goto("/#/design-system/github");
+  await expect(notice).toBeVisible();
   await expect(notice).toContainText("4,5:1");
   await expect(notice).toContainText("WCAG 2.2");
 
@@ -326,5 +330,83 @@ test("aviso de contraste lista os tokens ajustados e fecha", async ({ page }) =>
 
   await page.click("#contrastNotice [data-close-notice]");
   await expect(notice).toBeHidden();
+  expect(problems).toEqual([]);
+});
+
+test("botão sol/lua só funciona nos temas com variante clara/escura", async ({ page }) => {
+  const problems = watch(page);
+  const btn = page.locator("#schemeBtn");
+  const bg = () => page.evaluate(() => getComputedStyle(document.body).getPropertyValue("--bg").trim());
+
+  await page.goto("/?tema=airbnb#/");
+  await expect(btn).toHaveAttribute("aria-disabled", "true"); // Airbnb: sem variante
+  await expect(btn).toHaveAttribute("title", /não tem variante/);
+
+  await page.goto("/?tema=padrao#/"); // o Padrão tem variante escura própria
+  await expect(btn).toHaveAttribute("aria-disabled", "false");
+
+  await page.goto("/#/design-system/github");
+  await expect(btn).toHaveAttribute("aria-disabled", "false");
+  expect(await bg()).toBe("#ffffff");
+  await btn.click();
+  await expect(page.locator("html")).toHaveAttribute("data-scheme", "dark");
+  expect(await bg()).toBe("#0d1117");
+  await expect(btn).toHaveAttribute("data-target", "light");
+
+  // a escolha vale em outro tema com variante e é desfeita no clique seguinte
+  await page.goto("/#/design-system/perplexity");
+  await expect(btn).toHaveAttribute("aria-disabled", "false");
+  expect(await bg()).toBe("#0f0f10"); // base escura, escolha "dark": nada muda
+  await btn.click();
+  await expect(page.locator("html")).toHaveAttribute("data-scheme", "light");
+  expect(await bg()).toBe("#ffffff");
+
+  // tema sem variante: botão desabilitado e sem data-scheme
+  await page.goto("/#/design-system/airbnb");
+  await expect(btn).toHaveAttribute("aria-disabled", "true");
+  await expect(page.locator("html")).not.toHaveAttribute("data-scheme", /.+/);
+  expect(problems).toEqual([]);
+});
+
+test("tema na URL: link compartilhável, voltar desfaz a troca e o seletor acompanha", async ({ page }) => {
+  const problems = watch(page);
+  const pick = async (name) => {
+    await page.click(".combobox-btn");
+    await page.keyboard.type(name);
+    await page.keyboard.press("Enter");
+  };
+
+  // abrir um link com tema aplica esse tema (a URL manda sobre o que ficou guardado)
+  await page.goto("/?tema=bugatti#/loja");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "bugatti");
+  await expect(page.locator(".combobox-label")).toContainText("Bugatti");
+
+  // trocar de tema põe ?tema= na URL e navegar mantém o parâmetro
+  await pick("tesla");
+  await expect(page).toHaveURL(/\?tema=tesla#\/loja/);
+  await page.click('.main-nav > a[href="#/"]');
+  await expect(page).toHaveURL(/\?tema=tesla#\//);
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "tesla");
+
+  // voltar desfaz a troca de tema
+  await pick("bmw");
+  await expect(page).toHaveURL(/\?tema=bmw#\//);
+  await page.goBack();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "tesla");
+  await expect(page.locator(".combobox-label")).toContainText("Tesla");
+  await expect(page).toHaveURL(/\?tema=tesla#\//);
+
+  // sem o parâmetro vale o tema guardado, e a URL passa a ter o ?tema=
+  await page.goto("/#/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "tesla");
+  await expect(page).toHaveURL(/\?tema=tesla#\//);
+
+  // tema inexistente na URL é ignorado
+  await page.goto("/?tema=nao-existe#/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "tesla");
+
+  // na página de um DS o seletor mostra o tema da prévia
+  await page.goto("/?tema=tesla#/design-system/ferrari");
+  await expect(page.locator(".combobox-label")).toContainText("Ferrari");
   expect(problems).toEqual([]);
 });
