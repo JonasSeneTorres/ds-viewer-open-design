@@ -2,6 +2,7 @@
 
 import { T } from "./i18n.js";
 import { page } from "./layout.js";
+import { accordionHTML } from "./ui.js";
 import { esc } from "./util.js";
 
 
@@ -58,7 +59,7 @@ function licensesHTML() {
     legalHead(T("footer.lic"), T("lic.title"), T("lic.lede")) +
     '<div class="legal">' +
     "<section><h2>" + esc(T("lic.codeTitle")) + "</h2><p>" + esc(T("lic.codeText")) + "</p>" +
-    "<details><summary>" + esc(T("lic.mitText")) + "</summary><pre>" + esc(MIT_TEXT) + "</pre></details></section>" +
+    accordionHTML([{ id: "mitAcc", title: T("lic.mitText"), body: "<pre>" + esc(MIT_TEXT) + "</pre>" }]) + "</section>" +
     "<section><h2>" + esc(T("lic.catTitle")) + "</h2><p>" + esc(T("lic.catText")) + "</p><p>" + esc(T("lic.catChanges")) + "</p>" +
     '<ul class="legal-links">' +
     "<li>" + extLink("https://open-design.ai/plugins/systems/", T("lic.linkDocs")) + "</li>" +

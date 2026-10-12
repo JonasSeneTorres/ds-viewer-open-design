@@ -1175,6 +1175,30 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None, type_roles=None
     # (sem eles o CSS usa --accent e --accent-strong)
     extras = {k: g(k) for k in ("--field-bg", "--grad-1", "--grad-2", "--row-bg", "--row-stripe", "--row-hover",
                                   "--cta-bg", "--cta-btn-fg") if g(k)}
+
+    # Cor secundária (botões de destaque secundário, como "Ver código"): a paleta secundária do DS ou, sem ela,
+    # a neutra. O preenchimento passa de 4,5:1 com o texto e de 3:1 contra a superfície (WCAG 1.4.3 e 1.4.11).
+    sec_pal = next((p for p in palettes if p["name"] == roles.get("secondary")), None) or \
+        next((p for p in palettes if p["name"] == roles.get("neutral")), None)
+    if sec_pal and parse_hex(sec_pal["base"]):
+        base = parse_hex(sec_pal["base"])
+        picked = None
+        for pct in range(0, 101, 5):
+            cand = to_hex(mix_oklab(hex_to_rgb(base), hex_to_rgb(fg_c), pct / 100))
+            bg2, fg2 = solid_pair(cand, ink_for(cand))
+            if contrast(hex_to_rgb(bg2), hex_to_rgb(fg2)) >= 4.5 and contrast(hex_to_rgb(bg2), hex_to_rgb(surf_c)) >= 3:
+                picked = (bg2, fg2)
+                break
+        if picked:
+            sec_bg, sec_fg = picked
+            toward = "#000000" if sec_fg == "#ffffff" else "#ffffff"
+            extras["--secondary"] = sec_bg
+            extras["--secondary-fg"] = sec_fg
+            extras["--secondary-hover"] = to_hex(mix_oklab(hex_to_rgb(sec_bg), hex_to_rgb(toward), 0.12))
+            before = contrast(hex_to_rgb(base), hex_to_rgb(ink_for(base)))
+            if sec_bg.lower() != base.lower() and (before < 4.5 or contrast(hex_to_rgb(base), hex_to_rgb(surf_c)) < 3):
+                note("--secondary", base, sec_bg, min(before, contrast(hex_to_rgb(base), hex_to_rgb(surf_c)) + 1.5),
+                     contrast(hex_to_rgb(sec_bg), hex_to_rgb(sec_fg)))
     # esquema de cores nativo: ícones de calendário e relógio, barras de rolagem e controles do navegador
     # ficam claros sobre fundo escuro
     scheme = {"color-scheme": "dark" if bg_hex and luminance(hex_to_rgb(bg_hex)) < 0.18 else "light"}

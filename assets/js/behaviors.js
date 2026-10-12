@@ -1,5 +1,7 @@
 // Comportamentos globais dos formulários de exemplo.
 
+import { T } from "./i18n.js";
+import { showToast } from "./ui.js";
 import { app } from "./util.js";
 
 
@@ -34,6 +36,8 @@ document.addEventListener("keydown", function (e) {
 app.addEventListener("submit", function (e) {
   if (!e.target.closest) return;
   if (e.target.closest(".aside-search, .draft-form, .newsletter-form")) e.preventDefault();
+  if (e.target.closest(".draft-form")) showToast("ok", T("dash.toastDraft"));
+  if (e.target.closest(".newsletter-form")) showToast("ok", T("aside.toastNl"));
   var contact = e.target.closest(".contact-form");
   if (contact) {
     e.preventDefault();

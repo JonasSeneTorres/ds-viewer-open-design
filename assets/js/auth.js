@@ -4,6 +4,7 @@ import { T } from "./i18n.js";
 import { iconSVG } from "./institutional.js";
 import { setTitle } from "./layout.js";
 import { setFieldError } from "./table.js";
+import { tipWrap } from "./ui.js";
 import { esc } from "./util.js";
 
 
@@ -145,7 +146,8 @@ function authCardHTML(state) {
     '<div class="oauth-row">' +
     [["google", "Google"], ["code", "GitHub"], ["windows", "Microsoft"]].map(function (o) {
       var label = T("auth.continueWith") + " " + o[1];
-      return '<button type="button" class="btn btn-ghost oauth" aria-label="' + esc(label) + '" title="' + esc(label) + '">' + oauthIconSVG(o[0]) + "</button>";
+      return tipWrap('<button type="button" class="btn btn-ghost oauth" aria-label="' + esc(label) + '">' + oauthIconSVG(o[0]) + "</button>",
+        "oauthTip-" + o[0], label, { label: true, below: true });
     }).join("") +
     "</div>" +
     '<p class="sso"><button type="button" class="link-btn sso-link">' + esc(T("auth.continueWith")) + " SSO</button></p>" +

@@ -16,6 +16,7 @@ import { licensesHTML, privacyHTML } from "./js/legal.js";
 import { SHOP_CATS, shopCatName, shopHTML, shopMount } from "./js/shop.js";
 import { loadTimer, resetTableState, tableMount, tablePageHTML } from "./js/table.js";
 import { applyTheme, currentTheme, getStoredTheme, setTheme, syncPicker, themeFromURL } from "./js/theme.js";
+import { setTipText } from "./js/ui.js";
 import { app, esc } from "./js/util.js";
 import "./js/behaviors.js"; // só efeitos: cliques e Enter dos formulários de exemplo
 
@@ -227,7 +228,7 @@ function applyStaticI18n() {
   });
   if (langBtn) {
     langBtn.setAttribute("aria-label", T("lang.label"));
-    langBtn.setAttribute("title", T("lang.label"));
+    setTipText("langTip", T("lang.label"));
     document.getElementById("langCode").textContent = T("lang.code");
   }
   if (comboBtn) comboBtn.setAttribute("aria-label", T("combo.label"));

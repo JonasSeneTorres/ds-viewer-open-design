@@ -3588,7 +3588,9 @@ fieldset {
   gap: 4px;
   border-bottom: var(--bw) solid var(--border);
   margin-bottom: 14px;
+  /* só na largura (quando as abas não cabem); na altura nunca rola */
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .tab {
@@ -3596,8 +3598,8 @@ fieldset {
   background: transparent;
   color: var(--muted);
   border: 0;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  /* o sublinhado é interno: com margem negativa a aba passava 1px da altura e abria uma barra de rolagem */
+  box-shadow: inset 0 -2px 0 transparent;
   font-weight: var(--btn-weight, 600);
   cursor: pointer;
   white-space: nowrap;
@@ -3609,7 +3611,7 @@ fieldset {
 
 .tab[aria-selected="true"] {
   color: var(--accent-strong);
-  border-bottom-color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 .tab:focus-visible,
@@ -3850,4 +3852,130 @@ fieldset {
   direction: ltr;
   unicode-bidi: isolate;
   text-align: left;
+}
+
+
+/* ---------- Componentes: nota, cabeçalho do cartão e visão de código ---------- */
+
+.comp-note {
+  max-width: 70ch;
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  background: var(--accent-weak);
+  border: var(--bw) solid color-mix(in oklab, var(--accent) 30%, transparent);
+  border-inline-start-width: 4px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+}
+
+.widget-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline-end: 12px;
+  border-bottom: var(--bw) solid var(--border-soft, var(--border));
+}
+
+.widget-head .widget-title {
+  flex: 1;
+  min-width: 0;
+  border-bottom: 0;
+}
+
+.code-btn {
+  flex: none;
+}
+
+.dialog-code {
+  width: min(880px, calc(100vw - 32px));
+}
+
+.code-tabs {
+  padding: 0 22px;
+}
+
+.code-tabs .tablist {
+  margin-bottom: 0;
+}
+
+.code-body {
+  max-height: min(70vh, 640px);
+  padding-top: 16px;
+}
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.code-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.code-panel pre {
+  margin: 0;
+  max-height: 48vh;
+  overflow: auto;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  white-space: pre;
+  direction: ltr;
+  text-align: left;
+}
+
+.code-panel pre:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
+/* "Ver código": botão no tom secundário do tema (ou neutro, quando o DS não tem secundária) */
+.widget-head .code-btn {
+  background: var(--secondary, var(--surface));
+  color: var(--secondary-fg, var(--fg));
+  border-color: var(--secondary, var(--border-strong));
+}
+
+.widget-head .code-btn:hover {
+  background: var(--secondary-hover, var(--surface-2));
+  border-color: var(--secondary-hover, var(--accent));
+  color: var(--secondary-fg, var(--fg));
+}
+
+
+/* ---------- Tooltip em outras posições, paginação da tabela e aviso com accordion ---------- */
+
+.tip-wrap.tip-below .tip {
+  top: calc(100% + 8px);
+  bottom: auto;
+}
+
+/* para itens na borda direita da tela: o tooltip termina junto do gatilho em vez de centralizar */
+.tip-wrap.tip-end .tip {
+  left: auto;
+  inset-inline-end: 0;
+  transform: none;
+}
+
+.tip-wrap.tip-block {
+  display: block;
+}
+
+.table-pagination {
+  margin-top: 16px;
+}
+
+.table-pagination:empty {
+  display: none;
+}
+
+.font-notice-inner .accordion {
+  flex: 1;
+  min-width: 0;
+  background: var(--surface);
 }
