@@ -19,7 +19,7 @@
     "check:js": "node scripts/check_js.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test:unit": "node --test \"tests/unit/*.test.mjs\" && python -m unittest discover -s tests/unit"
+    "test:unit": "node --test tests/unit/*.test.mjs && python -m unittest discover -s tests/unit"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
