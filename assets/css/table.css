@@ -1,0 +1,92 @@
+/* Tabela CRUD de exemplo (#/tabela). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+.table-scroll {
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+/* Tabela de exemplo: linhas, zebra e hover podem ser definidos pelo tema (--row-bg, --row-stripe, --row-hover) */
+
+#recordsTable tbody tr {
+  background: var(--row-bg, transparent);
+}
+
+#recordsTable tbody tr:nth-child(even) {
+  background: var(--row-stripe, var(--row-bg, transparent));
+}
+
+#recordsTable tbody tr:hover {
+  background: var(--row-hover, color-mix(in oklab, var(--surface-2) 70%, var(--surface)));
+}
+
+td.num,
+th.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.pill-estável {
+  color: var(--ok-ink, var(--ok));
+  background: var(--ok-weak);
+  border-color: color-mix(in oklab, var(--ok) 30%, transparent);
+}
+
+.pill-beta {
+  color: var(--warn-ink, var(--warn));
+  background: var(--warn-weak);
+  border-color: color-mix(in oklab, var(--warn) 30%, transparent);
+}
+
+.pill-experimental {
+  color: var(--accent-strong);
+  background: var(--accent-weak);
+  border-color: color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.pill-depreciado {
+  color: var(--danger-ink, var(--danger));
+  background: var(--danger-weak);
+  border-color: color-mix(in oklab, var(--danger) 30%, transparent);
+}
+
+.empty.is-error strong {
+  color: var(--danger-ink, var(--danger));
+}
+
+.table-pagination {
+  margin-top: 16px;
+}
+
+.table-pagination:empty {
+  display: none;
+}

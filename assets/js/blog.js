@@ -2,14 +2,14 @@
 
 import { ARTICLES } from "./content.js";
 import { T } from "./i18n.js";
-import { notFoundHTML, page } from "./layout.js";
+import { notFoundHTML } from "./layout.js";
 import { esc, formatDate } from "./util.js";
 
 
 // Blog: o destaque e a grade de artigos.
 function blogHTML() {
-  var featured = ARTICLES[0];
-  var rest = ARTICLES.slice(1);
+  const featured = ARTICLES[0];
+  const rest = ARTICLES.slice(1);
   return (
     '<div class="page-head">' +
     '<span class="kicker">' + esc(T("blog.kicker")) + "</span>" +
@@ -48,7 +48,7 @@ function blogHTML() {
 // Barra lateral de blog genérico: busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags.
 // É só ilustrativa: a busca e o envio não fazem nada e os links não têm destino.
 function socialIconSVG(kind) {
-  var paths = {
+  const paths = {
     rss: '<circle cx="6" cy="18" r="2"/><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/>',
     video: '<rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/>',
     photo: '<rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17" cy="7" r="0.6"/>',
@@ -61,12 +61,12 @@ function socialIconSVG(kind) {
 
 
 function blogAsideHTML() {
-  var topics = ["Lorem", "Ipsum", "Dolor", "Sit amet", "Consectetur", "Adipiscing"];
-  var tags = [
+  const topics = ["Lorem", "Ipsum", "Dolor", "Sit amet", "Consectetur", "Adipiscing"];
+  const tags = [
     ["lorem", 5], ["ipsum", 3], ["dolor", 4], ["amet", 1], ["elit", 2], ["tempor", 1], ["magna", 3], ["aliqua", 2],
     ["veniam", 1], ["nostrud", 4], ["laboris", 2], ["aute", 1], ["irure", 3], ["cupidatat", 1], ["deserunt", 2], ["mollit", 1]
   ];
-  var social = [["people", "Facebook"], ["video", "YouTube"], ["photo", "Instagram"], ["chat", "X"], ["people", "LinkedIn"], ["rss", "RSS"]];
+  const social = [["people", "Facebook"], ["video", "YouTube"], ["photo", "Instagram"], ["chat", "X"], ["people", "LinkedIn"], ["rss", "RSS"]];
   function block(title, body, cls) {
     return '<section class="aside-block' + (cls ? " " + cls : "") + '"><h2 class="aside-title">' + esc(title) + "</h2>" + body + "</section>";
   }
@@ -102,18 +102,18 @@ function blogAsideHTML() {
 
 
 function articleTitle(id) {
-  for (var i = 0; i < ARTICLES.length; i++) if (ARTICLES[i].id === id) return ARTICLES[i].title;
+  for (let i = 0; i < ARTICLES.length; i++) if (ARTICLES[i].id === id) return ARTICLES[i].title;
   return T("art.article");
 }
 
 
 function articleHTML(id) {
-  var i = ARTICLES.map(function (a) { return a.id; }).indexOf(id);
+  const i = ARTICLES.map(function (a) { return a.id; }).indexOf(id);
   if (i === -1) return notFoundHTML();
-  var a = ARTICLES[i];
-  var prev = ARTICLES[i - 1];
-  var next = ARTICLES[i + 1];
-  var aside = blogAsideHTML();
+  const a = ARTICLES[i];
+  const prev = ARTICLES[i - 1];
+  const next = ARTICLES[i + 1];
+  const aside = blogAsideHTML();
   return (
     '<div class="article-layout">' +
     '<div class="article-body">' +

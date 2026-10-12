@@ -32,6 +32,8 @@ Páginas:
 index.html              página única (router por hash) e diálogos da tabela
 tests/
   e2e.spec.mjs          testes E2E (Playwright)
+  unit/                 testes unitários: *.test.mjs (node:test, módulos de assets/js/) e test_build.py (unittest, funções puras do build)
+eslint.config.mjs       regras do ESLint (npm run lint)
 .github/workflows/
   pages.yml             testes e publicação no GitHub Pages
 assets/
@@ -50,7 +52,12 @@ assets/
     home.js, blog.js, table.js, form.js, ds.js, components.js, dashboard.js, shop.js, institutional.js, auth.js, legal.js
                         uma página (ou grupo de telas) cada: o HTML e a interação dela
     behaviors.js        comportamentos globais dos formulários de exemplo
-  styles.css            estilos do produto (usam só as variáveis do tema)
+  css/                  estilos do produto (usam só as variáveis do tema), divididos por página:
+    core.css            núcleo: base, cabeçalho, rodapé, botões, campos, tabela, cartões (em toda página)
+    ds.css              catálogo e página de cada DS (vem no index.html: é a página inicial)
+    blog.css, dashboard.css, shop.css, institutional.css, auth.css, legal.css, components.css, table.css, form.css
+                        uma página cada; buscados na primeira visita à rota (assets/js/page-css.js)
+    late.css            por último: componentes compartilhados, RTL e cabeçalho responsivo (sobrescrevem as páginas)
   themes.css            valores-base das variáveis (fallback antes de o tema carregar)
   logo.svg
   og.png                imagem de compartilhamento (1200 × 630)
@@ -108,6 +115,8 @@ python -m http.server 8317
 | `npm run check` | Confere a consistência dos dados, incluindo variantes claro/escuro e relatórios de contraste (`scripts/check_data.py`), e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
 | `npm run check:js` | Confere a sintaxe do JavaScript do site (`assets/app.js` e `assets/js/*.js`) |
+| `npm run lint` | ESLint em todo o JavaScript (`no-var`, `prefer-const`, `eqeqeq`, `no-unused-vars` e as regras recomendadas). `npm run lint:fix` aplica o que o ESLint sabe corrigir sozinho |
+| `npm run test:unit` | Testes unitários, sem navegador e sem `.cache/`: `node --test` nos módulos de `assets/js/` (escape de HTML, i18n, paginação, mapa de rotas do CSS) e `unittest` nas funções puras do build (cores, contraste, sanitização do HTML, leitura do guia) |
 | `npm run test:e2e` | Testes E2E (Playwright, `tests/e2e.spec.mjs`). Só Chromium por padrão; `PW_BROWSERS=chromium,firefox,webkit` roda os três motores (precisa de `npx playwright install firefox webkit`). Sem baixar o Chromium: `PW_CHANNEL=msedge npm run test:e2e` |
 | `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita e `PW_BROWSER=firefox` (ou `webkit`) troca o motor. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
@@ -133,10 +142,11 @@ O Padrão não está em `systems-raw.json`: ele é montado a partir das páginas
 
 O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a cada push e pull request:
 
-1. `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
-2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
-3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 28 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes, visão de código, componentes no site todo e o tema Urdu em RTL). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+1. `npm run lint` (ESLint) e `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
+2. `npm run test:unit`: 28 testes em JavaScript e 42 em Python, só biblioteca padrão
+3. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
+4. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
+5. `npm run test:e2e`: 29 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes, visão de código, componentes no site todo e o tema Urdu em RTL, CSS por página sob demanda). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 143 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
 
@@ -148,7 +158,7 @@ O tema padrão (**Padrão**) é próprio do projeto e está descrito em [O tema 
 
 **Tema na URL:** a escolha vai em `?tema=<id>` (por exemplo `/?tema=bugatti#/loja`), então o link compartilha o tema aplicado. A URL manda sobre o que ficou guardado no `localStorage`; cada troca é uma entrada do histórico, e o botão voltar desfaz a troca. Os links internos mantêm o parâmetro.
 
-Cada DS vira um arquivo `data/themes/<id>.css` com as fontes (`@font-face` apontando para `assets/fonts/`) e as variáveis CSS (`--bg`, `--fg`, `--accent`, `--radius`, `--font-display`…) em `[data-theme="<id>"] { … }`. O `styles.css` só usa essas variáveis, por isso qualquer tema funciona em qualquer página.
+Cada DS vira um arquivo `data/themes/<id>.css` com as fontes (`@font-face` apontando para `assets/fonts/`) e as variáveis CSS (`--bg`, `--fg`, `--accent`, `--radius`, `--font-display`…) em `[data-theme="<id>"] { … }`. O CSS do site (`assets/css/`) só usa essas variáveis, por isso qualquer tema funciona em qualquer página.
 
 O tema padrão já vem linkado no `index.html`; os outros são carregados quando aplicados, e o site só troca de tema depois que o CSS chega, sem "piscar" o visual-base. O `assets/themes.css` guarda só os valores-base, usados se o CSS de um tema falhar.
 

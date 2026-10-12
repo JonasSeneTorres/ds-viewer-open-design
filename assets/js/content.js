@@ -1,16 +1,16 @@
 // Conteúdo de exemplo: Lorem ipsum, artigos, categorias e registros da tabela.
 
 
-var THEME_KEY = "odv-theme";
+const THEME_KEY = "odv-theme";
 
-var RECORDS_KEY = "odv-records";
+const RECORDS_KEY = "odv-records";
 
 
-var CATEGORIES = ["Ação", "Navegação", "Dados", "Feedback", "Formulário", "Layout"];
+const CATEGORIES = ["Ação", "Navegação", "Dados", "Feedback", "Formulário", "Layout"];
 
 
 // Conteúdo de exemplo: Lorem ipsum, para o blog funcionar igual em qualquer idioma.
-var LOREM = [
+const LOREM = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
@@ -38,7 +38,7 @@ function loremBody(n) {
 }
 
 
-var ARTICLES = [
+const ARTICLES = [
   {
     id: "lorem-ipsum-dolor",
     tag: "Lorem",
@@ -102,7 +102,7 @@ var ARTICLES = [
 ];
 
 
-var records = loadRecords();
+let records = loadRecords();
 
 
 function setRecords(next) {
@@ -112,9 +112,9 @@ function setRecords(next) {
 
 function loadRecords() {
   try {
-    var raw = localStorage.getItem(RECORDS_KEY);
+    const raw = localStorage.getItem(RECORDS_KEY);
     if (raw) {
-      var parsed = JSON.parse(raw);
+      const parsed = JSON.parse(raw);
       if (Array.isArray(parsed)) return parsed;
     }
   } catch (e) {}

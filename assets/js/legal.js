@@ -1,7 +1,6 @@
 // Licenças e privacidade.
 
 import { T } from "./i18n.js";
-import { page } from "./layout.js";
 import { accordionHTML } from "./ui.js";
 import { esc } from "./util.js";
 
@@ -11,7 +10,7 @@ import { esc } from "./util.js";
 // então o tema selecionado vale para elas também.
 // ------------------------------------------------------------------
 
-var MIT_TEXT = [
+const MIT_TEXT = [
   "MIT License",
   "",
   "Copyright (c) 2026 Jonas Sene Torres",

@@ -1,0 +1,298 @@
+/* Página institucional (#/institucional). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* ---------- Página institucional: faixas de largura total com fundos alternados ---------- */
+
+.band {
+  padding-block: clamp(40px, 6vw, var(--section-y, 80px));
+  color: var(--fg);
+}
+
+.band-a { background: var(--bg); }
+
+.band-b { background: var(--surface-2); }
+
+.band-c { background: var(--accent-weak); }
+
+.band-solid {
+  background: var(--cta-bg, var(--solid));
+  color: var(--solid-fg);
+}
+
+.band-solid h2,
+.band-solid p {
+  color: inherit;
+}
+
+.band-hero {
+  border-bottom: var(--bw) solid var(--border);
+}
+
+.band-head {
+  max-width: 62ch;
+  margin-bottom: 32px;
+}
+
+.band-head .lede {
+  margin-bottom: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+}
+
+.split-text .hero-actions {
+  margin-top: 24px;
+}
+
+.ph {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  color: var(--fg-soft);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-lg, var(--radius));
+}
+
+.ph-wide { aspect-ratio: 4 / 3; }
+
+.ph-card { aspect-ratio: 16 / 9; border-radius: var(--radius-sm); margin-bottom: 12px; }
+
+.ph-map { aspect-ratio: 16 / 9; margin-top: 24px; }
+
+.checks {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.checks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  background: var(--accent-weak);
+  color: var(--accent-strong);
+  border-radius: 50%;
+}
+
+.check-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.stats-row dt {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--display-tracking);
+  color: var(--accent-strong);
+}
+
+.stats-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--fg-soft);
+  font-size: var(--fs-sm, 0.9rem);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 20px;
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+}
+
+.info-card {
+  margin: 0;
+  padding: 24px;
+  background: var(--surface);
+  color: var(--fg);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-lg, var(--radius));
+  box-shadow: var(--shadow-card);
+}
+
+.info-card h3 {
+  margin: 12px 0 6px;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--fg-soft);
+}
+
+.icon-bubble {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--accent-weak);
+  color: var(--accent-strong);
+  border-radius: var(--radius-sm);
+}
+
+.service .icon-bubble {
+  margin-top: 4px;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.quote {
+  display: grid;
+  gap: 16px;
+}
+
+.quote-mark {
+  color: var(--accent-strong);
+}
+
+.quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--fg);
+}
+
+.quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--fg);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+}
+
+.cta h2 {
+  margin: 0 0 6px;
+}
+
+.cta p {
+  margin: 0;
+  max-width: 60ch;
+}
+
+.btn-invert {
+  background: var(--solid-fg);
+  color: var(--cta-btn-fg, var(--solid));
+  border-color: var(--solid-fg);
+}
+
+.btn-invert:hover {
+  background: var(--solid-fg);
+  color: var(--cta-btn-fg, var(--solid));
+  text-decoration: underline;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-list svg {
+  flex: none;
+  color: var(--accent-strong);
+}
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-form .field input,
+.contact-form .field select,
+.contact-form .field textarea {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--field-bg, var(--bg));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.contact-form .btn {
+  justify-self: start;
+}
+
+.contact-form .form-alert {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+
+.split,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+.split-rev > .ph {
+    order: 2;
+  }
+}

@@ -13,6 +13,7 @@ import { LANG_KEY, T, lang, setLang } from "./js/i18n.js";
 import { institutionalHTML } from "./js/institutional.js";
 import { dsName, notFoundHTML, page, setTitle } from "./js/layout.js";
 import { licensesHTML, privacyHTML } from "./js/legal.js";
+import { cssFor, cssReady, ensurePageCss } from "./js/page-css.js";
 import { SHOP_CATS, shopCatName, shopHTML, shopMount } from "./js/shop.js";
 import { loadTimer, resetTableState, tableMount, tablePageHTML } from "./js/table.js";
 import { applyTheme, currentTheme, getStoredTheme, setTheme, syncPicker, themeFromURL } from "./js/theme.js";
@@ -23,9 +24,9 @@ import "./js/behaviors.js"; // só efeitos: cliques e Enter dos formulários de 
 
 // ---- menu do cabeçalho em telas de tablet em pé ou menores: o hambúrguer abre o painel com a navegação,
 // o seletor de temas e o idioma; a marca e o botão claro/escuro ficam sempre visíveis
-var navToggle = document.getElementById("navToggle");
-var siteMenu = document.getElementById("siteMenu");
-var NAV_BREAKPOINT = window.matchMedia ? window.matchMedia("(min-width: 769px)") : null;
+const navToggle = document.getElementById("navToggle");
+const siteMenu = document.getElementById("siteMenu");
+const NAV_BREAKPOINT = window.matchMedia ? window.matchMedia("(min-width: 769px)") : null;
 
 function navIsOpen() {
   return !!siteMenu && siteMenu.getAttribute("data-open") === "true";
@@ -33,7 +34,7 @@ function navIsOpen() {
 
 function updateNavLabel() {
   if (!navToggle) return;
-  var label = T(navIsOpen() ? "nav.menuClose" : "nav.menuOpen");
+  const label = T(navIsOpen() ? "nav.menuClose" : "nav.menuOpen");
   navToggle.setAttribute("aria-label", label);
   setTipText("navToggleTip", label);
 }
@@ -51,7 +52,7 @@ if (navToggle && siteMenu) {
   // Esc fecha o painel; se o submenu Exemplos estiver aberto, o Esc é dele (fase de captura: roda antes)
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape" || !navIsOpen()) return;
-    var ex = document.getElementById("examplesMenu");
+    const ex = document.getElementById("examplesMenu");
     if (ex && !ex.hidden) return;
     setNav(false, true);
   }, true);
@@ -63,18 +64,16 @@ if (navToggle && siteMenu) {
     if (e.target.closest("a")) setNav(false, false);
   });
   if (NAV_BREAKPOINT) {
-    var onWide = function (e) { if (e.matches) setNav(false, false); };
+    const onWide = function (e) { if (e.matches) setNav(false, false); };
     if (NAV_BREAKPOINT.addEventListener) NAV_BREAKPOINT.addEventListener("change", onWide);
   }
   updateNavLabel();
 }
 
 // ---- menu "Exemplos" do cabeçalho
-var examplesBtn = document.getElementById("examplesBtn");
+const examplesBtn = document.getElementById("examplesBtn");
 
-var examplesMenu = document.getElementById("examplesMenu");
-
-var EXAMPLE_ROUTES = ["/entrar", "/institucional", "/blog", "/tabela", "/formulario", "/componentes", "/dashboard", "/loja"];
+const examplesMenu = document.getElementById("examplesMenu");
 
 
 function openExamples() {
@@ -103,15 +102,15 @@ if (examplesBtn && examplesMenu) {
     if (e.key === "ArrowDown") {
       e.preventDefault();
       openExamples();
-      var first = examplesMenu.querySelector("a");
+      const first = examplesMenu.querySelector("a");
       if (first) first.focus();
     } else if (e.key === "Escape") {
       closeExamples(false);
     }
   });
   examplesMenu.addEventListener("keydown", function (e) {
-    var links = Array.prototype.slice.call(examplesMenu.querySelectorAll("a"));
-    var i = links.indexOf(document.activeElement);
+    const links = Array.prototype.slice.call(examplesMenu.querySelectorAll("a"));
+    const i = links.indexOf(document.activeElement);
     if (e.key === "ArrowDown") { e.preventDefault(); links[(i + 1) % links.length].focus(); }
     else if (e.key === "ArrowUp") { e.preventDefault(); links[(i - 1 + links.length) % links.length].focus(); }
     else if (e.key === "Escape") { e.preventDefault(); closeExamples(true); }
@@ -129,13 +128,13 @@ function setActiveNav(route) {
     else link.removeAttribute("aria-current");
   }
   document.querySelectorAll(".main-nav > a").forEach(function (link) {
-    var href = link.getAttribute("href").replace("#", "");
+    const href = link.getAttribute("href").replace("#", "");
     mark(link, link.id === "navTheme" ? route.indexOf("/design-system") === 0 : href === route);
   });
-  var inExamples = false;
+  let inExamples = false;
   document.querySelectorAll("#examplesMenu a").forEach(function (link) {
-    var href = link.getAttribute("href").replace("#", "");
-    var on = route === href || route.indexOf(href + "/") === 0;
+    const href = link.getAttribute("href").replace("#", "");
+    const on = route === href || route.indexOf(href + "/") === 0;
     if (on) inExamples = true;
     mark(link, on);
   });
@@ -150,11 +149,19 @@ function focusContent() {
 
 
 function router(moveFocus) {
-  var hash = location.hash.replace(/^#/, "");
+  const hash = location.hash.replace(/^#/, "");
+  // O CSS da página vem sob demanda: espera o arquivo (uma vez por página) e só então desenha.
+  const needed = cssFor(hash);
+  if (!cssReady(needed)) {
+    ensurePageCss(needed).then(function () {
+      if (location.hash.replace(/^#/, "") === hash) router(moveFocus);
+    });
+    return;
+  }
   closeExamples(false);
   // Cada página de DS é exibida com o próprio tema (prévia); as demais voltam ao tema escolhido.
-  var previewId = hash.indexOf("/design-system/") === 0 ? hash.replace("/design-system/", "") : "";
-  var previewable = THEMES.some(function (t) { return t.id === previewId; });
+  const previewId = hash.indexOf("/design-system/") === 0 ? hash.replace("/design-system/", "") : "";
+  const previewable = THEMES.some(function (t) { return t.id === previewId; });
   applyTheme(previewable ? previewId : currentTheme);
   syncPicker(previewable ? previewId : currentTheme);
   if (!hash || hash === "/") {
@@ -175,8 +182,8 @@ function router(moveFocus) {
     location.replace("#/");
     return;
   } else if (hash.indexOf("/design-system/") === 0) {
-    var dsId = hash.replace("/design-system/", "");
-    var crumbs = [[dsName(dsId)]];
+    const dsId = hash.replace("/design-system/", "");
+    const crumbs = [[dsName(dsId)]];
     app.innerHTML = page('<div class="empty"><strong>' + esc(T("ds.loading")) + "</strong></div>", crumbs);
     setTitle(dsName(dsId));
     loadDsDetail(dsId)
@@ -193,7 +200,7 @@ function router(moveFocus) {
       });
     setActiveNav("/design-system");
   } else if (hash === "/entrar" || hash.indexOf("/entrar/") === 0) {
-    var wanted = authFromSlug(hash.replace(/^\/entrar\/?/, ""));
+    const wanted = authFromSlug(hash.replace(/^\/entrar\/?/, ""));
     if (hash !== "/entrar" && hash !== "/entrar/" && !wanted) {
       app.innerHTML = page(notFoundHTML(), [[T("nav.signin"), "#/entrar"], [T("nf.title")]]);
       setTitle(T("nf.title"));
@@ -226,8 +233,8 @@ function router(moveFocus) {
     setTitle(T("nav.dashboard"));
     setActiveNav("/dashboard");
   } else if (hash === "/loja" || hash.indexOf("/loja/") === 0) {
-    var catId = hash.indexOf("/loja/") === 0 ? hash.replace("/loja/", "") : "";
-    var known = SHOP_CATS.some(function (c) { return c.id === catId; });
+    const catId = hash.indexOf("/loja/") === 0 ? hash.replace("/loja/", "") : "";
+    const known = SHOP_CATS.some(function (c) { return c.id === catId; });
     if (catId && !known) {
       app.innerHTML = page(notFoundHTML(), [[T("nav.shop"), "#/loja"], [T("nf.title")]]);
       setTitle(T("nf.title"));
@@ -260,7 +267,7 @@ function router(moveFocus) {
 
 
 // ---- idioma: botão no cabeçalho (alterna pt-BR <-> en-US) ----
-var langBtn = document.getElementById("langBtn");
+const langBtn = document.getElementById("langBtn");
 
 
 function applyStaticI18n() {
@@ -305,7 +312,7 @@ if (langBtn) {
 
 // ---- altura do cabeçalho em --header-h (usada pelo painel fixo das telas de login) ----
 function updateHeaderHeight() {
-  var header = document.querySelector(".site-header");
+  const header = document.querySelector(".site-header");
   if (header) document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
 }
 
@@ -321,10 +328,10 @@ if (window.ResizeObserver && document.querySelector(".site-header")) {
 
 
 // ---- botão "voltar ao topo": aparece depois de rolar a página ----
-var toTop = document.getElementById("toTop");
+const toTop = document.getElementById("toTop");
 
 if (toTop) {
-  var topTicking = false;
+  let topTicking = false;
   function updateToTop() {
     topTicking = false;
     toTop.hidden = window.scrollY < 400;
@@ -333,9 +340,9 @@ if (toTop) {
     if (!topTicking) { topTicking = true; window.requestAnimationFrame(updateToTop); }
   }, { passive: true });
   toTop.addEventListener("click", function () {
-    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
-    var brand = document.querySelector(".brand");
+    const brand = document.querySelector(".brand");
     if (brand) brand.focus({ preventScroll: true });
   });
   updateToTop();
@@ -349,7 +356,7 @@ loadData().then(function () {
   window.addEventListener("hashchange", function () { router(true); });
   // Voltar/avançar entre trocas de tema (a entrada só difere no ?tema=): reaplica o da URL.
   window.addEventListener("popstate", function () {
-    var t = themeFromURL();
+    const t = themeFromURL();
     if (t && t !== currentTheme) {
       setTheme(t, { history: "none" });
       router();

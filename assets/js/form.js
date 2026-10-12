@@ -2,7 +2,6 @@
 
 import { CATEGORIES } from "./content.js";
 import { T } from "./i18n.js";
-import { page } from "./layout.js";
 import { catLabel, clearFieldError, setFieldError } from "./table.js";
 import { esc } from "./util.js";
 
@@ -127,23 +126,23 @@ function formStatesHTML() {
 
 
 function initDemoForm() {
-  var form = document.getElementById("demoForm");
+  const form = document.getElementById("demoForm");
   if (!form) return;
-  var alertBox = document.getElementById("demoAlert");
-  var submit = document.getElementById("demoSubmit");
-  var range = form.elements.intensidade;
-  var out = form.querySelector(".range-row output");
+  const alertBox = document.getElementById("demoAlert");
+  const submit = document.getElementById("demoSubmit");
+  const range = form.elements.intensidade;
+  const out = form.querySelector(".range-row output");
   if (range && out) {
     range.addEventListener("input", function () { out.textContent = range.value; });
   }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var ok = true;
+    let ok = true;
     [form.elements.texto, form.elements.email].forEach(function (input) {
       if (!input.value.trim()) { setFieldError(input, T("frm.required")); ok = false; }
       else clearFieldError(input);
     });
-    var email = form.elements.email;
+    const email = form.elements.email;
     if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       setFieldError(email, T("frm.emailErr"));
       ok = false;
@@ -154,7 +153,7 @@ function initDemoForm() {
       return;
     }
     alertBox.className = "form-alert";
-    var original = submit.innerHTML;
+    const original = submit.innerHTML;
     submit.disabled = true;
     submit.innerHTML = '<span class="spinner"></span> ' + esc(T("frm.sending"));
     setTimeout(function () {

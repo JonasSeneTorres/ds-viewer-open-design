@@ -10,19 +10,19 @@ import { esc } from "./util.js";
 // Título da aba por rota (o nome do site vem depois) e foco no conteúdo ao navegar,
 // para leitores de tela e teclado perceberem a troca de página.
 function setTitle(part) {
-  var site = T("brand");
+  const site = T("brand");
   document.title = part ? part + " · " + site : site;
   updateMeta();
 }
 
 // crumbs: [[label, href], ...] — o último item é a página atual (sem link).
 function breadcrumbs(crumbs) {
-  var items = [[T("nav.home"), "#/"]].concat(crumbs);
+  const items = [[T("nav.home"), "#/"]].concat(crumbs);
   return (
     '<nav class="breadcrumbs" aria-label="' + esc(T("crumbs.label")) + '">' +
     "<ol>" +
     items.map(function (c, i) {
-      var last = i === items.length - 1;
+      const last = i === items.length - 1;
       return last
         ? '<li aria-current="page">' + esc(c[0]) + "</li>"
         : '<li><a href="' + c[1] + '">' + esc(c[0]) + "</a></li>";
@@ -39,7 +39,7 @@ function page(html, crumbs) {
 
 
 function dsName(id) {
-  var i = dsIndex(id);
+  const i = dsIndex(id);
   return i !== -1 ? L(THEMES[i].label) : T("nf.title");
 }
 

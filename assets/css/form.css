@@ -1,0 +1,128 @@
+/* Formulário de exemplo (#/formulario). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+.field-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--fg-soft);
+}
+
+.field .hint {
+  font-size: 0.78rem;
+  color: var(--meta, var(--muted));
+}
+
+.choice {
+  display: grid;
+  gap: 10px;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-track {
+  width: 48px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--border-strong);
+  position: relative;
+  flex: none;
+  transition: background var(--motion-base, 180ms) var(--ease, ease-out);
+}
+
+.switch-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  inset-inline-start: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform var(--motion-base, 180ms) var(--ease, ease-out);
+}
+
+.switch input:checked + .switch-track {
+  background: var(--accent-strong);
+}
+
+.switch input:checked + .switch-track::after {
+  transform: translateX(20px);
+}
+
+[dir="rtl"] .switch input:checked + .switch-track::after {
+  transform: translateX(-20px);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+.form-card {
+  background: var(--surface);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: clamp(22px, 4vw, 36px);
+  max-width: 760px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid color-mix(in oklab, var(--solid-fg) 40%, transparent);
+  border-top-color: var(--solid-fg);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+@media (max-width: 760px) {
+
+.form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.switch:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.form-states {
+  margin-top: 32px;
+}
+
+.btn:disabled .spinner,
+.btn[aria-busy="true"] .spinner {
+  flex: none;
+}
+
+.skeleton-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+}

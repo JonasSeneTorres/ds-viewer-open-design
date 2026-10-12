@@ -4,13 +4,14 @@
 
 import { openCodeView } from "./code-view.js";
 import { T } from "./i18n.js";
+import { allCssUrls } from "./page-css.js";
 import { accordionHTML, mountPagination, paginationHTML, showToast, tipWrap, toastMarkup } from "./ui.js";
 import { esc } from "./util.js";
 
-var TAB_KEYS = ["comp.tab1", "comp.tab2", "comp.tab3"];
-var ACC_KEYS = ["comp.acc1", "comp.acc2", "comp.acc3"];
-var LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-var PAGES = 12;
+const TAB_KEYS = ["comp.tab1", "comp.tab2", "comp.tab3"];
+const ACC_KEYS = ["comp.acc1", "comp.acc2", "comp.acc3"];
+const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+const PAGES = 12;
 
 function block(title, body, cls, codeKey) {
   return (
@@ -88,15 +89,15 @@ function componentsHTML() {
 
 // ---- interação
 function mountTabs() {
-  var root = document.getElementById("demoTabs");
+  const root = document.getElementById("demoTabs");
   if (!root) return;
-  var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+  const tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
   function select(i, focus) {
     tabs.forEach(function (t, j) {
-      var on = i === j;
+      const on = i === j;
       t.setAttribute("aria-selected", String(on));
       t.tabIndex = on ? 0 : -1;
-      var panel = document.getElementById(t.getAttribute("aria-controls"));
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
       if (panel) panel.hidden = !on;
     });
     if (focus) tabs[i].focus();
@@ -104,7 +105,8 @@ function mountTabs() {
   tabs.forEach(function (t, i) {
     t.addEventListener("click", function () { select(i, false); });
     t.addEventListener("keydown", function (e) {
-      var n = tabs.length, to = null;
+      const n = tabs.length;
+      let to = null;
       if (e.key === "ArrowRight") to = (i + 1) % n;
       else if (e.key === "ArrowLeft") to = (i - 1 + n) % n;
       else if (e.key === "Home") to = 0;
@@ -125,9 +127,9 @@ function mountToastButtons() {
 }
 
 function mountDemoPagination() {
-  var box = document.getElementById("demoPagination");
+  const box = document.getElementById("demoPagination");
   if (!box) return;
-  var cur = 1;
+  let cur = 1;
   mountPagination(box, function () { return { cur: cur, total: PAGES }; }, function (n) {
     cur = n;
     box.innerHTML = paginationHTML(cur, PAGES);
@@ -135,8 +137,8 @@ function mountDemoPagination() {
 }
 
 // Visão de código: o HTML vem do elemento na página; o CSS e o JavaScript, dos arquivos publicados.
-var UI_JS = "assets/js/ui.js";
-var CODE_VIEWS = {
+const UI_JS = "assets/js/ui.js";
+const CODE_VIEWS = {
   tabs: { nameKey: "comp.tabs", html: function () { return document.getElementById("demoTabs").outerHTML; },
           cssPattern: /\.tab(s|list|panel)?\b/, fns: ["mountTabs"], jsUrl: "assets/js/components.js" },
   accordion: { nameKey: "comp.accordion", html: function () { return document.querySelector(".accordion").outerHTML; },
@@ -156,10 +158,10 @@ var CODE_VIEWS = {
 function mountCodeButtons() {
   document.querySelectorAll("[data-code]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var v = CODE_VIEWS[btn.getAttribute("data-code")];
+      const v = CODE_VIEWS[btn.getAttribute("data-code")];
       openCodeView({
         nameKey: v.nameKey, html: v.html(), cssPattern: v.cssPattern, fns: v.fns,
-        cssUrl: "assets/styles.css", jsUrl: v.jsUrl, opener: btn
+        cssUrls: allCssUrls(), jsUrl: v.jsUrl, opener: btn
       });
     });
   });

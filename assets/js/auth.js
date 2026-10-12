@@ -13,22 +13,22 @@ import { esc } from "./util.js";
 // O seletor de estados é o mesmo da tabela. Nada é enviado: é só demonstração.
 // ------------------------------------------------------------------
 
-var AUTH_STATES = [["login", "auth.sLogin", ""], ["signup", "auth.sSignup", "cadastro"], ["forgot", "auth.sForgot", "esqueci"], ["reset", "auth.sReset", "nova-senha"]];
+const AUTH_STATES = [["login", "auth.sLogin", ""], ["signup", "auth.sSignup", "cadastro"], ["forgot", "auth.sForgot", "esqueci"], ["reset", "auth.sReset", "nova-senha"]];
 
 
 function authTitle(state) {
-  var key = { login: "auth.loginTitle", signup: "auth.signupTitle", forgot: "auth.forgotTitle", reset: "auth.resetTitle" }[state];
+  const key = { login: "auth.loginTitle", signup: "auth.signupTitle", forgot: "auth.forgotTitle", reset: "auth.resetTitle" }[state];
   return T(key || "auth.loginTitle");
 }
 
-var authState = "login";
+let authState = "login";
 
 
 function setAuthState(next) {
   authState = next;
 }
 
-var AUTH_COMPANY = "XPTO Inc.";
+const AUTH_COMPANY = "XPTO Inc.";
 
 
 // Logo do visualizador de DS (a paleta) só em contorno, numa cor, dentro de uma moldura.
@@ -51,7 +51,7 @@ function authBrandHTML() {
 
 // Ícones simplificados (não são os logotipos oficiais).
 function oauthIconSVG(kind) {
-  var shapes = {
+  const shapes = {
     google: '<path d="M20 12.200c0-.6-.1-1.200-.2-1.700H12v3.300h4.500a3.900 3.900 0 0 1-1.700 2.500v2.100h2.700c1.600-1.500 2.500-3.600 2.500-6.200z" fill="currentColor" stroke="none"/><path d="M12 20.500c2.200 0 4.100-.7 5.500-2l-2.700-2.100c-.7.500-1.700.8-2.800.8-2.200 0-4-1.500-4.700-3.400H4.500v2.100A8.500 8.500 0 0 0 12 20.500z" fill="currentColor" stroke="none"/><path d="M7.300 13.800a5.100 5.100 0 0 1 0-3.600V8.100H4.500a8.500 8.500 0 0 0 0 7.800z" fill="currentColor" stroke="none"/><path d="M12 6.800c1.200 0 2.300.4 3.200 1.200l2.400-2.400A8.500 8.500 0 0 0 4.500 8.100l2.800 2.100c.7-1.900 2.500-3.400 4.700-3.400z" fill="currentColor" stroke="none"/>',
     code: '<circle cx="7" cy="6" r="2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="9" r="2"/><path d="M7 8v8"/><path d="M17 11c0 3-3 3-6 3"/>',
     windows: '<rect x="4" y="4" width="7.500" height="7.500" fill="currentColor" stroke="none"/><rect x="12.500" y="4" width="7.500" height="7.500" fill="currentColor" stroke="none"/><rect x="4" y="12.500" width="7.500" height="7.500" fill="currentColor" stroke="none"/><rect x="12.500" y="12.500" width="7.500" height="7.500" fill="currentColor" stroke="none"/>',
@@ -76,8 +76,8 @@ function pwFieldHTML(name, labelKey, autocomplete) {
 
 
 function authCardHTML(state) {
-  var alertBox = '<div class="form-alert" role="alert"></div>';
-  var back = '<button type="button" class="link-btn" data-auth-go="login">&larr; ' + esc(T("auth.back")) + "</button>";
+  const alertBox = '<div class="form-alert" role="alert"></div>';
+  const back = '<button type="button" class="link-btn" data-auth-go="login">&larr; ' + esc(T("auth.back")) + "</button>";
   if (state === "signup") {
     return (
       authBrandHTML() +
@@ -108,8 +108,8 @@ function authCardHTML(state) {
     );
   }
   if (state === "reset") {
-    var otp = "";
-    for (var i = 1; i <= 6; i++) {
+    let otp = "";
+    for (let i = 1; i <= 6; i++) {
       otp += '<input class="otp-digit" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="' + (i === 1 ? "one-time-code" : "off") + '" aria-label="' + esc(T("auth.digit")) + " " + i + '" data-otp="' + i + '">';
     }
     return (
@@ -145,7 +145,7 @@ function authCardHTML(state) {
     '<div class="divider"><span>' + esc(T("auth.or")) + "</span></div>" +
     '<div class="oauth-row">' +
     [["google", "Google"], ["code", "GitHub"], ["windows", "Microsoft"]].map(function (o) {
-      var label = T("auth.continueWith") + " " + o[1];
+      const label = T("auth.continueWith") + " " + o[1];
       return tipWrap('<button type="button" class="btn btn-ghost oauth" aria-label="' + esc(label) + '">' + oauthIconSVG(o[0]) + "</button>",
         "oauthTip-" + o[0], label, { label: true, below: true });
     }).join("") +
@@ -179,26 +179,26 @@ function authHTML(state) {
 
 
 function authSlug(state) {
-  for (var i = 0; i < AUTH_STATES.length; i++) if (AUTH_STATES[i][0] === state) return AUTH_STATES[i][2];
+  for (let i = 0; i < AUTH_STATES.length; i++) if (AUTH_STATES[i][0] === state) return AUTH_STATES[i][2];
   return "";
 }
 
 
 function authFromSlug(slug) {
-  for (var i = 0; i < AUTH_STATES.length; i++) if (AUTH_STATES[i][2] === slug) return AUTH_STATES[i][0];
+  for (let i = 0; i < AUTH_STATES.length; i++) if (AUTH_STATES[i][2] === slug) return AUTH_STATES[i][0];
   return null;
 }
 
 
 function authMount() {
-  var card = document.getElementById("authCard");
-  var states = document.getElementById("authStates");
+  const card = document.getElementById("authCard");
+  const states = document.getElementById("authStates");
   if (!card || !states) return;
 
   function show(state) {
     authState = state;
     card.innerHTML = authCardHTML(state);
-    var radio = states.querySelector('input[value="' + state + '"]');
+    const radio = states.querySelector('input[value="' + state + '"]');
     if (radio) radio.checked = true;
     // atualiza o endereço sem refazer a rota
     try { history.replaceState(null, "", "#/entrar" + (authSlug(state) ? "/" + authSlug(state) : "")); } catch (e) {}
@@ -206,7 +206,7 @@ function authMount() {
   }
 
   function banner(form, kind, message) {
-    var box = form.querySelector(".form-alert");
+    const box = form.querySelector(".form-alert");
     box.className = "form-alert show " + kind;
     box.textContent = message;
   }
@@ -216,11 +216,11 @@ function authMount() {
     form.querySelectorAll(".field .error, .otp-field .error").forEach(function (el) { el.remove(); });
   }
 
-  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function updateReqs(form) {
-    var pw = form.elements.nova ? form.elements.nova.value : "";
-    var ok = { len: pw.length >= 8, upper: /[A-Z]/.test(pw), num: /\d/.test(pw) };
+    const pw = form.elements.nova ? form.elements.nova.value : "";
+    const ok = { len: pw.length >= 8, upper: /[A-Z]/.test(pw), num: /\d/.test(pw) };
     form.querySelectorAll("[data-req]").forEach(function (li) {
       li.classList.toggle("is-ok", !!ok[li.getAttribute("data-req")]);
     });
@@ -232,30 +232,30 @@ function authMount() {
   });
 
   card.addEventListener("click", function (e) {
-    var go = e.target.closest("[data-auth-go]");
+    const go = e.target.closest("[data-auth-go]");
     if (go) { show(go.getAttribute("data-auth-go")); return; }
-    var tg = e.target.closest("[data-toggle-pw]");
+    const tg = e.target.closest("[data-toggle-pw]");
     if (tg) {
-      var input = tg.parentElement.querySelector("input");
-      var hidden = input.type === "password";
+      const input = tg.parentElement.querySelector("input");
+      const hidden = input.type === "password";
       input.type = hidden ? "text" : "password";
       tg.setAttribute("aria-label", T(hidden ? "auth.hidePw" : "auth.showPw"));
     }
   });
 
   card.addEventListener("input", function (e) {
-    var t = e.target;
+    const t = e.target;
     if (t.classList && t.classList.contains("otp-digit")) {
       t.value = t.value.replace(/\D/g, "").slice(0, 1);
-      var next = t.nextElementSibling;
+      const next = t.nextElementSibling;
       if (t.value && next) next.focus();
     }
-    var form = t.closest && t.closest("form");
+    const form = t.closest && t.closest("form");
     if (form && form.getAttribute("data-form") === "reset") updateReqs(form);
   });
 
   card.addEventListener("keydown", function (e) {
-    var t = e.target;
+    const t = e.target;
     if (t.classList && t.classList.contains("otp-digit") && e.key === "Backspace" && !t.value && t.previousElementSibling) {
       t.previousElementSibling.focus();
     }
@@ -263,23 +263,23 @@ function authMount() {
 
   // colar o código inteiro distribui os dígitos
   card.addEventListener("paste", function (e) {
-    var t = e.target;
+    const t = e.target;
     if (!(t.classList && t.classList.contains("otp-digit"))) return;
-    var digits = (e.clipboardData || window.clipboardData).getData("text").replace(/\D/g, "").slice(0, 6);
+    const digits = (e.clipboardData || window.clipboardData).getData("text").replace(/\D/g, "").slice(0, 6);
     if (!digits) return;
     e.preventDefault();
-    var boxes = card.querySelectorAll(".otp-digit");
-    for (var i = 0; i < boxes.length; i++) boxes[i].value = digits.charAt(i) || "";
-    var last = Math.min(digits.length, boxes.length) - 1;
+    const boxes = card.querySelectorAll(".otp-digit");
+    for (let i = 0; i < boxes.length; i++) boxes[i].value = digits.charAt(i) || "";
+    const last = Math.min(digits.length, boxes.length) - 1;
     if (boxes[last]) boxes[last].focus();
   });
 
   card.addEventListener("submit", function (e) {
     e.preventDefault();
-    var form = e.target;
-    var kind = form.getAttribute("data-form");
+    const form = e.target;
+    const kind = form.getAttribute("data-form");
     clearErrors(form);
-    var bad = [];
+    const bad = [];
     function fail(input, key) { setFieldError(input, T(key)); bad.push(input); }
 
     if (kind === "login") {
@@ -290,7 +290,7 @@ function authMount() {
       banner(form, "success", T("auth.loginOk"));
     } else if (kind === "signup") {
       if (!form.elements.nome.value.trim()) fail(form.elements.nome, "frm.required");
-      var mail = form.elements.email;
+      const mail = form.elements.email;
       if (!mail.value.trim()) fail(mail, "frm.required");
       else if (!EMAIL.test(mail.value)) fail(mail, "frm.emailErr");
       if (!form.elements.senha.value) fail(form.elements.senha, "frm.required");
@@ -298,26 +298,26 @@ function authMount() {
       if (bad.length) { banner(form, "error", T("frm.review")); bad[0].focus(); return; }
       banner(form, "success", T("auth.signupOk").replace("{email}", mail.value.trim()));
     } else if (kind === "forgot") {
-      var em = form.elements.email;
+      const em = form.elements.email;
       if (!em.value.trim()) fail(em, "frm.required");
       else if (!EMAIL.test(em.value)) fail(em, "frm.emailErr");
       if (bad.length) { banner(form, "error", T("frm.review")); em.focus(); return; }
       banner(form, "success", T("auth.codeSent"));
-      var after = card.querySelector("[data-after]");
+      const after = card.querySelector("[data-after]");
       if (after) after.hidden = false;
     } else if (kind === "reset") {
-      var digits = Array.prototype.map.call(form.querySelectorAll(".otp-digit"), function (i) { return i.value; }).join("");
-      var firstEmpty = Array.prototype.filter.call(form.querySelectorAll(".otp-digit"), function (i) { return !i.value; })[0];
+      const digits = Array.prototype.map.call(form.querySelectorAll(".otp-digit"), function (i) { return i.value; }).join("");
+      const firstEmpty = Array.prototype.filter.call(form.querySelectorAll(".otp-digit"), function (i) { return !i.value; })[0];
       if (digits.length < 6 && firstEmpty) {
         firstEmpty.setAttribute("aria-invalid", "true");
-        var legend = form.querySelector(".otp-field");
-        var err = document.createElement("span");
+        const legend = form.querySelector(".otp-field");
+        const err = document.createElement("span");
         err.className = "error";
         err.textContent = T("auth.codeErr");
         legend.appendChild(err);
         bad.push(firstEmpty);
       }
-      var ok = updateReqs(form);
+      const ok = updateReqs(form);
       if (!(ok.len && ok.upper && ok.num)) fail(form.elements.nova, "auth.pwWeak");
       if (form.elements.confirma.value !== form.elements.nova.value || !form.elements.confirma.value) fail(form.elements.confirma, "auth.pwMismatch");
       if (bad.length) { banner(form, "error", T("frm.review")); bad[0].focus(); return; }

@@ -1,7 +1,6 @@
 // Catálogo de loja de exemplo.
 
 import { T, lang } from "./i18n.js";
-import { page } from "./layout.js";
 import { showToast, tipWrap } from "./ui.js";
 import { esc } from "./util.js";
 
@@ -11,13 +10,13 @@ import { esc } from "./util.js";
 // Sem fotos: degradê com as cores do tema e o ícone de imagem não encontrada em SVG.
 // ------------------------------------------------------------------
 
-var SHOP_CATS = [
+const SHOP_CATS = [
   { id: "lorem", name: "Lorem" }, { id: "ipsum", name: "Ipsum" }, { id: "dolor", name: "Dolor" },
   { id: "sit-amet", name: "Sit amet" }, { id: "consectetur", name: "Consectetur" }
 ];
 
 
-var SHOP_PRODUCTS = [
+const SHOP_PRODUCTS = [
   { id: 1, name: "Lorem ipsum dolor", cat: "lorem", price: 129.9, old: 159.9, rating: 5, badge: "sale" },
   { id: 2, name: "Sit amet consectetur", cat: "ipsum", price: 89.5, old: null, rating: 4, badge: null },
   { id: 3, name: "Adipiscing elit sed", cat: "dolor", price: 249, old: null, rating: 4, badge: "new" },
@@ -33,9 +32,9 @@ var SHOP_PRODUCTS = [
 ];
 
 
-var shopSort = "relevance";
+let shopSort = "relevance";
 
-var shopCart = 0;
+let shopCart = 0;
 
 
 // Ícone de imagem não encontrada: moldura, montanhas, sol e um traço cortando.
@@ -62,8 +61,8 @@ function cartIconSVG() {
 
 
 function starsSVG(rating) {
-  var out = "";
-  for (var k = 1; k <= 5; k++) {
+  let out = "";
+  for (let k = 1; k <= 5; k++) {
     out += '<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true" class="' + (k <= rating ? "star is-on" : "star") + '"><path d="M10 1.8l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 8.1l6-.8z"/></svg>';
   }
   return '<span class="stars" role="img" aria-label="' + rating + '/5">' + out + "</span>";
@@ -80,10 +79,10 @@ function money(v) {
 
 
 function productCardHTML(p, i) {
-  var angle = 110 + (i * 37) % 80;
-  var a = 20 + (i * 13) % 28;
-  var b = 8 + (i * 7) % 18;
-  var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
+  const angle = 110 + (i * 37) % 80;
+  const a = 20 + (i * 13) % 28;
+  const b = 8 + (i * 7) % 18;
+  const grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
   return (
     '<article class="product">' +
     '<div class="thumb" style="background:' + grad + '">' + noImageSVG() +
@@ -101,13 +100,13 @@ function productCardHTML(p, i) {
 
 
 function shopCatName(id) {
-  for (var i = 0; i < SHOP_CATS.length; i++) if (SHOP_CATS[i].id === id) return SHOP_CATS[i].name;
+  for (let i = 0; i < SHOP_CATS.length; i++) if (SHOP_CATS[i].id === id) return SHOP_CATS[i].name;
   return "";
 }
 
 
 function shopList(catId) {
-  var list = SHOP_PRODUCTS.filter(function (p) { return !catId || p.cat === catId; });
+  let list = SHOP_PRODUCTS.filter(function (p) { return !catId || p.cat === catId; });
   if (shopSort === "price-asc") list = list.slice().sort(function (a, b) { return a.price - b.price; });
   else if (shopSort === "price-desc") list = list.slice().sort(function (a, b) { return b.price - a.price; });
   else if (shopSort === "name") list = list.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -116,7 +115,7 @@ function shopList(catId) {
 
 
 function shopGridHTML(catId) {
-  var list = shopList(catId);
+  const list = shopList(catId);
   if (!list.length) {
     return '<div class="empty"><strong>' + esc(T("shop.empty")) + "</strong></div>";
   }
@@ -125,16 +124,16 @@ function shopGridHTML(catId) {
 
 
 function shopHTML(catId) {
-  var current = catId || "";
-  var nav =
+  const current = catId || "";
+  const nav =
     '<nav class="shop-nav" aria-label="' + esc(T("shop.cats")) + '"><h2 class="aside-title">' + esc(T("shop.cats")) + "</h2><ul>" +
     '<li><a href="#/loja"' + (!current ? ' aria-current="page"' : "") + ">" + esc(T("shop.all")) + '<span class="aside-count">' + SHOP_PRODUCTS.length + "</span></a></li>" +
     SHOP_CATS.map(function (c) {
-      var n = SHOP_PRODUCTS.filter(function (p) { return p.cat === c.id; }).length;
+      const n = SHOP_PRODUCTS.filter(function (p) { return p.cat === c.id; }).length;
       return '<li><a href="#/loja/' + c.id + '"' + (current === c.id ? ' aria-current="page"' : "") + ">" + esc(c.name) + '<span class="aside-count">' + n + "</span></a></li>";
     }).join("") +
     "</ul></nav>";
-  var sorts = [["relevance", "shop.sRel"], ["price-asc", "shop.sAsc"], ["price-desc", "shop.sDesc"], ["name", "shop.sName"]];
+  const sorts = [["relevance", "shop.sRel"], ["price-asc", "shop.sAsc"], ["price-desc", "shop.sDesc"], ["name", "shop.sName"]];
   return (
     '<div class="page-head">' +
     '<span class="kicker">' + esc(T("shop.kicker")) + "</span>" +
@@ -156,8 +155,8 @@ function shopHTML(catId) {
 
 
 function shopMount() {
-  var grid = document.getElementById("shopGrid");
-  var sel = document.getElementById("shopSort");
+  const grid = document.getElementById("shopGrid");
+  const sel = document.getElementById("shopSort");
   if (sel) {
     sel.addEventListener("change", function () {
       shopSort = sel.value;
@@ -166,7 +165,7 @@ function shopMount() {
   }
   if (grid) {
     grid.addEventListener("click", function (e) {
-      var btn = e.target.closest("[data-add]");
+      const btn = e.target.closest("[data-add]");
       if (!btn) return;
       shopCart += 1;
       document.getElementById("cartCount").textContent = shopCart;

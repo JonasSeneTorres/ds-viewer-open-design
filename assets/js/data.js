@@ -1,8 +1,7 @@
 // Dados dos design systems (índice, detalhes e catálogo).
 
 import { T, enKey, lang } from "./i18n.js";
-import { page } from "./layout.js";
-import { app, esc } from "./util.js";
+import { esc } from "./util.js";
 
 
 // ------------------------------------------------------------------
@@ -12,13 +11,13 @@ import { app, esc } from "./util.js";
 // scripts/build_ds_details.py a partir do open-design.ai.
 // ------------------------------------------------------------------
 
-var THEMES = [];              // todos os design systems aplicáveis, na ordem do combobox
+const THEMES = [];              // todos os design systems aplicáveis, na ordem do combobox
 
-var DS_DATA = {};             // detalhes já carregados, por id e idioma (data/ds/<id>.<lang>.json)
+const DS_DATA = {};             // detalhes já carregados, por id e idioma (data/ds/<id>.<lang>.json)
 
-var CATALOG = [];             // THEMES sem o padrão: {id,name,category,tagline,swatches}
+const CATALOG = [];             // THEMES sem o padrão: {id,name,category,tagline,swatches}
 
-var CATALOG_CATEGORIES = [];
+const CATALOG_CATEGORIES = [];
 
 
 function registerDs(d) {
@@ -45,7 +44,7 @@ function loadData() {
     .then(function (list) { list.forEach(registerDs); })
     .catch(function (err) {
       console.error("Falha ao carregar data/ds/index.json:", err);
-      var main = document.getElementById("app");
+      const main = document.getElementById("app");
       if (main) {
         main.innerHTML =
           '<div class="wrap page"><div class="empty"><strong>' + esc(T("load.title")) + "</strong>" +
@@ -57,7 +56,7 @@ function loadData() {
 
 // Detalhes de um DS no idioma atual (data/ds/<id>.<lang>.json), com cache por idioma.
 function loadDsDetail(id) {
-  var key = id + "|" + lang;
+  const key = id + "|" + lang;
   if (DS_DATA[key]) return Promise.resolve(DS_DATA[key]);
   return fetch("data/ds/" + encodeURIComponent(id) + "." + lang + ".json", { credentials: "same-origin" })
     .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -65,6 +64,6 @@ function loadDsDetail(id) {
 }
 
 
-var DEFAULT_THEME = "padrao";
+const DEFAULT_THEME = "padrao";
 
 export { CATALOG, CATALOG_CATEGORIES, DEFAULT_THEME, DS_DATA, THEMES, loadData, loadDsDetail };

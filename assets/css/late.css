@@ -1,0 +1,297 @@
+/* Carregado por último (index.html): componentes compartilhados (tooltip, toast, accordion, paginação), RTL e cabeçalho responsivo,
+   que sobrescrevem as páginas. Os arquivos de página inseridos em tempo de execução entram antes deste (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+/* O nome do tema é texto latino: continua da esquerda para a direita (senão o corte come o começo) */
+
+[dir="rtl"] .combobox-label {
+  direction: ltr;
+  text-align: start;
+}
+
+/* A fonte Nastaliq tem ascendentes e descendentes altos: o texto da marca precisa de mais altura de linha */
+
+[dir="rtl"] .brand-text {
+  line-height: 1.6;
+}
+
+/* O texto do site é pt-BR ou en-US (da esquerda para a direita) dentro de um layout espelhado: cada
+   parágrafo decide a própria direção pelo conteúdo, e a pontuação não vai parar no lado errado */
+
+[dir="rtl"] :is(p, h1, h2, h3, h4, li, td, th, label, figcaption, blockquote, dd, dt, summary, .lede, .kicker, .stat-label) {
+  unicode-bidi: plaintext;
+}
+
+/* Conteúdo que continua da esquerda para a direita mesmo numa página RTL: código, tokens e números */
+
+[dir="rtl"] pre,
+[dir="rtl"] code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+
+/* ---------- Tooltip em outras posições, paginação da tabela e aviso com accordion ---------- */
+
+.tip-wrap.tip-below .tip {
+  top: calc(100% + 8px);
+  bottom: auto;
+}
+
+/* para itens na borda direita da tela: o tooltip termina junto do gatilho em vez de centralizar */
+
+.tip-wrap.tip-end .tip {
+  left: auto;
+  inset-inline-end: 0;
+  transform: none;
+}
+
+.tip-wrap.tip-block {
+  display: block;
+}
+
+.font-notice-inner .accordion {
+  flex: 1;
+  min-width: 0;
+  background: var(--surface);
+}
+
+/* ---------- Cabeçalho responsivo: de tablet em pé (768px) para baixo, hambúrguer + marca + claro/escuro ---------- */
+
+.nav-toggle-slot,
+.nav-toggle {
+  display: none;
+}
+
+/* Botão do menu: com o menu fechado ele se funde com o cabeçalho (mesmas cores, sem borda); aberto, vira um
+   botão com superfície e borda. O guia do DS pode definir raio, borda e fundo (--nav-toggle-*). */
+
+.nav-toggle {
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: var(--nav-toggle-bg, var(--header-bg));
+  color: var(--header-fg);
+  border: var(--nav-toggle-border, var(--bw) solid transparent);
+  border-radius: var(--nav-toggle-radius, var(--radius-sm));
+  cursor: pointer;
+  transition: background var(--motion-fast, 160ms) var(--ease, ease-out), border-color var(--motion-fast, 160ms) var(--ease, ease-out);
+}
+
+.nav-toggle:hover {
+  background: color-mix(in oklab, var(--header-fg) 14%, var(--header-bg));
+}
+
+.nav-toggle[aria-expanded="true"] {
+  background: var(--field-bg, var(--surface));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+}
+
+.nav-toggle[aria-expanded="true"]:hover {
+  border-color: var(--accent);
+}
+
+.nav-toggle .ic-close,
+.nav-toggle[aria-expanded="true"] .ic-bars {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .ic-close {
+  display: block;
+}
+
+/* com o painel aberto o ícone já virou um X: a dica só cobriria os links */
+
+.nav-toggle[aria-expanded="true"] ~ .tip {
+  display: none;
+}
+
+.tip-wrap.tip-start .tip {
+  left: 0;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  transform: none;
+}
+@media (min-width: 769px) {
+
+/* Telas largas: o painel some e os filhos entram direto na linha do cabeçalho, na ordem de sempre */
+
+.site-menu,
+  .header-tools {
+    display: contents;
+  }
+
+.header-inner {
+    gap: 8px;
+  }
+
+.brand {
+    order: 1;
+  }
+
+.main-nav {
+    order: 2;
+    margin-inline-end: 12px;
+  }
+
+.theme-picker {
+    order: 3;
+  }
+
+.scheme-slot {
+    order: 4;
+  }
+
+.header-tools .tip-wrap {
+    order: 5;
+  }
+}
+@media (min-width: 769px) and (max-width: 900px) {
+
+/* de 769 a 900px a linha não comporta tudo: a navegação desce para uma segunda linha */
+
+.brand {
+    margin-inline-end: auto;
+  }
+
+.main-nav {
+    order: 6;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 4px;
+  }
+
+.main-nav a {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 768px) {
+
+.header-inner {
+    flex-wrap: nowrap;
+    gap: 12px;
+    min-height: 60px;
+  }
+
+.nav-toggle-slot {
+    display: inline-block;
+    flex: none;
+  }
+
+.nav-toggle {
+    display: inline-flex;
+  }
+
+.brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+.scheme-slot {
+    flex: none;
+    margin-inline-start: auto;
+  }
+
+.scheme-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* o painel: tudo o que não é marca nem claro/escuro */
+
+.site-menu {
+    display: none;
+    position: absolute;
+    inset-inline: 0;
+    top: 100%;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px var(--gutter-phone, 16px) 18px;
+    max-height: calc(100dvh - var(--header-h, 60px));
+    overflow-y: auto;
+    background: var(--header-bg);
+    color: var(--header-fg);
+    border-bottom: var(--bw) solid var(--border);
+    box-shadow: var(--shadow-pop);
+  }
+
+.site-menu[data-open="true"] {
+    display: flex;
+  }
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    width: 100%;
+    margin: 0;
+  }
+
+.main-nav > a,
+  .nav-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    min-height: 44px;
+  }
+
+.nav-menu-list {
+    position: static;
+    min-width: 0;
+    margin-top: 4px;
+    box-shadow: none;
+  }
+
+.header-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+.theme-picker,
+  .theme-picker .combobox-btn,
+  .header-tools .lang-btn {
+    width: 100%;
+  }
+
+.theme-picker .combobox-pop {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 8px;
+  }
+
+  /* no painel não há tooltip: o botão de idioma mostra o próprio nome */
+
+.header-tools .tip-wrap {
+    display: block;
+  }
+
+.header-tools .tip {
+    display: none;
+  }
+
+.header-tools .lang-btn {
+    justify-content: flex-start;
+    min-height: 44px;
+  }
+
+.header-tools .lang-btn::after {
+    content: attr(aria-label);
+    font-weight: 550;
+  }
+}
+@media (max-width: 420px) {
+
+.brand-sub {
+    display: none;
+  }
+}

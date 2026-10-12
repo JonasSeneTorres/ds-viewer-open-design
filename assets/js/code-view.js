@@ -1,11 +1,11 @@
 // Visão de código de um componente: modal com três abas (HTML, CSS e JavaScript).
 // O código mostrado é o que o site realmente usa: o HTML vem do próprio elemento na página, e o CSS e o
-// JavaScript são lidos dos arquivos publicados (assets/styles.css e o módulo do componente).
+// JavaScript são lidos dos arquivos publicados (assets/css/*.css e o módulo do componente).
 
 import { T } from "./i18n.js";
 import { showToast } from "./ui.js";
 
-var cache = {};
+const cache = {};
 
 function fetchText(url) {
   if (!cache[url]) {
@@ -18,11 +18,11 @@ function fetchText(url) {
 }
 
 // ---- HTML: reindenta o markup do elemento (2 espaços), sem depender de bibliotecas
-var VOID = { area: 1, base: 1, br: 1, col: 1, embed: 1, hr: 1, img: 1, input: 1, link: 1, meta: 1, source: 1, track: 1, wbr: 1 };
+const VOID = { area: 1, base: 1, br: 1, col: 1, embed: 1, hr: 1, img: 1, input: 1, link: 1, meta: 1, source: 1, track: 1, wbr: 1 };
 
 function formatHTML(html) {
-  var doc = new DOMParser().parseFromString("<body>" + html + "</body>", "text/html");
-  var lines = [];
+  const doc = new DOMParser().parseFromString("<body>" + html + "</body>", "text/html");
+  const lines = [];
   function esc(t) { return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function attrs(el) {
     return Array.prototype.map.call(el.attributes, function (a) {
@@ -30,15 +30,15 @@ function formatHTML(html) {
     }).join("");
   }
   function walk(node, depth) {
-    var pad = new Array(depth + 1).join("  ");
+    const pad = new Array(depth + 1).join("  ");
     if (node.nodeType === 3) {
-      var t = node.textContent.replace(/\s+/g, " ").trim();
+      const t = node.textContent.replace(/\s+/g, " ").trim();
       if (t) lines.push(pad + esc(t));
       return;
     }
     if (node.nodeType !== 1) return;
-    var tag = node.tagName.toLowerCase();
-    var kids = Array.prototype.filter.call(node.childNodes, function (c) {
+    const tag = node.tagName.toLowerCase();
+    const kids = Array.prototype.filter.call(node.childNodes, function (c) {
       return c.nodeType === 1 || (c.nodeType === 3 && c.textContent.trim());
     });
     if (VOID[tag]) { lines.push(pad + "<" + tag + attrs(node) + ">"); return; }
@@ -58,19 +58,20 @@ function formatHTML(html) {
 // ---- CSS: as regras de nível superior cujo seletor casa com o padrão do componente
 function extractCss(css, pattern) {
   css = css.replace(/\/\*[\s\S]*?\*\//g, "");
-  var rules = [], depth = 0, start = 0;
-  for (var i = 0; i < css.length; i++) {
-    var ch = css[i];
+  const rules = [];
+  let depth = 0, start = 0;
+  for (let i = 0; i < css.length; i++) {
+    const ch = css[i];
     if (ch === "{") depth++;
     else if (ch === "}") {
       depth--;
       if (depth === 0) {
-        var rule = css.slice(start, i + 1).trim();
+        const rule = css.slice(start, i + 1).trim();
         start = i + 1;
         if (rule[0] === "@") continue;
-        var brace = rule.indexOf("{");
+        const brace = rule.indexOf("{");
         // regra compartilhada ("a, b { ... }"): fica só com os seletores deste componente
-        var mine = rule.slice(0, brace).split(",").map(function (s) { return s.trim(); })
+        const mine = rule.slice(0, brace).split(",").map(function (s) { return s.trim(); })
           .filter(function (s) { return pattern.test(s); });
         if (mine.length) rules.push(mine.join(",\n") + " " + rule.slice(brace));
       }
@@ -81,15 +82,15 @@ function extractCss(css, pattern) {
 
 // ---- JavaScript: o corpo das funções pedidas, lidas do módulo publicado
 function extractFunctions(src, names) {
-  var out = [];
+  const out = [];
   names.forEach(function (name) {
-    var m = new RegExp("(^|\\n)(function " + name + "\\s*\\()").exec(src);
+    const m = new RegExp("(^|\\n)(function " + name + "\\s*\\()").exec(src);
     if (!m) return;
-    var i = m.index + m[1].length;
-    var open = src.indexOf("{", src.indexOf(")", i));
-    var depth = 0, quote = null;
-    for (var j = open; j < src.length; j++) {
-      var c = src[j];
+    const i = m.index + m[1].length;
+    const open = src.indexOf("{", src.indexOf(")", i));
+    let depth = 0, quote = null;
+    for (let j = open; j < src.length; j++) {
+      const c = src[j];
       if (quote) {
         if (c === "\\") j++;
         else if (c === quote) quote = null;
@@ -105,8 +106,8 @@ function extractFunctions(src, names) {
 }
 
 // ---- modal
-var dialog = null;
-var TABS = [["html", "comp.codeHtml"], ["css", "comp.codeCss"], ["js", "comp.codeJs"]];
+let dialog = null;
+const TABS = [["html", "comp.codeHtml"], ["css", "comp.codeCss"], ["js", "comp.codeJs"]];
 
 function build() {
   dialog = document.createElement("dialog");
@@ -129,10 +130,10 @@ function build() {
     '<p class="sr-only" role="status" aria-live="polite" id="codeStatus"></p></div>';
   document.body.appendChild(dialog);
 
-  var tabs = Array.prototype.slice.call(dialog.querySelectorAll('[role="tab"]'));
+  const tabs = Array.prototype.slice.call(dialog.querySelectorAll('[role="tab"]'));
   function select(i, focus) {
     tabs.forEach(function (t, j) {
-      var on = i === j;
+      const on = i === j;
       t.setAttribute("aria-selected", String(on));
       t.tabIndex = on ? 0 : -1;
       document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
@@ -142,7 +143,8 @@ function build() {
   tabs.forEach(function (t, i) {
     t.addEventListener("click", function () { select(i, false); });
     t.addEventListener("keydown", function (e) {
-      var n = tabs.length, to = null;
+      const n = tabs.length;
+      let to = null;
       if (e.key === "ArrowRight") to = (i + 1) % n;
       else if (e.key === "ArrowLeft") to = (i - 1 + n) % n;
       else if (e.key === "Home") to = 0;
@@ -159,13 +161,13 @@ function build() {
 
   dialog.addEventListener("click", function (e) {
     if (e.target.closest("[data-close]") || e.target === dialog) { dialog.close(); return; }
-    var copy = e.target.closest("[data-copy]");
+    const copy = e.target.closest("[data-copy]");
     if (!copy) return;
-    var text = document.getElementById("codeText-" + copy.getAttribute("data-copy")).textContent;
-    var done = function () { showToast("ok", T("comp.copied")); };
+    const text = document.getElementById("codeText-" + copy.getAttribute("data-copy")).textContent;
+    const done = function () { showToast("ok", T("comp.copied")); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
     else {
-      var ta = document.createElement("textarea");
+      const ta = document.createElement("textarea");
       ta.value = text;
       document.body.appendChild(ta);
       ta.select();
@@ -188,26 +190,26 @@ function labels(spec) {
   document.getElementById("codeStatus").textContent = "";
 }
 
-// spec: { nameKey, html: string, cssPattern: RegExp, fns: [nomes], jsUrl, cssUrl, opener }
+// spec: { nameKey, html: string, cssPattern: RegExp, fns: [nomes], jsUrl, cssUrls: [arquivos CSS], opener }
 // opener: o botão que abriu o modal; ao fechar, o foco volta para ele (no Safari o clique não foca o botão,
 // então o navegador não sabe para onde devolver).
 function openCodeView(spec) {
   if (!dialog) build();
   dialog.opener = spec.opener || null;
   labels(spec);
-  var set = function (key, text) { document.getElementById("codeText-" + key).textContent = text; };
+  const set = function (key, text) { document.getElementById("codeText-" + key).textContent = text; };
   set("html", formatHTML(spec.html));
   set("css", T("comp.loading"));
   set("js", T("comp.loading"));
   dialog.select(0, false);
   if (!dialog.open) dialog.showModal();
 
-  fetchText(spec.cssUrl).then(function (css) {
-    set("css", extractCss(css, spec.cssPattern) || T("comp.codeError"));
+  Promise.all(spec.cssUrls.map(fetchText)).then(function (parts) {
+    set("css", extractCss(parts.join("\n"), spec.cssPattern) || T("comp.codeError"));
   }).catch(function () { set("css", T("comp.codeError")); });
 
   fetchText(spec.jsUrl).then(function (src) {
-    var code = extractFunctions(src, spec.fns);
+    let code = extractFunctions(src, spec.fns);
     if (/\bT\(|\besc\(/.test(code)) code = "// T(chave) traduz o texto e esc() escapa HTML: utilitários do site.\n\n" + code;
     set("js", code || T("comp.codeError"));
   }).catch(function () { set("js", T("comp.codeError")); });

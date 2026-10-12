@@ -1,0 +1,209 @@
+/* Loja (#/loja). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+/* ---------- Catálogo de loja ---------- */
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.shop-nav {
+  position: sticky;
+  top: 96px;
+}
+
+.shop-nav ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop-nav a {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--fg-soft);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.shop-nav a:hover {
+  background: var(--surface-2);
+  color: var(--fg);
+}
+
+.shop-nav a[aria-current="page"] {
+  background: var(--accent-weak);
+  color: var(--fg);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--accent-strong);
+}
+
+.shop-tools {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cart {
+  font-size: 0.9rem;
+}
+
+.shop-sort select {
+  min-height: 38px;
+  padding: 6px 10px;
+  background: var(--field-bg, var(--surface));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(236px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  display: grid;
+  background: var(--surface);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-lg, var(--radius));
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--motion-base, 180ms) var(--ease, ease-out), box-shadow var(--motion-base, 180ms) var(--ease, ease-out);
+}
+
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+}
+
+.thumb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  color: var(--fg-soft);
+}
+
+.no-image {
+  opacity: 0.8;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 10px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill, 999px);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--solid);
+  color: var(--solid-fg);
+}
+
+.badge-sale {
+  background: var(--danger);
+  color: var(--danger-fg, #fff);
+}
+
+.product-body {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px 16px;
+}
+
+.product-cat {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.product-name {
+  margin: 0;
+  font-size: 1.02rem;
+  overflow-wrap: anywhere;
+  /* no máximo duas linhas; o que passar vira reticências */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 8px; /* se o preço cheio e o com desconto não cabem juntos, o cheio fica em cima */
+  margin: 0;
+}
+
+.price strong {
+  font-size: 1.1rem;
+}
+
+.price-old {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.product-body .btn {
+  justify-self: stretch;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4px;
+  padding-inline: 12px;
+  text-align: center;
+}
+
+/* o rótulo do botão ocupa até duas linhas; o que passar vira reticências */
+
+.product-body .btn .btn-label {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+
+.shop-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+.shop-nav {
+    position: static;
+  }
+
+.shop-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+[dir="rtl"] .product-name,
+[dir="rtl"] .product-body .btn .btn-label {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}

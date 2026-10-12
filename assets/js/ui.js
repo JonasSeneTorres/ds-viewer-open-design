@@ -16,19 +16,19 @@ function tip(id, text, opts) {
 
 function tipWrap(inner, id, text, opts) {
   opts = opts || {};
-  var cls = "tip-wrap" + (opts.below ? " tip-below" : "") + (opts.end ? " tip-end" : "") + (opts.block ? " tip-block" : "");
+  const cls = "tip-wrap" + (opts.below ? " tip-below" : "") + (opts.end ? " tip-end" : "") + (opts.block ? " tip-block" : "");
   return '<span class="' + cls + '">' + inner + tip(id, text, opts) + "</span>";
 }
 
 function setTipText(id, text) {
-  var el = document.getElementById(id);
+  const el = document.getElementById(id);
   if (el) el.textContent = text;
 }
 
 // Esc dispensa todos os tooltips abertos; sair do gatilho (mouse ou foco) rearma o tooltip.
 function mountTooltips() {
   function reset(e) {
-    var w = e.target.closest && e.target.closest(".tip-wrap");
+    const w = e.target.closest && e.target.closest(".tip-wrap");
     if (w) w.classList.remove("is-dismissed");
   }
   document.addEventListener("keydown", function (e) {
@@ -43,12 +43,12 @@ mountTooltips();
 // ---------------------------------------------------------------- toast
 // Região viva global (#toastRegion, em index.html): fica de pé ao trocar de página. Até 3 ao mesmo tempo.
 function showToast(kind, message) {
-  var region = document.getElementById("toastRegion");
+  const region = document.getElementById("toastRegion");
   if (!region) return;
-  var el = document.createElement("div");
+  const el = document.createElement("div");
   el.className = "toast toast-" + kind;
   el.innerHTML = toastMarkup(message);
-  var timer = setTimeout(remove, 5000);
+  const timer = setTimeout(remove, 5000);
   function remove() {
     clearTimeout(timer);
     if (el.parentNode) el.parentNode.removeChild(el);
@@ -83,11 +83,11 @@ function accordionHTML(items) {
 
 function mountAccordions() {
   document.addEventListener("click", function (e) {
-    var btn = e.target.closest && e.target.closest(".acc-btn");
+    const btn = e.target.closest && e.target.closest(".acc-btn");
     if (!btn) return;
-    var open = btn.getAttribute("aria-expanded") === "true";
+    const open = btn.getAttribute("aria-expanded") === "true";
     btn.setAttribute("aria-expanded", String(!open));
-    var panel = document.getElementById(btn.getAttribute("aria-controls"));
+    const panel = document.getElementById(btn.getAttribute("aria-controls"));
     if (panel) panel.hidden = open;
   });
 }
@@ -96,10 +96,10 @@ mountAccordions();
 // ---------------------------------------------------------------- paginação
 // Janela de páginas com reticências: 1 2 … 5 [6] 7 … 11 12
 function pageItems(cur, total) {
-  var set = {};
+  const set = {};
   [1, 2, cur - 1, cur, cur + 1, total - 1, total].forEach(function (n) { if (n >= 1 && n <= total) set[n] = true; });
-  var nums = Object.keys(set).map(Number).sort(function (a, b) { return a - b; });
-  var out = [];
+  const nums = Object.keys(set).map(Number).sort(function (a, b) { return a - b; });
+  const out = [];
   nums.forEach(function (n, i) {
     if (i && n - nums[i - 1] > 1) out.push("…");
     out.push(n);
@@ -108,7 +108,7 @@ function pageItems(cur, total) {
 }
 
 function paginationHTML(cur, total) {
-  var items = pageItems(cur, total);
+  const items = pageItems(cur, total);
   return (
     '<nav class="pagination" aria-label="' + esc(T("comp.pagLabel")) + '"><ul>' +
     '<li><button type="button" class="page-link" data-page="' + (cur - 1) + '"' + (cur === 1 ? " disabled" : "") + ">" + esc(T("comp.prev")) + "</button></li>" +
@@ -128,14 +128,14 @@ function paginationHTML(cur, total) {
 // Liga os cliques de `box` à troca de página. get() devolve { cur, total }; change(n) aplica a nova página.
 function mountPagination(box, get, change) {
   box.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-page]");
+    const b = e.target.closest("[data-page]");
     if (!b || b.disabled) return;
-    var n = Number(b.getAttribute("data-page"));
-    var s = get();
+    const n = Number(b.getAttribute("data-page"));
+    const s = get();
     if (n < 1 || n > s.total || n === s.cur) return;
     change(n);
     // o HTML foi redesenhado: devolve o foco ao botão que o visitante usou
-    var again = box.querySelector('[data-page="' + n + '"]:not([disabled])') || box.querySelector(".is-current");
+    const again = box.querySelector('[data-page="' + n + '"]:not([disabled])') || box.querySelector(".is-current");
     if (again) again.focus();
   });
 }

@@ -661,3 +661,32 @@ test("cabeçalho responsivo: hambúrguer, marca e claro/escuro em tela de tablet
   await expect(page.locator(".main-nav")).toBeHidden();
   expect(problems).toEqual([]);
 });
+
+test("o CSS de cada página vem sob demanda, antes de desenhar, e late.css fica por último", async ({ page }) => {
+  const problems = watch(page);
+  const cssRequests = [];
+  page.on("request", (r) => {
+    const m = r.url().match(/\/assets\/css\/([a-z]+)\.css$/);
+    if (m) cssRequests.push(m[1]);
+  });
+  await page.goto("/#/");
+  await expect(page.locator(".ds-card-cat")).toHaveCount(TOTAL);
+  // a página inicial só precisa do núcleo, do catálogo e do arquivo tardio
+  expect([...new Set(cssRequests)].sort()).toEqual(["core", "ds", "late"]);
+
+  // outra rota: o arquivo dela é pedido e já está aplicado quando a página aparece
+  await page.evaluate(() => { location.hash = "#/blog"; });
+  await expect(page.locator(".featured")).toBeVisible();
+  expect(cssRequests).toContain("blog");
+  expect(cssRequests).not.toContain("shop");
+  const featuredBg = await page.locator(".featured").evaluate((el) => getComputedStyle(el).display);
+  expect(featuredBg).not.toBe("inline"); // com o CSS aplicado o destaque é um bloco/grade, não texto corrido
+
+  // links inseridos em tempo de execução ficam antes de late.css
+  const order = await page.evaluate(() =>
+    [...document.head.querySelectorAll('link[rel="stylesheet"]')].map((l) => l.getAttribute("href")).filter((h) => h.includes("assets/css/")));
+  expect(order[0]).toBe("assets/css/core.css");
+  expect(order[order.length - 1]).toBe("assets/css/late.css");
+  expect(order).toContain("assets/css/blog.css");
+  expect(problems).toEqual([]);
+});

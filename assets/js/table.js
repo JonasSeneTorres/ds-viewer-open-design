@@ -2,7 +2,6 @@
 
 import { records, saveRecords, setRecords } from "./content.js";
 import { T, UI } from "./i18n.js";
-import { page } from "./layout.js";
 import { mountPagination, paginationHTML, showToast, tipWrap } from "./ui.js";
 import { esc, formatDate } from "./util.js";
 
@@ -48,13 +47,13 @@ function tablePageHTML() {
 
 
 // Estado da tabela de exemplo: dados, carregando, vazio ou erro (para ver cada estado no tema).
-var tableState = "data";
+let tableState = "data";
 
-var loadTimer = null;
+let loadTimer = null;
 
 // Paginação da tabela: 5 registros por página
-var PAGE_SIZE = 5;
-var tablePage = 1;
+const PAGE_SIZE = 5;
+let tablePage = 1;
 
 
 function resetTableState() {
@@ -63,7 +62,7 @@ function resetTableState() {
 
 
 function rowHTML(r) {
-  var deprecated = r.status === "depreciado";
+  const deprecated = r.status === "depreciado";
   return (
     '<tr data-id="' + r.id + '">' +
     "<td><strong>" + esc(r.name) + "</strong></td>" +
@@ -84,7 +83,7 @@ function rowHTML(r) {
 
 
 function skeletonRows() {
-  var row = "<tr>" + [60, 40, 30, 20, 30, 40].map(function (w) {
+  const row = "<tr>" + [60, 40, 30, 20, 30, 40].map(function (w) {
     return '<td><span class="skeleton" style="width:' + w + '%"></span></td>';
   }).join("") + "</tr>";
   return new Array(6).join(row);
@@ -92,12 +91,12 @@ function skeletonRows() {
 
 
 function paintRows() {
-  var body = document.getElementById("tableBody");
-  var count = document.getElementById("tableCount");
-  var table = document.getElementById("recordsTable");
-  var add = document.getElementById("addRecord");
+  const body = document.getElementById("tableBody");
+  const count = document.getElementById("tableCount");
+  const table = document.getElementById("recordsTable");
+  const add = document.getElementById("addRecord");
   if (!body) return;
-  var shown = tableState === "data" ? records : [];
+  const shown = tableState === "data" ? records : [];
   if (table) table.setAttribute("aria-busy", String(tableState === "loading"));
   if (add) add.disabled = tableState === "loading";
   if (tableState === "loading") {
@@ -117,13 +116,13 @@ function paintRows() {
       '<tr><td colspan="6"><div class="empty"><strong>' + esc(T("tbl.emptyTitle")) + "</strong>" +
       "<p>" + esc(T("tbl.emptyText")) + "</p></div></td></tr>";
   } else {
-    var pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+    const pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
     if (tablePage > pages) tablePage = pages;
     body.innerHTML = shown.slice((tablePage - 1) * PAGE_SIZE, tablePage * PAGE_SIZE).map(rowHTML).join("");
   }
-  var pag = document.getElementById("tablePagination");
+  const pag = document.getElementById("tablePagination");
   if (pag) {
-    var total = Math.ceil(shown.length / PAGE_SIZE);
+    const total = Math.ceil(shown.length / PAGE_SIZE);
     pag.innerHTML = tableState === "data" && total > 1 ? paginationHTML(tablePage, total) : "";
   }
   if (count) {
@@ -141,7 +140,7 @@ function setTableState(next) {
     // "Carregando" termina sozinho e mostra os dados, como numa chamada de verdade.
     loadTimer = setTimeout(function () {
       tableState = "data";
-      var radio = document.querySelector('#tableStates input[value="data"]');
+      const radio = document.querySelector('#tableStates input[value="data"]');
       if (radio) radio.checked = true;
       paintRows();
     }, 2200);
@@ -150,30 +149,30 @@ function setTableState(next) {
 
 
 function tableMount() {
-  var addBtn = document.getElementById("addRecord");
+  const addBtn = document.getElementById("addRecord");
   if (addBtn) {
     addBtn.addEventListener("click", function () { openRecord(null); });
   }
-  var body = document.getElementById("tableBody");
+  const body = document.getElementById("tableBody");
   if (body) {
     body.addEventListener("click", function (e) {
-      var btn = e.target.closest("button[data-action]");
+      const btn = e.target.closest("button[data-action]");
       if (!btn || btn.disabled || btn.getAttribute("aria-disabled") === "true") return;
       if (btn.dataset.action === "retry") {
-        var radio = document.querySelector('#tableStates input[value="loading"]');
+        const radio = document.querySelector('#tableStates input[value="loading"]');
         if (radio) radio.checked = true;
         setTableState("loading");
         return;
       }
-      var tr = e.target.closest("tr");
-      var id = Number(tr.dataset.id);
-      var rec = records.filter(function (r) { return r.id === id; })[0];
+      const tr = e.target.closest("tr");
+      const id = Number(tr.dataset.id);
+      const rec = records.filter(function (r) { return r.id === id; })[0];
       if (!rec) return;
       if (btn.dataset.action === "edit") openRecord(rec);
       if (btn.dataset.action === "delete") openConfirm(rec);
     });
   }
-  var pagBox = document.getElementById("tablePagination");
+  const pagBox = document.getElementById("tablePagination");
   if (pagBox) {
     mountPagination(pagBox, function () {
       return { cur: tablePage, total: Math.max(1, Math.ceil(records.length / PAGE_SIZE)) };
@@ -182,7 +181,7 @@ function tableMount() {
       paintRows();
     });
   }
-  var states = document.getElementById("tableStates");
+  const states = document.getElementById("tableStates");
   if (states) {
     states.addEventListener("change", function (e) {
       if (e.target.name === "tableState") setTableState(e.target.value);
@@ -192,17 +191,17 @@ function tableMount() {
 }
 
 
-var recordDialog = document.getElementById("recordDialog");
+const recordDialog = document.getElementById("recordDialog");
 
-var recordForm = document.getElementById("recordForm");
+const recordForm = document.getElementById("recordForm");
 
-var recordTitle = document.getElementById("recordDialogTitle");
+const recordTitle = document.getElementById("recordDialogTitle");
 
 
 function openRecord(rec) {
   recordForm.reset();
-  var range = recordForm.querySelector('input[name="complexity"]');
-  var out = recordForm.querySelector(".range-row output");
+  const range = recordForm.querySelector('input[name="complexity"]');
+  const out = recordForm.querySelector(".range-row output");
   if (rec) {
     recordTitle.textContent = T("rec.edit");
     recordForm.elements.id.value = rec.id;
@@ -226,14 +225,14 @@ function openRecord(rec) {
 
 function clearFieldError(input) {
   input.removeAttribute("aria-invalid");
-  var err = input.parentElement.querySelector(".error");
+  const err = input.parentElement.querySelector(".error");
   if (err) err.remove();
 }
 
 
 function setFieldError(input, message) {
   input.setAttribute("aria-invalid", "true");
-  var err = input.parentElement.querySelector(".error");
+  let err = input.parentElement.querySelector(".error");
   if (!err) {
     err = document.createElement("span");
     err.className = "error";
@@ -249,21 +248,21 @@ function nextId() {
 
 recordForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  var nameInput = recordForm.elements.name;
+  const nameInput = recordForm.elements.name;
   if (!nameInput.value.trim()) {
     setFieldError(nameInput, T("rec.nameErr"));
     nameInput.focus();
     return;
   }
   clearFieldError(nameInput);
-  var data = {
+  const data = {
     name: nameInput.value.trim(),
     category: recordForm.elements.category.value,
     status: recordForm.elements.status.value,
     complexity: Number(recordForm.elements.complexity.value),
     updated: recordForm.elements.updated.value || new Date().toISOString().slice(0, 10)
   };
-  var id = recordForm.elements.id.value;
+  const id = recordForm.elements.id.value;
   if (id) {
     setRecords(records.map(function (r) {
       return r.id === Number(id) ? Object.assign({}, r, data) : r;
@@ -284,23 +283,23 @@ recordForm.querySelectorAll("[data-close]").forEach(function (btn) {
 });
 
 
-var dirtyComplexity = recordForm.querySelector('input[name="complexity"]');
+const dirtyComplexity = recordForm.querySelector('input[name="complexity"]');
 
 if (dirtyComplexity) {
   dirtyComplexity.addEventListener("input", function () {
-    var out = recordForm.querySelector(".range-row output");
+    const out = recordForm.querySelector(".range-row output");
     if (out) out.textContent = dirtyComplexity.value;
   });
 }
 
 
-var confirmDialog = document.getElementById("confirmDialog");
+const confirmDialog = document.getElementById("confirmDialog");
 
-var confirmText = document.getElementById("confirmText");
+const confirmText = document.getElementById("confirmText");
 
-var confirmDelete = document.getElementById("confirmDelete");
+const confirmDelete = document.getElementById("confirmDelete");
 
-var pendingDelete = null;
+let pendingDelete = null;
 
 
 function openConfirm(rec) {

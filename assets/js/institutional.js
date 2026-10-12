@@ -12,7 +12,7 @@ import { esc } from "./util.js";
 // ------------------------------------------------------------------
 
 function iconSVG(name) {
-  var paths = {
+  const paths = {
     heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/>',
     shield: '<path d="M12 3l7 3v5c0 4.500-3 8-7 10-4-2-7-5.500-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
     bulb: '<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.500 10.900c.6.500 1 1.200 1 2.100h5c0-.9.400-1.600 1-2.100A6 6 0 0 0 12 3z"/>',
@@ -33,10 +33,10 @@ function iconSVG(name) {
 
 // Imagem de exemplo: o mesmo degradê com o ícone de imagem não encontrada da loja.
 function placeholderHTML(i, cls) {
-  var angle = 110 + (i * 37) % 80;
-  var a = 20 + (i * 13) % 28;
-  var b = 8 + (i * 7) % 18;
-  var grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
+  const angle = 110 + (i * 37) % 80;
+  const a = 20 + (i * 13) % 28;
+  const b = 8 + (i * 7) % 18;
+  const grad = "linear-gradient(" + angle + "deg, color-mix(in oklab, var(--grad-1, var(--accent)) " + a + "%, var(--surface)), color-mix(in oklab, var(--grad-2, var(--accent-strong)) " + b + "%, var(--surface-2)))";
   return '<div class="ph ' + (cls || "") + '" style="background:' + grad + '" role="img" aria-label="' + esc(T("inst.imageAlt")) + '">' + noImageSVG() + "</div>";
 }
 
@@ -53,15 +53,15 @@ function bandHead(kicker, title, text) {
 
 
 function institutionalHTML() {
-  var lorem = T("inst.lorem");
-  var values = [["heart", "inst.v1"], ["shield", "inst.v2"], ["bulb", "inst.v3"], ["users", "inst.v4"]];
-  var services = [["chart", "inst.s1"], ["code", "inst.s2"], ["pen", "inst.s3"], ["users", "inst.s4"], ["shield", "inst.s5"], ["bulb", "inst.s6"]];
-  var people = [
+  const lorem = T("inst.lorem");
+  const values = [["heart", "inst.v1"], ["shield", "inst.v2"], ["bulb", "inst.v3"], ["users", "inst.v4"]];
+  const services = [["chart", "inst.s1"], ["code", "inst.s2"], ["pen", "inst.s3"], ["users", "inst.s4"], ["shield", "inst.s5"], ["bulb", "inst.s6"]];
+  const people = [
     ["Maria Lorem", "Diretora · Empresa Ipsum", "ML"],
     ["João Dolor", "Fundador · Studio Amet", "JD"],
     ["Ana Consectetur", "Gerente · Grupo Elit", "AC"]
   ];
-  var stats = [["15+", "inst.st1"], ["240", "inst.st2"], ["98%", "inst.st3"]];
+  const stats = [["15+", "inst.st1"], ["240", "inst.st2"], ["98%", "inst.st3"]];
   return (
     // hero
     '<section class="band band-b band-hero"><div class="wrap split">' +

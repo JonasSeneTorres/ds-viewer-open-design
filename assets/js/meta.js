@@ -5,28 +5,28 @@
 import { THEMES } from "./data.js";
 import { L, T } from "./i18n.js";
 
-var BASE = "https://jonassenetorres.github.io/ds-viewer-open-design/";
+const BASE = "https://jonassenetorres.github.io/ds-viewer-open-design/";
 
 // rota (início do hash) -> chave do texto "meta.<chave>" em i18n.js
-var ROUTE_KEYS = [
+const ROUTE_KEYS = [
   ["/artigo/", "article"], ["/blog", "blog"], ["/design-system/", "ds"], ["/tabela", "table"],
   ["/formulario", "form"], ["/componentes", "components"], ["/dashboard", "dashboard"], ["/loja", "shop"], ["/institucional", "institutional"],
   ["/entrar", "auth"], ["/licencas", "licenses"], ["/privacidade", "privacy"]
 ];
 
 function setContent(selector, value) {
-  var el = document.head.querySelector(selector);
+  const el = document.head.querySelector(selector);
   if (el) el.setAttribute("content", value);
 }
 
 function describe(hash) {
-  var key = "home";
-  for (var i = 0; i < ROUTE_KEYS.length; i++) {
+  let key = "home";
+  for (let i = 0; i < ROUTE_KEYS.length; i++) {
     if (hash.indexOf(ROUTE_KEYS[i][0]) === 0) { key = ROUTE_KEYS[i][1]; break; }
   }
   if (key === "ds") {
-    var id = hash.replace("/design-system/", "");
-    var t = THEMES.filter(function (x) { return x.id === id; })[0];
+    const id = hash.replace("/design-system/", "");
+    const t = THEMES.filter(function (x) { return x.id === id; })[0];
     if (t && L(t.hint)) return L(t.hint);
   }
   return T("meta." + key);
@@ -34,10 +34,10 @@ function describe(hash) {
 
 // Chamada a cada troca de rota (setTitle em layout.js): usa o título já definido da aba.
 function updateMeta() {
-  var hash = location.hash.replace(/^#/, "") || "/";
-  var title = document.title;
-  var desc = describe(hash);
-  var url = BASE + (hash === "/" ? "" : "#" + hash);
+  const hash = location.hash.replace(/^#/, "") || "/";
+  const title = document.title;
+  const desc = describe(hash);
+  const url = BASE + (hash === "/" ? "" : "#" + hash);
   setContent('meta[name="description"]', desc);
   setContent('meta[property="og:title"]', title);
   setContent('meta[property="og:description"]', desc);
