@@ -434,23 +434,23 @@ test("o botão de abrir no open-design só aparece nos DS que existem lá", asyn
 });
 
 test("metatags acompanham a rota", async ({ page }) => {
-  const meta = (sel) => page.locator(`head meta[${sel}]`).getAttribute("content");
+  // as tags são atualizadas pelo JavaScript depois da navegação: espera com repetição, sem ler na hora
+  const meta = (sel) => page.locator(`head meta[${sel}]`);
   await page.goto("/#/");
-  expect(await meta('name="description"')).toContain("143 design systems");
-  const home = await meta('property="og:title"');
+  await expect(meta('name="description"')).toHaveAttribute("content", /143 design systems/);
+  const home = await meta('property="og:title"').getAttribute("content");
 
   await page.goto("/#/tabela");
   await expect(page.locator("main h1")).toBeVisible();
-  expect(await meta('name="description"')).toContain("CRUD");
-  expect(await meta('property="og:title"')).not.toBe(home);
-  expect(await meta('property="og:url"')).toMatch(/#\/tabela$/);
+  await expect(meta('name="description"')).toHaveAttribute("content", /CRUD/);
+  await expect(meta('property="og:title"')).not.toHaveAttribute("content", home);
+  await expect(meta('property="og:url"')).toHaveAttribute("content", /#\/tabela$/);
 
   // na página de um DS, a descrição é o resumo dele
   await page.goto("/#/design-system/bugatti");
   await expect(page.locator(".ds-full h1")).toBeVisible();
-  const dsDesc = await meta('name="description"');
-  expect(dsDesc).toContain("hipercarros"); // o resumo do Bugatti, não o texto genérico
-  expect(await meta('property="og:image"')).toMatch(/\/assets\/og\.png$/);
+  await expect(meta('name="description"')).toHaveAttribute("content", /hipercarros/); // o resumo do Bugatti
+  await expect(meta('property="og:image"')).toHaveAttribute("content", /\/assets\/og\.png$/);
 });
 
 test("componentes: abas, accordion, toast, tooltip e paginação", async ({ page }) => {
