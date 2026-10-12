@@ -115,6 +115,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --h3-weight: 600;
+  --btn-weight: 700;
+  --label-weight: 600;
+  --kicker-spacing: 0.117em;
+  --btn-radius: 4px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 16px;
   --bg: #000000;
   --surface: #141414;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -148,9 +155,7 @@
   --font-body: "Inter", __Inter_d1b8ee, sans-serif;
   --font-code: "Inconsolata", __Inconsolata_a25f62, monospace;
   --font-mono: "Inconsolata", __Inconsolata_a25f62, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

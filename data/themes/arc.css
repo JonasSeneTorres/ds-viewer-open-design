@@ -79,6 +79,10 @@
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 4px color-mix(in oklab, var(--accent), transparent 80%);
+  --body-weight: 400;
+  --btn-radius: 12px;
+  --btn-pad-y: 10px;
+  --btn-pad-x: 20px;
   --bg: #fdf3ec;
   --surface: #ffffff;
   --surface-2: #fff4ea;
@@ -112,9 +116,7 @@
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-code: "Berkeley Mono", ui-monospace, Menlo, Consolas, monospace;
   --font-mono: "Berkeley Mono", ui-monospace, Menlo, Consolas, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

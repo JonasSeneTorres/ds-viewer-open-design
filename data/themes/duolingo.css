@@ -133,6 +133,12 @@
   --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
   --radius-lg: 20px;
   --focus-ring: 0 0 0 3px rgba(28, 176, 246, 0.2);
+  --h3-weight: 700;
+  --body-weight: 400;
+  --btn-weight: 700;
+  --btn-radius: 16px;
+  --btn-pad-y: 14px;
+  --btn-pad-x: 24px;
   --bg: #ffffff;
   --surface: #f7f7f7;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -166,9 +172,7 @@
   --font-body: "Mona Sans", "Helvetica Neue", system-ui, sans-serif;
   --font-code: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 800;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

@@ -63,6 +63,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 4px rgba(31, 143, 70, 0.24);
+  --h3-weight: 700;
+  --body-weight: 400;
+  --btn-weight: 700;
+  --label-weight: 700;
+  --btn-radius: 6px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 24px;
   --bg: #f3faf4;
   --surface: #ffffff;
   --surface-2: #e5f5e7;
@@ -96,9 +103,7 @@
   --font-body: "Noto Nastaliq Urdu", "Mehr Nastaliq", "URW Chancery", serif, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

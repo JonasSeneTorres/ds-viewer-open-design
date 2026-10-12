@@ -31,6 +31,11 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, #435ee5, transparent 70%);
+  --body-weight: 400;
+  --btn-weight: 400;
+  --btn-radius: 16px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 14px;
   --bg: #ffffff;
   --surface: #f6f6f3;
   --surface-2: #e5e5e0;
@@ -65,8 +70,6 @@
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

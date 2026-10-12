@@ -85,6 +85,10 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-lg: 10px;
   --focus-ring: 0 0 0 4px rgba(212, 175, 55, 0.32);
+  --h3-weight: 400;
+  --btn-weight: 400;
+  --label-weight: 500;
+  --kicker-spacing: 0.08em;
   --bg: #050505;
   --surface: #141414;
   --surface-2: #211b0b;
@@ -118,9 +122,7 @@
   --font-body: "Open Sans", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

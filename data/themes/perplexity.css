@@ -127,6 +127,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --btn-pad-y: 10px;
+  --btn-pad-x: 20px;
   --bg: #0f0f10;
   --surface: #19191a;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -161,8 +163,6 @@
   --font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
@@ -199,6 +199,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --btn-pad-y: 10px;
+  --btn-pad-x: 20px;
   --bg: #ffffff;
   --surface: #f8f8f8;
   --surface-2: #f0f0f0;
@@ -233,8 +235,6 @@
   --font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

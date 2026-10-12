@@ -170,8 +170,6 @@
   --font-code: "JetBrains Mono", monospace;
   --font-mono: "JetBrains Mono", monospace;
   --heading-weight: 400;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

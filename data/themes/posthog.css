@@ -133,6 +133,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  --h3-weight: 700;
+  --body-weight: 400;
+  --btn-weight: 600;
   --bg: #fdfdf8;
   --surface: #eeefe9;
   --surface-2: #e5e7e0;
@@ -166,9 +169,7 @@
   --font-body: "IBM Plex Sans Variable", "IBM Plex Sans", -apple-system, system-ui, "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, Arial, sans-serif;
   --font-code: "Source Code Pro", Menlo, Consolas, Monaco, monospace;
   --font-mono: "Source Code Pro", Menlo, Consolas, Monaco, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 800;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

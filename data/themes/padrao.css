@@ -132,6 +132,9 @@
   --row-bg: #ffffff;
   --row-stripe: var(--surface-2);
   --row-hover: color-mix(in oklab, #8145b5 14%, #ffffff);
+  --btn-radius: 6px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 12px;
   --bg: #ffffff;
   --surface: #f6f7f9;
   --surface-2: #eef2ff;
@@ -166,8 +169,6 @@
   --font-code: "Anonymous Pro", monospace;
   --font-mono: "Anonymous Pro", monospace;
   --heading-weight: 400;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
@@ -213,6 +214,9 @@
   --row-hover: color-mix(in oklab, #a77ad6 22%, var(--bg));
   --cta-bg: #f2e8fd;
   --cta-btn-fg: #f2e8fd;
+  --btn-radius: 6px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 12px;
   --bg: #0b0d12;
   --surface: #12151c;
   --surface-2: #1a1f2e;
@@ -247,8 +251,6 @@
   --font-code: "Anonymous Pro", monospace;
   --font-mono: "Anonymous Pro", monospace;
   --heading-weight: 400;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

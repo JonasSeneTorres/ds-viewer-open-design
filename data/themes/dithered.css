@@ -199,8 +199,6 @@
   --font-code: "IBM Plex Mono", monospace;
   --font-mono: "IBM Plex Mono", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

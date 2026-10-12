@@ -79,6 +79,14 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 3px rgba(9, 127, 232, 0.3);
+  --h3-weight: 700;
+  --body-weight: 400;
+  --label-weight: 400;
+  --kicker-spacing: 0.0104em;
+  --btn-radius: 4px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
+  --font-features: "lnum", "locl";
   --bg: #ffffff;
   --surface: #f6f5f4;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -112,9 +120,7 @@
   --font-body: "NotionInter", Inter, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

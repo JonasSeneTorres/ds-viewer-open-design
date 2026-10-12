@@ -79,6 +79,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 4px rgba(207, 69, 0, 0.24);
+  --btn-radius: 20px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 24px;
   --bg: #f3f0ee;
   --surface: #fcfbfa;
   --surface-2: #f7e8de;
@@ -113,8 +116,6 @@
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

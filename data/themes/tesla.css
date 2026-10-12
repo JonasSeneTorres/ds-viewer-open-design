@@ -31,6 +31,8 @@
   --ease: cubic-bezier(0.5, 0, 0, 0.75);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --body-weight: 400;
+  --btn-weight: 500;
   --bg: #ffffff;
   --surface: #f4f4f4;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +66,7 @@
   --font-body: "Universal Sans Text", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 500;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

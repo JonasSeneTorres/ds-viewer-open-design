@@ -2,6 +2,7 @@
 //
 //   npm run audit:themes                       (usa o Chromium do Playwright)
 //   PW_CHANNEL=msedge npm run audit:themes     (usa o Edge instalado, sem baixar navegador)
+//   PW_BROWSER=firefox npm run audit:themes    (ou webkit; o padrão é o Chromium)
 //   npm run audit:themes -- --only bugatti,airbnb --out saida.json
 //
 // Por tema e por tela (início, página do DS, tabela, formulário), em desktop (1280) e celular (390):
@@ -9,7 +10,7 @@
 //   - contraste (WCAG) de texto normal, títulos, links, kicker, texto secundário, botões, cabeçalho e rodapé;
 //   - fonte do título e do corpo realmente carregadas;
 // Grava um JSON e imprime um resumo. Sai com código 1 se houver achados "graves".
-import { chromium } from "@playwright/test";
+import { chromium, firefox, webkit } from "@playwright/test";
 import { createServer } from "node:http";
 import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -37,7 +38,10 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const index = JSON.parse(await readFile("data/ds/index.json", "utf8"));
 const ids = index.map((d) => d.id).filter((id) => !only || only.includes(id));
 
-const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || undefined });
+// PW_BROWSER=firefox|webkit audita em outro motor (o padrão é o Chromium; PW_CHANNEL=msedge usa o Edge instalado)
+const ENGINE = { chromium, firefox, webkit }[process.env.PW_BROWSER || "chromium"];
+if (!ENGINE) throw new Error(`PW_BROWSER desconhecido: ${process.env.PW_BROWSER}`);
+const browser = await ENGINE.launch({ channel: process.env.PW_BROWSER ? undefined : process.env.PW_CHANNEL || undefined });
 
 // roda dentro da página: mede contraste e fontes
 const MEASURE = () => {
@@ -121,6 +125,7 @@ const ROUTES = (id) => [
   ["licencas", "/#/licencas"],
   ["privacidade", "/#/privacidade"],
   ["dashboard", "/#/dashboard"],
+  ["componentes", "/#/componentes"],
   ["loja", "/#/loja"],
 ];
 const VIEWPORTS = [["desktop", { width: 1280, height: 900 }], ["celular", { width: 390, height: 800 }]];
@@ -131,6 +136,15 @@ for (const id of ids) {
   for (const [vname, viewport] of VIEWPORTS) {
     const ctx = await browser.newContext({ viewport, locale: "pt-BR" });
     await ctx.addInitScript((t) => { try { localStorage.setItem("odv-theme", t); } catch (e) {} }, id);
+    // mede o estado final: sem transições, a leitura no meio de uma troca de cor (mais lenta no Firefox e no
+    // WebKit) daria um contraste que ninguém vê
+    await ctx.addInitScript(() => {
+      document.addEventListener("DOMContentLoaded", () => {
+        const s = document.createElement("style");
+        s.textContent = "*,*::before,*::after{transition:none!important;animation:none!important}";
+        document.head.append(s);
+      });
+    });
     const page = await ctx.newPage();
     const problems = [];
     page.on("pageerror", (e) => problems.push(`erro de JS: ${e.message}`));

@@ -19,7 +19,13 @@ concurrency:
 
 jobs:
   test:
+    name: Testes (${{ matrix.browser }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # o CSS usa color-mix, dvh, :has e color-scheme: os três motores rodam a mesma suíte
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,17 +35,19 @@ jobs:
         with:
           python-version: "3.12"
       - name: Sintaxe do JavaScript
-        run: node --check assets/app.js
+        run: npm run check:js
       - name: Consistência dos dados
         run: python scripts/check_data.py
       - name: HTML dos guias
         run: python scripts/check_html.py
       - name: Instalar dependências
         run: npm ci
-      - name: Instalar o Chromium do Playwright
-        run: npx playwright install --with-deps chromium
+      - name: Instalar o navegador do Playwright
+        run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Testes E2E
         run: npm run test:e2e
+        env:
+          PW_BROWSERS: ${{ matrix.browser }}
 
   deploy:
     needs: test

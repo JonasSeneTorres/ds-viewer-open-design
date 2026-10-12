@@ -31,6 +31,12 @@
   --ease: ease;
   --radius-lg: 12px;
   --focus-ring: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --h3-weight: 400;
+  --btn-weight: 400;
+  --btn-radius: 8px;
+  --btn-pad-y: 10px;
+  --btn-pad-x: 12px;
+  --font-features: "cswh", "ss09";
   --bg: #f2f1ed;
   --surface: #e6e5e0;
   --surface-2: #ebeae5;
@@ -64,9 +70,7 @@
   --font-body: "jjannon", "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, ui-serif, Georgia, Cambria, "Times New Roman", Times, sans-serif;
   --font-code: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-mono: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

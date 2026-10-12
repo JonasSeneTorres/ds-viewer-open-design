@@ -79,6 +79,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent-active);
+  --btn-radius: 8px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 14px;
   --bg: #f5f4ed;
   --surface: #faf9f5;
   --surface-2: #e8e6dc;
@@ -113,8 +116,6 @@
   --font-code: "JetBrains Mono", "SF Mono", "Fira Code", Consolas, Monaco, TsangerJinKai02, "Source Han Serif SC", monospace;
   --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", Consolas, Monaco, TsangerJinKai02, "Source Han Serif SC", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

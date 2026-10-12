@@ -167,8 +167,6 @@
   --font-code: "Source Code Pro", monospace;
   --font-mono: "Source Code Pro", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

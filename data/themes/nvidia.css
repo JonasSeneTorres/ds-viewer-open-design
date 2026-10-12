@@ -31,6 +31,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 4px;
   --focus-ring: 0 0 0 2px #ffffff;
+  --h3-weight: 400;
+  --body-weight: 400;
+  --btn-weight: 700;
+  --label-weight: 700;
+  --btn-radius: 2px;
+  --btn-pad-y: 11px;
+  --btn-pad-x: 13px;
   --bg: #000000;
   --surface: #1a1a1a;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +71,7 @@
   --font-body: "NVIDIA-EMEA", Arial, Helvetica, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

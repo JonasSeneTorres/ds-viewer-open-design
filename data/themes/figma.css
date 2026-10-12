@@ -31,6 +31,12 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 2px rgba(0, 0, 0, 0.8);
+  --h3-weight: 700;
+  --btn-weight: 400;
+  --btn-radius: 999px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 18px;
+  --font-features: "kern";
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +70,7 @@
   --font-body: "figmaSans", "figmaSans Fallback", "SF Pro Display", system-ui, helvetica, sans-serif;
   --font-code: "figmaMono", "figmaMono Fallback", "SF Mono", menlo, monospace;
   --font-mono: "figmaMono", "figmaMono Fallback", "SF Mono", menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

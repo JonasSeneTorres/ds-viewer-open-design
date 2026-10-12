@@ -63,6 +63,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 4px rgba(180, 106, 70, 0.24);
+  --h3-weight: 600;
+  --body-weight: 400;
+  --btn-weight: 500;
+  --label-weight: 600;
+  --kicker-spacing: 0.09em;
+  --btn-radius: 4px;
+  --font-features: "ss01", "ss03", "ss10", "ss11", "ss12";
   --bg: #f7eee6;
   --surface: #fff8f1;
   --surface-2: #ead6c7;
@@ -97,8 +104,6 @@
   --font-code: "Space Mono", monospace;
   --font-mono: "Space Mono", monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
