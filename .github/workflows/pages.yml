@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Sintaxe do JavaScript
-        run: node --check assets/app.js
+        run: npm run check:js
       - name: Consistência dos dados
         run: python scripts/check_data.py
       - name: HTML dos guias

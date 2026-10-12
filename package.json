@@ -1,6 +1,7 @@
 {
   "name": "ds-viewer-open-design",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "description": "Visualizador de DS do Open Design — catálogo navegável de design systems (open-design.ai), cada um aplicável ao site.",
   "scripts": {
@@ -14,7 +15,8 @@
     "check:html": "python scripts/check_html.py",
     "test:e2e": "playwright test",
     "verify:upstream": "python scripts/verify_upstream.py",
-    "audit:themes": "node scripts/audit_themes.mjs"
+    "audit:themes": "node scripts/audit_themes.mjs",
+    "check:js": "node scripts/check_js.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.0",

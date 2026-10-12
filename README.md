@@ -34,7 +34,18 @@ tests/
 .github/workflows/
   pages.yml             testes e publicação no GitHub Pages
 assets/
-  app.js                SPA: textos da interface (dicionário UI), artigos, roteador e telas
+  app.js                ponto de entrada (módulo ES): menu Exemplos, roteador, idioma e inicialização
+  js/                   módulos ES, um por área, sem etapa de build:
+    i18n.js             idioma atual e o dicionário UI (todos os textos da interface)
+    data.js             índice e detalhes dos design systems (carregamento)
+    content.js          Lorem ipsum, artigos, categorias e os registros da tabela
+    util.js             escape de HTML, datas, cores e o elemento raiz
+    theme.js            aplicar e trocar tema, ?tema=, claro/escuro, avisos de fontes e de contraste
+    combobox.js         seletor de temas com busca
+    layout.js           migalhas, moldura de página, 404 e título da aba
+    home.js, blog.js, table.js, form.js, ds.js, dashboard.js, shop.js, institutional.js, auth.js, legal.js
+                        uma página (ou grupo de telas) cada: o HTML e a interação dela
+    behaviors.js        comportamentos globais dos formulários de exemplo
   styles.css            estilos do produto (usam só as variáveis do tema)
   themes.css            valores-base das variáveis (fallback antes de o tema carregar)
   logo.svg
@@ -91,6 +102,7 @@ python -m http.server 8317
 | `npm run data:update` | Regera `data/ds/*.<lang>.json`, `data/themes/*.css` e `data/themes/*.contrast.json` a partir de `.cache/pages/`, das traduções em `i18n/` e de `data/modes.json`. O Padrão precisa também das páginas `expo`, `vercel` e `futuristic` em `.cache/pages/` |
 | `npm run check` | Confere a consistência dos dados, incluindo variantes claro/escuro e relatórios de contraste (`scripts/check_data.py`), e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
+| `npm run check:js` | Confere a sintaxe do JavaScript do site (`assets/app.js` e `assets/js/*.js`) |
 | `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
 | `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
@@ -116,7 +128,7 @@ O Padrão não está em `systems-raw.json`: ele é montado a partir das páginas
 
 O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a cada push e pull request:
 
-1. `node --check assets/app.js`
+1. `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
 4. `npm run test:e2e`: 21 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL e o botão de abrir no open-design). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
@@ -298,7 +310,7 @@ Aqui, "fonte proprietária" é a fonte de **marca** de um design system (a do It
 
 O botão de idioma do topo alterna pt-BR / en-US (o padrão segue o idioma do sistema; a escolha fica no `localStorage`).
 
-- **Interface:** dicionário `UI` em `assets/app.js`. Todas as páginas estão em pt-BR e en-US.
+- **Interface:** dicionário `UI` em `assets/js/i18n.js`. Todas as páginas estão em pt-BR e en-US.
 - **Conteúdo dos DS:** vem do open-design.ai em inglês. As traduções ficam em `i18n/<idioma>/<slug>.html`:
 
   ```html
@@ -326,9 +338,8 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
-1. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~3.100 linhas em uma única função, e cada página nova soma cerca de 300.
-2. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
-3. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
+1. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
+2. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
 ## Créditos
 
