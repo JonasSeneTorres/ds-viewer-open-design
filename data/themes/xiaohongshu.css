@@ -31,6 +31,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --secondary: #b0864b;
+  --secondary-fg: #111111;
+  --secondary-hover: #ba9461;
   --btn-radius: 999px;
   --btn-pad-y: 8px;
   --btn-pad-x: 20px;
@@ -104,6 +107,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --secondary: #fdbc5f;
+  --secondary-fg: #111111;
+  --secondary-hover: #fec476;
   --btn-radius: 999px;
   --btn-pad-y: 8px;
   --btn-pad-x: 20px;

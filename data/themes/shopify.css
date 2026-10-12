@@ -79,6 +79,9 @@
   --ease: ease;
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px #36f4a4;
+  --secondary: #616167;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #515156;
   --body-weight: 400;
   --btn-weight: 400;
   --label-weight: 400;

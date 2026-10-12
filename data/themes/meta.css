@@ -31,6 +31,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --secondary: #d6311f;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #b42818;
   --h3-weight: 700;
   --body-weight: 400;
   --btn-weight: 400;

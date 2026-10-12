@@ -1,17 +1,17 @@
 // Confere a sintaxe do JavaScript do site: assets/app.js e todos os módulos de assets/js/.
+// Lê cada arquivo como módulo ES (é assim que o navegador o carrega), sem depender do "type" do package.json.
 // Uso: npm run check:js
-import { readdirSync } from "node:fs";
-import { execFileSync } from "node:child_process";
+import { readdirSync, readFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 
 const files = ["assets/app.js", ...readdirSync("assets/js").filter((f) => f.endsWith(".js")).map((f) => join("assets/js", f))];
 let bad = 0;
 for (const f of files) {
-  try {
-    execFileSync(process.execPath, ["--check", f], { stdio: "pipe" });
-  } catch (e) {
+  const r = spawnSync(process.execPath, ["--input-type=module", "--check"], { input: readFileSync(f), encoding: "utf8" });
+  if (r.status !== 0) {
     bad++;
-    console.error(`${f}: ${String(e.stderr || e.message).split("\n").slice(0, 4).join("\n")}`);
+    console.error(`${f}: ${(r.stderr || "").split("\n").slice(0, 5).join("\n")}`);
   }
 }
 if (bad) process.exit(1);

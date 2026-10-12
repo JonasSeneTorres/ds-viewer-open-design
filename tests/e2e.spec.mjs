@@ -23,11 +23,19 @@ test("início mostra o hero e o catálogo completo", async ({ page }) => {
   await expect(page.locator(".ds-card-cat")).toHaveCount(TOTAL);
   await expect(page.locator(".main-nav > a")).toHaveText(["Início", "Informações do tema"]);
   await expect(page.locator("#examplesBtn")).toContainText("Exemplos");
-  // aviso de que os exemplos não usam UI kit, com link para a documentação em outra janela
-  const doc = page.locator(".hero a[target=_blank]");
-  await expect(doc).toHaveAttribute("href", /open-design\.ai/);
-  await expect(doc).toHaveAttribute("rel", /noopener/);
-  await expect(doc).toContainText("abre em outra janela");
+  // texto de apresentação: links para o Open Design, o site do Maujor e o CSS Zen Garden, em outra janela
+  await expect(page.locator(".hero p.lede")).toHaveCount(4);
+  await expect(page.locator(".hero")).toContainText("Maujor");
+  await expect(page.locator(".hero")).toContainText("nenhum UI Kit nem biblioteca de componentes");
+  const links = page.locator(".hero a[target=_blank]");
+  await expect(links).toHaveCount(3);
+  await expect(links.nth(0)).toHaveAttribute("href", /open-design\.ai/);
+  await expect(links.nth(1)).toHaveAttribute("href", "https://maujor.com/");
+  await expect(links.nth(2)).toHaveAttribute("href", "https://csszengarden.com/");
+  for (const i of [0, 1, 2]) {
+    await expect(links.nth(i)).toHaveAttribute("rel", /noopener/);
+    await expect(links.nth(i)).toContainText("abre em outra janela");
+  }
   expect(problems).toEqual([]);
 });
 
@@ -58,7 +66,7 @@ test("página de um DS abre com o próprio tema", async ({ page }) => {
 
 test("seletor de temas busca, aplica e lembra a escolha", async ({ page }) => {
   await page.goto("/#/");
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("tesla");
   await expect(page.locator(".combobox-option:not([hidden])")).toHaveCount(1);
   await page.keyboard.press("Enter");
@@ -99,7 +107,10 @@ test("tabela: adiciona um registro e mostra os estados", async ({ page }) => {
   await page.locator('#tableStates label:has-text("Erro")').click();
   await expect(page.locator("#tableBody .is-error")).toBeVisible();
   await page.locator('#tableStates label:has-text("Dados")').click();
-  await expect(page.locator("#tableBody tr")).toHaveCount(11);
+  // a tabela pagina de 5 em 5: 11 registros em 3 páginas, e o novo registro está na última
+  await expect(page.locator("#tableBody tr")).toHaveCount(5);
+  await expect(page.locator("#tablePagination .pagination")).toBeVisible();
+  await expect(page.locator("#tablePagination .pag-status")).toContainText("de 3");
 });
 
 test("formulário valida e confirma o envio", async ({ page }) => {
@@ -140,7 +151,7 @@ test("menu Exemplos lista as páginas de exemplo e a informação do tema segue 
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
   // escolhe outro tema; "Informações do tema" passa a apontar para ele
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("tesla");
   await page.keyboard.press("Enter");
   await page.click("#navTheme");
@@ -264,7 +275,7 @@ test("rodapé: autoria, licenças e privacidade, com o tema selecionado", async 
   await expect(page.locator(".site-footer")).toContainText("Site desenvolvido por Jonas Sene Torres");
 
   // escolhe um tema e abre as páginas do rodapé: o tema continua valendo
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("bugatti");
   await page.keyboard.press("Enter");
   await page.click('.footer-nav a[href="#/licencas"]');
@@ -293,7 +304,7 @@ test("aviso de fontes proprietárias aparece só nos temas que têm", async ({ p
   await page.goto("/#/");
   await expect(page.locator("#fontNotice")).toBeHidden(); // tema padrão: fontes abertas
 
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("bugatti");
   await page.keyboard.press("Enter");
   const notice = page.locator("#fontNotice");
@@ -323,7 +334,7 @@ test("aviso de contraste lista os tokens ajustados e fecha", async ({ page }) =>
   await expect(notice).toContainText("WCAG 2.2");
 
   await page.goto("/#/design-system/airbnb");
-  await notice.locator("summary").click();
+  await notice.locator(".acc-btn").click();
   const solid = notice.locator("li", { hasText: "Botão principal" });
   await expect(solid).toBeVisible();
   await expect(solid).toContainText("texto"); // no Airbnb a cor fica e só o texto do botão muda
@@ -340,7 +351,7 @@ test("botão sol/lua só funciona nos temas com variante clara/escura", async ({
 
   await page.goto("/?tema=airbnb#/");
   await expect(btn).toHaveAttribute("aria-disabled", "true"); // Airbnb: sem variante
-  await expect(btn).toHaveAttribute("title", /não tem variante/);
+  await expect(page.locator("#schemeTip")).toHaveText(/não tem variante/);
 
   await page.goto("/?tema=padrao#/"); // o Padrão tem variante escura própria
   await expect(btn).toHaveAttribute("aria-disabled", "false");
@@ -373,7 +384,7 @@ test("botão sol/lua só funciona nos temas com variante clara/escura", async ({
 test("tema na URL: link compartilhável, voltar desfaz a troca e o seletor acompanha", async ({ page }) => {
   const problems = watch(page);
   const pick = async (name) => {
-    await page.click(".combobox-btn");
+    await page.click("#themePicker .combobox-btn");
     await page.keyboard.type(name);
     await page.keyboard.press("Enter");
   };
@@ -423,23 +434,23 @@ test("o botão de abrir no open-design só aparece nos DS que existem lá", asyn
 });
 
 test("metatags acompanham a rota", async ({ page }) => {
-  const meta = (sel) => page.locator(`head meta[${sel}]`).getAttribute("content");
+  // as tags são atualizadas pelo JavaScript depois da navegação: espera com repetição, sem ler na hora
+  const meta = (sel) => page.locator(`head meta[${sel}]`);
   await page.goto("/#/");
-  expect(await meta('name="description"')).toContain("143 design systems");
-  const home = await meta('property="og:title"');
+  await expect(meta('name="description"')).toHaveAttribute("content", /143 design systems/);
+  const home = await meta('property="og:title"').getAttribute("content");
 
   await page.goto("/#/tabela");
   await expect(page.locator("main h1")).toBeVisible();
-  expect(await meta('name="description"')).toContain("CRUD");
-  expect(await meta('property="og:title"')).not.toBe(home);
-  expect(await meta('property="og:url"')).toMatch(/#\/tabela$/);
+  await expect(meta('name="description"')).toHaveAttribute("content", /CRUD/);
+  await expect(meta('property="og:title"')).not.toHaveAttribute("content", home);
+  await expect(meta('property="og:url"')).toHaveAttribute("content", /#\/tabela$/);
 
   // na página de um DS, a descrição é o resumo dele
   await page.goto("/#/design-system/bugatti");
   await expect(page.locator(".ds-full h1")).toBeVisible();
-  const dsDesc = await meta('name="description"');
-  expect(dsDesc).toContain("hipercarros"); // o resumo do Bugatti, não o texto genérico
-  expect(await meta('property="og:image"')).toMatch(/\/assets\/og\.png$/);
+  await expect(meta('name="description"')).toHaveAttribute("content", /hipercarros/); // o resumo do Bugatti
+  await expect(meta('property="og:image"')).toHaveAttribute("content", /\/assets\/og\.png$/);
 });
 
 test("componentes: abas, accordion, toast, tooltip e paginação", async ({ page }) => {
@@ -464,9 +475,9 @@ test("componentes: abas, accordion, toast, tooltip e paginação", async ({ page
   await expect(acc).toHaveAttribute("aria-expanded", "false");
   await acc.click();
   await expect(acc).toHaveAttribute("aria-expanded", "true");
-  await expect(page.locator("#accpanel1")).toBeVisible();
+  await expect(page.locator("#acc1Panel")).toBeVisible();
   await acc.click();
-  await expect(page.locator("#accpanel1")).toBeHidden();
+  await expect(page.locator("#acc1Panel")).toBeHidden();
 
   // toast: aparece, tem região viva e fecha
   await page.locator('[data-toast="ok"]').click();
@@ -509,5 +520,144 @@ test("tema Urdu: direção da direita para a esquerda e sem rolagem horizontal",
   // outro tema volta para a esquerda
   await page.goto("/?tema=padrao#/");
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  expect(problems).toEqual([]);
+});
+
+test("componentes: visão de código com abas HTML, CSS e JavaScript", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/componentes");
+  await expect(page.locator(".comp-note")).toContainText("nenhuma lib ou UI Kit");
+
+  // um botão por cartão
+  await expect(page.locator(".code-btn")).toHaveCount(5);
+
+  await page.locator('[data-code="tabs"]').click();
+  const dialog = page.locator("dialog.dialog-code");
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator("#codeTitle")).toContainText("Abas");
+  await expect(dialog.locator('[role="tab"]')).toHaveText(["HTML", "CSS", "JavaScript"]);
+
+  // HTML: o markup da página
+  await expect(dialog.locator("#codeText-html")).toContainText('role="tablist"');
+  await expect(dialog.locator("#codeText-html")).toContainText("aria-selected");
+
+  // CSS e JavaScript: lidos dos arquivos publicados
+  await dialog.locator("#codeTab-css").click();
+  await expect(dialog.locator("#codePanel-css")).toBeVisible();
+  await expect(dialog.locator("#codeText-css")).toContainText(".tab");
+  await dialog.locator("#codeTab-css").press("ArrowRight");
+  await expect(dialog.locator("#codeTab-js")).toHaveAttribute("aria-selected", "true");
+  await expect(dialog.locator("#codeText-js")).toContainText("function mountTabs");
+
+  // Esc fecha e devolve o foco ao botão
+  await page.keyboard.press("Escape");
+  await expect(dialog).toBeHidden();
+  await expect(page.locator('[data-code="tabs"]')).toBeFocused();
+
+  // outro componente traz o próprio código
+  await page.locator('[data-code="pagination"]').click();
+  await expect(dialog.locator("#codeTitle")).toContainText("Paginação");
+  await dialog.locator("#codeTab-js").click();
+  await expect(dialog.locator("#codeText-js")).toContainText("function paginationHTML");
+  expect(problems).toEqual([]);
+});
+
+test("os componentes valem no site todo: tooltips, toasts, paginação e accordion", async ({ page }) => {
+  const problems = watch(page);
+
+  // cabeçalho: tooltip no mesmo padrão (sem title nativo)
+  await page.goto("/?tema=github#/");
+  await expect(page.locator("#schemeBtn")).not.toHaveAttribute("title", /.+/);
+  await expect(page.locator("#langBtn")).not.toHaveAttribute("title", /.+/);
+  await page.locator("#langBtn").focus();
+  await expect(page.locator("#langTip")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#langTip")).toBeHidden();
+  await page.locator("#schemeBtn").focus();
+  await expect(page.locator("#schemeTip")).toContainText("modo escuro");
+
+  // tabela: paginação e toast ao excluir
+  await page.goto("/#/tabela");
+  await expect(page.locator("#tableBody tr")).toHaveCount(5);
+  await page.locator('#tablePagination [data-page="2"]').first().click();
+  await expect(page.locator("#tablePagination [aria-current='page']")).toHaveText("2");
+  await page.locator('#tableBody [data-action="delete"]').first().click();
+  await page.click("#confirmDelete");
+  await expect(page.locator("#toastRegion .toast")).toContainText("excluído");
+
+  // item depreciado: Editar fica focável (aria-disabled) e explica o motivo no tooltip
+  const dep = page.locator('[data-action="edit"][aria-disabled="true"]').first();
+  await dep.focus();
+  await expect(page.locator(".tip-wrap:focus-within .tip")).toBeVisible();
+
+  // loja: adicionar ao carrinho avisa com toast
+  await page.goto("/#/loja");
+  await page.locator("[data-add]").first().click();
+  await expect(page.locator("#toastRegion .toast")).toContainText("carrinho");
+
+  // licenças: o texto da MIT é um accordion
+  await page.goto("/#/licencas");
+  await page.locator("#mitAcc").click();
+  await expect(page.locator("#mitAccPanel pre")).toBeVisible();
+  expect(problems).toEqual([]);
+});
+
+test("abas não têm barra de rolagem vertical, no cartão nem no modal", async ({ page }) => {
+  await page.goto("/#/componentes");
+  const noVScroll = (sel) => page.locator(sel).first().evaluate((e) => e.scrollHeight <= e.clientHeight);
+  expect(await noVScroll("#demoTabs .tablist")).toBe(true);
+
+  await page.locator('[data-code="tabs"]').click();
+  await expect(page.locator("dialog.dialog-code")).toBeVisible();
+  expect(await noVScroll("#codeTablist")).toBe(true);
+});
+
+test("cabeçalho responsivo: hambúrguer, marca e claro/escuro em tela de tablet em pé (768 px) ou menor", async ({ page }) => {
+  const problems = watch(page);
+
+  // desktop: sem hambúrguer, tudo à vista
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto("/?tema=github#/");
+  await expect(page.locator("#navToggle")).toBeHidden();
+  await expect(page.locator(".main-nav > a").first()).toBeVisible();
+  await expect(page.locator("#langBtn")).toBeVisible();
+
+  // tablet em pé (768) e celular (390): só hambúrguer, marca e claro/escuro
+  for (const width of [768, 390]) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/?tema=github#/");
+    await expect(page.locator("#navToggle")).toBeVisible();
+    await expect(page.locator(".brand")).toBeVisible();
+    await expect(page.locator("#schemeBtn")).toBeVisible();
+    await expect(page.locator(".main-nav")).toBeHidden();
+    await expect(page.locator("#langBtn")).toBeHidden();
+    await expect(page.locator("#themePicker")).toBeHidden();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)).toBe(false);
+
+    // abrir: navegação, seletor de temas e idioma aparecem
+    await page.click("#navToggle");
+    await expect(page.locator("#navToggle")).toHaveAttribute("aria-expanded", "true");
+    await expect(page.locator(".main-nav")).toBeVisible();
+    await expect(page.locator("#themePicker")).toBeVisible();
+    await expect(page.locator("#langBtn")).toBeVisible();
+
+    // Esc fecha e devolve o foco ao hambúrguer
+    await page.keyboard.press("Escape");
+    await expect(page.locator(".main-nav")).toBeHidden();
+    await expect(page.locator("#navToggle")).toBeFocused();
+
+    // escolher uma página fecha o painel
+    await page.click("#navToggle");
+    await page.locator('.main-nav > a[href="#/"]').click();
+    await expect(page.locator(".main-nav")).toBeHidden();
+  }
+
+  // o menu Exemplos funciona dentro do painel
+  await page.click("#navToggle");
+  await page.click("#examplesBtn");
+  await expect(page.locator("#examplesMenu")).toBeVisible();
+  await page.locator('#examplesMenu a[href="#/blog"]').click();
+  await expect(page).toHaveURL(/#\/blog$/);
+  await expect(page.locator(".main-nav")).toBeHidden();
   expect(problems).toEqual([]);
 });

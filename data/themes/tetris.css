@@ -88,6 +88,9 @@
   --ease: ease-out;
   --radius-lg: 4px;
   --focus-ring: 0 0 0 4px rgba(0, 240, 240, 0.32);
+  --secondary: #7b3ceb;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #6731c6;
   --bg: #050816;
   --surface: #10162a;
   --surface-2: #17203a;

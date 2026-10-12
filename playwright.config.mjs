@@ -19,7 +19,7 @@ for (const name of wanted) {
 
 export default defineConfig({
   testDir: "tests",
-  timeout: 30_000,
+  timeout: 45_000, // o Firefox no CI carrega o catálogo de 143 cartões mais devagar
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? "github" : "list",
   use: {

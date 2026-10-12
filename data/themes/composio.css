@@ -79,6 +79,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 22px;
   --focus-ring: 0 0 0 4px rgba(109, 93, 252, 0.30);
+  --secondary: #00ffff;
+  --secondary-fg: #111111;
+  --secondary-hover: #57ffff;
   --h3-weight: 400;
   --btn-weight: 400;
   --label-weight: 500;

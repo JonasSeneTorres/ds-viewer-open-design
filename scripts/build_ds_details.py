@@ -913,6 +913,39 @@ def parse_button_spec(raw_guide):
     return out
 
 
+_CSS_COLOR = r"(?:#[0-9a-fA-F]{3,8}|rgba?\([\d., %]+\))"
+
+
+def parse_nav_toggle_policy(raw_guide):
+    """Política do guia para o botão do menu hambúrguer: raio, borda e fundo, quando escritos de forma explícita.
+    Dois formatos: frase ("hamburger toggle at 12px radius") ou bloco de botão que termina em "Use: ... menu toggle"."""
+    _intro, secs = split_sections(raw_guide)
+    out = {}
+    for sec in secs:
+        if not sec["id"].startswith("component"):
+            continue
+        plain = re.sub(r"\s+", " ", text(sec["html"]))
+        # 1. frase: o raio vem ao lado de "hamburger"
+        m = re.search(r"hamburger[^.;]{0,60}?(\d{1,2})px radius|(\d{1,2})px radius[^.;]{0,30}?hamburger", plain, re.I)
+        if m:
+            out["radius"] = f"{m.group(1) or m.group(2)}px"
+        # 2. bloco de botão: as propriedades vêm antes de "Use: ... menu toggle"
+        # "Use:" / "Used for" com maiúscula (sem isso casaria "uses inset box-shadow..."); os itens do guia vêm
+        # sem espaço entre si ("0.08)Use: ..."), então não dá para exigir fronteira de palavra
+        for u in re.finditer(r"(?:Use:|Used for)[^.]{0,80}?(?:menu toggles?|hamburger)", plain):
+            blk = plain[max(0, u.start() - 320):u.start()]
+            r = re.findall(r"[Rr]adius:\s*(\d{1,3}(?:px|%))", blk)
+            if r:
+                out["radius"] = r[-1]
+            b = re.findall(r"Border:\s*(\d{1,2}px solid " + _CSS_COLOR + ")", blk)
+            if b:
+                out["border"] = b[-1]
+            bg = re.findall(r"Background:\s*(" + _CSS_COLOR + ")", blk)
+            if bg:
+                out["bg"] = bg[-1]
+    return out
+
+
 def pick_weight(ranges, want=600):
     """Peso mais próximo de `want` que a fonte realmente tem (sem passar dele, se possível)."""
     for lo, hi in ranges:
@@ -1157,6 +1190,13 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None, type_roles=None
         val, unit = type_roles["label_tracking"]
         em = val / 12 if unit == "px" else val  # px sobre o rótulo de ~12px
         type_extra["--kicker-spacing"] = f"{max(0.0, min(0.2, em)):.3g}em"
+    nav = type_roles.get("nav_toggle") or {}
+    if nav.get("radius"):
+        type_extra["--nav-toggle-radius"] = nav["radius"]
+    if nav.get("border"):
+        type_extra["--nav-toggle-border"] = nav["border"]
+    if nav.get("bg"):
+        type_extra["--nav-toggle-bg"] = nav["bg"]
     spec = type_roles.get("button_spec") or {}
     if "radius" in spec:
         type_extra["--btn-radius"] = f"{min(spec['radius'], 999)}px"
@@ -1175,6 +1215,30 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None, type_roles=None
     # (sem eles o CSS usa --accent e --accent-strong)
     extras = {k: g(k) for k in ("--field-bg", "--grad-1", "--grad-2", "--row-bg", "--row-stripe", "--row-hover",
                                   "--cta-bg", "--cta-btn-fg") if g(k)}
+
+    # Cor secundária (botões de destaque secundário, como "Ver código"): a paleta secundária do DS ou, sem ela,
+    # a neutra. O preenchimento passa de 4,5:1 com o texto e de 3:1 contra a superfície (WCAG 1.4.3 e 1.4.11).
+    sec_pal = next((p for p in palettes if p["name"] == roles.get("secondary")), None) or \
+        next((p for p in palettes if p["name"] == roles.get("neutral")), None)
+    if sec_pal and parse_hex(sec_pal["base"]):
+        base = parse_hex(sec_pal["base"])
+        picked = None
+        for pct in range(0, 101, 5):
+            cand = to_hex(mix_oklab(hex_to_rgb(base), hex_to_rgb(fg_c), pct / 100))
+            bg2, fg2 = solid_pair(cand, ink_for(cand))
+            if contrast(hex_to_rgb(bg2), hex_to_rgb(fg2)) >= 4.5 and contrast(hex_to_rgb(bg2), hex_to_rgb(surf_c)) >= 3:
+                picked = (bg2, fg2)
+                break
+        if picked:
+            sec_bg, sec_fg = picked
+            toward = "#000000" if sec_fg == "#ffffff" else "#ffffff"
+            extras["--secondary"] = sec_bg
+            extras["--secondary-fg"] = sec_fg
+            extras["--secondary-hover"] = to_hex(mix_oklab(hex_to_rgb(sec_bg), hex_to_rgb(toward), 0.12))
+            before = contrast(hex_to_rgb(base), hex_to_rgb(ink_for(base)))
+            if sec_bg.lower() != base.lower() and (before < 4.5 or contrast(hex_to_rgb(base), hex_to_rgb(surf_c)) < 3):
+                note("--secondary", base, sec_bg, min(before, contrast(hex_to_rgb(base), hex_to_rgb(surf_c)) + 1.5),
+                     contrast(hex_to_rgb(sec_bg), hex_to_rgb(sec_fg)))
     # esquema de cores nativo: ícones de calendário e relógio, barras de rolagem e controles do navegador
     # ficam claros sobre fundo escuro
     scheme = {"color-scheme": "dark" if bg_hex and luminance(hex_to_rgb(bg_hex)) < 0.18 else "light"}
@@ -1403,12 +1467,13 @@ def build_one(ds_id, page_path, entry, slug):
     _intro, sections = split_sections(raw_guide)
     colors = guide_colors(raw_guide)
     fonts = describe_fonts(parse_fonts(raw_guide))
-    type_roles = {**parse_type_roles(raw_guide), "button_spec": parse_button_spec(raw_guide)}
+    type_roles = {**parse_type_roles(raw_guide), "button_spec": parse_button_spec(raw_guide),
+                  "nav_toggle": parse_nav_toggle_policy(raw_guide)}
     if ds_id == "padrao":
         tokens, colors, fonts = compose_default(tokens)
         # tipografia do Futuristic; o botão (raio e padding) segue o guia do Vercel, de onde vêm as bordas
         type_roles = {**parse_type_roles(block(cached_page(DEFAULT_TYPE_FROM[0]), "designmd-body")),
-                      "button_spec": type_roles["button_spec"]}
+                      "button_spec": type_roles["button_spec"], "nav_toggle": type_roles["nav_toggle"]}
     # cores do preview do catálogo entram como candidatas se o guia não nomear nada
     palettes, roles = build_palettes(tokens, colors)
     if ds_id == "padrao":

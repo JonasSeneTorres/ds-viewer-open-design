@@ -127,6 +127,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --secondary: #6a6a6b;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #585859;
   --btn-pad-y: 10px;
   --btn-pad-x: 20px;
   --bg: #0f0f10;
@@ -199,6 +202,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --secondary: #5c5c5e;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #4c4c4e;
   --btn-pad-y: 10px;
   --btn-pad-x: 20px;
   --bg: #ffffff;

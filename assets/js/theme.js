@@ -5,6 +5,7 @@ import { THEME_KEY } from "./content.js";
 import { DEFAULT_THEME, THEMES } from "./data.js";
 import { L, T, lang } from "./i18n.js";
 import { esc } from "./util.js";
+import { accordionHTML, setTipText } from "./ui.js";
 
 
 // Cada tema é um CSS próprio (data/themes/<id>.css: variáveis + @import das fontes),
@@ -90,7 +91,7 @@ function updateSchemeButton(id) {
   btn.setAttribute("data-target", has ? target : "dark");
   btn.setAttribute("aria-disabled", String(!has));
   btn.setAttribute("aria-label", label);
-  btn.setAttribute("title", label);
+  setTipText("schemeTip", label);
 }
 
 
@@ -142,8 +143,11 @@ function updateContrastNotice(id) {
     });
     if (!rows.length) return;
     box.innerHTML =
-      '<div class="wrap font-notice-inner"><details><summary>' + esc(T("contrastnote.text").replace("{n}", String(rows.length))) +
-      '</summary><ul class="cn-list">' + rows.join("") + "</ul></details>" +
+      '<div class="wrap font-notice-inner">' +
+      accordionHTML([{
+        id: "contrastAcc", title: T("contrastnote.text").replace("{n}", String(rows.length)),
+        body: '<ul class="cn-list">' + rows.join("") + "</ul>"
+      }]) +
       '<button type="button" class="font-notice-close" data-close-notice="' + esc(id) + '" data-notice-key="' + CONTRAST_NOTICE_KEY +
       '" data-notice-box="contrastNotice" aria-label="' + esc(T("close")) + '">&times;</button></div>';
     box.hidden = false;

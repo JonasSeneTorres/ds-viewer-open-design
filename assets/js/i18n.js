@@ -350,6 +350,8 @@ var UI = {
   "shop.new": { "en-US": "New", "pt-BR": "Novo" },
   "shop.sale": { "en-US": "Sale", "pt-BR": "Oferta" },
   "shop.empty": { "en-US": "No products in this category.", "pt-BR": "Nenhum produto nesta categoria." },
+  "nav.menuOpen": { "en-US": "Open menu", "pt-BR": "Abrir menu" },
+  "nav.menuClose": { "en-US": "Close menu", "pt-BR": "Fechar menu" },
   "nav.components": { "en-US": "Components", "pt-BR": "Componentes" },
   "comp.kicker": { "en-US": "Example · Components", "pt-BR": "Exemplo · Componentes" },
   "comp.h1": { "en-US": "Components", "pt-BR": "Componentes" },
@@ -357,6 +359,22 @@ var UI = {
     "en-US": "Tabs, accordion, toast, tooltip and pagination, all keyboard accessible, styled by the selected design system.",
     "pt-BR": "Abas, accordion, toast, tooltip e paginação, todos acessíveis pelo teclado, no estilo do design system escolhido."
   },
+  "comp.note": {
+    "en-US": "The components below were not built with any library or UI kit. They are plain markup with some JavaScript for interaction. The focus is on presenting the visual proposal indicated by the brand.",
+    "pt-BR": "Os componentes a seguir não foram criados usando nenhuma lib ou UI Kit. Foram criados com marcação simples e algum JavaScript para interação. O foco maior é apresentar a proposta visual indicada pela marca."
+  },
+  "comp.code": { "en-US": "View code", "pt-BR": "Ver código" },
+  "comp.codeTitle": { "en-US": "Code: {name}", "pt-BR": "Código: {name}" },
+  "comp.codeHtml": { "en-US": "HTML", "pt-BR": "HTML" },
+  "comp.codeCss": { "en-US": "CSS", "pt-BR": "CSS" },
+  "comp.codeJs": { "en-US": "JavaScript", "pt-BR": "JavaScript" },
+  "comp.copy": { "en-US": "Copy", "pt-BR": "Copiar" },
+  "comp.copied": { "en-US": "Copied to the clipboard.", "pt-BR": "Copiado para a área de transferência." },
+  "comp.loading": { "en-US": "Loading…", "pt-BR": "Carregando…" },
+  "comp.codeError": { "en-US": "Could not load this code.", "pt-BR": "Não foi possível carregar este código." },
+  "comp.noteHtml": { "en-US": "Markup as rendered on this page.", "pt-BR": "Marcação como está nesta página." },
+  "comp.noteCss": { "en-US": "Rules from the site stylesheet. Colors come from the theme variables (--accent, --surface...).", "pt-BR": "Regras da folha de estilo do site. As cores vêm das variáveis do tema (--accent, --surface...)." },
+  "comp.noteJs": { "en-US": "Interaction code of this component.", "pt-BR": "Código de interação deste componente." },
   "comp.tabs": { "en-US": "Tabs", "pt-BR": "Abas" },
   "comp.tab1": { "en-US": "Overview", "pt-BR": "Visão geral" },
   "comp.tab2": { "en-US": "Details", "pt-BR": "Detalhes" },
@@ -384,6 +402,12 @@ var UI = {
   "comp.pageN": { "en-US": "Page {n}", "pt-BR": "Página {n}" },
   "comp.pagStatus": { "en-US": "Page {n} of {total}", "pt-BR": "Página {n} de {total}" },
   "meta.components": { "en-US": "Tabs, accordion, toast, tooltip and pagination, styled by the selected design system.", "pt-BR": "Abas, accordion, toast, tooltip e paginação, no estilo do design system escolhido." },
+  "tbl.toastSaved": { "en-US": "Record added.", "pt-BR": "Registro adicionado." },
+  "tbl.toastUpdated": { "en-US": "Record updated.", "pt-BR": "Registro atualizado." },
+  "tbl.toastDeleted": { "en-US": "Record deleted.", "pt-BR": "Registro excluído." },
+  "shop.toastAdded": { "en-US": "Added to the cart.", "pt-BR": "Adicionado ao carrinho." },
+  "dash.toastDraft": { "en-US": "Draft saved (sample: nothing is stored).", "pt-BR": "Rascunho salvo (de exemplo: nada é guardado)." },
+  "aside.toastNl": { "en-US": "Subscription noted (sample: nothing is sent).", "pt-BR": "Inscrição registrada (de exemplo: nada é enviado)." },
   "meta.locale": { "en-US": "en_US", "pt-BR": "pt_BR" },
   "meta.home": {
     "en-US": "Browsable catalog of 143 design systems: apply each one as a theme to the whole site, with palettes, typography, tokens and guides.",
@@ -419,6 +443,7 @@ var UI = {
   "ctok.--ok-ink": { "en-US": "Success text", "pt-BR": "Texto de sucesso" },
   "ctok.--warn-ink": { "en-US": "Warning text", "pt-BR": "Texto de atenção" },
   "ctok.--danger-ink": { "en-US": "Error text", "pt-BR": "Texto de erro" },
+  "ctok.--secondary": { "en-US": "Secondary button", "pt-BR": "Botão secundário" },
   "ctok.--surface": { "en-US": "Surface (cards)", "pt-BR": "Superfície (cartões)" },
   "scheme.toDark": { "en-US": "Switch to dark mode", "pt-BR": "Mudar para o modo escuro" },
   "scheme.toLight": { "en-US": "Switch to light mode", "pt-BR": "Mudar para o modo claro" },
@@ -432,13 +457,23 @@ var UI = {
   "home.kicker": { "en-US": "DS Viewer · Open Design", "pt-BR": "Visualizador de DS · Open Design" },
   "home.h1": { "en-US": "A hands-on viewer for Open Design's design systems.", "pt-BR": "Visualizador Prático de Design Systems do Open Design." },
   "home.lede": {
-    "en-US": "All texts, articles and forms are for illustration only. Their sole purpose is to let you interact with the page and get a better feel for what each cataloged design system has to offer.",
-    "pt-BR": "Todos os textos, matérias e formulários são somente ilustrativos. A única finalidade é poder interagir com a página tendo uma ideia melhor do que cada design system catalogado tem a oferecer."
+    "en-US": "The documentation of {link}'s design systems is extremely rich, but it falls short of giving a web overview. With this viewer I try to offer what I find most effective: each design system applied to real pages.",
+    "pt-BR": "A documentação dos Design Systems do {link} é extremamente rica, mas peca em oferecer um panorama web. Com este visualizador, procuro apresentar o que julgo mais efetivo: cada design system aplicado a páginas de verdade."
   },
   "home.note": {
-    "en-US": "It is important to make clear that the examples on this page use no UI kit or similar. All the definitions of colors, fonts, borders and shadows come from the {link} documentation.",
-    "pt-BR": "É importante deixar claro que, nos exemplos desta página, não estamos usando nenhum UI Kit ou assemelhado. Toda a definição de cores, fontes, bordas e sombras vem da documentação do {link}."
+    "en-US": "On {maujor}'s old website there was a section that, if I remember correctly, was inspired by {zen}: a page with fixed markup, for which the audience wrote CSS files to generate a completely different theme. I did the same work here.",
+    "pt-BR": "No antigo site do {maujor} havia um trecho que, se não me engano, foi inspirado no {zen}: uma página com marcação fixa, para a qual o público desenvolvia arquivos CSS e gerava um tema totalmente diferente. Fiz o mesmo trabalho aqui."
   },
+  "home.how": {
+    "en-US": "I generated the markup for a few examples and applied the style of each of Open Design's design systems. I made a point of using no UI kit or component library; when I needed a component, I tried to build it in the simplest and most generic way. What interests me most is seeing how each design system affects the code around it.",
+    "pt-BR": "Gerei a marcação de alguns exemplos e apliquei o estilo de cada um dos Design Systems do Open Design. Fiz questão de não usar nenhum UI Kit nem biblioteca de componentes; quando precisei de algum, tentei construí-lo da forma mais simples e genérica possível. O que mais me interessa é ver como cada design system interfere no código à sua volta."
+  },
+  "home.more": {
+    "en-US": "Feel free to explore. Here you will find examples of blog pages, e-commerce, forms, tables, charts and a few other little things.",
+    "pt-BR": "Sinta-se à vontade para explorar. Aqui você encontra exemplos de páginas de blog, e-commerce, formulários, tabelas, gráficos e mais algumas coisinhas."
+  },
+  "home.maujorLink": { "en-US": "Maujor", "pt-BR": "Maujor" },
+  "home.zenLink": { "en-US": "CSS Zen Garden", "pt-BR": "CSS Zen Garden" },
   "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
   "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
   "blog.kicker": { "en-US": "Blog", "pt-BR": "Blog" },

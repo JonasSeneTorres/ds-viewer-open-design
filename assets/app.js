@@ -16,9 +16,58 @@ import { licensesHTML, privacyHTML } from "./js/legal.js";
 import { SHOP_CATS, shopCatName, shopHTML, shopMount } from "./js/shop.js";
 import { loadTimer, resetTableState, tableMount, tablePageHTML } from "./js/table.js";
 import { applyTheme, currentTheme, getStoredTheme, setTheme, syncPicker, themeFromURL } from "./js/theme.js";
+import { setTipText } from "./js/ui.js";
 import { app, esc } from "./js/util.js";
 import "./js/behaviors.js"; // só efeitos: cliques e Enter dos formulários de exemplo
 
+
+// ---- menu do cabeçalho em telas de tablet em pé ou menores: o hambúrguer abre o painel com a navegação,
+// o seletor de temas e o idioma; a marca e o botão claro/escuro ficam sempre visíveis
+var navToggle = document.getElementById("navToggle");
+var siteMenu = document.getElementById("siteMenu");
+var NAV_BREAKPOINT = window.matchMedia ? window.matchMedia("(min-width: 769px)") : null;
+
+function navIsOpen() {
+  return !!siteMenu && siteMenu.getAttribute("data-open") === "true";
+}
+
+function updateNavLabel() {
+  if (!navToggle) return;
+  var label = T(navIsOpen() ? "nav.menuClose" : "nav.menuOpen");
+  navToggle.setAttribute("aria-label", label);
+  setTipText("navToggleTip", label);
+}
+
+function setNav(open, restoreFocus) {
+  if (!siteMenu || !navToggle) return;
+  siteMenu.setAttribute("data-open", String(open));
+  navToggle.setAttribute("aria-expanded", String(open));
+  updateNavLabel();
+  if (!open && restoreFocus) navToggle.focus();
+}
+
+if (navToggle && siteMenu) {
+  navToggle.addEventListener("click", function () { setNav(!navIsOpen(), false); });
+  // Esc fecha o painel; se o submenu Exemplos estiver aberto, o Esc é dele (fase de captura: roda antes)
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !navIsOpen()) return;
+    var ex = document.getElementById("examplesMenu");
+    if (ex && !ex.hidden) return;
+    setNav(false, true);
+  }, true);
+  document.addEventListener("click", function (e) {
+    if (navIsOpen() && !e.target.closest(".site-header")) setNav(false, false);
+  });
+  // ao escolher uma página, o painel fecha
+  siteMenu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) setNav(false, false);
+  });
+  if (NAV_BREAKPOINT) {
+    var onWide = function (e) { if (e.matches) setNav(false, false); };
+    if (NAV_BREAKPOINT.addEventListener) NAV_BREAKPOINT.addEventListener("change", onWide);
+  }
+  updateNavLabel();
+}
 
 // ---- menu "Exemplos" do cabeçalho
 var examplesBtn = document.getElementById("examplesBtn");
@@ -227,7 +276,8 @@ function applyStaticI18n() {
   });
   if (langBtn) {
     langBtn.setAttribute("aria-label", T("lang.label"));
-    langBtn.setAttribute("title", T("lang.label"));
+    setTipText("langTip", T("lang.label"));
+    updateNavLabel();
     document.getElementById("langCode").textContent = T("lang.code");
   }
   if (comboBtn) comboBtn.setAttribute("aria-label", T("combo.label"));

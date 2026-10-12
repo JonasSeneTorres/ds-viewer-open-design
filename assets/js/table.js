@@ -3,6 +3,7 @@
 import { records, saveRecords, setRecords } from "./content.js";
 import { T, UI } from "./i18n.js";
 import { page } from "./layout.js";
+import { mountPagination, paginationHTML, showToast, tipWrap } from "./ui.js";
 import { esc, formatDate } from "./util.js";
 
 
@@ -40,7 +41,8 @@ function tablePageHTML() {
     "</tr></thead>" +
     '<tbody id="tableBody"></tbody>' +
     "</table>" +
-    "</div>"
+    "</div>" +
+    '<div class="table-pagination" id="tablePagination"></div>'
   );
 }
 
@@ -49,6 +51,10 @@ function tablePageHTML() {
 var tableState = "data";
 
 var loadTimer = null;
+
+// Paginação da tabela: 5 registros por página
+var PAGE_SIZE = 5;
+var tablePage = 1;
 
 
 function resetTableState() {
@@ -66,7 +72,10 @@ function rowHTML(r) {
     '<td class="num">' + esc(r.complexity) + "/5</td>" +
     '<td class="num">' + formatDate(r.updated) + "</td>" +
     '<td><div class="row-actions">' +
-    '<button type="button" class="btn btn-success btn-small" data-action="edit"' + (deprecated ? ' disabled title="' + esc(T("tbl.depTip")) + '"' : "") + ">" + esc(T("edit")) + "</button>" +
+    (deprecated
+      ? tipWrap('<button type="button" class="btn btn-success btn-small" data-action="edit" aria-disabled="true" aria-describedby="depTip' + r.id + '">' + esc(T("edit")) + "</button>",
+        "depTip" + r.id, T("tbl.depTip"), { below: true })
+      : '<button type="button" class="btn btn-success btn-small" data-action="edit">' + esc(T("edit")) + "</button>") +
     '<button type="button" class="btn btn-danger btn-small" data-action="delete">' + esc(T("delete")) + "</button>" +
     "</div></td>" +
     "</tr>"
@@ -108,7 +117,14 @@ function paintRows() {
       '<tr><td colspan="6"><div class="empty"><strong>' + esc(T("tbl.emptyTitle")) + "</strong>" +
       "<p>" + esc(T("tbl.emptyText")) + "</p></div></td></tr>";
   } else {
-    body.innerHTML = shown.map(rowHTML).join("");
+    var pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+    if (tablePage > pages) tablePage = pages;
+    body.innerHTML = shown.slice((tablePage - 1) * PAGE_SIZE, tablePage * PAGE_SIZE).map(rowHTML).join("");
+  }
+  var pag = document.getElementById("tablePagination");
+  if (pag) {
+    var total = Math.ceil(shown.length / PAGE_SIZE);
+    pag.innerHTML = tableState === "data" && total > 1 ? paginationHTML(tablePage, total) : "";
   }
   if (count) {
     count.textContent = shown.length + " " + (shown.length === 1 ? T("tbl.one") : T("tbl.many"));
@@ -117,6 +133,7 @@ function paintRows() {
 
 
 function setTableState(next) {
+  tablePage = 1;
   tableState = next;
   clearTimeout(loadTimer);
   paintRows();
@@ -141,7 +158,7 @@ function tableMount() {
   if (body) {
     body.addEventListener("click", function (e) {
       var btn = e.target.closest("button[data-action]");
-      if (!btn || btn.disabled) return;
+      if (!btn || btn.disabled || btn.getAttribute("aria-disabled") === "true") return;
       if (btn.dataset.action === "retry") {
         var radio = document.querySelector('#tableStates input[value="loading"]');
         if (radio) radio.checked = true;
@@ -154,6 +171,15 @@ function tableMount() {
       if (!rec) return;
       if (btn.dataset.action === "edit") openRecord(rec);
       if (btn.dataset.action === "delete") openConfirm(rec);
+    });
+  }
+  var pagBox = document.getElementById("tablePagination");
+  if (pagBox) {
+    mountPagination(pagBox, function () {
+      return { cur: tablePage, total: Math.max(1, Math.ceil(records.length / PAGE_SIZE)) };
+    }, function (n) {
+      tablePage = n;
+      paintRows();
     });
   }
   var states = document.getElementById("tableStates");
@@ -245,10 +271,12 @@ recordForm.addEventListener("submit", function (e) {
   } else {
     data.id = nextId();
     setRecords(records.concat([data]));
+    tablePage = Math.ceil(records.length / PAGE_SIZE); // o novo registro entra no fim: vai para a página dele
   }
   saveRecords();
   paintRows();
   recordDialog.close();
+  showToast("ok", T(id ? "tbl.toastUpdated" : "tbl.toastSaved"));
 });
 
 recordForm.querySelectorAll("[data-close]").forEach(function (btn) {
@@ -289,6 +317,7 @@ confirmDelete.addEventListener("click", function () {
   saveRecords();
   paintRows();
   confirmDialog.close();
+  showToast("ok", T("tbl.toastDeleted"));
 });
 
 confirmDialog.querySelectorAll("[data-close]").forEach(function (btn) {

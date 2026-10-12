@@ -2,6 +2,7 @@
 
 import { T, lang } from "./i18n.js";
 import { page } from "./layout.js";
+import { showToast, tipWrap } from "./ui.js";
 import { esc } from "./util.js";
 
 
@@ -90,7 +91,7 @@ function productCardHTML(p, i) {
     "</div>" +
     '<div class="product-body">' +
     '<span class="product-cat">' + esc(shopCatName(p.cat)) + "</span>" +
-    '<h3 class="product-name" title="' + esc(p.name) + '">' + esc(p.name) + "</h3>" +
+    tipWrap('<h3 class="product-name">' + esc(p.name) + "</h3>", "pname" + p.id, p.name, { label: true, below: true, block: true }) +
     starsSVG(p.rating) +
     '<p class="price">' + (p.old ? '<s class="price-old">' + money(p.old) + "</s> " : "") + "<strong>" + money(p.price) + "</strong></p>" +
     '<button type="button" class="btn btn-ghost btn-small" data-add="' + p.id + '">' + cartIconSVG() + '<span class="btn-label">' + esc(T("shop.add")) + "</span></button>" +
@@ -169,6 +170,7 @@ function shopMount() {
       if (!btn) return;
       shopCart += 1;
       document.getElementById("cartCount").textContent = shopCart;
+      showToast("ok", T("shop.toastAdded"));
     });
   }
 }

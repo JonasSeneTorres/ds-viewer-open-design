@@ -6,7 +6,7 @@ SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo n
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão**, uma mistura própria: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic, com variante escura.
 
-O cabeçalho tem três itens (e, à direita, o seletor de temas, o botão sol/lua e o de idioma): **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Componentes, Dashboard, Loja e Login).
+O cabeçalho tem três itens (e, à direita, o seletor de temas, o botão sol/lua e o de idioma): **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Componentes, Dashboard, Loja e Login). Em telas de tablet em pé (768 px) ou menores, o cabeçalho mostra só o menu hambúrguer, a marca e o botão claro/escuro; o resto (navegação, seletor de temas e idioma) fica dentro do hambúrguer, que fecha com Esc, com o clique fora ou ao escolher uma página. Com o menu fechado o botão tem as cores do cabeçalho e nenhuma borda; aberto, vira um botão com superfície e borda. Quando o guia do DS descreve o botão do menu, o raio, a borda e o fundo dele são usados (`--nav-toggle-radius`, `--nav-toggle-border`, `--nav-toggle-bg`): hoje Bugatti, Linear, Lovable, Revolut e Stripe.
 
 Páginas:
 
@@ -14,14 +14,14 @@ Páginas:
 |---|---|
 | `#/` | Início: hero e o catálogo de design systems, com busca e filtros por categoria (o Padrão vem primeiro; o tema ativo fica destacado) |
 | `#/institucional` | Página institucional genérica (a primeira dos exemplos): hero, sobre, valores, serviços, opiniões de clientes, chamada e contato fake. Faixas de largura total com fundos alternados (`--surface-2`, `--bg`, `--accent-weak` e `--solid`); imagens com o degradê e o ícone de imagem não encontrada. O conteúdo é Lorem ipsum: quem dita o estilo é o design system |
-| `#/entrar`, `#/entrar/cadastro`, `#/entrar/esqueci` e `#/entrar/nova-senha` | Telas de autenticação da empresa fictícia "XPTO Ink" (logo do visualizador em contorno, numa moldura): login com botões de OAuth, criar conta (nome, e-mail e senha, avisando do e-mail de confirmação), esqueci minha senha e nova senha (código de 6 dígitos e a senha duas vezes, com requisitos). Seletor de estados igual ao da tabela; nada é enviado |
+| `#/entrar`, `#/entrar/cadastro`, `#/entrar/esqueci` e `#/entrar/nova-senha` | Telas de autenticação da empresa fictícia "XPTO Inc." (logo do visualizador em contorno, numa moldura): login com botões de OAuth, criar conta (nome, e-mail e senha, avisando do e-mail de confirmação), esqueci minha senha e nova senha (código de 6 dígitos e a senha duas vezes, com requisitos). Seletor de estados igual ao da tabela; nada é enviado |
 | `#/licencas` e `#/privacidade` | Páginas do rodapé (fora do menu Exemplos), com o tema selecionado: licenças e créditos (MIT, Apache 2.0 do Open Design, fontes, marcas) e privacidade/LGPD (o site não coleta nem envia dados; só guarda tema, idioma, modo claro/escuro e a tabela de exemplo no navegador, e os avisos dispensados na sessão) |
 | `#/blog` | Blog: destaque e lista de artigos de exemplo, com barra lateral ilustrativa (busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags; nada nela funciona) |
 | `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com a mesma barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
 | `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia, e tem o botão de aplicar o tema e, nos DS que existem lá, o de abrir no open-design.ai (o Padrão não tem) |
-| `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados |
-| `#/componentes` | Componentes de interface: abas (setas, Home e End), accordion, toast (região viva, fecha sozinho), tooltip (abre com foco, Esc dispensa) e paginação com reticências. Tudo pelo teclado e com as cores do tema |
+| `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), paginada de 5 em 5, com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados (o motivo aparece num tooltip) e salvar, editar e excluir avisam com toast |
+| `#/componentes` | Componentes de interface: abas (setas, Home e End), accordion, toast (região viva, fecha sozinho), tooltip (abre com foco, Esc dispensa) e paginação com reticências. Tudo pelo teclado e com as cores do tema. Feitos com marcação simples e um pouco de JavaScript, sem biblioteca nem UI Kit; cada cartão tem o botão "Ver código", que abre um modal com as abas HTML, CSS e JavaScript (o HTML é o da própria página, e o CSS e o JavaScript são lidos dos arquivos publicados, com botão de copiar) |
 | `#/dashboard` | Dashboard genérico no estilo do painel do WordPress: indicadores com minigráficos, área, barras, rosca e anel de progresso, tudo em SVG com as cores do tema |
 | `#/loja` e `#/loja/<categoria>` | Catálogo de loja com navegação por categoria, ordenação e carrinho de brincadeira. Sem fotos: degradê do tema e ícone de imagem não encontrada em SVG |
 | `#/formulario` | Um campo de cada tipo de entrada, mais os estados: erro, ajuda, desabilitado, somente leitura, botões, alertas e carregamento |
@@ -41,7 +41,9 @@ assets/
     data.js             índice e detalhes dos design systems (carregamento)
     content.js          Lorem ipsum, artigos, categorias e os registros da tabela
     util.js             escape de HTML, datas, cores e o elemento raiz
+    ui.js               componentes compartilhados: tooltip, toast, accordion e paginação
     meta.js             metatags por página (descrição, Open Graph, Twitter)
+    code-view.js        modal "Ver código" (HTML, CSS e JavaScript) da página de componentes
     theme.js            aplicar e trocar tema, ?tema=, claro/escuro, avisos de fontes e de contraste
     combobox.js         seletor de temas com busca
     layout.js           migalhas, moldura de página, 404 e título da aba
@@ -134,7 +136,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 24 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes e o tema Urdu em RTL). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 28 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes, visão de código, componentes no site todo e o tema Urdu em RTL). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 143 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
 
@@ -185,6 +187,19 @@ A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que 
 O botão de sol e lua do cabeçalho alterna a variante clara/escura do tema, mas **só nos temas cujo guia descreve uma segunda paleta**: Padrão, Discord, GitHub, IBM, Linear, Perplexity e Xiaohongshu. Nos demais o botão fica desabilitado, com a dica "Este tema não tem variante clara/escura" (o Mission Control declara não ter modo claro "por design", e o Supabase só descreve o escuro).
 
 As cores da outra variante estão em [`data/modes.json`](data/modes.json), copiadas da seção de cores do guia (o que o guia não dá, como o texto do modo claro do Discord e do Linear, está em `derived` e marcado como dedução). `npm run data:update` roda as mesmas regras de contraste sobre a variante e grava um bloco extra em `data/themes/<id>.css`, `[data-theme="<id>"][data-scheme="dark|light"]`, e o campo `schemes` no `index.json`. A escolha fica em `localStorage` (`odv-scheme`) e vale para qualquer tema que tenha a variante. O aviso de contraste lista os ajustes da variante que está na tela. O escuro do Padrão não vem de nenhum guia: é derivado da paleta do Expo e marcado como tal no `modes.json`. Para incluir um tema, adicione a entrada em `data/modes.json`.
+
+### Componentes compartilhados
+
+Tooltip, toast, accordion e paginação ficam em [`assets/js/ui.js`](assets/js/ui.js) e são os mesmos da página de componentes. As outras páginas os usam no lugar de soluções avulsas:
+
+| Componente | Onde aparece |
+|---|---|
+| Tooltip | botões de claro/escuro e de idioma do cabeçalho, ícones de login (OAuth), "Editar" desabilitado da tabela e nome dos produtos da loja. Abre com mouse e foco; Esc dispensa |
+| Toast | salvar, editar e excluir na tabela, adicionar ao carrinho, rascunho rápido, newsletter e copiar código. Região viva única em `index.html` |
+| Accordion | aviso de contraste e o texto da licença MIT |
+| Paginação | tabela CRUD (5 por página) |
+
+Ficam de fora, de propósito: as **abas** (os seletores de estado são rádios de demonstração, e os filtros do catálogo filtram, não trocam painéis) e os alertas dentro de formulários (`.form-alert`), que são a demonstração do alerta.
 
 ### Escrita da direita para a esquerda (Urdu)
 
