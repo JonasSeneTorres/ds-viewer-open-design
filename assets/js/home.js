@@ -19,12 +19,13 @@ function extLinkHTML(href, text) {
 function homeHTML() {
   var openDesign = extLinkHTML("https://open-design.ai/plugins/systems/", T("home.noteLink"));
   var zen = extLinkHTML("https://csszengarden.com/", T("home.zenLink"));
+  var maujor = extLinkHTML("https://maujor.com/", T("home.maujorLink"));
   return (
     '<section class="hero"><div class="wrap hero-inner">' +
     '<span class="kicker">' + esc(T("home.kicker")) + "</span>" +
     "<h1>" + esc(T("home.h1")) + "</h1>" +
     '<p class="lede">' + esc(T("home.lede")).replace("{link}", openDesign) + "</p>" +
-    '<p class="lede">' + esc(T("home.note")).replace("{zen}", zen) + "</p>" +
+    '<p class="lede">' + esc(T("home.note")).replace("{maujor}", maujor).replace("{zen}", zen) + "</p>" +
     '<p class="lede">' + esc(T("home.how")) + "</p>" +
     '<p class="lede">' + esc(T("home.more")) + "</p>" +
     "</div></section>" +

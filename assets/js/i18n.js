@@ -459,8 +459,8 @@ var UI = {
     "pt-BR": "A documentação dos Design Systems do {link} é extremamente rica, mas peca em oferecer um panorama web. Com este visualizador, procuro apresentar o que julgo mais efetivo: cada design system aplicado a páginas de verdade."
   },
   "home.note": {
-    "en-US": "On Maujor's old website there was a section that, if I remember correctly, was inspired by {zen}: a page with fixed markup, for which the audience wrote CSS files to generate a completely different theme. I did the same work here.",
-    "pt-BR": "No antigo site do Maujor havia um trecho que, se não me engano, foi inspirado no {zen}: uma página com marcação fixa, para a qual o público desenvolvia arquivos CSS e gerava um tema totalmente diferente. Fiz o mesmo trabalho aqui."
+    "en-US": "On {maujor}'s old website there was a section that, if I remember correctly, was inspired by {zen}: a page with fixed markup, for which the audience wrote CSS files to generate a completely different theme. I did the same work here.",
+    "pt-BR": "No antigo site do {maujor} havia um trecho que, se não me engano, foi inspirado no {zen}: uma página com marcação fixa, para a qual o público desenvolvia arquivos CSS e gerava um tema totalmente diferente. Fiz o mesmo trabalho aqui."
   },
   "home.how": {
     "en-US": "I generated the markup for a few examples and applied the style of each of Open Design's design systems. I made a point of using no UI kit or component library; when I needed a component, I tried to build it in the simplest and most generic way. What interests me most is seeing how each design system affects the code around it.",
@@ -470,6 +470,7 @@ var UI = {
     "en-US": "Feel free to explore. Here you will find examples of blog pages, e-commerce, forms, tables, charts and a few other little things.",
     "pt-BR": "Sinta-se à vontade para explorar. Aqui você encontra exemplos de páginas de blog, e-commerce, formulários, tabelas, gráficos e mais algumas coisinhas."
   },
+  "home.maujorLink": { "en-US": "Maujor", "pt-BR": "Maujor" },
   "home.zenLink": { "en-US": "CSS Zen Garden", "pt-BR": "CSS Zen Garden" },
   "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
   "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
