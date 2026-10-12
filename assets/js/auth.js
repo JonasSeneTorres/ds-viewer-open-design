@@ -28,7 +28,7 @@ function setAuthState(next) {
   authState = next;
 }
 
-var AUTH_COMPANY = "XPTO Ink";
+var AUTH_COMPANY = "XPTO Inc.";
 
 
 // Logo do visualizador de DS (a paleta) só em contorno, numa cor, dentro de uma moldura.
