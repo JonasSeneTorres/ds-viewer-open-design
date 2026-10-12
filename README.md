@@ -2,7 +2,7 @@
 
 **Site publicado:** <https://jonassenetorres.github.io/ds-viewer-open-design/>
 
-SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 143 design systems** open-source, extraídos de <https://open-design.ai/plugins/systems/>.
+SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 143 temas**: 142 design systems open-source, extraídos de <https://open-design.ai/plugins/systems/>, mais o **Padrão**, tema próprio do projeto.
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão**, uma mistura própria: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic, com variante escura.
 
@@ -19,7 +19,7 @@ Páginas:
 | `#/blog` | Blog: destaque e lista de artigos de exemplo, com barra lateral ilustrativa (busca, tópicos, últimos artigos, redes sociais, newsletter e nuvem de tags; nada nela funciona) |
 | `#/artigo/<id>` | Artigo de exemplo em Lorem ipsum, com a mesma barra lateral de blog genérico (busca e links sem função; o menu destaca "Blog") |
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
-| `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia |
+| `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia, e tem o botão de aplicar o tema e, nos DS que existem lá, o de abrir no open-design.ai (o Padrão não tem) |
 | `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados |
 | `#/dashboard` | Dashboard genérico no estilo do painel do WordPress: indicadores com minigráficos, área, barras, rosca e anel de progresso, tudo em SVG com as cores do tema |
 | `#/loja` e `#/loja/<categoria>` | Catálogo de loja com navegação por categoria, ordenação e carrinho de brincadeira. Sem fotos: degradê do tema e ícone de imagem não encontrada em SVG |
@@ -29,6 +29,10 @@ Páginas:
 
 ```
 index.html              página única (router por hash) e diálogos da tabela
+tests/
+  e2e.spec.mjs          testes E2E (Playwright)
+.github/workflows/
+  pages.yml             testes e publicação no GitHub Pages
 assets/
   app.js                SPA: textos da interface (dicionário UI), artigos, roteador e telas
   styles.css            estilos do produto (usam só as variáveis do tema)
@@ -40,15 +44,21 @@ data/
   systems-raw.json      lista do catálogo (nome, categoria, link) extraída de open-design.ai (entrada do build)
   ds/index.json         lista dos DS na ordem do seletor: nome, categoria, tagline e cores (~68 KB)
   ds/<id>.<lang>.json   detalhes de cada DS, um arquivo por idioma (en-US e pt-BR), minificado; carregado só ao abrir a página dele (~26 KB em média)
-  themes/<id>.css       tema de cada DS: @font-face das fontes + variáveis CSS (carregado ao aplicar o tema)
+  themes/<id>.css       tema de cada DS: @font-face das fontes + variáveis CSS, e o bloco da variante clara/escura quando existe (carregado ao aplicar o tema)
   themes/<id>.contrast.json  tokens do DS que o build ajustou para passar de 4,5:1 (alimenta o aviso de contraste)
 i18n/pt-BR/<slug>.html  traduções do conteúdo de cada DS
 scripts/
   build_ds_fetch.py     baixa a página de cada DS para .cache/pages/
   build_fonts.py        baixa as fontes do Google Fonts usadas pelos temas para assets/fonts/
-  build_ds_details.py   gera data/ds/*.<lang>.json e data/themes/*.css a partir de .cache/pages/ + i18n/
+  build_ds_details.py   gera data/ds/*.<lang>.json, data/themes/*.css e *.contrast.json a partir de .cache/pages/ + i18n/ + data/modes.json; compõe o tema Padrão
+  check_data.py         confere a consistência dos dados (índice, temas, fontes, variantes, contraste)
+  check_html.py         confere que os guias só têm tags e atributos permitidos
+  update_readme_fonts.py  regera a lista de fontes proprietárias deste README
+  verify_upstream.py    compara os tokens com o repositório do Open Design
+  audit_themes.mjs      audita cada tema nas telas principais (contraste, rolagem, fontes)
+  review_styles.py      gera docs/revisao-estilos.md a partir da auditoria
 package.json            scripts npm (ver abaixo)
-docs/historico/         registros antigos (handoff do Open Design, pedidos já concluídos)
+docs/                   revisao-estilos.md (relatório por tema) e historico/ (registros antigos: handoff do Open Design, pedidos concluídos)
 .cache/                 páginas baixadas do open-design.ai (pages/) e cache do Google Fonts
 ```
 
@@ -78,12 +88,13 @@ python -m http.server 8317
 | `npm start` | Sobe o site em http://127.0.0.1:8317 |
 | `npm run data:fetch` | Baixa a página de cada DS de `data/systems-raw.json` para `.cache/pages/` (pula o que já existe) |
 | `npm run data:fonts` | Baixa para `assets/fonts/` as fontes do Google Fonts usadas pelos temas (só o subconjunto `latin`, normal e itálico) e grava `manifest.json`. Rode antes do `data:update` |
-| `npm run data:update` | Regera `data/ds/*.<lang>.json` e `data/themes/*.css` a partir de `.cache/pages/` e das traduções em `i18n/` |
-| `npm run check` | Confere a consistência dos dados (`scripts/check_data.py`) e o HTML dos guias (`scripts/check_html.py`) |
+| `npm run data:update` | Regera `data/ds/*.<lang>.json`, `data/themes/*.css` e `data/themes/*.contrast.json` a partir de `.cache/pages/`, das traduções em `i18n/` e de `data/modes.json`. O Padrão precisa também das páginas `expo`, `vercel` e `futuristic` em `.cache/pages/` |
+| `npm run check` | Confere a consistência dos dados, incluindo variantes claro/escuro e relatórios de contraste (`scripts/check_data.py`), e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
 | `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
 | `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
+| `npm run readme:fonts` | Regera a lista de fontes proprietárias deste README (entre os marcadores `fontes-proprietarias`) a partir do `index.json` |
 | `npm run i18n:template -- <slug> [lang]` | Gera `i18n/<lang>/<slug>.html` (padrão `pt-BR`) com o texto em inglês, pronto para traduzir |
 
 `data:update` precisa do `.cache/pages/`. A pasta pode ser apagada, mas depois é preciso rodar `data:fetch` de novo antes de regerar os dados.
@@ -99,6 +110,8 @@ O catálogo é uma **cópia datada** (2026-10-10) do open-design.ai, mantida à 
 3. Para cada DS novo, gere e traduza o arquivo de i18n (ver abaixo).
 4. `npm run data:update` (cria os temas e os dados) e, se houver fonte nova, `npm run data:fonts` seguido de `npm run data:update` de novo.
 
+O Padrão não está em `systems-raw.json`: ele é montado a partir das páginas já baixadas de `expo`, `vercel` e `futuristic` (ver "O tema Padrão"). Para dar uma variante clara/escura a um tema, a entrada vai em `data/modes.json`.
+
 ## Testes e publicação
 
 O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a cada push e pull request:
@@ -106,7 +119,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `node --check assets/app.js`
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 20 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 21 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL e o botão de abrir no open-design). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
@@ -163,7 +176,7 @@ Além disso, cada tema expõe dois tons da paleta, usados no header e no footer:
 | `--primary-500` / `--primary-500-fg` | fundo e texto do header | `--bg` / `--fg` |
 | `--neutral-400` / `--neutral-400-fg` | fundo e texto do footer | `--bg` / `--fg` |
 
-As cores `-fg` são `#111111` ou branco, a que tiver mais contraste com o fundo; o pior caso no catálogo é 4,77:1, acima do mínimo AA. Por isso o texto do header e do footer não deve ganhar transparência nem ser misturado com o fundo.
+As cores `-fg` são `#111111` ou branco, a que tiver mais contraste com o fundo; o pior caso no catálogo é 4,77:1, acima do mínimo AA. Por isso o texto do header e do footer não deve ganhar transparência nem ser misturado com o fundo. Duas exceções, ambas calculadas no build: a variante clara/escura de um tema usa `--bg` e `--fg` no header e no footer, e o Padrão fixa o header em `#6b7280` com texto branco (4,8:1).
 
 ### O tema Padrão
 
@@ -307,7 +320,7 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
-1. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~2.900 linhas em uma única função, e cada página nova soma cerca de 300.
+1. **Dividir o `assets/app.js` em módulos ES por página** (sem etapa de build): hoje são ~3.100 linhas em uma única função, e cada página nova soma cerca de 300.
 2. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
 3. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
@@ -325,12 +338,15 @@ O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
 ### Origem dos temas
 
-O [Open Design](https://github.com/nexu-io/open-design) (ferramenta colaborativa de design assistido por IA) é licenciado sob a Apache License 2.0; uma cópia do texto está em [LICENSE-OPEN-DESIGN](LICENSE-OPEN-DESIGN). O projeto não publica um arquivo `NOTICE`. **Cada tema deste site foi retirado, no estado em que está, da documentação do Open Design**: nomes, categorias, cores, fontes, tokens e o texto dos guias vêm de lá, sem alteração de valores.
+O [Open Design](https://github.com/nexu-io/open-design) (ferramenta colaborativa de design assistido por IA) é licenciado sob a Apache License 2.0; uma cópia do texto está em [LICENSE-OPEN-DESIGN](LICENSE-OPEN-DESIGN). O projeto não publica um arquivo `NOTICE`. **Os 142 design systems deste site foram retirados, no estado em que estão, da documentação do Open Design**: nomes, categorias, cores, fontes, tokens e o texto dos guias vêm de lá, sem alteração de valores nos tokens e nos guias exibidos. As exceções, todas declaradas abaixo, são a variante escura ou clara de alguns temas, os ajustes de contraste que o build aplica às variáveis do site (os tokens originais continuam intactos na página do tema) e o tema **Padrão**, que é do projeto.
 
 O que este projeto acrescenta, e que não faz parte da documentação original:
 
 - as escalas de cor 50–950, **derivadas** das cores informadas (os degraus exatos aparecem marcados na paleta);
 - a conversão dos tokens em variáveis CSS (`data/themes/<id>.css`);
+- os **ajustes de contraste** (WCAG 2.2 AA) das variáveis do site, listados por tema em `data/themes/<id>.contrast.json` e mostrados num aviso na página;
+- as **variantes clara/escura** de sete temas (`data/modes.json`): quando vêm da seção de cores do guia estão copiadas dele; o que o guia não traz está marcado como dedução;
+- o tema **Padrão**, composto no build com a paleta do Expo, as bordas, sombras e animação do Vercel e as fontes do Futuristic, além de decisões do projeto (README, seção "O tema Padrão");
 - as traduções para pt-BR (`i18n/pt-BR/`);
 - a interface, os artigos de exemplo, a tabela e o formulário.
 
