@@ -1,7 +1,5 @@
 // Idiomas e textos da interface (dicionário UI).
 
-import { records } from "./content.js";
-import { page } from "./layout.js";
 
 
 // ------------------------------------------------------------------
@@ -11,22 +9,22 @@ import { page } from "./layout.js";
 // Obs.: o conteúdo dos artigos fica só em pt-BR; em en-US aparece um aviso de texto ilustrativo.
 // ------------------------------------------------------------------
 
-var LANGS = ["en-US", "pt-BR"];
+const LANGS = ["en-US", "pt-BR"];
 
-var LANG_KEY = "odv-lang";
+const LANG_KEY = "odv-lang";
 
 
 function detectLang() {
   try {
-    var saved = localStorage.getItem(LANG_KEY);
+    const saved = localStorage.getItem(LANG_KEY);
     if (LANGS.indexOf(saved) !== -1) return saved;
   } catch (e) {}
-  var n = (navigator.languages && navigator.languages[0]) || navigator.language || "en-US";
+  const n = (navigator.languages && navigator.languages[0]) || navigator.language || "en-US";
   return /^pt/i.test(n) ? "pt-BR" : "en-US";
 }
 
 
-var lang = detectLang();
+let lang = detectLang();
 
 
 function setLang(next) {
@@ -38,7 +36,7 @@ function setLang(next) {
 function L(v) {
   if (v == null) return "";
   if (typeof v === "string") return v;
-  var pick = v.filter(function (x) { return x.lang === lang; })[0] ||
+  const pick = v.filter(function (x) { return x.lang === lang; })[0] ||
     v.filter(function (x) { return x.lang === "en-US"; })[0] || v[0];
   return pick ? pick.message : "";
 }
@@ -47,12 +45,12 @@ function L(v) {
 // Chave estável (en-US) para comparar/filtrar independentemente do idioma.
 function enKey(v) {
   if (typeof v === "string") return v;
-  var en = v.filter(function (x) { return x.lang === "en-US"; })[0] || v[0];
+  const en = v.filter(function (x) { return x.lang === "en-US"; })[0] || v[0];
   return en ? en.message : "";
 }
 
 
-var UI = {
+const UI = {
   "skip": { "en-US": "Skip to content", "pt-BR": "Pular para o conteúdo" },
   "brand": { "en-US": "DS Viewer", "pt-BR": "Visualizador de DS" },
   "nav.label": { "en-US": "Main navigation", "pt-BR": "Navegação principal" },
@@ -573,7 +571,7 @@ var UI = {
 
 
 function T(key) {
-  var e = UI[key];
+  const e = UI[key];
   return e ? (e[lang] != null ? e[lang] : e["en-US"]) : key;
 }
 

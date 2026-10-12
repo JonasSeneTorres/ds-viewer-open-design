@@ -1,0 +1,52 @@
+/* Licenças e privacidade (#/licencas e #/privacidade). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+/* ---------- Licenças e privacidade ---------- */
+
+.legal {
+  max-width: 72ch;
+}
+
+.legal section {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: var(--bw) solid var(--border-soft, var(--border));
+}
+
+.legal h2 {
+  margin: 0 0 8px;
+  font-size: var(--fs-h3, 1.3rem);
+}
+
+.legal p,
+.legal li {
+  color: var(--fg-soft);
+}
+
+.legal ul {
+  padding-inline-start: 1.2em;
+}
+
+.legal .legal-links {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.legal details {
+  margin-top: 12px;
+}
+
+.legal summary {
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.legal pre {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}

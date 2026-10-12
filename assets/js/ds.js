@@ -2,13 +2,13 @@
 
 import { CATALOG, CATALOG_CATEGORIES, DS_DATA, THEMES } from "./data.js";
 import { L, T, enKey, lang } from "./i18n.js";
-import { dsName, notFoundHTML, page } from "./layout.js";
+import { dsName, notFoundHTML } from "./layout.js";
 import { currentTheme, setTheme } from "./theme.js";
 import { app, chipsHTML, esc, inkFor, isColorValue } from "./util.js";
 
 
 function dsIndex(id) {
-  for (var i = 0; i < THEMES.length; i++) {
+  for (let i = 0; i < THEMES.length; i++) {
     if (THEMES[i].id === id) return i;
   }
   return -1;
@@ -18,22 +18,22 @@ function dsIndex(id) {
 // compact: sem kicker e título próprios (a home já tem o h1 do hero).
 function renderDSList(compact) {
   // O padrão entra como primeira categoria, igual às do catálogo.
-  var def = THEMES.filter(function (t) { return t.id === "padrao"; })[0];
-  var entries = CATALOG;
-  var cats = CATALOG_CATEGORIES;
+  const def = THEMES.filter(function (t) { return t.id === "padrao"; })[0];
+  let entries = CATALOG;
+  let cats = CATALOG_CATEGORIES;
   if (def) {
     entries = [{ id: def.id, name: def.label, category: def.category, tagline: def.hint, swatches: def.swatches }].concat(CATALOG);
     if (!cats.some(function (c) { return enKey(c) === enKey(def.category); })) cats = [def.category].concat(cats);
   }
 
-  var chips =
+  const chips =
     '<button type="button" class="ds-filter is-active" data-cat="">' + esc(T("list.all")) + "</button>" +
     cats.map(function (c) {
       return '<button type="button" class="ds-filter" data-cat="' + esc(enKey(c)) + '">' + esc(L(c)) + "</button>";
     }).join("");
 
   function cardHTML(c) {
-    var strip = chipsHTML(c.swatches);
+    const strip = chipsHTML(c.swatches);
     return (
       '<a class="ds-card ds-card-cat' + (c.id === currentTheme ? " is-current" : "") + '" href="#/design-system/' + c.id + '" data-id="' + c.id + '" data-cat="' + esc(enKey(c.category)) + '" data-search="' + esc((L(c.name) + " " + L(c.tagline) + " " + L(c.category)).toLowerCase()) + '">' +
       '<div class="ds-card-head">' +
@@ -47,8 +47,8 @@ function renderDSList(compact) {
     );
   }
 
-  var groups = cats.map(function (cat) {
-    var items = entries.filter(function (c) { return enKey(c.category) === enKey(cat); });
+  const groups = cats.map(function (cat) {
+    const items = entries.filter(function (c) { return enKey(c.category) === enKey(cat); });
     if (!items.length) return "";
     return (
       '<section class="ds-group" data-cat="' + esc(enKey(cat)) + '">' +
@@ -77,20 +77,20 @@ function renderDSList(compact) {
 
 
 function initDSList() {
-  var search = document.getElementById("dsSearch");
-  var filters = document.getElementById("dsFilters");
-  var grid = document.getElementById("dsCatalogGrid");
-  var count = document.getElementById("dsCount");
+  const search = document.getElementById("dsSearch");
+  const filters = document.getElementById("dsFilters");
+  const grid = document.getElementById("dsCatalogGrid");
+  const count = document.getElementById("dsCount");
   if (!grid) return;
-  var activeCat = "";
+  let activeCat = "";
 
   function apply() {
-    var q = (search && search.value || "").trim().toLowerCase();
-    var n = 0;
+    const q = (search && search.value || "").trim().toLowerCase();
+    let n = 0;
     grid.querySelectorAll(".ds-group").forEach(function (group) {
-      var shown = 0;
+      let shown = 0;
       group.querySelectorAll(".ds-card-cat").forEach(function (card) {
-        var ok = (!activeCat || card.dataset.cat === activeCat) &&
+        const ok = (!activeCat || card.dataset.cat === activeCat) &&
                  (!q || card.dataset.search.indexOf(q) !== -1);
         card.hidden = !ok;
         if (ok) shown++;
@@ -105,7 +105,7 @@ function initDSList() {
   if (search) search.addEventListener("input", apply);
   if (filters) {
     filters.addEventListener("click", function (e) {
-      var btn = e.target.closest(".ds-filter");
+      const btn = e.target.closest(".ds-filter");
       if (!btn) return;
       activeCat = btn.dataset.cat;
       filters.querySelectorAll(".ds-filter").forEach(function (b) {
@@ -125,10 +125,10 @@ function dsSequence() {
 
 
 function dsPager(id) {
-  var seq = dsSequence();
-  var i = seq.indexOf(id);
-  var prev = i > 0 ? seq[i - 1] : null;
-  var next = i !== -1 && i < seq.length - 1 ? seq[i + 1] : null;
+  const seq = dsSequence();
+  const i = seq.indexOf(id);
+  const prev = i > 0 ? seq[i - 1] : null;
+  const next = i !== -1 && i < seq.length - 1 ? seq[i + 1] : null;
   return (
     '<nav class="ds-pager" aria-label="' + esc(T("pager.label")) + '">' +
     (prev
@@ -143,14 +143,14 @@ function dsPager(id) {
 
 
 function dsPaletteHTML(d) {
-  var roleOf = {};
+  const roleOf = {};
   roleOf[d.roles.primary] = T("pal.primary");
   roleOf[d.roles.secondary] = T("pal.secondary");
   roleOf[d.roles.neutral] = T("pal.neutral");
-  var byName = {};
+  const byName = {};
   d.palettes.forEach(function (p) { byName[p.name] = p; });
-  var roleCards = ["primary", "secondary", "neutral"].map(function (r) {
-    var p = byName[d.roles[r]];
+  const roleCards = ["primary", "secondary", "neutral"].map(function (r) {
+    const p = byName[d.roles[r]];
     if (!p) return "";
     return (
       '<div class="role-card">' +
@@ -161,7 +161,7 @@ function dsPaletteHTML(d) {
     );
   }).join("");
 
-  var scales = d.palettes.map(function (p) {
+  const scales = d.palettes.map(function (p) {
     return (
       '<div class="palette">' +
       '<div class="palette-head"><h3>' + esc(p.name) + "</h3>" +
@@ -193,13 +193,13 @@ function dsPaletteHTML(d) {
 
 
 function dsFontsHTML(d) {
-  var fonts = d.fonts.map(function (f) {
-    var fallbackStack = f.fallbacks.length
+  const fonts = d.fonts.map(function (f) {
+    const fallbackStack = f.fallbacks.length
       ? f.fallbacks.map(function (x) { return /\s/.test(x) ? '"' + x + '"' : x; }).join(", ")
       : "";
-    var generic = f.kind === "mono" ? "monospace" : "sans-serif";
-    var sample = function (family, label) {
-      var txt = "Quick brown fox jumps over the lazy dog 0123456789";
+    const generic = f.kind === "mono" ? "monospace" : "sans-serif";
+    const sample = function (family, label) {
+      const txt = "Quick brown fox jumps over the lazy dog 0123456789";
       return (
         '<div class="font-sample">' +
         '<span class="font-sample-label">' + label + "</span>" +
@@ -209,7 +209,7 @@ function dsFontsHTML(d) {
         "</div>"
       );
     };
-    var how = f.source
+    const how = f.source
       ? "<h4>" + esc(T("font.how")) + "</h4>" +
         '<p class="muted">' + T("font.head") + "</p><pre><code>" + esc(f.source.link) + "</code></pre>" +
         '<p class="muted">' + esc(T("font.css")) + "</p><pre><code>" + esc(f.source.import) + "</code></pre>" +
@@ -235,7 +235,7 @@ function dsFontsHTML(d) {
 
 
 function dsTokensHTML(d) {
-  var groups = d.tokens.map(function (g) {
+  const groups = d.tokens.map(function (g) {
     if (!g.items.length) return "";
     return (
       '<div class="token-group"><h3>' + esc(L(g.group)) + "</h3>" +
@@ -257,9 +257,9 @@ function dsTokensHTML(d) {
 
 
 function renderDsFull(id) {
-  var d = DS_DATA[id + "|" + lang];
-  var atmos = d.sections[0];
-  var rest = d.sections.slice(1);
+  const d = DS_DATA[id + "|" + lang];
+  const atmos = d.sections[0];
+  const rest = d.sections.slice(1);
   return (
     '<div class="ds-page ds-full">' +
     '<span class="kicker">' + esc(T("ds.kicker")) + " &middot; " + esc(L(d.category)) + "</span>" +
@@ -299,7 +299,7 @@ function renderDSDetail(id) {
 function initDSDetail() {
   app.querySelectorAll("[data-apply]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var id = btn.getAttribute("data-apply");
+      const id = btn.getAttribute("data-apply");
       setTheme(id);
       btn.textContent = T("ds.applied");
     });

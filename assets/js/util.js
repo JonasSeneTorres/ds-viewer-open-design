@@ -5,9 +5,9 @@ import { lang } from "./i18n.js";
 
 // Quadradinhos de cor: só cores únicas (o índice repete tons quando o DS tem poucas cores).
 function chipsHTML(colors) {
-  var seen = {};
+  const seen = {};
   return colors.filter(function (c) {
-    var k = String(c).trim().toLowerCase();
+    const k = String(c).trim().toLowerCase();
     if (!k || seen[k]) return false;
     seen[k] = true;
     return true;
@@ -26,7 +26,7 @@ function esc(value) {
 
 function formatDate(iso) {
   if (!iso) return "—";
-  var parts = iso.split("-");
+  const parts = iso.split("-");
   if (parts.length !== 3) return esc(iso);
   return lang === "en-US"
     ? parts[1] + "/" + parts[2] + "/" + parts[0]
@@ -34,7 +34,7 @@ function formatDate(iso) {
 }
 
 
-var app = document.getElementById("app");
+const app = document.getElementById("app");
 
 
 // Minúsculas e sem acento, para a busca do seletor.
@@ -46,15 +46,15 @@ function fold(s) {
 // Tinta (#111 ou branco) com maior contraste WCAG sobre `hex` (mesma regra do ink_for do build).
 function inkFor(hex) {
   function lum(x) {
-    var h = x.replace("#", "");
+    let h = x.replace("#", "");
     if (h.length === 3) h = h.replace(/(.)/g, "$1$1");
-    var c = [0, 2, 4].map(function (k) {
-      var v = parseInt(h.substr(k, 2), 16) / 255;
+    const c = [0, 2, 4].map(function (k) {
+      const v = parseInt(h.substr(k, 2), 16) / 255;
       return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
     });
     return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
   }
-  var bg = lum(hex);
+  const bg = lum(hex);
   return (bg + 0.05) / (lum("#111111") + 0.05) >= 1.05 / (bg + 0.05) ? "#111111" : "#ffffff";
 }
 

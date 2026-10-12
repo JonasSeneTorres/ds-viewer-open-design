@@ -1,0 +1,490 @@
+/* Catálogo de design systems e página de cada DS (#/ e #/design-system/*). Vem no index.html porque é a página inicial.
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+.hero {
+  background: var(--hero-ground);
+  color: var(--hero-ink);
+  border-block: var(--bw) solid var(--border);
+  padding-block: clamp(28px, 5vw, calc(var(--section-y, 100px) * 0.6));
+}
+
+.hero h1 {
+  max-width: 28ch;
+  font-size: clamp(max(2rem, calc(var(--fs-hero, 3.4rem) * 0.55)), 1.2rem + 4.4vw, var(--fs-hero, 3.4rem));
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.ds-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Card do design system ativo: pintado com o acento e marcado com "Ativo". */
+
+.ds-card.is-current {
+  background: var(--accent-weak);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.ds-current-badge {
+  display: none;
+  margin-inline-start: 6px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.ds-card.is-current .ds-current-badge {
+  display: inline-block;
+}
+
+.ds-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ds-index {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ds-card h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.ds-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--fg-soft);
+}
+
+.ds-card-link {
+  margin-top: auto;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.ds-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.ds-section {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: var(--bw) solid var(--border);
+}
+
+.ds-section h2,
+.ds-section .ds-card h4 {
+  font-size: 1.05rem;
+  margin: 0 0 14px;
+}
+
+.ds-group {
+  margin-top: 32px;
+}
+
+.ds-group[hidden] {
+  display: none;
+}
+
+.ds-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: var(--bw) solid var(--border);
+  font-size: 1.15rem;
+}
+
+.ds-group-count {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.ds-catalog-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ds-search {
+  flex: 1 1 260px;
+  max-width: 420px;
+}
+
+.ds-search input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 42px;
+  padding: 9px 12px;
+  background: var(--field-bg, var(--surface));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.ds-search input::placeholder {
+  color: var(--muted);
+}
+
+.ds-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 6px;
+}
+
+.ds-filter {
+  font: inherit;
+  font-size: 13px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ds-filter:hover {
+  border-color: var(--border-strong);
+  color: var(--fg);
+}
+
+.ds-filter.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ds-card-cat .ds-index {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* ---------- Página completa de design system (data/ds/<id>.json) ---------- */
+
+.ds-pager {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.ds-full .ds-section {
+  scroll-margin-top: 96px;
+}
+
+.guide-body {
+  max-width: 78ch;
+  line-height: 1.6;
+}
+
+.guide-body h3 {
+  margin: 1.6em 0 0.5em;
+  font-size: 1rem;
+}
+
+.guide-body table {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 1em 0;
+}
+
+.guide-body th,
+.guide-body td {
+  padding: 8px 12px;
+  text-align: start;
+  vertical-align: top;
+  border-bottom: var(--bw) solid var(--border);
+}
+
+.guide-body th {
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.guide-body ul,
+.guide-body ol {
+  padding-inline-start: 1.3em;
+}
+
+.guide-body li {
+  margin-bottom: 0.4em;
+}
+
+.guide-body blockquote {
+  margin: 1em 0;
+  padding: 2px 0 2px 16px;
+  border-inline-start: 3px solid var(--accent);
+  color: var(--fg-soft);
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+
+.role-card {
+  display: grid;
+  gap: 6px;
+}
+
+.role-chip {
+  display: flex;
+  align-items: flex-end;
+  height: 84px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: var(--bw) solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.role-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.palette {
+  margin-top: 24px;
+}
+
+.palette-head,
+.font-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.palette-head h3,
+.font-card-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.palette-role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.palette-scale {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: var(--bw) solid var(--border);
+}
+
+.palette-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  min-height: 84px;
+  padding: 8px 6px;
+  font-size: 0.7rem;
+}
+
+.palette-num {
+  font-weight: 700;
+}
+
+.palette-hex {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  background: none;
+  padding: 0;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.palette-step.is-exact::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+@media (max-width: 760px) {
+
+.palette-scale {
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  }
+}
+
+.font-card {
+  margin-top: 20px;
+  padding: 20px;
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.font-card h4 {
+  margin: 1.4em 0 0.4em;
+  font-size: 0.95rem;
+}
+
+.font-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.font-sample {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.font-sample p {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.font-sample-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.font-card pre {
+  margin: 6px 0 12px;
+}
+
+.token-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 40px;
+}
+
+.token-group {
+  min-width: 0;
+}
+@media (max-width: 760px) {
+
+.token-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.token-group h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+.token-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.token-table code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.token-table td:nth-child(2) {
+  width: 38%;
+}
+
+.token-table td {
+  padding: 6px 8px 6px 0;
+  border-bottom: var(--bw) solid var(--border);
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.token-table td:first-child {
+  width: 28px;
+}
+
+.token-chip {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: var(--bw) solid var(--border);
+}
+
+.ds-full a,
+.ds-full p,
+.ds-full li,
+.ds-full code:not(pre code) {
+  overflow-wrap: anywhere;
+}
+
+/* Conteúdo que continua da esquerda para a direita mesmo numa página RTL: código, tokens e números */
+
+[dir="rtl"] .token-table td:nth-child(2),
+[dir="rtl"] .palette-hex {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}

@@ -14,18 +14,18 @@ function submitForm(form) {
 
 
 document.addEventListener("click", function (e) {
-  var btn = e.target.closest && e.target.closest("button[data-submit]");
+  const btn = e.target.closest && e.target.closest("button[data-submit]");
   if (!btn || btn.disabled) return;
-  var form = btn.closest("form");
+  const form = btn.closest("form");
   if (form) submitForm(form);
 });
 
 
 document.addEventListener("keydown", function (e) {
-  var t = e.target;
+  const t = e.target;
   if (e.key !== "Enter" || e.isComposing || !t || t.tagName !== "INPUT") return;
   if (["checkbox", "radio", "button", "submit", "reset", "file", "range", "color"].indexOf(t.type) !== -1) return;
-  var form = t.form;
+  const form = t.form;
   if (!form || !form.querySelector("button[data-submit]")) return;
   e.preventDefault();
   submitForm(form);
@@ -38,10 +38,10 @@ app.addEventListener("submit", function (e) {
   if (e.target.closest(".aside-search, .draft-form, .newsletter-form")) e.preventDefault();
   if (e.target.closest(".draft-form")) showToast("ok", T("dash.toastDraft"));
   if (e.target.closest(".newsletter-form")) showToast("ok", T("aside.toastNl"));
-  var contact = e.target.closest(".contact-form");
+  const contact = e.target.closest(".contact-form");
   if (contact) {
     e.preventDefault();
-    var ok = contact.querySelector(".form-alert");
+    const ok = contact.querySelector(".form-alert");
     if (ok) ok.classList.add("show");
   }
 });

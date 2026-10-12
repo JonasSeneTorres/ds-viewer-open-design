@@ -19,6 +19,7 @@ for (const name of wanted) {
 
 export default defineConfig({
   testDir: "tests",
+  testMatch: "*.spec.mjs", // tests/unit/ roda no node:test e no unittest, não aqui
   timeout: 45_000, // o Firefox no CI carrega o catálogo de 143 cartões mais devagar
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? "github" : "list",

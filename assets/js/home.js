@@ -2,7 +2,6 @@
 
 import { renderDSList } from "./ds.js";
 import { T } from "./i18n.js";
-import { page } from "./layout.js";
 import { esc } from "./util.js";
 
 
@@ -17,9 +16,9 @@ function extLinkHTML(href, text) {
 
 // Início: o hero (a proposta do projeto em quatro parágrafos curtos) e, logo abaixo, o catálogo de design systems.
 function homeHTML() {
-  var openDesign = extLinkHTML("https://open-design.ai/plugins/systems/", T("home.noteLink"));
-  var zen = extLinkHTML("https://csszengarden.com/", T("home.zenLink"));
-  var maujor = extLinkHTML("https://maujor.com/", T("home.maujorLink"));
+  const openDesign = extLinkHTML("https://open-design.ai/plugins/systems/", T("home.noteLink"));
+  const zen = extLinkHTML("https://csszengarden.com/", T("home.zenLink"));
+  const maujor = extLinkHTML("https://maujor.com/", T("home.maujorLink"));
   return (
     '<section class="hero"><div class="wrap hero-inner">' +
     '<span class="kicker">' + esc(T("home.kicker")) + "</span>" +

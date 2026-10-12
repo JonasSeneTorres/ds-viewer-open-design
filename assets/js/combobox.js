@@ -6,19 +6,19 @@ import { setTheme } from "./theme.js";
 import { chipsHTML, esc, fold } from "./util.js";
 
 
-var themePicker = document.getElementById("themePicker");
+const themePicker = document.getElementById("themePicker");
 
-var comboBtn;
+let comboBtn;
 
-var comboPop;
+let comboPop;
 
-var comboSearch;
+let comboSearch;
 
-var comboList;
+let comboList;
 
-var comboStatus;
+let comboStatus;
 
-var comboIndex = -1;
+let comboIndex = -1;
 
 
 // Botão que abre um popup com campo de busca (role=combobox) e a lista de temas (role=listbox).
@@ -53,10 +53,10 @@ function buildCombobox() {
 
 
 function fillComboList() {
-  var html = "";
-  var grp = 0;
+  let html = "";
+  let grp = 0;
   function optionHTML(t) {
-    var label = L(t.label);
+    const label = L(t.label);
     return (
       '<li class="combobox-option" role="option" id="theme-opt-' + t.id + '" data-kind="theme" data-theme-id="' + t.id + '" data-search="' + esc(fold(label + " " + L(t.category))) + '" aria-selected="false">' +
       '<span class="opt-label">' + esc(label) + "</span>" +
@@ -64,15 +64,15 @@ function fillComboList() {
       "</li>"
     );
   }
-  var def = THEMES.filter(function (t) { return t.id === "padrao"; })[0];
-  var groups = (def ? [[def.category, [def]]] : []).concat(
+  const def = THEMES.filter(function (t) { return t.id === "padrao"; })[0];
+  const groups = (def ? [[def.category, [def]]] : []).concat(
     CATALOG_CATEGORIES.map(function (cat) {
       return [cat, THEMES.filter(function (t) { return t.id !== "padrao" && enKey(t.category) === enKey(cat); })];
     })
   );
   groups.forEach(function (g) {
     if (!g[1].length) return;
-    var gid = "theme-grp-" + (grp++);
+    const gid = "theme-grp-" + (grp++);
     html += '<li class="combobox-section" role="presentation"><span class="combobox-group" id="' + gid + '">' + esc(L(g[0])) + "</span>" +
       '<ul role="group" aria-labelledby="' + gid + '">' + g[1].map(optionHTML).join("") + "</ul></li>";
   });
@@ -88,12 +88,12 @@ function fillComboList() {
 
 // Mostra só as opções que casam com a busca; esconde grupos vazios e avisa o total.
 function filterCombo() {
-  var q = fold(comboSearch.value.trim());
-  var total = 0;
+  const q = fold(comboSearch.value.trim());
+  let total = 0;
   comboList.querySelectorAll(".combobox-section").forEach(function (sec) {
-    var shown = 0;
+    let shown = 0;
     sec.querySelectorAll(".combobox-option").forEach(function (opt) {
-      var ok = !q || opt.dataset.search.indexOf(q) !== -1;
+      const ok = !q || opt.dataset.search.indexOf(q) !== -1;
       opt.hidden = !ok;
       if (ok) shown++;
     });
@@ -127,7 +127,7 @@ function bindComboEvents() {
     else if (e.key === "Home" && comboIndex >= 0) { e.preventDefault(); setActive(0); }
     else if (e.key === "End" && comboIndex >= 0) { e.preventDefault(); setActive(visibleOptions().length - 1); }
     else if (e.key === "Enter") {
-      var active = visibleOptions()[comboIndex];
+      const active = visibleOptions()[comboIndex];
       if (active) { e.preventDefault(); chooseOption(active); }
     } else if (e.key === "Escape") {
       e.preventDefault();
@@ -138,7 +138,7 @@ function bindComboEvents() {
   });
 
   comboList.addEventListener("click", function (e) {
-    var opt = e.target.closest(".combobox-option");
+    const opt = e.target.closest(".combobox-option");
     if (opt) chooseOption(opt);
   });
 
@@ -153,7 +153,7 @@ function openCombo() {
   comboBtn.setAttribute("aria-expanded", "true");
   comboSearch.value = "";
   filterCombo();
-  var selected = comboList.querySelector('[aria-selected="true"]');
+  const selected = comboList.querySelector('[aria-selected="true"]');
   setActive(selected ? visibleOptions().indexOf(selected) : 0);
   comboSearch.focus();
 }
@@ -173,7 +173,7 @@ function setActive(index) {
   comboList.querySelectorAll(".combobox-option[data-active]").forEach(function (opt) {
     opt.removeAttribute("data-active");
   });
-  var opt = index >= 0 ? visibleOptions()[index] : null;
+  const opt = index >= 0 ? visibleOptions()[index] : null;
   if (opt) {
     opt.setAttribute("data-active", "true");
     opt.scrollIntoView({ block: "nearest" });
@@ -191,9 +191,9 @@ function chooseOption(opt) {
 
 
 function moveActive(delta) {
-  var total = visibleOptions().length;
+  const total = visibleOptions().length;
   if (!total) return;
-  var next = comboIndex + delta;
+  let next = comboIndex + delta;
   if (next < 0) next = total - 1;
   if (next >= total) next = 0;
   setActive(next);

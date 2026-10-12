@@ -34,14 +34,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Instalar dependências
+        run: npm ci
+      - name: Lint (ESLint)
+        run: npm run lint
       - name: Sintaxe do JavaScript
         run: npm run check:js
+      - name: Testes unitários (JS e Python)
+        run: npm run test:unit
       - name: Consistência dos dados
         run: python scripts/check_data.py
       - name: HTML dos guias
         run: python scripts/check_html.py
-      - name: Instalar dependências
-        run: npm ci
       - name: Instalar o navegador do Playwright
         run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Testes E2E

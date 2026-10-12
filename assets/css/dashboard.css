@@ -1,0 +1,198 @@
+/* Dashboard (#/dashboard). Carregado sob demanda pela rota (assets/js/page-css.js).
+   Gerado da divisão do antigo styles.css; edite aqui. */
+
+/* ---------- Dashboard (gráficos em SVG) ---------- */
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: grid;
+  gap: 2px;
+  padding: 16px;
+  background: var(--surface);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: var(--fs-sm, 0.875rem);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: var(--heading-weight);
+  line-height: 1.1;
+}
+
+.stat-delta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stat-delta.is-up {
+  color: var(--ok-ink, var(--ok));
+}
+
+.stat-delta.is-down {
+  color: var(--danger-ink, var(--danger));
+}
+
+.spark {
+  width: 100%;
+  max-width: 120px;
+  height: 32px;
+  margin-top: 6px;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ch-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.ch-axis {
+  fill: var(--muted);
+  font-family: var(--font-body);
+  font-size: 11px;
+}
+
+.ch-center {
+  fill: var(--fg);
+  font-family: var(--font-display);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.ch-s1 { --c: var(--accent-strong); }
+
+.ch-s2 { --c: var(--ok-ink, var(--ok)); }
+
+.ch-s3 { --c: var(--warn-ink, var(--warn)); }
+
+.ch-line {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ch-area {
+  fill: color-mix(in oklab, var(--c) 18%, transparent);
+}
+
+.ch-dot {
+  fill: var(--surface);
+  stroke: var(--c);
+  stroke-width: 2;
+}
+
+.ch-bar {
+  fill: var(--c);
+}
+
+.ch-ring-bg {
+  stroke: var(--surface-2);
+  stroke-width: 5;
+}
+
+.ch-seg {
+  stroke: var(--c);
+  stroke-width: 5;
+}
+
+.donut-wrap,
+.gauge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.donut-wrap .chart,
+.gauge-wrap .chart {
+  width: 140px;
+  flex: none;
+}
+
+.legend {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1 1 220px;
+  font-size: 0.9rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend strong {
+  margin-inline-start: auto;
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--c);
+}
+
+.activity {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-bottom: var(--bw) solid var(--border-soft, var(--border));
+  font-size: 0.92rem;
+}
+
+.activity li:last-child {
+  border-bottom: 0;
+}
+
+.draft-form {
+  display: grid;
+  gap: 10px;
+}
+
+.draft-form input,
+.draft-form textarea {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--field-bg, var(--surface));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.draft-form .btn {
+  justify-self: start;
+}
