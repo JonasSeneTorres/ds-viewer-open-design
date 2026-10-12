@@ -66,7 +66,7 @@ test("página de um DS abre com o próprio tema", async ({ page }) => {
 
 test("seletor de temas busca, aplica e lembra a escolha", async ({ page }) => {
   await page.goto("/#/");
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("tesla");
   await expect(page.locator(".combobox-option:not([hidden])")).toHaveCount(1);
   await page.keyboard.press("Enter");
@@ -151,7 +151,7 @@ test("menu Exemplos lista as páginas de exemplo e a informação do tema segue 
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
   // escolhe outro tema; "Informações do tema" passa a apontar para ele
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("tesla");
   await page.keyboard.press("Enter");
   await page.click("#navTheme");
@@ -275,7 +275,7 @@ test("rodapé: autoria, licenças e privacidade, com o tema selecionado", async 
   await expect(page.locator(".site-footer")).toContainText("Site desenvolvido por Jonas Sene Torres");
 
   // escolhe um tema e abre as páginas do rodapé: o tema continua valendo
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("bugatti");
   await page.keyboard.press("Enter");
   await page.click('.footer-nav a[href="#/licencas"]');
@@ -304,7 +304,7 @@ test("aviso de fontes proprietárias aparece só nos temas que têm", async ({ p
   await page.goto("/#/");
   await expect(page.locator("#fontNotice")).toBeHidden(); // tema padrão: fontes abertas
 
-  await page.click(".combobox-btn");
+  await page.click("#themePicker .combobox-btn");
   await page.keyboard.type("bugatti");
   await page.keyboard.press("Enter");
   const notice = page.locator("#fontNotice");
@@ -384,7 +384,7 @@ test("botão sol/lua só funciona nos temas com variante clara/escura", async ({
 test("tema na URL: link compartilhável, voltar desfaz a troca e o seletor acompanha", async ({ page }) => {
   const problems = watch(page);
   const pick = async (name) => {
-    await page.click(".combobox-btn");
+    await page.click("#themePicker .combobox-btn");
     await page.keyboard.type(name);
     await page.keyboard.press("Enter");
   };
@@ -610,4 +610,54 @@ test("abas não têm barra de rolagem vertical, no cartão nem no modal", async 
   await page.locator('[data-code="tabs"]').click();
   await expect(page.locator("dialog.dialog-code")).toBeVisible();
   expect(await noVScroll("#codeTablist")).toBe(true);
+});
+
+test("cabeçalho responsivo: hambúrguer, marca e claro/escuro em tela de tablet em pé (768 px) ou menor", async ({ page }) => {
+  const problems = watch(page);
+
+  // desktop: sem hambúrguer, tudo à vista
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto("/?tema=github#/");
+  await expect(page.locator("#navToggle")).toBeHidden();
+  await expect(page.locator(".main-nav > a").first()).toBeVisible();
+  await expect(page.locator("#langBtn")).toBeVisible();
+
+  // tablet em pé (768) e celular (390): só hambúrguer, marca e claro/escuro
+  for (const width of [768, 390]) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/?tema=github#/");
+    await expect(page.locator("#navToggle")).toBeVisible();
+    await expect(page.locator(".brand")).toBeVisible();
+    await expect(page.locator("#schemeBtn")).toBeVisible();
+    await expect(page.locator(".main-nav")).toBeHidden();
+    await expect(page.locator("#langBtn")).toBeHidden();
+    await expect(page.locator("#themePicker")).toBeHidden();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)).toBe(false);
+
+    // abrir: navegação, seletor de temas e idioma aparecem
+    await page.click("#navToggle");
+    await expect(page.locator("#navToggle")).toHaveAttribute("aria-expanded", "true");
+    await expect(page.locator(".main-nav")).toBeVisible();
+    await expect(page.locator("#themePicker")).toBeVisible();
+    await expect(page.locator("#langBtn")).toBeVisible();
+
+    // Esc fecha e devolve o foco ao hambúrguer
+    await page.keyboard.press("Escape");
+    await expect(page.locator(".main-nav")).toBeHidden();
+    await expect(page.locator("#navToggle")).toBeFocused();
+
+    // escolher uma página fecha o painel
+    await page.click("#navToggle");
+    await page.locator('.main-nav > a[href="#/"]').click();
+    await expect(page.locator(".main-nav")).toBeHidden();
+  }
+
+  // o menu Exemplos funciona dentro do painel
+  await page.click("#navToggle");
+  await page.click("#examplesBtn");
+  await expect(page.locator("#examplesMenu")).toBeVisible();
+  await page.locator('#examplesMenu a[href="#/blog"]').click();
+  await expect(page).toHaveURL(/#\/blog$/);
+  await expect(page.locator(".main-nav")).toBeHidden();
+  expect(problems).toEqual([]);
 });

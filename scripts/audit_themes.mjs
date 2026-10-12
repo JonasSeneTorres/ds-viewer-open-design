@@ -154,6 +154,8 @@ for (const id of ids) {
       await page.evaluate((h) => { location.hash = h.replace("/#", "#"); }, route);
       await page.waitForTimeout(450);
       await page.evaluate(() => document.fonts.ready);
+      // no celular a navegação fica dentro do menu hambúrguer: abre para medir o contraste dos links
+      if (vname === "celular") await page.click("#navToggle").catch(() => {});
       const m = await page.evaluate(MEASURE);
       theme.telas[`${vname}/${name}`] = m;
       if (m.overflowX) theme.achados.push(`${vname}/${name}: rolagem horizontal`);

@@ -350,6 +350,8 @@ var UI = {
   "shop.new": { "en-US": "New", "pt-BR": "Novo" },
   "shop.sale": { "en-US": "Sale", "pt-BR": "Oferta" },
   "shop.empty": { "en-US": "No products in this category.", "pt-BR": "Nenhum produto nesta categoria." },
+  "nav.menuOpen": { "en-US": "Open menu", "pt-BR": "Abrir menu" },
+  "nav.menuClose": { "en-US": "Close menu", "pt-BR": "Fechar menu" },
   "nav.components": { "en-US": "Components", "pt-BR": "Componentes" },
   "comp.kicker": { "en-US": "Example · Components", "pt-BR": "Exemplo · Componentes" },
   "comp.h1": { "en-US": "Components", "pt-BR": "Componentes" },

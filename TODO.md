@@ -87,6 +87,8 @@ Marque `[x]` ao concluir cada item.
 
 - [x] **47.** Texto da página inicial — _Feito: o hero agora conta a proposta em quatro parágrafos curtos: a documentação do Open Design é rica, mas falta o panorama web; a inspiração no CSS Zen Garden (via o antigo site do Maujor), com uma marcação fixa e um estilo por design system; a opção de não usar UI Kit nem biblioteca de componentes; e o convite a explorar (blog, e-commerce, formulários, tabelas e gráficos). Em pt-BR e en-US, com links externos para o Open Design, o site do Maujor (maujor.com) e o CSS Zen Garden; o teste da home confere o texto e os dois links._
 
+- [x] **48.** Cabeçalho responsivo — _Feito: de 768 px (tablet em pé) para baixo, o cabeçalho tem o hambúrguer à esquerda, a marca e, no canto direito, o botão claro/escuro; navegação, menu Exemplos, seletor de temas e idioma ficam dentro do painel do hambúrguer. O painel fecha com Esc (devolvendo o foco), com o clique fora, ao escolher uma página e ao alargar a janela; o menu Exemplos abre dentro dele. No desktop nada mudou (o painel vira `display: contents`). Botão do menu com as cores do cabeçalho e sem borda quando fechado, e com superfície e borda quando aberto; o guia do DS vale como exceção (raio, borda e fundo lidos por `parse_nav_toggle_policy`). Entre 769 e 900 px a navegação desce para uma segunda linha. A auditoria abre o menu no celular para continuar medindo o contraste dos links. Teste E2E novo (28 no total)._
+
 ## Ordem sugerida
 
 1. Rápidos: 5, 6, 7, 16
