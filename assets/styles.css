@@ -14,6 +14,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
+  font-weight: var(--body-weight, 400);
+  font-feature-settings: var(--font-features, normal);
   font-size: var(--fs-base, 1rem);
   line-height: var(--lh-body, 1.6);
   -webkit-font-smoothing: antialiased;
@@ -68,6 +70,11 @@ h2 {
 
 h3 {
   font-size: var(--fs-h3, 1.2rem);
+}
+
+h3,
+h4 {
+  font-weight: var(--h3-weight, var(--heading-weight));
 }
 
 p {
@@ -193,7 +200,7 @@ pre {
 .brand-sub {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  letter-spacing: var(--kicker-spacing);
+  letter-spacing: var(--kicker-spacing, 0.08em);
   text-transform: uppercase;
   color: var(--header-fg);
   font-weight: 500;
@@ -440,9 +447,9 @@ main:focus {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: var(--kicker-spacing);
-  text-transform: var(--kicker-transform);
+  font-weight: var(--label-weight, 600);
+  letter-spacing: var(--kicker-spacing, 0.08em);
+  text-transform: var(--kicker-transform, uppercase);
   color: var(--accent-strong);
   margin-bottom: 12px;
 }
@@ -472,12 +479,12 @@ main:focus {
   justify-content: center;
   gap: 8px;
   min-height: 42px;
-  padding: 9px 18px;
-  border-radius: var(--radius-sm);
+  padding: var(--btn-pad-y, 9px) var(--btn-pad-x, 18px);
+  border-radius: var(--btn-radius, var(--radius-sm));
   border: var(--bw) solid transparent;
   background: var(--surface);
   color: var(--fg);
-  font-weight: 600;
+  font-weight: var(--btn-weight, 600);
   font-size: 0.94rem;
   cursor: pointer;
   text-decoration: none;
@@ -1953,8 +1960,8 @@ legend {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: var(--kicker-spacing);
-  text-transform: var(--kicker-transform);
+  letter-spacing: var(--kicker-spacing, 0.08em);
+  text-transform: var(--kicker-transform, uppercase);
   color: var(--muted);
 }
 

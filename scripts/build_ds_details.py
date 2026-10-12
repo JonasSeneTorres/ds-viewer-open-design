@@ -822,6 +822,94 @@ def font_weight_ranges(font):
     return out
 
 
+# Papéis tipográficos do guia (tabela "Hierarchy" da seção de tipografia): papel do site -> nomes do guia.
+TYPE_ROLE_NAMES = {
+    "display": re.compile(r"^(display( hero| large| secondary)?|display / hero|hero( display| title)?|heading 1|h1|headline)$"),
+    "h2": re.compile(r"^(section (heading|title|display)|heading 2|h2|page title)$"),
+    "h3": re.compile(r"^(sub-?heading( large)?|card (title|heading)|feature (title|heading)|heading 3|h3|heading)$"),
+    "body": re.compile(r"^(body|body (regular|standard|text|default)|paragraph)$"),
+    "button": re.compile(r"^(button|button (label|text|large)|body / button|nav / ui)$"),
+    "label": re.compile(r"^(label|uppercase label|overline|eyebrow|micro label|kicker|section label)$"),
+}
+WEIGHT_WORDS = (("extra", 800), ("black", 900), ("semi", 600), ("bold", 700), ("medium", 500), ("regular", 400),
+                ("normal", 400), ("light", 300), ("thin", 100))
+# recursos OpenType aceitos (lista fechada: o valor entra num font-feature-settings)
+FEATURE_TAG = re.compile(r"^(ss\d\d|cv\d\d|liga|calt|kern|lnum|locl|cswh|dlig|salt|zero|case|frac)$")
+
+
+def parse_weight(cell):
+    """Peso de uma célula do guia: número (300, 300-400 -> o maior) ou palavra (Regular, Medium...)."""
+    nums = [int(n) for n in re.findall(r"\b([1-9]00)\b", cell)]
+    if nums:
+        return max(nums)
+    low = cell.lower()
+    for word, w in WEIGHT_WORDS:
+        if word in low:
+            return w
+    return None
+
+
+def parse_type_roles(raw_guide):
+    """Peso por papel, espaçamento do rótulo, caixa do rótulo e recursos OpenType, lidos da seção de tipografia
+    do guia. Guias sem tabela de hierarquia (modelos genéricos) devolvem {} e o site usa os padrões."""
+    _intro, secs = split_sections(raw_guide)
+    sec = next((s for s in secs if s["id"].startswith("typography")), None)
+    if not sec:
+        return {}
+    html_ = sec["html"]
+    out = {"weights": {}, "features": []}
+    table = re.search(r"<table>(.*?)</table>", html_, re.S)
+    if table:
+        heads = [text(h).lower() for h in re.findall(r"<th>(.*?)</th>", table.group(1), re.S)]
+        wi = heads.index("weight") if "weight" in heads else None
+        ti = next((i for i, h in enumerate(heads) if h.startswith("letter")), None)
+        for tr in re.findall(r"<tr>(.*?)</tr>", table.group(1), re.S)[1:]:
+            cells = [text(c) for c in re.findall(r"<td>(.*?)</td>", tr, re.S)]
+            if not cells or wi is None or wi >= len(cells):
+                continue
+            name = cells[0].lower().strip()
+            for role, rx in TYPE_ROLE_NAMES.items():
+                if rx.match(name) and role not in out["weights"]:
+                    w = parse_weight(cells[wi])
+                    if w:
+                        out["weights"][role] = w
+                    if role == "label":
+                        row = " ".join(cells).lower()
+                        if ti is not None and ti < len(cells):
+                            m = re.search(r"(-?[\d.]+)\s*(px|em)", cells[ti])
+                            if m:
+                                out["label_tracking"] = (float(m.group(1)), m.group(2))
+                        if re.search(r"sentence case|lowercase|not uppercase|no uppercase", row):
+                            out["label_transform"] = "none"
+    for li in re.findall(r"<li>(.*?)</li>", html_, re.S):
+        if re.search(r"opentype|font-feature|stylistic", li, re.I):
+            for tag in re.findall(r"<code>(?:&quot;|\")?([a-z0-9]{3,4})(?:&quot;|\")?</code>", li):
+                if FEATURE_TAG.match(tag) and tag not in out["features"]:
+                    out["features"].append(tag)
+    return out
+
+
+def parse_button_spec(raw_guide):
+    """Raio e padding do botão principal, quando o guia os escreve de forma explícita ("Radius: 8px",
+    "Padding: 10px 20px") no primeiro bloco de botão da seção de componentes."""
+    _intro, secs = split_sections(raw_guide)
+    sec = next((s for s in secs if s["id"].startswith("component")), None)
+    if not sec:
+        return {}
+    m = re.search(r"<h3>[^<]*[Bb]utton[^<]*</h3>(.*?)(?=<h3>|$)", sec["html"], re.S)
+    if not m:
+        return {}
+    t = re.sub(r"\s+", " ", text(m.group(1)))
+    out = {}
+    r = re.search(r"[Rr]adius:\s*(?:(\d{1,2})px|(full|pill|9999px))", t)
+    if r:
+        out["radius"] = int(r.group(1)) if r.group(1) else 999
+    p = re.search(r"[Pp]adding:\s*(\d{1,2})px\s+(\d{1,2})px", t)
+    if p:
+        out["pad"] = (int(p.group(1)), int(p.group(2)))
+    return out
+
+
 def pick_weight(ranges, want=600):
     """Peso mais próximo de `want` que a fonte realmente tem (sem passar dele, se possível)."""
     for lo, hi in ranges:
@@ -832,7 +920,7 @@ def pick_weight(ranges, want=600):
     return max(below) if below else min(discrete)
 
 
-def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
+def theme_vars(tokens, palettes, roles, fonts, adjustments=None, type_roles=None):
     """Variáveis CSS do site para este DS. Derivados usam color-mix para funcionar em temas claros e escuros.
 
     `adjustments` (lista) recebe os tokens cuja cor do DS ficou abaixo de 4,5:1 (WCAG 2.2 AA) e foi trocada:
@@ -1017,11 +1105,46 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
 
     # Pesos: fontes que só têm o peso regular (ex.: fonte pixelada) não ganham negrito sintético, que borra os glifos.
     heading_font = next((f for f in fonts if f["kind"] == "display"), None) or next((f for f in fonts if f["kind"] in ("primary", "body")), None)
+    type_roles = type_roles or {}
+    guide_w = type_roles.get("weights", {})
     heading_weight = 600
     if heading_font:
         ranges = font_weight_ranges(heading_font)
-        if ranges:
-            heading_weight = pick_weight(ranges)
+        want = clamp(guide_w.get("display") or guide_w.get("h2"), 300, 900, 600)
+        heading_weight = pick_weight(ranges, want) if ranges else int(want)
+    body_font = next((f for f in fonts if f["kind"] in ("body", "primary")), None) or heading_font
+
+    def role_weight(role, lo, hi):
+        """Peso do papel, no intervalo [lo, hi], ajustado ao que a fonte tem; None sem peso no guia."""
+        w = guide_w.get(role)
+        if not w:
+            return None
+        w = int(clamp(w, lo, hi, w))
+        ranges = font_weight_ranges(body_font) if body_font else []
+        return pick_weight(ranges, w) if ranges else w
+
+    roles_w = {"--h3-weight": (guide_w.get("h3") and int(clamp(guide_w["h3"], 300, 900, 600)) or None),
+               "--body-weight": role_weight("body", 300, 500),
+               "--btn-weight": role_weight("button", 400, 800),
+               "--label-weight": role_weight("label", 400, 800)}
+    if roles_w["--h3-weight"] and heading_font:
+        r_ = font_weight_ranges(heading_font)
+        roles_w["--h3-weight"] = pick_weight(r_, roles_w["--h3-weight"]) if r_ else roles_w["--h3-weight"]
+    type_extra = {k: str(v) for k, v in roles_w.items() if v}
+    if type_roles.get("label_transform"):
+        type_extra["--kicker-transform"] = type_roles["label_transform"]
+    if type_roles.get("label_tracking"):
+        val, unit = type_roles["label_tracking"]
+        em = val / 12 if unit == "px" else val  # px sobre o rótulo de ~12px
+        type_extra["--kicker-spacing"] = f"{max(0.0, min(0.2, em)):.3g}em"
+    spec = type_roles.get("button_spec") or {}
+    if "radius" in spec:
+        type_extra["--btn-radius"] = f"{min(spec['radius'], 999)}px"
+    if "pad" in spec:
+        type_extra["--btn-pad-y"] = f"{int(clamp(spec['pad'][0], 6, 16, 9))}px"
+        type_extra["--btn-pad-x"] = f"{int(clamp(spec['pad'][1], 12, 40, 18))}px"
+    if type_roles.get("features"):
+        type_extra["--font-features"] = ", ".join(f'"{t}"' for t in type_roles["features"])
     no_bold = any(
         (r := font_weight_ranges(f)) and max(hi for _lo, hi in r) < 600
         for f in fonts if f.get("source")
@@ -1035,7 +1158,7 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
     # esquema de cores nativo: ícones de calendário e relógio, barras de rolagem e controles do navegador
     # ficam claros sobre fundo escuro
     scheme = {"color-scheme": "dark" if bg_hex and luminance(hex_to_rgb(bg_hex)) < 0.18 else "light"}
-    return {**scheme, **weights, **shades, **ink, **scale, **extras, **{
+    return {**scheme, **weights, **shades, **ink, **scale, **extras, **type_extra, **{
         "--bg": g("--bg", "#ffffff"),
         "--surface": surface_css,
         "--surface-2": surface2_css,
@@ -1070,8 +1193,6 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None):
         "--font-code": code,
         "--font-mono": code,
         "--heading-weight": str(heading_weight),
-        "--kicker-transform": "uppercase",
-        "--kicker-spacing": "0.08em",
         "--hero-ground": "var(--surface-2)",
         "--hero-ink": "var(--fg)",
     }}
@@ -1262,8 +1383,12 @@ def build_one(ds_id, page_path, entry, slug):
     _intro, sections = split_sections(raw_guide)
     colors = guide_colors(raw_guide)
     fonts = describe_fonts(parse_fonts(raw_guide))
+    type_roles = {**parse_type_roles(raw_guide), "button_spec": parse_button_spec(raw_guide)}
     if ds_id == "padrao":
         tokens, colors, fonts = compose_default(tokens)
+        # tipografia do Futuristic; o botão (raio e padding) segue o guia do Vercel, de onde vêm as bordas
+        type_roles = {**parse_type_roles(block(cached_page(DEFAULT_TYPE_FROM[0]), "designmd-body")),
+                      "button_spec": type_roles["button_spec"]}
     # cores do preview do catálogo entram como candidatas se o guia não nomear nada
     palettes, roles = build_palettes(tokens, colors)
     if ds_id == "padrao":
@@ -1309,7 +1434,7 @@ def build_one(ds_id, page_path, entry, slug):
         "colors": colors,
         "fonts": fonts,
         "tokens": tokens,
-        "vars": theme_vars(tokens, palettes, roles, fonts, adjustments),
+        "vars": theme_vars(tokens, palettes, roles, fonts, adjustments, type_roles),
         "sections": sections,
     }
     if ds_id == "padrao":  # cabeçalho no cinza de sempre, não no tom 500 da paleta Primary
@@ -1320,7 +1445,7 @@ def build_one(ds_id, page_path, entry, slug):
     alt = None
     alt_adjustments = []
     if mode:
-        alt_vars = theme_vars(override_tokens(tokens, mode["tokens"]), palettes, roles, fonts, alt_adjustments)
+        alt_vars = theme_vars(override_tokens(tokens, mode["tokens"]), palettes, roles, fonts, alt_adjustments, type_roles)
         # os tons 500/400 da escala (cabeçalho e rodapé) vêm da paleta do modo base; na variante o fundo e o texto
         for shade in ("--primary-500", "--neutral-400"):
             if shade in alt_vars:

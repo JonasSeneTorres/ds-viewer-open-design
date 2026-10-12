@@ -144,6 +144,10 @@ Além das cores, cada tema leva os detalhes do guia que o site usa (seções 3 a
 | `--solid`, `--solid-fg`, `--solid-hover` | `--accent`, `--accent-on`, `--accent-hover` | botão principal: o par do DS, ou ajustado se não passar de 4,5:1 |
 | `--accent-strong`, `--muted`, `--fg-soft`, `--meta` | `--accent`, `--muted`, `--fg-2`, `--meta` | links, kicker e textos secundários, garantidos acima de 4,7:1 sobre fundo, superfície e fundo secundário |
 | `--surface-2`, `--border-soft` | `--surface-warm`, `--border-soft` | fundo secundário (hero, cabeçalho de tabela) e divisórias suaves |
+| `--heading-weight`, `--h3-weight`, `--body-weight`, `--btn-weight`, `--label-weight` | tabela "Hierarchy" da seção de tipografia do guia (papéis Display, Section Heading, Sub-heading, Body, Button e Label) | peso de títulos, subtítulos, corpo, botões e rótulos, limitado ao que a fonte tem |
+| `--kicker-spacing`, `--kicker-transform` | linha do papel Label/Overline do guia | espaçamento e caixa dos rótulos (kickers) |
+| `--font-features` | itens "OpenType features" do guia | `font-feature-settings` do site (só `ss01`…, `cv01`…, `liga`, `calt`, `kern`, `lnum`, `locl` e semelhantes) |
+| `--btn-radius`, `--btn-pad-y`, `--btn-pad-x` | `Radius: Npx` e `Padding: Npx Npx` do primeiro botão da seção de componentes | raio e padding dos botões, limitados a faixas seguras |
 
 Algumas variáveis são opcionais: o tema só as define quando quer mudar o padrão, e o CSS tem um fallback para as demais.
 
@@ -154,6 +158,8 @@ Algumas variáveis são opcionais: o tema só as define quando quer mudar o padr
 | `--row-bg`, `--row-stripe`, `--row-hover` | linhas, zebra e hover da tabela de exemplo | transparente; hover em `--surface-2` |
 | `--cta-bg`, `--cta-btn-fg` | fundo da faixa de chamada e texto do botão dela | `--solid` |
 | `color-scheme` | `dark` ou `light` conforme a luminância do fundo; deixa ícones de calendário e relógio, barras de rolagem e controles do navegador legíveis | gerado em todos os temas |
+
+**Tipografia por papel.** O guia de cada DS descreve, na seção de tipografia, uma tabela de hierarquia com peso por papel. O build lê essa tabela (`parse_type_roles`): 82 dos 143 guias têm uma; os demais são modelos genéricos sem pesos, e o site mantém os padrões (títulos em 600, corpo em 400, botões em 600). O peso do guia é ajustado ao que a fonte realmente tem, e faixas como `300-400` usam o maior valor. O raio e o padding do botão só são usados quando o guia os escreve de forma explícita (`Radius: 8px`, `Padding: 10px 20px`). Nada disso muda a cor, então não altera nenhuma validação de contraste.
 
 A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que foi ajustado em cada um) está em [`docs/revisao-estilos.md`](docs/revisao-estilos.md), gerada por `npm run audit:themes` e `scripts/review_styles.py`.
 
