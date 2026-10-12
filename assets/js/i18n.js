@@ -470,6 +470,11 @@ const UI = {
     "en-US": "Feel free to explore. Here you will find examples of blog pages, e-commerce, forms, tables, charts and a few other little things.",
     "pt-BR": "Sinta-se à vontade para explorar. Aqui você encontra exemplos de páginas de blog, e-commerce, formulários, tabelas, gráficos e mais algumas coisinhas."
   },
+  "home.source": {
+    "en-US": "The source code is on {repo}.",
+    "pt-BR": "O código-fonte está no {repo}."
+  },
+  "home.sourceLink": { "en-US": "GitHub", "pt-BR": "GitHub" },
   "home.maujorLink": { "en-US": "Maujor", "pt-BR": "Maujor" },
   "home.zenLink": { "en-US": "CSS Zen Garden", "pt-BR": "CSS Zen Garden" },
   "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },

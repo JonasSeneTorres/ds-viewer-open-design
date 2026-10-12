@@ -14,11 +14,12 @@ function extLinkHTML(href, text) {
   );
 }
 
-// Início: o hero (a proposta do projeto em quatro parágrafos curtos) e, logo abaixo, o catálogo de design systems.
+// Início: o hero (a proposta do projeto em cinco parágrafos curtos) e, logo abaixo, o catálogo de design systems.
 function homeHTML() {
   const openDesign = extLinkHTML("https://open-design.ai/plugins/systems/", T("home.noteLink"));
   const zen = extLinkHTML("https://csszengarden.com/", T("home.zenLink"));
   const maujor = extLinkHTML("https://maujor.com/", T("home.maujorLink"));
+  const repo = extLinkHTML("https://github.com/JonasSeneTorres/ds-viewer-open-design", T("home.sourceLink"));
   return (
     '<section class="hero"><div class="wrap hero-inner">' +
     '<span class="kicker">' + esc(T("home.kicker")) + "</span>" +
@@ -27,6 +28,7 @@ function homeHTML() {
     '<p class="lede">' + esc(T("home.note")).replace("{maujor}", maujor).replace("{zen}", zen) + "</p>" +
     '<p class="lede">' + esc(T("home.how")) + "</p>" +
     '<p class="lede">' + esc(T("home.more")) + "</p>" +
+    '<p class="lede">' + esc(T("home.source")).replace("{repo}", repo) + "</p>" +
     "</div></section>" +
     '<div class="wrap page">' + renderDSList(true) + "</div>"
   );
