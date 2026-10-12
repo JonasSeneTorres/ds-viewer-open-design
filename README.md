@@ -103,8 +103,8 @@ python -m http.server 8317
 | `npm run check` | Confere a consistência dos dados, incluindo variantes claro/escuro e relatórios de contraste (`scripts/check_data.py`), e o HTML dos guias (`scripts/check_html.py`) |
 | `npm run check:html` | Só a conferência do HTML dos guias |
 | `npm run check:js` | Confere a sintaxe do JavaScript do site (`assets/app.js` e `assets/js/*.js`) |
-| `npm run test:e2e` | Testes E2E básicos (Playwright, `tests/e2e.spec.mjs`). Sem baixar navegador: `PW_CHANNEL=msedge npm run test:e2e` |
-| `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
+| `npm run test:e2e` | Testes E2E (Playwright, `tests/e2e.spec.mjs`). Só Chromium por padrão; `PW_BROWSERS=chromium,firefox,webkit` roda os três motores (precisa de `npx playwright install firefox webkit`). Sem baixar o Chromium: `PW_CHANNEL=msedge npm run test:e2e` |
+| `npm run audit:themes` | Abre cada tema nas telas principais (desktop e celular) e mede contraste, rolagem horizontal, erros e fontes. Leva ~20 min; `-- --only <ids>` limita e `PW_BROWSER=firefox` (ou `webkit`) troca o motor. Depois, `python scripts/review_styles.py <json>` gera `docs/revisao-estilos.md` |
 | `npm run verify:upstream` | Compara os tokens com o `tokens.css` do repositório do Open Design (ver o topo de `scripts/verify_upstream.py`) |
 | `npm run readme:fonts` | Regera a lista de fontes proprietárias deste README (entre os marcadores `fontes-proprietarias`) a partir do `index.json` |
 | `npm run i18n:template -- <slug> [lang]` | Gera `i18n/<lang>/<slug>.html` (padrão `pt-BR`) com o texto em inglês, pronto para traduzir |
@@ -131,7 +131,9 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 21 cenários no Chromium (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL e o botão de abrir no open-design). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 21 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL e o botão de abrir no open-design). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+
+A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 143 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
@@ -338,8 +340,7 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
-1. **Rodar a auditoria de temas com regularidade** (agendada ou sob demanda no CI, já que leva ~40 min) e testar também em Firefox e WebKit, porque o CSS usa recursos recentes (`color-mix`, `dvh`, `:has`) e só foi verificado em Chromium.
-2. **Mais adiante:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
+1. **Próximo:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
 
 ## Créditos
 

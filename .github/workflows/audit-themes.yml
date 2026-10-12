@@ -1,0 +1,54 @@
+# Auditoria visual dos 143 temas (contraste, rolagem horizontal, erros e fontes), em desktop e celular.
+# Leva de 20 a 40 minutos, por isso não roda a cada push: é semanal e pode ser disparada à mão.
+# À mão: Actions > Auditar temas > Run workflow (dá para limitar a alguns temas e escolher o navegador).
+name: Auditar temas
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # segundas, 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Só estes temas (ids separados por vírgula; vazio = todos)"
+        required: false
+        default: ""
+      browser:
+        description: "Navegador"
+        required: false
+        default: chromium
+        type: choice
+        options: [chromium, firefox, webkit]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar dependências
+        run: npm ci
+      - name: Instalar o navegador
+        run: npx playwright install --with-deps ${{ inputs.browser || 'chromium' }}
+      - name: Auditar
+        env:
+          PW_BROWSER: ${{ inputs.browser || 'chromium' }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          args=(--out audit-themes.json)
+          if [ -n "$ONLY" ]; then args+=(--only "$ONLY"); fi
+          node scripts/audit_themes.mjs "${args[@]}" | tee audit-themes.txt
+      - name: Guardar o relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-themes
+          path: |
+            audit-themes.json
+            audit-themes.txt
+          if-no-files-found: ignore

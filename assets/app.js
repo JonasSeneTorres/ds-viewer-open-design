@@ -42,6 +42,10 @@ function closeExamples(restoreFocus) {
 
 
 if (examplesBtn && examplesMenu) {
+  // Esc fecha o menu de qualquer lugar: no Safari clicar num botão não o foca, e o teclado ficaria no <body>.
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !examplesMenu.hidden) closeExamples(true);
+  });
   examplesBtn.addEventListener("click", function () {
     if (examplesMenu.hidden) openExamples(); else closeExamples(false);
   });
@@ -254,7 +258,9 @@ updateHeaderHeight();
 window.addEventListener("resize", updateHeaderHeight);
 
 if (window.ResizeObserver && document.querySelector(".site-header")) {
-  new ResizeObserver(updateHeaderHeight).observe(document.querySelector(".site-header"));
+  // no próximo quadro: gravar --header-h dentro do callback muda o layout e faz o WebKit avisar
+  // "ResizeObserver loop completed with undelivered notifications"
+  new ResizeObserver(function () { requestAnimationFrame(updateHeaderHeight); }).observe(document.querySelector(".site-header"));
 }
 
 

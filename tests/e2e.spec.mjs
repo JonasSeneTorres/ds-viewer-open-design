@@ -346,6 +346,7 @@ test("botão sol/lua só funciona nos temas com variante clara/escura", async ({
   await expect(btn).toHaveAttribute("aria-disabled", "false");
 
   await page.goto("/#/design-system/github");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "github"); // o tema só troca quando o CSS chega
   await expect(btn).toHaveAttribute("aria-disabled", "false");
   expect(await bg()).toBe("#ffffff");
   await btn.click();
@@ -355,6 +356,7 @@ test("botão sol/lua só funciona nos temas com variante clara/escura", async ({
 
   // a escolha vale em outro tema com variante e é desfeita no clique seguinte
   await page.goto("/#/design-system/perplexity");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "perplexity");
   await expect(btn).toHaveAttribute("aria-disabled", "false");
   expect(await bg()).toBe("#0f0f10"); // base escura, escolha "dark": nada muda
   await btn.click();
