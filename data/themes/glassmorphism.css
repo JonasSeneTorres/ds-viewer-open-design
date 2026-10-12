@@ -127,6 +127,9 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 4px rgba(79, 140, 255, 0.28);
+  --secondary: #3a344e;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #2f2a40;
   --bg: #eef6ff;
   --surface: rgba(255, 255, 255, 0.74);
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);

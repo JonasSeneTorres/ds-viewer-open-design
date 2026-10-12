@@ -111,6 +111,9 @@
   --ease: ease-out;
   --radius-lg: 0px;
   --focus-ring: 0 0 0 4px #000000, 0 0 0 8px #ffef5a;
+  --secondary: #bd8b3a;
+  --secondary-fg: #111111;
+  --secondary-hover: #c59955;
   --bg: #f5f1e8;
   --surface: #ffffff;
   --surface-2: #ffef5a;

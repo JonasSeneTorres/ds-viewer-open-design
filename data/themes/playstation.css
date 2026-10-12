@@ -31,6 +31,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 2px #0070cc;
+  --secondary: #d53b00;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #b33000;
   --btn-pad-y: 16px;
   --btn-pad-x: 20px;
   --bg: #000000;

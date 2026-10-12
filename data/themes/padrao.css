@@ -132,6 +132,9 @@
   --row-bg: #ffffff;
   --row-stripe: var(--surface-2);
   --row-hover: color-mix(in oklab, #8145b5 14%, #ffffff);
+  --secondary: #8145b5;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #6c3998;
   --btn-radius: 6px;
   --btn-pad-y: 6px;
   --btn-pad-x: 12px;
@@ -214,6 +217,9 @@
   --row-hover: color-mix(in oklab, #a77ad6 22%, var(--bg));
   --cta-bg: #f2e8fd;
   --cta-btn-fg: #f2e8fd;
+  --secondary: #8145b5;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #6c3998;
   --btn-radius: 6px;
   --btn-pad-y: 6px;
   --btn-pad-x: 12px;

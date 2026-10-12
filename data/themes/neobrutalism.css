@@ -127,6 +127,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 4px rgba(210, 75, 31, 0.28);
+  --secondary: #432dd7;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #3724b5;
   --bg: #fff4cf;
   --surface: #fffaf0;
   --surface-2: #ffdca8;

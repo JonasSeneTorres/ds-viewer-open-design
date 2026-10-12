@@ -111,6 +111,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --secondary: #111111;
+  --secondary-fg: #ffffff;
+  --secondary-hover: #0c0c0c;
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);

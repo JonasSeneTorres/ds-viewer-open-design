@@ -127,6 +127,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --secondary: #c37d0d;
+  --secondary-fg: #111111;
+  --secondary-hover: #cb8d3d;
   --h3-weight: 500;
   --body-weight: 400;
   --btn-weight: 500;
