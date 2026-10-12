@@ -3,6 +3,7 @@
 import { authFromSlug, authHTML, authMount, authState, authTitle, setAuthState } from "./js/auth.js";
 import { articleHTML, articleTitle, blogHTML } from "./js/blog.js";
 import { buildCombobox, comboBtn, comboList, fillComboList } from "./js/combobox.js";
+import { componentsHTML, componentsMount } from "./js/components.js";
 import { dashboardHTML } from "./js/dashboard.js";
 import { THEMES, loadData, loadDsDetail } from "./js/data.js";
 import { initDSDetail, initDSList, renderDSDetail } from "./js/ds.js";
@@ -24,7 +25,7 @@ var examplesBtn = document.getElementById("examplesBtn");
 
 var examplesMenu = document.getElementById("examplesMenu");
 
-var EXAMPLE_ROUTES = ["/entrar", "/institucional", "/blog", "/tabela", "/formulario", "/dashboard", "/loja"];
+var EXAMPLE_ROUTES = ["/entrar", "/institucional", "/blog", "/tabela", "/formulario", "/componentes", "/dashboard", "/loja"];
 
 
 function openExamples() {
@@ -166,6 +167,11 @@ function router(moveFocus) {
     app.innerHTML = institutionalHTML();
     setTitle(T("nav.institutional"));
     setActiveNav("/institucional");
+  } else if (hash === "/componentes") {
+    app.innerHTML = page(componentsHTML(), [[T("nav.components")]]);
+    setTitle(T("nav.components"));
+    componentsMount();
+    setActiveNav("/componentes");
   } else if (hash === "/dashboard") {
     app.innerHTML = page(dashboardHTML(), [[T("nav.dashboard")]]);
     setTitle(T("nav.dashboard"));

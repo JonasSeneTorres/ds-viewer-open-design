@@ -196,6 +196,8 @@ function applyTheme(id) {
     var th = themeById(id);
     if (altApplied(id)) document.documentElement.setAttribute("data-scheme", th.schemes.alt);
     else document.documentElement.removeAttribute("data-scheme");
+    // direção do texto do tema (Urdu: da direita para a esquerda); o CSS usa propriedades lógicas
+    document.documentElement.setAttribute("dir", (th && th.dir) || "ltr");
     updateSchemeButton(id);
     updateFontNotice(id);
     updateContrastNotice(id);

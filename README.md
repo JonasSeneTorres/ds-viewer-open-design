@@ -6,7 +6,7 @@ SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo n
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão**, uma mistura própria: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic, com variante escura.
 
-O cabeçalho tem três itens (e, à direita, o seletor de temas, o botão sol/lua e o de idioma): **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Dashboard, Loja e Login).
+O cabeçalho tem três itens (e, à direita, o seletor de temas, o botão sol/lua e o de idioma): **Início** (a página inicial, com o catálogo), **Informações do tema** (a página do design system escolhido no seletor) e **Exemplos** (menu com Institucional, Blog, Tabela, Formulário, Componentes, Dashboard, Loja e Login).
 
 Páginas:
 
@@ -21,6 +21,7 @@ Páginas:
 | `#/design-system` | Atalho antigo: redireciona para `#/` |
 | `#/design-system/<id>` | Detalhes do DS: paleta 50–950, tipografia e fontes, tokens e o guia completo. A página é exibida com o próprio tema, como prévia, e tem o botão de aplicar o tema e, nos DS que existem lá, o de abrir no open-design.ai (o Padrão não tem) |
 | `#/tabela` | Tabela CRUD de exemplo (salva no `localStorage`), com seletor de estado: dados, carregando, vazio e erro; itens depreciados não podem ser editados |
+| `#/componentes` | Componentes de interface: abas (setas, Home e End), accordion, toast (região viva, fecha sozinho), tooltip (abre com foco, Esc dispensa) e paginação com reticências. Tudo pelo teclado e com as cores do tema |
 | `#/dashboard` | Dashboard genérico no estilo do painel do WordPress: indicadores com minigráficos, área, barras, rosca e anel de progresso, tudo em SVG com as cores do tema |
 | `#/loja` e `#/loja/<categoria>` | Catálogo de loja com navegação por categoria, ordenação e carrinho de brincadeira. Sem fotos: degradê do tema e ícone de imagem não encontrada em SVG |
 | `#/formulario` | Um campo de cada tipo de entrada, mais os estados: erro, ajuda, desabilitado, somente leitura, botões, alertas e carregamento |
@@ -40,15 +41,17 @@ assets/
     data.js             índice e detalhes dos design systems (carregamento)
     content.js          Lorem ipsum, artigos, categorias e os registros da tabela
     util.js             escape de HTML, datas, cores e o elemento raiz
+    meta.js             metatags por página (descrição, Open Graph, Twitter)
     theme.js            aplicar e trocar tema, ?tema=, claro/escuro, avisos de fontes e de contraste
     combobox.js         seletor de temas com busca
     layout.js           migalhas, moldura de página, 404 e título da aba
-    home.js, blog.js, table.js, form.js, ds.js, dashboard.js, shop.js, institutional.js, auth.js, legal.js
+    home.js, blog.js, table.js, form.js, ds.js, components.js, dashboard.js, shop.js, institutional.js, auth.js, legal.js
                         uma página (ou grupo de telas) cada: o HTML e a interação dela
     behaviors.js        comportamentos globais dos formulários de exemplo
   styles.css            estilos do produto (usam só as variáveis do tema)
   themes.css            valores-base das variáveis (fallback antes de o tema carregar)
   logo.svg
+  og.png                imagem de compartilhamento (1200 × 630)
   fonts/                fontes dos temas (woff2, self-host) e manifest.json
 data/
   modes.json            variante clara/escura dos temas que a têm (ver "Claro e escuro")
@@ -131,7 +134,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 1. `npm run check:js` (`node --check` em `assets/app.js` e em cada módulo de `assets/js/`)
 2. `python scripts/check_data.py`: cada DS do índice tem JSON e tema, sem `@import` externo, fontes existentes, paletas 50–950, seções em pt-BR e en-US
 3. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
-4. `npm run test:e2e`: 21 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL e o botão de abrir no open-design). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
+4. `npm run test:e2e`: 24 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes e o tema Urdu em RTL). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
 A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 143 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
 
@@ -182,6 +185,22 @@ A revisão tema a tema (contraste, rolagem horizontal, fontes carregadas, o que 
 O botão de sol e lua do cabeçalho alterna a variante clara/escura do tema, mas **só nos temas cujo guia descreve uma segunda paleta**: Padrão, Discord, GitHub, IBM, Linear, Perplexity e Xiaohongshu. Nos demais o botão fica desabilitado, com a dica "Este tema não tem variante clara/escura" (o Mission Control declara não ter modo claro "por design", e o Supabase só descreve o escuro).
 
 As cores da outra variante estão em [`data/modes.json`](data/modes.json), copiadas da seção de cores do guia (o que o guia não dá, como o texto do modo claro do Discord e do Linear, está em `derived` e marcado como dedução). `npm run data:update` roda as mesmas regras de contraste sobre a variante e grava um bloco extra em `data/themes/<id>.css`, `[data-theme="<id>"][data-scheme="dark|light"]`, e o campo `schemes` no `index.json`. A escolha fica em `localStorage` (`odv-scheme`) e vale para qualquer tema que tenha a variante. O aviso de contraste lista os ajustes da variante que está na tela. O escuro do Padrão não vem de nenhum guia: é derivado da paleta do Expo e marcado como tal no `modes.json`. Para incluir um tema, adicione a entrada em `data/modes.json`.
+
+### Escrita da direita para a esquerda (Urdu)
+
+O guia do tema Urdu declara `rtl_primary: true`; o build grava `dir: "rtl"` no `index.json` desse tema, e ao aplicá-lo o site põe `dir="rtl"` no `<html>`. Troca de tema volta para `ltr`. O CSS usa propriedades lógicas (`margin-inline-start`, `inset-inline-end`, `border-inline-start`, `text-align: start`...), então o layout espelha sozinho; as exceções são o interruptor (desliza para o outro lado) e as setas, que não espelham. O que o guia pede e o site faz:
+
+- **Pesos a evitar:** o guia diz `Avoid: 300, 500, 600` para a Noto Nastaliq; o build escolhe o peso permitido mais próximo (títulos, botões e rótulos em 700, corpo em 400). Vale para qualquer guia que traga essa linha.
+- **Sem reticências em RTL:** títulos de produto e rótulos longos não são truncados.
+- **Conteúdo da esquerda para a direita:** código, tokens e valores hexadecimais ficam em `ltr` isolados.
+- **Texto misto:** o texto do site é pt-BR ou en-US dentro de um layout espelhado, então cada parágrafo decide a própria direção (`unicode-bidi: plaintext`) e a pontuação não vai parar no lado errado.
+- **Altura de linha da marca:** a Nastaliq tem ascendentes e descendentes altos; o nome do site ganha mais altura de linha.
+
+Gráficos em SVG não são espelhados (série temporal lê da esquerda para a direita em qualquer idioma).
+
+### Metatags por página
+
+`index.html` traz as metatags estáticas (descrição, Open Graph, Twitter, `canonical` e a imagem `assets/og.png`). A cada troca de rota, `assets/js/meta.js` atualiza descrição, título e URL conforme a página (na página de um DS, a descrição é o resumo dele). Limite: as rotas são por hash, então a maioria dos rastreadores de rede social (que não executam JavaScript) só lê as tags estáticas; buscadores que executam recebem as da página aberta.
 
 ### Aviso de contraste (WCAG 2.2 AA)
 
@@ -340,7 +359,7 @@ As categorias vêm do open-design.ai e são traduzidas pelo mapa `CAT_PT` em `sc
 
 O que eu faria a seguir, em ordem (o detalhamento está no [TODO.md](TODO.md)):
 
-1. **Próximo:** uma página só de componentes (abas, accordion, toast, tooltip, paginação), suporte a RTL (tema Urdu) e metatags por página para compartilhamento.
+Nada em aberto: os itens do TODO foram resolvidos. Ideias, sem prioridade: mais componentes (modal, menu suspenso, breadcrumbs interativos), testes de acessibilidade automatizados (axe) no CI e tradução do conteúdo dos guias para mais idiomas.
 
 ## Créditos
 

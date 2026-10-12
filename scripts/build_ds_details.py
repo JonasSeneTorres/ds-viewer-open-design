@@ -881,6 +881,9 @@ def parse_type_roles(raw_guide):
                                 out["label_tracking"] = (float(m.group(1)), m.group(2))
                         if re.search(r"sentence case|lowercase|not uppercase|no uppercase", row):
                             out["label_transform"] = "none"
+    avoid = re.search(r"Avoid:?\s*(?:</strong>)?\s*((?:[1-9]00\s*,?\s*(?:and\s+)?)+)", html_)
+    if avoid:
+        out["avoid_weights"] = sorted({int(n) for n in re.findall(r"[1-9]00", avoid.group(1))})
     for li in re.findall(r"<li>(.*?)</li>", html_, re.S):
         if re.search(r"opentype|font-feature|stylistic", li, re.I):
             for tag in re.findall(r"<code>(?:&quot;|\")?([a-z0-9]{3,4})(?:&quot;|\")?</code>", li):
@@ -1130,6 +1133,23 @@ def theme_vars(tokens, palettes, roles, fonts, adjustments=None, type_roles=None
     if roles_w["--h3-weight"] and heading_font:
         r_ = font_weight_ranges(heading_font)
         roles_w["--h3-weight"] = pick_weight(r_, roles_w["--h3-weight"]) if r_ else roles_w["--h3-weight"]
+    avoid = set(type_roles.get("avoid_weights") or [])
+
+    def allowed(w):
+        """Peso mais próximo de `w` que o guia não pede para evitar (e que a fonte tem, se soubermos)."""
+        if w not in avoid:
+            return w
+        ranges = font_weight_ranges(body_font) if body_font else []
+        for step in (100, 200, 300, 400, 500, 600):
+            for cand in (w + step, w - step):
+                if 300 <= cand <= 900 and cand not in avoid and (not ranges or any(lo <= cand <= hi for lo, hi in ranges)):
+                    return cand
+        return w
+
+    if avoid:
+        heading_weight = allowed(heading_weight)
+        for var, default in (("--h3-weight", 600), ("--body-weight", 400), ("--btn-weight", 600), ("--label-weight", 600)):
+            roles_w[var] = allowed(roles_w.get(var) or default)
     type_extra = {k: str(v) for k, v in roles_w.items() if v}
     if type_roles.get("label_transform"):
         type_extra["--kicker-transform"] = type_roles["label_transform"]
@@ -1469,6 +1489,9 @@ def build_one(ds_id, page_path, entry, slug):
     # fontes proprietárias do guia que o site não tem: o aviso do topo e o README usam esta lista
     if mode:  # o botão sol/lua do cabeçalho só fica ativo nos temas com variante
         entry_out["schemes"] = {"base": mode["base"], "alt": mode["alt"]}
+    # escrita da direita para a esquerda: o guia declara "rtl_primary: true" (ou <html dir="rtl">)
+    if re.search(r"rtl_primary:\s*true|<html[^>]*dir=\"rtl\"|dir=&quot;rtl&quot;", raw_guide):
+        entry_out["dir"] = "rtl"
     prop = [f["family"] for f in fonts if f.get("proprietary")]
     if prop:
         entry_out["proprietaryFonts"] = prop

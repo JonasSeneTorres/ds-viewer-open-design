@@ -29,6 +29,7 @@ function registerDs(d) {
     category: d.category,
     swatches: d.swatches,
     proprietary: d.proprietaryFonts || [],
+    dir: d.dir || "ltr",         // "rtl" nos temas de escrita da direita para a esquerda (Urdu)
     schemes: d.schemes || null   // {base, alt}: o botão sol/lua só funciona nos temas com variante (data/modes.json)
   });
   if (d.id !== DEFAULT_THEME) {

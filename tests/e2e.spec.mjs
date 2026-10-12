@@ -135,7 +135,7 @@ test("rota antiga e rota inexistente se comportam", async ({ page }) => {
 test("menu Exemplos lista as páginas de exemplo e a informação do tema segue o tema escolhido", async ({ page }) => {
   await page.goto("/#/");
   await page.click("#examplesBtn");
-  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Dashboard", "Loja", "Login"]);
+  await expect(page.locator("#examplesMenu a")).toHaveText(["Institucional", "Blog", "Tabela", "Formulário", "Componentes", "Dashboard", "Loja", "Login"]);
   await page.keyboard.press("Escape");
   await expect(page.locator("#examplesMenu")).toBeHidden();
 
@@ -420,4 +420,94 @@ test("o botão de abrir no open-design só aparece nos DS que existem lá", asyn
 
   await page.goto("/#/design-system/airbnb");
   await expect(page.locator('.ds-actions a[target="_blank"]')).toHaveCount(1);
+});
+
+test("metatags acompanham a rota", async ({ page }) => {
+  const meta = (sel) => page.locator(`head meta[${sel}]`).getAttribute("content");
+  await page.goto("/#/");
+  expect(await meta('name="description"')).toContain("143 design systems");
+  const home = await meta('property="og:title"');
+
+  await page.goto("/#/tabela");
+  await expect(page.locator("main h1")).toBeVisible();
+  expect(await meta('name="description"')).toContain("CRUD");
+  expect(await meta('property="og:title"')).not.toBe(home);
+  expect(await meta('property="og:url"')).toMatch(/#\/tabela$/);
+
+  // na página de um DS, a descrição é o resumo dele
+  await page.goto("/#/design-system/bugatti");
+  await expect(page.locator(".ds-full h1")).toBeVisible();
+  const dsDesc = await meta('name="description"');
+  expect(dsDesc).toContain("hipercarros"); // o resumo do Bugatti, não o texto genérico
+  expect(await meta('property="og:image"')).toMatch(/\/assets\/og\.png$/);
+});
+
+test("componentes: abas, accordion, toast, tooltip e paginação", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/componentes");
+  await expect(page.locator("main h1")).toHaveText("Componentes");
+
+  // abas: clique e setas
+  const tab1 = page.locator("#tab0");
+  await expect(tab1).toHaveAttribute("aria-selected", "true");
+  await page.locator("#tab1").click();
+  await expect(page.locator("#tabpanel1")).toBeVisible();
+  await expect(page.locator("#tabpanel0")).toBeHidden();
+  await page.locator("#tab1").press("ArrowRight");
+  await expect(page.locator("#tab2")).toHaveAttribute("aria-selected", "true");
+  await expect(page.locator("#tab2")).toBeFocused();
+  await page.locator("#tab2").press("Home");
+  await expect(page.locator("#tab0")).toHaveAttribute("aria-selected", "true");
+
+  // accordion: abre e fecha
+  const acc = page.locator("#acc1");
+  await expect(acc).toHaveAttribute("aria-expanded", "false");
+  await acc.click();
+  await expect(acc).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator("#accpanel1")).toBeVisible();
+  await acc.click();
+  await expect(page.locator("#accpanel1")).toBeHidden();
+
+  // toast: aparece, tem região viva e fecha
+  await page.locator('[data-toast="ok"]').click();
+  const toast = page.locator("#toastRegion .toast");
+  await expect(toast).toHaveCount(1);
+  await expect(page.locator("#toastRegion")).toHaveAttribute("aria-live", "polite");
+  await toast.locator(".toast-close").click();
+  await expect(toast).toHaveCount(0);
+
+  // tooltip: abre com o foco e Esc dispensa
+  await page.locator('[aria-describedby="tip1"]').focus();
+  await expect(page.locator("#tip1")).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#tip1")).toBeHidden();
+
+  // paginação: próxima, página atual e limites
+  const pag = page.locator("#demoPagination");
+  await expect(pag.locator('[aria-current="page"]')).toHaveText("1");
+  await expect(pag.locator('[data-page="0"]')).toBeDisabled();
+  await pag.locator('[data-page="2"]').first().click();
+  await expect(pag.locator('[aria-current="page"]')).toHaveText("2");
+  await expect(pag.locator(".pag-status")).toContainText("Página 2 de 12");
+  expect(problems).toEqual([]);
+});
+
+test("tema Urdu: direção da direita para a esquerda e sem rolagem horizontal", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/?tema=urdu#/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "urdu");
+  await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+  for (const route of ["#/", "#/tabela", "#/formulario", "#/loja", "#/componentes", "#/institucional", "#/entrar"]) {
+    await page.goto("/?tema=urdu" + route);
+    await expect(page.locator("main")).toBeVisible();
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
+    expect(overflow, `rolagem horizontal em ${route}`).toBe(false);
+  }
+  // o botão voltar do menu e os campos seguem a direção
+  expect(await page.locator("body").evaluate((e) => getComputedStyle(e).direction)).toBe("rtl");
+
+  // outro tema volta para a esquerda
+  await page.goto("/?tema=padrao#/");
+  await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  expect(problems).toEqual([]);
 });

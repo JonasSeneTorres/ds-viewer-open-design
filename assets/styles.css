@@ -117,7 +117,7 @@ pre {
 
 .skip-link {
   position: absolute;
-  left: 12px;
+  inset-inline-start: 12px;
   top: -60px;
   z-index: 100;
   background: var(--solid);
@@ -210,7 +210,7 @@ pre {
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-left: auto;
+  margin-inline-start: auto;
   flex-wrap: wrap;
 }
 
@@ -332,7 +332,7 @@ pre {
 
 .combobox-pop {
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   top: calc(100% + 8px);
   width: 340px;
   max-width: min(92vw, 340px);
@@ -668,7 +668,7 @@ main:focus {
   display: grid;
   place-items: center;
   padding: 32px;
-  border-right: var(--bw) solid var(--border);
+  border-inline-end: var(--bw) solid var(--border);
 }
 
 .featured-visual span {
@@ -726,7 +726,7 @@ main:focus {
 
 .article-body ul,
 .article-body ol {
-  padding-left: 1.3em;
+  padding-inline-start: 1.3em;
   margin: 0 0 1em;
 }
 
@@ -737,7 +737,7 @@ main:focus {
 .article-body blockquote {
   margin: 1.5em 0;
   padding: 4px 0 4px 20px;
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);
   color: var(--fg-soft);
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -761,7 +761,7 @@ main:focus {
 
 .breadcrumbs li + li::before {
   content: "/";
-  margin-right: 6px;
+  margin-inline-end: 6px;
   opacity: 0.6;
 }
 
@@ -821,7 +821,7 @@ table {
 
 th,
 td {
-  text-align: left;
+  text-align: start;
   padding: 14px 16px;
   border-bottom: var(--bw) solid var(--border);
   font-size: 0.92rem;
@@ -1127,7 +1127,7 @@ dialog::backdrop {
   content: "";
   position: absolute;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -1142,6 +1142,10 @@ dialog::backdrop {
 
 .switch input:checked + .switch-track::after {
   transform: translateX(20px);
+}
+
+[dir="rtl"] .switch input:checked + .switch-track::after {
+  transform: translateX(-20px);
 }
 
 .switch input:focus-visible + .switch-track {
@@ -1311,7 +1315,7 @@ legend {
   }
 
   .featured-visual {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: var(--bw) solid var(--border);
     min-height: 180px;
   }
@@ -1325,7 +1329,7 @@ legend {
   .main-nav {
     order: 3;
     width: 100%;
-    margin-left: 0;
+    margin-inline-start: 0;
     padding-bottom: 4px;
   }
 
@@ -1334,7 +1338,7 @@ legend {
   }
 
   .header-tools {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   .form-grid {
@@ -1358,8 +1362,8 @@ legend {
   }
 
   .combobox-pop {
-    right: auto;
-    left: 0;
+    inset-inline-end: auto;
+    inset-inline-start: 0;
   }
 
   .toolbar {
@@ -1414,7 +1418,7 @@ legend {
 
 .ds-current-badge {
   display: none;
-  margin-left: 6px;
+  margin-inline-start: 6px;
   padding: 2px 8px;
   border-radius: var(--radius-pill);
   background: var(--accent);
@@ -1644,7 +1648,7 @@ legend {
 .guide-body th,
 .guide-body td {
   padding: 8px 12px;
-  text-align: left;
+  text-align: start;
   vertical-align: top;
   border-bottom: var(--bw) solid var(--border);
 }
@@ -1657,7 +1661,7 @@ legend {
 
 .guide-body ul,
 .guide-body ol {
-  padding-left: 1.3em;
+  padding-inline-start: 1.3em;
 }
 
 .guide-body li {
@@ -1667,7 +1671,7 @@ legend {
 .guide-body blockquote {
   margin: 1em 0;
   padding: 2px 0 2px 16px;
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);
   color: var(--fg-soft);
 }
 
@@ -1766,7 +1770,7 @@ legend {
   content: "";
   position: absolute;
   top: 8px;
-  right: 8px;
+  inset-inline-end: 8px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -1901,7 +1905,7 @@ legend {
 
 .to-top {
   position: fixed;
-  right: 20px;
+  inset-inline-end: 20px;
   bottom: 20px;
   z-index: 50;
   display: inline-flex;
@@ -2184,7 +2188,7 @@ fieldset {
 .nav-menu-list {
   position: absolute;
   top: calc(100% + 6px);
-  left: 0;
+  inset-inline-start: 0;
   z-index: 60;
   min-width: 220px;
   margin: 0;
@@ -2398,7 +2402,7 @@ fieldset {
 }
 
 .legend strong {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .swatch {
@@ -2553,7 +2557,7 @@ fieldset {
 .badge {
   position: absolute;
   top: 10px;
-  left: 10px;
+  inset-inline-start: 10px;
   padding: 3px 10px;
   border-radius: var(--radius-pill, 999px);
   font-family: var(--font-mono);
@@ -3079,7 +3083,7 @@ fieldset {
     radial-gradient(circle at 20% 15%, color-mix(in oklab, var(--grad-1, var(--accent)) 40%, transparent), transparent 55%),
     linear-gradient(150deg, color-mix(in oklab, var(--grad-2, var(--accent-strong)) 28%, var(--surface-2)), color-mix(in oklab, var(--grad-1, var(--accent)) 14%, var(--bg)));
   color: var(--fg);
-  border-right: var(--bw) solid var(--border);
+  border-inline-end: var(--bw) solid var(--border);
 }
 
 /* Painel da esquerda: altura da janela menos o cabeçalho, fixo ao rolar. O quadro com o logo e a
@@ -3199,13 +3203,13 @@ fieldset {
 }
 
 .pw input {
-  padding-right: 44px;
+  padding-inline-end: 44px;
 }
 
 .pw-toggle {
   position: absolute;
   top: 0;
-  right: 0;
+  inset-inline-end: 0;
   display: grid;
   place-items: center;
   width: 44px;
@@ -3376,7 +3380,7 @@ fieldset {
 
 .reqs li::before {
   content: "○";
-  margin-right: 8px;
+  margin-inline-end: 8px;
 }
 
 .reqs li.is-ok {
@@ -3404,7 +3408,7 @@ fieldset {
 
   /* no celular o quadro da esquerda vira uma faixa com o seletor e o aviso */
   .auth-aside {
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: var(--bw) solid var(--border);
   }
 
@@ -3442,7 +3446,7 @@ fieldset {
 }
 
 .legal ul {
-  padding-left: 1.2em;
+  padding-inline-start: 1.2em;
 }
 
 .legal .legal-links {
@@ -3553,7 +3557,7 @@ fieldset {
 
 .cn-list {
   margin: 8px 0 0;
-  padding-left: 20px;
+  padding-inline-start: 20px;
   display: grid;
   gap: 6px;
 }
@@ -3562,7 +3566,7 @@ fieldset {
   display: inline-block;
   width: 14px;
   height: 14px;
-  margin-right: 4px;
+  margin-inline-end: 4px;
   vertical-align: -2px;
   border: var(--bw) solid var(--border-strong);
   border-radius: 3px;
@@ -3574,4 +3578,276 @@ fieldset {
 
 .cn-ratio {
   color: var(--fg-soft);
+}
+
+
+/* ---------- Componentes de exemplo: abas, accordion, toast, tooltip e paginação ---------- */
+
+.tablist {
+  display: flex;
+  gap: 4px;
+  border-bottom: var(--bw) solid var(--border);
+  margin-bottom: 14px;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 9px 14px;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-weight: var(--btn-weight, 600);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--fg);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+
+.tab:focus-visible,
+.acc-btn:focus-visible,
+.page-link:focus-visible,
+.toast-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tabpanel p {
+  margin: 0;
+}
+
+.accordion {
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.acc-item + .acc-item {
+  border-top: var(--bw) solid var(--border);
+}
+
+.acc-head {
+  margin: 0;
+  font-size: inherit;
+}
+
+.acc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--surface);
+  color: var(--fg);
+  border: 0;
+  text-align: start;
+  font-weight: var(--btn-weight, 600);
+  cursor: pointer;
+}
+
+.acc-btn:hover {
+  background: var(--surface-2);
+}
+
+.acc-icon {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--motion-fast, 160ms) var(--ease, ease-out);
+}
+
+.acc-btn[aria-expanded="true"] .acc-icon {
+  transform: rotate(-135deg);
+}
+
+.acc-panel {
+  padding: 4px 14px 14px;
+  background: var(--surface);
+}
+
+.acc-panel p {
+  margin: 0;
+}
+
+.toast-region {
+  position: fixed;
+  inset-inline-end: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: grid;
+  gap: 10px;
+  width: min(360px, calc(100vw - 40px));
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-inline-start-width: 4px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-pop);
+}
+
+.toast-ok { border-inline-start-color: var(--ok); }
+.toast-warn { border-inline-start-color: var(--warn); }
+.toast-danger { border-inline-start-color: var(--danger); }
+
+.toast-close {
+  flex: none;
+  background: transparent;
+  color: var(--fg);
+  border: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tip-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.tip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  z-index: 20;
+  width: max-content;
+  max-width: 240px;
+  padding: 6px 10px;
+  background: var(--solid);
+  color: var(--solid-fg);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-fast, 160ms) var(--ease, ease-out);
+}
+
+.tip-wrap:hover .tip,
+.tip-wrap:focus-within .tip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tip-wrap.is-dismissed .tip {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.pagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-link {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 6px 12px;
+  background: var(--field-bg, var(--surface));
+  color: var(--fg);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--btn-radius, var(--radius-sm));
+  font-weight: var(--btn-weight, 600);
+  cursor: pointer;
+}
+
+.page-link:hover:not(:disabled):not(.is-current) {
+  border-color: var(--accent);
+}
+
+.page-link.is-current {
+  background: var(--solid);
+  color: var(--solid-fg);
+  border-color: var(--solid);
+}
+
+.page-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-gap {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  min-height: 40px;
+  color: var(--muted);
+}
+
+.pag-status {
+  margin: 12px 0 0;
+}
+
+
+/* ---------- Escrita da direita para a esquerda (tema Urdu): direção vem de <html dir="rtl"> ---------- */
+
+/* O guia pede para não truncar com reticências em texto RTL: elas leem ao contrário */
+[dir="rtl"] .social-btn span {
+  text-overflow: clip;
+}
+
+/* O nome do tema é texto latino: continua da esquerda para a direita (senão o corte come o começo) */
+[dir="rtl"] .combobox-label {
+  direction: ltr;
+  text-align: start;
+}
+
+/* A fonte Nastaliq tem ascendentes e descendentes altos: o texto da marca precisa de mais altura de linha */
+[dir="rtl"] .brand-text {
+  line-height: 1.6;
+}
+
+/* O texto do site é pt-BR ou en-US (da esquerda para a direita) dentro de um layout espelhado: cada
+   parágrafo decide a própria direção pelo conteúdo, e a pontuação não vai parar no lado errado */
+[dir="rtl"] :is(p, h1, h2, h3, h4, li, td, th, label, figcaption, blockquote, dd, dt, summary, .lede, .kicker, .stat-label) {
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .product-name,
+[dir="rtl"] .product-body .btn .btn-label {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+
+/* Conteúdo que continua da esquerda para a direita mesmo numa página RTL: código, tokens e números */
+[dir="rtl"] pre,
+[dir="rtl"] code,
+[dir="rtl"] .token-table td:nth-child(2),
+[dir="rtl"] .palette-hex {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
 }

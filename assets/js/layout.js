@@ -3,6 +3,7 @@
 import { THEMES } from "./data.js";
 import { dsIndex } from "./ds.js";
 import { L, T } from "./i18n.js";
+import { updateMeta } from "./meta.js";
 import { esc } from "./util.js";
 
 
@@ -11,6 +12,7 @@ import { esc } from "./util.js";
 function setTitle(part) {
   var site = T("brand");
   document.title = part ? part + " · " + site : site;
+  updateMeta();
 }
 
 // crumbs: [[label, href], ...] — o último item é a página atual (sem link).

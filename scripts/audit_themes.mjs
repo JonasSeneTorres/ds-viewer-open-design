@@ -125,6 +125,7 @@ const ROUTES = (id) => [
   ["licencas", "/#/licencas"],
   ["privacidade", "/#/privacidade"],
   ["dashboard", "/#/dashboard"],
+  ["componentes", "/#/componentes"],
   ["loja", "/#/loja"],
 ];
 const VIEWPORTS = [["desktop", { width: 1280, height: 900 }], ["celular", { width: 390, height: 800 }]];
