@@ -35,6 +35,8 @@
   --secondary-fg: #111111;
   --secondary-hover: #a5a5a5;
   --body-weight: 400;
+  --nav-toggle-radius: 6px;
+  --nav-toggle-border: 1px solid #999999;
   --btn-radius: 999px;
   --btn-pad-y: 12px;
   --btn-pad-x: 24px;

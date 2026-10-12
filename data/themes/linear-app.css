@@ -84,6 +84,9 @@
   --secondary-hover: #d6dbe4;
   --body-weight: 400;
   --label-weight: 400;
+  --nav-toggle-radius: 50%;
+  --nav-toggle-border: 1px solid rgba(255,255,255,0.08);
+  --nav-toggle-bg: rgba(255,255,255,0.03);
   --btn-radius: 6px;
   --btn-pad-y: 6px;
   --btn-pad-x: 12px;
@@ -162,6 +165,9 @@
   --secondary-hover: #999ea4;
   --body-weight: 400;
   --label-weight: 400;
+  --nav-toggle-radius: 50%;
+  --nav-toggle-border: 1px solid rgba(255,255,255,0.08);
+  --nav-toggle-bg: rgba(255,255,255,0.03);
   --btn-radius: 6px;
   --btn-pad-y: 6px;
   --btn-pad-x: 12px;
