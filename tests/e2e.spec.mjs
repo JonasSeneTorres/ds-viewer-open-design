@@ -23,11 +23,18 @@ test("início mostra o hero e o catálogo completo", async ({ page }) => {
   await expect(page.locator(".ds-card-cat")).toHaveCount(TOTAL);
   await expect(page.locator(".main-nav > a")).toHaveText(["Início", "Informações do tema"]);
   await expect(page.locator("#examplesBtn")).toContainText("Exemplos");
-  // aviso de que os exemplos não usam UI kit, com link para a documentação em outra janela
-  const doc = page.locator(".hero a[target=_blank]");
-  await expect(doc).toHaveAttribute("href", /open-design\.ai/);
-  await expect(doc).toHaveAttribute("rel", /noopener/);
-  await expect(doc).toContainText("abre em outra janela");
+  // texto de apresentação: links para a documentação do Open Design e para o CSS Zen Garden, em outra janela
+  await expect(page.locator(".hero p.lede")).toHaveCount(4);
+  await expect(page.locator(".hero")).toContainText("Maujor");
+  await expect(page.locator(".hero")).toContainText("nenhum UI Kit nem biblioteca de componentes");
+  const links = page.locator(".hero a[target=_blank]");
+  await expect(links).toHaveCount(2);
+  await expect(links.nth(0)).toHaveAttribute("href", /open-design\.ai/);
+  await expect(links.nth(1)).toHaveAttribute("href", "https://csszengarden.com/");
+  for (const i of [0, 1]) {
+    await expect(links.nth(i)).toHaveAttribute("rel", /noopener/);
+    await expect(links.nth(i)).toContainText("abre em outra janela");
+  }
   expect(problems).toEqual([]);
 });
 

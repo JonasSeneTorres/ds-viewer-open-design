@@ -455,13 +455,22 @@ var UI = {
   "home.kicker": { "en-US": "DS Viewer · Open Design", "pt-BR": "Visualizador de DS · Open Design" },
   "home.h1": { "en-US": "A hands-on viewer for Open Design's design systems.", "pt-BR": "Visualizador Prático de Design Systems do Open Design." },
   "home.lede": {
-    "en-US": "All texts, articles and forms are for illustration only. Their sole purpose is to let you interact with the page and get a better feel for what each cataloged design system has to offer.",
-    "pt-BR": "Todos os textos, matérias e formulários são somente ilustrativos. A única finalidade é poder interagir com a página tendo uma ideia melhor do que cada design system catalogado tem a oferecer."
+    "en-US": "The documentation of {link}'s design systems is extremely rich, but it falls short of giving a web overview. With this viewer I try to offer what I find most effective: each design system applied to real pages.",
+    "pt-BR": "A documentação dos Design Systems do {link} é extremamente rica, mas peca em oferecer um panorama web. Com este visualizador, procuro apresentar o que julgo mais efetivo: cada design system aplicado a páginas de verdade."
   },
   "home.note": {
-    "en-US": "It is important to make clear that the examples on this page use no UI kit or similar. All the definitions of colors, fonts, borders and shadows come from the {link} documentation.",
-    "pt-BR": "É importante deixar claro que, nos exemplos desta página, não estamos usando nenhum UI Kit ou assemelhado. Toda a definição de cores, fontes, bordas e sombras vem da documentação do {link}."
+    "en-US": "On Maujor's old website there was a section that, if I remember correctly, was inspired by {zen}: a page with fixed markup, for which the audience wrote CSS files to generate a completely different theme. I did the same work here.",
+    "pt-BR": "No antigo site do Maujor havia um trecho que, se não me engano, foi inspirado no {zen}: uma página com marcação fixa, para a qual o público desenvolvia arquivos CSS e gerava um tema totalmente diferente. Fiz o mesmo trabalho aqui."
   },
+  "home.how": {
+    "en-US": "I generated the markup for a few examples and applied the style of each of Open Design's design systems. I made a point of using no UI kit or component library; when I needed a component, I tried to build it in the simplest and most generic way. What interests me most is seeing how each design system affects the code around it.",
+    "pt-BR": "Gerei a marcação de alguns exemplos e apliquei o estilo de cada um dos Design Systems do Open Design. Fiz questão de não usar nenhum UI Kit nem biblioteca de componentes; quando precisei de algum, tentei construí-lo da forma mais simples e genérica possível. O que mais me interessa é ver como cada design system interfere no código à sua volta."
+  },
+  "home.more": {
+    "en-US": "Feel free to explore. Here you will find examples of blog pages, e-commerce, forms, tables, charts and a few other little things.",
+    "pt-BR": "Sinta-se à vontade para explorar. Aqui você encontra exemplos de páginas de blog, e-commerce, formulários, tabelas, gráficos e mais algumas coisinhas."
+  },
+  "home.zenLink": { "en-US": "CSS Zen Garden", "pt-BR": "CSS Zen Garden" },
   "home.noteLink": { "en-US": "Open Design", "pt-BR": "Open Design" },
   "home.newWindow": { "en-US": "(opens in a new window)", "pt-BR": "(abre em outra janela)" },
   "blog.kicker": { "en-US": "Blog", "pt-BR": "Blog" },
