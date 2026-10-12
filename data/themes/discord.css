@@ -31,6 +31,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 3px rgba(88, 101, 242, 0.3);
+  --btn-radius: 4px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
   --bg: #313338;
   --surface: #2b2d31;
   --surface-2: #1e1f22;
@@ -64,9 +67,7 @@
   --font-body: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: "gg mono", Consolas, "Andale Mono", "Courier New", Courier, monospace;
   --font-mono: "gg mono", Consolas, "Andale Mono", "Courier New", Courier, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 800;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
@@ -103,6 +104,9 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 3px rgba(88, 101, 242, 0.3);
+  --btn-radius: 4px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
   --bg: #ffffff;
   --surface: #f2f3f5;
   --surface-2: #e3e5e8;
@@ -136,9 +140,7 @@
   --font-body: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: "gg mono", Consolas, "Andale Mono", "Courier New", Courier, monospace;
   --font-mono: "gg mono", Consolas, "Andale Mono", "Courier New", Courier, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 800;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

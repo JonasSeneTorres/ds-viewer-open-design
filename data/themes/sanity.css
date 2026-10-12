@@ -79,6 +79,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 4px rgba(240, 62, 47, 0.24);
+  --body-weight: 400;
+  --btn-radius: 5px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
   --bg: #f8f8f7;
   --surface: #ffffff;
   --surface-2: #fff1ef;
@@ -112,9 +116,7 @@
   --font-body: "Helvetica", Arial, "Hiragino Sans GB", STXihei, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   --font-code: "IBM Plex Mono", "ibmPlexMono Fallback", ui-monospace, monospace;
   --font-mono: "IBM Plex Mono", "ibmPlexMono Fallback", ui-monospace, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

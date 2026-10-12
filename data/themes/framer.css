@@ -181,6 +181,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 20px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --h3-weight: 500;
+  --body-weight: 400;
+  --label-weight: 500;
+  --font-features: "cv01", "cv05", "cv09", "cv11", "ss03", "ss07";
   --bg: #000000;
   --surface: #090909;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -214,9 +218,7 @@
   --font-body: "Inter Variable", Inter, sans-serif;
   --font-code: "Azeret Mono", monospace;
   --font-mono: "Azeret Mono", monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 500;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

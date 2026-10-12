@@ -31,6 +31,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 2px #0070cc;
+  --btn-pad-y: 16px;
+  --btn-pad-x: 20px;
   --bg: #000000;
   --surface: #010101;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -65,8 +67,6 @@
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

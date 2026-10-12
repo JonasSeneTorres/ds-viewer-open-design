@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 22px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --h3-weight: 400;
+  --btn-weight: 400;
+  --label-weight: 400;
+  --kicker-spacing: 0.0233em;
   --bg: #ffffff;
   --surface: #fafafa;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +68,7 @@
   --font-body: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, sans-serif;
   --font-code: "CohereMono", Arial, ui-sans-serif, system-ui, monospace;
   --font-mono: "CohereMono", Arial, ui-sans-serif, system-ui, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

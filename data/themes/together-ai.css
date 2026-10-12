@@ -31,6 +31,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --h3-weight: 500;
+  --btn-weight: 500;
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +66,7 @@
   --font-body: "The Future", Arial, sans-serif;
   --font-code: "PP Neue Montreal Mono", Georgia, monospace;
   --font-mono: "PP Neue Montreal Mono", Georgia, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 500;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

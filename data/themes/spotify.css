@@ -31,6 +31,12 @@
   --ease: ease;
   --radius-lg: 8px;
   --focus-ring: 0 0 0 3px rgba(30, 215, 96, 0.4);
+  --h3-weight: 600;
+  --body-weight: 400;
+  --btn-weight: 700;
+  --btn-radius: 999px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
   --bg: #121212;
   --surface: #181818;
   --surface-2: #1f1f1f;
@@ -64,9 +70,7 @@
   --font-body: "SpotifyMixUI", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

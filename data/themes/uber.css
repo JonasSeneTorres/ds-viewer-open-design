@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+  --h3-weight: 700;
+  --btn-weight: 500;
+  --btn-pad-y: 10px;
+  --btn-pad-x: 12px;
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: #f8f8f8;
@@ -64,9 +68,7 @@
   --font-body: "UberMoveText", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

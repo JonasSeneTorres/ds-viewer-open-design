@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-lg: 14px;
   --focus-ring: 0 0 0 4px rgba(220, 0, 0, 0.30);
+  --h3-weight: 400;
+  --btn-weight: 400;
+  --label-weight: 400;
+  --kicker-spacing: 0.0833em;
   --bg: #0b0b0b;
   --surface: #171717;
   --surface-2: #23130f;
@@ -64,9 +68,7 @@
   --font-body: "FerrariSans", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 500;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

@@ -79,6 +79,11 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 4px;
   --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  --body-weight: 400;
+  --btn-weight: 400;
+  --btn-radius: 0px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 24px;
   --bg: #1f2228;
   --surface: rgba(255, 255, 255, 0.03);
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -112,9 +117,7 @@
   --font-body: "GeistMono", "Geist Mono", ui-monospace, SFMono-Regular, "Roboto Mono", Menlo, Monaco, "Liberation Mono", "DejaVu Sans Mono", "Courier New", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 300;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

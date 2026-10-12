@@ -113,8 +113,6 @@
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

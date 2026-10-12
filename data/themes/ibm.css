@@ -133,6 +133,9 @@
   --ease: cubic-bezier(0.2, 0, 0.38, 0.9);
   --radius-lg: 0px;
   --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #0f62fe;
+  --btn-radius: 0px;
+  --btn-pad-y: 14px;
+  --btn-pad-x: 40px;
   --bg: #ffffff;
   --surface: #f4f4f4;
   --surface-2: #edf5ff;
@@ -167,8 +170,6 @@
   --font-code: "IBM Plex Mono", Menlo, Courier, monospace;
   --font-mono: "IBM Plex Mono", Menlo, Courier, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
@@ -205,6 +206,9 @@
   --ease: cubic-bezier(0.2, 0, 0.38, 0.9);
   --radius-lg: 0px;
   --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #0f62fe;
+  --btn-radius: 0px;
+  --btn-pad-y: 14px;
+  --btn-pad-x: 40px;
   --bg: #161616;
   --surface: #262626;
   --surface-2: #393939;
@@ -239,8 +243,6 @@
   --font-code: "IBM Plex Mono", Menlo, Courier, monospace;
   --font-mono: "IBM Plex Mono", Menlo, Courier, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

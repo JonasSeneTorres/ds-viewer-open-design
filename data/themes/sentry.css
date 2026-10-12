@@ -79,6 +79,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --h3-weight: 500;
+  --body-weight: 400;
+  --btn-weight: 700;
+  --label-weight: 500;
+  --btn-radius: 13px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 16px;
   --bg: #1f1633;
   --surface: #150f23;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -112,9 +119,7 @@
   --font-body: "Rubik", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-code: "Monaco", Menlo, "Ubuntu Mono", monospace;
   --font-mono: "Monaco", Menlo, "Ubuntu Mono", monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-lg: 22px;
   --focus-ring: 0 0 0 4px rgba(183, 199, 217, 0.28);
+  --body-weight: 400;
+  --btn-radius: 999px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 24px;
   --bg: #07111f;
   --surface: #101d2f;
   --surface-2: #16283f;
@@ -64,9 +68,7 @@
   --font-body: "Bugatti Text Regular", ui-sans-serif, system-ui, sans-serif;
   --font-code: "Bugatti Monospace", ui-sans-serif, system-ui, monospace;
   --font-mono: "Bugatti Monospace", ui-sans-serif, system-ui, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

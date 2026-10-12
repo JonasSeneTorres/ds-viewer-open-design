@@ -127,6 +127,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 22px;
   --focus-ring: 0 0 0 4px rgba(70, 48, 235, 0.24);
+  --h3-weight: 600;
+  --btn-weight: 700;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 12px;
   --bg: #ffffff;
   --surface: #f6f7f9;
   --surface-2: #eef2ff;
@@ -160,9 +164,7 @@
   --font-body: "Inter", -apple-system, system-ui, sans-serif;
   --font-code: "JetBrains Mono", ui-monospace, monospace;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

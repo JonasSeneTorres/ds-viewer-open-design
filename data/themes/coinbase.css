@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 2px var(--fg);
+  --h3-weight: 400;
+  --body-weight: 400;
+  --btn-weight: 600;
+  --btn-radius: 56px;
   --bg: #ffffff;
   --surface: #eef0f3;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +68,7 @@
   --font-body: "CoinbaseSans", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

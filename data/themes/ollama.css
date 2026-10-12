@@ -31,6 +31,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, #3b82f6, transparent 50%);
+  --h3-weight: 500;
+  --btn-radius: 999px;
+  --btn-pad-y: 10px;
+  --btn-pad-x: 24px;
   --bg: #ffffff;
   --surface: #fafafa;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +68,7 @@
   --font-body: "SF Pro Rounded", system-ui, -apple-system, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 500;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

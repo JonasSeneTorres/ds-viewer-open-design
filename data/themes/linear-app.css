@@ -79,6 +79,11 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px color-mix(in oklab, var(--accent), transparent 30%), 0 4px 12px rgba(0, 0, 0, 0.1);
+  --body-weight: 400;
+  --label-weight: 400;
+  --btn-radius: 6px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 12px;
   --bg: #08090a;
   --surface: #191a1b;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -112,9 +117,7 @@
   --font-body: "Inter Variable", Inter, "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-code: "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --font-mono: "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
@@ -151,6 +154,11 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px color-mix(in oklab, var(--accent), transparent 30%), 0 4px 12px rgba(0, 0, 0, 0.1);
+  --body-weight: 400;
+  --label-weight: 400;
+  --btn-radius: 6px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 12px;
   --bg: #f7f8f8;
   --surface: #ffffff;
   --surface-2: #f3f4f5;
@@ -184,9 +192,7 @@
   --font-body: "Inter Variable", Inter, "SF Pro Display", -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-code: "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --font-mono: "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

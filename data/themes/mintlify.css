@@ -127,6 +127,12 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 24px;
   --focus-ring: 0 0 0 2px var(--accent);
+  --h3-weight: 500;
+  --body-weight: 400;
+  --btn-weight: 500;
+  --btn-radius: 999px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 24px;
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: #fafafa;
@@ -161,8 +167,6 @@
   --font-code: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, monospace;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

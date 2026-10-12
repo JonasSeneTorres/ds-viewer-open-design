@@ -79,6 +79,14 @@
   --ease: ease;
   --radius-lg: 12px;
   --focus-ring: 0 0 0 2px #36f4a4;
+  --body-weight: 400;
+  --btn-weight: 400;
+  --label-weight: 400;
+  --kicker-spacing: 0.128em;
+  --btn-radius: 999px;
+  --btn-pad-y: 12px;
+  --btn-pad-x: 26px;
+  --font-features: "ss03";
   --bg: #000000;
   --surface: #02090a;
   --surface-2: #061a1c;
@@ -113,8 +121,6 @@
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

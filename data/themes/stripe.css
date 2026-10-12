@@ -79,6 +79,13 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 2px var(--accent), 0 0 0 5px color-mix(in oklab, var(--accent), transparent 75%);
+  --h3-weight: 300;
+  --body-weight: 400;
+  --btn-weight: 400;
+  --btn-radius: 4px;
+  --btn-pad-y: 8px;
+  --btn-pad-x: 16px;
+  --font-features: "ss01";
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: #f6f9fc;
@@ -112,9 +119,7 @@
   --font-body: "sohne-var", "SF Pro Display", sans-serif;
   --font-code: "SourceCodePro", "Source Code Pro", SFMono-Regular, monospace;
   --font-mono: "SourceCodePro", "Source Code Pro", SFMono-Regular, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 300;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

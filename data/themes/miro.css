@@ -85,6 +85,9 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --radius-lg: 28px;
   --focus-ring: 0 0 0 4px rgba(255, 208, 47, 0.38);
+  --h3-weight: 400;
+  --body-weight: 400;
+  --btn-weight: 700;
   --bg: #fff7c2;
   --surface: #ffffff;
   --surface-2: #fff3a3;
@@ -118,9 +121,7 @@
   --font-body: "Noto Sans", "liga" 0", ss01, ss04, ss05, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

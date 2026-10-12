@@ -79,6 +79,8 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 0px;
   --focus-ring: 0 0 0 4px rgba(225, 6, 0, 0.24);
+  --h3-weight: 700;
+  --btn-weight: 700;
   --bg: #ffffff;
   --surface: #f2f2f2;
   --surface-2: #fff0f0;
@@ -112,9 +114,7 @@
   --font-body: "BreveText", helvetica, sans-serif;
   --font-code: "WiredMono", helvetica, monospace;
   --font-mono: "WiredMono", helvetica, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

@@ -31,6 +31,12 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 8px;
   --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+  --h3-weight: 400;
+  --body-weight: 400;
+  --btn-weight: 400;
+  --btn-radius: 4px;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 14px;
   --bg: #faf9f6;
   --surface: #ffffff;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -64,9 +70,7 @@
   --font-body: "MediumLL", LLMedium, sans-serif;
   --font-code: "SaansMono", "SaansMono Fallback", ui-monospace, monospace;
   --font-mono: "SaansMono", "SaansMono Fallback", ui-monospace, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 400;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

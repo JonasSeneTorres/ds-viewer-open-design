@@ -124,6 +124,10 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 16px;
   --focus-ring: 0 0 0 3px hsla(202, 100%, 67%, 0.35);
+  --h3-weight: 400;
+  --body-weight: 500;
+  --btn-weight: 600;
+  --font-features: "calt", "kern", "liga", "ss03", "ss02", "ss08";
   --bg: #07080a;
   --surface: #101111;
   --surface-2: color-mix(in oklab, var(--bg), var(--fg) 4%);
@@ -158,8 +162,6 @@
   --font-code: "GeistMono", "Geist Mono", ui-monospace, monospace;
   --font-mono: "GeistMono", "Geist Mono", ui-monospace, monospace;
   --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

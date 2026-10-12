@@ -31,6 +31,11 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 20px;
   --focus-ring: 0 0 0 2px var(--fg);
+  --h3-weight: 700;
+  --btn-weight: 500;
+  --btn-radius: 8px;
+  --btn-pad-y: 10px;
+  --btn-pad-x: 16px;
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: #f7f7f7;
@@ -64,9 +69,7 @@
   --font-body: "Airbnb Cereal VF", Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }

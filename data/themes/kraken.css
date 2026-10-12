@@ -31,6 +31,12 @@
   --ease: cubic-bezier(0.2, 0, 0, 1);
   --radius-lg: 18px;
   --focus-ring: 0 0 0 4px rgba(113, 50, 245, 0.32);
+  --h3-weight: 700;
+  --body-weight: 400;
+  --btn-weight: 600;
+  --btn-radius: 12px;
+  --btn-pad-y: 13px;
+  --btn-pad-x: 16px;
   --bg: #0b1020;
   --surface: #121a33;
   --surface-2: #1b2450;
@@ -64,9 +70,7 @@
   --font-body: "Kraken-Product", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --heading-weight: 600;
-  --kicker-transform: uppercase;
-  --kicker-spacing: 0.08em;
+  --heading-weight: 700;
   --hero-ground: var(--surface-2);
   --hero-ink: var(--fg);
 }
