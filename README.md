@@ -2,7 +2,7 @@
 
 **Site publicado:** <https://jonassenetorres.github.io/ds-viewer-open-design/>
 
-SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 143 temas**: 142 design systems open-source, extraídos de <https://open-design.ai/plugins/systems/>, mais o **Padrão**, tema próprio do projeto.
+SPA em HTML/CSS/JS puro (sem build nem framework) que apresenta um **catálogo navegável de 144 temas**: 143 design systems open-source, extraídos de <https://open-design.ai/plugins/systems/>, mais o **Padrão**, tema próprio do projeto.
 
 Qualquer design system pode ser **aplicado como tema ao site inteiro** pelo seletor do topo: a mesma página muda de cara sem mudar o conteúdo. O tema padrão é o **Padrão**, uma mistura própria: paleta do Expo, bordas, sombras e animação do Vercel e fontes do Futuristic, com variante escura.
 
@@ -64,6 +64,7 @@ assets/
   fonts/                fontes dos temas (woff2, self-host) e manifest.json
 data/
   modes.json            variante clara/escura dos temas que a têm (ver "Claro e escuro")
+  guide-colors.json     temas em que o guia e o tokens.css descrevem cores diferentes: vale o guia (ver "Guia e tokens com cores diferentes")
   systems-raw.json      lista do catálogo (nome, categoria, link) extraída de open-design.ai (entrada do build)
   ds/index.json         lista dos DS na ordem do seletor: nome, categoria, tagline e cores (~68 KB)
   ds/<id>.<lang>.json   detalhes de cada DS, um arquivo por idioma (en-US e pt-BR), minificado; carregado só ao abrir a página dele (~26 KB em média)
@@ -129,7 +130,7 @@ python -m http.server 8317
 
 ## Atualizando o catálogo
 
-O catálogo é uma **cópia datada** (2026-10-10) do open-design.ai, mantida à mão: não há script que a raspe do site, e não é preciso, porque o dado versionado aqui é o que o site usa. Para incluir ou trocar um design system:
+O catálogo é uma **cópia datada** (2026-10-10, mais o VoltAgent, incluído em 2026-11-24) do open-design.ai, mantida à mão: não há script que a raspe do site, e não é preciso, porque o dado versionado aqui é o que o site usa. Para incluir ou trocar um design system:
 
 1. Edite `data/systems-raw.json` (lista do catálogo). Cada item tem `name`, `category`, `href`, `tagline` e os dados do card (`preview`). A lista completa de pacotes do Open Design está em [`design-systems/`](https://github.com/nexu-io/open-design/tree/main/design-systems) do repositório deles, que é a melhor base para isso.
 2. `npm run data:fetch` para baixar as páginas novas.
@@ -148,7 +149,7 @@ O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) roda a c
 4. `python scripts/check_html.py`: só tags e atributos permitidos nos guias
 5. `npm run test:e2e`: 29 cenários, em **Chromium, Firefox e WebKit** (três jobs em paralelo) (início e catálogo, busca, página de DS com tema, seletor de temas, blog e artigo, tabela e seus estados, formulário, idioma e botão de topo, rotas antigas e inexistentes, exemplos e telas de login, rodapé, avisos de fontes e de contraste, botão sol/lua, tema na URL, o botão de abrir no open-design, metatags, componentes, visão de código, componentes no site todo e o tema Urdu em RTL, CSS por página sob demanda). Também falha se alguma tela der erro de JS, resposta 4xx/5xx ou pedir algo ao Google
 
-A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 143 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
+A **auditoria dos temas** (contraste, rolagem horizontal, erros e fontes em desktop e celular, nos 144 temas) tem um workflow à parte, [`.github/workflows/audit-themes.yml`](.github/workflows/audit-themes.yml): roda toda segunda-feira e pode ser disparada à mão em Actions > "Auditar temas", com a opção de limitar a alguns temas e de escolher o navegador. O relatório (`audit-themes.json` e o resumo) fica como artefato da execução. Ela não roda a cada push porque leva de 20 a 40 minutos.
 
 Na branch `main`, se os testes passarem, ele publica no **GitHub Pages** só o que o navegador usa (`index.html`, `assets/`, `data/ds/` e `data/themes/`, cerca de 12 MB). O Pages já está ativo (Source: **GitHub Actions**) e o site é publicado em <https://jonassenetorres.github.io/ds-viewer-open-design/>. Em pull requests o job de publicação aparece como "pulado" de propósito: só roda no push para a `main`. O site funciona em subcaminho (`usuario.github.io/ds-viewer-open-design/`), porque todos os endereços são relativos.
 
@@ -270,6 +271,15 @@ Pontos de atenção:
 - **Escuro derivado:** nenhum guia traz modo escuro para o Padrão. Os valores estão em [`data/modes.json`](data/modes.json), com o que foi deduzido em `derived`.
 - **Onde mudar:** as origens e as decisões são constantes no topo de `compose_default` (`DEFAULT_PALETTE_FROM`, `DEFAULT_TYPE_FROM`, `DEFAULT_ACCENT`, `DEFAULT_HEADER`, `DEFAULT_PALETTE_NAMES`) e o escuro, em `data/modes.json`. Depois, `npm run data:update`.
 
+### Guia e tokens com cores diferentes
+
+Em geral o `tokens.css` e o guia escrito (`DESIGN.md`) de um design system descrevem as mesmas cores. No **VoltAgent** não: os tokens usam um preto esverdeado (`--bg: #07110c`) com destaque verde-limão (`--accent: #7cff6b`), e o guia descreve um preto quase neutro (`#050507`) com destaque esmeralda (`#00d992`). **Onde divergem, o site segue o texto do guia**, a mesma regra que já vale para a tipografia, que sempre vem do guia.
+
+- **Onde fica:** [`data/guide-colors.json`](data/guide-colors.json) lista, por tema, cada token trocado, o valor do guia e o nome da cor lá. `"value": null` tira o token (o build deriva a cor do fundo e do texto), usado quando o guia não tem equivalente e o tom do `tokens.css` destoaria das outras cores (`--surface-warm` e `--border-soft`). Os papéis vêm da "Quick Color Reference" do próprio guia (fundo, superfície, borda, texto principal, secundário e terciário, destaque) e das cores semânticas e do anel de foco que ele nomeia.
+- **O que muda:** só o tema aplicado (variáveis CSS, paletas 50–950, contraste e as cores do cartão no catálogo). A seção **Tokens** da página continua mostrando o valor publicado, e `npm run verify:upstream` segue conferindo tudo contra o repositório.
+- **A observação:** a página do tema abre com a seção **Nota sobre as cores**, gerada no build (em inglês e em português), que mostra, para cada token, o valor publicado, o valor usado e a cor correspondente no guia.
+- **Incluir outro tema:** adicione a lista dele em `data/guide-colors.json` e rode `npm run data:update`.
+
 ### Ajustes para um tema específico
 
 O `<body>` recebe a classe `theme-<id>` do tema ativo (inclusive na prévia de uma página de DS). Use um seletor composto para corrigir um tema sem afetar os outros:
@@ -284,7 +294,7 @@ Aqui, "fonte proprietária" é a fonte de **marca** de um design system (a do It
 
 <!-- fontes-proprietarias:inicio -->
 
-**61 dos 143 temas** têm, no guia original, fontes de marca proprietárias (112 famílias no total). **O site não usa nenhuma delas e elas não constam nele**: nenhum arquivo dessas fontes é hospedado ou distribuído aqui. Nesses temas o navegador usa as **fontes de reserva (fallback)** indicadas pelo próprio guia, e a página mostra um aviso no topo dizendo isso.
+**62 dos 144 temas** têm, no guia original, fontes de marca proprietárias (113 famílias no total). **O site não usa nenhuma delas e elas não constam nele**: nenhum arquivo dessas fontes é hospedado ou distribuído aqui. Nesses temas o navegador usa as **fontes de reserva (fallback)** indicadas pelo próprio guia, e a página mostra um aviso no topo dizendo isso.
 
 | Tema | Fontes proprietárias do guia (não usadas) | Reserva indicada pelo guia (o que aparece) |
 |---|---|---|
@@ -332,6 +342,7 @@ Aqui, "fonte proprietária" é a fonte de **marca** de um design system (a do It
 | Replicate (`replicate`) | rb-freigeist-neue, basier-square | ui-sans-serif, system-ui |
 | Runway (`runwayml`) | abcNormal | abcNormal Fallback |
 | Together AI (`together-ai`) | The Future, PP Neue Montreal Mono | Arial, Georgia |
+| VoltAgent (`voltagent`) | SFMono-Regular | Menlo, Monaco, Consolas, Liberation Mono, Courier New |
 | xAI (`x-ai`) | universalSans | universalSans Fallback |
 | NVIDIA (`nvidia`) | NVIDIA-EMEA | Arial, Helvetica, sans-serif |
 | Pinterest (`pinterest`) | Pin Sans | -apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans |
@@ -373,7 +384,7 @@ O botão de idioma do topo alterna pt-BR / en-US (o padrão segue o idioma do si
   3. Remova o marcador `TRADUCAO-PENDENTE` do arquivo. Enquanto ele existir, o arquivo é ignorado.
   4. `npm run data:update`. Seções sem tradução continuam em inglês.
 
-  Todos os 143 DS já estão traduzidos para pt-BR (o Padrão usa a tradução do guia do `vercel`, com uma seção "Sobre este tema" no início).
+  Todos os 144 DS já estão traduzidos para pt-BR (o Padrão usa a tradução do guia do `vercel`, com uma seção "Sobre este tema" no início).
 - **Artigos:** o conteúdo é Lorem ipsum (autor: Jonas Torres), igual em qualquer idioma; só os rótulos da interface são traduzidos. A barra lateral do blog (busca, categorias, posts recentes e tags) é de enfeite, com links sem destino.
 
 ## Categorias
@@ -407,6 +418,7 @@ O que este projeto acrescenta, e que não faz parte da documentação original:
 - as escalas de cor 50–950, **derivadas** das cores informadas (os degraus exatos aparecem marcados na paleta);
 - a conversão dos tokens em variáveis CSS (`data/themes/<id>.css`);
 - os **ajustes de contraste** (WCAG 2.2 AA) das variáveis do site, listados por tema em `data/themes/<id>.contrast.json` e mostrados num aviso na página;
+- a **troca das cores do tokens.css pelas do guia** quando os dois divergem, hoje só no VoltAgent (`data/guide-colors.json`), com uma nota na página do tema;
 - as **variantes clara/escura** de sete temas (`data/modes.json`): quando vêm da seção de cores do guia estão copiadas dele; o que o guia não traz está marcado como dedução;
 - o tema **Padrão**, composto no build com a paleta do Expo, as bordas, sombras e animação do Vercel e as fontes do Futuristic, além de decisões do projeto (README, seção "O tema Padrão");
 - as traduções para pt-BR (`i18n/pt-BR/`);
@@ -418,7 +430,7 @@ Em conformidade com a Apache 2.0: o conteúdo do Open Design mantém a licença 
 
 Verificado no repositório [nexu-io/open-design](https://github.com/nexu-io/open-design) (licença `Apache-2.0` confirmada pela API do GitHub):
 
-- Os 142 design systems deste catálogo (todos, exceto o **Padrão**, composto por Expo, Vercel e Futuristic) existem em `design-systems/<id>/` do repositório.
+- Os 143 design systems deste catálogo (todos, exceto o **Padrão**, composto por Expo, Vercel e Futuristic) existem em `design-systems/<id>/` do repositório.
 - O `manifest.json` de cada um deles declara a origem `OpenDesign curated bundled fixture`, ou seja, material curado e incluído pelo próprio projeto. Nenhum pacote do repositório traz arquivo de licença próprio.
 - Só dois pacotes do Open Design declaram origem externa, e **nenhum está neste catálogo**: `cloudflare-kumo` (integração de [`cloudflare/kumo`](https://github.com/cloudflare/kumo), MIT) e `tom-modern` ([`Tom-Opencart/tom-modern-html-style-rule`](https://github.com/Tom-Opencart/tom-modern-html-style-rule)).
 

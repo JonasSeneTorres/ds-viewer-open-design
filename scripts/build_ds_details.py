@@ -1358,6 +1358,60 @@ def load_modes():
     return {k: v for k, v in modes.items() if not k.startswith("_")}
 
 
+def load_guide_colors():
+    """data/guide-colors.json: temas cujo tokens.css e cujo guia escrito descrevem cores diferentes (vale o texto do guia)."""
+    path = os.path.join("data", "guide-colors.json")
+    data = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+    return {k: v for k, v in data.items() if not k.startswith("_")}
+
+
+def guide_color_note(published, rows):
+    """Seção 'Nota sobre as cores' (em inglês e em português): o que o tokens.css publica, o que o tema usa e por quê."""
+    def cell(v):
+        return f"<code>{htmllib.escape(v)}</code>" if v else "—"
+
+    def row(r, lang):
+        pt = lang == "pt-BR"
+        if r["value"] is None:
+            used = "derivado" if pt else "derived"
+            why = "sem equivalente no guia" if pt else "no counterpart in the guide"
+        else:
+            used = r["value"]
+            why = r["guide"]
+            if r.get("like"):
+                why = (f"igual a <code>{r['like']}</code>" if pt else f"same as <code>{r['like']}</code>")
+            elif why:
+                why = htmllib.escape(why)
+        return (f"<tr><td><code>{r['token']}</code></td><td>{cell(published.get(r['token']))}</td>"
+                f"<td>{cell(used) if r['value'] is not None else used}</td><td>{why or '—'}</td></tr>")
+
+    used = {r["token"]: r["value"] for r in rows}
+
+    def table(lang):
+        pt = lang == "pt-BR"
+        head = ("Token", "Publicado (tokens.css)", "Usado no tema", "Cor no guia") if pt else \
+               ("Token", "Published (tokens.css)", "Used by the theme", "Color in the guide")
+        return ("<table><thead><tr>" + "".join(f"<th>{h}</th>" for h in head) + "</tr></thead><tbody>"
+                + "".join(row(r, lang) for r in rows) + "</tbody></table>")
+
+    def c(token, src):
+        return f"<code>{src.get(token)}</code>"
+
+    en = (f"<p>The tokens published for this design system (<code>tokens.css</code>) and its written guide describe different colors. "
+          f"The tokens use a background of {c('--bg', published)} and an accent of {c('--accent', published)}; "
+          f"the guide describes {c('--bg', used)} and {c('--accent', used)}. "
+          "Where they disagree, this viewer follows the text of the guide.</p>"
+          "<p>The <strong>Tokens</strong> section of this page still lists the published values, unchanged. "
+          "The table below shows what the theme uses instead. Typography already comes from the guide in every theme.</p>" + table("en-US"))
+    pt = (f"<p>Os tokens publicados para este design system (<code>tokens.css</code>) e o guia escrito descrevem cores diferentes. "
+          f"Os tokens usam fundo {c('--bg', published)} e destaque {c('--accent', published)}; "
+          f"o guia descreve {c('--bg', used)} e {c('--accent', used)}. "
+          "Onde divergem, este visualizador segue o texto do guia.</p>"
+          "<p>A seção <strong>Tokens</strong> desta página continua listando os valores publicados, sem alteração. "
+          "A tabela abaixo mostra o que o tema usa no lugar. A tipografia, em todos os temas, já vem do guia.</p>" + table("pt-BR"))
+    return {"id": "color-note", "title": i18n("Note on the colors", "Nota sobre as cores"), "html": i18n(en, pt)}
+
+
 def override_tokens(groups, overrides):
     """Cópia dos grupos de tokens com `overrides` aplicados ({nome: valor}; None remove o token)."""
     out, seen = [], set()
@@ -1474,8 +1528,11 @@ def build_one(ds_id, page_path, entry, slug):
         # tipografia do Futuristic; o botão (raio e padding) segue o guia do Vercel, de onde vêm as bordas
         type_roles = {**parse_type_roles(block(cached_page(DEFAULT_TYPE_FROM[0]), "designmd-body")),
                       "button_spec": type_roles["button_spec"], "nav_toggle": type_roles["nav_toggle"]}
+    # tokens.css e guia com cores diferentes: o tema usa as do guia (data/guide-colors.json); a seção Tokens segue publicada
+    guide_rows = load_guide_colors().get(ds_id)
+    theme_tokens = override_tokens(tokens, {r["token"]: r["value"] for r in guide_rows}) if guide_rows else tokens
     # cores do preview do catálogo entram como candidatas se o guia não nomear nada
-    palettes, roles = build_palettes(tokens, colors)
+    palettes, roles = build_palettes(theme_tokens, colors)
     if ds_id == "padrao":
         palettes = [{**p, "name": DEFAULT_PALETTE_NAMES.get(p["name"], p["name"])} for p in palettes
                     if DEFAULT_PALETTE_NAMES.get(p["name"], p["name"]) is not None]
@@ -1492,6 +1549,8 @@ def build_one(ds_id, page_path, entry, slug):
         sec["html"] = i18n(sec["html"])
     if ds_id == "padrao":  # a explicação da mistura vem antes do guia do Vercel
         sections.insert(0, {"id": "origem", "title": i18n("About this theme", "Sobre este tema"), "html": DEFAULT_ORIGIN_HTML})
+    if guide_rows:  # a observação sobre a divergência de cores vem antes do guia
+        sections.insert(0, guide_color_note(token_map(tokens), guide_rows))
     for lang in TRANSLATED_LANGS:
         tr = load_translation(slug, lang)
         if not tr:
@@ -1519,7 +1578,7 @@ def build_one(ds_id, page_path, entry, slug):
         "colors": colors,
         "fonts": fonts,
         "tokens": tokens,
-        "vars": theme_vars(tokens, palettes, roles, fonts, adjustments, type_roles),
+        "vars": theme_vars(theme_tokens, palettes, roles, fonts, adjustments, type_roles),
         "sections": sections,
     }
     if ds_id == "padrao":  # cabeçalho no cinza de sempre, não no tom 500 da paleta Primary
@@ -1530,7 +1589,7 @@ def build_one(ds_id, page_path, entry, slug):
     alt = None
     alt_adjustments = []
     if mode:
-        alt_vars = theme_vars(override_tokens(tokens, mode["tokens"]), palettes, roles, fonts, alt_adjustments, type_roles)
+        alt_vars = theme_vars(override_tokens(theme_tokens, mode["tokens"]), palettes, roles, fonts, alt_adjustments, type_roles)
         # os tons 500/400 da escala (cabeçalho e rodapé) vêm da paleta do modo base; na variante o fundo e o texto
         for shade in ("--primary-500", "--neutral-400"):
             if shade in alt_vars:
@@ -1541,6 +1600,9 @@ def build_one(ds_id, page_path, entry, slug):
     pal = {x["name"]: x for x in palettes}
     if ds_id == "padrao":  # o padrão mostra as cores dos papéis (primária, secundária, neutra)
         swatches = [pal[roles[r]]["base"] for r in ("primary", "secondary", "neutral") if roles.get(r) in pal]
+    elif guide_rows:  # as cores do tema (as do guia), não as do card do site
+        tm = token_map(theme_tokens)
+        swatches = [tm[k] for k in ("--bg", "--surface", "--fg", "--accent") if tm.get(k)]
     else:
         swatches = [x for x in (p.get("bg"), p.get("surface"), p.get("ink"), p.get("accent")) if x]
     # o índice leva só o que a listagem e o seletor usam; variáveis e fontes ficam em data/themes/<id>.css

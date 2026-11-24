@@ -1,4 +1,4 @@
-# Auditoria visual dos 143 temas (contraste, rolagem horizontal, erros e fontes), em desktop e celular.
+# Auditoria visual dos 144 temas (contraste, rolagem horizontal, erros e fontes), em desktop e celular.
 # Leva de 20 a 40 minutos, por isso não roda a cada push: é semanal e pode ser disparada à mão.
 # À mão: Actions > Auditar temas > Run workflow (dá para limitar a alguns temas e escolher o navegador).
 name: Auditar temas

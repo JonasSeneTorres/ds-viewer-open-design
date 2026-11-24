@@ -245,5 +245,57 @@ class Botao(unittest.TestCase):
         self.assertEqual(b.parse_nav_toggle_policy("<h2>4. Components</h2><p>Nothing here.</p>"), {})
 
 
+class CoresDoGuia(unittest.TestCase):
+    """Temas em que o guia e o tokens.css descrevem cores diferentes: vale o texto do guia."""
+    TOKENS = [{"group": "Surface", "items": [{"name": "--bg", "value": "#07110c"}, {"name": "--surface-warm", "value": "#14281e"}]},
+              {"group": "Accent", "items": [{"name": "--accent", "value": "#7cff6b"}]}]
+    ROWS = [{"token": "--bg", "value": "#050507", "guide": "Abyss Black: Page Background"},
+            {"token": "--surface-warm", "value": None, "guide": ""},
+            {"token": "--accent", "value": "#00d992", "guide": "Emerald Signal Green: Brand Accent"},
+            {"token": "--accent-on", "value": "#050507", "guide": "", "like": "--bg"}]
+
+    def test_override_troca_remove_e_acrescenta(self):
+        out = b.token_map(b.override_tokens(self.TOKENS, {r["token"]: r["value"] for r in self.ROWS}))
+        self.assertEqual(out["--bg"], "#050507")
+        self.assertEqual(out["--accent"], "#00d992")
+        self.assertNotIn("--surface-warm", out)
+        self.assertEqual(out["--accent-on"], "#050507")  # não existia nos tokens: entra no grupo extra
+
+    def test_override_nao_altera_os_tokens_publicados(self):
+        b.override_tokens(self.TOKENS, {"--bg": "#000000", "--surface-warm": None})
+        self.assertEqual(b.token_map(self.TOKENS)["--bg"], "#07110c")
+        self.assertIn("--surface-warm", b.token_map(self.TOKENS))
+
+    def test_nota_em_dois_idiomas_com_publicado_e_usado(self):
+        note = b.guide_color_note(b.token_map(self.TOKENS), self.ROWS)
+        self.assertEqual(note["id"], "color-note")
+        en = next(x["message"] for x in note["html"] if x["lang"] == "en-US")
+        pt = next(x["message"] for x in note["html"] if x["lang"] == "pt-BR")
+        for html in (en, pt):
+            self.assertIn("<code>#07110c</code>", html)   # publicado
+            self.assertIn("<code>#050507</code>", html)   # usado
+            self.assertIn("<code>#7cff6b</code>", html)
+            self.assertIn("<code>#00d992</code>", html)
+            self.assertEqual(html.count("<tr>"), len(self.ROWS) + 1)  # uma linha por token, mais o cabeçalho
+        self.assertIn("derived", en)
+        self.assertIn("derivado", pt)
+        self.assertIn("same as <code>--bg</code>", en)
+        self.assertIn("igual a <code>--bg</code>", pt)
+
+    def test_nota_so_tem_tags_permitidas(self):
+        note = b.guide_color_note(b.token_map(self.TOKENS), self.ROWS)
+        for item in note["html"]:
+            self.assertEqual(b.clean(item["message"]), item["message"])
+
+    def test_arquivo_de_dados_e_consistente(self):
+        for ds_id, rows in b.load_guide_colors().items():
+            tokens = [r["token"] for r in rows]
+            self.assertEqual(len(tokens), len(set(tokens)), ds_id)       # sem token repetido
+            for r in rows:
+                self.assertTrue(r["value"] is None or r["value"].strip(), (ds_id, r["token"]))
+                if r.get("like"):
+                    self.assertIn(r["like"], tokens, (ds_id, r["token"]))  # aponta para um token da própria lista
+
+
 if __name__ == "__main__":
     unittest.main()

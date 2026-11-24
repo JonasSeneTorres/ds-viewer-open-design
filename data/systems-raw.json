@@ -2010,6 +2010,21 @@
   }
  },
  {
+  "href": "/plugins/design-system-voltagent/",
+  "name": "VoltAgent",
+  "category": "AI & LLM",
+  "tagline": "AI agent framework. Void-black canvas, emerald accent, terminal-native.",
+  "preview": {
+   "bg": "#07110c",
+   "surface": "#101c16",
+   "ink": "#f4fff8",
+   "muted": "rgba(244, 255, 248, 0.55)",
+   "line": "rgba(244, 255, 248, 0.12)",
+   "accent": "#7cff6b",
+   "radius": "10px"
+  }
+ },
+ {
   "href": "/plugins/design-system-warm-editorial/",
   "name": "Warm Editorial",
   "category": "Starter",
