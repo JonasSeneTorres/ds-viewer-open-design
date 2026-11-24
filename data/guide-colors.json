@@ -1,0 +1,20 @@
+{
+ "_": "Temas cujo tokens.css e cujo guia escrito (DESIGN.md) descrevem cores diferentes: vale o texto do guia. Cada item troca um token só no tema aplicado (a seção Tokens da página segue mostrando o valor publicado) e entra na seção 'Nota sobre as cores' da página. 'value': null tira o token (o build deriva a cor do fundo e do texto), para um tom do tokens.css não destoar das cores do guia. 'guide' é o nome da cor no guia (vazio quando o guia não tem equivalente) e 'like', o token cujo papel este repete no tokens.css. Para incluir um tema, adicione a lista dele aqui e rode `npm run data:update`.",
+ "voltagent": [
+  {"token": "--bg", "value": "#050507", "guide": "Abyss Black: Page Background"},
+  {"token": "--surface", "value": "#101010", "guide": "Carbon Surface: Card Surface"},
+  {"token": "--surface-warm", "value": null, "guide": ""},
+  {"token": "--fg", "value": "#f2f2f2", "guide": "Snow White: Primary Text"},
+  {"token": "--fg-2", "value": "#b8b3b0", "guide": "Warm Parchment: Secondary Text"},
+  {"token": "--muted", "value": "#8b949e", "guide": "Steel Slate: Tertiary Text"},
+  {"token": "--meta", "value": "#00d992", "guide": "", "like": "--accent"},
+  {"token": "--border", "value": "#3d3a39", "guide": "Warm Charcoal Border: Border / Containment"},
+  {"token": "--border-soft", "value": null, "guide": ""},
+  {"token": "--accent", "value": "#00d992", "guide": "Emerald Signal Green: Brand Accent"},
+  {"token": "--accent-on", "value": "#050507", "guide": "", "like": "--bg"},
+  {"token": "--success", "value": "#008b00", "guide": "Success Emerald"},
+  {"token": "--warn", "value": "#ffba00", "guide": "Warning Amber"},
+  {"token": "--danger", "value": "#fb565b", "guide": "Danger Coral"},
+  {"token": "--focus-ring", "value": "0 0 0 4px rgba(59, 130, 246, 0.5)", "guide": "Ring Blue at 50%"}
+ ]
+}

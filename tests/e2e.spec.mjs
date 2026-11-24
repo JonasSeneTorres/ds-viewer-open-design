@@ -1,7 +1,7 @@
 // E2E básico: garante que o site abre, navega, troca de tema e que as telas principais respondem.
 import { test, expect } from "@playwright/test";
 
-const TOTAL = 143; // design systems no catálogo (data/ds/index.json)
+const TOTAL = 144; // design systems no catálogo (data/ds/index.json)
 
 // Falha o teste se a página gerar erro de JS, resposta 4xx/5xx ou pedir algo ao Google.
 function watch(page) {
@@ -345,6 +345,25 @@ test("aviso de contraste lista os tokens ajustados e fecha", async ({ page }) =>
   expect(problems).toEqual([]);
 });
 
+test("VoltAgent segue as cores do guia e a página explica a diferença para o tokens.css", async ({ page }) => {
+  const problems = watch(page);
+  await page.goto("/#/design-system/voltagent");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "voltagent");
+  const note = page.locator("#color-note");
+  await expect(note).toBeVisible();
+  await expect(note.locator("h2")).toHaveText("Nota sobre as cores");
+  await expect(note.locator("tbody tr")).toHaveCount(15); // uma linha por token trocado ou tirado (data/guide-colors.json)
+  // o tema aplicado usa as cores do guia; a seção Tokens segue mostrando o que o tokens.css publica
+  const cssVar = (name) => page.evaluate((n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim(), name);
+  expect(await cssVar("--bg")).toBe("#050507");
+  expect(await cssVar("--accent")).toBe("#00d992");
+  await expect(page.locator("#tokens")).toContainText("#07110c");
+  await expect(page.locator("#tokens")).toContainText("#7cff6b");
+  await page.click("#langBtn");
+  await expect(note.locator("h2")).toHaveText("Note on the colors");
+  expect(problems).toEqual([]);
+});
+
 test("botão sol/lua só funciona nos temas com variante clara/escura", async ({ page }) => {
   const problems = watch(page);
   const btn = page.locator("#schemeBtn");
@@ -438,7 +457,7 @@ test("metatags acompanham a rota", async ({ page }) => {
   // as tags são atualizadas pelo JavaScript depois da navegação: espera com repetição, sem ler na hora
   const meta = (sel) => page.locator(`head meta[${sel}]`);
   await page.goto("/#/");
-  await expect(meta('name="description"')).toHaveAttribute("content", /143 design systems/);
+  await expect(meta('name="description"')).toHaveAttribute("content", /144 design systems/);
   const home = await meta('property="og:title"').getAttribute("content");
 
   await page.goto("/#/tabela");

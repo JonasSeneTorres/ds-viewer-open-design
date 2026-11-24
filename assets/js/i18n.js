@@ -408,8 +408,8 @@ const UI = {
   "aside.toastNl": { "en-US": "Subscription noted (sample: nothing is sent).", "pt-BR": "Inscrição registrada (de exemplo: nada é enviado)." },
   "meta.locale": { "en-US": "en_US", "pt-BR": "pt_BR" },
   "meta.home": {
-    "en-US": "Browsable catalog of 143 design systems: apply each one as a theme to the whole site, with palettes, typography, tokens and guides.",
-    "pt-BR": "Catálogo navegável de 143 design systems: aplique cada um como tema ao site inteiro, com paletas, tipografia, tokens e guias."
+    "en-US": "Browsable catalog of 144 design systems: apply each one as a theme to the whole site, with palettes, typography, tokens and guides.",
+    "pt-BR": "Catálogo navegável de 144 design systems: aplique cada um como tema ao site inteiro, com paletas, tipografia, tokens e guias."
   },
   "meta.blog": { "en-US": "Sample blog with featured post, article list and sidebar, styled by the selected design system.", "pt-BR": "Blog de exemplo com destaque, lista de artigos e barra lateral, no estilo do design system escolhido." },
   "meta.article": { "en-US": "Sample article with sidebar, styled by the selected design system.", "pt-BR": "Artigo de exemplo com barra lateral, no estilo do design system escolhido." },
